@@ -1,0 +1,149 @@
+{
+  "pdf_path": "/home/kimilabra/DocWorldTrace/data/raw_pdfs/ti2025ars.pdf",
+  "profile": {
+    "doc_id": "ti2025ars",
+    "title": "ti2025ars",
+    "page_count": 140,
+    "total_words": 62127,
+    "avg_words_per_page": 443.76,
+    "total_text_chars": 399343,
+    "table_pages": 66,
+    "has_text_layer": true
+  },
+  "checks": [
+    {
+      "name": "overview",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "cache_hit": false
+      }
+    },
+    {
+      "name": "read_page",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "cache_hit_second": true,
+        "page": 42,
+        "text_chars": 5100
+      }
+    },
+    {
+      "name": "search",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "query": "government incentives",
+        "returned_pages": [
+          20,
+          42,
+          15
+        ],
+        "target_page": 42,
+        "cache_hit_second": true
+      }
+    },
+    {
+      "name": "crop",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "page": 38,
+        "bbox": [
+          48.96,
+          83.70001000000002,
+          562.2600199999999,
+          183.45001000000002
+        ],
+        "text_chars": 334,
+        "image_path": "artifacts/docenv/ti2025ars/crops/page_038_102_174_1171_382.png"
+      }
+    },
+    {
+      "name": "ocr",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "page": 38,
+        "bbox": [
+          48.96,
+          83.70001000000002,
+          562.2600199999999,
+          183.45001000000002
+        ],
+        "text_preview": "| Revenue $ 14,006 $ 2,697 $ 979 $ 17,682 |\n| --- |\n| Cost of revenue 5,764 1,471 364 7,599 |\n| Gross profit 8,242 1,226 615 10,083 |\n| Research and development 1,494 514 75 2,083 |\n| Selling, general",
+        "cache_hit_second": true
+      }
+    },
+    {
+      "name": "detect_layout",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "page": 42,
+        "element_count": 778
+      }
+    },
+    {
+      "name": "parse_table",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "page": 38,
+        "row_count": 7,
+        "cache_hit_second": true
+      }
+    },
+    {
+      "name": "compute",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "value": 14.285714285714299
+      }
+    },
+    {
+      "name": "verify",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "claim": "revenue 14 006 2 697 979 17 682 cost of revenue 5",
+        "label": "SUPPORTED",
+        "sufficiency": "SUFFICIENT",
+        "cache_hit_second": true
+      }
+    }
+  ],
+  "metrics": {
+    "attempted_checks": 9,
+    "passed_checks": 9,
+    "skipped_checks": 0,
+    "pass_rate": 1.0,
+    "cache_check_count": 5,
+    "cache_pass_rate": 1.0
+  },
+  "suitability": "medium",
+  "recommended_for_h1": true,
+  "reasons": [
+    "very_long_document"
+  ]
+}

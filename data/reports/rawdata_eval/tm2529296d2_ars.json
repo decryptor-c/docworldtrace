@@ -1,0 +1,147 @@
+{
+  "pdf_path": "/home/kimilabra/DocWorldTrace/data/raw_pdfs/tm2529296d2_ars.pdf",
+  "profile": {
+    "doc_id": "tm2529296d2_ars",
+    "title": "tm2529296d2_ars",
+    "page_count": 98,
+    "total_words": 39995,
+    "avg_words_per_page": 408.11,
+    "total_text_chars": 266479,
+    "table_pages": 49,
+    "has_text_layer": true
+  },
+  "checks": [
+    {
+      "name": "overview",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "cache_hit": false
+      }
+    },
+    {
+      "name": "read_page",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "cache_hit_second": true,
+        "page": 27,
+        "text_chars": 5788
+      }
+    },
+    {
+      "name": "search",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "query": "technology risks",
+        "returned_pages": [
+          27,
+          12,
+          16
+        ],
+        "target_page": 27,
+        "cache_hit_second": true
+      }
+    },
+    {
+      "name": "crop",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "page": 15,
+        "bbox": [
+          51.975,
+          163.13833333333335,
+          480.264,
+          173.289
+        ],
+        "text_chars": 143,
+        "image_path": "artifacts/docenv/tm2529296d2_ars/crops/page_015_108_339_1000_361.png"
+      }
+    },
+    {
+      "name": "ocr",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "page": 15,
+        "bbox": [
+          51.975,
+          163.13833333333335,
+          480.264,
+          173.289
+        ],
+        "text_preview": "| platforms that communicate directly with | Grainger | 's systems | through eProcurement technology. |\n| --- | --- | --- | --- |\n|  |  |  |  |",
+        "cache_hit_second": true
+      }
+    },
+    {
+      "name": "detect_layout",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "page": 27,
+        "element_count": 843
+      }
+    },
+    {
+      "name": "parse_table",
+      "status": "success",
+      "passed": false,
+      "detail": {
+        "passed": false,
+        "status": "success",
+        "page": 15,
+        "row_count": 1,
+        "cache_hit_second": true
+      }
+    },
+    {
+      "name": "compute",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "value": 14.285714285714299
+      }
+    },
+    {
+      "name": "verify",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "claim": "platforms that communicate directly with grainger s systems through eprocurement technology",
+        "label": "SUPPORTED",
+        "sufficiency": "SUFFICIENT",
+        "cache_hit_second": true
+      }
+    }
+  ],
+  "metrics": {
+    "attempted_checks": 9,
+    "passed_checks": 8,
+    "skipped_checks": 0,
+    "pass_rate": 0.8889,
+    "cache_check_count": 5,
+    "cache_pass_rate": 1.0
+  },
+  "suitability": "high",
+  "recommended_for_h1": true,
+  "reasons": []
+}

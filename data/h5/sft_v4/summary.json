@@ -1,0 +1,169 @@
+{
+  "rollout_dir": "data/h2/rollouts_v4",
+  "docverify": "data/h3/docverify_plus_v4/docverify_review.json",
+  "out_dir": "data/h5/sft_v4",
+  "heldout_per_task": 1,
+  "rollout_count": 80,
+  "unique_seed_count": 20,
+  "split_rollout_counts": {
+    "train": 56,
+    "eval": 24
+  },
+  "split_by_task": {
+    "cross_page": {
+      "train": 12,
+      "eval": 4
+    },
+    "numeric_computation": {
+      "train": 8,
+      "eval": 4
+    },
+    "table_lookup": {
+      "eval": 4,
+      "train": 4
+    },
+    "text_lookup": {
+      "train": 16,
+      "eval": 4
+    },
+    "unanswerable": {
+      "train": 12,
+      "eval": 4
+    },
+    "verification": {
+      "eval": 4,
+      "train": 4
+    }
+  },
+  "dataset_counts": {
+    "answer_only_train": 56,
+    "answer_only_eval": 24,
+    "trajectory_train": 162,
+    "trajectory_eval": 72
+  },
+  "answer_only_train": {
+    "condition": "answer_only_sft",
+    "count": 56,
+    "task_distribution": {
+      "cross_page": 12,
+      "unanswerable": 12,
+      "text_lookup": 16,
+      "numeric_computation": 8,
+      "table_lookup": 4,
+      "verification": 4
+    },
+    "teacher_distribution": {
+      "dmxapi_gemini_2_5_flash": 28,
+      "dmxapi_gpt4o_2024_11_20": 28
+    },
+    "target_action_distribution": {
+      "answer": 44,
+      "refuse": 12
+    },
+    "terminal_target_rate": 1.0,
+    "nonterminal_target_rate": 0.0,
+    "core_tool_coverage": [
+      "answer",
+      "refuse"
+    ]
+  },
+  "trajectory_train": {
+    "condition": "trajectory_sft",
+    "count": 162,
+    "task_distribution": {
+      "cross_page": 41,
+      "unanswerable": 37,
+      "text_lookup": 32,
+      "numeric_computation": 26,
+      "table_lookup": 12,
+      "verification": 14
+    },
+    "teacher_distribution": {
+      "dmxapi_gemini_2_5_flash": 79,
+      "dmxapi_gpt4o_2024_11_20": 83
+    },
+    "target_action_distribution": {
+      "search": 27,
+      "read_page": 55,
+      "answer": 44,
+      "refuse": 12,
+      "parse_table": 10,
+      "compute": 8,
+      "verify": 4,
+      "crop": 2
+    },
+    "terminal_target_rate": 0.3457,
+    "nonterminal_target_rate": 0.6543,
+    "core_tool_coverage": [
+      "answer",
+      "compute",
+      "parse_table",
+      "read_page",
+      "refuse",
+      "search",
+      "verify"
+    ]
+  },
+  "answer_only_eval": {
+    "condition": "answer_only_sft",
+    "count": 24,
+    "task_distribution": {
+      "verification": 4,
+      "cross_page": 4,
+      "unanswerable": 4,
+      "table_lookup": 4,
+      "numeric_computation": 4,
+      "text_lookup": 4
+    },
+    "teacher_distribution": {
+      "dmxapi_gemini_2_5_flash": 12,
+      "dmxapi_gpt4o_2024_11_20": 12
+    },
+    "target_action_distribution": {
+      "answer": 20,
+      "refuse": 4
+    },
+    "terminal_target_rate": 1.0,
+    "nonterminal_target_rate": 0.0,
+    "core_tool_coverage": [
+      "answer",
+      "refuse"
+    ]
+  },
+  "trajectory_eval": {
+    "condition": "trajectory_sft",
+    "count": 72,
+    "task_distribution": {
+      "verification": 13,
+      "cross_page": 15,
+      "unanswerable": 12,
+      "table_lookup": 12,
+      "numeric_computation": 12,
+      "text_lookup": 8
+    },
+    "teacher_distribution": {
+      "dmxapi_gemini_2_5_flash": 36,
+      "dmxapi_gpt4o_2024_11_20": 36
+    },
+    "target_action_distribution": {
+      "read_page": 23,
+      "verify": 4,
+      "answer": 20,
+      "search": 9,
+      "refuse": 4,
+      "parse_table": 8,
+      "compute": 4
+    },
+    "terminal_target_rate": 0.3333,
+    "nonterminal_target_rate": 0.6667,
+    "core_tool_coverage": [
+      "answer",
+      "compute",
+      "parse_table",
+      "read_page",
+      "refuse",
+      "search",
+      "verify"
+    ]
+  }
+}

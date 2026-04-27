@@ -1,0 +1,3385 @@
+{
+  "rollout_dir": "data/h2/rollouts_v5",
+  "docverify_path": "data/h3/docverify_plus_v5/docverify_review.json",
+  "overall": {
+    "count": 120,
+    "unique_sequence_count": 12,
+    "unique_sequence_ratio": 0.1,
+    "top_sequences": {
+      "read_page -> answer": 31,
+      "search -> read_page -> refuse": 24,
+      "search -> read_page -> answer": 17,
+      "parse_table -> compute -> answer": 15,
+      "search -> read_page -> read_page -> answer": 7,
+      "search -> read_page -> verify -> answer": 6,
+      "read_page -> parse_table -> answer": 6,
+      "read_page -> verify -> answer": 6,
+      "parse_table -> answer": 5,
+      "parse_table": 1,
+      "read_page -> parse_table -> compute -> answer": 1,
+      "read_page -> crop -> compute -> compute -> answer": 1
+    },
+    "action_coverage_count": 8,
+    "action_coverage": [
+      "answer",
+      "compute",
+      "crop",
+      "parse_table",
+      "read_page",
+      "refuse",
+      "search",
+      "verify"
+    ],
+    "core_pilot_action_coverage_count": 7,
+    "core_pilot_action_coverage": [
+      "answer",
+      "compute",
+      "parse_table",
+      "read_page",
+      "refuse",
+      "search",
+      "verify"
+    ],
+    "action_counts": {
+      "search": 54,
+      "read_page": 106,
+      "answer": 95,
+      "refuse": 24,
+      "verify": 12,
+      "parse_table": 28,
+      "compute": 18,
+      "crop": 1
+    },
+    "step_count_mean": 2.8167,
+    "step_count_std": 0.6706,
+    "step_count_distribution": {
+      "3": 68,
+      "2": 36,
+      "4": 14,
+      "1": 1,
+      "5": 1
+    },
+    "search_call_count": 54,
+    "unique_search_query_count": 15,
+    "unique_search_query_ratio": 0.2778,
+    "seeds_with_search_count": 10,
+    "unique_seed_query_pair_count": 15,
+    "unique_seed_query_pair_ratio": 0.2778,
+    "search_query_counts": {
+      "mlagentbench evaluating language agents on": 6,
+      "predictive data selection the data that": 6,
+      "2025 annual report": 6,
+      "visit bench a benchmark for vision": 4,
+      "current physical location today first author": 4,
+      "confidential non-public legal case number regulatory investigation id": 4,
+      "current employer today first author": 4,
+      "2035 exact revenue forecast fiscal year": 4,
+      "10 2 frozen executive death benefit plan as amended incorporated": 4,
+      "2 visit bench areal worldinspiredvlinstruction followingbenchmark": 2,
+      "visit-bench: a benchmark for vision-language": 2,
+      "first author location": 2,
+      "legal case regulatory investigation confidential id": 2,
+      "first author employer": 2,
+      "2035 revenue forecast": 2
+    }
+  },
+  "by_teacher": {
+    "dmxapi_gemini_2_5_flash": {
+      "count": 40,
+      "unique_sequence_count": 8,
+      "unique_sequence_ratio": 0.2,
+      "top_sequences": {
+        "read_page -> answer": 10,
+        "search -> read_page -> answer": 8,
+        "search -> read_page -> refuse": 8,
+        "search -> read_page -> verify -> answer": 4,
+        "parse_table -> compute -> answer": 4,
+        "read_page -> parse_table -> answer": 4,
+        "parse_table": 1,
+        "read_page -> parse_table -> compute -> answer": 1
+      },
+      "action_coverage_count": 7,
+      "action_coverage": [
+        "answer",
+        "compute",
+        "parse_table",
+        "read_page",
+        "refuse",
+        "search",
+        "verify"
+      ],
+      "core_pilot_action_coverage_count": 7,
+      "core_pilot_action_coverage": [
+        "answer",
+        "compute",
+        "parse_table",
+        "read_page",
+        "refuse",
+        "search",
+        "verify"
+      ],
+      "action_counts": {
+        "search": 20,
+        "read_page": 35,
+        "answer": 31,
+        "refuse": 8,
+        "verify": 4,
+        "parse_table": 10,
+        "compute": 5
+      },
+      "step_count_mean": 2.825,
+      "step_count_std": 0.6666,
+      "step_count_distribution": {
+        "3": 24,
+        "2": 10,
+        "4": 5,
+        "1": 1
+      },
+      "search_call_count": 20,
+      "unique_search_query_count": 10,
+      "unique_search_query_ratio": 0.5,
+      "seeds_with_search_count": 10,
+      "unique_seed_query_pair_count": 10,
+      "unique_seed_query_pair_ratio": 0.5,
+      "search_query_counts": {
+        "visit bench a benchmark for vision": 2,
+        "current physical location today first author": 2,
+        "2 visit bench areal worldinspiredvlinstruction followingbenchmark": 2,
+        "mlagentbench evaluating language agents on": 2,
+        "confidential non-public legal case number regulatory investigation id": 2,
+        "predictive data selection the data that": 2,
+        "current employer today first author": 2,
+        "2035 exact revenue forecast fiscal year": 2,
+        "2025 annual report": 2,
+        "10 2 frozen executive death benefit plan as amended incorporated": 2
+      }
+    },
+    "dmxapi_gemini_3_1_flash_lite_preview": {
+      "count": 40,
+      "unique_sequence_count": 7,
+      "unique_sequence_ratio": 0.175,
+      "top_sequences": {
+        "read_page -> answer": 11,
+        "search -> read_page -> answer": 8,
+        "search -> read_page -> refuse": 8,
+        "parse_table -> compute -> answer": 6,
+        "read_page -> verify -> answer": 4,
+        "parse_table -> answer": 2,
+        "read_page -> parse_table -> answer": 1
+      },
+      "action_coverage_count": 7,
+      "action_coverage": [
+        "answer",
+        "compute",
+        "parse_table",
+        "read_page",
+        "refuse",
+        "search",
+        "verify"
+      ],
+      "core_pilot_action_coverage_count": 7,
+      "core_pilot_action_coverage": [
+        "answer",
+        "compute",
+        "parse_table",
+        "read_page",
+        "refuse",
+        "search",
+        "verify"
+      ],
+      "action_counts": {
+        "search": 16,
+        "read_page": 32,
+        "answer": 32,
+        "refuse": 8,
+        "verify": 4,
+        "parse_table": 9,
+        "compute": 6
+      },
+      "step_count_mean": 2.675,
+      "step_count_std": 0.4684,
+      "step_count_distribution": {
+        "3": 27,
+        "2": 13
+      },
+      "search_call_count": 16,
+      "unique_search_query_count": 8,
+      "unique_search_query_ratio": 0.5,
+      "seeds_with_search_count": 8,
+      "unique_seed_query_pair_count": 8,
+      "unique_seed_query_pair_ratio": 0.5,
+      "search_query_counts": {
+        "visit-bench: a benchmark for vision-language": 2,
+        "first author location": 2,
+        "mlagentbench evaluating language agents on": 2,
+        "legal case regulatory investigation confidential id": 2,
+        "predictive data selection the data that": 2,
+        "first author employer": 2,
+        "2035 revenue forecast": 2,
+        "2025 annual report": 2
+      }
+    },
+    "dmxapi_gpt4o_2024_11_20": {
+      "count": 40,
+      "unique_sequence_count": 10,
+      "unique_sequence_ratio": 0.25,
+      "top_sequences": {
+        "read_page -> answer": 10,
+        "search -> read_page -> refuse": 8,
+        "search -> read_page -> read_page -> answer": 7,
+        "parse_table -> compute -> answer": 5,
+        "parse_table -> answer": 3,
+        "read_page -> verify -> answer": 2,
+        "search -> read_page -> verify -> answer": 2,
+        "read_page -> crop -> compute -> compute -> answer": 1,
+        "read_page -> parse_table -> answer": 1,
+        "search -> read_page -> answer": 1
+      },
+      "action_coverage_count": 8,
+      "action_coverage": [
+        "answer",
+        "compute",
+        "crop",
+        "parse_table",
+        "read_page",
+        "refuse",
+        "search",
+        "verify"
+      ],
+      "core_pilot_action_coverage_count": 7,
+      "core_pilot_action_coverage": [
+        "answer",
+        "compute",
+        "parse_table",
+        "read_page",
+        "refuse",
+        "search",
+        "verify"
+      ],
+      "action_counts": {
+        "search": 18,
+        "read_page": 39,
+        "answer": 32,
+        "refuse": 8,
+        "verify": 4,
+        "crop": 1,
+        "compute": 7,
+        "parse_table": 9
+      },
+      "step_count_mean": 2.95,
+      "step_count_std": 0.8047,
+      "step_count_distribution": {
+        "4": 9,
+        "3": 17,
+        "2": 13,
+        "5": 1
+      },
+      "search_call_count": 18,
+      "unique_search_query_count": 9,
+      "unique_search_query_ratio": 0.5,
+      "seeds_with_search_count": 9,
+      "unique_seed_query_pair_count": 9,
+      "unique_seed_query_pair_ratio": 0.5,
+      "search_query_counts": {
+        "visit bench a benchmark for vision": 2,
+        "current physical location today first author": 2,
+        "mlagentbench evaluating language agents on": 2,
+        "confidential non-public legal case number regulatory investigation id": 2,
+        "predictive data selection the data that": 2,
+        "current employer today first author": 2,
+        "2035 exact revenue forecast fiscal year": 2,
+        "2025 annual report": 2,
+        "10 2 frozen executive death benefit plan as amended incorporated": 2
+      }
+    }
+  },
+  "by_task_type": {
+    "cross_page": {
+      "count": 24,
+      "unique_sequence_count": 2,
+      "unique_sequence_ratio": 0.0833,
+      "top_sequences": {
+        "search -> read_page -> answer": 17,
+        "search -> read_page -> read_page -> answer": 7
+      },
+      "action_coverage_count": 3,
+      "action_coverage": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "core_pilot_action_coverage_count": 3,
+      "core_pilot_action_coverage": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "action_counts": {
+        "search": 24,
+        "read_page": 31,
+        "answer": 24
+      },
+      "step_count_mean": 3.2917,
+      "step_count_std": 0.4545,
+      "step_count_distribution": {
+        "3": 17,
+        "4": 7
+      },
+      "search_call_count": 24,
+      "unique_search_query_count": 5,
+      "unique_search_query_ratio": 0.2083,
+      "seeds_with_search_count": 4,
+      "unique_seed_query_pair_count": 5,
+      "unique_seed_query_pair_ratio": 0.2083,
+      "search_query_counts": {
+        "mlagentbench evaluating language agents on": 6,
+        "predictive data selection the data that": 6,
+        "2025 annual report": 6,
+        "visit bench a benchmark for vision": 4,
+        "visit-bench: a benchmark for vision-language": 2
+      }
+    },
+    "numeric_computation": {
+      "count": 18,
+      "unique_sequence_count": 4,
+      "unique_sequence_ratio": 0.2222,
+      "top_sequences": {
+        "parse_table -> compute -> answer": 15,
+        "parse_table": 1,
+        "read_page -> parse_table -> compute -> answer": 1,
+        "read_page -> crop -> compute -> compute -> answer": 1
+      },
+      "action_coverage_count": 5,
+      "action_coverage": [
+        "answer",
+        "compute",
+        "crop",
+        "parse_table",
+        "read_page"
+      ],
+      "core_pilot_action_coverage_count": 4,
+      "core_pilot_action_coverage": [
+        "answer",
+        "compute",
+        "parse_table",
+        "read_page"
+      ],
+      "action_counts": {
+        "parse_table": 17,
+        "compute": 18,
+        "answer": 17,
+        "read_page": 2,
+        "crop": 1
+      },
+      "step_count_mean": 3.0556,
+      "step_count_std": 0.7049,
+      "step_count_distribution": {
+        "1": 1,
+        "3": 15,
+        "4": 1,
+        "5": 1
+      },
+      "search_call_count": 0,
+      "unique_search_query_count": 0,
+      "unique_search_query_ratio": 0.0,
+      "seeds_with_search_count": 0,
+      "unique_seed_query_pair_count": 0,
+      "unique_seed_query_pair_ratio": 0.0,
+      "search_query_counts": {}
+    },
+    "table_lookup": {
+      "count": 12,
+      "unique_sequence_count": 3,
+      "unique_sequence_ratio": 0.25,
+      "top_sequences": {
+        "read_page -> parse_table -> answer": 6,
+        "parse_table -> answer": 5,
+        "read_page -> answer": 1
+      },
+      "action_coverage_count": 3,
+      "action_coverage": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "core_pilot_action_coverage_count": 3,
+      "core_pilot_action_coverage": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "action_counts": {
+        "read_page": 7,
+        "parse_table": 11,
+        "answer": 12
+      },
+      "step_count_mean": 2.5,
+      "step_count_std": 0.5,
+      "step_count_distribution": {
+        "3": 6,
+        "2": 6
+      },
+      "search_call_count": 0,
+      "unique_search_query_count": 0,
+      "unique_search_query_ratio": 0.0,
+      "seeds_with_search_count": 0,
+      "unique_seed_query_pair_count": 0,
+      "unique_seed_query_pair_ratio": 0.0,
+      "search_query_counts": {}
+    },
+    "text_lookup": {
+      "count": 30,
+      "unique_sequence_count": 1,
+      "unique_sequence_ratio": 0.0333,
+      "top_sequences": {
+        "read_page -> answer": 30
+      },
+      "action_coverage_count": 2,
+      "action_coverage": [
+        "answer",
+        "read_page"
+      ],
+      "core_pilot_action_coverage_count": 2,
+      "core_pilot_action_coverage": [
+        "answer",
+        "read_page"
+      ],
+      "action_counts": {
+        "read_page": 30,
+        "answer": 30
+      },
+      "step_count_mean": 2,
+      "step_count_std": 0.0,
+      "step_count_distribution": {
+        "2": 30
+      },
+      "search_call_count": 0,
+      "unique_search_query_count": 0,
+      "unique_search_query_ratio": 0.0,
+      "seeds_with_search_count": 0,
+      "unique_seed_query_pair_count": 0,
+      "unique_seed_query_pair_ratio": 0.0,
+      "search_query_counts": {}
+    },
+    "unanswerable": {
+      "count": 24,
+      "unique_sequence_count": 1,
+      "unique_sequence_ratio": 0.0417,
+      "top_sequences": {
+        "search -> read_page -> refuse": 24
+      },
+      "action_coverage_count": 3,
+      "action_coverage": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "core_pilot_action_coverage_count": 3,
+      "core_pilot_action_coverage": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "action_counts": {
+        "search": 24,
+        "read_page": 24,
+        "refuse": 24
+      },
+      "step_count_mean": 3,
+      "step_count_std": 0.0,
+      "step_count_distribution": {
+        "3": 24
+      },
+      "search_call_count": 24,
+      "unique_search_query_count": 8,
+      "unique_search_query_ratio": 0.3333,
+      "seeds_with_search_count": 4,
+      "unique_seed_query_pair_count": 8,
+      "unique_seed_query_pair_ratio": 0.3333,
+      "search_query_counts": {
+        "current physical location today first author": 4,
+        "confidential non-public legal case number regulatory investigation id": 4,
+        "current employer today first author": 4,
+        "2035 exact revenue forecast fiscal year": 4,
+        "first author location": 2,
+        "legal case regulatory investigation confidential id": 2,
+        "first author employer": 2,
+        "2035 revenue forecast": 2
+      }
+    },
+    "verification": {
+      "count": 12,
+      "unique_sequence_count": 2,
+      "unique_sequence_ratio": 0.1667,
+      "top_sequences": {
+        "search -> read_page -> verify -> answer": 6,
+        "read_page -> verify -> answer": 6
+      },
+      "action_coverage_count": 4,
+      "action_coverage": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "core_pilot_action_coverage_count": 4,
+      "core_pilot_action_coverage": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "action_counts": {
+        "search": 6,
+        "read_page": 12,
+        "verify": 12,
+        "answer": 12
+      },
+      "step_count_mean": 3.5,
+      "step_count_std": 0.5,
+      "step_count_distribution": {
+        "4": 6,
+        "3": 6
+      },
+      "search_call_count": 6,
+      "unique_search_query_count": 2,
+      "unique_search_query_ratio": 0.3333,
+      "seeds_with_search_count": 2,
+      "unique_seed_query_pair_count": 2,
+      "unique_seed_query_pair_ratio": 0.3333,
+      "search_query_counts": {
+        "10 2 frozen executive death benefit plan as amended incorporated": 4,
+        "2 visit bench areal worldinspiredvlinstruction followingbenchmark": 2
+      }
+    }
+  },
+  "task_type_path_table": {
+    "cross_page": {
+      "search -> read_page -> answer": 17,
+      "search -> read_page -> read_page -> answer": 7
+    },
+    "numeric_computation": {
+      "parse_table -> compute -> answer": 15,
+      "parse_table": 1,
+      "read_page -> parse_table -> compute -> answer": 1,
+      "read_page -> crop -> compute -> compute -> answer": 1
+    },
+    "table_lookup": {
+      "read_page -> parse_table -> answer": 6,
+      "parse_table -> answer": 5,
+      "read_page -> answer": 1
+    },
+    "text_lookup": {
+      "read_page -> answer": 30
+    },
+    "unanswerable": {
+      "search -> read_page -> refuse": 24
+    },
+    "verification": {
+      "search -> read_page -> verify -> answer": 6,
+      "read_page -> verify -> answer": 6
+    }
+  },
+  "kept_only": {
+    "count": 118,
+    "unique_sequence_count": 11,
+    "unique_sequence_ratio": 0.0932,
+    "top_sequences": {
+      "read_page -> answer": 30,
+      "search -> read_page -> refuse": 24,
+      "search -> read_page -> answer": 17,
+      "parse_table -> compute -> answer": 15,
+      "search -> read_page -> read_page -> answer": 7,
+      "search -> read_page -> verify -> answer": 6,
+      "read_page -> parse_table -> answer": 6,
+      "read_page -> verify -> answer": 6,
+      "parse_table -> answer": 5,
+      "read_page -> parse_table -> compute -> answer": 1,
+      "read_page -> crop -> compute -> compute -> answer": 1
+    },
+    "action_coverage_count": 8,
+    "action_coverage": [
+      "answer",
+      "compute",
+      "crop",
+      "parse_table",
+      "read_page",
+      "refuse",
+      "search",
+      "verify"
+    ],
+    "core_pilot_action_coverage_count": 7,
+    "core_pilot_action_coverage": [
+      "answer",
+      "compute",
+      "parse_table",
+      "read_page",
+      "refuse",
+      "search",
+      "verify"
+    ],
+    "action_counts": {
+      "search": 54,
+      "read_page": 105,
+      "answer": 94,
+      "refuse": 24,
+      "verify": 12,
+      "parse_table": 27,
+      "compute": 18,
+      "crop": 1
+    },
+    "step_count_mean": 2.839,
+    "step_count_std": 0.6506,
+    "step_count_distribution": {
+      "3": 68,
+      "2": 35,
+      "4": 14,
+      "5": 1
+    },
+    "search_call_count": 54,
+    "unique_search_query_count": 15,
+    "unique_search_query_ratio": 0.2778,
+    "seeds_with_search_count": 10,
+    "unique_seed_query_pair_count": 15,
+    "unique_seed_query_pair_ratio": 0.2778,
+    "search_query_counts": {
+      "mlagentbench evaluating language agents on": 6,
+      "predictive data selection the data that": 6,
+      "2025 annual report": 6,
+      "visit bench a benchmark for vision": 4,
+      "current physical location today first author": 4,
+      "confidential non-public legal case number regulatory investigation id": 4,
+      "current employer today first author": 4,
+      "2035 exact revenue forecast fiscal year": 4,
+      "10 2 frozen executive death benefit plan as amended incorporated": 4,
+      "2 visit bench areal worldinspiredvlinstruction followingbenchmark": 2,
+      "visit-bench: a benchmark for vision-language": 2,
+      "first author location": 2,
+      "legal case regulatory investigation confidential id": 2,
+      "first author employer": 2,
+      "2035 revenue forecast": 2
+    }
+  },
+  "h4_lite_decision": {
+    "h4_lite_passed": false,
+    "task_coverage_ok": true,
+    "core_action_coverage_ok": true,
+    "sequence_diversity_ok": true,
+    "search_query_diversity_ok": false,
+    "covered_tasks": [
+      "cross_page",
+      "numeric_computation",
+      "table_lookup",
+      "text_lookup",
+      "unanswerable",
+      "verification"
+    ],
+    "expected_tasks": [
+      "cross_page",
+      "numeric_computation",
+      "table_lookup",
+      "text_lookup",
+      "unanswerable",
+      "verification"
+    ],
+    "rationale": "H4-lite passes when six task types are covered, core pilot actions are used, at least six unique tool sequences appear, and seed-level search queries are not highly duplicated."
+  },
+  "records": [
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2308.06595v4__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "visit bench a benchmark for vision"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__cross__p1_p2__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2308.06595v4__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "visit bench a benchmark for vision"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__refuse__external_fact__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2308.06595v4__refuse__external_fact",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "current physical location today first author"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__refuse__external_fact__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2308.06595v4__refuse__external_fact",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "current physical location today first author"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__text__p7__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2308.06595v4__text__p7",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__text__p7__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2308.06595v4__text__p7",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__verify__p4__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2308.06595v4__verify__p4",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "2 visit bench areal worldinspiredvlinstruction followingbenchmark"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__verify__p4__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2308.06595v4__verify__p4",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "2 visit bench areal worldinspiredvlinstruction followingbenchmark"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2310.03302v2__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "mlagentbench evaluating language agents on"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__cross__p1_p2__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2310.03302v2__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "mlagentbench evaluating language agents on"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__refuse__legal_risk__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2310.03302v2__refuse__legal_risk",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "confidential non-public legal case number regulatory investigation ID"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__refuse__legal_risk__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2310.03302v2__refuse__legal_risk",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "confidential non-public legal case number regulatory investigation ID"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__text__p11__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2310.03302v2__text__p11",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__text__p11__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2310.03302v2__text__p11",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2503.00808v4__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "predictive data selection the data that"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__cross__p1_p2__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2503.00808v4__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "predictive data selection the data that"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__refuse__external_fact__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2503.00808v4__refuse__external_fact",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "current employer today first author"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__refuse__external_fact__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2503.00808v4__refuse__external_fact",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "current employer today first author"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__text__p18__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2503.00808v4__text__p18",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__text__p18__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2503.00808v4__text__p18",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+      "task_type": "numeric_computation",
+      "status": "format_error",
+      "sequence": [
+        "parse_table"
+      ],
+      "sequence_key": "parse_table",
+      "step_count": 1,
+      "actions": [
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "INVALID"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__refuse__undisclosed_forecast__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "ti2025ars__refuse__undisclosed_forecast",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "2035 exact revenue forecast fiscal year"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__refuse__undisclosed_forecast__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "ti2025ars__refuse__undisclosed_forecast",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "2035 exact revenue forecast fiscal year"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__table__p7__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "ti2025ars__table__p7",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__table__p7__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "ti2025ars__table__p7",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__text__p42__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "ti2025ars__text__p42",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__text__p42__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "ti2025ars__text__p42",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "tm2529296d2_ars__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "2025 annual report"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__cross__p1_p2__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "tm2529296d2_ars__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "2025 annual report"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_margin_change_p2__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_margin_change_p2__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_total_growth_gap_p2__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> compute -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_total_growth_gap_p2__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__table__p2__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "tm2529296d2_ars__table__p2",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__table__p2__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "tm2529296d2_ars__table__p2",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__text__p27__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "tm2529296d2_ars__text__p27",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__text__p27__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "tm2529296d2_ars__text__p27",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__verify__p81__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "tm2529296d2_ars__verify__p81",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "10 2 frozen executive death benefit plan as amended incorporated"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__verify__p81__run02.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "tm2529296d2_ars__verify__p81",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "10 2 frozen executive death benefit plan as amended incorporated"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2308.06595v4__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "VisIT-Bench: A Benchmark for Vision-Language"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__cross__p1_p2__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2308.06595v4__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "VisIT-Bench: A Benchmark for Vision-Language"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__refuse__external_fact__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2308.06595v4__refuse__external_fact",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "first author location"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__refuse__external_fact__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2308.06595v4__refuse__external_fact",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "first author location"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__text__p7__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2308.06595v4__text__p7",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__text__p7__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2308.06595v4__text__p7",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__verify__p4__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2308.06595v4__verify__p4",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "read_page -> verify -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "verify"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__verify__p4__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2308.06595v4__verify__p4",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "read_page -> verify -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "verify"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2310.03302v2__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "mlagentbench evaluating language agents on"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__cross__p1_p2__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2310.03302v2__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "mlagentbench evaluating language agents on"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__refuse__legal_risk__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2310.03302v2__refuse__legal_risk",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "legal case regulatory investigation confidential ID"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__refuse__legal_risk__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2310.03302v2__refuse__legal_risk",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "legal case regulatory investigation confidential ID"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__text__p11__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2310.03302v2__text__p11",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__text__p11__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2310.03302v2__text__p11",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2503.00808v4__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "predictive data selection the data that"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__cross__p1_p2__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2503.00808v4__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "predictive data selection the data that"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__refuse__external_fact__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2503.00808v4__refuse__external_fact",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "first author employer"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__refuse__external_fact__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2503.00808v4__refuse__external_fact",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "first author employer"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__text__p18__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2503.00808v4__text__p18",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__text__p18__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2503.00808v4__text__p18",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__refuse__undisclosed_forecast__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "ti2025ars__refuse__undisclosed_forecast",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "2035 revenue forecast"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__refuse__undisclosed_forecast__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "ti2025ars__refuse__undisclosed_forecast",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "2035 revenue forecast"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__table__p7__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "ti2025ars__table__p7",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "review",
+      "docverify_support_label": "PARTIAL"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__table__p7__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "ti2025ars__table__p7",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__text__p42__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "ti2025ars__text__p42",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__text__p42__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "ti2025ars__text__p42",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "tm2529296d2_ars__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "2025 annual report"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__cross__p1_p2__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "tm2529296d2_ars__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "2025 annual report"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_margin_change_p2__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_margin_change_p2__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_total_growth_gap_p2__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_total_growth_gap_p2__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__table__p2__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "tm2529296d2_ars__table__p2",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__table__p2__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "tm2529296d2_ars__table__p2",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__text__p27__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "tm2529296d2_ars__text__p27",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__text__p27__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "tm2529296d2_ars__text__p27",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__verify__p81__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "tm2529296d2_ars__verify__p81",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "read_page -> verify -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "verify"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__verify__p81__run02.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "tm2529296d2_ars__verify__p81",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "read_page -> verify -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "verify"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2308.06595v4__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> read_page -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "visit bench a benchmark for vision"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__cross__p1_p2__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2308.06595v4__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> read_page -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "visit bench a benchmark for vision"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__refuse__external_fact__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2308.06595v4__refuse__external_fact",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "current physical location today first author"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__refuse__external_fact__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2308.06595v4__refuse__external_fact",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "current physical location today first author"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__text__p7__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2308.06595v4__text__p7",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__text__p7__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2308.06595v4__text__p7",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__verify__p4__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2308.06595v4__verify__p4",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "read_page -> verify -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "verify"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__verify__p4__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2308.06595v4__verify__p4",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "read_page -> verify -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "verify"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2310.03302v2__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> read_page -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "mlagentbench evaluating language agents on"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__cross__p1_p2__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2310.03302v2__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> read_page -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "mlagentbench evaluating language agents on"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__refuse__legal_risk__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2310.03302v2__refuse__legal_risk",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "confidential non-public legal case number regulatory investigation ID"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__refuse__legal_risk__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2310.03302v2__refuse__legal_risk",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "confidential non-public legal case number regulatory investigation ID"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__text__p11__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2310.03302v2__text__p11",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__text__p11__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2310.03302v2__text__p11",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2503.00808v4__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> read_page -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "predictive data selection the data that"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__cross__p1_p2__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2503.00808v4__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> read_page -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "predictive data selection the data that"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__refuse__external_fact__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2503.00808v4__refuse__external_fact",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "current employer today first author"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__refuse__external_fact__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2503.00808v4__refuse__external_fact",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "current employer today first author"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__text__p18__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2503.00808v4__text__p18",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__text__p18__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2503.00808v4__text__p18",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "crop",
+        "compute",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "read_page -> crop -> compute -> compute -> answer",
+      "step_count": 5,
+      "actions": [
+        "answer",
+        "compute",
+        "crop",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__refuse__undisclosed_forecast__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "ti2025ars__refuse__undisclosed_forecast",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "2035 exact revenue forecast fiscal year"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__refuse__undisclosed_forecast__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "ti2025ars__refuse__undisclosed_forecast",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "2035 exact revenue forecast fiscal year"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__table__p7__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "ti2025ars__table__p7",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__table__p7__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "ti2025ars__table__p7",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__text__p42__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "ti2025ars__text__p42",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__text__p42__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "ti2025ars__text__p42",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "tm2529296d2_ars__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "2025 annual report"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__cross__p1_p2__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "tm2529296d2_ars__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> read_page -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "2025 annual report"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_margin_change_p2__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_margin_change_p2__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_total_growth_gap_p2__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_total_growth_gap_p2__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__table__p2__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "tm2529296d2_ars__table__p2",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__table__p2__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "tm2529296d2_ars__table__p2",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__text__p27__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "tm2529296d2_ars__text__p27",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__text__p27__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "tm2529296d2_ars__text__p27",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__verify__p81__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "tm2529296d2_ars__verify__p81",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "10 2 frozen executive death benefit plan as amended incorporated"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__verify__p81__run02.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "tm2529296d2_ars__verify__p81",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "10 2 frozen executive death benefit plan as amended incorporated"
+      ],
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    }
+  ]
+}

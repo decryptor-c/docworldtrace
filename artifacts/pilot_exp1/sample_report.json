@@ -1,0 +1,636 @@
+{
+  "source": "/home/kimilabra/DocWorldTrace/pilot_exp1/sample_document.json",
+  "summary": {
+    "total_calls": 10,
+    "success_calls": 10,
+    "success_rate": 1.0,
+    "expectation_checks": {
+      "passed": 20,
+      "total": 20,
+      "rate": 1.0
+    },
+    "retrieval_checks": {
+      "passed": 2,
+      "total": 2,
+      "rate": 1.0
+    },
+    "cache_checks": {
+      "passed": 1,
+      "total": 1,
+      "rate": 1.0
+    }
+  },
+  "executions": [
+    {
+      "index": 1,
+      "name": "overview_doc",
+      "action": "overview",
+      "params": {},
+      "result": {
+        "action": "overview",
+        "status": "success",
+        "result": {
+          "doc_id": "sample_financial_report",
+          "title": "Sample Financial Report",
+          "page_count": 3,
+          "pages": [
+            {
+              "page": 1,
+              "summary": "Sample Financial Report 2023 Executive summary.",
+              "image_path": null
+            },
+            {
+              "page": 2,
+              "summary": "Revenue table for FY2022 and FY2023.",
+              "image_path": null
+            },
+            {
+              "page": 3,
+              "summary": "Appendix and qualitative discussion.",
+              "image_path": null
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "document"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "search_revenue",
+      "action": "search",
+      "params": {
+        "query": "FY2023 revenue",
+        "top_k": 3
+      },
+      "result": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "FY2023 revenue",
+          "results": [
+            {
+              "page": 2,
+              "score": 5.0,
+              "snippet": "Revenue table. FY2022 revenue was 2.8 billion dollars. FY2023 revenue was 3.2 billion dollars. Growth rate was 14.3 percent."
+            },
+            {
+              "page": 1,
+              "score": 2.0,
+              "snippet": "Sample Financial Report 2023 Executive summary. The company expanded cloud revenue in FY2023 and improved operating margin."
+            },
+            {
+              "page": 3,
+              "score": 1.0,
+              "snippet": "Appendix. Cloud segment revenue contributed most of the year over year gain."
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "contains_pages",
+          "passed": true,
+          "expected": [
+            2
+          ],
+          "actual": [
+            2,
+            1,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "search_revenue_cached",
+      "action": "search",
+      "params": {
+        "query": "FY2023 revenue",
+        "top_k": 3
+      },
+      "result": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "FY2023 revenue",
+          "results": [
+            {
+              "page": 2,
+              "score": 5.0,
+              "snippet": "Revenue table. FY2022 revenue was 2.8 billion dollars. FY2023 revenue was 3.2 billion dollars. Growth rate was 14.3 percent."
+            },
+            {
+              "page": 1,
+              "score": 2.0,
+              "snippet": "Sample Financial Report 2023 Executive summary. The company expanded cloud revenue in FY2023 and improved operating margin."
+            },
+            {
+              "page": 3,
+              "score": 1.0,
+              "snippet": "Appendix. Cloud segment revenue contributed most of the year over year gain."
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": true
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "contains_pages",
+          "passed": true,
+          "expected": [
+            2
+          ],
+          "actual": [
+            2,
+            1,
+            3
+          ]
+        },
+        {
+          "name": "cache_hit",
+          "passed": true,
+          "expected": true,
+          "actual": true
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "read_page_2",
+      "action": "read_page",
+      "params": {
+        "page_ids": [
+          2
+        ]
+      },
+      "result": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 2,
+              "text": "Revenue table. FY2022 revenue was 2.8 billion dollars. FY2023 revenue was 3.2 billion dollars. Growth rate was 14.3 percent.",
+              "summary": "Revenue table for FY2022 and FY2023.",
+              "image_path": null
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "FY2023 revenue was 3.2"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "name": "crop_table_region",
+      "action": "crop",
+      "params": {
+        "page_id": 2,
+        "bbox": [
+          40,
+          140,
+          340,
+          290
+        ]
+      },
+      "result": {
+        "action": "crop",
+        "status": "success",
+        "result": {
+          "page": 2,
+          "bbox": [
+            40.0,
+            140.0,
+            340.0,
+            290.0
+          ],
+          "text": "| Metric | Value |\n| --- | --- |\n| FY2022 Revenue | 2.8 |\n| FY2023 Revenue | 3.2 |\n| Growth Rate | 14.3% |",
+          "image_path": null
+        },
+        "provenance": {
+          "page": 2,
+          "bbox": [
+            40.0,
+            140.0,
+            340.0,
+            290.0
+          ],
+          "element_type": "region"
+        },
+        "confidence": 0.9,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "FY2023"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "name": "ocr_table_region",
+      "action": "ocr",
+      "params": {
+        "page_id": 2,
+        "bbox": [
+          40,
+          140,
+          340,
+          290
+        ]
+      },
+      "result": {
+        "action": "ocr",
+        "status": "success",
+        "result": {
+          "page": 2,
+          "bbox": [
+            40.0,
+            140.0,
+            340.0,
+            290.0
+          ],
+          "text": "| Metric | Value |\n| --- | --- |\n| FY2022 Revenue | 2.8 |\n| FY2023 Revenue | 3.2 |\n| Growth Rate | 14.3% |"
+        },
+        "provenance": {
+          "page": 2,
+          "bbox": [
+            40.0,
+            140.0,
+            340.0,
+            290.0
+          ],
+          "element_type": "ocr_text"
+        },
+        "confidence": 0.88,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "14.3"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "name": "parse_table_region",
+      "action": "parse_table",
+      "params": {
+        "page_id": 2,
+        "bbox": [
+          40,
+          140,
+          340,
+          290
+        ]
+      },
+      "result": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {
+          "page": 2,
+          "bbox": [
+            40,
+            140,
+            340,
+            290
+          ],
+          "rows": [
+            [
+              "Metric",
+              "Value"
+            ],
+            [
+              "FY2022 Revenue",
+              "2.8"
+            ],
+            [
+              "FY2023 Revenue",
+              "3.2"
+            ],
+            [
+              "Growth Rate",
+              "14.3%"
+            ]
+          ],
+          "markdown": "| Metric | Value |\n| --- | --- |\n| FY2022 Revenue | 2.8 |\n| FY2023 Revenue | 3.2 |\n| Growth Rate | 14.3% |"
+        },
+        "provenance": {
+          "page": 2,
+          "bbox": [
+            40.0,
+            140.0,
+            340.0,
+            290.0
+          ],
+          "element_type": "table"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "table_rows_min",
+          "passed": true,
+          "expected": 4,
+          "actual": 4
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "name": "compute_growth",
+      "action": "compute",
+      "params": {
+        "expr": "(fy2023 - fy2022) / fy2022 * 100",
+        "vars": {
+          "fy2022": 2.8,
+          "fy2023": 3.2
+        }
+      },
+      "result": {
+        "action": "compute",
+        "status": "success",
+        "result": {
+          "expr": "(fy2023 - fy2022) / fy2022 * 100",
+          "vars": {
+            "fy2022": 2.8,
+            "fy2023": 3.2
+          },
+          "value": 14.285714285714299
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "computed_value"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "value_equals",
+          "passed": true,
+          "expected": 14.2857142857,
+          "actual": 14.285714285714299
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "name": "verify_supported_claim",
+      "action": "verify",
+      "params": {
+        "claim": "FY2023 revenue was 3.2",
+        "evidence_refs": [
+          {
+            "page": 2,
+            "bbox": [
+              40,
+              140,
+              340,
+              290
+            ]
+          }
+        ]
+      },
+      "result": {
+        "action": "verify",
+        "status": "success",
+        "result": {
+          "claim": "FY2023 revenue was 3.2",
+          "evidence_count": 1,
+          "label": "SUPPORTED",
+          "sufficiency": "SUFFICIENT",
+          "confidence": 0.79,
+          "failure_taxonomy": null
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "verification"
+        },
+        "confidence": 0.79,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "support_label",
+          "passed": true,
+          "expected": "SUPPORTED",
+          "actual": "SUPPORTED"
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "name": "detect_layout_page_2",
+      "action": "detect_layout",
+      "params": {
+        "page_id": 2
+      },
+      "result": {
+        "action": "detect_layout",
+        "status": "success",
+        "result": {
+          "page": 2,
+          "elements": [
+            {
+              "element_type": "word",
+              "bbox": [
+                50,
+                90,
+                110,
+                110
+              ],
+              "text": "Revenue"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                115,
+                90,
+                155,
+                110
+              ],
+              "text": "table"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                60,
+                170,
+                115,
+                190
+              ],
+              "text": "FY2022"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                260,
+                170,
+                285,
+                190
+              ],
+              "text": "2.8"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                60,
+                210,
+                115,
+                230
+              ],
+              "text": "FY2023"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                260,
+                210,
+                285,
+                230
+              ],
+              "text": "3.2"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                60,
+                250,
+                110,
+                270
+              ],
+              "text": "Growth"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                250,
+                250,
+                295,
+                270
+              ],
+              "text": "14.3%"
+            },
+            {
+              "element_type": "table",
+              "bbox": [
+                40,
+                140,
+                340,
+                290
+              ],
+              "text": "| Metric | Value |"
+            }
+          ]
+        },
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "element_type": "layout"
+        },
+        "confidence": 0.8,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "table"
+        }
+      ]
+    }
+  ]
+}

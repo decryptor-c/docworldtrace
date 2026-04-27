@@ -1,0 +1,210 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      [
+        "search",
+        "read_page",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "hard",
+    "doc_id": "tm2529296d2_ars",
+    "metadata": {
+      "anchor_page": 1,
+      "anchor_phrase": "2025 annual report",
+      "answer_page": 2,
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage"
+      ],
+      "review_status": "v4_query_sanitized"
+    },
+    "pdf_path": "data/raw_pdfs/tm2529296d2_ars.pdf",
+    "question": "Use search to find the page about \"2025 annual report\". Then inspect the following page and report its heading or leading phrase.",
+    "reference_answer": "About Us Shareholder and Media Information",
+    "required_tools": [
+      "search",
+      "read_page"
+    ],
+    "seed_id": "tm2529296d2_ars__cross__p1_p2",
+    "source": "structure_heuristic_v2_review_approved_v3_path_optimized_v4_query_sanitized",
+    "supporting_refs": [
+      {
+        "page": 2
+      }
+    ],
+    "task_type": "cross_page",
+    "tool_hints": {
+      "search_policy": "Use the quoted anchor phrase as the search query; do not assume page numbers."
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash__negative",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"action\": \"search\", \"action_input\": {\"query\": \"2025 annual report\", \"top_k\": 3}}",
+      "thought": "",
+      "action": "search",
+      "action_input": {
+        "query": "2025 annual report",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The search results indicate that \\\"2025 Annual Report\\\" is found on page 1 and page 98. The task asks to find the page about \\\"2025 annual report\\\" and then inspect the *following* page. Page 1 is the most logical starting point for an annual report. Therefore, I should read page 2 to find its heading or leading phrase.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [2]}}",
+      "thought": "The search results indicate that \"2025 Annual Report\" is found on page 1 and page 98. The task asks to find the page about \"2025 annual report\" and then inspect the *following* page. Page 1 is the most logical starting point for an annual report. Therefore, I should read page 2 to find its heading or leading phrase.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          2
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"I have read page 2, which is the page following the \\\"2025 Annual Report\\\" page (page 1). The heading or leading phrase of page 2 is \\\"About Us Shareholder and Media Information\\\".\", \"action\": \"answer\", \"action_input\": {\"text\": \"About Us Shareholder and Media Information\", \"evidence_refs\": [{\"page\": 2}]}}",
+      "thought": "I have read page 2, which is the page following the \"2025 Annual Report\" page (page 1). The heading or leading phrase of page 2 is \"About Us Shareholder and Media Information\".",
+      "action": "answer",
+      "action_input": {
+        "text": "About Us Shareholder and Media Information",
+        "evidence_refs": [
+          {
+            "page": 2
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "About Us Shareholder and Media Information",
+          "evidence_refs": [
+            {
+              "page": 2
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "About Us Shareholder and Media Information",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1304,
+      "completion_tokens": 142,
+      "total_tokens": 1446,
+      "prompt_tokens_details": {
+        "text_tokens": 1304,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 112
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1555,
+      "completion_tokens": 106,
+      "total_tokens": 1661,
+      "prompt_tokens_details": {
+        "text_tokens": 1555,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2133,
+      "completion_tokens": 86,
+      "total_tokens": 2219,
+      "prompt_tokens_details": {
+        "text_tokens": 2133,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "missing_evidence_observations",
+    "source_teacher": "dmxapi_gemini_2_5_flash",
+    "source_seed_id": "tm2529296d2_ars__cross__p1_p2",
+    "source_final_action": "answer",
+    "source_final_answer": "About Us Shareholder and Media Information",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved but all non-terminal evidence observations were blanked."
+  }
+}

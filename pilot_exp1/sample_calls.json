@@ -1,0 +1,128 @@
+{
+  "calls": [
+    {
+      "name": "overview_doc",
+      "action": "overview",
+      "params": {},
+      "expected": {
+        "status": "success"
+      }
+    },
+    {
+      "name": "search_revenue",
+      "action": "search",
+      "params": {
+        "query": "FY2023 revenue",
+        "top_k": 3
+      },
+      "expected": {
+        "status": "success",
+        "contains_pages": [2]
+      }
+    },
+    {
+      "name": "search_revenue_cached",
+      "action": "search",
+      "params": {
+        "query": "FY2023 revenue",
+        "top_k": 3
+      },
+      "expected": {
+        "status": "success",
+        "contains_pages": [2],
+        "cache_hit": true
+      }
+    },
+    {
+      "name": "read_page_2",
+      "action": "read_page",
+      "params": {
+        "page_ids": [2]
+      },
+      "expected": {
+        "status": "success",
+        "text_contains": "FY2023 revenue was 3.2"
+      }
+    },
+    {
+      "name": "crop_table_region",
+      "action": "crop",
+      "params": {
+        "page_id": 2,
+        "bbox": [40, 140, 340, 290]
+      },
+      "expected": {
+        "status": "success",
+        "text_contains": "FY2023"
+      }
+    },
+    {
+      "name": "ocr_table_region",
+      "action": "ocr",
+      "params": {
+        "page_id": 2,
+        "bbox": [40, 140, 340, 290]
+      },
+      "expected": {
+        "status": "success",
+        "text_contains": "14.3"
+      }
+    },
+    {
+      "name": "parse_table_region",
+      "action": "parse_table",
+      "params": {
+        "page_id": 2,
+        "bbox": [40, 140, 340, 290]
+      },
+      "expected": {
+        "status": "success",
+        "table_rows_min": 4
+      }
+    },
+    {
+      "name": "compute_growth",
+      "action": "compute",
+      "params": {
+        "expr": "(fy2023 - fy2022) / fy2022 * 100",
+        "vars": {
+          "fy2022": 2.8,
+          "fy2023": 3.2
+        }
+      },
+      "expected": {
+        "status": "success",
+        "value_equals": 14.2857142857,
+        "value_tolerance": 0.0001
+      }
+    },
+    {
+      "name": "verify_supported_claim",
+      "action": "verify",
+      "params": {
+        "claim": "FY2023 revenue was 3.2",
+        "evidence_refs": [
+          {
+            "page": 2,
+            "bbox": [40, 140, 340, 290]
+          }
+        ]
+      },
+      "expected": {
+        "status": "success",
+        "support_label": "SUPPORTED"
+      }
+    },
+    {
+      "name": "detect_layout_page_2",
+      "action": "detect_layout",
+      "params": {
+        "page_id": 2
+      },
+      "expected": {
+        "status": "success",
+        "text_contains": "table"
+      }
+    }
+  ]
+}

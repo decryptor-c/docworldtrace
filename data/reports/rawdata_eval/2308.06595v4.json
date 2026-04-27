@@ -1,0 +1,147 @@
+{
+  "pdf_path": "/home/kimilabra/DocWorldTrace/data/raw_pdfs/2308.06595v4.pdf",
+  "profile": {
+    "doc_id": "2308.06595v4",
+    "title": "2308.06595v4",
+    "page_count": 28,
+    "total_words": 5816,
+    "avg_words_per_page": 207.71,
+    "total_text_chars": 80756,
+    "table_pages": 6,
+    "has_text_layer": true
+  },
+  "checks": [
+    {
+      "name": "overview",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "cache_hit": false
+      }
+    },
+    {
+      "name": "read_page",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "cache_hit_second": true,
+        "page": 7,
+        "text_chars": 3198
+      }
+    },
+    {
+      "name": "search",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "query": "blip2 caption not possible determine",
+        "returned_pages": [
+          7,
+          2,
+          4
+        ],
+        "target_page": 7,
+        "cache_hit_second": true
+      }
+    },
+    {
+      "name": "crop",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "page": 3,
+        "bbox": [
+          113.47879446279998,
+          73.13514863924,
+          263.77319592,
+          167.6252836
+        ],
+        "text_chars": 167,
+        "image_path": "artifacts/docenv/2308.06595v4/crops/page_003_236_152_549_349.png"
+      }
+    },
+    {
+      "name": "ocr",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "page": 3,
+        "bbox": [
+          113.47879446279998,
+          73.13514863924,
+          263.77319592,
+          167.6252836
+        ],
+        "text_preview": "| Reasoning Over\nPlots |  | Art Knowledge |\n| --- | --- | --- |\n|  |  |  |\n| How much is the\nbrowser usage for\nFirefox and Safari? |  | Teach me about this\npainting. |",
+        "cache_hit_second": true
+      }
+    },
+    {
+      "name": "detect_layout",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "page": 7,
+        "element_count": 562
+      }
+    },
+    {
+      "name": "parse_table",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "page": 3,
+        "row_count": 3,
+        "cache_hit_second": true
+      }
+    },
+    {
+      "name": "compute",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "value": 14.285714285714299
+      }
+    },
+    {
+      "name": "verify",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "claim": "reasoning over plots art knowledge how much is the browser usage for",
+        "label": "SUPPORTED",
+        "sufficiency": "SUFFICIENT",
+        "cache_hit_second": true
+      }
+    }
+  ],
+  "metrics": {
+    "attempted_checks": 9,
+    "passed_checks": 9,
+    "skipped_checks": 0,
+    "pass_rate": 1.0,
+    "cache_check_count": 5,
+    "cache_pass_rate": 1.0
+  },
+  "suitability": "high",
+  "recommended_for_h1": true,
+  "reasons": []
+}

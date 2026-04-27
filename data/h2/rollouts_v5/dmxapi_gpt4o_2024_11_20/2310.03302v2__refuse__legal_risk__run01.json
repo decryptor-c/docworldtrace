@@ -1,0 +1,238 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      [
+        "overview",
+        "search",
+        "read_page",
+        "refuse"
+      ]
+    ],
+    "answerable": false,
+    "difficulty": "medium",
+    "doc_id": "2310.03302v2",
+    "metadata": {
+      "negative_evidence_query": "confidential non-public legal case number regulatory investigation ID",
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage",
+        "v5_refuse_query_diversification"
+      ],
+      "question_zh": "文档是否披露了作者或其机构的保密/未公开法律案件编号或监管调查编号？先用工具检查文档；如果文档没有提供，则基于证据拒答。",
+      "refuse_category_zh": "法律风险",
+      "review_status": "v5_refuse_diverse_review"
+    },
+    "pdf_path": "data/raw_pdfs/2310.03302v2.pdf",
+    "question": "What confidential or non-public legal case number or regulatory investigation ID does the document disclose for the authors or their institution? First check the document with tools; if the document does not provide it, refuse with a brief evidence-based reason.",
+    "reference_answer": "REFUSE",
+    "required_tools": [
+      "search",
+      "read_page",
+      "refuse"
+    ],
+    "seed_id": "2310.03302v2__refuse__legal_risk",
+    "source": "structure_heuristic_v5_refuse_diverse",
+    "supporting_refs": [],
+    "task_type": "unanswerable",
+    "tool_hints": {
+      "negative_evidence_policy": "Use search and read_page before refusing.",
+      "search_policy": "Search for: confidential non-public legal case number regulatory investigation ID"
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I should search the document for terms related to confidential or non-public legal case numbers or regulatory investigation IDs.\",\"action\":\"search\",\"action_input\":{\"query\":\"confidential non-public legal case number regulatory investigation ID\"}}",
+      "thought": "I should search the document for terms related to confidential or non-public legal case numbers or regulatory investigation IDs.",
+      "action": "search",
+      "action_input": {
+        "query": "confidential non-public legal case number regulatory investigation ID",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "confidential non-public legal case number regulatory investigation ID",
+          "results": [
+            {
+              "page": 3,
+              "score": 1.0,
+              "snippet": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\nActionName Input Observation SideEffects\nListFiles directory(e.g. .) listoffilesinthedirectory None\nReadFile filename(e.g. train.py) contentsofthefile None\nWriteFile file"
+            },
+            {
+              "page": 5,
+              "score": 1.0,
+              "snippet": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\nYou are a helpful research assistant. You have access to the following tools:\n- List Files:\nUse this to navigate the file system.\n...\nTask Description: Given a training s"
+            },
+            {
+              "page": 9,
+              "score": 1.0,
+              "snippet": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\nGood Plan Bad Plan\nList Files Understand File\ndir_path: . f t i h le in _ g n s a _ m to e _ : l o tr o a k i _ n f . o p r y : , model arch...\nInspect Script Lines Execu"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The search results do not directly indicate any confidential or non-public legal case numbers or regulatory investigation IDs. I should read the relevant pages to confirm.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[3,5,9]}}",
+      "thought": "The search results do not directly indicate any confidential or non-public legal case numbers or regulatory investigation IDs. I should read the relevant pages to confirm.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          3,
+          5,
+          9
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 3,
+              "text": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\nActionName Input Observation SideEffects\nListFiles directory(e.g. .) listoffilesinthedirectory None\nReadFile filename(e.g. train.py) contentsofthefile None\nWriteFile filename,content Asuccessorerrormessage Contentwrittentogivenfile\nAppendFile filename,content Asuccessorerrormessage Content appended to given\nfile\nCopyFile Source (e.g. train.py), Asuccessorerrormessage Sourcefilecopiedtodestina-\ndestination (e.g. tion\ntrain copy.py)\nInspectScriptLines file name, start line number, thefilecontentbetweenstart None\nendlinenumber andendlinenumbers\nUndoEditScript filename(e.g. train.py) The content of the file after The given file is restored to\nundo beforeanedit\nExecuteScript filename(e.g. train.py) Any output from the execu- Anysideeffectfromcodeex-\ntion ecution\nFinalAnswer None None Theenvironmentshutsdown\nUnderstandFile file name, a query (e.g. the retrievedcontentfromthefile None\nmodelarchitecture) relevanttothequery\nEditScript filename,editinstruction(e.g. The diff of the edited file Edited file is saved to save\nchangeepochto20),savefile basedontheinstruction path\nname\nEditScriptSegment file name, start line number, The diff of the edited file Edited file is saved to save\nendlinenumber,editinstruc- basedontheinstruction path\ntion,savefilename\nTable1.ActionsinMLAgentBench,whereeachactionhasaname,input,output,andsideeffects. Mostoftheactionsareprimitive\nactionsthatincludefilesystemoperationsandpythonscriptexecution.Thelastthreearecompoundactionsthatiscomposedofmultiple\nprimitiveactionsandLMcalls.\nthebenchmark. Eachtaskisspecifiedbytaskdescription, StarterFiles. Thestarterfilesincludetrainingandtesting\nstarter files, and an evaluator, and instantiated in a gen- data(withouttestlabels),detaileddatadescriptions,metric\neralenvironmentwithatask-independentsetofactionsand descriptions,andthestartercode. Thestartercodeisbased\nstates. In the subsequent subsections, we describe each ondiverseMLframeworks,includingPyTorch(Paszkeetal.,\nofthekeycomponentsofMLAgentBench: taskspecifica- 2019), TensorFlow (Abadi et al., 2015), JAX (Bradbury\ntion(section2.1), generalenvironment(section2.2), and etal.,2018),Keras(Cholletetal.,2015),etc. Thestarter\nevaluation(section2.3). codemostlyimplementsasimplebaselinemodelthatwe\ncan compare with during evaluation, but some tasks do\n2.1.TaskSpecification not have any baseline implementation, and the agent is\nresponsibleforcodingupthemodelfromscratchfromthe\nEachtaskisspecifiedbyatextualtaskdescription,asetof\ntaskdescriptionanddatasetfiles.\nstarterfiles,andanevaluator.\nEvaluator. Eachenvironmenthasitsownevaluator. The\nTask description. In MLAgentBench, the task descrip-\nevaluatorassignsarawscoretoafinalsubmissionofthe\ntiondescribesthedesiredgoal,e.g. “Givenatrainingscript\nagent. Atypicalevaluator,forexample,givesthetestaccu-\nonadatasettrain.py, improveuponthecurrentmodelac-\nracyofthepredictionsrecordedinsubmission.csv.\ncuracy”(asshowninFigure1),andhowtheagentshould\nsubmitthefinalanswerforevaluation,e.g. “Saveperclass\n2.2.GeneralEnvironment\nprobabilitiesfortestsetexamplestosubmission.csv”. The\ndescriptioncouldalsoincludeconstraintslikelimitingthe Each task in MLAgentBench is instantiated in a task-\nmodelsizeandtrainingepochs,oroccasionallyincludespe- agnostic environment. As shown in Figure 1, the agent\ncificdirectionstoapproachtheproblemlike“byfine-tuning operatesoverasequenceoftimestepst=1,...,T. Each\napretrainedBERTmodel”. timestepisbrokenintothreeparts:\n3",
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_003.png"
+            },
+            {
+              "page": 5,
+              "text": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\nYou are a helpful research assistant. You have access to the following tools:\n- List Files:\nUse this to navigate the file system.\n...\nTask Description: Given a training script on a dataset train.py, improve upon the current model performance...\nAlways respond in this format exactly:\nReflection: What does the observation mean? If there is an error, what caused the error and how to debug? Reflection: The edit to increase learning rate to\nResearch Plan and Status: ... 0.3 in train_lr03.py is correct.\nFact Check: ...\nThought: What you are currently doing, what actions to perform and why Research Plan and Status:\nAction: the action to take, should be one of the names of the tools 1. Understand the train.py script and\nAction Input: the input to the action as a valid JSON string dataset...\nLM rt\nHere are the exact several steps you have done most recently (up to 3 steps): Fact Check: Edit to train_lr03.py is confirmed\ncorrect.\nAssistant:\nReflection: ... Research Plan and Status: ... Fact Check: ... Thought: ... rt-3 Thought: Next I will execute the edited\nAction: Inspect Script Lines Action Input: { \"dir_path\" : \".\" } at-3 t\nA\nra\nc\ni\nt\nn\nio\n_\nn\nlr\n:\n0\nE\n3\nx\n.p\ne\ny\nc u\ns\nt\nc\ne\nr i\nS\npt\ncript at\nObservation: Action Input: { \"script_name\": \"train_lr03.py\"}.\n```\ndata/ ot-3\ntrain.py\n```\nAssistant:\nReflection: ... Research Plan and Status: ... Fact Check: ... Thought: ... rt-2\nA\n`\nction: Inspect Script Lines Action Input: ... at-2\n[1, 100] loss: 2.074 ot\nObservation: [1, 200] loss: 1.728\n``` [1, 300] loss: 1.609\nH\n. ` . ` . `\nere are the lines (the file ends at line 106): ot-2 E\n4 [ [ 2 2 3\np\n, , .\no\n7\nc\n1 2 1\nh\n0 0 % 0 0\n[1\n] ]\n/\nl l\n5\no o\n]\ns s\n,\ns s\nT\n: :\nr\n1 1\na\n. .\nin\n4 4 9 8\nA\n1 2\nccuracy: 44.17%, Test Accuracy:\nAssistant: [2, 300] loss: 1.484\nReflection: ... Research Plan and Status: ... Fact Check: ... Thought: ... rt-1 Epoch [2/5], Train Accuracy: 49.93%, Test Accuracy:\nAction: Edit Script Action Input: ... at-1 48.41%\n...\nObservation:\n```\nThe edited file is saved to ... Here is the diff ot-1\n...\n```\necart\nlacirotsiH\ns'tnegA\nPrompt pt\nResponse (Next Step)\nAction\nExecution\nObservation\nFigure2.OverviewofourLM-basedagent.OntheleftweshowthepromptandcontextofLMp ateachstep,whichincludespastthree\nt\nstepsofobservations. Ontheupperright,weshowtheagent’sresponsetothepromptr andactiona . Onthelowerright,thecode\nt t\nexecutionresultsarereturnedasobservationso totheagent.Nextstep,thisobservationisincorporatedintothepromptasthepasthistory,\nt\nandthenthecyclerepeats.Notethatinthisexample,theagentstartswithabaselinetrain.pyandisnowtryingtoexecutethisbaseline.\nCompetenceinaccomplishingtheobjectives. Werun followingcategories:\ntheevaluatortoobtainasingleperformancemetricbasedon\nthefinalsnapshotoftheworkingdirectory. Thenwedefine\nCanonicalTasks. WeincludedCIFAR-10(imageclassifi-\nsuccessaswhethertheperformancemetricisimprovedover\ncation)(Krizhevsky,2009),imdb(sentimentclassification)\nbaselineinthestartercodeby10%.Wethencomputeaggre-\n(Maasetal.,2011),andogbn-arxiv(papercategoryclassifi-\ngatedmetricsovertheperformencemetricofmultipleruns\ncationovercitationnetwork)(Huetal.,2020)ascanonical\nsuchassuccessrateandtheaverageamountofimprovement\ntasksthatarewell-studiedandeasytoiterateon.ForCIFAR-\noftheperformancemetric.\n10andogbn-arxiv,thetaskwastoimproveabaselinemodel,\nbutforimdb,theagentwasexpectedtowritethemodelfrom\nEfficiency. We evaluate efficiency in terms of the total\nscratchwhichinvolvedfinetuningaBERTmodelasmen-\namount of wall clock time spent and the total number of\ntionedinthetaskdescription.\ninputandoutputtokensconsumedbytheagent.\n2.4.Tasks ClassicKaggle. House-price(AnnaMontoya,2016)and\nspaceship-titanic(Howardetal.,2022)aretwointroductory\nMLAgentBench includes 13 tasks from diverse domains\nKagglechallengesfortabularregressionandclassification.\nincludingtext,image,timeseries,graphs,andtabulardata\nThesetasksmainlyinvolvefeatureengineering,writing,and\nasshowninTable2. Ourtasksincludebothwell-studied\ntrainingmodelsfromscratch(nobaselinesprovided),and\ndatasets like CIFAR-10 and open challenges like Parkin-\nproperlyfollowingtheKagglesubmissionformat.\nson’sdiseaseprogressionpredictionfromKaggle,whichis\nreleasedafterthelanguagemodel(e.g. GPT-4)pre-training\nthatthereforehasnotbeenpretrainedon . Thetasksare KaggleChallenges. WeselectfourrecentopenKaggle\nchosensuchthattheyrangeinvariousdifficultiesandre- ChallengeslaunchedbetweenAugust31,2022andMay11,\ncency. Inthisway,wetestthegeneralizabilityoftheagent 2023totestagents’abilitytogeneralizetomorerealistic\nandmitigatedatacontamination. Theyaredividedtothe andout-of-distributiontasks.\n5",
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_005.png"
+            },
+            {
+              "page": 9,
+              "text": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\nGood Plan Bad Plan\nList Files Understand File\ndir_path: . f t i h le in _ g n s a _ m to e _ : l o tr o a k i _ n f . o p r y : , model arch...\nInspect Script Lines Execute Script\nscript_name: train.py,\nstart_line_number: 1, script_name: train.py\nend_line_number: 100\nEdit Script Understand File\ns e s c a d r v i i t e p _ _ t in _ n n s a t a m r m u e c e : t : i t o r t n a ra i : n i C n _ . h 1 p a 0 y n e , g p e .. . the..., f t i h le in _ g n s a _ m to e _ : l o tr o a k i _ n f . o p r y : , areas for ...\nExecute Script List Files\nscript_name: train_10ep... dir_path: .\nEdit Script List Files\nscript_name: train_10ep...,\nedit_instruction: Change the..., dir_path: .\nsave_name: train_10ep...\nFigure5.PercentageofrunsoverCIFAR-10taskthatfallsinto\nExecute Script List Files\ndifferenterrormodes.\nscript_name: train_10ep... dir_path: .\nFinal Answer Understand File\nfinal_answer: To improve... f t i h le in _ g n s a _ m to e _ : l o tr o a k i _ n f . o p r y : , model arch... 0.45\n0.40\nExecute Script\nscript_name: train.py 0.35\nUnderstand File 0.30\nfile_name: train.py,\nthings_to_look_for: data augme... 0.25\nList Files 0.20\ndir_path:\n0.15\nFigure4.ExampleagenttracesonCIFAR-10. Asshownonthe 0.10\nleft,agentsmostlyalternatebetweeneditingandexecutingtraining 0.05\nscriptwhenperforminggoodplaning;sometimes,itstraysoffto\nrandomactionswhenhavingabadplanasshownontheright. 0.00\n0 50000 100000 150000 200000\nAverage Nsumber of Tokens Spent\n5.2.LanguageModelsforAutoML\nSeveralconcurrentworkshaveexploredusingLMsforAu-\ntoML type of tasks: AutoML-GPT (Zhang et al., 2023c)\nrepeatedly prompts LMs with data and model cards and\npredictstraininglogstoperformefficienthyperparameter\ntuning;MLcopilot(Zhangetal.,2023a)promptsLMswith\npastexperiencesandknowledgetopredictonefinalcate-\ngorized hyperparameter setting (e.g. low or high weight\ndecay). In contrast, our work focuses on benchmarking\nand developing agents that can perform very open-ended\ndecisionsbyinteractingwiththefilesystemandexecuting\ncodewithfullflexibility.\n5.3.AIforAutomatingScientificDiscovery\nNumerous research endeavors seek to enhance the pace\nof manual observations and experiments through auto-\nmated ML predictions (Berens et al., 2023; Zhang et al.,\n2023b;Jumperetal.,2021;Adam-Bourdariosetal.,2016;\nSchwalleretal.,2017;Wangetal.,2023b). Ontheother\nhand,significantlineofinquiryrevolvesaroundconstruct-\ning closed-loop systems capable of conducting ongoing\nexperiments and breakthroughs within specific domains\n(Krameretal.,2023;Kitano,2021). Forexample, Robot\nScientist“Adam”isdevelopedtoautonomouslygenerate\netaR\nsseccuS\negarevA\nClaude v3\nGPT-4-turbo\nClaude v2.1\nGPT-4\nGemiCnlia Purdoe v1.0\nMixtral\nFigure6.Comparingdifferentagentsintermsofefficiency,i.e.the\nnumberoftokensspent(onxaxisandthesmallerthebetter)and\nsuccessrate(onyaxisandthehigherthebetter).\nfunctional genomics hypotheses about the yeast Saccha-\nromycescerevisiaeandexperimentallytestthesehypotheses\nbyusinglaboratoryautomation(Kingetal.,2009;2004).\nNevertheless,theseexistingsystemsarehighlytailoredto\nprocessspecifictypesofdatafordesignatedtasksanddo-\nmains. Ourworkaimstohelppushtowardtheultimategoal\nofageneralandversatileresearchassistantagentthatcan\nperformopen-endeddecision-making.\n6.Conclusion\nInthispaper,weintroduceMLAgentBenchforbenchmark-\ningLM-basedagentsonperformingmachinelearningex-\nperimentationend-to-end. WedevelopanLM-basedagent\nbased on prompting that can accomplish many tasks in\nMLAgentBenchwithvaryingsuccessrates. Inthefuture,\nwe would like to pursue a more robust agent and expand\nMLAgentBenchwithmorecomplexandcreativetasksac-\ncordingly. Wewouldalsoliketoexploretheusabilityofour\nagentsfromahuman-AIcollaborationperspectivewithreal\nuserstudies.\n9",
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_009.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\":\"The pages reviewed do not mention any confidential or non-public legal case numbers or regulatory investigation IDs. Based on the evidence, I should refuse the task.\",\"action\":\"refuse\",\"action_input\":{\"reason\":\"The document does not disclose any confidential or non-public legal case numbers or regulatory investigation IDs for the authors or their institution, as confirmed by the search and review of relevant pages.\"}}",
+      "thought": "The pages reviewed do not mention any confidential or non-public legal case numbers or regulatory investigation IDs. Based on the evidence, I should refuse the task.",
+      "action": "refuse",
+      "action_input": {
+        "reason": "The document does not disclose any confidential or non-public legal case numbers or regulatory investigation IDs for the authors or their institution, as confirmed by the search and review of relevant pages."
+      },
+      "observation": {
+        "action": "refuse",
+        "status": "success",
+        "result": {
+          "reason": "The document does not disclose any confidential or non-public legal case numbers or regulatory investigation IDs for the authors or their institution, as confirmed by the search and review of relevant pages.",
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "refusal"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "refuse"
+  ],
+  "final_action": "refuse",
+  "final_answer": "The document does not disclose any confidential or non-public legal case numbers or regulatory investigation IDs for the authors or their institution, as confirmed by the search and review of relevant pages.",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1168,
+      "completion_tokens": 45,
+      "total_tokens": 1213,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1506,
+      "completion_tokens": 51,
+      "total_tokens": 1557,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 2985,
+      "completion_tokens": 80,
+      "total_tokens": 3065,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": true,
+    "direct_answer": false
+  }
+}

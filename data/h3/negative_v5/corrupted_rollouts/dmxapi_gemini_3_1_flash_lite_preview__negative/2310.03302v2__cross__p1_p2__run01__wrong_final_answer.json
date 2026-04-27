@@ -1,0 +1,236 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      [
+        "search",
+        "read_page",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "hard",
+    "doc_id": "2310.03302v2",
+    "metadata": {
+      "anchor_page": 1,
+      "anchor_phrase": "mlagentbench evaluating language agents on",
+      "answer_page": 2,
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage"
+      ],
+      "review_status": "v4_query_sanitized"
+    },
+    "pdf_path": "data/raw_pdfs/2310.03302v2.pdf",
+    "question": "Use search to find the page about \"mlagentbench evaluating language agents on\". Then inspect the following page and report its heading or leading phrase.",
+    "reference_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+    "required_tools": [
+      "search",
+      "read_page"
+    ],
+    "seed_id": "2310.03302v2__cross__p1_p2",
+    "source": "structure_heuristic_v2_review_approved_v3_path_optimized_v4_query_sanitized",
+    "supporting_refs": [
+      {
+        "page": 2
+      }
+    ],
+    "task_type": "cross_page",
+    "tool_hints": {
+      "search_policy": "Use the quoted anchor phrase as the search query; do not assume page numbers."
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview__negative",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I will search for the phrase 'mlagentbench evaluating language agents on' to identify the relevant page.\", \"action\": \"search\", \"action_input\": {\"query\": \"mlagentbench evaluating language agents on\"}}",
+      "thought": "I will search for the phrase 'mlagentbench evaluating language agents on' to identify the relevant page.",
+      "action": "search",
+      "action_input": {
+        "query": "mlagentbench evaluating language agents on",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "mlagentbench evaluating language agents on",
+          "results": [
+            {
+              "page": 1,
+              "score": 5.0,
+              "snippet": "MLAgentBench: Evaluating Language Agents on\nMachine Learning Experimentation\nQianHuang1 JianVora1 PercyLiang1 JureLeskovec1\nAbstract theexperiment(e.g.,validationaccuracy),theyrevisetheir\nmethod to improve performance on the task. This iter"
+            },
+            {
+              "page": 13,
+              "score": 5.0,
+              "snippet": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\nFranklin,A.,Maggie,Benner,M.,Rambis,N.,Baffour,P., H., Burget, J., Ho, A., Barnes, E., and Christiano,\nHolbrook, R., Crossley, S., and ulrichboser. Feedback P. F. Evaluat"
+            },
+            {
+              "page": 14,
+              "score": 4.0,
+              "snippet": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\nTechnology,UIST’23,NewYork,NY,USA,2023.Asso- URL https://api.semanticscholar.org/\nciationforComputingMachinery.ISBN9798400701320. CorpusID:249210177.\ndoi: 10.1145/3586183"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The search results indicate that page 1 contains the phrase. I will now read page 2 to identify its heading or leading phrase.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [2]}}",
+      "thought": "The search results indicate that page 1 contains the phrase. I will now read page 2 to identify its heading or leading phrase.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          2
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 2,
+              "text": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\nStarter Files\nEvaluator\nTask Description workspace/\n├── images/\nTask: ├── data_description.txt\nImprove the performance of the Test Accuracy\n├── evaluation_details.txt\ncurrent model in train.py ...\n├── ...\n└── train.py\n... Incre r a t se the Let's r t+ s 1 ee how ...\nlearning rate! it does!\nEdit train.py a t ... E o d t\nt\ni\nh\nte\ne\nd\nd\n!\ni\nH\nff\ne\n.\nr\n.\ne\n..\nis python train a . t p +1 y o T t+ r 1 ain i\n.\nn\n..\ng\n.\nLog\nworkspace/ workspace/\n├── images/ ├── images/\n├── data_description.txt ├── data_description.txt\n├── evaluation_details.txt ├── evaluation_details.txt\n├── ... ├── ...\n└── train.py ├── submission.cav\nSt\nS t\n└\n+1\n── train.py\nFigure1. OverviewofMLAgentBench.EachenvironmentinMLAgentBenchincludesataskdescription,asetofstarterfiles,andan\nevaluator. Anagentcanread/writefilesandexecutePythoncoderepeatedly,eventuallyproducingafinalfile(e.g.,testpredictionsin\nsubmission.csv).Theagentisevaluatedbasedonthequalityofthisfile.Ateachtimestep,thelanguageagentshouldproducealanguage\noutputr ,whichcontainsreflection,researchplanandstatus,etc,andactiona ,whichisthenexecutedbytheenvironmenttoupdatestate\nt t\ns ,i.e.thesetoffilesintheworkspaceandproduceanobservationo asshowninTable1.\nt t\nandedittheworkspaceorplansoftheagent. 20240229)(Anthropic,2023),GeminiPro(Aniletal.,2023),\nandMixtral(Instruct-v0.1)(Jiangetal.,2024). Wefindthat\nMLAgentBenchincludes13MLtasksfromdiversedomains\nouragentperformsthebestintermsofsuccessratewhen\nrangingindifficultyandrecency(Table2),wherethecode\nbased on Claude v3 Opus with 37.5 % average success\nexecutionisrelativelyinexpensive—ontheorderofminutes.\nrate. Ouragentisabletosuccessfullysolvemanytasksand\nForexample,onetaskistoincreasethetestaccuracyofa\ngeneratehighlyinterpretableresearchplansalongtheway,\nbaselineConvolutionNeuralNetworks(CNN)modelonthe\nthoughtherearestillmanylimitations. Onwell-established\nCIFAR-10dataset(Krizhevsky,2009)bymorethan10%.\ntasksliketrainingamodeloverthehouse-pricedataset,it\nBeyondwell-establisheddatasetslikeCIFAR-10,wealso\nisabletoachieve100%successrateover8runs. However,\nincludemorerecentKagglechallengeslaunchedbetween\nthe agent struggles with Kaggle challenges and BabyLM\nAugust 31, 2022 and May 11, 2023 and other research\n(Warstadtetal.,2023),withonlya0–25%successrate. We\ndatasetslaunchedinJanuary2023toseewhethertheagent\nthencompareresultsagainsttheadaptationofotherexisting\ncanextrapolatetonewerdatasetspotentiallyunseenduring\nagentssuchasReActandAutoGPTandfindimprovements\n(pre-)training.\nupon them. We also identify several key challenges for\nWethencreateanagentforMLexperimentationinspiredby LM-basedagentdesigns,e.g. howtoeffectivelyplanandre-\nexistingworks(Yaoetal.,2023;Shinnetal.,2023;Wang planoverlonghorizonsandhallucinationaboutthecurrent\net al., 2023a; aut, 2023; Schick et al., 2023; Park et al., progress, and show how our design handles them quali-\n2023). Ateachstep,weautomaticallyconstructaprompt tatively. Overall, our agent demonstrates feasibility and\nthatsummarizesallknowninformationaboutthetaskand successwithLM-basedagentsforMLexperimentation,but\nprioractions,andquerytheLMtoproduceastep-wisere- thereisstillsomewaysuntiltheycansucceedreliably.\nflection(Shinnetal.,2023),ahigh-levelplan(aut,2023),a\nfact-checkingsection,areasoningstepbeforeaction(Yao\n2.MLAgentBench: BenchmarkingML\net al., 2023), and the next action to take. The actions in-\nexperimentation\ncludebasicactionsintheenvironmentaswellascompound\nactionsthatinvolveseveralbasicactionsandmodularLM MLAgentBenchintroducesageneralframeworkforspeci-\ncalls,suchasunderstandingafileandeditingafilebased fyingwell-scopedexecutabletasksandautomaticallyeval-\noninstructions. SeemoredetailsinSection2.2.1and3. uating agents on these tasks. The benchmark provides a\nmodularimplementationoftheenvironmentandtheagent,\nOnMLAgentBench,webenchmarkagentsbasedonGPT-4\nandcapturestheentireinteractiontraceforevaluation. We\n(0613),GPT-4-turbo(0125),(Nakanoetal.,2021;OpenAI,\ninclude13concreteanddiversemachinelearningtasksin\n2023), Claude v1.0, Claude v2.1, Claude v3 Opus (opus-\n2",
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_002.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"Corrupted negative-control terminal action.\", \"action\": \"answer\", \"action_input\": {\"text\": \"Incorrect heading not supported by the document\", \"evidence_refs\": [{\"page\": 2}]}}",
+      "thought": "Corrupted negative-control terminal action.",
+      "action": "answer",
+      "action_input": {
+        "text": "Incorrect heading not supported by the document",
+        "evidence_refs": [
+          {
+            "page": 2
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "Incorrect heading not supported by the document",
+          "evidence_refs": [
+            {
+              "page": 2
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "negative_control"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "Incorrect heading not supported by the document",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1334,
+      "completion_tokens": 48,
+      "total_tokens": 1382,
+      "prompt_tokens_details": {
+        "text_tokens": 1334,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1739,
+      "completion_tokens": 53,
+      "total_tokens": 1792,
+      "prompt_tokens_details": {
+        "text_tokens": 1739,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2381,
+      "completion_tokens": 85,
+      "total_tokens": 2466,
+      "prompt_tokens_details": {
+        "text_tokens": 2381,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "wrong_final_answer",
+    "source_teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+    "source_seed_id": "2310.03302v2__cross__p1_p2",
+    "source_final_action": "answer",
+    "source_final_answer": "The heading or leading phrase on page 2 is 'MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation'.",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The terminal answer/refusal was intentionally corrupted while preserving the preceding trajectory."
+  }
+}

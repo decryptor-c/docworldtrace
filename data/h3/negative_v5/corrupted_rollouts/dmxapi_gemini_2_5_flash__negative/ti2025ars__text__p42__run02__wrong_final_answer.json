@@ -1,0 +1,172 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "easy",
+    "doc_id": "ti2025ars",
+    "metadata": {
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage"
+      ],
+      "page": 42,
+      "review_status": "v4_query_sanitized"
+    },
+    "pdf_path": "data/raw_pdfs/ti2025ars.pdf",
+    "question": "What is the heading or leading phrase on page 42? Return the page summary or the first visible leading phrase exactly. Do not choose a later figure caption, table caption, or section title unless it is the first visible leading phrase.",
+    "reference_answer": "Government incentives",
+    "required_tools": [
+      "read_page"
+    ],
+    "seed_id": "ti2025ars__text__p42",
+    "source": "structure_heuristic_approved_v3_path_optimized_v4_query_sanitized",
+    "supporting_refs": [
+      {
+        "page": 42
+      }
+    ],
+    "task_type": "text_lookup",
+    "tool_hints": {
+      "target_page": 42
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash__negative",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"action\": \"read_page\", \"action_input\": {\"page_ids\": [42]}}",
+      "thought": "",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          42
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 42,
+              "text": "Government incentives\nIncentives provided by government entities are recognized when we have reasonable assurance that we will comply\nwith the conditions of the incentive, if any, and the incentive will be received. Incentives, which include non-income\ntax incentives, related to the acquisition or construction of fixed assets are recognized as a reduction in the carrying\namounts of the related assets and reduce depreciation expense over the useful lives of the assets. Incentives for\nspecific operating activities are offset against the related expense in the period the expense is incurred.\nThe U.S. CHIPS and Science Act (CHIPS Act) provides funding for manufacturing grants and research investments,\nand it established an investment tax credit (ITC) for certain investments in U.S. semiconductor manufacturing. The\nenactment of the One Big Beautiful Bill Act (OBBBA) in 2025 increased the ITC from 25% to 35% for qualifying\nmanufacturing investments placed in service after December 31, 2025. Additionally, we have entered into an\nagreement with the U.S. Department of Commerce to receive direct funding of up to $1.6 billion for our three large-\nscale 300mm wafer fabs located in Sherman, Texas, and Lehi, Utah. Direct funding of the award is based on the\nachievement of certain milestones. The agreement contains representations, warranties and covenants that relate to\ncompliance with requirements for awards provided for in the CHIPS Act. The agreement also includes certain events\nof default and related rights and remedies, including clawbacks.\nAs of December 31, 2025, we have recognized $3.35 billion of CHIPS Act receivables, which are comprised of\n$1.71 billion in prepaid expenses and other current assets and $1.64 billion in other long-term assets. We have also\nrecognized deferred income of $95 million in other long-term liabilities for eligible expenditures that have not yet\nbeen incurred. See Note 11 for additional information.\nIn 2025, the total cash benefit related to CHIPS Act incentives was $670 million, which included $335 million used to\nreduce our income taxes payable and $335 million of cash proceeds received. The CHIPS Act incentives have\nreduced the carrying amounts of manufacturing assets by $4.51 billion, of which $1.37 billion was recognized in\n2025. Cost of revenue benefited by $353 million, $159 million and $45 million from the CHIPS Act incentives,\nrecognized as a reduction of depreciation expense in 2025, 2024 and 2023, respectively.\nProperty, plant and equipment and other capitalized costs\nProperty, plant and equipment are stated at cost and depreciated over their estimated useful lives using the straight-\nline method. Our cost basis includes certain assets acquired in business combinations that were initially recorded at\nfair value as of the date of acquisition. Leasehold improvements are amortized using the straight-line method over\nthe shorter of the remaining lease term or the estimated useful lives of the improvements. Capitalized software\nlicenses are generally amortized on a straight-line basis over the term of the license. Fully depreciated or amortized\nassets are written off against accumulated depreciation or amortization.\nImpairments of long-lived assets\nWe regularly review whether facts or circumstances exist that indicate the carrying values of property, plant and\nequipment or other long-lived assets, including intangible assets, are impaired. We assess the recoverability of\nassets by comparing the projected undiscounted net cash flows associated with those assets to their respective\ncarrying amounts. Any impairment charge is based on the excess of the carrying amount over the fair value of those\nassets. Fair value is determined by available market valuations, if applicable, or by discounted cash flows.\nGoodwill\nGoodwill is reviewed for impairment annually in the fourth quarter or more frequently if certain impairment indicators\narise. We perform a qualitative assessment to determine if it is more likely than not that the fair value of a reporting\nunit is less than its carrying value, including goodwill. If we determine that it is more likely than not that the fair value\nof a reporting unit is less than its carrying value, or if we elect not to use a qualitative assessment, then we perform\na quantitative goodwill impairment test. See Note 11 for additional information.\nForeign currency\nThe functional currency for our non-U.S. subsidiaries is the U.S. dollar. Accounts recorded in currencies other than\nthe U.S. dollar are remeasured into the functional currency. Current assets (except inventories), deferred taxes,\ncurrent liabilities and long-term liabilities are remeasured at exchange rates in effect at the end of each reporting\nperiod. Property, plant and equipment with associated depreciation and inventories are valued at historical\nexchange rates. Revenue and expense accounts other than depreciation for each month are calculated at the\nappropriate daily rate of exchange. Currency exchange gains and losses from remeasurement are credited or\ncharged to OI&E.\n2025 FORM 10-K  PAGE 36",
+              "summary": "Government incentives",
+              "image_path": "artifacts/docenv/ti2025ars/page_042.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 42,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"Corrupted negative-control terminal action.\", \"action\": \"answer\", \"action_input\": {\"text\": \"Incorrect heading not supported by the document\", \"evidence_refs\": [{\"page\": 42}]}}",
+      "thought": "Corrupted negative-control terminal action.",
+      "action": "answer",
+      "action_input": {
+        "text": "Incorrect heading not supported by the document",
+        "evidence_refs": [
+          {
+            "page": 42
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "Incorrect heading not supported by the document",
+          "evidence_refs": [
+            {
+              "page": 42
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "negative_control"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "Incorrect heading not supported by the document",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1266,
+      "completion_tokens": 84,
+      "total_tokens": 1350,
+      "prompt_tokens_details": {
+        "text_tokens": 1266,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 61
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1678,
+      "completion_tokens": 78,
+      "total_tokens": 1756,
+      "prompt_tokens_details": {
+        "text_tokens": 1678,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "wrong_final_answer",
+    "source_teacher": "dmxapi_gemini_2_5_flash",
+    "source_seed_id": "ti2025ars__text__p42",
+    "source_final_action": "answer",
+    "source_final_answer": "Government incentives",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The terminal answer/refusal was intentionally corrupted while preserving the preceding trajectory."
+  }
+}

@@ -1,0 +1,228 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      [
+        "search",
+        "read_page",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "hard",
+    "doc_id": "2308.06595v4",
+    "metadata": {
+      "anchor_page": 1,
+      "anchor_phrase": "visit bench a benchmark for vision",
+      "answer_page": 2,
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage"
+      ],
+      "review_status": "v4_query_sanitized"
+    },
+    "pdf_path": "data/raw_pdfs/2308.06595v4.pdf",
+    "question": "Use search to find the page about \"visit bench a benchmark for vision\". Then inspect the following page and report its heading or leading phrase.",
+    "reference_answer": "1 Introduction",
+    "required_tools": [
+      "search",
+      "read_page"
+    ],
+    "seed_id": "2308.06595v4__cross__p1_p2",
+    "source": "structure_heuristic_v2_review_approved_v3_path_optimized_v4_query_sanitized",
+    "supporting_refs": [
+      {
+        "page": 2
+      }
+    ],
+    "task_type": "cross_page",
+    "tool_hints": {
+      "search_policy": "Use the quoted anchor phrase as the search query; do not assume page numbers."
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"action\": \"search\", \"action_input\": {\"query\": \"visit bench a benchmark for vision\", \"top_k\": 3}}",
+      "thought": "",
+      "action": "search",
+      "action_input": {
+        "query": "visit bench a benchmark for vision",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "visit bench a benchmark for vision",
+          "results": [
+            {
+              "page": 1,
+              "score": 6.0,
+              "snippet": "VisIT-Bench: A Benchmark for Vision-Language\nInstruction Following Inspired by Real-World Use\nYonatanBitton*1,2 HritikBansal*3 JackHessel*4 RulinShao5 WanrongZhu6\nAnasAwadalla5 JoshGardner5 RohanTaori7 LudwigSchmidt4,5,8\nAbstract\nWeintroduc"
+            },
+            {
+              "page": 2,
+              "score": 6.0,
+              "snippet": "1 Introduction\nA long-standing challenge for artificial intelligence is to build general-purpose assistants\nthatcan,incollaborationwithhumans,solvediverseandnever-before-seentasks[1]. For\ntextual tasks, several recent works [2, 3, 4, 5, 6, "
+            },
+            {
+              "page": 3,
+              "score": 5.0,
+              "snippet": "Reasoning Over Art Knowledge Recognition Location Home Renovation\nPlots Understanding\nHow much is the Teach me about this Where is this? If you are going for a Here is a photo of my\nbrowser usage for painting. picnic at this location, bathr"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The search results indicate that \\\"VisIT-Bench: A Benchmark for Vision-Language\\\" is on page 1. The question asks to inspect the *following* page, which would be page 2. I need to read page 2 to find its heading or leading phrase.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [2]}}",
+      "thought": "The search results indicate that \"VisIT-Bench: A Benchmark for Vision-Language\" is on page 1. The question asks to inspect the *following* page, which would be page 2. I need to read page 2 to find its heading or leading phrase.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          2
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 2,
+              "text": "1 Introduction\nA long-standing challenge for artificial intelligence is to build general-purpose assistants\nthatcan,incollaborationwithhumans,solvediverseandnever-before-seentasks[1]. For\ntextual tasks, several recent works [2, 3, 4, 5, 6, 7] have shown that fine-tuning language\nmodelssuchasGPT-3andLLaMAwithsupervisedinstruction+responseexamples[8,9,10]\nenablesthemtorespondtoimperativerequestsandquestionswithouttask-specifictraining.\nZero-shot generalization is promising not only for standard academic benchmarks, but –\nperhaps more-so – for creative, useful, and real-world queries that downstream users of\nlanguagetechnologiesarelikelytomake.\nOnthemultimodalside,recentinstruction-followingvision-languagemodelsalsoprovide\nazero-shotinterface. Givenanimage(ormultipleimages)andaquery(e.g.,“howmany\napplesareinthisimage?” or“Whatisthis?” or“WriteapoeminthestyleofRobertFrost\naboutthisscene.”) atextualresponseisprovided. RecentworkslikeOpenFlamingo[11,12],\nLLaVA[13]andothers[14,15,16,17,18],haveimplementedthisinterfacewithpromising\ninitialresults. AlthoughstandardbenchmarkslikeVQAv2[19]andCOCOcaptioning[20]\nare commonly used to assess performance, less is know about how models perform on\nbroader, open-endedqueriesthatresemblereal-worlduserbehavior. Evaluationsofsuch\nqueriestypicallyrelyoninformalandqualitativeapproaches.\nTo support quantitative evaluation for this setting, we present VisIT-Bench (Visual\nInsTruction Benchmark), a dynamic benchmark consisting of 592 challenging vision-\nlanguageinstructions. Eachinstancecontainsaninstruction,inputimage(s),ainstruction-\nconditioned caption (a human-crafted caption for the image(s)/instruction), and a human\nverifiedreference(Figure1). Instructionsareimage-contextualimperativerequestsorques-\ntions,e.g.,foranimageofpancakes,auserasks“howcanIcookthisinahealthyway?”.\nDifferentfromexistingzero-shotevaluations,manyoftheinstructionsfocusonopen-ended\ngenerationrequests(e.g.,“writeapoem...” or“whatshouldIbringifIweretovisithere?”).\nWecreatedVisIT-Benchtocoverawidearrayof“instructionfamilies”. Ourstartingpoint\nwasasetof70“wish-list”taskssuchas“homerenovation”and“gardeningtips”collectedby\ntheauthors:1 eachrequiringvariedhigh-levelskillsfromrecognitiontocomplexreasoning\n(Figure 2). We derived 25/70 instruction families from benchmark tasks such as Visual\nQuestion Answering (VQA) [21] and robust change captioning [22] into a chatbot-style\nformat(thisreformattingdiffersfrompriorwork[14,17,13],aswefocusonopen-ended\nchatbotstyleresponses.). Notably,10oftheserepurposedtasksinvolvemultipleimages.\nWe started with 10 images for each instruction family. Our annotators, guided by an\nexample,createanewinstruction,andprovidea(permissivelylicensed)image. Foreach\ninstruction, we next collect instruction-conditioned captions – unlike prior work [23, 24]\nthesedescriptionsaredesignednotonlytodescribetheimageingeneral,butalso,surface\ninformationtargetedtotheinstruction. Finally,weuseinstruction-conditionedcaptionsto\ngenerate areference candidate output fromGPT-4; an additional humanverificationstep\ndiscardsGPT-4referencesdeemedtobeincorrect.\nWeconductalarge-scaleempiricalcomparisonofmultimodalinstruction-followingmodels\nusing VisIT-Bench (§4). We first gather predictions for each instance from 7 candidate\nmodels. Then,wecollect5Khumanjudgementsofoutputqualitybypittingmodeloutputs\nhead-to-head,and(inaforced-choicesetup)crowd-sourcingpairwisepreferencejudgements.\nThis analysis not only reveals significant differences between models (e.g., that LLaVA-\n13b[13]isgenerallypreferredtoPanda[18]),butalso,thatthehumanverifiedreferences\nin our corpus are preferred significantly more than the ones generated using multimodal\nmodels. Wesummarizehead-to-headcomparisonswithtwometrics: 1)Eloratings[25,26],\n1Werecognizethatpromisingapplicationsmaynotbecoveredbyourset;andwedon’tnecessarilyadvocate\nfordeployingmodelsinallcaseswecover–wehopeVisIT-Benchcanhelptoquantifyshortcomingsandrisks.\n2",
+              "summary": "1 Introduction",
+              "image_path": "artifacts/docenv/2308.06595v4/page_002.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"I have read page 2. The heading or leading phrase on page 2 is \\\"1 Introduction\\\".\", \"action\": \"answer\", \"action_input\": {\"text\": \"1 Introduction\", \"evidence_refs\": [{\"page\": 2}]}}",
+      "thought": "I have read page 2. The heading or leading phrase on page 2 is \"1 Introduction\".",
+      "action": "answer",
+      "action_input": {
+        "text": "1 Introduction",
+        "evidence_refs": [
+          {
+            "page": 2
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "1 Introduction",
+          "evidence_refs": [
+            {
+              "page": 2
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "1 Introduction",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1344,
+      "completion_tokens": 142,
+      "total_tokens": 1486,
+      "prompt_tokens_details": {
+        "text_tokens": 1344,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 112
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1689,
+      "completion_tokens": 83,
+      "total_tokens": 1772,
+      "prompt_tokens_details": {
+        "text_tokens": 1689,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2259,
+      "completion_tokens": 56,
+      "total_tokens": 2315,
+      "prompt_tokens_details": {
+        "text_tokens": 2259,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  }
+}

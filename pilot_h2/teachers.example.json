@@ -1,0 +1,22 @@
+{
+  "teachers": [
+    {
+      "name": "gpt4o",
+      "api_base": "https://api.openai.com/v1",
+      "model": "gpt-4o",
+      "api_key_env": "OPENAI_API_KEY",
+      "temperature": 0.2,
+      "max_tokens": 400,
+      "timeout_sec": 120
+    },
+    {
+      "name": "gemini_flash",
+      "api_base": "https://generativelanguage.googleapis.com/v1beta/openai",
+      "model": "gemini-2.5-flash",
+      "api_key_env": "GEMINI_API_KEY",
+      "temperature": 0.2,
+      "max_tokens": 400,
+      "timeout_sec": 120
+    }
+  ]
+}

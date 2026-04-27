@@ -1,0 +1,68 @@
+{
+  "doc_id": "sample_financial_report",
+  "title": "Sample Financial Report",
+  "metadata": {
+    "domain": "financial",
+    "page_count": 3
+  },
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "Sample Financial Report 2023 Executive summary. The company expanded cloud revenue in FY2023 and improved operating margin.",
+      "summary": "Sample Financial Report 2023 Executive summary.",
+      "width": 600,
+      "height": 800,
+      "words": [
+        {"text": "Sample", "bbox": [40, 40, 90, 60]},
+        {"text": "Financial", "bbox": [95, 40, 170, 60]},
+        {"text": "Report", "bbox": [175, 40, 230, 60]},
+        {"text": "2023", "bbox": [235, 40, 270, 60]},
+        {"text": "Executive", "bbox": [40, 90, 110, 110]},
+        {"text": "summary", "bbox": [115, 90, 180, 110]}
+      ],
+      "tables": []
+    },
+    {
+      "page_number": 2,
+      "text": "Revenue table. FY2022 revenue was 2.8 billion dollars. FY2023 revenue was 3.2 billion dollars. Growth rate was 14.3 percent.",
+      "summary": "Revenue table for FY2022 and FY2023.",
+      "width": 600,
+      "height": 800,
+      "words": [
+        {"text": "Revenue", "bbox": [50, 90, 110, 110]},
+        {"text": "table", "bbox": [115, 90, 155, 110]},
+        {"text": "FY2022", "bbox": [60, 170, 115, 190]},
+        {"text": "2.8", "bbox": [260, 170, 285, 190]},
+        {"text": "FY2023", "bbox": [60, 210, 115, 230]},
+        {"text": "3.2", "bbox": [260, 210, 285, 230]},
+        {"text": "Growth", "bbox": [60, 250, 110, 270]},
+        {"text": "14.3%", "bbox": [250, 250, 295, 270]}
+      ],
+      "tables": [
+        {
+          "bbox": [40, 140, 340, 290],
+          "rows": [
+            ["Metric", "Value"],
+            ["FY2022 Revenue", "2.8"],
+            ["FY2023 Revenue", "3.2"],
+            ["Growth Rate", "14.3%"]
+          ]
+        }
+      ]
+    },
+    {
+      "page_number": 3,
+      "text": "Appendix. Cloud segment revenue contributed most of the year over year gain.",
+      "summary": "Appendix and qualitative discussion.",
+      "width": 600,
+      "height": 800,
+      "words": [
+        {"text": "Appendix", "bbox": [40, 40, 105, 60]},
+        {"text": "Cloud", "bbox": [40, 110, 80, 130]},
+        {"text": "segment", "bbox": [85, 110, 140, 130]},
+        {"text": "revenue", "bbox": [145, 110, 195, 130]}
+      ],
+      "tables": []
+    }
+  ]
+}

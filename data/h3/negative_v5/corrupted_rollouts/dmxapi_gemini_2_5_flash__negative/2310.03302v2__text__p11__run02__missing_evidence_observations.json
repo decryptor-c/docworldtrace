@@ -1,0 +1,163 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "easy",
+    "doc_id": "2310.03302v2",
+    "metadata": {
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage"
+      ],
+      "page": 11,
+      "review_status": "v4_query_sanitized"
+    },
+    "pdf_path": "data/raw_pdfs/2310.03302v2.pdf",
+    "question": "What is the heading or leading phrase on page 11? Return the page summary or the first visible leading phrase exactly. Do not choose a later figure caption, table caption, or section title unless it is the first visible leading phrase.",
+    "reference_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+    "required_tools": [
+      "read_page"
+    ],
+    "seed_id": "2310.03302v2__text__p11",
+    "source": "structure_heuristic_approved_v3_path_optimized_v4_query_sanitized",
+    "supporting_refs": [
+      {
+        "page": 11
+      }
+    ],
+    "task_type": "text_lookup",
+    "tool_hints": {
+      "target_page": 11
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash__negative",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"action\":\"read_page\",\"action_input\":{\"page_ids\":[11]}}",
+      "thought": "",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          11
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"action\":\"answer\",\"action_input\":{\"text\":\"MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\",\"evidence_refs\":[{\"page\":11}]}}",
+      "thought": "",
+      "action": "answer",
+      "action_input": {
+        "text": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "evidence_refs": [
+          {
+            "page": 11
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+          "evidence_refs": [
+            {
+              "page": 11
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1341,
+      "completion_tokens": 72,
+      "total_tokens": 1413,
+      "prompt_tokens_details": {
+        "text_tokens": 1341,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 53
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2106,
+      "completion_tokens": 34,
+      "total_tokens": 2140,
+      "prompt_tokens_details": {
+        "text_tokens": 2106,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "missing_evidence_observations",
+    "source_teacher": "dmxapi_gemini_2_5_flash",
+    "source_seed_id": "2310.03302v2__text__p11",
+    "source_final_action": "answer",
+    "source_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved but all non-terminal evidence observations were blanked."
+  }
+}

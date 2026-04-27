@@ -1,0 +1,331 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "read_page",
+        "crop",
+        "compute",
+        "answer"
+      ],
+      [
+        "crop",
+        "compute",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "tm2529296d2_ars",
+    "metadata": {
+      "bbox": [
+        35.94,
+        333.96,
+        535.455,
+        458.28005
+      ],
+      "column_label": "High-Touch Solutions N.A.",
+      "first_label": "Reported sales growth",
+      "first_value": 2.0,
+      "formula": "second_value - first_value",
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage"
+      ],
+      "page": 2,
+      "review_status": "v4_query_sanitized",
+      "second_label": "Adjusted Operating Margin2",
+      "second_value": 16.8,
+      "unit": "percentage points"
+    },
+    "pdf_path": "data/raw_pdfs/tm2529296d2_ars.pdf",
+    "question": "Based on the table on page 2, for column \"High-Touch Solutions N.A.\", compute the value in row \"Adjusted Operating Margin2\" minus the value in row \"Reported sales growth\". Report only the final result as \"<number> percentage points\", not as a percent.",
+    "reference_answer": "14.8 percentage points",
+    "required_tools": [
+      "read_page",
+      "parse_table",
+      "compute"
+    ],
+    "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+    "source": "manual_numeric_gold_approved_v3_path_optimized_v4_query_sanitized",
+    "supporting_refs": [
+      {
+        "bbox": [
+          35.94,
+          333.96,
+          535.455,
+          458.28005
+        ],
+        "page": 2
+      }
+    ],
+    "task_type": "numeric_computation",
+    "tool_hints": {
+      "bbox_note": "Use a bbox that covers the full table; avoid a narrow column-only bbox.",
+      "table_bbox_hint": [
+        35.94,
+        333.96,
+        535.455,
+        458.28005
+      ],
+      "target_page": 2,
+      "unit_policy": "If the question asks for percentage-point difference, answer with 'percentage points', not '%'."
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I need to parse the table on page 2 to extract the values for the specified rows and column.\",\"action\":\"parse_table\",\"action_input\":{\"page_id\":2,\"bbox\":[35.94,333.96,535.455,458.28005]}}",
+      "thought": "I need to parse the table on page 2 to extract the values for the specified rows and column.",
+      "action": "parse_table",
+      "action_input": {
+        "page_id": 2,
+        "bbox": [
+          35.94,
+          333.96,
+          535.455,
+          458.28005
+        ]
+      },
+      "observation": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {
+          "page": 2,
+          "bbox": [
+            35.94,
+            333.96,
+            535.455,
+            458.28005
+          ],
+          "rows": [
+            [
+              "",
+              "High-Touch Solutions N.A.",
+              "Endless Assortment",
+              "Total Company1"
+            ],
+            [
+              "Revenue",
+              "$14.0B",
+              "$3.6B",
+              "$17.9B"
+            ],
+            [
+              "Reported sales growth",
+              "2.0%",
+              "15.7%",
+              "4.5%"
+            ],
+            [
+              "Daily, organic constant currency sales growth2",
+              "2.6%",
+              "15.6%",
+              "4.9%"
+            ],
+            [
+              "Adjusted Operating Margin2",
+              "16.8%",
+              "9.8%",
+              "15.0%"
+            ],
+            [
+              "Adjusted ROIC2",
+              "—",
+              "—",
+              "39.1%"
+            ]
+          ],
+          "markdown": "|  | High-Touch Solutions N.A. | Endless Assortment | Total Company1 |\n| --- | --- | --- | --- |\n| Revenue | $14.0B | $3.6B | $17.9B |\n| Reported sales growth | 2.0% | 15.7% | 4.5% |\n| Daily, organic constant currency sales growth2 | 2.6% | 15.6% | 4.9% |\n| Adjusted Operating Margin2 | 16.8% | 9.8% | 15.0% |\n| Adjusted ROIC2 | — | — | 39.1% |"
+        },
+        "provenance": {
+          "page": 2,
+          "bbox": [
+            35.94,
+            333.96,
+            535.455,
+            458.28005
+          ],
+          "element_type": "table"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"I have the values for 'High-Touch Solutions N.A.' in the rows 'Adjusted Operating Margin2' (16.8%) and 'Reported sales growth' (2.0%). I will compute the difference.\",\"action\":\"compute\",\"action_input\":{\"expr\":\"adjusted_margin - reported_growth\",\"vars\":{\"adjusted_margin\":16.8,\"reported_growth\":2.0}}}",
+      "thought": "I have the values for 'High-Touch Solutions N.A.' in the rows 'Adjusted Operating Margin2' (16.8%) and 'Reported sales growth' (2.0%). I will compute the difference.",
+      "action": "compute",
+      "action_input": {
+        "expr": "adjusted_margin - reported_growth",
+        "vars": {
+          "adjusted_margin": 16.8,
+          "reported_growth": 2.0
+        }
+      },
+      "observation": {
+        "action": "compute",
+        "status": "success",
+        "result": {
+          "expr": "adjusted_margin - reported_growth",
+          "vars": {
+            "adjusted_margin": 16.8,
+            "reported_growth": 2.0
+          },
+          "value": 14.8
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "computed_value"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"Corrupted negative-control terminal action.\", \"action\": \"answer\", \"action_input\": {\"text\": \"999 percentage points\", \"evidence_refs\": [{\"bbox\": [35.94, 333.96, 535.455, 458.28005], \"page\": 2}]}}",
+      "thought": "Corrupted negative-control terminal action.",
+      "action": "answer",
+      "action_input": {
+        "text": "999 percentage points",
+        "evidence_refs": [
+          {
+            "bbox": [
+              35.94,
+              333.96,
+              535.455,
+              458.28005
+            ],
+            "page": 2
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "999 percentage points",
+          "evidence_refs": [
+            {
+              "bbox": [
+                35.94,
+                333.96,
+                535.455,
+                458.28005
+              ],
+              "page": 2
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "negative_control"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "parse_table",
+    "compute",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "999 percentage points",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1233,
+      "completion_tokens": 58,
+      "total_tokens": 1291,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1648,
+      "completion_tokens": 82,
+      "total_tokens": 1730,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1791,
+      "completion_tokens": 48,
+      "total_tokens": 1839,
+      "prompt_tokens_details": {
+        "cached_tokens": 1664,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "wrong_final_answer",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+    "source_final_action": "answer",
+    "source_final_answer": "14.8 percentage points",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The terminal answer/refusal was intentionally corrupted while preserving the preceding trajectory."
+  }
+}

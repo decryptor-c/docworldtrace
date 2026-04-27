@@ -1,0 +1,2565 @@
+{
+  "source": "/home/kimilabra/DocWorldTrace/data/raw_pdfs/2503.00808v4.pdf",
+  "summary": {
+    "total_calls": 10,
+    "success_calls": 10,
+    "success_rate": 1.0,
+    "expectation_checks": {
+      "passed": 21,
+      "total": 21,
+      "rate": 1.0
+    },
+    "retrieval_checks": {
+      "passed": 2,
+      "total": 2,
+      "rate": 1.0
+    },
+    "cache_checks": {
+      "passed": 1,
+      "total": 1,
+      "rate": 1.0
+    }
+  },
+  "executions": [
+    {
+      "index": 1,
+      "name": "overview_doc",
+      "action": "overview",
+      "params": {},
+      "result": {
+        "action": "overview",
+        "status": "success",
+        "result": {
+          "doc_id": "2503.00808v4",
+          "title": "2503.00808v4",
+          "page_count": 24,
+          "pages": [
+            {
+              "page": 1,
+              "summary": "Predictive Data Selection: The Data That Predicts Is the Data That Teaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_001.png"
+            },
+            {
+              "page": 2,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_002.png"
+            },
+            {
+              "page": 3,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_003.png"
+            },
+            {
+              "page": 4,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_004.png"
+            },
+            {
+              "page": 5,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_005.png"
+            },
+            {
+              "page": 6,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_006.png"
+            },
+            {
+              "page": 7,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_007.png"
+            },
+            {
+              "page": 8,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_008.png"
+            },
+            {
+              "page": 9,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_009.png"
+            },
+            {
+              "page": 10,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_010.png"
+            },
+            {
+              "page": 11,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_011.png"
+            },
+            {
+              "page": 12,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_012.png"
+            },
+            {
+              "page": 13,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_013.png"
+            },
+            {
+              "page": 14,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_014.png"
+            },
+            {
+              "page": 15,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_015.png"
+            },
+            {
+              "page": 16,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_016.png"
+            },
+            {
+              "page": 17,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_017.png"
+            },
+            {
+              "page": 18,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_018.png"
+            },
+            {
+              "page": 19,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_019.png"
+            },
+            {
+              "page": 20,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_020.png"
+            },
+            {
+              "page": 21,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_021.png"
+            },
+            {
+              "page": 22,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_022.png"
+            },
+            {
+              "page": 23,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_023.png"
+            },
+            {
+              "page": 24,
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_024.png"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "document"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "search_primary_page",
+      "action": "search",
+      "params": {
+        "query": "largelanguagemodel llm pre trainingtypicallyrequires",
+        "top_k": 3
+      },
+      "result": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "largelanguagemodel llm pre trainingtypicallyrequires",
+          "results": [
+            {
+              "page": 1,
+              "score": 4.0,
+              "snippet": "Predictive Data Selection: The Data That Predicts Is the Data That Teaches\nKashunShum*1 YuzhenHuang*1 HongjianZou2 QiDing2 YixuanLiao2 XiaoxinChen2 QianLiu\nJunxianHe1\nAbstract\n42\nLanguagemodelpretraininginvolvestrainingon\nextensivecorpora,w"
+            },
+            {
+              "page": 2,
+              "score": 1.0,
+              "snippet": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\nsample\nNormalized Loss\necnamrofreP\nmaertsnwoD\ndifferent models rank not align\nrank align\nPos Features Neg Features\nNormalized Loss\n<‘^’,337.7> <‘Register’,-375>\n<’MIT’,240.6> <"
+            },
+            {
+              "page": 3,
+              "score": 1.0,
+              "snippet": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\nin§3.4. WhileHuangetal.(2024)usethePearsoncorrelationco-\nefficient to measure the relationship between losses and\nExperimental results show that PRESELECT naturally se-\nthe mod"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "contains_pages",
+          "passed": true,
+          "expected": [
+            1
+          ],
+          "actual": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "search_primary_page_cached",
+      "action": "search",
+      "params": {
+        "query": "largelanguagemodel llm pre trainingtypicallyrequires",
+        "top_k": 3
+      },
+      "result": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "largelanguagemodel llm pre trainingtypicallyrequires",
+          "results": [
+            {
+              "page": 1,
+              "score": 4.0,
+              "snippet": "Predictive Data Selection: The Data That Predicts Is the Data That Teaches\nKashunShum*1 YuzhenHuang*1 HongjianZou2 QiDing2 YixuanLiao2 XiaoxinChen2 QianLiu\nJunxianHe1\nAbstract\n42\nLanguagemodelpretraininginvolvestrainingon\nextensivecorpora,w"
+            },
+            {
+              "page": 2,
+              "score": 1.0,
+              "snippet": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\nsample\nNormalized Loss\necnamrofreP\nmaertsnwoD\ndifferent models rank not align\nrank align\nPos Features Neg Features\nNormalized Loss\n<‘^’,337.7> <‘Register’,-375>\n<’MIT’,240.6> <"
+            },
+            {
+              "page": 3,
+              "score": 1.0,
+              "snippet": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\nin§3.4. WhileHuangetal.(2024)usethePearsoncorrelationco-\nefficient to measure the relationship between losses and\nExperimental results show that PRESELECT naturally se-\nthe mod"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": true
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "contains_pages",
+          "passed": true,
+          "expected": [
+            1
+          ],
+          "actual": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "cache_hit",
+          "passed": true,
+          "expected": true,
+          "actual": true
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "read_primary_page",
+      "action": "read_page",
+      "params": {
+        "page_ids": [
+          1
+        ]
+      },
+      "result": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 1,
+              "text": "Predictive Data Selection: The Data That Predicts Is the Data That Teaches\nKashunShum*1 YuzhenHuang*1 HongjianZou2 QiDing2 YixuanLiao2 XiaoxinChen2 QianLiu\nJunxianHe1\nAbstract\n42\nLanguagemodelpretraininginvolvestrainingon\nextensivecorpora,wheredataqualityplaysapiv- 40\notalrole. Inthiswork,weaimtodirectlyestimate\nthecontributionofdataduringpretrainingandse-\n38\nlectpretrainingdatainanefficientmanner.Specif-\nically,wedrawinspirationfromrecentfindings\nshowingthatcompressionefficiency(i.e.,normal- 36\nizedloss)ofdiversemodelsoncertaintextcorre-\nlatesstronglywiththeirdownstreamperformance, 34\nwhenthetextdomainalignswiththedownstream\nbenchmarks(Huangetal.,2024).Buildingonthis\n32\nobservation,wehypothesizethatdataonwhich 3 6 9 15 30 90 150 300\nmodellossesarepredictiveofdownstreamabili- \u00008\u0000V\u0000E\u0000M\u0000R\u0000M\u0000R\u0000K\u0000\u0004\u00008\u0000S\u0000O\u0000I\u0000R\u0000W\u0000\u0004\u0000\f\u0000&\u0000\r\ntiesalsocontributeeffectivelytolearning,which\nsharessimilarintuitionwithThrushetal.(2024).\nToleveragethisinsight,weintroducepredictive\ndataselection(PRESELECT),alightweightand\nefficientdataselectionmethodthatrequirestrain-\ning and deploying only a fastText-based scorer.\nThroughcomprehensiveexperimentswith1Band\n3Bparametermodels,wedemonstratethatmod-\nelstrainedon30BtokensselectedwithPRESE-\nLECTsurpasstheperformanceofthevanillabase-\nlinetrainedon300Btokens,achievinga10xre-\nductionincomputerequirements. Furthermore,\nPRESELECTsignificantlyoutperformsothercom-\npetitivedataselectionbaselines,suchasDCLM\nandFineWeb-Eduonascaleof3Bmodelstrained\non100Btokens. Weopen-sourceourtraineddata\nselectionscoreralongwiththecurateddatasetsat\nhttps://github.com/hkust-nlp/PreSelect.\n1.Introduction\nLargelanguagemodel(LLM)pre-trainingtypicallyrequires\ntraining on a huge data source such as web crawl data\n*Equalcontribution 1HKUST2VivoAILab.Correspondence\nto:KashunShum<ksshumab@connect.ust.hk>,JunxianHe<junx-\nianh@cse.ust.hk>.\nProceedingsofthe42nd InternationalConferenceonMachine\nLearning,Vancouver,Canada.PMLR267,2025.Copyright2025\nbytheauthor(s).\n\u0000\r\u0000\t\u0000\f\u0000\u0004\u0000I\u0000G\u0000R\u0000E\u0000Q\u0000V\u0000S\u0000J\u0000V\u0000I\u00004\u0000\u0004\u0000I\u0000K\u0000E\u0000V\u0000I\u0000Z\u0000%\n\u0000\u0015\u0000\u0014\u0000\\\u0000\u0004\u0000J\u0000E\u0000W\u0000X\u0000I\u0000V\n3.1%\nRandom Selection\nFineWeb-Edu\nDCLM\nPreSelect\nFigure 1: PRESELECT outperforms random selection by\nanaverageof3.1%accuracyacross15downstreambench-\nmarksandachieves10xreductionincomputerequirements\nonthescaleof1BmodelsusingRefinedWebcorpus.\nwheretheexistenceoflow-qualitydataleadstoslowscaling\nlaw(Kaplanetal.,2020;Chowdheryetal.,2023).Giventhe\ngrowingavailabletokenbudgetandlimitedtrainingbudget\nnowadays,dataselectionhasbecomeastandardstepinthe\npre-training stage. This step has played a critical role in\nenhancingdataqualityandoptimizingtrainingefficiency\nduringthedevelopmentofvariousLLMs(Touvronetal.,\n2023b;DeepSeek-AI,2024). Whilepreviouspracticesof-\ntenrelyonhumanheuristicssuchaspre-definedrulesand\ndomainclassificationtofilterdata(Penedoetal.,2024b;Li\netal.,2024a),inthisworkweaimtodirectlyidentifydata\nthatcouldcontributeeffectivelytolearningvariousabilities.\nWeareinspiredbythebeliefthat“compressionrepresents\nintelligence” and the corresponding empirical finding re-\ncently(Huangetal.,2024),thatthecompressionefficiency\n(i.e., the normalized loss)1 of a series of models on cer-\ntain raw text, strongly correlates with their downstream\nbenchmarkperformance,whenthetextdataalignswiththe\nbenchmark domains. For example, Huang et al. (2024)\nobservedthatmodellossesonrawGitHubcodeexhibitan\n1Foragivenmodel,thelosslesscompressionefficiency,such\nasbitspercharacteroncertaindata,isequaltothenormalizedloss\nonthatdata(Deletangetal.,2024;Huangetal.,2024).See§2.1\nforfurtherdetails.\n1\n5202\nguA\n2\n]LC.sc[\n4v80800.3052:viXra",
+              "summary": "Predictive Data Selection: The Data That Predicts Is the Data That Teaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_001.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "Predictive Data Selection: The Data That Predicts Is the Dat"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "name": "crop_evidence_region",
+      "action": "crop",
+      "params": {
+        "page_id": 21,
+        "bbox": [
+          97.122738,
+          376.298042,
+          471.988526,
+          638.2171940000001
+        ]
+      },
+      "result": {
+        "action": "crop",
+        "status": "success",
+        "result": {
+          "page": 21,
+          "bbox": [
+            97.122738,
+            376.298042,
+            471.988526,
+            638.2171940000001
+          ],
+          "text": "| Corpus | SubsetFrom* | Method | ModelSize | PoolSize | SelectionRatio |\n| --- | --- | --- | --- | --- | --- |\n|  | k∈[0,10] | RandomSelection\nDCLM\nPRESELECT | 400M | 80B | N/A\n10%\n10% |\n|  |  |  |  |  | N/A\nN/A\n10%\n10%\n10%\n10%(domain-wise)\n10%\n10% |\n|  |  |  |  |  | 30% |\n|  |  |  |  |  | 50% |\n|  | k∈[0,130] | RandomSelection\nDCLM\nPRESELECT | 3B | 1T | N/A\n10%\n10% |\n|  |  |  | 410M |  |  |\n|  |  |  | 1B |  |  |",
+          "image_path": "artifacts/docenv/2503.00808v4/crops/page_021_202_783_983_1329.png"
+        },
+        "provenance": {
+          "page": 21,
+          "bbox": [
+            97.122738,
+            376.298042,
+            471.988526,
+            638.2171940000001
+          ],
+          "element_type": "region"
+        },
+        "confidence": 0.9,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "| Corpus | SubsetFrom* | Method | ModelSize | PoolSize | Sel"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "name": "ocr_evidence_region",
+      "action": "ocr",
+      "params": {
+        "page_id": 21,
+        "bbox": [
+          97.122738,
+          376.298042,
+          471.988526,
+          638.2171940000001
+        ]
+      },
+      "result": {
+        "action": "ocr",
+        "status": "success",
+        "result": {
+          "page": 21,
+          "bbox": [
+            97.122738,
+            376.298042,
+            471.988526,
+            638.2171940000001
+          ],
+          "text": "| Corpus | SubsetFrom* | Method | ModelSize | PoolSize | SelectionRatio |\n| --- | --- | --- | --- | --- | --- |\n|  | k∈[0,10] | RandomSelection\nDCLM\nPRESELECT | 400M | 80B | N/A\n10%\n10% |\n|  |  |  |  |  | N/A\nN/A\n10%\n10%\n10%\n10%(domain-wise)\n10%\n10% |\n|  |  |  |  |  | 30% |\n|  |  |  |  |  | 50% |\n|  | k∈[0,130] | RandomSelection\nDCLM\nPRESELECT | 3B | 1T | N/A\n10%\n10% |\n|  |  |  | 410M |  |  |\n|  |  |  | 1B |  |  |"
+        },
+        "provenance": {
+          "page": 21,
+          "bbox": [
+            97.122738,
+            376.298042,
+            471.988526,
+            638.2171940000001
+          ],
+          "element_type": "ocr_text"
+        },
+        "confidence": 0.88,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "| Corpus | SubsetFrom* | Method | ModelSize | PoolSize | Sel"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "name": "parse_table_primary_table",
+      "action": "parse_table",
+      "params": {
+        "page_id": 21,
+        "bbox": [
+          97.122738,
+          376.298042,
+          471.988526,
+          638.2171940000001
+        ]
+      },
+      "result": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {
+          "page": 21,
+          "bbox": [
+            97.122738,
+            376.298042,
+            471.988526,
+            638.2171940000001
+          ],
+          "rows": [
+            [
+              "Corpus",
+              "SubsetFrom*",
+              "Method",
+              "ModelSize",
+              "PoolSize",
+              "SelectionRatio"
+            ],
+            [
+              "",
+              "k∈[0,10]",
+              "RandomSelection\nDCLM\nPRESELECT",
+              "400M",
+              "80B",
+              "N/A\n10%\n10%"
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "N/A\nN/A\n10%\n10%\n10%\n10%(domain-wise)\n10%\n10%"
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "30%"
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "50%"
+            ],
+            [
+              "",
+              "k∈[0,130]",
+              "RandomSelection\nDCLM\nPRESELECT",
+              "3B",
+              "1T",
+              "N/A\n10%\n10%"
+            ],
+            [
+              "",
+              "",
+              "",
+              "410M",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "1B",
+              "",
+              ""
+            ]
+          ],
+          "markdown": "| Corpus | SubsetFrom* | Method | ModelSize | PoolSize | SelectionRatio |\n| --- | --- | --- | --- | --- | --- |\n|  | k∈[0,10] | RandomSelection\nDCLM\nPRESELECT | 400M | 80B | N/A\n10%\n10% |\n|  |  |  |  |  | N/A\nN/A\n10%\n10%\n10%\n10%(domain-wise)\n10%\n10% |\n|  |  |  |  |  | 30% |\n|  |  |  |  |  | 50% |\n|  | k∈[0,130] | RandomSelection\nDCLM\nPRESELECT | 3B | 1T | N/A\n10%\n10% |\n|  |  |  | 410M |  |  |\n|  |  |  | 1B |  |  |"
+        },
+        "provenance": {
+          "page": 21,
+          "bbox": [
+            97.122738,
+            376.298042,
+            471.988526,
+            638.2171940000001
+          ],
+          "element_type": "table"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "table_rows_min",
+          "passed": true,
+          "expected": 2,
+          "actual": 8
+        },
+        {
+          "name": "table_text_cells_min",
+          "passed": true,
+          "expected": 2,
+          "actual": 19
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "name": "compute_sanity_check",
+      "action": "compute",
+      "params": {
+        "expr": "(a-b)/b*100",
+        "vars": {
+          "a": 3.2,
+          "b": 2.8
+        }
+      },
+      "result": {
+        "action": "compute",
+        "status": "success",
+        "result": {
+          "expr": "(a-b)/b*100",
+          "vars": {
+            "a": 3.2,
+            "b": 2.8
+          },
+          "value": 14.285714285714299
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "computed_value"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "value_equals",
+          "passed": true,
+          "expected": 14.2857142857,
+          "actual": 14.285714285714299
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "name": "verify_supported_claim",
+      "action": "verify",
+      "params": {
+        "claim": "corpus subsetfrom method modelsize poolsize selectionratio k 0 10 randomselection dclm preselect",
+        "evidence_refs": [
+          {
+            "page": 21,
+            "bbox": [
+              97.122738,
+              376.298042,
+              471.988526,
+              638.2171940000001
+            ]
+          }
+        ]
+      },
+      "result": {
+        "action": "verify",
+        "status": "success",
+        "result": {
+          "claim": "corpus subsetfrom method modelsize poolsize selectionratio k 0 10 randomselection dclm preselect",
+          "evidence_count": 1,
+          "label": "SUPPORTED",
+          "sufficiency": "SUFFICIENT",
+          "confidence": 0.99,
+          "failure_taxonomy": null
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "verification"
+        },
+        "confidence": 0.99,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "support_label",
+          "passed": true,
+          "expected": "SUPPORTED",
+          "actual": "SUPPORTED"
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "name": "detect_layout_primary_page",
+      "action": "detect_layout",
+      "params": {
+        "page_id": 1
+      },
+      "result": {
+        "action": "detect_layout",
+        "status": "success",
+        "result": {
+          "page": 1,
+          "elements": [
+            {
+              "element_type": "word",
+              "bbox": [
+                67.77,
+                89.57515579999995,
+                129.3725828,
+                103.92135580000001
+              ],
+              "text": "Predictive"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                132.9591328,
+                89.57515579999995,
+                162.4405738,
+                103.92135580000001
+              ],
+              "text": "Data"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                166.0271238,
+                89.57515579999995,
+                225.793393,
+                103.92135580000001
+              ],
+              "text": "Selection:"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                230.24071500000002,
+                89.57515579999995,
+                254.15583040000007,
+                103.92135580000001
+              ],
+              "text": "The"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                257.74238040000006,
+                89.57515579999995,
+                287.2238214,
+                103.92135580000001
+              ],
+              "text": "Data"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                290.81037140000007,
+                89.57515579999995,
+                320.30615860000006,
+                103.92135580000001
+              ],
+              "text": "That"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                323.89270860000005,
+                89.57515579999995,
+                373.83183080000003,
+                103.92135580000001
+              ],
+              "text": "Predicts"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                377.4183808,
+                89.57515579999995,
+                388.57972440000003,
+                103.92135580000001
+              ],
+              "text": "Is"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                392.1662744,
+                89.57515579999995,
+                411.289759,
+                103.92135580000001
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                414.876309,
+                89.57515579999995,
+                444.3577499999999,
+                103.92135580000001
+              ],
+              "text": "Data"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                447.9442999999999,
+                89.57515579999995,
+                477.4400871999998,
+                103.92135580000001
+              ],
+              "text": "That"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                481.0266371999998,
+                89.57515579999995,
+                529.1150995999998,
+                103.92135580000001
+              ],
+              "text": "Teaches"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                74.897,
+                138.79254079999998,
+                145.8225644,
+                149.95718339999996
+              ],
+              "text": "KashunShum*1"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                152.466,
+                138.79254079999998,
+                225.7835644,
+                149.95718339999996
+              ],
+              "text": "YuzhenHuang*1"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                232.42600000000002,
+                138.79254079999998,
+                297.09090000000003,
+                149.95718339999996
+              ],
+              "text": "HongjianZou2"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                303.73300000000006,
+                138.79254079999998,
+                342.37390000000005,
+                149.95718339999996
+              ],
+              "text": "QiDing2"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                349.0160000000001,
+                138.79254079999998,
+                406.66690000000006,
+                149.95718339999996
+              ],
+              "text": "YixuanLiao2"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                413.3090000000001,
+                138.79254079999998,
+                476.85690000000005,
+                149.95718339999996
+              ],
+              "text": "XiaoxinChen2"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                483.4990000000001,
+                139.9945834,
+                521.9845238,
+                149.95718339999996
+              ],
+              "text": "QianLiu"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                270.7500000000001,
+                150.74754080000002,
+                324.7439000000001,
+                161.9121834
+              ],
+              "text": "JunxianHe1"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                150.19800000000012,
+                183.8844368,
+                194.68329920000014,
+                195.8396368
+              ],
+              "text": "Abstract"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                321.96470703125,
+                189.18073828125,
+                330.23270703125,
+                195.68073828125
+              ],
+              "text": "42"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                202.38232159999995,
+                269.5120977618001,
+                212.34492160000002
+              ],
+              "text": "Languagemodelpretraininginvolvestrainingon"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                214.3373216,
+                271.16599895040014,
+                224.29992160000006
+              ],
+              "text": "extensivecorpora,wheredataqualityplaysapiv-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                321.96470703125,
+                217.06802343750007,
+                330.23270703125,
+                223.56802343750007
+              ],
+              "text": "40"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                226.29232159999992,
+                109.90872522400001,
+                236.2549216
+              ],
+              "text": "otalrole."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                112.925599756,
+                226.29232159999992,
+                269.51017498000004,
+                236.2549216
+              ],
+              "text": "Inthiswork,weaimtodirectlyestimate"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                238.24732159999996,
+                271.16528164320005,
+                248.20992160000003
+              ],
+              "text": "thecontributionofdataduringpretrainingandse-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                321.96470703125,
+                244.95530859375003,
+                330.23270703125,
+                251.45530859375003
+              ],
+              "text": "38"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                250.2023216,
+                271.1699441400001,
+                260.16492160000007
+              ],
+              "text": "lectpretrainingdatainanefficientmanner.Specif-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                262.1583216,
+                269.51834431200007,
+                272.1209216000001
+              ],
+              "text": "ically,wedrawinspirationfromrecentfindings"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                274.11332159999995,
+                271.1699441400001,
+                284.07592159999996
+              ],
+              "text": "showingthatcompressionefficiency(i.e.,normal-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                321.96470703125,
+                272.84259375,
+                330.23270703125,
+                279.34259375
+              ],
+              "text": "36"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                286.0683216,
+                271.17161785680014,
+                296.0309216
+              ],
+              "text": "izedloss)ofdiversemodelsoncertaintextcorre-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                298.02332160000003,
+                270.7598835240001,
+                307.9859216
+              ],
+              "text": "latesstronglywiththeirdownstreamperformance,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                321.96470703125,
+                300.72987890625,
+                330.23270703125,
+                307.22987890625
+              ],
+              "text": "34"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.007,
+                309.97832159999996,
+                269.51542756120006,
+                319.94092159999997
+              ],
+              "text": "whenthetextdomainalignswiththedownstream"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                321.9333216,
+                269.5101749800001,
+                331.8959216
+              ],
+              "text": "benchmarks(Huangetal.,2024).Buildingonthis"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                321.96470703125,
+                328.6171640625,
+                330.23270703125,
+                335.1171640625
+              ],
+              "text": "32"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                333.6601818,
+                269.519261584,
+                343.85192159999997
+              ],
+              "text": "observation,wehypothesizethatdataonwhich"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                340.2876784445875,
+                335.96140234375,
+                344.42167844458754,
+                342.46140234375
+              ],
+              "text": "3"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                368.1968123452469,
+                335.96140234375,
+                372.3308123452469,
+                342.46140234375
+              ],
+              "text": "6"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                384.52260910471875,
+                335.96140234375,
+                388.65660910471877,
+                342.46140234375
+              ],
+              "text": "9"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                403.02134461496564,
+                335.96140234375,
+                411.28934461496567,
+                342.46140234375
+              ],
+              "text": "15"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                430.930478515625,
+                335.96140234375,
+                439.198478515625,
+                342.46140234375
+              ],
+              "text": "30"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                475.1654091757563,
+                335.96140234375,
+                483.4334091757563,
+                342.46140234375
+              ],
+              "text": "90"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                493.6641446860031,
+                335.96140234375,
+                506.0661446860031,
+                342.46140234375
+              ],
+              "text": "150"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                521.5732785866625,
+                335.96140234375,
+                533.9752785866625,
+                342.46140234375
+              ],
+              "text": "300"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                345.61518179999996,
+                271.1654111570001,
+                355.57778179999997
+              ],
+              "text": "modellossesarepredictiveofdownstreamabili-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                403.229306640625,
+                347.43212500000004,
+                466.92849414062505,
+                354.74462500000004
+              ],
+              "text": "\u00008\u0000V\u0000E\u0000M\u0000R\u0000M\u0000R\u0000K\u0000\u0004\u00008\u0000S\u0000O\u0000I\u0000R\u0000W\u0000\u0004\u0000\f\u0000&\u0000\r"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                357.5701818,
+                269.519837429,
+                367.7619216
+              ],
+              "text": "tiesalsocontributeeffectivelytolearning,which"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                369.7543216,
+                271.2570471518,
+                379.7169216
+              ],
+              "text": "sharessimilarintuitionwithThrushetal.(2024)."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.057,
+                381.48018179999997,
+                269.5194559084,
+                391.67192159999996
+              ],
+              "text": "Toleveragethisinsight,weintroducepredictive"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                393.4351818,
+                269.513272272,
+                403.6269216
+              ],
+              "text": "dataselection(PRESELECT),alightweightand"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                405.6203216,
+                271.16504254080013,
+                415.58292159999996
+              ],
+              "text": "efficientdataselectionmethodthatrequirestrain-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                417.57532160000005,
+                88.352846856,
+                427.5379216
+              ],
+              "text": "ing"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                91.584315792,
+                417.57532160000005,
+                106.25803008,
+                427.5379216
+              ],
+              "text": "and"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                109.499660868,
+                417.57532160000005,
+                150.045450348,
+                427.5379216
+              ],
+              "text": "deploying"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                153.276919284,
+                417.57532160000005,
+                171.34469214,
+                427.5379216
+              ],
+              "text": "only"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                174.58632292800002,
+                417.57532160000005,
+                179.09818521600002,
+                427.5379216
+              ],
+              "text": "a"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                182.32965415200002,
+                417.57532160000005,
+                241.20742464000008,
+                427.5379216
+              ],
+              "text": "fastText-based"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                244.4388935760001,
+                417.57532160000005,
+                271.2560210040001,
+                427.5379216
+              ],
+              "text": "scorer."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.057,
+                429.5303216,
+                269.5136021160001,
+                439.4929216
+              ],
+              "text": "Throughcomprehensiveexperimentswith1Band"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                441.4853216,
+                271.16685573400014,
+                451.4479216
+              ],
+              "text": "3Bparametermodels,wedemonstratethatmod-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                453.44032159999995,
+                271.15889671599996,
+                463.40292159999996
+              ],
+              "text": "elstrainedon30BtokensselectedwithPRESE-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.615,
+                465.3953216,
+                271.16897819200005,
+                475.3579216
+              ],
+              "text": "LECTsurpasstheperformanceofthevanillabase-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                477.3513216,
+                271.16456433600007,
+                487.31392159999996
+              ],
+              "text": "linetrainedon300Btokens,achievinga10xre-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                489.30632160000005,
+                213.07941830400006,
+                499.2689216
+              ],
+              "text": "ductionincomputerequirements."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                217.41852910800003,
+                489.30632160000005,
+                270.75809025600006,
+                499.2689216
+              ],
+              "text": "Furthermore,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.615,
+                501.2613216,
+                271.17217223660003,
+                511.2239216
+              ],
+              "text": "PRESELECTsignificantlyoutperformsothercom-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                513.2163216,
+                269.5107328856001,
+                523.1789216
+              ],
+              "text": "petitivedataselectionbaselines,suchasDCLM"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                525.1713216,
+                269.5101749800001,
+                535.1339216
+              ],
+              "text": "andFineWeb-Eduonascaleof3Bmodelstrained"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                537.1263216,
+                139.26686359500002,
+                547.0889216
+              ],
+              "text": "on100Btokens."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                142.351732872,
+                537.1263216,
+                269.5168997350001,
+                547.0889216
+              ],
+              "text": "Weopen-sourceourtraineddata"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                549.0823216,
+                269.5168997350001,
+                559.0449216
+              ],
+              "text": "selectionscoreralongwiththecurateddatasetsat"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                561.0373216,
+                231.06151280000003,
+                570.9999216
+              ],
+              "text": "https://github.com/hkust-nlp/PreSelect."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                55.44,
+                595.5154368,
+                132.2760704,
+                607.4706368
+              ],
+              "text": "1.Introduction"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                55.44,
+                616.5343216,
+                289.43816151600015,
+                626.4969216
+              ],
+              "text": "Largelanguagemodel(LLM)pre-trainingtypicallyrequires"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                55.44,
+                628.4893216,
+                87.05352157200001,
+                638.4519216
+              ],
+              "text": "training"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                91.169071632,
+                628.4893216,
+                101.33092363200001,
+                638.4519216
+              ],
+              "text": "on"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                105.446473692,
+                628.4893216,
+                109.95833598,
+                638.4519216
+              ],
+              "text": "a"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                114.06372418800001,
+                628.4893216,
+                133.818364476,
+                638.4519216
+              ],
+              "text": "huge"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                137.933914536,
+                628.4893216,
+                154.86355996800003,
+                638.4519216
+              ],
+              "text": "data"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                158.97911002800004,
+                628.4893216,
+                185.50154374800005,
+                638.4519216
+              ],
+              "text": "source"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                189.61709380800005,
+                628.4893216,
+                208.24376852400007,
+                638.4519216
+              ],
+              "text": "such"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                212.35931858400008,
+                628.4893216,
+                220.8241413000001,
+                638.4519216
+              ],
+              "text": "as"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                224.9295295080001,
+                628.4893216,
+                241.85917494000012,
+                638.4519216
+              ],
+              "text": "web"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                245.9747250000001,
+                628.4893216,
+                268.4019323640001,
+                638.4519216
+              ],
+              "text": "crawl"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                272.50732057200014,
+                628.4893216,
+                289.4369660040001,
+                638.4519216
+              ],
+              "text": "data"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                64.955,
+                646.7895616000001,
+                136.04327615999998,
+                657.2217424
+              ],
+              "text": "*Equalcontribution"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                140.545,
+                646.7895616000001,
+                289.43632741119995,
+                657.2217424
+              ],
+              "text": "1HKUST2VivoAILab.Correspondence"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                55.44,
+                658.2183424,
+                290.9247425280001,
+                667.1847424
+              ],
+              "text": "to:KashunShum<ksshumab@connect.ust.hk>,JunxianHe<junx-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                55.44,
+                668.1803424,
+                121.80032639999999,
+                677.1467424
+              ],
+              "text": "ianh@cse.ust.hk>."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                55.162,
+                686.5080544,
+                146.40156671999998,
+                696.8744816
+              ],
+              "text": "Proceedingsofthe42nd"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                149.756,
+                687.8991152,
+                289.43870374399995,
+                696.8655152
+              ],
+              "text": "InternationalConferenceonMachine"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                55.189,
+                697.8621152000001,
+                289.43839778560005,
+                707.0347424
+              ],
+              "text": "Learning,Vancouver,Canada.PMLR267,2025.Copyright2025"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                55.44,
+                708.0313424,
+                114.4568448,
+                716.9977424
+              ],
+              "text": "bytheauthor(s)."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                312.55037109374996,
+                213.87063281250005,
+                320.67537109374996,
+                305.9756328125
+              ],
+              "text": "\u0000\r\u0000\t\u0000\f\u0000\u0004\u0000I\u0000G\u0000R\u0000E\u0000Q\u0000V\u0000S\u0000J\u0000V\u0000I\u00004\u0000\u0004\u0000I\u0000K\u0000E\u0000V\u0000I\u0000Z\u0000%"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                487.38395999515,
+                201.89971484374996,
+                518.25489749515,
+                208.80596484374996
+              ],
+              "text": "\u0000\u0015\u0000\u0014\u0000\\\u0000\u0004\u0000J\u0000E\u0000W\u0000X\u0000I\u0000V"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                441.27593025619376,
+                231.11300000000006,
+                458.81780525619376,
+                238.01925000000006
+              ],
+              "text": "3.1%"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                472.25181640625,
+                290.32429296875,
+                499.17166796875,
+                296.82429296875
+              ],
+              "text": "Random"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                501.23866796875,
+                290.32429296875,
+                531.19716796875,
+                296.82429296875
+              ],
+              "text": "Selection"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                472.25181640625,
+                299.8648203125,
+                514.32073046875,
+                306.3648203125
+              ],
+              "text": "FineWeb-Edu"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                472.25181640625,
+                309.40534765625,
+                491.02381640625003,
+                315.90534765625
+              ],
+              "text": "DCLM"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                472.25181640625,
+                318.945875,
+                502.63891015625,
+                325.445875
+              ],
+              "text": "PreSelect"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                371.3903216,
+                333.972595572,
+                381.3529216
+              ],
+              "text": "Figure"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                337.305683028,
+                371.3903216,
+                345.211603884,
+                381.3529216
+              ],
+              "text": "1:"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                350.221,
+                371.3903216,
+                401.21973821399996,
+                381.3529216
+              ],
+              "text": "PRESELECT"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                404.8,
+                371.3903216,
+                454.471132576,
+                381.3529216
+              ],
+              "text": "outperforms"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                457.804220032,
+                371.3903216,
+                488.848677892,
+                381.3529216
+              ],
+              "text": "random"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                492.171603496,
+                371.3903216,
+                528.296987356,
+                381.3529216
+              ],
+              "text": "selection"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                531.6300748120001,
+                371.3903216,
+                541.791926812,
+                381.3529216
+              ],
+              "text": "by"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                383.34532160000003,
+                543.0921523680001,
+                393.3079216
+              ],
+              "text": "anaverageof3.1%accuracyacross15downstreambench-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                395.30132160000005,
+                541.4387991224002,
+                405.2639216
+              ],
+              "text": "marksandachieves10xreductionincomputerequirements"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                407.2563216,
+                517.7704112000001,
+                417.2189216
+              ],
+              "text": "onthescaleof1BmodelsusingRefinedWebcorpus."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.082,
+                427.3083216,
+                541.4414053920001,
+                437.2709216
+              ],
+              "text": "wheretheexistenceoflow-qualitydataleadstoslowscaling"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                439.2643216,
+                541.4381615160002,
+                449.22692159999997
+              ],
+              "text": "law(Kaplanetal.,2020;Chowdheryetal.,2023).Giventhe"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                451.21932159999994,
+                541.4437405720001,
+                461.18192159999995
+              ],
+              "text": "growingavailabletokenbudgetandlimitedtrainingbudget"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                463.1743216,
+                541.4382810672003,
+                473.1369216
+              ],
+              "text": "nowadays,dataselectionhasbecomeastandardstepinthe"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                475.1293216,
+                355.414103292,
+                485.0919216
+              ],
+              "text": "pre-training"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                358.635410376,
+                475.1293216,
+                382.058479236,
+                485.0919216
+              ],
+              "text": "stage."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                387.352804128,
+                475.1293216,
+                405.42057698400004,
+                485.0919216
+              ],
+              "text": "This"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                408.641884068,
+                475.1293216,
+                425.01262764,
+                485.0919216
+              ],
+              "text": "step"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                428.24409657600006,
+                475.1293216,
+                441.789845292,
+                485.0919216
+              ],
+              "text": "has"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                445.01115237600004,
+                475.1293216,
+                472.102649808,
+                485.0919216
+              ],
+              "text": "played"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                475.32395689200007,
+                475.1293216,
+                479.83581918000004,
+                485.0919216
+              ],
+              "text": "a"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                483.0672881160001,
+                475.1293216,
+                511.28675112000013,
+                485.0919216
+              ],
+              "text": "critical"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                514.5080582040001,
+                475.1293216,
+                530.3097380640002,
+                485.0919216
+              ],
+              "text": "role"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                533.5310451480002,
+                475.1293216,
+                541.4369660040002,
+                485.0919216
+              ],
+              "text": "in"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                487.08432159999995,
+                541.7926308240001,
+                497.04692159999996
+              ],
+              "text": "enhancingdataqualityandoptimizingtrainingefficiency"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                499.0393216,
+                542.6868738000002,
+                509.0019216
+              ],
+              "text": "duringthedevelopmentofvariousLLMs(Touvronetal.,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                510.9953216,
+                424.799228748,
+                520.9579216
+              ],
+              "text": "2023b;DeepSeek-AI,2024)."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                427.979888424,
+                510.9953216,
+                543.0933478800001,
+                520.9579216
+              ],
+              "text": "Whilepreviouspracticesof-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                522.9503216,
+                541.4444977296001,
+                532.9129216
+              ],
+              "text": "tenrelyonhumanheuristicssuchaspre-definedrulesand"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                534.9053216,
+                541.43905815,
+                544.8679216
+              ],
+              "text": "domainclassificationtofilterdata(Penedoetal.,2024b;Li"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                546.8603216,
+                541.4370855552,
+                556.8229216
+              ],
+              "text": "etal.,2024a),inthisworkweaimtodirectlyidentifydata"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                558.8153216000001,
+                543.156510764,
+                568.7779216
+              ],
+              "text": "thatcouldcontributeeffectivelytolearningvariousabilities."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                306.972,
+                576.7483216,
+                541.4424784194001,
+                586.7109216
+              ],
+              "text": "Weareinspiredbythebeliefthat“compressionrepresents"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                588.7033216,
+                359.36706372,
+                598.6659216
+              ],
+              "text": "intelligence”"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                362.710313028,
+                588.7033216,
+                377.38402731599996,
+                598.6659216
+              ],
+              "text": "and"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                380.717114772,
+                588.7033216,
+                393.134897916,
+                598.6659216
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                396.478147224,
+                588.7033216,
+                454.614102516,
+                598.6659216
+              ],
+              "text": "corresponding"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                457.95735182400006,
+                588.7033216,
+                496.3386668280001,
+                598.6659216
+              ],
+              "text": "empirical"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                499.6717542840001,
+                588.7033216,
+                528.4704428520001,
+                598.6659216
+              ],
+              "text": "finding"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                531.8136921600001,
+                588.7033216,
+                543.0933478800001,
+                598.6659216
+              ],
+              "text": "re-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                600.6583216,
+                541.7903394260002,
+                610.6209216
+              ],
+              "text": "cently(Huangetal.,2024),thatthecompressionefficiency"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.112,
+                612.6133216000001,
+                325.45414286,
+                622.5759216
+              ],
+              "text": "(i.e.,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                329.376617732,
+                612.6133216000001,
+                341.794400876,
+                622.5759216
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                345.42218204000005,
+                612.6133216000001,
+                391.140354188,
+                622.5759216
+              ],
+              "text": "normalized"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                394.77829720400007,
+                611.3415408,
+                417.4619,
+                622.5759216
+              ],
+              "text": "loss)1"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                421.595,
+                612.6133216000001,
+                430.059822716,
+                622.5759216
+              ],
+              "text": "of"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                433.69776573200005,
+                612.6133216000001,
+                438.20962802,
+                622.5759216
+              ],
+              "text": "a"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                441.837409184,
+                612.6133216000001,
+                464.975946188,
+                622.5759216
+              ],
+              "text": "series"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                468.61388920400003,
+                612.6133216000001,
+                477.07871192,
+                622.5759216
+              ],
+              "text": "of"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                480.71665493600005,
+                612.6133216000001,
+                510.07424536400003,
+                622.5759216
+              ],
+              "text": "models"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                513.702026528,
+                612.6133216000001,
+                523.863878528,
+                622.5759216
+              ],
+              "text": "on"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                527.5018215440001,
+                612.6133216000001,
+                543.090102512,
+                622.5759216
+              ],
+              "text": "cer-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                624.5693216,
+                322.682778,
+                634.5319216
+              ],
+              "text": "tain"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                326.513796204,
+                624.5693216,
+                341.593984572,
+                634.5319216
+              ],
+              "text": "raw"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                345.414840924,
+                624.5693216,
+                363.055815996,
+                634.5319216
+              ],
+              "text": "text,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                367.212013464,
+                624.5693216,
+                400.52256432,
+                634.5319216
+              ],
+              "text": "strongly"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                404.34342067200004,
+                624.5693216,
+                443.84253939600006,
+                634.5319216
+              ],
+              "text": "correlates"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                447.6735576000001,
+                624.5693216,
+                465.74133045600007,
+                634.5319216
+              ],
+              "text": "with"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                469.5621868080001,
+                624.5693216,
+                488.1888615240001,
+                634.5319216
+              ],
+              "text": "their"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                492.0198797280001,
+                624.5693216,
+                541.4369660040002,
+                634.5319216
+              ],
+              "text": "downstream"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                636.5243216,
+                541.4384703566001,
+                646.4869216
+              ],
+              "text": "benchmarkperformance,whenthetextdataalignswiththe"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                648.4793216,
+                352.58910843599995,
+                658.4419216
+              ],
+              "text": "benchmark"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                356.044138116,
+                648.4793216,
+                393.023117544,
+                658.4419216
+              ],
+              "text": "domains."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                398.988124668,
+                648.4793216,
+                412.950509316,
+                658.4419216
+              ],
+              "text": "For"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                416.405538996,
+                648.4793216,
+                453.221928792,
+                658.4419216
+              ],
+              "text": "example,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                460.3555488960001,
+                648.4793216,
+                487.44704632800006,
+                658.4419216
+              ],
+              "text": "Huang"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                490.90207600800005,
+                648.4793216,
+                498.2389331520001,
+                658.4419216
+              ],
+              "text": "et"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                501.68380098000006,
+                648.4793216,
+                511.56112112400007,
+                658.4419216
+              ],
+              "text": "al."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                515.0161508040001,
+                648.4793216,
+                542.107648236,
+                658.4419216
+              ],
+              "text": "(2024)"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                660.4343216,
+                541.4356509408001,
+                670.3969216
+              ],
+              "text": "observedthatmodellossesonrawGitHubcodeexhibitan"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                320.093,
+                676.6775616,
+                541.4439553152001,
+                687.1097424
+              ],
+              "text": "1Foragivenmodel,thelosslesscompressionefficiency,such"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                688.1053424,
+                541.43972736,
+                697.0717424
+              ],
+              "text": "asbitspercharacteroncertaindata,isequaltothenormalizedloss"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                698.0683424,
+                542.1130591680002,
+                707.0347424
+              ],
+              "text": "onthatdata(Deletangetal.,2024;Huangetal.,2024).See§2.1"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                708.0313424,
+                372.4284672,
+                716.9977424
+              ],
+              "text": "forfurtherdetails."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                295.95,
+                732.1563216,
+                300.93129999999996,
+                742.1189216
+              ],
+              "text": "1"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                16.34,
+                225.46000000000004,
+                36.34,
+                265.46000000000004
+              ],
+              "text": "5202"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                16.34,
+                270.46000000000004,
+                36.34,
+                304.9
+              ],
+              "text": "guA"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                16.34,
+                309.9,
+                36.34,
+                319.9
+              ],
+              "text": "2"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                16.34,
+                329.9,
+                36.34,
+                390.44
+              ],
+              "text": "]LC.sc["
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                16.34,
+                400.44,
+                36.34,
+                566.54
+              ],
+              "text": "4v80800.3052:viXra"
+            },
+            {
+              "element_type": "table",
+              "bbox": [
+                333.08580078125,
+                190.202,
+                537.0525,
+                330.31550911458334
+              ],
+              "text": "|  |  |  |  |  |  |  | \u0000\u0015\u0000\u0014\u0000\\\u0000\u0004 | \u0000J\u0000E\u0000W\u0000X\u0000I\u0000V |  |"
+            }
+          ]
+        },
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "element_type": "layout"
+        },
+        "confidence": 0.8,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "bbox"
+        }
+      ]
+    }
+  ]
+}

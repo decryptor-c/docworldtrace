@@ -1,0 +1,210 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      [
+        "overview",
+        "search",
+        "read_page",
+        "refuse"
+      ]
+    ],
+    "answerable": false,
+    "difficulty": "medium",
+    "doc_id": "2503.00808v4",
+    "metadata": {
+      "negative_evidence_query": "current employer today first author",
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage",
+        "v5_refuse_query_diversification"
+      ],
+      "question_zh": "根据文档，论文第一作者今天的当前雇主是什么？先用工具检查文档；如果文档没有提供，则基于证据拒答。",
+      "refuse_category_zh": "文档外事实",
+      "review_status": "v5_refuse_diverse_review"
+    },
+    "pdf_path": "data/raw_pdfs/2503.00808v4.pdf",
+    "question": "What is the current employer of the paper's first author today, according to the document? First check the document with tools; if the document does not provide it, refuse with a brief evidence-based reason.",
+    "reference_answer": "REFUSE",
+    "required_tools": [
+      "search",
+      "read_page",
+      "refuse"
+    ],
+    "seed_id": "2503.00808v4__refuse__external_fact",
+    "source": "structure_heuristic_v5_refuse_diverse",
+    "supporting_refs": [],
+    "task_type": "unanswerable",
+    "tool_hints": {
+      "negative_evidence_policy": "Use search and read_page before refusing.",
+      "search_policy": "Search for: current employer today first author"
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to identify the first author and check if their current employer is mentioned in the document.\", \"action\": \"search\", \"action_input\": {\"query\": \"first author employer\", \"top_k\": 3}}",
+      "thought": "I need to identify the first author and check if their current employer is mentioned in the document.",
+      "action": "search",
+      "action_input": {
+        "query": "first author employer",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "first author employer",
+          "results": [
+            {
+              "page": 4,
+              "score": 1.0,
+              "snippet": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\n2.3.TheOverallFramework scorer. Notably, our approach requires only the fastText\nscoreratdeployment,makingithighlyaccessibleandscal-\nOur core hypothesis is that the data on whi"
+            },
+            {
+              "page": 17,
+              "score": 1.0,
+              "snippet": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\nHowever,wefoundforafastTextclassifiertrainedwithuni-gram+bi-gramfeatures,ifweonlygiveitsuni-gramandmake\nthefinalscoreprediction,thatdoesnothaveahugedifferencetousingallfeatures"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The search results do not mention the first author's employer. I will read the first page to identify the authors and check for affiliation information.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [1]}}",
+      "thought": "The search results do not mention the first author's employer. I will read the first page to identify the authors and check for affiliation information.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          1
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 1,
+              "text": "Predictive Data Selection: The Data That Predicts Is the Data That Teaches\nKashunShum*1 YuzhenHuang*1 HongjianZou2 QiDing2 YixuanLiao2 XiaoxinChen2 QianLiu\nJunxianHe1\nAbstract\n42\nLanguagemodelpretraininginvolvestrainingon\nextensivecorpora,wheredataqualityplaysapiv- 40\notalrole. Inthiswork,weaimtodirectlyestimate\nthecontributionofdataduringpretrainingandse-\n38\nlectpretrainingdatainanefficientmanner.Specif-\nically,wedrawinspirationfromrecentfindings\nshowingthatcompressionefficiency(i.e.,normal- 36\nizedloss)ofdiversemodelsoncertaintextcorre-\nlatesstronglywiththeirdownstreamperformance, 34\nwhenthetextdomainalignswiththedownstream\nbenchmarks(Huangetal.,2024).Buildingonthis\n32\nobservation,wehypothesizethatdataonwhich 3 6 9 15 30 90 150 300\nmodellossesarepredictiveofdownstreamabili- \u00008\u0000V\u0000E\u0000M\u0000R\u0000M\u0000R\u0000K\u0000\u0004\u00008\u0000S\u0000O\u0000I\u0000R\u0000W\u0000\u0004\u0000\f\u0000&\u0000\r\ntiesalsocontributeeffectivelytolearning,which\nsharessimilarintuitionwithThrushetal.(2024).\nToleveragethisinsight,weintroducepredictive\ndataselection(PRESELECT),alightweightand\nefficientdataselectionmethodthatrequirestrain-\ning and deploying only a fastText-based scorer.\nThroughcomprehensiveexperimentswith1Band\n3Bparametermodels,wedemonstratethatmod-\nelstrainedon30BtokensselectedwithPRESE-\nLECTsurpasstheperformanceofthevanillabase-\nlinetrainedon300Btokens,achievinga10xre-\nductionincomputerequirements. Furthermore,\nPRESELECTsignificantlyoutperformsothercom-\npetitivedataselectionbaselines,suchasDCLM\nandFineWeb-Eduonascaleof3Bmodelstrained\non100Btokens. Weopen-sourceourtraineddata\nselectionscoreralongwiththecurateddatasetsat\nhttps://github.com/hkust-nlp/PreSelect.\n1.Introduction\nLargelanguagemodel(LLM)pre-trainingtypicallyrequires\ntraining on a huge data source such as web crawl data\n*Equalcontribution 1HKUST2VivoAILab.Correspondence\nto:KashunShum<ksshumab@connect.ust.hk>,JunxianHe<junx-\nianh@cse.ust.hk>.\nProceedingsofthe42nd InternationalConferenceonMachine\nLearning,Vancouver,Canada.PMLR267,2025.Copyright2025\nbytheauthor(s).\n\u0000\r\u0000\t\u0000\f\u0000\u0004\u0000I\u0000G\u0000R\u0000E\u0000Q\u0000V\u0000S\u0000J\u0000V\u0000I\u00004\u0000\u0004\u0000I\u0000K\u0000E\u0000V\u0000I\u0000Z\u0000%\n\u0000\u0015\u0000\u0014\u0000\\\u0000\u0004\u0000J\u0000E\u0000W\u0000X\u0000I\u0000V\n3.1%\nRandom Selection\nFineWeb-Edu\nDCLM\nPreSelect\nFigure 1: PRESELECT outperforms random selection by\nanaverageof3.1%accuracyacross15downstreambench-\nmarksandachieves10xreductionincomputerequirements\nonthescaleof1BmodelsusingRefinedWebcorpus.\nwheretheexistenceoflow-qualitydataleadstoslowscaling\nlaw(Kaplanetal.,2020;Chowdheryetal.,2023).Giventhe\ngrowingavailabletokenbudgetandlimitedtrainingbudget\nnowadays,dataselectionhasbecomeastandardstepinthe\npre-training stage. This step has played a critical role in\nenhancingdataqualityandoptimizingtrainingefficiency\nduringthedevelopmentofvariousLLMs(Touvronetal.,\n2023b;DeepSeek-AI,2024). Whilepreviouspracticesof-\ntenrelyonhumanheuristicssuchaspre-definedrulesand\ndomainclassificationtofilterdata(Penedoetal.,2024b;Li\netal.,2024a),inthisworkweaimtodirectlyidentifydata\nthatcouldcontributeeffectivelytolearningvariousabilities.\nWeareinspiredbythebeliefthat“compressionrepresents\nintelligence” and the corresponding empirical finding re-\ncently(Huangetal.,2024),thatthecompressionefficiency\n(i.e., the normalized loss)1 of a series of models on cer-\ntain raw text, strongly correlates with their downstream\nbenchmarkperformance,whenthetextdataalignswiththe\nbenchmark domains. For example, Huang et al. (2024)\nobservedthatmodellossesonrawGitHubcodeexhibitan\n1Foragivenmodel,thelosslesscompressionefficiency,such\nasbitspercharacteroncertaindata,isequaltothenormalizedloss\nonthatdata(Deletangetal.,2024;Huangetal.,2024).See§2.1\nforfurtherdetails.\n1\n5202\nguA\n2\n]LC.sc[\n4v80800.3052:viXra",
+              "summary": "Predictive Data Selection: The Data That Predicts Is the Data That Teaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_001.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"The first page lists the authors (Kashun Shum, Yuzhen Huang, Hongjian Zou, Qi Ding, Yixuan Liao, Xiaoxin Chen, Qian Liu, Junxian He) but does not provide their current employer or affiliation details. Since the document does not contain this information, I must refuse.\", \"action\": \"refuse\", \"action_input\": {\"reason\": \"The document lists the authors but does not provide information regarding their current employer.\"}}",
+      "thought": "The first page lists the authors (Kashun Shum, Yuzhen Huang, Hongjian Zou, Qi Ding, Yixuan Liao, Xiaoxin Chen, Qian Liu, Junxian He) but does not provide their current employer or affiliation details. Since the document does not contain this information, I must refuse.",
+      "action": "refuse",
+      "action_input": {
+        "reason": "The document lists the authors but does not provide information regarding their current employer."
+      },
+      "observation": {
+        "action": "refuse",
+        "status": "success",
+        "result": {
+          "reason": "The document lists the authors but does not provide information regarding their current employer.",
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "refusal"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "refuse"
+  ],
+  "final_action": "refuse",
+  "final_answer": "The document lists the authors but does not provide information regarding their current employer.",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1380,
+      "completion_tokens": 50,
+      "total_tokens": 1430,
+      "prompt_tokens_details": {
+        "text_tokens": 1380,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1647,
+      "completion_tokens": 55,
+      "total_tokens": 1702,
+      "prompt_tokens_details": {
+        "text_tokens": 1647,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2399,
+      "completion_tokens": 101,
+      "total_tokens": 2500,
+      "prompt_tokens_details": {
+        "text_tokens": 2399,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": true,
+    "direct_answer": false
+  }
+}

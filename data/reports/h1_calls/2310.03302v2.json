@@ -1,0 +1,3306 @@
+{
+  "source": "/home/kimilabra/DocWorldTrace/data/raw_pdfs/2310.03302v2.pdf",
+  "summary": {
+    "total_calls": 10,
+    "success_calls": 10,
+    "success_rate": 1.0,
+    "expectation_checks": {
+      "passed": 21,
+      "total": 21,
+      "rate": 1.0
+    },
+    "retrieval_checks": {
+      "passed": 2,
+      "total": 2,
+      "rate": 1.0
+    },
+    "cache_checks": {
+      "passed": 1,
+      "total": 1,
+      "rate": 1.0
+    }
+  },
+  "executions": [
+    {
+      "index": 1,
+      "name": "overview_doc",
+      "action": "overview",
+      "params": {},
+      "result": {
+        "action": "overview",
+        "status": "success",
+        "result": {
+          "doc_id": "2310.03302v2",
+          "title": "2310.03302v2",
+          "page_count": 39,
+          "pages": [
+            {
+              "page": 1,
+              "summary": "MLAgentBench: Evaluating Language Agents on",
+              "image_path": "artifacts/docenv/2310.03302v2/page_001.png"
+            },
+            {
+              "page": 2,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_002.png"
+            },
+            {
+              "page": 3,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_003.png"
+            },
+            {
+              "page": 4,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_004.png"
+            },
+            {
+              "page": 5,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_005.png"
+            },
+            {
+              "page": 6,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_006.png"
+            },
+            {
+              "page": 7,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_007.png"
+            },
+            {
+              "page": 8,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_008.png"
+            },
+            {
+              "page": 9,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_009.png"
+            },
+            {
+              "page": 10,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_010.png"
+            },
+            {
+              "page": 11,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_011.png"
+            },
+            {
+              "page": 12,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_012.png"
+            },
+            {
+              "page": 13,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_013.png"
+            },
+            {
+              "page": 14,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_014.png"
+            },
+            {
+              "page": 15,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_015.png"
+            },
+            {
+              "page": 16,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_016.png"
+            },
+            {
+              "page": 17,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_017.png"
+            },
+            {
+              "page": 18,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_018.png"
+            },
+            {
+              "page": 19,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_019.png"
+            },
+            {
+              "page": 20,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_020.png"
+            },
+            {
+              "page": 21,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_021.png"
+            },
+            {
+              "page": 22,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_022.png"
+            },
+            {
+              "page": 23,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_023.png"
+            },
+            {
+              "page": 24,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_024.png"
+            },
+            {
+              "page": 25,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_025.png"
+            },
+            {
+              "page": 26,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_026.png"
+            },
+            {
+              "page": 27,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_027.png"
+            },
+            {
+              "page": 28,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_028.png"
+            },
+            {
+              "page": 29,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_029.png"
+            },
+            {
+              "page": 30,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_030.png"
+            },
+            {
+              "page": 31,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_031.png"
+            },
+            {
+              "page": 32,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_032.png"
+            },
+            {
+              "page": 33,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_033.png"
+            },
+            {
+              "page": 34,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_034.png"
+            },
+            {
+              "page": 35,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_035.png"
+            },
+            {
+              "page": 36,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_036.png"
+            },
+            {
+              "page": 37,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_037.png"
+            },
+            {
+              "page": 38,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_038.png"
+            },
+            {
+              "page": 39,
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_039.png"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "document"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "search_primary_page",
+      "action": "search",
+      "params": {
+        "query": "agentsbasedonclaudev1 claudev2 claude machinelearningexperimentationautonomously",
+        "top_k": 3
+      },
+      "result": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "agentsbasedonclaudev1 claudev2 claude machinelearningexperimentationautonomously",
+          "results": [
+            {
+              "page": 1,
+              "score": 4.0,
+              "snippet": "MLAgentBench: Evaluating Language Agents on\nMachine Learning Experimentation\nQianHuang1 JianVora1 PercyLiang1 JureLeskovec1\nAbstract theexperiment(e.g.,validationaccuracy),theyrevisetheir\nmethod to improve performance on the task. This iter"
+            },
+            {
+              "page": 6,
+              "score": 2.0,
+              "snippet": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\nRecentResearch. WeincludeCLRS(Velivckovi’cetal., Checkdouble-checkswhetherastatementinResearch\n2022)andBabyLM(Warstadtetal.,2023)astwodatasets Plan and Statushasbeenconfi"
+            },
+            {
+              "page": 2,
+              "score": 1.0,
+              "snippet": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\nStarter Files\nEvaluator\nTask Description workspace/\n├── images/\nTask: ├── data_description.txt\nImprove the performance of the Test Accuracy\n├── evaluation_details.txt\ncur"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "contains_pages",
+          "passed": true,
+          "expected": [
+            1
+          ],
+          "actual": [
+            1,
+            6,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "search_primary_page_cached",
+      "action": "search",
+      "params": {
+        "query": "agentsbasedonclaudev1 claudev2 claude machinelearningexperimentationautonomously",
+        "top_k": 3
+      },
+      "result": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "agentsbasedonclaudev1 claudev2 claude machinelearningexperimentationautonomously",
+          "results": [
+            {
+              "page": 1,
+              "score": 4.0,
+              "snippet": "MLAgentBench: Evaluating Language Agents on\nMachine Learning Experimentation\nQianHuang1 JianVora1 PercyLiang1 JureLeskovec1\nAbstract theexperiment(e.g.,validationaccuracy),theyrevisetheir\nmethod to improve performance on the task. This iter"
+            },
+            {
+              "page": 6,
+              "score": 2.0,
+              "snippet": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\nRecentResearch. WeincludeCLRS(Velivckovi’cetal., Checkdouble-checkswhetherastatementinResearch\n2022)andBabyLM(Warstadtetal.,2023)astwodatasets Plan and Statushasbeenconfi"
+            },
+            {
+              "page": 2,
+              "score": 1.0,
+              "snippet": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\nStarter Files\nEvaluator\nTask Description workspace/\n├── images/\nTask: ├── data_description.txt\nImprove the performance of the Test Accuracy\n├── evaluation_details.txt\ncur"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": true
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "contains_pages",
+          "passed": true,
+          "expected": [
+            1
+          ],
+          "actual": [
+            1,
+            6,
+            2
+          ]
+        },
+        {
+          "name": "cache_hit",
+          "passed": true,
+          "expected": true,
+          "actual": true
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "read_primary_page",
+      "action": "read_page",
+      "params": {
+        "page_ids": [
+          1
+        ]
+      },
+      "result": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 1,
+              "text": "MLAgentBench: Evaluating Language Agents on\nMachine Learning Experimentation\nQianHuang1 JianVora1 PercyLiang1 JureLeskovec1\nAbstract theexperiment(e.g.,validationaccuracy),theyrevisetheir\nmethod to improve performance on the task. This itera-\nAcentralaspectofmachinelearningresearchis\ntiveprocessischallenging,asitrequirestheresearcherto\nexperimentation, the process of designing and\npossessextensivepriorknowledgeaboutpotentialmethods,\nrunningexperiments, analyzingtheresults, and\ntoproducefunctionalcode, andtointerpretexperimental\niteratingtowardssomepositiveoutcome(e.g.,im-\nresultsforfutureimprovements.\nprovingaccuracy). Couldagentsdrivenbypow-\nerful language models perform machine learn- Thecomplexityandexpertiserequiredforsuccessfulma-\ningexperimentationeffectively? Toanswerthis chinelearningexperimentationposesignificantbarriersto\nquestion,weintroduceMLAgentBench,asuite entry. Inlightofthesechallenges,therehasbeeninterestin\nof 13 tasks ranging from improving model per- thepossibilityofautomatingaspectsofthemachinelearn-\nformanceonCIFAR-10torecentresearchprob- ingworkflow,suchasNeuralArchitectureSearch(Elsken\nlemslikeBabyLM.Foreachtask, anagentcan etal.,2019)andAutoML(Heetal.,2021). Theemergence\nperformactionslikereading/writingfiles,execut- ofadvancedlanguagemodels, withtheirabilitytounder-\ning code, and inspecting outputs. We then con- standandgeneratehuman-liketext,presentsanpromising\nstructanagentthatcanperformMLexperimenta- opportunitytofurtherautomateMLexperimentationend\ntionbasedonReActframework. Webenchmark to end. Can we develop an agent capable of conducting\nagentsbasedonClaudev1.0,Claudev2.1,Claude machinelearningexperimentationautonomously?\nv3Opus,GPT-4,GPT-4-turbo,Gemini-Pro,and\nInthispaper,weproposeMLAgentBench,thefirstbench-\nMixtralandfindthataClaudev3Opusagentis\nmark for evaluating agents capable of machine learning\nthe best in terms of success rate. It can build\nexperimentation (Figure 1). MLAgentBench is a general\ncompellingMLmodelsovermanytasksinMLA-\nframeworkforspecifyingexperimentationtaskswithclear\ngentBenchwith37.5%averagesuccessrate. Our\ngoals and automatically evaluates agents on these tasks.\nagentsalsodisplayhighlyinterpretableplansand\nConcretely, each task is specified with a task description,\nactions. However,thesuccessratesvaryconsid-\na set of starter files (including starter code and data, e.g.,\nerably;theyspanfrom100%onwell-established\nKaggle data package), and an evaluator that can assign a\nolderdatasetstoaslowas0%onrecentKaggle\nperformancemetricscoretoafinalsubmission(suchastest\nchallengescreatedpotentiallyaftertheunderlying\nset accuracy of the submitted test set prediction). Given\nLMwastrained. Finally,weidentifyseveralkey\nthese, an agent can perform actions like reading/writing\nchallengesforLM-basedagentssuchaslong-term\nfilesandexecutingPythoncodeinaworkspace. Duringthe\nplanningandreducinghallucination. 2\nagent’sinteractionwiththeenvironment,wecollectitsin-\nteractiontraceforevaluation,whichistheagentactionsand\n1.Introduction intermediatesnapshotsoftheworkspace(i.e.,thesetoffiles\nanddirectoriesintheworkingdirectory). Weevaluatethe\nMuchoftheprogressinmachinelearningisdrivenbyef- agentalongtwoaspects: 1)competenceinaccomplishing\nfectiveexperimentation: Givenatask(e.g.,imageclassifica- thetask,i.e.,thefractionoftimethattheagentwasableto\ntion),aresearcherdevelopsamethod(e.g.,choiceofmodel improvetheperformancemetric(e.g.,testaccuracy)byat\narchitecture and learning algorithm), runs an experiment, least10%overthebaselineinthestartercode;2)efficiency,\nand then evaluates the results. Based on the outcome of theamountoftimeandnumberoftokensLMqueriesspent\nbytheagent. Whileourbenchmarkisframedintermsof\n1StanfordUniversity. Correspondenceto: QianHuang<qh-\nautomationforsimplicity,westresstheimportanceofinter-\nwang@cs.stanford.edu>.\npretabilityforbuildingtrustandalsoprovidingahookfor\n2Our code is released at https://github.com/snap- humanaugmentation: Indeed,aresearchercouldintervene\nstanford/MLAgentBench/.\n1\n4202\nrpA\n41\n]GL.sc[\n2v20330.0132:viXra",
+              "summary": "MLAgentBench: Evaluating Language Agents on",
+              "image_path": "artifacts/docenv/2310.03302v2/page_001.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "MLAgentBench: Evaluating Language Agents on"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "name": "crop_evidence_region",
+      "action": "crop",
+      "params": {
+        "page_id": 9,
+        "bbox": [
+          59.8275,
+          79.84875,
+          285.0525,
+          355.12268359375
+        ]
+      },
+      "result": {
+        "action": "crop",
+        "status": "success",
+        "result": {
+          "page": 9,
+          "bbox": [
+            59.8275,
+            79.84875,
+            285.0525,
+            355.12268359375
+          ],
+          "text": "| List Files\ndir_path: .\nInspect Script Lines\nscript_name: train.py,\nstart_line_number: 1,\nend_line_number: 100\nEdit Script\ns c r i p t _ n a m e : t ra i n . p y ,\ne d i t _ in s t r u c t i o n : C h a n g e the...,\ns a v e _ n a m e : t r a i n _ 1 0 e p .. .\nExecute Script\nscript_name: train_10ep...\nEdit Script\nscript_name: train_10ep...,\nedit_instruction: Change the...,\nsave_name: train_10ep...\nExecute Script\nscript_name: train_10ep...\nFinal Answer\nfinal_answer: To improve... | Understand File\nfile_name: train.py,\nthings_to_look_for: model arch... | . |\n| --- | --- | --- |\n|  | Execute Script\nscript_name: train.py |  |\n|  | Understand File\nfile_name: train.py,\nthings_to_look_for: areas for ... |  |\n|  | List Files\ndir_path: . |  |\n|  | List Files\ndir_path: . |  |\n|  | List Files\ndir_path: . |  |\n|  | Understand File\nfile_name: train.py,\nthings_to_look_for: model arch... |  |\n|  | Execute Script\nscript_name: train.py |  |\n|  | Understand File\nfile_name: train.py,\nthings_to_look_for: data augme.. |  |\n|  | List Files\ndir_path: |  |",
+          "image_path": "artifacts/docenv/2310.03302v2/crops/page_009_124_166_593_739.png"
+        },
+        "provenance": {
+          "page": 9,
+          "bbox": [
+            59.8275,
+            79.84875,
+            285.0525,
+            355.12268359375
+          ],
+          "element_type": "region"
+        },
+        "confidence": 0.9,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "| List Files"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "name": "ocr_evidence_region",
+      "action": "ocr",
+      "params": {
+        "page_id": 9,
+        "bbox": [
+          59.8275,
+          79.84875,
+          285.0525,
+          355.12268359375
+        ]
+      },
+      "result": {
+        "action": "ocr",
+        "status": "success",
+        "result": {
+          "page": 9,
+          "bbox": [
+            59.8275,
+            79.84875,
+            285.0525,
+            355.12268359375
+          ],
+          "text": "| List Files\ndir_path: .\nInspect Script Lines\nscript_name: train.py,\nstart_line_number: 1,\nend_line_number: 100\nEdit Script\ns c r i p t _ n a m e : t ra i n . p y ,\ne d i t _ in s t r u c t i o n : C h a n g e the...,\ns a v e _ n a m e : t r a i n _ 1 0 e p .. .\nExecute Script\nscript_name: train_10ep...\nEdit Script\nscript_name: train_10ep...,\nedit_instruction: Change the...,\nsave_name: train_10ep...\nExecute Script\nscript_name: train_10ep...\nFinal Answer\nfinal_answer: To improve... | Understand File\nfile_name: train.py,\nthings_to_look_for: model arch... | . |\n| --- | --- | --- |\n|  | Execute Script\nscript_name: train.py |  |\n|  | Understand File\nfile_name: train.py,\nthings_to_look_for: areas for ... |  |\n|  | List Files\ndir_path: . |  |\n|  | List Files\ndir_path: . |  |\n|  | List Files\ndir_path: . |  |\n|  | Understand File\nfile_name: train.py,\nthings_to_look_for: model arch... |  |\n|  | Execute Script\nscript_name: train.py |  |\n|  | Understand File\nfile_name: train.py,\nthings_to_look_for: data augme.. |  |\n|  | List Files\ndir_path: |  |"
+        },
+        "provenance": {
+          "page": 9,
+          "bbox": [
+            59.8275,
+            79.84875,
+            285.0525,
+            355.12268359375
+          ],
+          "element_type": "ocr_text"
+        },
+        "confidence": 0.88,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "| List Files"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "name": "parse_table_primary_table",
+      "action": "parse_table",
+      "params": {
+        "page_id": 9,
+        "bbox": [
+          59.8275,
+          79.84875,
+          285.0525,
+          355.12268359375
+        ]
+      },
+      "result": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {
+          "page": 9,
+          "bbox": [
+            59.8275,
+            79.84875,
+            285.0525,
+            355.12268359375
+          ],
+          "rows": [
+            [
+              "List Files\ndir_path: .\nInspect Script Lines\nscript_name: train.py,\nstart_line_number: 1,\nend_line_number: 100\nEdit Script\ns c r i p t _ n a m e : t ra i n . p y ,\ne d i t _ in s t r u c t i o n : C h a n g e the...,\ns a v e _ n a m e : t r a i n _ 1 0 e p .. .\nExecute Script\nscript_name: train_10ep...\nEdit Script\nscript_name: train_10ep...,\nedit_instruction: Change the...,\nsave_name: train_10ep...\nExecute Script\nscript_name: train_10ep...\nFinal Answer\nfinal_answer: To improve...",
+              "Understand File\nfile_name: train.py,\nthings_to_look_for: model arch...",
+              "."
+            ],
+            [
+              "",
+              "Execute Script\nscript_name: train.py",
+              ""
+            ],
+            [
+              "",
+              "Understand File\nfile_name: train.py,\nthings_to_look_for: areas for ...",
+              ""
+            ],
+            [
+              "",
+              "List Files\ndir_path: .",
+              ""
+            ],
+            [
+              "",
+              "List Files\ndir_path: .",
+              ""
+            ],
+            [
+              "",
+              "List Files\ndir_path: .",
+              ""
+            ],
+            [
+              "",
+              "Understand File\nfile_name: train.py,\nthings_to_look_for: model arch...",
+              ""
+            ],
+            [
+              "",
+              "Execute Script\nscript_name: train.py",
+              ""
+            ],
+            [
+              "",
+              "Understand File\nfile_name: train.py,\nthings_to_look_for: data augme..",
+              ""
+            ],
+            [
+              "",
+              "List Files\ndir_path:",
+              ""
+            ]
+          ],
+          "markdown": "| List Files\ndir_path: .\nInspect Script Lines\nscript_name: train.py,\nstart_line_number: 1,\nend_line_number: 100\nEdit Script\ns c r i p t _ n a m e : t ra i n . p y ,\ne d i t _ in s t r u c t i o n : C h a n g e the...,\ns a v e _ n a m e : t r a i n _ 1 0 e p .. .\nExecute Script\nscript_name: train_10ep...\nEdit Script\nscript_name: train_10ep...,\nedit_instruction: Change the...,\nsave_name: train_10ep...\nExecute Script\nscript_name: train_10ep...\nFinal Answer\nfinal_answer: To improve... | Understand File\nfile_name: train.py,\nthings_to_look_for: model arch... | . |\n| --- | --- | --- |\n|  | Execute Script\nscript_name: train.py |  |\n|  | Understand File\nfile_name: train.py,\nthings_to_look_for: areas for ... |  |\n|  | List Files\ndir_path: . |  |\n|  | List Files\ndir_path: . |  |\n|  | List Files\ndir_path: . |  |\n|  | Understand File\nfile_name: train.py,\nthings_to_look_for: model arch... |  |\n|  | Execute Script\nscript_name: train.py |  |\n|  | Understand File\nfile_name: train.py,\nthings_to_look_for: data augme.. |  |\n|  | List Files\ndir_path: |  |"
+        },
+        "provenance": {
+          "page": 9,
+          "bbox": [
+            59.8275,
+            79.84875,
+            285.0525,
+            355.12268359375
+          ],
+          "element_type": "table"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "table_rows_min",
+          "passed": true,
+          "expected": 2,
+          "actual": 10
+        },
+        {
+          "name": "table_text_cells_min",
+          "passed": true,
+          "expected": 2,
+          "actual": 12
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "name": "compute_sanity_check",
+      "action": "compute",
+      "params": {
+        "expr": "(a-b)/b*100",
+        "vars": {
+          "a": 3.2,
+          "b": 2.8
+        }
+      },
+      "result": {
+        "action": "compute",
+        "status": "success",
+        "result": {
+          "expr": "(a-b)/b*100",
+          "vars": {
+            "a": 3.2,
+            "b": 2.8
+          },
+          "value": 14.285714285714299
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "computed_value"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "value_equals",
+          "passed": true,
+          "expected": 14.2857142857,
+          "actual": 14.285714285714299
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "name": "verify_supported_claim",
+      "action": "verify",
+      "params": {
+        "claim": "list files dir path inspect script lines script name train py start",
+        "evidence_refs": [
+          {
+            "page": 9,
+            "bbox": [
+              59.8275,
+              79.84875,
+              285.0525,
+              355.12268359375
+            ]
+          }
+        ]
+      },
+      "result": {
+        "action": "verify",
+        "status": "success",
+        "result": {
+          "claim": "list files dir path inspect script lines script name train py start",
+          "evidence_count": 1,
+          "label": "SUPPORTED",
+          "sufficiency": "SUFFICIENT",
+          "confidence": 0.99,
+          "failure_taxonomy": null
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "verification"
+        },
+        "confidence": 0.99,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "support_label",
+          "passed": true,
+          "expected": "SUPPORTED",
+          "actual": "SUPPORTED"
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "name": "detect_layout_primary_page",
+      "action": "detect_layout",
+      "params": {
+        "page_id": 1
+      },
+      "result": {
+        "action": "detect_layout",
+        "status": "success",
+        "result": {
+          "page": 1,
+          "elements": [
+            {
+              "element_type": "word",
+              "bbox": [
+                147.039,
+                89.57515579999995,
+                249.8438692,
+                103.92135580000001
+              ],
+              "text": "MLAgentBench:"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                254.2911912,
+                89.57515579999995,
+                321.1157908,
+                103.92135580000001
+              ],
+              "text": "Evaluating"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                324.7023408,
+                89.57515579999995,
+                385.2863434000001,
+                103.92135580000001
+              ],
+              "text": "Language"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                388.87289340000007,
+                89.57515579999995,
+                431.1081062,
+                103.92135580000001
+              ],
+              "text": "Agents"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                434.6946562,
+                89.57515579999995,
+                449.8442434,
+                103.92135580000001
+              ],
+              "text": "on"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                188.16199999999998,
+                107.50815579999994,
+                241.5585564,
+                121.85435580000001
+              ],
+              "text": "Machine"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                245.14510639999997,
+                107.50815579999994,
+                301.52567239999996,
+                121.85435580000001
+              ],
+              "text": "Learning"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                305.1122224,
+                107.50815579999994,
+                408.7204788000001,
+                121.85435580000001
+              ],
+              "text": "Experimentation"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                174.859,
+                159.49954079999998,
+                232.3299,
+                170.66518339999993
+              ],
+              "text": "QianHuang1"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                238.972,
+                159.49954079999998,
+                285.4649,
+                170.66518339999993
+              ],
+              "text": "JianVora1"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                292.106,
+                159.49954079999998,
+                348.6209,
+                170.66518339999993
+              ],
+              "text": "PercyLiang1"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                355.26300000000003,
+                159.49954079999998,
+                420.88390000000004,
+                170.66518339999993
+              ],
+              "text": "JureLeskovec1"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                150.19800000000004,
+                193.71243679999998,
+                194.68329920000005,
+                205.66763679999997
+              ],
+              "text": "Abstract"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                195.35832159999995,
+                541.6057424106001,
+                205.32092160000002
+              ],
+              "text": "theexperiment(e.g.,validationaccuracy),theyrevisetheir"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                207.3133216,
+                337.925556,
+                217.27592160000006
+              ],
+              "text": "method"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                341.502527904,
+                207.3133216,
+                349.40844876,
+                217.27592160000006
+              ],
+              "text": "to"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                352.975258812,
+                207.3133216,
+                386.55001782,
+                217.27592160000006
+              ],
+              "text": "improve"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                390.116827872,
+                207.3133216,
+                441.464666028,
+                217.27592160000006
+              ],
+              "text": "performance"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                445.04163793200007,
+                207.3133216,
+                455.203489932,
+                217.27592160000006
+              ],
+              "text": "on"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                458.7804618360001,
+                207.3133216,
+                471.19824498,
+                217.27592160000006
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                474.7650550320001,
+                207.3133216,
+                493.6762616040001,
+                217.27592160000006
+              ],
+              "text": "task."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                500.0070954000001,
+                207.3133216,
+                518.0748682560001,
+                217.27592160000006
+              ],
+              "text": "This"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                521.6518401600001,
+                207.3133216,
+                543.0933478800001,
+                217.27592160000006
+              ],
+              "text": "itera-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.007,
+                211.8223216,
+                269.51720090400005,
+                221.78492160000008
+              ],
+              "text": "Acentralaspectofmachinelearningresearchis"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                219.2693216,
+                541.4369660040002,
+                229.23192160000008
+              ],
+              "text": "tiveprocessischallenging,asitrequirestheresearcherto"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                223.77732159999994,
+                143.795911368,
+                233.7399216
+              ],
+              "text": "experimentation,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                148.12486032,
+                223.77732159999994,
+                160.542643464,
+                233.7399216
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                164.50576574400003,
+                223.77732159999994,
+                194.98115989200005,
+                233.7399216
+              ],
+              "text": "process"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                198.93412032000003,
+                223.77732159999994,
+                207.39894303600008,
+                233.7399216
+              ],
+              "text": "of"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                211.36206531600004,
+                223.77732159999994,
+                250.88150774400006,
+                233.7399216
+              ],
+              "text": "designing"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                254.84463002400008,
+                223.77732159999994,
+                269.51834431200007,
+                233.7399216
+              ],
+              "text": "and"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                231.22432159999994,
+                542.6888663200001,
+                241.1869216
+              ],
+              "text": "possessextensivepriorknowledgeaboutpotentialmethods,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                235.73232159999998,
+                161.955140892,
+                245.69492160000004
+              ],
+              "text": "runningexperiments,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                164.98337278800003,
+                235.73232159999998,
+                251.81639812800012,
+                245.69492160000004
+              ],
+              "text": "analyzingtheresults,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                254.84463002400008,
+                235.73232159999998,
+                269.51834431200007,
+                245.69492160000004
+              ],
+              "text": "and"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                243.17932159999998,
+                419.758950156,
+                253.14192160000005
+              ],
+              "text": "toproducefunctionalcode,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                422.77702020000004,
+                243.17932159999998,
+                541.4369660040002,
+                253.14192160000005
+              ],
+              "text": "andtointerpretexperimental"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                247.68732160000002,
+                271.16994414,
+                257.6499216000001
+              ],
+              "text": "iteratingtowardssomepositiveoutcome(e.g.,im-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                255.13432160000002,
+                435.52914820000007,
+                265.0969216000001
+              ],
+              "text": "resultsforfutureimprovements."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                259.6433215999999,
+                151.10924681339998,
+                269.6059216
+              ],
+              "text": "provingaccuracy)."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                154.19542119099998,
+                259.6433215999999,
+                271.1654908578,
+                269.6059216
+              ],
+              "text": "Couldagentsdrivenbypow-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                271.59832159999996,
+                94.551576576,
+                281.5609216
+              ],
+              "text": "erful"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                98.494375152,
+                271.59832159999996,
+                135.178660872,
+                281.5609216
+              ],
+              "text": "language"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                139.121459448,
+                271.59832159999996,
+                168.47904987600003,
+                281.5609216
+              ],
+              "text": "models"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                172.421848452,
+                271.59832159999996,
+                205.15317374400004,
+                281.5609216
+              ],
+              "text": "perform"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                209.09597232000004,
+                271.59832159999996,
+                243.52432689600008,
+                281.5609216
+              ],
+              "text": "machine"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                247.46712547200008,
+                271.59832159999996,
+                271.16456433600007,
+                281.5609216
+              ],
+              "text": "learn-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.131,
+                273.0673216,
+                543.0892034400001,
+                283.02992159999997
+              ],
+              "text": "Thecomplexityandexpertiserequiredforsuccessfulma-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                283.5533216,
+                206.80955562000008,
+                293.51592159999996
+              ],
+              "text": "ingexperimentationeffectively?"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                210.30523270800006,
+                283.5533216,
+                269.5183443120001,
+                293.51592159999996
+              ],
+              "text": "Toanswerthis"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                285.02232160000005,
+                541.4370855552,
+                294.9849216
+              ],
+              "text": "chinelearningexperimentationposesignificantbarriersto"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                295.50832160000004,
+                269.518344312,
+                305.4709216
+              ],
+              "text": "question,weintroduceMLAgentBench,asuite"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                296.9773216,
+                329.4562800018,
+                306.9399216
+              ],
+              "text": "entry."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                332.5438690686,
+                296.9773216,
+                541.4379523014002,
+                306.9399216
+              ],
+              "text": "Inlightofthesechallenges,therehasbeeninterestin"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                307.4633216,
+                83.830822716,
+                317.4259216
+              ],
+              "text": "of"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                87.044,
+                307.2441444,
+                97.0066,
+                317.2067444
+              ],
+              "text": "13"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                100.22,
+                307.4633216,
+                120.543704,
+                317.4259216
+              ],
+              "text": "tasks"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                123.754849232,
+                307.4633216,
+                154.799307092,
+                317.4259216
+              ],
+              "text": "ranging"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                158.010452324,
+                307.4633216,
+                177.765092612,
+                317.4259216
+              ],
+              "text": "from"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                180.98639969599998,
+                307.4633216,
+                223.17840920000003,
+                317.4259216
+              ],
+              "text": "improving"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                226.389554432,
+                307.4633216,
+                251.79418443200004,
+                317.4259216
+              ],
+              "text": "model"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                255.00532966400002,
+                307.4633216,
+                271.17283619600005,
+                317.4259216
+              ],
+              "text": "per-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                308.9323216,
+                543.0908572300002,
+                318.8949216
+              ],
+              "text": "thepossibilityofautomatingaspectsofthemachinelearn-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                319.4183216,
+                271.16456433600007,
+                329.38092159999997
+              ],
+              "text": "formanceonCIFAR-10torecentresearchprob-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                320.88832160000004,
+                541.4426944990001,
+                330.8509216
+              ],
+              "text": "ingworkflow,suchasNeuralArchitectureSearch(Elsken"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                331.37432160000003,
+                214.97968462800003,
+                341.3369216
+              ],
+              "text": "lemslikeBabyLM.Foreachtask,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                217.98759282000003,
+                331.37432160000003,
+                269.51834431200007,
+                341.3369216
+              ],
+              "text": "anagentcan"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                332.84332159999997,
+                477.91599627220006,
+                342.8059216
+              ],
+              "text": "etal.,2019)andAutoML(Heetal.,2021)."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                481.0160983646,
+                332.84332159999997,
+                541.4384703566001,
+                342.8059216
+              ],
+              "text": "Theemergence"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                343.32932159999996,
+                271.16552074560013,
+                353.29192159999997
+              ],
+              "text": "performactionslikereading/writingfiles,execut-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                344.7983216,
+                431.41459440000006,
+                354.76092159999996
+              ],
+              "text": "ofadvancedlanguagemodels,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                434.46315000000004,
+                344.7983216,
+                543.0933478800001,
+                354.76092159999996
+              ],
+              "text": "withtheirabilitytounder-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                355.2843216,
+                88.352846856,
+                365.2469216
+              ],
+              "text": "ing"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                91.411564308,
+                355.2843216,
+                113.137603884,
+                365.2469216
+              ],
+              "text": "code,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                116.33858726400001,
+                355.2843216,
+                131.012301552,
+                365.2469216
+              ],
+              "text": "and"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                134.081180856,
+                355.2843216,
+                175.85655442800004,
+                365.2469216
+              ],
+              "text": "inspecting"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                178.91527188000003,
+                355.2843216,
+                211.38238902,
+                365.2469216
+              ],
+              "text": "outputs."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                216.17878316400004,
+                355.2843216,
+                229.49080928400005,
+                365.2469216
+              ],
+              "text": "We"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                232.54952673600008,
+                355.2843216,
+                250.04823588000008,
+                365.2469216
+              ],
+              "text": "then"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                253.10695333200005,
+                355.2843216,
+                271.16456433600007,
+                365.2469216
+              ],
+              "text": "con-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                356.75332160000005,
+                541.4370855552,
+                366.7159216
+              ],
+              "text": "standandgeneratehuman-liketext,presentsanpromising"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                367.23932160000004,
+                271.1652816432001,
+                377.2019216
+              ],
+              "text": "structanagentthatcanperformMLexperimenta-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                368.7083216,
+                541.436966004,
+                378.6709216
+              ],
+              "text": "opportunitytofurtherautomateMLexperimentationend"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                379.19432159999997,
+                206.20207612240006,
+                389.1569216
+              ],
+              "text": "tionbasedonReActframework."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                209.28721438960002,
+                379.19432159999997,
+                269.75995728720005,
+                389.1569216
+              ],
+              "text": "Webenchmark"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                380.6633216,
+                315.34592085599996,
+                390.62592159999997
+              ],
+              "text": "to"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                318.709493868,
+                380.6633216,
+                335.923671156,
+                390.62592159999997
+              ],
+              "text": "end."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                341.63463198,
+                380.6633216,
+                358.005375552,
+                390.62592159999997
+              ],
+              "text": "Can"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                361.368948564,
+                380.6633216,
+                373.217667996,
+                390.62592159999997
+              ],
+              "text": "we"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                376.581241008,
+                380.6633216,
+                408.357352212,
+                390.62592159999997
+              ],
+              "text": "develop"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                411.72092522400004,
+                380.6633216,
+                421.31371351200005,
+                390.62592159999997
+              ],
+              "text": "an"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                424.67728652400007,
+                380.6633216,
+                446.687857956,
+                390.62592159999997
+              ],
+              "text": "agent"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                450.0514309680001,
+                380.6633216,
+                481.08572697600005,
+                390.62592159999997
+              ],
+              "text": "capable"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                484.44929998800006,
+                380.6633216,
+                492.9141227040001,
+                390.62592159999997
+              ],
+              "text": "of"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                496.27769571600004,
+                380.6633216,
+                541.436966004,
+                390.62592159999997
+              ],
+              "text": "conducting"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                391.1493216,
+                269.51017498000004,
+                401.11192159999996
+              ],
+              "text": "agentsbasedonClaudev1.0,Claudev2.1,Claude"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                392.61932160000003,
+                506.79162600000006,
+                402.5819216
+              ],
+              "text": "machinelearningexperimentationautonomously?"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.117,
+                403.1053216,
+                269.51004072800004,
+                413.0679216
+              ],
+              "text": "v3Opus,GPT-4,GPT-4-turbo,Gemini-Pro,and"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                410.55132160000005,
+                543.0892233636,
+                420.5139216
+              ],
+              "text": "Inthispaper,weproposeMLAgentBench,thefirstbench-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                415.06032159999995,
+                269.51834431200007,
+                425.02292159999996
+              ],
+              "text": "MixtralandfindthataClaudev3Opusagentis"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                422.5063216,
+                328.32260585999995,
+                432.4689216
+              ],
+              "text": "mark"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                332.072329248,
+                422.5063216,
+                343.92104868,
+                432.4689216
+              ],
+              "text": "for"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                347.670772068,
+                422.5063216,
+                389.507116752,
+                432.4689216
+              ],
+              "text": "evaluating"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                393.25684014,
+                422.5063216,
+                419.220372,
+                432.4689216
+              ],
+              "text": "agents"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                422.97009538800006,
+                422.5063216,
+                454.0043913960001,
+                432.4689216
+              ],
+              "text": "capable"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                457.74395293200007,
+                422.5063216,
+                466.2087756480001,
+                432.4689216
+              ],
+              "text": "of"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                469.9584990360001,
+                422.5063216,
+                504.3868536120001,
+                432.4689216
+              ],
+              "text": "machine"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                508.1365770000001,
+                422.5063216,
+                541.4369660040002,
+                432.4689216
+              ],
+              "text": "learning"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                427.0153216,
+                87.783783144,
+                436.9779216
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                91.563992088,
+                427.0153216,
+                107.93473566,
+                436.9779216
+              ],
+              "text": "best"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                111.704782752,
+                427.0153216,
+                119.61070360800001,
+                436.9779216
+              ],
+              "text": "in"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                123.390912552,
+                427.0153216,
+                145.970547696,
+                436.9779216
+              ],
+              "text": "terms"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                149.740594788,
+                427.0153216,
+                158.20541750400002,
+                436.9779216
+              ],
+              "text": "of"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                161.985626448,
+                427.0153216,
+                192.46102059600005,
+                436.9779216
+              ],
+              "text": "success"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                196.24122954000006,
+                427.0153216,
+                214.01430868800003,
+                436.9779216
+              ],
+              "text": "rate."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                220.95485360400005,
+                427.0153216,
+                227.16374517600002,
+                436.9779216
+              ],
+              "text": "It"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                230.94395412000006,
+                427.0153216,
+                245.04860469600007,
+                436.9779216
+              ],
+              "text": "can"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                248.81865178800007,
+                427.0153216,
+                269.51834431200007,
+                436.9779216
+              ],
+              "text": "build"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                434.4623216,
+                373.329448368,
+                444.4249216
+              ],
+              "text": "experimentation"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                376.37800396800003,
+                434.4623216,
+                406.294496256,
+                444.4249216
+              ],
+              "text": "(Figure"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                409.33289000400003,
+                434.4623216,
+                420.33817572000004,
+                444.4249216
+              ],
+              "text": "1)."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                425.07359875200007,
+                434.4623216,
+                491.1154749000001,
+                444.4249216
+              ],
+              "text": "MLAgentBench"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                494.1640305000001,
+                434.4623216,
+                500.94198578400005,
+                444.4249216
+              ],
+              "text": "is"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                503.98037953200014,
+                434.4623216,
+                508.4922418200001,
+                444.4249216
+              ],
+              "text": "a"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                511.5306355680001,
+                434.4623216,
+                541.4369660040002,
+                444.4249216
+              ],
+              "text": "general"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                438.97032160000003,
+                271.1680014330001,
+                448.9329216
+              ],
+              "text": "compellingMLmodelsovermanytasksinMLA-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                446.41732160000004,
+                541.6103152440002,
+                456.3799216
+              ],
+              "text": "frameworkforspecifyingexperimentationtaskswithclear"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                450.92532159999996,
+                251.1574319136001,
+                460.88792159999997
+              ],
+              "text": "gentBenchwith37.5%averagesuccessrate."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                254.2533297888001,
+                450.92532159999996,
+                269.6832054168001,
+                460.88792159999997
+              ],
+              "text": "Our"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                458.37232159999996,
+                328.89166957199996,
+                468.3349216
+              ],
+              "text": "goals"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                332.763335184,
+                458.37232159999996,
+                347.43704947199996,
+                468.3349216
+              ],
+              "text": "and"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                351.30871508399997,
+                458.37232159999996,
+                406.629837372,
+                468.3349216
+              ],
+              "text": "automatically"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                410.501502984,
+                458.37232159999996,
+                447.815823528,
+                468.3349216
+              ],
+              "text": "evaluates"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                451.68748914,
+                458.37232159999996,
+                477.65102100000007,
+                468.3349216
+              ],
+              "text": "agents"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                481.5328484640001,
+                458.37232159999996,
+                491.6947004640001,
+                468.3349216
+              ],
+              "text": "on"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                495.5663660760001,
+                458.37232159999996,
+                516.4489719360001,
+                468.3349216
+              ],
+              "text": "these"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                520.3206375480001,
+                458.37232159999996,
+                543.1848045480002,
+                468.3349216
+              ],
+              "text": "tasks."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                462.8803216,
+                269.5104539328001,
+                472.84292159999995
+              ],
+              "text": "agentsalsodisplayhighlyinterpretableplansand"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                470.3273216,
+                353.920311048,
+                480.28992159999996
+              ],
+              "text": "Concretely,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                357.060323316,
+                470.3273216,
+                375.67683617999995,
+                480.28992159999996
+              ],
+              "text": "each"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                378.69490622399996,
+                470.3273216,
+                395.065649796,
+                480.28992159999996
+              ],
+              "text": "task"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                398.073557988,
+                470.3273216,
+                404.851513272,
+                480.28992159999996
+              ],
+              "text": "is"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                407.859421464,
+                470.3273216,
+                443.98480532400004,
+                480.28992159999996
+              ],
+              "text": "specified"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                447.00287536800005,
+                470.3273216,
+                465.070648224,
+                480.28992159999996
+              ],
+              "text": "with"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                468.0785564160001,
+                470.3273216,
+                472.59041870400006,
+                480.28992159999996
+              ],
+              "text": "a"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                475.6084887480001,
+                470.3273216,
+                491.97923232000005,
+                480.28992159999996
+              ],
+              "text": "task"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                494.9871405120001,
+                470.3273216,
+                542.6868738000003,
+                480.28992159999996
+              ],
+              "text": "description,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                474.8363216,
+                106.69498971600001,
+                484.79892159999997
+              ],
+              "text": "actions."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                109.92645865200001,
+                474.8363216,
+                271.16456433600007,
+                484.79892159999997
+              ],
+              "text": "However,thesuccessratesvaryconsid-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                482.28232160000005,
+                311.951862288,
+                492.2449216
+              ],
+              "text": "a"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                315.030903444,
+                482.28232160000005,
+                326.320721016,
+                492.2449216
+              ],
+              "text": "set"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                329.399762172,
+                482.28232160000005,
+                337.86458488799997,
+                492.2449216
+              ],
+              "text": "of"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                340.943626044,
+                482.28232160000005,
+                366.33809419199997,
+                492.2449216
+              ],
+              "text": "starter"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                369.417135348,
+                482.28232160000005,
+                386.356942632,
+                492.2449216
+              ],
+              "text": "files"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                389.43598378800004,
+                482.28232160000005,
+                431.21135736,
+                492.2449216
+              ],
+              "text": "(including"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                434.2903985160001,
+                482.28232160000005,
+                459.6848666640001,
+                492.2449216
+              ],
+              "text": "starter"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                462.7639078200001,
+                482.28232160000005,
+                481.9494843960001,
+                492.2449216
+              ],
+              "text": "code"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                485.0183637000001,
+                482.28232160000005,
+                499.6920779880001,
+                492.2449216
+              ],
+              "text": "and"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                502.7711191440002,
+                482.28232160000005,
+                522.2412275760003,
+                492.2449216
+              ],
+              "text": "data,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                525.4726965120002,
+                482.28232160000005,
+                542.6868738000002,
+                492.2449216
+              ],
+              "text": "e.g.,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                486.79132159999995,
+                269.5108723620001,
+                496.75392159999996
+              ],
+              "text": "erably;theyspanfrom100%onwell-established"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                494.2373216,
+                336.78742857599997,
+                504.1999216
+              ],
+              "text": "Kaggle"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                339.846146028,
+                494.2373216,
+                356.77579146,
+                504.1999216
+              ],
+              "text": "data"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                359.834508912,
+                494.2373216,
+                399.04909578,
+                504.1999216
+              ],
+              "text": "package),"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                402.25007916000004,
+                494.2373216,
+                416.923793448,
+                504.1999216
+              ],
+              "text": "and"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                419.9825109000001,
+                494.2373216,
+                429.57529918800003,
+                504.1999216
+              ],
+              "text": "an"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                432.63401664,
+                494.2373216,
+                469.948337184,
+                504.1999216
+              ],
+              "text": "evaluator"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                473.00705463600013,
+                494.2373216,
+                488.24983263600006,
+                504.1999216
+              ],
+              "text": "that"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                491.2983882360001,
+                494.2373216,
+                505.4030388120001,
+                504.1999216
+              ],
+              "text": "can"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                508.4617562640001,
+                494.2373216,
+                533.8663862640001,
+                504.1999216
+              ],
+              "text": "assign"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                536.9251037160001,
+                494.2373216,
+                541.436966004,
+                504.1999216
+              ],
+              "text": "a"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                498.7463216,
+                269.51834431200007,
+                508.7089216
+              ],
+              "text": "olderdatasetstoaslowas0%onrecentKaggle"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                506.1933216,
+                541.4395762052001,
+                516.1559216
+              ],
+              "text": "performancemetricscoretoafinalsubmission(suchastest"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                510.7013216,
+                269.5101749800001,
+                520.6639216
+              ],
+              "text": "challengescreatedpotentiallyaftertheunderlying"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                518.1483216,
+                318.729817572,
+                528.1109216
+              ],
+              "text": "set"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                322.052743176,
+                518.1483216,
+                358.005375552,
+                528.1109216
+              ],
+              "text": "accuracy"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                361.328301156,
+                518.1483216,
+                369.79312387199997,
+                528.1109216
+              ],
+              "text": "of"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                373.105887624,
+                518.1483216,
+                385.523670768,
+                528.1109216
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                388.846596372,
+                518.1483216,
+                428.935102512,
+                528.1109216
+              ],
+              "text": "submitted"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                432.258028116,
+                518.1483216,
+                446.37284054400004,
+                528.1109216
+              ],
+              "text": "test"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                449.68560429600007,
+                518.1483216,
+                460.975421868,
+                528.1109216
+              ],
+              "text": "set"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                464.29834747200005,
+                518.1483216,
+                511.42901704800005,
+                528.1109216
+              ],
+              "text": "prediction)."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                516.997711944,
+                518.1483216,
+                541.436966004,
+                528.1109216
+              ],
+              "text": "Given"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                522.6563216,
+                141.293704752,
+                532.6189216
+              ],
+              "text": "LMwastrained."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                144.3867333984,
+                522.6563216,
+                269.8652818944001,
+                532.6189216
+              ],
+              "text": "Finally,weidentifyseveralkey"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                530.1033216,
+                330.86306886,
+                540.0659216
+              ],
+              "text": "these,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                334.755058176,
+                530.1033216,
+                344.347846464,
+                540.0659216
+              ],
+              "text": "an"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                347.955303924,
+                530.1033216,
+                369.96587535599997,
+                540.0659216
+              ],
+              "text": "agent"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                373.573332816,
+                530.1033216,
+                387.677983392,
+                540.0659216
+              ],
+              "text": "can"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                391.285440852,
+                530.1033216,
+                424.0167661440001,
+                540.0659216
+              ],
+              "text": "perform"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                427.634385456,
+                530.1033216,
+                456.42291217200005,
+                540.0659216
+              ],
+              "text": "actions"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                460.0303696320001,
+                530.1033216,
+                475.17152911200003,
+                540.0659216
+              ],
+              "text": "like"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                478.7789865720001,
+                530.1033216,
+                541.436966004,
+                540.0659216
+              ],
+              "text": "reading/writing"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                534.6123216,
+                269.5199383280001,
+                544.5749216
+              ],
+              "text": "challengesforLM-basedagentssuchaslong-term"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                542.0583216,
+                496.0341499964001,
+                552.0209216000001
+              ],
+              "text": "filesandexecutingPythoncodeinaworkspace."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                499.1186108068001,
+                542.0583216,
+                541.4366272756001,
+                552.0209216000001
+              ],
+              "text": "Duringthe"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                75.366,
+                546.5673216,
+                221.46752900000004,
+                556.5299216
+              ],
+              "text": "planningandreducinghallucination."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                224.555,
+                545.2945407999999,
+                228.0419,
+                552.2683408
+              ],
+              "text": "2"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                554.0133216,
+                543.0978111248002,
+                563.9759216
+              ],
+              "text": "agent’sinteractionwiththeenvironment,wecollectitsin-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                565.9683216,
+                541.4381615160002,
+                575.9309216
+              ],
+              "text": "teractiontraceforevaluation,whichistheagentactionsand"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                55.44,
+                580.6564367999999,
+                132.2760704,
+                592.6116368
+              ],
+              "text": "1.Introduction"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                577.9243216,
+                541.438161516,
+                587.8869216
+              ],
+              "text": "intermediatesnapshotsoftheworkspace(i.e.,thesetoffiles"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                589.8793216,
+                474.22647687600005,
+                599.8419216
+              ],
+              "text": "anddirectoriesintheworkingdirectory)."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                477.34616544000005,
+                589.8793216,
+                541.4369660040002,
+                599.8419216
+              ],
+              "text": "Weevaluatethe"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                55.44,
+                601.6753216,
+                291.0933478800001,
+                611.6379216
+              ],
+              "text": "Muchoftheprogressinmachinelearningisdrivenbyef-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                601.8343216000001,
+                406.7660858896,
+                611.7969216
+              ],
+              "text": "agentalongtwoaspects:"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                409.87256404600004,
+                601.8343216000001,
+                541.4410506700002,
+                611.7969216
+              ],
+              "text": "1)competenceinaccomplishing"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                55.44,
+                613.6303216,
+                149.98826203200002,
+                623.5929216
+              ],
+              "text": "fectiveexperimentation:"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                153.01489991200003,
+                613.6303216,
+                291.09793067600015,
+                623.5929216
+              ],
+              "text": "Givenatask(e.g.,imageclassifica-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                613.7893216,
+                541.4424255088002,
+                623.7519216000001
+              ],
+              "text": "thetask,i.e.,thefractionoftimethattheagentwasableto"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                55.44,
+                625.5863216,
+                289.43632839760005,
+                635.5489216
+              ],
+              "text": "tion),aresearcherdevelopsamethod(e.g.,choiceofmodel"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                625.7443216,
+                541.4404329888002,
+                635.7069216
+              ],
+              "text": "improvetheperformancemetric(e.g.,testaccuracy)byat"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                55.44,
+                637.5413216,
+                103.40394144,
+                647.5039216
+              ],
+              "text": "architecture"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                106.493144448,
+                637.5413216,
+                121.166858736,
+                647.5039216
+              ],
+              "text": "and"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                124.245899892,
+                637.5413216,
+                157.54628889600005,
+                647.5039216
+              ],
+              "text": "learning"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                160.63549190400005,
+                637.5413216,
+                206.07929404800004,
+                647.5039216
+              ],
+              "text": "algorithm),"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                209.31076298400004,
+                637.5413216,
+                226.80947212800007,
+                647.5039216
+              ],
+              "text": "runs"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                229.89867513600007,
+                637.5413216,
+                239.49146342400007,
+                647.5039216
+              ],
+              "text": "an"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                242.58066643200007,
+                637.5413216,
+                290.6868738000001,
+                647.5039216
+              ],
+              "text": "experiment,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                637.6993216,
+                542.6885873672002,
+                647.6619216
+              ],
+              "text": "least10%overthebaselineinthestartercode;2)efficiency,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                55.44,
+                649.4963216,
+                70.11371428800001,
+                659.4589215999999
+              ],
+              "text": "and"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                73.436639892,
+                649.4963216,
+                90.935349036,
+                659.4589215999999
+              ],
+              "text": "then"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                94.25827464,
+                649.4963216,
+                131.572595184,
+                659.4589215999999
+              ],
+              "text": "evaluates"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                134.885358936,
+                649.4963216,
+                147.30314208000001,
+                659.4589215999999
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                150.62606768400002,
+                649.4963216,
+                179.69912625600003,
+                659.4589215999999
+              ],
+              "text": "results."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                185.27798300400002,
+                649.4963216,
+                210.11354929200007,
+                659.4589215999999
+              ],
+              "text": "Based"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                213.43647489600008,
+                649.4963216,
+                223.5983268960001,
+                659.4589215999999
+              ],
+              "text": "on"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                226.9212525000001,
+                649.4963216,
+                239.3390356440001,
+                659.4589215999999
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                242.66196124800013,
+                649.4963216,
+                277.6492176840001,
+                659.4589215999999
+              ],
+              "text": "outcome"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                280.97214328800015,
+                649.4963216,
+                289.43696600400017,
+                659.4589215999999
+              ],
+              "text": "of"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                649.6553216,
+                541.4379523014002,
+                659.6179216
+              ],
+              "text": "theamountoftimeandnumberoftokensLMqueriesspent"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                661.6103216,
+                360.108878916,
+                671.5729216
+              ],
+              "text": "bytheagent."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                364.031353788,
+                661.6103216,
+                541.4369660040002,
+                671.5729216
+              ],
+              "text": "Whileourbenchmarkisframedintermsof"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                67.562,
+                665.8025616,
+                145.111105344,
+                676.2347424
+              ],
+              "text": "1StanfordUniversity."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                148.98889401600002,
+                667.2683423999999,
+                220.682255808,
+                676.2347424
+              ],
+              "text": "Correspondenceto:"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                224.19421536,
+                667.0710816,
+                290.929255424,
+                676.2347424
+              ],
+              "text": "QianHuang<qh-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                673.5653216000001,
+                543.089910783,
+                683.5279216
+              ],
+              "text": "automationforsimplicity,westresstheimportanceofinter-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                55.118,
+                677.0340816,
+                146.3976,
+                686.1977424
+              ],
+              "text": "wang@cs.stanford.edu>."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                685.5203216,
+                541.6099565904,
+                695.4829216
+              ],
+              "text": "pretabilityforbuildingtrustandalsoprovidingahookfor"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                68.093,
+                696.6025616,
+                85.80160704,
+                707.0347424
+              ],
+              "text": "2Our"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                89.725124352,
+                698.0683424,
+                106.99225881599999,
+                707.0347424
+              ],
+              "text": "code"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                110.9066304,
+                698.0683424,
+                117.006830976,
+                707.0347424
+              ],
+              "text": "is"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                120.930348288,
+                698.0683424,
+                150.891753216,
+                707.0347424
+              ],
+              "text": "released"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                154.81527052799999,
+                698.0683424,
+                161.41848614399996,
+                707.0347424
+              ],
+              "text": "at"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                165.336,
+                697.4496608,
+                291.63256,
+                706.8374816
+              ],
+              "text": "https://github.com/snap-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.44,
+                697.2461818,
+                394.52583319720003,
+                707.4379216
+              ],
+              "text": "humanaugmentation:"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                397.61115079120003,
+                697.4753216,
+                541.4367138586001,
+                707.4379216
+              ],
+              "text": "Indeed,aresearchercouldintervene"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                55.44,
+                707.4126608,
+                176.0376,
+                716.9977424
+              ],
+              "text": "stanford/MLAgentBench/."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                295.95,
+                732.1563216,
+                300.93129999999996,
+                742.1189216
+              ],
+              "text": "1"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                16.34,
+                211.15999999999997,
+                36.34,
+                251.15999999999997
+              ],
+              "text": "4202"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                16.34,
+                256.15999999999997,
+                36.34,
+                287.26
+              ],
+              "text": "rpA"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                16.34,
+                292.26,
+                36.34,
+                312.26
+              ],
+              "text": "41"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                16.34,
+                322.26,
+                36.34,
+                383.9
+              ],
+              "text": "]GL.sc["
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                16.34,
+                393.9,
+                36.34,
+                560.0
+              ],
+              "text": "2v20330.0132:viXra"
+            }
+          ]
+        },
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "element_type": "layout"
+        },
+        "confidence": 0.8,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "bbox"
+        }
+      ]
+    }
+  ]
+}

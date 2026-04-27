@@ -1,0 +1,147 @@
+{
+  "pdf_path": "/home/kimilabra/DocWorldTrace/data/raw_pdfs/2503.00808v4.pdf",
+  "profile": {
+    "doc_id": "2503.00808v4",
+    "title": "2503.00808v4",
+    "page_count": 24,
+    "total_words": 7160,
+    "avg_words_per_page": 298.33,
+    "total_text_chars": 82862,
+    "table_pages": 8,
+    "has_text_layer": true
+  },
+  "checks": [
+    {
+      "name": "overview",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "cache_hit": false
+      }
+    },
+    {
+      "name": "read_page",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "cache_hit_second": true,
+        "page": 18,
+        "text_chars": 3619
+      }
+    },
+    {
+      "name": "search",
+      "status": "success",
+      "passed": false,
+      "detail": {
+        "passed": false,
+        "status": "success",
+        "query": "predictivedataselection thedatathatpredictsisthedatathatteaches",
+        "returned_pages": [
+          2,
+          3,
+          4
+        ],
+        "target_page": 18,
+        "cache_hit_second": true
+      }
+    },
+    {
+      "name": "crop",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "page": 6,
+        "bbox": [
+          142.80017792,
+          125.19795404000001,
+          452.9536206,
+          139.51805528
+        ],
+        "text_chars": 78,
+        "image_path": "artifacts/docenv/2503.00808v4/crops/page_006_297_260_943_290.png"
+      }
+    },
+    {
+      "name": "ocr",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "page": 6,
+        "bbox": [
+          142.80017792,
+          125.19795404000001,
+          452.9536206,
+          139.51805528
+        ],
+        "text_preview": "| Tokens | ARC-E ARC-C MMLU LAMBADA RACE SciQ BBH Avg. |\n| --- | --- |\n|  |  |",
+        "cache_hit_second": true
+      }
+    },
+    {
+      "name": "detect_layout",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "page": 18,
+        "element_count": 1322
+      }
+    },
+    {
+      "name": "parse_table",
+      "status": "success",
+      "passed": false,
+      "detail": {
+        "passed": false,
+        "status": "success",
+        "page": 6,
+        "row_count": 1,
+        "cache_hit_second": true
+      }
+    },
+    {
+      "name": "compute",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "value": 14.285714285714299
+      }
+    },
+    {
+      "name": "verify",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "claim": "tokens arc e arc c mmlu lambada race sciq bbh avg",
+        "label": "SUPPORTED",
+        "sufficiency": "SUFFICIENT",
+        "cache_hit_second": true
+      }
+    }
+  ],
+  "metrics": {
+    "attempted_checks": 9,
+    "passed_checks": 7,
+    "skipped_checks": 0,
+    "pass_rate": 0.7778,
+    "cache_check_count": 5,
+    "cache_pass_rate": 1.0
+  },
+  "suitability": "high",
+  "recommended_for_h1": true,
+  "reasons": []
+}

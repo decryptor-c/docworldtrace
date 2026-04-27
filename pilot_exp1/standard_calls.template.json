@@ -1,0 +1,94 @@
+{
+  "calls": [
+    {
+      "name": "search_example",
+      "action": "search",
+      "params": {
+        "query": "replace me",
+        "top_k": 3
+      },
+      "expected": {
+        "status": "success",
+        "contains_pages": [1]
+      }
+    },
+    {
+      "name": "read_page_example",
+      "action": "read_page",
+      "params": {
+        "page_ids": [1]
+      },
+      "expected": {
+        "status": "success",
+        "text_contains": "replace me"
+      }
+    },
+    {
+      "name": "crop_example",
+      "action": "crop",
+      "params": {
+        "page_id": 1,
+        "bbox": [0, 0, 100, 100]
+      },
+      "expected": {
+        "status": "success"
+      }
+    },
+    {
+      "name": "ocr_example",
+      "action": "ocr",
+      "params": {
+        "page_id": 1,
+        "bbox": [0, 0, 100, 100]
+      },
+      "expected": {
+        "status": "success"
+      }
+    },
+    {
+      "name": "parse_table_example",
+      "action": "parse_table",
+      "params": {
+        "page_id": 1,
+        "bbox": [0, 0, 100, 100]
+      },
+      "expected": {
+        "status": "success",
+        "table_rows_min": 2
+      }
+    },
+    {
+      "name": "compute_example",
+      "action": "compute",
+      "params": {
+        "expr": "(a-b)/b*100",
+        "vars": {
+          "a": 3.2,
+          "b": 2.8
+        }
+      },
+      "expected": {
+        "status": "success",
+        "value_equals": 14.2857,
+        "value_tolerance": 0.001
+      }
+    },
+    {
+      "name": "verify_example",
+      "action": "verify",
+      "params": {
+        "claim": "replace me",
+        "evidence_refs": [
+          {
+            "page": 1,
+            "bbox": [0, 0, 100, 100]
+          }
+        ]
+      },
+      "expected": {
+        "status": "success",
+        "support_label": "SUPPORTED"
+      }
+    }
+  ]
+}

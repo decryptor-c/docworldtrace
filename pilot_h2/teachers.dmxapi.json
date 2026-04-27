@@ -1,0 +1,37 @@
+{
+  "teachers": [
+    {
+      "name": "dmxapi_gpt4o_2024_11_20",
+      "api_base": "https://www.dmxapi.cn/v1",
+      "model": "gpt-4o-2024-11-20",
+      "api_key_env": "DMXAPI_API_KEY",
+      "temperature": 0.2,
+      "max_tokens": 400,
+      "timeout_sec": 120,
+      "max_retries": 3,
+      "retry_delay_sec": 2.0
+    },
+    {
+      "name": "dmxapi_gemini_2_5_flash",
+      "api_base": "https://www.dmxapi.cn/v1",
+      "model": "gemini-2.5-flash",
+      "api_key_env": "DMXAPI_API_KEY",
+      "temperature": 0.2,
+      "max_tokens": 900,
+      "timeout_sec": 240,
+      "max_retries": 5,
+      "retry_delay_sec": 3.0
+    },
+    {
+      "name": "dmxapi_gemini_3_1_flash_lite_preview",
+      "api_base": "https://www.dmxapi.cn/v1",
+      "model": "gemini-3.1-flash-lite-preview",
+      "api_key_env": "DMXAPI_API_KEY",
+      "temperature": 0.2,
+      "max_tokens": 900,
+      "timeout_sec": 240,
+      "max_retries": 5,
+      "retry_delay_sec": 3.0
+    }
+  ]
+}

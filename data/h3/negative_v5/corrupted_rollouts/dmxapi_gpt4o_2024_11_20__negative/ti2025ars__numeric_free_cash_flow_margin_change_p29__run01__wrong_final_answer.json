@@ -1,0 +1,397 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "read_page",
+        "crop",
+        "compute",
+        "answer"
+      ],
+      [
+        "crop",
+        "compute",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "ti2025ars",
+    "metadata": {
+      "bbox": [
+        48.96,
+        365.70001,
+        561.96002,
+        493.95001
+      ],
+      "first_label": "2024",
+      "first_value": 9.6,
+      "formula": "second_value - first_value",
+      "metric": "Free cash flow as a percentage of revenue (non-GAAP)",
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage"
+      ],
+      "page": 29,
+      "review_status": "v4_query_sanitized",
+      "second_label": "2025",
+      "second_value": 16.6,
+      "unit": "percentage points"
+    },
+    "pdf_path": "data/raw_pdfs/ti2025ars.pdf",
+    "question": "Based on the table on page 29, compute the percentage-point increase in \"Free cash flow as a percentage of revenue (non-GAAP)\" from 2024 to 2025. Report only the final result as \"<number> percentage points\", not as a percent.",
+    "reference_answer": "7.0 percentage points",
+    "required_tools": [
+      "read_page",
+      "compute"
+    ],
+    "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+    "source": "manual_numeric_gold_approved_v3_path_optimized_v4_query_sanitized",
+    "supporting_refs": [
+      {
+        "bbox": [
+          48.96,
+          365.70001,
+          561.96002,
+          493.95001
+        ],
+        "page": 29
+      }
+    ],
+    "task_type": "numeric_computation",
+    "tool_hints": {
+      "bbox_note": "Use a bbox that covers the full table; avoid a narrow column-only bbox.",
+      "table_bbox_hint": [
+        48.96,
+        365.70001,
+        561.96002,
+        493.95001
+      ],
+      "target_page": 29,
+      "unit_policy": "If the question asks for percentage-point difference, answer with 'percentage points', not '%'."
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I need to locate and parse the table on page 29 to extract the relevant data.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[29]}}",
+      "thought": "I need to locate and parse the table on page 29 to extract the relevant data.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          29
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 29,
+              "text": "We had $3.23 billion of cash and cash equivalents and $1.66 billion of short-term investments as of December 31,\n2025. We believe we have the necessary financial resources and operating plans to fund our working capital needs,\ncapital expenditures, dividend and debt-related payments and other business requirements for at least the next 12\nmonths.\nAs announced on February 4, 2026, we have entered into a definitive agreement to acquire Silicon Labs for $231.00\nper share in an all-cash transaction, representing a total enterprise value of approximately $7.5 billion. Under the\nterms of the agreement, Silicon Labs stockholders will receive $231.00 in cash for each share of Silicon Labs\ncommon stock they hold at the time of closing, which is currently expected to close in the first half of 2027, subject\nto receipt of regulatory approvals and other customary closing conditions, including approval by Silicon Labs\nstockholders. We expect to fund the transaction with a combination of cash on hand and debt financing to be\narranged prior to closing.\nNon-GAAP financial information\nThis MD&A includes references to free cash flow and ratios based on that measure. These are financial measures\nthat were not prepared in accordance with generally accepted accounting principles in the United States (GAAP).\nFree cash flow is calculated as cash flows from operating activities (also referred to as cash flow from operations)\nless capital expenditures, plus proceeds from CHIPS Act incentives.\nWe believe that free cash flow and the associated ratios provide insight into our liquidity, our cash-generating\ncapability and the amount of cash potentially available to return to shareholders, as well as insight into our financial\nperformance. These non-GAAP measures are supplemental to the comparable GAAP measures.\nReconciliation to the most directly comparable GAAP measures is provided in the table below.\nFor Years Ended December 31,\n2025 2024\nCash flow from operations (GAAP) * $ 7,153 $ 6,318\nCapital expenditures (4,550) (4,820)\nProceeds from CHIPS Act incentives 335 —\nFree cash flow (non-GAAP) $ 2,938 $ 1,498\nRevenue $ 17,682 $ 15,641\nCash flow from operations as a percentage of revenue (GAAP) 40.5 % 40.4 %\nFree cash flow as a percentage of revenue (non-GAAP) 16.6 % 9.6 %\n* Includes cash benefits of $335 million and $588 million from the CHIPS Act ITC used to reduce income taxes\npayable for 2025 and 2024, respectively.\nCritical accounting estimates\nOur accounting policies are more fully described in Note 2 of the consolidated financial statements. As disclosed in\nNote 2, the preparation of consolidated financial statements in conformity with U.S. GAAP requires management to\nmake estimates and assumptions about future events that affect the amounts reported in the financial statements\nand accompanying notes. Management believes it is unlikely that applying other estimates and assumptions would\nhave a material impact on the financial statements. We consider the following accounting policies to be those that\nare most important to the portrayal of our financial condition and that require a higher degree of judgment.\nIncome taxes\nIn determining net income for financial statement purposes, we must make certain estimates and judgments in the\ncalculation of tax provisions and the resultant tax liabilities that arise from temporary differences between the tax\nand financial statement recognition of revenue and expense.\n2025 FORM 10-K  PAGE 23",
+              "summary": "We had $3.23 billion of cash and cash equivalents and $1.66 billion of short-term investments as of December 31,",
+              "image_path": "artifacts/docenv/ti2025ars/page_029.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 29,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The table was not visible in the text of page 29. I should crop the suggested bbox to locate and parse the table.\",\"action\":\"crop\",\"action_input\":{\"page_id\":29,\"bbox\":[48.96,365.70001,561.96002,493.95001]}}",
+      "thought": "The table was not visible in the text of page 29. I should crop the suggested bbox to locate and parse the table.",
+      "action": "crop",
+      "action_input": {
+        "page_id": 29,
+        "bbox": [
+          48.96,
+          365.70001,
+          561.96002,
+          493.95001
+        ]
+      },
+      "observation": {
+        "action": "crop",
+        "status": "success",
+        "result": {
+          "page": 29,
+          "bbox": [
+            48.96,
+            365.70001,
+            561.96002,
+            493.95001
+          ],
+          "text": "| Cash flow from operations (GAAP) * $ 7,153 $ 6,318 |\n| --- |\n| Capital expenditures (4,550) (4,820) |\n| Proceeds from CHIPS Act incentives 335 — |\n| Free cash flow (non-GAAP) $ 2,938 $ 1,498 |\n|  |\n| Revenue $ 17,682 $ 15,641 |\n|  |\n| Cash flow from operations as a percentage of revenue (GAAP) 40.5 % 40.4 % |\n| Free cash flow as a percentage of revenue (non-GAAP) 16.6 % 9.6 % |",
+          "image_path": "artifacts/docenv/ti2025ars/crops/page_029_102_761_1170_1029.png"
+        },
+        "provenance": {
+          "page": 29,
+          "bbox": [
+            48.96,
+            365.70001,
+            561.96002,
+            493.95001
+          ],
+          "element_type": "region"
+        },
+        "confidence": 0.9,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\":\"I have extracted the relevant table data. Now I need to compute the percentage-point increase in 'Free cash flow as a percentage of revenue (non-GAAP)' from 2024 to 2025.\",\"action\":\"compute\",\"action_input\":{\"expr\":\"2025_value - 2024_value\",\"vars\":{\"2025_value\":16.6,\"2024_value\":9.6}}}",
+      "thought": "I have extracted the relevant table data. Now I need to compute the percentage-point increase in 'Free cash flow as a percentage of revenue (non-GAAP)' from 2024 to 2025.",
+      "action": "compute",
+      "action_input": {
+        "expr": "2025_value - 2024_value",
+        "vars": {
+          "2025_value": 16.6,
+          "2024_value": 9.6
+        }
+      },
+      "observation": {
+        "action": "compute",
+        "status": "failure",
+        "result": {
+          "expr": "2025_value - 2024_value",
+          "vars": {
+            "2025_value": 16.6,
+            "2024_value": 9.6
+          },
+          "error": "invalid decimal literal (<unknown>, line 1)"
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "computed_value"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 4,
+      "raw_model_output": "{\"thought\":\"The computation failed due to a formatting issue. I will reattempt using corrected variable names.\",\"action\":\"compute\",\"action_input\":{\"expr\":\"value_2025 - value_2024\",\"vars\":{\"value_2025\":16.6,\"value_2024\":9.6}}}",
+      "thought": "The computation failed due to a formatting issue. I will reattempt using corrected variable names.",
+      "action": "compute",
+      "action_input": {
+        "expr": "value_2025 - value_2024",
+        "vars": {
+          "value_2025": 16.6,
+          "value_2024": 9.6
+        }
+      },
+      "observation": {
+        "action": "compute",
+        "status": "success",
+        "result": {
+          "expr": "value_2025 - value_2024",
+          "vars": {
+            "value_2025": 16.6,
+            "value_2024": 9.6
+          },
+          "value": 7.000000000000002
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "computed_value"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 5,
+      "raw_model_output": "{\"thought\": \"Corrupted negative-control terminal action.\", \"action\": \"answer\", \"action_input\": {\"text\": \"999 percentage points\", \"evidence_refs\": [{\"bbox\": [48.96, 365.70001, 561.96002, 493.95001], \"page\": 29}]}}",
+      "thought": "Corrupted negative-control terminal action.",
+      "action": "answer",
+      "action_input": {
+        "text": "999 percentage points",
+        "evidence_refs": [
+          {
+            "bbox": [
+              48.96,
+              365.70001,
+              561.96002,
+              493.95001
+            ],
+            "page": 29
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "999 percentage points",
+          "evidence_refs": [
+            {
+              "bbox": [
+                48.96,
+                365.70001,
+                561.96002,
+                493.95001
+              ],
+              "page": 29
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "negative_control"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "crop",
+    "compute",
+    "compute",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "999 percentage points",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1210,
+      "completion_tokens": 36,
+      "total_tokens": 1246,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1645,
+      "completion_tokens": 64,
+      "total_tokens": 1709,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1931,
+      "completion_tokens": 82,
+      "total_tokens": 2013,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null
+    },
+    {
+      "prompt_tokens": 2084,
+      "completion_tokens": 62,
+      "total_tokens": 2146,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 2214,
+      "completion_tokens": 41,
+      "total_tokens": 2255,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 5,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "wrong_final_answer",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+    "source_final_action": "answer",
+    "source_final_answer": "7 percentage points",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The terminal answer/refusal was intentionally corrupted while preserving the preceding trajectory."
+  }
+}

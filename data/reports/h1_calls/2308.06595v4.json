@@ -1,0 +1,3483 @@
+{
+  "source": "/home/kimilabra/DocWorldTrace/data/raw_pdfs/2308.06595v4.pdf",
+  "summary": {
+    "total_calls": 10,
+    "success_calls": 10,
+    "success_rate": 1.0,
+    "expectation_checks": {
+      "passed": 21,
+      "total": 21,
+      "rate": 1.0
+    },
+    "retrieval_checks": {
+      "passed": 2,
+      "total": 2,
+      "rate": 1.0
+    },
+    "cache_checks": {
+      "passed": 1,
+      "total": 1,
+      "rate": 1.0
+    }
+  },
+  "executions": [
+    {
+      "index": 1,
+      "name": "overview_doc",
+      "action": "overview",
+      "params": {},
+      "result": {
+        "action": "overview",
+        "status": "success",
+        "result": {
+          "doc_id": "2308.06595v4",
+          "title": "2308.06595v4",
+          "page_count": 28,
+          "pages": [
+            {
+              "page": 1,
+              "summary": "VisIT-Bench: A Benchmark for Vision-Language",
+              "image_path": "artifacts/docenv/2308.06595v4/page_001.png"
+            },
+            {
+              "page": 2,
+              "summary": "1 Introduction",
+              "image_path": "artifacts/docenv/2308.06595v4/page_002.png"
+            },
+            {
+              "page": 3,
+              "summary": "Reasoning Over Art Knowledge Recognition Location Home Renovation",
+              "image_path": "artifacts/docenv/2308.06595v4/page_003.png"
+            },
+            {
+              "page": 4,
+              "summary": "2 VisIT-Bench: AReal-WorldInspiredVLInstruction-FollowingBenchmark",
+              "image_path": "artifacts/docenv/2308.06595v4/page_004.png"
+            },
+            {
+              "page": 5,
+              "summary": "In this task you will be provided with two individual images i.e., BEFORE and AFTER. Please study them",
+              "image_path": "artifacts/docenv/2308.06595v4/page_005.png"
+            },
+            {
+              "page": 6,
+              "summary": "andyoucanaddashortexplanation: <instruction>’. Response: Thispromptisemployed",
+              "image_path": "artifacts/docenv/2308.06595v4/page_006.png"
+            },
+            {
+              "page": 7,
+              "summary": "BLIP2 Caption It is not possible to determine if a",
+              "image_path": "artifacts/docenv/2308.06595v4/page_007.png"
+            },
+            {
+              "page": 8,
+              "summary": "PandaGPT",
+              "image_path": "artifacts/docenv/2308.06595v4/page_008.png"
+            },
+            {
+              "page": 9,
+              "summary": "Table3: Humanscoringresultsforthemodels,shownasbothanELOratingandwin-rate",
+              "image_path": "artifacts/docenv/2308.06595v4/page_009.png"
+            },
+            {
+              "page": 10,
+              "summary": "Table 4: Current reference-free Elo rankings as of September 25th, 2023. In total, these",
+              "image_path": "artifacts/docenv/2308.06595v4/page_010.png"
+            },
+            {
+              "page": 11,
+              "summary": "Ourpromptencouragesthemodeltothinkstep-by-stepsothatitschain-of-thoughtprocess",
+              "image_path": "artifacts/docenv/2308.06595v4/page_011.png"
+            },
+            {
+              "page": 12,
+              "summary": "C4[11]),improvedsoftwareandhardwareframeworks,andadvancesinmodality-specific",
+              "image_path": "artifacts/docenv/2308.06595v4/page_012.png"
+            },
+            {
+              "page": 13,
+              "summary": "communityinvolvement. WehopeVisIT-Benchcanprovideanewquantificationofprogress",
+              "image_path": "artifacts/docenv/2308.06595v4/page_013.png"
+            },
+            {
+              "page": 14,
+              "summary": "[7] OpenAI. Gpt-4technicalreport. arXiv,2023.",
+              "image_path": "artifacts/docenv/2308.06595v4/page_014.png"
+            },
+            {
+              "page": 15,
+              "summary": "[20] Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva",
+              "image_path": "artifacts/docenv/2308.06595v4/page_015.png"
+            },
+            {
+              "page": 16,
+              "summary": "[36] AlaneSuhr,StephanieZhou,AllyZhang,IrisZhang,HuajunBai,andYoavArtzi. A",
+              "image_path": "artifacts/docenv/2308.06595v4/page_016.png"
+            },
+            {
+              "page": 17,
+              "summary": "[50] YannDubois,XuechenLi,RohanTaori,TianyiZhang,IshaanGulrajani,JimmyBa,",
+              "image_path": "artifacts/docenv/2308.06595v4/page_017.png"
+            },
+            {
+              "page": 18,
+              "summary": "[65] Tao Gong, Chengqi Lyu, Shilong Zhang, Yudong Wang, Miao Zheng, Qian Zhao,",
+              "image_path": "artifacts/docenv/2308.06595v4/page_018.png"
+            },
+            {
+              "page": 19,
+              "summary": "[79] Benjamin Recht, Rebecca Roelofs, Ludwig Schmidt, and Vaishaal Shankar. Do",
+              "image_path": "artifacts/docenv/2308.06595v4/page_019.png"
+            },
+            {
+              "page": 20,
+              "summary": "[93] JeffreyPBigham,ChandrikaJayant,HanjieJi,GregLittle,AndrewMiller,RobertC",
+              "image_path": "artifacts/docenv/2308.06595v4/page_020.png"
+            },
+            {
+              "page": 21,
+              "summary": "Appendix",
+              "image_path": "artifacts/docenv/2308.06595v4/page_021.png"
+            },
+            {
+              "page": 22,
+              "summary": "B InterfacesforCollectingHumanAnnotations",
+              "image_path": "artifacts/docenv/2308.06595v4/page_022.png"
+            },
+            {
+              "page": 23,
+              "summary": "Figure14: AsampleofthemodelverificationwheretheGPT4failedtofollowtheinstruction",
+              "image_path": "artifacts/docenv/2308.06595v4/page_023.png"
+            },
+            {
+              "page": 24,
+              "summary": "Table5: ListofexistingdatasetsinVisIT-Bench,categorizedassingleandmultipleimage",
+              "image_path": "artifacts/docenv/2308.06595v4/page_024.png"
+            },
+            {
+              "page": 25,
+              "summary": "D EloRating",
+              "image_path": "artifacts/docenv/2308.06595v4/page_025.png"
+            },
+            {
+              "page": 26,
+              "summary": "system prompt(humanauthored)",
+              "image_path": "artifacts/docenv/2308.06595v4/page_026.png"
+            },
+            {
+              "page": 27,
+              "summary": "system prompt(humanauthored)",
+              "image_path": "artifacts/docenv/2308.06595v4/page_027.png"
+            },
+            {
+              "page": 28,
+              "summary": "system prompt(humanauthored)",
+              "image_path": "artifacts/docenv/2308.06595v4/page_028.png"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "document"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "search_primary_page",
+      "action": "search",
+      "params": {
+        "query": "scribesramps potentialobstacles thesedescriptionsenable1 collecting",
+        "top_k": 3
+      },
+      "result": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "scribesramps potentialobstacles thesedescriptionsenable1 collecting",
+          "results": [
+            {
+              "page": 1,
+              "score": 4.0,
+              "snippet": "VisIT-Bench: A Benchmark for Vision-Language\nInstruction Following Inspired by Real-World Use\nYonatanBitton*1,2 HritikBansal*3 JackHessel*4 RulinShao5 WanrongZhu6\nAnasAwadalla5 JoshGardner5 RohanTaori7 LudwigSchmidt4,5,8\nAbstract\nWeintroduc"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "contains_pages",
+          "passed": true,
+          "expected": [
+            1
+          ],
+          "actual": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "search_primary_page_cached",
+      "action": "search",
+      "params": {
+        "query": "scribesramps potentialobstacles thesedescriptionsenable1 collecting",
+        "top_k": 3
+      },
+      "result": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "scribesramps potentialobstacles thesedescriptionsenable1 collecting",
+          "results": [
+            {
+              "page": 1,
+              "score": 4.0,
+              "snippet": "VisIT-Bench: A Benchmark for Vision-Language\nInstruction Following Inspired by Real-World Use\nYonatanBitton*1,2 HritikBansal*3 JackHessel*4 RulinShao5 WanrongZhu6\nAnasAwadalla5 JoshGardner5 RohanTaori7 LudwigSchmidt4,5,8\nAbstract\nWeintroduc"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": true
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "contains_pages",
+          "passed": true,
+          "expected": [
+            1
+          ],
+          "actual": [
+            1
+          ]
+        },
+        {
+          "name": "cache_hit",
+          "passed": true,
+          "expected": true,
+          "actual": true
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "read_primary_page",
+      "action": "read_page",
+      "params": {
+        "page_ids": [
+          1
+        ]
+      },
+      "result": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 1,
+              "text": "VisIT-Bench: A Benchmark for Vision-Language\nInstruction Following Inspired by Real-World Use\nYonatanBitton*1,2 HritikBansal*3 JackHessel*4 RulinShao5 WanrongZhu6\nAnasAwadalla5 JoshGardner5 RohanTaori7 LudwigSchmidt4,5,8\nAbstract\nWeintroduceVisIT-Bench(VisualInsTructionBenchmark),abenchmark\nfor evaluation of instruction-following vision-language models for real-\nworlduse. Ourstartingpointiscurating70“instructionfamilies”thatwe\nenvisioninstructiontunedvision-languagemodelsshouldbeabletoaddress.\nExtendingbeyondevaluationslikeVQAv2andCOCO,tasksrangefrom\nbasicrecognitiontogameplayingandcreativegeneration. Followingcura-\ntion,ourdatasetcomprises592testqueries,eachwithahuman-authored\ninstruction-conditioned caption. These descriptions surface instruction-\nspecific factors, e.g., for an instruction asking about the accessibility of\na storefront for wheelchair users, the instruction-conditioned caption de-\nscribesramps/potentialobstacles. Thesedescriptionsenable1)collecting\nhuman-verifiedreferenceoutputsforeachinstance;and2)automaticevalu-\nationofcandidatemultimodalgenerationsusingatext-onlyLLM,aligning\nwithhumanjudgment. Wequantifyqualitygapsbetweenmodelsandrefer-\nencesusingbothhumanandautomaticevaluations;e.g.,thetop-performing\ninstruction-followingmodelwinsagainsttheGPT-4referenceinjust27%\nof the comparison. VisIT-Bench is dynamic to participate, practitioners\nsimply submit their model’s response on the project website; Data, code\nandleaderboardisavailableathttps://visit-bench.github.io/.\nInstruction Instruction-Conditioned Caption Human-Verified GPT4 Response\nCreate a catchy title There is a jeep parked on the street with \"Tan Lines & Ticket Stubs: A Love Story\nfor a country song the top down. There is a wheel cover on the Unbound\" -A country song about\nbased upon the spare tire in the back with an inscription leaving it all behind, finding love, and\nadvice printed on the that says, \"Quit your Job, Buy a Ticket, Get a embracing the freedom of the open\nwheel cover. Tan, Fall in Love, Never Return.\" road.\nFigure1: AnexamplefromVisIT-Bench,featuringanimage,achallenginginstruction,an\ninstruction-conditionedcaption,andahuman-verifiedGPT4response. Theseelementsare\nusedforevaluatingmultimodalchatbotsandupdatingadynamicleaderboard.\n∗\nEqualcontribution. Contactyonatanbitton1@gmail.com,hbansal@ucla.edu,jackh@allenai.org,\nschmidt@cs.washington.edu. 1HebrewUniversity 2GoogleResearch 3UCLA 4AllenInstituteforAI\n5UniversityofWashington 6UCSB 7Stanford 8LAION ,\nPreprint.Underreview.\n3202\nceD\n62\n]LC.sc[\n4v59560.8032:viXra",
+              "summary": "VisIT-Bench: A Benchmark for Vision-Language",
+              "image_path": "artifacts/docenv/2308.06595v4/page_001.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "VisIT-Bench: A Benchmark for Vision-Language"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "name": "crop_evidence_region",
+      "action": "crop",
+      "params": {
+        "page_id": 21,
+        "bbox": [
+          131.78769225,
+          465.7925,
+          507.95480775000004,
+          63233.21027675
+        ]
+      },
+      "result": {
+        "action": "crop",
+        "status": "success",
+        "result": {
+          "page": 21,
+          "bbox": [
+            131.78769225,
+            465.7925,
+            507.95480775000004,
+            63233.21027675
+          ],
+          "text": "|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n| evolg\nllabesab | niart | rotaregirfer | torrac | draobyek | hcuoc | teliot | tac | ngis\npots | elcycrotom | draobfrus | srossics | effarig | potpal | efink | elcycib | esroh | taob | thgil\nciffart | noops | kcurt | tab\nllabesab | woc | elppa | etik\nO | esactius\nbj | hcneb\nect | vt\ns | tunod | egnaro | enohp\nllec | allerbmu | god | llab\nstrops | tnalp\ndettop | elbat\ngninid | kcapkcab | drib | esav | etomer | ssalg\neniw | gabdnah | kcolc | ekac | lwob | eit | koob | puc | elttob | rac | riahc | nosrep |\n| e\nca\nt | 1\nle\n‘p | 0:\n.\ner | T\ns | C\nh\non | o\ne\n’ | un\nob\no | t\nj\ncc | o\nec\nu | f\nt\nrs | th\nd | e\net\nm | v\nec\nos | ar\nti\nt | io\no\nof | u\nn\nt | s\nw\nhe | C\nas\nt | O\ni | C\npe\nm | O\nrf\nei | o\nn | o\nrm\nt | bj\ne\nhe\n2 | ec\nd\nd\n1 | ts\nb\na | y\nta | pr\nY\nse | es\no\nt | e\nlo\ni | nt\nv\nma | i\n5-\ng | n\nL\ne | t\na\nsi | he\nrg\n.e | e\n., | Vi\n[4\n8 | sI\n0\n7 | T\n].\n5 | -\nti | Be\nW\nm | n\ne\nes | c\nob\n. | h\ns | im\ner | a\nv | g\ne | es\nth | at | on\nt | h | a\ne |",
+          "image_path": "artifacts/docenv/2308.06595v4/crops/page_021_274_970_1058_1650.png"
+        },
+        "provenance": {
+          "page": 21,
+          "bbox": [
+            131.78769225,
+            465.7925,
+            507.95480775000004,
+            63233.21027675
+          ],
+          "element_type": "region"
+        },
+        "confidence": 0.9,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "name": "ocr_evidence_region",
+      "action": "ocr",
+      "params": {
+        "page_id": 21,
+        "bbox": [
+          131.78769225,
+          465.7925,
+          507.95480775000004,
+          63233.21027675
+        ]
+      },
+      "result": {
+        "action": "ocr",
+        "status": "success",
+        "result": {
+          "page": 21,
+          "bbox": [
+            131.78769225,
+            465.7925,
+            507.95480775000004,
+            63233.21027675
+          ],
+          "text": "|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n| evolg\nllabesab | niart | rotaregirfer | torrac | draobyek | hcuoc | teliot | tac | ngis\npots | elcycrotom | draobfrus | srossics | effarig | potpal | efink | elcycib | esroh | taob | thgil\nciffart | noops | kcurt | tab\nllabesab | woc | elppa | etik\nO | esactius\nbj | hcneb\nect | vt\ns | tunod | egnaro | enohp\nllec | allerbmu | god | llab\nstrops | tnalp\ndettop | elbat\ngninid | kcapkcab | drib | esav | etomer | ssalg\neniw | gabdnah | kcolc | ekac | lwob | eit | koob | puc | elttob | rac | riahc | nosrep |\n| e\nca\nt | 1\nle\n‘p | 0:\n.\ner | T\ns | C\nh\non | o\ne\n’ | un\nob\no | t\nj\ncc | o\nec\nu | f\nt\nrs | th\nd | e\net\nm | v\nec\nos | ar\nti\nt | io\no\nof | u\nn\nt | s\nw\nhe | C\nas\nt | O\ni | C\npe\nm | O\nrf\nei | o\nn | o\nrm\nt | bj\ne\nhe\n2 | ec\nd\nd\n1 | ts\nb\na | y\nta | pr\nY\nse | es\no\nt | e\nlo\ni | nt\nv\nma | i\n5-\ng | n\nL\ne | t\na\nsi | he\nrg\n.e | e\n., | Vi\n[4\n8 | sI\n0\n7 | T\n].\n5 | -\nti | Be\nW\nm | n\ne\nes | c\nob\n. | h\ns | im\ner | a\nv | g\ne | es\nth | at | on\nt | h | a\ne |"
+        },
+        "provenance": {
+          "page": 21,
+          "bbox": [
+            131.78769225,
+            465.7925,
+            507.95480775000004,
+            63233.21027675
+          ],
+          "element_type": "ocr_text"
+        },
+        "confidence": 0.88,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "name": "parse_table_primary_table",
+      "action": "parse_table",
+      "params": {
+        "page_id": 21,
+        "bbox": [
+          131.78769225,
+          465.7925,
+          507.95480775000004,
+          63233.21027675
+        ]
+      },
+      "result": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {
+          "page": 21,
+          "bbox": [
+            131.78769225,
+            465.7925,
+            507.95480775000004,
+            63233.21027675
+          ],
+          "rows": [
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "evolg\nllabesab",
+              "niart",
+              "rotaregirfer",
+              "torrac",
+              "draobyek",
+              "hcuoc",
+              "teliot",
+              "tac",
+              "ngis\npots",
+              "elcycrotom",
+              "draobfrus",
+              "srossics",
+              "effarig",
+              "potpal",
+              "efink",
+              "elcycib",
+              "esroh",
+              "taob",
+              "thgil\nciffart",
+              "noops",
+              "kcurt",
+              "tab\nllabesab",
+              "woc",
+              "elppa",
+              "etik\nO",
+              "esactius\nbj",
+              "hcneb\nect",
+              "vt\ns",
+              "tunod",
+              "egnaro",
+              "enohp\nllec",
+              "allerbmu",
+              "god",
+              "llab\nstrops",
+              "tnalp\ndettop",
+              "elbat\ngninid",
+              "kcapkcab",
+              "drib",
+              "esav",
+              "etomer",
+              "ssalg\neniw",
+              "gabdnah",
+              "kcolc",
+              "ekac",
+              "lwob",
+              "eit",
+              "koob",
+              "puc",
+              "elttob",
+              "rac",
+              "riahc",
+              "nosrep"
+            ],
+            [
+              "e\nca\nt",
+              "1\nle\n‘p",
+              "0:\n.\ner",
+              "T\ns",
+              "C\nh\non",
+              "o\ne\n’",
+              "un\nob\no",
+              "t\nj\ncc",
+              "o\nec\nu",
+              "f\nt\nrs",
+              "th\nd",
+              "e\net\nm",
+              "v\nec\nos",
+              "ar\nti\nt",
+              "io\no\nof",
+              "u\nn\nt",
+              "s\nw\nhe",
+              "C\nas\nt",
+              "O\ni",
+              "C\npe\nm",
+              "O\nrf\nei",
+              "o\nn",
+              "o\nrm\nt",
+              "bj\ne\nhe\n2",
+              "ec\nd\nd\n1",
+              "ts\nb\na",
+              "y\nta",
+              "pr\nY\nse",
+              "es\no\nt",
+              "e\nlo\ni",
+              "nt\nv\nma",
+              "i\n5-\ng",
+              "n\nL\ne",
+              "t\na\nsi",
+              "he\nrg\n.e",
+              "e\n.,",
+              "Vi\n[4\n8",
+              "sI\n0\n7",
+              "T\n].\n5",
+              "-\nti",
+              "Be\nW\nm",
+              "n\ne\nes",
+              "c\nob\n.",
+              "h\ns",
+              "im\ner",
+              "a\nv",
+              "g\ne",
+              "es\nth",
+              "at",
+              "on\nt",
+              "h",
+              "a\ne"
+            ]
+          ],
+          "markdown": "|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n| evolg\nllabesab | niart | rotaregirfer | torrac | draobyek | hcuoc | teliot | tac | ngis\npots | elcycrotom | draobfrus | srossics | effarig | potpal | efink | elcycib | esroh | taob | thgil\nciffart | noops | kcurt | tab\nllabesab | woc | elppa | etik\nO | esactius\nbj | hcneb\nect | vt\ns | tunod | egnaro | enohp\nllec | allerbmu | god | llab\nstrops | tnalp\ndettop | elbat\ngninid | kcapkcab | drib | esav | etomer | ssalg\neniw | gabdnah | kcolc | ekac | lwob | eit | koob | puc | elttob | rac | riahc | nosrep |\n| e\nca\nt | 1\nle\n‘p | 0:\n.\ner | T\ns | C\nh\non | o\ne\n’ | un\nob\no | t\nj\ncc | o\nec\nu | f\nt\nrs | th\nd | e\net\nm | v\nec\nos | ar\nti\nt | io\no\nof | u\nn\nt | s\nw\nhe | C\nas\nt | O\ni | C\npe\nm | O\nrf\nei | o\nn | o\nrm\nt | bj\ne\nhe\n2 | ec\nd\nd\n1 | ts\nb\na | y\nta | pr\nY\nse | es\no\nt | e\nlo\ni | nt\nv\nma | i\n5-\ng | n\nL\ne | t\na\nsi | he\nrg\n.e | e\n., | Vi\n[4\n8 | sI\n0\n7 | T\n].\n5 | -\nti | Be\nW\nm | n\ne\nes | c\nob\n. | h\ns | im\ner | a\nv | g\ne | es\nth | at | on\nt | h | a\ne |"
+        },
+        "provenance": {
+          "page": 21,
+          "bbox": [
+            131.78769225,
+            465.7925,
+            507.95480775000004,
+            63233.21027675
+          ],
+          "element_type": "table"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "table_rows_min",
+          "passed": true,
+          "expected": 2,
+          "actual": 14
+        },
+        {
+          "name": "table_text_cells_min",
+          "passed": true,
+          "expected": 2,
+          "actual": 104
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "name": "compute_sanity_check",
+      "action": "compute",
+      "params": {
+        "expr": "(a-b)/b*100",
+        "vars": {
+          "a": 3.2,
+          "b": 2.8
+        }
+      },
+      "result": {
+        "action": "compute",
+        "status": "success",
+        "result": {
+          "expr": "(a-b)/b*100",
+          "vars": {
+            "a": 3.2,
+            "b": 2.8
+          },
+          "value": 14.285714285714299
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "computed_value"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "value_equals",
+          "passed": true,
+          "expected": 14.2857142857,
+          "actual": 14.285714285714299
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "name": "verify_supported_claim",
+      "action": "verify",
+      "params": {
+        "claim": "evolg llabesab niart rotaregirfer torrac draobyek hcuoc teliot tac ngis pots elcycrotom",
+        "evidence_refs": [
+          {
+            "page": 21,
+            "bbox": [
+              131.78769225,
+              465.7925,
+              507.95480775000004,
+              63233.21027675
+            ]
+          }
+        ]
+      },
+      "result": {
+        "action": "verify",
+        "status": "success",
+        "result": {
+          "claim": "evolg llabesab niart rotaregirfer torrac draobyek hcuoc teliot tac ngis pots elcycrotom",
+          "evidence_count": 1,
+          "label": "SUPPORTED",
+          "sufficiency": "SUFFICIENT",
+          "confidence": 0.99,
+          "failure_taxonomy": null
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "verification"
+        },
+        "confidence": 0.99,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "support_label",
+          "passed": true,
+          "expected": "SUPPORTED",
+          "actual": "SUPPORTED"
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "name": "detect_layout_primary_page",
+      "action": "detect_layout",
+      "params": {
+        "page_id": 1
+      },
+      "result": {
+        "action": "detect_layout",
+        "status": "success",
+        "result": {
+          "page": 1,
+          "elements": [
+            {
+              "element_type": "word",
+              "bbox": [
+                125.575,
+                99.42961860000003,
+                222.8247946,
+                116.64501860000007
+              ],
+              "text": "VisIT-Bench:"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                228.1615686,
+                99.42961860000003,
+                240.59108740000002,
+                116.64501860000007
+              ],
+              "text": "A"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                244.8949374,
+                99.42961860000003,
+                330.9719374,
+                116.64501860000007
+              ],
+              "text": "Benchmark"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                335.2757874,
+                99.42961860000003,
+                356.8294682,
+                116.64501860000007
+              ],
+              "text": "for"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                361.1333182,
+                99.42961860000003,
+                485.80724500000014,
+                116.64501860000007
+              ],
+              "text": "Vision-Language"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                121.788,
+                119.35461859999998,
+                204.0431812,
+                136.57001860000003
+              ],
+              "text": "Instruction"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                208.3470312,
+                119.35461859999998,
+                280.44512640000005,
+                136.57001860000003
+              ],
+              "text": "Following"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                284.7489764,
+                119.35461859999998,
+                346.62112400000007,
+                136.57001860000003
+              ],
+              "text": "Inspired"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                350.9249740000001,
+                119.35461859999998,
+                369.1044364000001,
+                136.57001860000003
+              ],
+              "text": "by"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                373.4082864000001,
+                119.35461859999998,
+                459.1409784000001,
+                136.57001860000003
+              ],
+              "text": "Real-World"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                463.4448284000001,
+                119.35461859999998,
+                490.21477540000006,
+                136.57001860000003
+              ],
+              "text": "Use"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                116.705,
+                178.35009939999998,
+                203.59451413000002,
+                191.01300189999995
+              ],
+              "text": "YonatanBitton*1,2"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                211.728,
+                178.35009939999998,
+                284.76551413,
+                191.01300189999995
+              ],
+              "text": "HritikBansal*3"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                292.9,
+                178.35009939999998,
+                356.66451412999993,
+                191.01300189999995
+              ],
+              "text": "JackHessel*4"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                364.79799999999994,
+                178.35009939999998,
+                420.8725141299999,
+                191.01300189999995
+              ],
+              "text": "RulinShao5"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                429.0059999999999,
+                178.35009939999998,
+                498.7165141299999,
+                191.01300189999995
+              ],
+              "text": "WanrongZhu6"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                146.62299999999993,
+                191.0320994,
+                220.48951412999995,
+                203.6940019
+              ],
+              "text": "AnasAwadalla5"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                228.62399999999994,
+                191.0320994,
+                297.2425141299999,
+                203.6940019
+              ],
+              "text": "JoshGardner5"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                305.37699999999995,
+                191.0320994,
+                368.31251412999995,
+                203.6940019
+              ],
+              "text": "RohanTaori7"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                376.447,
+                191.0320994,
+                470.9805141299999,
+                203.6940019
+              ],
+              "text": "LudwigSchmidt4,5,8"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                283.7579999999999,
+                234.4994368,
+                328.2432991999999,
+                246.4546368
+              ],
+              "text": "Abstract"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.353,
+                260.19790190000003,
+                468.4053929911,
+                271.1833656
+              ],
+              "text": "WeintroduceVisIT-Bench(VisualInsTructionBenchmark),abenchmark"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.866,
+                272.22926559999996,
+                156.84041081200002,
+                283.1383656
+              ],
+              "text": "for"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                160.712704948,
+                272.22926559999996,
+                206.523724942,
+                283.1383656
+              ],
+              "text": "evaluation"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                210.40714636,
+                272.22926559999996,
+                219.676172266,
+                283.1383656
+              ],
+              "text": "of"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                223.548466402,
+                272.22926559999996,
+                317.85218135200006,
+                283.1383656
+              ],
+              "text": "instruction-following"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                321.73560277,
+                272.22926559999996,
+                392.81668018600016,
+                283.1383656
+              ],
+              "text": "vision-language"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                396.6889743220001,
+                272.22926559999996,
+                428.83569202000007,
+                283.1383656
+              ],
+              "text": "models"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                432.70798615600006,
+                272.22926559999996,
+                445.6823969680001,
+                283.1383656
+              ],
+              "text": "for"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                449.56581838600005,
+                272.22926559999996,
+                469.9509990100001,
+                283.1383656
+              ],
+              "text": "real-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.473,
+                284.1842656,
+                189.5264965597,
+                295.0933656
+              ],
+              "text": "worlduse."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                192.9103357432,
+                284.1842656,
+                468.1329541861003,
+                295.0933656
+              ],
+              "text": "Ourstartingpointiscurating70“instructionfamilies”thatwe"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.866,
+                295.8883563,
+                470.039210678,
+                307.0483656
+              ],
+              "text": "envisioninstructiontunedvision-languagemodelsshouldbeabletoaddress."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.866,
+                308.09426559999997,
+                468.137252044,
+                319.0033656
+              ],
+              "text": "ExtendingbeyondevaluationslikeVQAv2andCOCO,tasksrangefrom"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.866,
+                320.04926559999996,
+                397.3198475750001,
+                330.9583656
+              ],
+              "text": "basicrecognitiontogameplayingandcreativegeneration."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                400.71732313350014,
+                320.04926559999996,
+                469.94767173450015,
+                330.9583656
+              ],
+              "text": "Followingcura-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.866,
+                332.0052656,
+                468.13725204400004,
+                342.9143656
+              ],
+              "text": "tion,ourdatasetcomprises592testqueries,eachwithahuman-authored"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.866,
+                343.96026559999996,
+                247.71692290599998,
+                354.8693656
+              ],
+              "text": "instruction-conditioned"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                251.68936258,
+                343.96026559999996,
+                287.22990128799995,
+                354.8693656
+              ],
+              "text": "caption."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                294.35136176799995,
+                343.96026559999996,
+                320.923311184,
+                354.8693656
+              ],
+              "text": "These"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                324.895750858,
+                343.96026559999996,
+                378.67390476400004,
+                354.8693656
+              ],
+              "text": "descriptions"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                382.646344438,
+                343.96026559999996,
+                414.65953475200007,
+                354.8693656
+              ],
+              "text": "surface"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                418.643101708,
+                343.96026559999996,
+                469.9509990100001,
+                354.8693656
+              ],
+              "text": "instruction-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.866,
+                355.9152656,
+                177.85984651,
+                366.8243656
+              ],
+              "text": "specific"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                181.387194904,
+                355.9152656,
+                214.34620418800003,
+                366.8243656
+              ],
+              "text": "factors,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                218.07384365800002,
+                355.9152656,
+                236.92345936600003,
+                366.8243656
+              ],
+              "text": "e.g.,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                240.66222611800004,
+                355.9152656,
+                253.63663693000004,
+                366.8243656
+              ],
+              "text": "for"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                257.175112606,
+                355.9152656,
+                267.6792668140001,
+                366.8243656
+              ],
+              "text": "an"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                271.206615208,
+                355.9152656,
+                318.809127604,
+                366.8243656
+              ],
+              "text": "instruction"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                322.34760328000004,
+                355.9152656,
+                351.4009365820001,
+                366.8243656
+              ],
+              "text": "asking"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                354.9282849760001,
+                355.9152656,
+                379.6531055800001,
+                366.8243656
+              ],
+              "text": "about"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                383.1915812560001,
+                355.9152656,
+                396.7891198600002,
+                366.8243656
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                400.31646825400014,
+                355.9152656,
+                455.3297504620004,
+                366.8243656
+              ],
+              "text": "accessibility"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                458.8682261380004,
+                355.9152656,
+                468.1372520440004,
+                366.8243656
+              ],
+              "text": "of"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.866,
+                367.8702656,
+                148.806513208,
+                378.7793656
+              ],
+              "text": "a"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                152.04455227000003,
+                367.8702656,
+                195.30742468600002,
+                378.7793656
+              ],
+              "text": "storefront"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                198.545463748,
+                367.8702656,
+                211.51987456,
+                378.7793656
+              ],
+              "text": "for"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                214.757913622,
+                367.8702656,
+                263.573299756,
+                378.7793656
+              ],
+              "text": "wheelchair"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                266.81133881799997,
+                367.8702656,
+                292.45972382799994,
+                378.7793656
+              ],
+              "text": "users,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                295.82016299199995,
+                367.8702656,
+                309.41770159600003,
+                378.7793656
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                312.655740658,
+                367.8702656,
+                416.5066635640001,
+                378.7793656
+              ],
+              "text": "instruction-conditioned"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                419.74470262600005,
+                367.8702656,
+                452.5034208340002,
+                378.7793656
+              ],
+              "text": "caption"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                455.74145989600015,
+                367.8702656,
+                469.9509990100001,
+                378.7793656
+              ],
+              "text": "de-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.866,
+                379.82526559999997,
+                292.1940436066,
+                390.7343656
+              ],
+              "text": "scribesramps/potentialobstacles."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                295.6010864458,
+                379.82526559999997,
+                468.1324084036002,
+                390.7343656
+              ],
+              "text": "Thesedescriptionsenable1)collecting"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.866,
+                391.7802656,
+                469.9493844632003,
+                402.68936560000003
+              ],
+              "text": "human-verifiedreferenceoutputsforeachinstance;and2)automaticevalu-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.866,
+                403.73626559999997,
+                468.13948840950025,
+                414.6453656
+              ],
+              "text": "ationofcandidatemultimodalgenerationsusingatext-onlyLLM,aligning"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.473,
+                415.6912656,
+                241.04028130600003,
+                426.60036560000003
+              ],
+              "text": "withhumanjudgment."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                244.431484132,
+                415.6912656,
+                469.9464720610001,
+                426.60036560000003
+              ],
+              "text": "Wequantifyqualitygapsbetweenmodelsandrefer-"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.866,
+                427.6462656,
+                468.13223385800006,
+                438.5553656
+              ],
+              "text": "encesusingbothhumanandautomaticevaluations;e.g.,thetop-performing"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.866,
+                439.6012656,
+                469.0431218897999,
+                450.5103656
+              ],
+              "text": "instruction-followingmodelwinsagainsttheGPT-4referenceinjust27%"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.866,
+                451.55626559999996,
+                153.135025906,
+                462.4653656
+              ],
+              "text": "of"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                156.640119736,
+                451.55626559999996,
+                170.23765834000002,
+                462.4653656
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                173.753879452,
+                451.55626559999996,
+                228.45559776400003,
+                462.4653656
+              ],
+              "text": "comparison."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                234.18614799400004,
+                451.55626559999996,
+                290.6125950160001,
+                462.4653656
+              ],
+              "text": "VisIT-Bench"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                294.1288161280001,
+                451.55626559999996,
+                301.55071322200007,
+                462.4653656
+              ],
+              "text": "is"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                305.0558070520001,
+                451.55626559999996,
+                343.37816626000017,
+                462.4653656
+              ],
+              "text": "dynamic"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                346.89438737200015,
+                451.55626559999996,
+                355.55141276800015,
+                462.4653656
+              ],
+              "text": "to"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                359.05650659800017,
+                451.55626559999996,
+                408.80658442000015,
+                462.4653656
+              ],
+              "text": "participate,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                412.5119693260002,
+                451.55626559999996,
+                468.1372520440004,
+                462.4653656
+              ],
+              "text": "practitioners"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.866,
+                463.5112656,
+                174.165588886,
+                474.4203656
+              ],
+              "text": "simply"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                177.29235512800003,
+                463.5112656,
+                207.591944014,
+                474.4203656
+              ],
+              "text": "submit"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                210.718710256,
+                463.5112656,
+                231.115018162,
+                474.4203656
+              ],
+              "text": "their"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                234.24178440400001,
+                463.5112656,
+                269.49301378,
+                474.4203656
+              ],
+              "text": "model’s"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                272.619780022,
+                463.5112656,
+                311.55413974000004,
+                474.4203656
+              ],
+              "text": "response"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                314.680905982,
+                463.5112656,
+                325.8081879820001,
+                474.4203656
+              ],
+              "text": "on"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                328.9349542240001,
+                463.5112656,
+                342.5324928280001,
+                474.4203656
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                345.6703863520001,
+                463.5112656,
+                376.5708484660001,
+                474.4203656
+              ],
+              "text": "project"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                379.69761470800006,
+                463.5112656,
+                416.7848456140002,
+                474.4203656
+              ],
+              "text": "website;"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                420.11190293200013,
+                463.5112656,
+                443.9020318480002,
+                474.4203656
+              ],
+              "text": "Data,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                447.12894362800023,
+                463.5112656,
+                468.13725204400026,
+                474.4203656
+              ],
+              "text": "code"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                143.866,
+                475.46726559999996,
+                451.13027500000004,
+                486.4418202
+              ],
+              "text": "andleaderboardisavailableathttps://visit-bench.github.io/."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                204.166604006,
+                513.736464973472,
+                241.6928860158651,
+                522.0076313851682
+              ],
+              "text": "Instruction"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                266.7996828,
+                513.736464973472,
+                347.8208152234301,
+                522.0076313851682
+              ],
+              "text": "Instruction-Conditioned"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                349.8968779927658,
+                513.736464973472,
+                375.8848828583148,
+                522.0076313851682
+              ],
+              "text": "Caption"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                390.25780352,
+                513.736464973472,
+                443.2467875256817,
+                522.0076313851682
+              ],
+              "text": "Human-Verified"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                445.31932101999996,
+                513.736464973472,
+                462.79050583142555,
+                522.0076313851682
+              ],
+              "text": "GPT4"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                464.89217102,
+                513.736464973472,
+                496.9148188995225,
+                522.0076313851682
+              ],
+              "text": "Response"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                193.459266112,
+                536.2483392437307,
+                211.33082910950216,
+                543.7103697228548
+              ],
+              "text": "Create"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                213.0291872465508,
+                536.2483392437307,
+                216.20801223065766,
+                543.7103697228548
+              ],
+              "text": "a"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                217.86906021531067,
+                536.2483392437307,
+                235.58392057275123,
+                543.7103697228548
+              ],
+              "text": "catchy"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                237.24496855740426,
+                536.2483392437307,
+                248.32011419452022,
+                543.7103697228548
+              ],
+              "text": "title"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                262.20154646599997,
+                536.2483392437307,
+                277.19425810465606,
+                543.7103697228548
+              ],
+              "text": "There"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                278.9000782721838,
+                536.2483392437307,
+                283.39445922976023,
+                543.7103697228548
+              ],
+              "text": "is"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                285.08535533632977,
+                536.2483392437307,
+                288.26418032043665,
+                543.7103697228548
+              ],
+              "text": "a"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                289.93269033556874,
+                536.2483392437307,
+                301.2518443693521,
+                543.7103697228548
+              ],
+              "text": "jeep"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                302.92781641496333,
+                536.2483392437307,
+                321.37768677459763,
+                543.7103697228548
+              ],
+              "text": "parked"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                323.0835069421254,
+                536.2483392437307,
+                329.50309176331587,
+                543.7103697228548
+              ],
+              "text": "on"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                331.17906380892714,
+                536.2483392437307,
+                339.8842685658733,
+                543.7103697228548
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                341.59008873340105,
+                536.2483392437307,
+                357.5849510654036,
+                543.7103697228548
+              ],
+              "text": "street"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                359.25346108053566,
+                536.2483392437307,
+                370.9158685163587,
+                543.7103697228548
+              ],
+              "text": "with"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                390.367658716,
+                536.2483392437307,
+                401.7838191460119,
+                543.7103697228548
+              ],
+              "text": "\"Tan"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                403.4597911916232,
+                536.2483392437307,
+                417.2809640450568,
+                543.7103697228548
+              ],
+              "text": "Lines"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                418.97186015162634,
+                536.2483392437307,
+                423.4938506219755,
+                543.7103697228548
+              ],
+              "text": "&"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                425.15489860662854,
+                536.2483392437307,
+                441.57509667594104,
+                543.7103697228548
+              ],
+              "text": "Ticket"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                443.2436066910732,
+                536.2483392437307,
+                459.7981213090099,
+                543.7103697228548
+              ],
+              "text": "Stubs:"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                461.4740933546212,
+                536.2483392437307,
+                465.1454123503502,
+                543.7103697228548
+              ],
+              "text": "A"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                466.83630845691977,
+                536.2483392437307,
+                478.8867414776572,
+                543.7103697228548
+              ],
+              "text": "Love"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                480.59256164518496,
+                536.2483392437307,
+                494.7942980530539,
+                543.7103697228548
+              ],
+              "text": "Story"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                193.459266112,
+                545.1488352437308,
+                201.1078473531022,
+                552.6108657228549
+              ],
+              "text": "for"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                202.78680421090507,
+                545.1488352437308,
+                205.96562919501193,
+                552.6108657228549
+              ],
+              "text": "a"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                207.6296619918566,
+                545.1488352437308,
+                227.8666886512411,
+                552.6108657228549
+              ],
+              "text": "country"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                229.52325941760665,
+                545.1488352437308,
+                241.9400781348691,
+                552.6108657228549
+              ],
+              "text": "song"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                262.20154646599997,
+                545.1488352437308,
+                270.9052588168503,
+                552.6108657228549
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                272.6021245478031,
+                545.1488352437308,
+                281.33568502056994,
+                552.6108657228549
+              ],
+              "text": "top"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                283.00270262960623,
+                545.1488352437308,
+                298.46253737625545,
+                552.6108657228549
+              ],
+              "text": "down."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                300.1519410767292,
+                545.1488352437308,
+                315.14166790319365,
+                552.6108657228549
+              ],
+              "text": "There"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                316.8385336341465,
+                545.1488352437308,
+                321.3284373734354,
+                552.6108657228549
+              ],
+              "text": "is"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                323.0178410739091,
+                545.1488352437308,
+                326.196666058016,
+                552.6108657228549
+              ],
+              "text": "a"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                327.85622163657314,
+                545.1488352437308,
+                343.5175312061587,
+                552.6108657228549
+              ],
+              "text": "wheel"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                345.2069349066324,
+                545.1488352437308,
+                359.7564019348285,
+                552.6108657228549
+              ],
+              "text": "cover"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                361.4308815743439,
+                545.1488352437308,
+                367.8459891772469,
+                552.6108657228549
+              ],
+              "text": "on"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                369.5130067862832,
+                545.1488352437308,
+                378.21671913713345,
+                552.6108657228549
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                390.367658716,
+                545.1488352437308,
+                415.84153836563377,
+                552.6108657228549
+              ],
+              "text": "Unbound\""
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                417.512111216,
+                545.1488352437308,
+                425.25252271172906,
+                552.6108657228549
+              ],
+              "text": "-A"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                426.9404340061069,
+                545.1488352437308,
+                447.1744758532998,
+                552.6108657228549
+              ],
+              "text": "country"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                448.83253902576115,
+                545.1488352437308,
+                461.2515963521673,
+                552.6108657228549
+              ],
+              "text": "song"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                462.95443170750343,
+                545.1488352437308,
+                478.0829523008796,
+                552.6108657228549
+              ],
+              "text": "about"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                193.459266112,
+                554.0493312437308,
+                209.11609846329813,
+                561.5113617228549
+              ],
+              "text": "based"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                210.81445660034677,
+                554.0493312437308,
+                223.7715263242978,
+                561.5113617228549
+              ],
+              "text": "upon"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                225.44003633942995,
+                554.0493312437308,
+                234.1452410963761,
+                561.5113617228549
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                262.20154646599997,
+                554.0493312437308,
+                276.93010222569507,
+                561.5113617228549
+              ],
+              "text": "spare"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                278.6269679566479,
+                554.0493312437308,
+                288.10449286818334,
+                561.5113617228549
+              ],
+              "text": "tire"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                289.80135859913617,
+                554.0493312437308,
+                294.7762943195682,
+                561.5113617228549
+              ],
+              "text": "in"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                296.44331192860454,
+                554.0493312437308,
+                305.14702427945485,
+                561.5113617228549
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                306.8438900104077,
+                554.0493312437308,
+                319.5226259974874,
+                561.5113617228549
+              ],
+              "text": "back"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                321.2120296979611,
+                554.0493312437308,
+                332.87592953987996,
+                561.5113617228549
+              ],
+              "text": "with"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                334.5504091793954,
+                554.0493312437308,
+                340.9655167822983,
+                561.5113617228549
+              ],
+              "text": "an"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                342.6325343913346,
+                554.0493312437308,
+                371.14495285206766,
+                561.5113617228549
+              ],
+              "text": "inscription"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                390.367658716,
+                554.0493312437308,
+                409.3719579402332,
+                561.5113617228549
+              ],
+              "text": "leaving"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                411.0703160772818,
+                554.0493312437308,
+                415.0684720079965,
+                561.5113617228549
+              ],
+              "text": "it"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                416.73698202312863,
+                554.0493312437308,
+                423.2856599716079,
+                561.5113617228549
+              ],
+              "text": "all"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                424.97655607817745,
+                554.0493312437308,
+                444.3464947958878,
+                561.5113617228549
+              ],
+              "text": "behind,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                446.0448529329364,
+                554.0493312437308,
+                464.58650626746385,
+                561.5113617228549
+              ],
+              "text": "finding"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                466.2848644045125,
+                554.0493312437308,
+                478.4942386744553,
+                561.5113617228549
+              ],
+              "text": "love,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                480.1925968115039,
+                554.0493312437308,
+                489.8753275612153,
+                561.5113617228549
+              ],
+              "text": "and"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                193.459266112,
+                562.9498272437309,
+                210.6107431682667,
+                570.4118577228548
+              ],
+              "text": "advice"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                212.31357852360279,
+                562.9498272437309,
+                231.63725265234248,
+                570.4118577228548
+              ],
+              "text": "printed"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                233.34008800767862,
+                562.9498272437309,
+                239.75818042277322,
+                570.4118577228548
+              ],
+              "text": "on"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                241.43116765619283,
+                562.9498272437309,
+                250.14084963142648,
+                570.4118577228548
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                262.20154646599997,
+                562.9498272437309,
+                273.2013255952768,
+                570.4118577228548
+              ],
+              "text": "that"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                274.8683432043131,
+                562.9498272437309,
+                287.8507838318932,
+                570.4118577228548
+              ],
+              "text": "says,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                289.54764956284595,
+                562.9498272437309,
+                302.768875165758,
+                570.4118577228548
+              ],
+              "text": "\"Quit"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                304.43589277479435,
+                562.9498272437309,
+                316.09979261671316,
+                570.4118577228548
+              ],
+              "text": "your"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                317.77427225622864,
+                562.9498272437309,
+                327.8189114841776,
+                570.4118577228548
+              ],
+              "text": "Job,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                329.51577721513036,
+                562.9498272437309,
+                339.54773099126476,
+                570.4118577228548
+              ],
+              "text": "Buy"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                341.2072865698219,
+                562.9498272437309,
+                344.3861115539288,
+                570.4118577228548
+              ],
+              "text": "a"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                346.04566713248596,
+                562.9498272437309,
+                363.8217161398553,
+                570.4118577228548
+              ],
+              "text": "Ticket,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                365.5185818708081,
+                562.9498272437309,
+                374.92372508669604,
+                570.4118577228548
+              ],
+              "text": "Get"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                376.59074269573233,
+                562.9498272437309,
+                379.7695676798392,
+                570.4118577228548
+              ],
+              "text": "a"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                390.367658716,
+                562.9498272437309,
+                418.59502761243056,
+                570.4118577228548
+              ],
+              "text": "embracing"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                420.29786296776666,
+                562.9498272437309,
+                429.00754494300025,
+                570.4118577228548
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                430.7103802983364,
+                562.9498272437309,
+                452.9890184968092,
+                570.4118577228548
+              ],
+              "text": "freedom"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                454.6620057302289,
+                562.9498272437309,
+                459.94586951249664,
+                570.4118577228548
+              ],
+              "text": "of"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                461.6188567459162,
+                562.9498272437309,
+                470.3285387211498,
+                570.4118577228548
+              ],
+              "text": "the"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                472.031374076486,
+                562.9498272437309,
+                484.8906912011605,
+                570.4118577228548
+              ],
+              "text": "open"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                193.459266112,
+                571.8503232437308,
+                209.1205756815856,
+                579.3123537228548
+              ],
+              "text": "wheel"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                210.80997938205928,
+                571.8503232437308,
+                226.73768343974965,
+                579.3123537228548
+              ],
+              "text": "cover."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                262.20154646599997,
+                571.8503232437308,
+                273.0282064881611,
+                579.3123537228548
+              ],
+              "text": "Tan,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                274.72656462520973,
+                571.8503232437308,
+                284.16528697825373,
+                579.3123537228548
+              ],
+              "text": "Fall"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                285.8636451153024,
+                571.8503232437308,
+                290.8430580540219,
+                579.3123537228548
+              ],
+              "text": "in"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                292.51903009963314,
+                571.8503232437308,
+                305.9671014291106,
+                579.3123537228548
+              ],
+              "text": "Love,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                307.6654595661592,
+                571.8503232437308,
+                323.0909689726045,
+                579.3123537228548
+              ],
+              "text": "Never"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                324.7669410182158,
+                571.8503232437308,
+                346.2732590620993,
+                579.3123537228548
+              ],
+              "text": "Return.\""
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                390.367658716,
+                571.8503232437308,
+                403.72469327363206,
+                579.3123537228548
+              ],
+              "text": "road."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                108.0,
+                595.0182656,
+                147.87477868349998,
+                605.9273656
+              ],
+              "text": "Figure1:"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                151.262545143,
+                595.0182656,
+                503.99591181450023,
+                605.9273656
+              ],
+              "text": "AnexamplefromVisIT-Bench,featuringanimage,achallenginginstruction,an"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                108.0,
+                606.9742656,
+                416.5718025975,
+                617.8833655999999
+              ],
+              "text": "instruction-conditionedcaption,andahuman-verifiedGPT4response."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                419.981496348,
+                606.9742656,
+                503.99591181450023,
+                617.8833655999999
+              ],
+              "text": "Theseelementsare"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                108.0,
+                618.9292656,
+                447.40391920000025,
+                629.8383656
+              ],
+              "text": "usedforevaluatingmultimodalchatbotsandupdatingadynamicleaderboard."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                119.476,
+                682.7180722,
+                123.14273493,
+                687.6993722
+              ],
+              "text": "∗"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                124.14,
+                686.0213424,
+                194.93708044799996,
+                694.9877424
+              ],
+              "text": "Equalcontribution."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                198.91547212799998,
+                686.0213424,
+                505.120432,
+                695.0415408
+              ],
+              "text": "Contactyonatanbitton1@gmail.com,hbansal@ucla.edu,jackh@allenai.org,"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                108.0,
+                695.9833424,
+                227.941432,
+                705.0035408
+              ],
+              "text": "schmidt@cs.washington.edu."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                231.194,
+                694.3860544,
+                304.724492608,
+                704.9497424
+              ],
+              "text": "1HebrewUniversity"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                311.014,
+                694.3860544,
+                378.005297088,
+                704.9497424
+              ],
+              "text": "2GoogleResearch"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                384.3,
+                694.3860544,
+                413.346671616,
+                704.9497424
+              ],
+              "text": "3UCLA"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                419.639,
+                694.3860544,
+                501.601853824,
+                704.9497424
+              ],
+              "text": "4AllenInstituteforAI"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                108.0,
+                704.3490544,
+                204.21799520000002,
+                714.9127424
+              ],
+              "text": "5UniversityofWashington"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                210.195,
+                704.3490544,
+                237.7662368,
+                714.9127424
+              ],
+              "text": "6UCSB"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                243.744,
+                704.3490544,
+                278.7752816,
+                714.9127424
+              ],
+              "text": "7Stanford"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                283.25800000000004,
+                704.3490544,
+                315.294504,
+                714.9127424
+              ],
+              "text": "8LAION"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                319.7777040000001,
+                705.9463424,
+                322.0193040000001,
+                714.9127424
+              ],
+              "text": ","
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                108.00000000000006,
+                734.9393424,
+                192.16759680000007,
+                743.9057424
+              ],
+              "text": "Preprint.Underreview."
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                16.34,
+                211.16000000000008,
+                36.34,
+                251.16000000000008
+              ],
+              "text": "3202"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                16.34,
+                256.15999999999997,
+                36.34,
+                288.36
+              ],
+              "text": "ceD"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                16.34,
+                293.36,
+                36.34,
+                313.36
+              ],
+              "text": "62"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                16.34,
+                323.35999999999996,
+                36.34,
+                383.9
+              ],
+              "text": "]LC.sc["
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                16.34,
+                393.9,
+                36.34,
+                560.0
+              ],
+              "text": "4v59560.8032:viXra"
+            }
+          ]
+        },
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "element_type": "layout"
+        },
+        "confidence": 0.8,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "bbox"
+        }
+      ]
+    }
+  ]
+}

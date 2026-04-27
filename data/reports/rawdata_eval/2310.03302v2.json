@@ -1,0 +1,147 @@
+{
+  "pdf_path": "/home/kimilabra/DocWorldTrace/data/raw_pdfs/2310.03302v2.pdf",
+  "profile": {
+    "doc_id": "2310.03302v2",
+    "title": "2310.03302v2",
+    "page_count": 39,
+    "total_words": 11644,
+    "avg_words_per_page": 298.56,
+    "total_text_chars": 107194,
+    "table_pages": 5,
+    "has_text_layer": true
+  },
+  "checks": [
+    {
+      "name": "overview",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "cache_hit": false
+      }
+    },
+    {
+      "name": "read_page",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "cache_hit_second": true,
+        "page": 11,
+        "text_chars": 5669
+      }
+    },
+    {
+      "name": "search",
+      "status": "success",
+      "passed": false,
+      "detail": {
+        "passed": false,
+        "status": "success",
+        "query": "mlagentbench evaluatinglanguageagentsonmachinelearningexperimentation",
+        "returned_pages": [
+          2,
+          3,
+          4
+        ],
+        "target_page": 11,
+        "cache_hit_second": true
+      }
+    },
+    {
+      "name": "crop",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "page": 5,
+        "bbox": [
+          336.7050432013035,
+          155.3799905549895,
+          372.3208408424063,
+          173.01521262900133
+        ],
+        "text_chars": 19,
+        "image_path": "artifacts/docenv/2310.03302v2/crops/page_005_701_323_775_360.png"
+      }
+    },
+    {
+      "name": "ocr",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "page": 5,
+        "bbox": [
+          336.7050432013035,
+          155.3799905549895,
+          372.3208408424063,
+          173.01521262900133
+        ],
+        "text_preview": "| LM |\n| --- |\n|  |",
+        "cache_hit_second": true
+      }
+    },
+    {
+      "name": "detect_layout",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "page": 11,
+        "element_count": 567
+      }
+    },
+    {
+      "name": "parse_table",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "page": 5,
+        "row_count": 2,
+        "cache_hit_second": true
+      }
+    },
+    {
+      "name": "compute",
+      "status": "success",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "status": "success",
+        "value": 14.285714285714299
+      }
+    },
+    {
+      "name": "verify",
+      "status": "success",
+      "passed": false,
+      "detail": {
+        "passed": false,
+        "status": "success",
+        "claim": "lm",
+        "label": "UNSUPPORTED",
+        "sufficiency": "INSUFFICIENT",
+        "cache_hit_second": true
+      }
+    }
+  ],
+  "metrics": {
+    "attempted_checks": 9,
+    "passed_checks": 7,
+    "skipped_checks": 0,
+    "pass_rate": 0.7778,
+    "cache_check_count": 5,
+    "cache_pass_rate": 1.0
+  },
+  "suitability": "high",
+  "recommended_for_h1": true,
+  "reasons": []
+}

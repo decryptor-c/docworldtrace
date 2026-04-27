@@ -1,0 +1,753 @@
+{
+  "pdf_dir": "/home/kimilabra/DocWorldTrace/data/raw_pdfs",
+  "document_count": 5,
+  "high": 4,
+  "medium": 1,
+  "low": 0,
+  "recommended_for_h1": [
+    "2308.06595v4.pdf",
+    "2310.03302v2.pdf",
+    "2503.00808v4.pdf",
+    "ti2025ars.pdf",
+    "tm2529296d2_ars.pdf"
+  ],
+  "documents": [
+    {
+      "pdf_path": "/home/kimilabra/DocWorldTrace/data/raw_pdfs/2308.06595v4.pdf",
+      "profile": {
+        "doc_id": "2308.06595v4",
+        "title": "2308.06595v4",
+        "page_count": 28,
+        "total_words": 5816,
+        "avg_words_per_page": 207.71,
+        "total_text_chars": 80756,
+        "table_pages": 6,
+        "has_text_layer": true
+      },
+      "checks": [
+        {
+          "name": "overview",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "cache_hit": false
+          }
+        },
+        {
+          "name": "read_page",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "cache_hit_second": true,
+            "page": 7,
+            "text_chars": 3198
+          }
+        },
+        {
+          "name": "search",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "query": "blip2 caption not possible determine",
+            "returned_pages": [
+              7,
+              2,
+              4
+            ],
+            "target_page": 7,
+            "cache_hit_second": true
+          }
+        },
+        {
+          "name": "crop",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "page": 3,
+            "bbox": [
+              113.47879446279998,
+              73.13514863924,
+              263.77319592,
+              167.6252836
+            ],
+            "text_chars": 167,
+            "image_path": "artifacts/docenv/2308.06595v4/crops/page_003_236_152_549_349.png"
+          }
+        },
+        {
+          "name": "ocr",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "page": 3,
+            "bbox": [
+              113.47879446279998,
+              73.13514863924,
+              263.77319592,
+              167.6252836
+            ],
+            "text_preview": "| Reasoning Over\nPlots |  | Art Knowledge |\n| --- | --- | --- |\n|  |  |  |\n| How much is the\nbrowser usage for\nFirefox and Safari? |  | Teach me about this\npainting. |",
+            "cache_hit_second": true
+          }
+        },
+        {
+          "name": "detect_layout",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "page": 7,
+            "element_count": 562
+          }
+        },
+        {
+          "name": "parse_table",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "page": 3,
+            "row_count": 3,
+            "cache_hit_second": true
+          }
+        },
+        {
+          "name": "compute",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "value": 14.285714285714299
+          }
+        },
+        {
+          "name": "verify",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "claim": "reasoning over plots art knowledge how much is the browser usage for",
+            "label": "SUPPORTED",
+            "sufficiency": "SUFFICIENT",
+            "cache_hit_second": true
+          }
+        }
+      ],
+      "metrics": {
+        "attempted_checks": 9,
+        "passed_checks": 9,
+        "skipped_checks": 0,
+        "pass_rate": 1.0,
+        "cache_check_count": 5,
+        "cache_pass_rate": 1.0
+      },
+      "suitability": "high",
+      "recommended_for_h1": true,
+      "reasons": []
+    },
+    {
+      "pdf_path": "/home/kimilabra/DocWorldTrace/data/raw_pdfs/2310.03302v2.pdf",
+      "profile": {
+        "doc_id": "2310.03302v2",
+        "title": "2310.03302v2",
+        "page_count": 39,
+        "total_words": 11644,
+        "avg_words_per_page": 298.56,
+        "total_text_chars": 107194,
+        "table_pages": 5,
+        "has_text_layer": true
+      },
+      "checks": [
+        {
+          "name": "overview",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "cache_hit": false
+          }
+        },
+        {
+          "name": "read_page",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "cache_hit_second": true,
+            "page": 11,
+            "text_chars": 5669
+          }
+        },
+        {
+          "name": "search",
+          "status": "success",
+          "passed": false,
+          "detail": {
+            "passed": false,
+            "status": "success",
+            "query": "mlagentbench evaluatinglanguageagentsonmachinelearningexperimentation",
+            "returned_pages": [
+              2,
+              3,
+              4
+            ],
+            "target_page": 11,
+            "cache_hit_second": true
+          }
+        },
+        {
+          "name": "crop",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "page": 5,
+            "bbox": [
+              336.7050432013035,
+              155.3799905549895,
+              372.3208408424063,
+              173.01521262900133
+            ],
+            "text_chars": 19,
+            "image_path": "artifacts/docenv/2310.03302v2/crops/page_005_701_323_775_360.png"
+          }
+        },
+        {
+          "name": "ocr",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "page": 5,
+            "bbox": [
+              336.7050432013035,
+              155.3799905549895,
+              372.3208408424063,
+              173.01521262900133
+            ],
+            "text_preview": "| LM |\n| --- |\n|  |",
+            "cache_hit_second": true
+          }
+        },
+        {
+          "name": "detect_layout",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "page": 11,
+            "element_count": 567
+          }
+        },
+        {
+          "name": "parse_table",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "page": 5,
+            "row_count": 2,
+            "cache_hit_second": true
+          }
+        },
+        {
+          "name": "compute",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "value": 14.285714285714299
+          }
+        },
+        {
+          "name": "verify",
+          "status": "success",
+          "passed": false,
+          "detail": {
+            "passed": false,
+            "status": "success",
+            "claim": "lm",
+            "label": "UNSUPPORTED",
+            "sufficiency": "INSUFFICIENT",
+            "cache_hit_second": true
+          }
+        }
+      ],
+      "metrics": {
+        "attempted_checks": 9,
+        "passed_checks": 7,
+        "skipped_checks": 0,
+        "pass_rate": 0.7778,
+        "cache_check_count": 5,
+        "cache_pass_rate": 1.0
+      },
+      "suitability": "high",
+      "recommended_for_h1": true,
+      "reasons": []
+    },
+    {
+      "pdf_path": "/home/kimilabra/DocWorldTrace/data/raw_pdfs/2503.00808v4.pdf",
+      "profile": {
+        "doc_id": "2503.00808v4",
+        "title": "2503.00808v4",
+        "page_count": 24,
+        "total_words": 7160,
+        "avg_words_per_page": 298.33,
+        "total_text_chars": 82862,
+        "table_pages": 8,
+        "has_text_layer": true
+      },
+      "checks": [
+        {
+          "name": "overview",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "cache_hit": false
+          }
+        },
+        {
+          "name": "read_page",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "cache_hit_second": true,
+            "page": 18,
+            "text_chars": 3619
+          }
+        },
+        {
+          "name": "search",
+          "status": "success",
+          "passed": false,
+          "detail": {
+            "passed": false,
+            "status": "success",
+            "query": "predictivedataselection thedatathatpredictsisthedatathatteaches",
+            "returned_pages": [
+              2,
+              3,
+              4
+            ],
+            "target_page": 18,
+            "cache_hit_second": true
+          }
+        },
+        {
+          "name": "crop",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "page": 6,
+            "bbox": [
+              142.80017792,
+              125.19795404000001,
+              452.9536206,
+              139.51805528
+            ],
+            "text_chars": 78,
+            "image_path": "artifacts/docenv/2503.00808v4/crops/page_006_297_260_943_290.png"
+          }
+        },
+        {
+          "name": "ocr",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "page": 6,
+            "bbox": [
+              142.80017792,
+              125.19795404000001,
+              452.9536206,
+              139.51805528
+            ],
+            "text_preview": "| Tokens | ARC-E ARC-C MMLU LAMBADA RACE SciQ BBH Avg. |\n| --- | --- |\n|  |  |",
+            "cache_hit_second": true
+          }
+        },
+        {
+          "name": "detect_layout",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "page": 18,
+            "element_count": 1322
+          }
+        },
+        {
+          "name": "parse_table",
+          "status": "success",
+          "passed": false,
+          "detail": {
+            "passed": false,
+            "status": "success",
+            "page": 6,
+            "row_count": 1,
+            "cache_hit_second": true
+          }
+        },
+        {
+          "name": "compute",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "value": 14.285714285714299
+          }
+        },
+        {
+          "name": "verify",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "claim": "tokens arc e arc c mmlu lambada race sciq bbh avg",
+            "label": "SUPPORTED",
+            "sufficiency": "SUFFICIENT",
+            "cache_hit_second": true
+          }
+        }
+      ],
+      "metrics": {
+        "attempted_checks": 9,
+        "passed_checks": 7,
+        "skipped_checks": 0,
+        "pass_rate": 0.7778,
+        "cache_check_count": 5,
+        "cache_pass_rate": 1.0
+      },
+      "suitability": "high",
+      "recommended_for_h1": true,
+      "reasons": []
+    },
+    {
+      "pdf_path": "/home/kimilabra/DocWorldTrace/data/raw_pdfs/ti2025ars.pdf",
+      "profile": {
+        "doc_id": "ti2025ars",
+        "title": "ti2025ars",
+        "page_count": 140,
+        "total_words": 62127,
+        "avg_words_per_page": 443.76,
+        "total_text_chars": 399343,
+        "table_pages": 66,
+        "has_text_layer": true
+      },
+      "checks": [
+        {
+          "name": "overview",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "cache_hit": false
+          }
+        },
+        {
+          "name": "read_page",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "cache_hit_second": true,
+            "page": 42,
+            "text_chars": 5100
+          }
+        },
+        {
+          "name": "search",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "query": "government incentives",
+            "returned_pages": [
+              20,
+              42,
+              15
+            ],
+            "target_page": 42,
+            "cache_hit_second": true
+          }
+        },
+        {
+          "name": "crop",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "page": 38,
+            "bbox": [
+              48.96,
+              83.70001000000002,
+              562.2600199999999,
+              183.45001000000002
+            ],
+            "text_chars": 334,
+            "image_path": "artifacts/docenv/ti2025ars/crops/page_038_102_174_1171_382.png"
+          }
+        },
+        {
+          "name": "ocr",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "page": 38,
+            "bbox": [
+              48.96,
+              83.70001000000002,
+              562.2600199999999,
+              183.45001000000002
+            ],
+            "text_preview": "| Revenue $ 14,006 $ 2,697 $ 979 $ 17,682 |\n| --- |\n| Cost of revenue 5,764 1,471 364 7,599 |\n| Gross profit 8,242 1,226 615 10,083 |\n| Research and development 1,494 514 75 2,083 |\n| Selling, general",
+            "cache_hit_second": true
+          }
+        },
+        {
+          "name": "detect_layout",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "page": 42,
+            "element_count": 778
+          }
+        },
+        {
+          "name": "parse_table",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "page": 38,
+            "row_count": 7,
+            "cache_hit_second": true
+          }
+        },
+        {
+          "name": "compute",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "value": 14.285714285714299
+          }
+        },
+        {
+          "name": "verify",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "claim": "revenue 14 006 2 697 979 17 682 cost of revenue 5",
+            "label": "SUPPORTED",
+            "sufficiency": "SUFFICIENT",
+            "cache_hit_second": true
+          }
+        }
+      ],
+      "metrics": {
+        "attempted_checks": 9,
+        "passed_checks": 9,
+        "skipped_checks": 0,
+        "pass_rate": 1.0,
+        "cache_check_count": 5,
+        "cache_pass_rate": 1.0
+      },
+      "suitability": "medium",
+      "recommended_for_h1": true,
+      "reasons": [
+        "very_long_document"
+      ]
+    },
+    {
+      "pdf_path": "/home/kimilabra/DocWorldTrace/data/raw_pdfs/tm2529296d2_ars.pdf",
+      "profile": {
+        "doc_id": "tm2529296d2_ars",
+        "title": "tm2529296d2_ars",
+        "page_count": 98,
+        "total_words": 39995,
+        "avg_words_per_page": 408.11,
+        "total_text_chars": 266479,
+        "table_pages": 49,
+        "has_text_layer": true
+      },
+      "checks": [
+        {
+          "name": "overview",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "cache_hit": false
+          }
+        },
+        {
+          "name": "read_page",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "cache_hit_second": true,
+            "page": 27,
+            "text_chars": 5788
+          }
+        },
+        {
+          "name": "search",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "query": "technology risks",
+            "returned_pages": [
+              27,
+              12,
+              16
+            ],
+            "target_page": 27,
+            "cache_hit_second": true
+          }
+        },
+        {
+          "name": "crop",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "page": 15,
+            "bbox": [
+              51.975,
+              163.13833333333335,
+              480.264,
+              173.289
+            ],
+            "text_chars": 143,
+            "image_path": "artifacts/docenv/tm2529296d2_ars/crops/page_015_108_339_1000_361.png"
+          }
+        },
+        {
+          "name": "ocr",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "page": 15,
+            "bbox": [
+              51.975,
+              163.13833333333335,
+              480.264,
+              173.289
+            ],
+            "text_preview": "| platforms that communicate directly with | Grainger | 's systems | through eProcurement technology. |\n| --- | --- | --- | --- |\n|  |  |  |  |",
+            "cache_hit_second": true
+          }
+        },
+        {
+          "name": "detect_layout",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "page": 27,
+            "element_count": 843
+          }
+        },
+        {
+          "name": "parse_table",
+          "status": "success",
+          "passed": false,
+          "detail": {
+            "passed": false,
+            "status": "success",
+            "page": 15,
+            "row_count": 1,
+            "cache_hit_second": true
+          }
+        },
+        {
+          "name": "compute",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "value": 14.285714285714299
+          }
+        },
+        {
+          "name": "verify",
+          "status": "success",
+          "passed": true,
+          "detail": {
+            "passed": true,
+            "status": "success",
+            "claim": "platforms that communicate directly with grainger s systems through eprocurement technology",
+            "label": "SUPPORTED",
+            "sufficiency": "SUFFICIENT",
+            "cache_hit_second": true
+          }
+        }
+      ],
+      "metrics": {
+        "attempted_checks": 9,
+        "passed_checks": 8,
+        "skipped_checks": 0,
+        "pass_rate": 0.8889,
+        "cache_check_count": 5,
+        "cache_pass_rate": 1.0
+      },
+      "suitability": "high",
+      "recommended_for_h1": true,
+      "reasons": []
+    }
+  ]
+}

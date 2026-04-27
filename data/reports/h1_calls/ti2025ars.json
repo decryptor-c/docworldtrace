@@ -1,0 +1,1481 @@
+{
+  "source": "/home/kimilabra/DocWorldTrace/data/raw_pdfs/ti2025ars.pdf",
+  "summary": {
+    "total_calls": 10,
+    "success_calls": 10,
+    "success_rate": 1.0,
+    "expectation_checks": {
+      "passed": 21,
+      "total": 21,
+      "rate": 1.0
+    },
+    "retrieval_checks": {
+      "passed": 2,
+      "total": 2,
+      "rate": 1.0
+    },
+    "cache_checks": {
+      "passed": 1,
+      "total": 1,
+      "rate": 1.0
+    }
+  },
+  "executions": [
+    {
+      "index": 1,
+      "name": "overview_doc",
+      "action": "overview",
+      "params": {},
+      "result": {
+        "action": "overview",
+        "status": "success",
+        "result": {
+          "doc_id": "ti2025ars",
+          "title": "ti2025ars",
+          "page_count": 140,
+          "pages": [
+            {
+              "page": 1,
+              "summary": "TEXAS INSTRUMENTS",
+              "image_path": "artifacts/docenv/ti2025ars/page_001.png"
+            },
+            {
+              "page": 2,
+              "summary": "To our shareholders, colleagues, customers and partners",
+              "image_path": "artifacts/docenv/ti2025ars/page_002.png"
+            },
+            {
+              "page": 3,
+              "summary": "Lastly, we continued to strengthen our reach of market channels by building closer direct relationships with our",
+              "image_path": "artifacts/docenv/ti2025ars/page_003.png"
+            },
+            {
+              "page": 4,
+              "summary": "(This page intentionally left blank.)",
+              "image_path": "artifacts/docenv/ti2025ars/page_004.png"
+            },
+            {
+              "page": 5,
+              "summary": "TABLE OF CONTENTS",
+              "image_path": "artifacts/docenv/ti2025ars/page_005.png"
+            },
+            {
+              "page": 6,
+              "summary": "(This page intentionally left blank.)",
+              "image_path": "artifacts/docenv/ti2025ars/page_006.png"
+            },
+            {
+              "page": 7,
+              "summary": "UNITED STATES",
+              "image_path": "artifacts/docenv/ti2025ars/page_007.png"
+            },
+            {
+              "page": 8,
+              "summary": "PART I",
+              "image_path": "artifacts/docenv/ti2025ars/page_008.png"
+            },
+            {
+              "page": 9,
+              "summary": "We believe that our business model with the combined effect of our four competitive advantages sets TI apart from",
+              "image_path": "artifacts/docenv/ti2025ars/page_009.png"
+            },
+            {
+              "page": 10,
+              "summary": "Embedded Processing",
+              "image_path": "artifacts/docenv/ti2025ars/page_010.png"
+            },
+            {
+              "page": 11,
+              "summary": "Markets for our products",
+              "image_path": "artifacts/docenv/ti2025ars/page_011.png"
+            },
+            {
+              "page": 12,
+              "summary": "Market characteristics",
+              "image_path": "artifacts/docenv/ti2025ars/page_012.png"
+            },
+            {
+              "page": 13,
+              "summary": "We invest in manufacturing technologies and do most of our manufacturing in-house. This strategic decision to",
+              "image_path": "artifacts/docenv/ti2025ars/page_013.png"
+            },
+            {
+              "page": 14,
+              "summary": "Information about our executive officers",
+              "image_path": "artifacts/docenv/ti2025ars/page_014.png"
+            },
+            {
+              "page": 15,
+              "summary": "ITEM 1A. Risk factors",
+              "image_path": "artifacts/docenv/ti2025ars/page_015.png"
+            },
+            {
+              "page": 16,
+              "summary": "Changes in expected demand for our products could have a material adverse effect on our results of",
+              "image_path": "artifacts/docenv/ti2025ars/page_016.png"
+            },
+            {
+              "page": 17,
+              "summary": "Our results of operations could be affected by natural events in the locations in which we operate.",
+              "image_path": "artifacts/docenv/ti2025ars/page_017.png"
+            },
+            {
+              "page": 18,
+              "summary": "Our continued success depends in part on our ability to retain, train and recruit a sufficient number of",
+              "image_path": "artifacts/docenv/ti2025ars/page_018.png"
+            },
+            {
+              "page": 19,
+              "summary": "Legal and regulatory risks",
+              "image_path": "artifacts/docenv/ti2025ars/page_019.png"
+            },
+            {
+              "page": 20,
+              "summary": "We have received and may in the future continue to receive government incentives, including but not limited to tax",
+              "image_path": "artifacts/docenv/ti2025ars/page_020.png"
+            },
+            {
+              "page": 21,
+              "summary": "ITEM 1B. Unresolved staff comments",
+              "image_path": "artifacts/docenv/ti2025ars/page_021.png"
+            },
+            {
+              "page": 22,
+              "summary": "Our chief information security officer reports to our chief information officer. Our chief information security officer has",
+              "image_path": "artifacts/docenv/ti2025ars/page_022.png"
+            },
+            {
+              "page": 23,
+              "summary": "ITEM 3. Legal proceedings",
+              "image_path": "artifacts/docenv/ti2025ars/page_023.png"
+            },
+            {
+              "page": 24,
+              "summary": "PART II",
+              "image_path": "artifacts/docenv/ti2025ars/page_024.png"
+            },
+            {
+              "page": 25,
+              "summary": "ITEM 7. Management’s discussion and analysis of financial condition and results of",
+              "image_path": "artifacts/docenv/ti2025ars/page_025.png"
+            },
+            {
+              "page": 26,
+              "summary": "◦ New products do not tend to have a significant impact on our revenue in any given period because we",
+              "image_path": "artifacts/docenv/ti2025ars/page_026.png"
+            },
+            {
+              "page": 27,
+              "summary": "Details of financial results – 2025 compared with 2024",
+              "image_path": "artifacts/docenv/ti2025ars/page_027.png"
+            },
+            {
+              "page": 28,
+              "summary": "Embedded Processing revenue increased due to higher demand, which was impacted by the macroeconomic",
+              "image_path": "artifacts/docenv/ti2025ars/page_028.png"
+            },
+            {
+              "page": 29,
+              "summary": "We had $3.23 billion of cash and cash equivalents and $1.66 billion of short-term investments as of December 31,",
+              "image_path": "artifacts/docenv/ti2025ars/page_029.png"
+            },
+            {
+              "page": 30,
+              "summary": "In the ordinary course of global business, there may be many transactions and calculations where the ultimate tax",
+              "image_path": "artifacts/docenv/ti2025ars/page_030.png"
+            },
+            {
+              "page": 31,
+              "summary": "ITEM 8. Financial statements and supplementary data",
+              "image_path": "artifacts/docenv/ti2025ars/page_031.png"
+            },
+            {
+              "page": 32,
+              "summary": "Consolidated Statements of Income For Years Ended December 31,",
+              "image_path": "artifacts/docenv/ti2025ars/page_032.png"
+            },
+            {
+              "page": 33,
+              "summary": "Consolidated Statements of Comprehensive Income For Years Ended December 31,",
+              "image_path": "artifacts/docenv/ti2025ars/page_033.png"
+            },
+            {
+              "page": 34,
+              "summary": "Consolidated Balance Sheets December 31,",
+              "image_path": "artifacts/docenv/ti2025ars/page_034.png"
+            },
+            {
+              "page": 35,
+              "summary": "Consolidated Statements of Cash Flows For Years Ended December 31,",
+              "image_path": "artifacts/docenv/ti2025ars/page_035.png"
+            },
+            {
+              "page": 36,
+              "summary": "Consolidated Statements of Stockholders’ Equity Treasury",
+              "image_path": "artifacts/docenv/ti2025ars/page_036.png"
+            },
+            {
+              "page": 37,
+              "summary": "Notes to financial statements",
+              "image_path": "artifacts/docenv/ti2025ars/page_037.png"
+            },
+            {
+              "page": 38,
+              "summary": "Segment information",
+              "image_path": "artifacts/docenv/ti2025ars/page_038.png"
+            },
+            {
+              "page": 39,
+              "summary": "Property, plant and equipment by geographic area, based on physical location:",
+              "image_path": "artifacts/docenv/ti2025ars/page_039.png"
+            },
+            {
+              "page": 40,
+              "summary": "The revenue recognized is adjusted based on allowances, which are prepared on a portfolio basis using a most",
+              "image_path": "artifacts/docenv/ti2025ars/page_040.png"
+            },
+            {
+              "page": 41,
+              "summary": "Computation and reconciliation of earnings per common share are as follows:",
+              "image_path": "artifacts/docenv/ti2025ars/page_041.png"
+            },
+            {
+              "page": 42,
+              "summary": "Government incentives",
+              "image_path": "artifacts/docenv/ti2025ars/page_042.png"
+            },
+            {
+              "page": 43,
+              "summary": "Derivatives and hedging",
+              "image_path": "artifacts/docenv/ti2025ars/page_043.png"
+            },
+            {
+              "page": 44,
+              "summary": "We also have an employee stock purchase plan (ESPP) under which options are offered to all eligible employees in",
+              "image_path": "artifacts/docenv/ti2025ars/page_044.png"
+            },
+            {
+              "page": 45,
+              "summary": "Long-term incentive and director compensation plans",
+              "image_path": "artifacts/docenv/ti2025ars/page_045.png"
+            },
+            {
+              "page": 46,
+              "summary": "Effect on shares outstanding and treasury shares",
+              "image_path": "artifacts/docenv/ti2025ars/page_046.png"
+            },
+            {
+              "page": 47,
+              "summary": "Applying the updated requirements in ASU 2023-09 on a prospective basis, the principal reconciling items from the",
+              "image_path": "artifacts/docenv/ti2025ars/page_047.png"
+            },
+            {
+              "page": 48,
+              "summary": "We have made an allowable policy election to account for the effects of GILTI as a component of income tax",
+              "image_path": "artifacts/docenv/ti2025ars/page_048.png"
+            },
+            {
+              "page": 49,
+              "summary": "Applying the updated requirements in ASU 2023-09 on a prospective basis, cash payments made for income taxes,",
+              "image_path": "artifacts/docenv/ti2025ars/page_049.png"
+            },
+            {
+              "page": 50,
+              "summary": "All of the $87 million and $85 million liabilities for uncertain tax positions as of December 31, 2025 and 2024,",
+              "image_path": "artifacts/docenv/ti2025ars/page_050.png"
+            },
+            {
+              "page": 51,
+              "summary": "Our mutual funds hold a variety of debt and equity investments intended to generate returns that offset changes in",
+              "image_path": "artifacts/docenv/ti2025ars/page_051.png"
+            },
+            {
+              "page": 52,
+              "summary": "• Level 2 – Uses inputs other than Level 1 that are either directly or indirectly observable as of the",
+              "image_path": "artifacts/docenv/ti2025ars/page_052.png"
+            },
+            {
+              "page": 53,
+              "summary": "Our aggregate expense for the U.S. defined contribution plans was $74 million, $76 million and $75 million in 2025,",
+              "image_path": "artifacts/docenv/ti2025ars/page_053.png"
+            },
+            {
+              "page": 54,
+              "summary": "Changes in the benefit obligations and plan assets for defined benefit and retiree health care benefit plans are as",
+              "image_path": "artifacts/docenv/ti2025ars/page_054.png"
+            },
+            {
+              "page": 55,
+              "summary": "Contributions to the plans meet or exceed all minimum funding requirements. We expect to contribute about",
+              "image_path": "artifacts/docenv/ti2025ars/page_055.png"
+            },
+            {
+              "page": 56,
+              "summary": "December 31, 2024",
+              "image_path": "artifacts/docenv/ti2025ars/page_056.png"
+            },
+            {
+              "page": 57,
+              "summary": "Assumptions for the expected long-term rate of return on plan assets are based on future expectations for returns",
+              "image_path": "artifacts/docenv/ti2025ars/page_057.png"
+            },
+            {
+              "page": 58,
+              "summary": "Deferred compensation plans",
+              "image_path": "artifacts/docenv/ti2025ars/page_058.png"
+            },
+            {
+              "page": 59,
+              "summary": "Long-term debt outstanding is as follows:",
+              "image_path": "artifacts/docenv/ti2025ars/page_059.png"
+            },
+            {
+              "page": 60,
+              "summary": "Details of our operating leases are as follows:",
+              "image_path": "artifacts/docenv/ti2025ars/page_060.png"
+            },
+            {
+              "page": 61,
+              "summary": "General",
+              "image_path": "artifacts/docenv/ti2025ars/page_061.png"
+            },
+            {
+              "page": 62,
+              "summary": "Goodwill",
+              "image_path": "artifacts/docenv/ti2025ars/page_062.png"
+            },
+            {
+              "page": 63,
+              "summary": "Details on amounts reclassified out of accumulated other comprehensive income (loss), net of taxes, to",
+              "image_path": "artifacts/docenv/ti2025ars/page_063.png"
+            },
+            {
+              "page": 64,
+              "summary": "Report of independent registered public accounting firm",
+              "image_path": "artifacts/docenv/ti2025ars/page_064.png"
+            },
+            {
+              "page": 65,
+              "summary": "Uncertain tax positions",
+              "image_path": "artifacts/docenv/ti2025ars/page_065.png"
+            },
+            {
+              "page": 66,
+              "summary": "ITEM 9. Changes in and disagreements with accountants on accounting and financial",
+              "image_path": "artifacts/docenv/ti2025ars/page_066.png"
+            },
+            {
+              "page": 67,
+              "summary": "Report of independent registered public accounting firm",
+              "image_path": "artifacts/docenv/ti2025ars/page_067.png"
+            },
+            {
+              "page": 68,
+              "summary": "ITEM 9B. Other information",
+              "image_path": "artifacts/docenv/ti2025ars/page_068.png"
+            },
+            {
+              "page": 69,
+              "summary": "ITEM 12. Security ownership of certain beneficial owners and management and related",
+              "image_path": "artifacts/docenv/ti2025ars/page_069.png"
+            },
+            {
+              "page": 70,
+              "summary": "PART IV",
+              "image_path": "artifacts/docenv/ti2025ars/page_070.png"
+            },
+            {
+              "page": 71,
+              "summary": "Designation Incorporated by Reference Filed or",
+              "image_path": "artifacts/docenv/ti2025ars/page_071.png"
+            },
+            {
+              "page": 72,
+              "summary": "Notice regarding forward-looking statements",
+              "image_path": "artifacts/docenv/ti2025ars/page_072.png"
+            },
+            {
+              "page": 73,
+              "summary": "• Our ability to maintain and enforce a strong intellectual property portfolio and maintain freedom of operation",
+              "image_path": "artifacts/docenv/ti2025ars/page_073.png"
+            },
+            {
+              "page": 74,
+              "summary": "SIGNATURES",
+              "image_path": "artifacts/docenv/ti2025ars/page_074.png"
+            },
+            {
+              "page": 75,
+              "summary": "NOTICE OF ANNUAL MEETING OF STOCKHOLDERS",
+              "image_path": "artifacts/docenv/ti2025ars/page_075.png"
+            },
+            {
+              "page": 76,
+              "summary": "TABLE OF CONTENTS",
+              "image_path": "artifacts/docenv/ti2025ars/page_076.png"
+            },
+            {
+              "page": 77,
+              "summary": "PROXY STATEMENT – March 4, 2026",
+              "image_path": "artifacts/docenv/ti2025ars/page_077.png"
+            },
+            {
+              "page": 78,
+              "summary": "Attendance and instructions for the annual meeting",
+              "image_path": "artifacts/docenv/ti2025ars/page_078.png"
+            },
+            {
+              "page": 79,
+              "summary": "Summary",
+              "image_path": "artifacts/docenv/ti2025ars/page_079.png"
+            },
+            {
+              "page": 80,
+              "summary": "Nominee criteria",
+              "image_path": "artifacts/docenv/ti2025ars/page_080.png"
+            },
+            {
+              "page": 81,
+              "summary": "Director nominees",
+              "image_path": "artifacts/docenv/ti2025ars/page_081.png"
+            },
+            {
+              "page": 82,
+              "summary": "Carrie Cox",
+              "image_path": "artifacts/docenv/ti2025ars/page_082.png"
+            },
+            {
+              "page": 83,
+              "summary": "Curtis Farmer",
+              "image_path": "artifacts/docenv/ti2025ars/page_083.png"
+            },
+            {
+              "page": 84,
+              "summary": "Ronald Kirk",
+              "image_path": "artifacts/docenv/ti2025ars/page_084.png"
+            },
+            {
+              "page": 85,
+              "summary": "Director nomination process",
+              "image_path": "artifacts/docenv/ti2025ars/page_085.png"
+            },
+            {
+              "page": 86,
+              "summary": "Director independence",
+              "image_path": "artifacts/docenv/ti2025ars/page_086.png"
+            },
+            {
+              "page": 87,
+              "summary": "C. No member of the audit committee may accept directly or indirectly any consulting, advisory or other",
+              "image_path": "artifacts/docenv/ti2025ars/page_087.png"
+            },
+            {
+              "page": 88,
+              "summary": "Board organization",
+              "image_path": "artifacts/docenv/ti2025ars/page_088.png"
+            },
+            {
+              "page": 89,
+              "summary": "◦ Trends in accounting policy changes that are relevant to the company.",
+              "image_path": "artifacts/docenv/ti2025ars/page_089.png"
+            },
+            {
+              "page": 90,
+              "summary": "During 2025, the committee determined that its compensation consultant was independent of the company and had",
+              "image_path": "artifacts/docenv/ti2025ars/page_090.png"
+            },
+            {
+              "page": 91,
+              "summary": "• Electing officers of the company other than the executive officers.",
+              "image_path": "artifacts/docenv/ti2025ars/page_091.png"
+            },
+            {
+              "page": 92,
+              "summary": "Oversight by the board",
+              "image_path": "artifacts/docenv/ti2025ars/page_092.png"
+            },
+            {
+              "page": 93,
+              "summary": "• Annual grant of a 10-year option to purchase TI common stock pursuant to the terms of the Texas",
+              "image_path": "artifacts/docenv/ti2025ars/page_093.png"
+            },
+            {
+              "page": 94,
+              "summary": "2025 director compensation",
+              "image_path": "artifacts/docenv/ti2025ars/page_094.png"
+            },
+            {
+              "page": 95,
+              "summary": "(3) Shown is the aggregate grant date fair value of options granted in 2025 calculated in accordance with ASC",
+              "image_path": "artifacts/docenv/ti2025ars/page_095.png"
+            },
+            {
+              "page": 96,
+              "summary": "Executive compensation",
+              "image_path": "artifacts/docenv/ti2025ars/page_096.png"
+            },
+            {
+              "page": 97,
+              "summary": "continued to strengthen its strategic position, which will benefit the company and drive value for",
+              "image_path": "artifacts/docenv/ti2025ars/page_097.png"
+            },
+            {
+              "page": 98,
+              "summary": "a world that is ever changing. And third, we will be a company that we are personally proud to be a part of and that",
+              "image_path": "artifacts/docenv/ti2025ars/page_098.png"
+            },
+            {
+              "page": 99,
+              "summary": "Profit Sharing",
+              "image_path": "artifacts/docenv/ti2025ars/page_099.png"
+            },
+            {
+              "page": 100,
+              "summary": "Shown in the table below is the Comparator Group used for the compensation decisions for 2025.",
+              "image_path": "artifacts/docenv/ti2025ars/page_100.png"
+            },
+            {
+              "page": 101,
+              "summary": "Analysis of compensation determinations",
+              "image_path": "artifacts/docenv/ti2025ars/page_101.png"
+            },
+            {
+              "page": 102,
+              "summary": "Equity compensation",
+              "image_path": "artifacts/docenv/ti2025ars/page_102.png"
+            },
+            {
+              "page": 103,
+              "summary": "Before approving the grants, the committee reviewed the amount of unvested equity compensation held by the",
+              "image_path": "artifacts/docenv/ti2025ars/page_103.png"
+            },
+            {
+              "page": 104,
+              "summary": "Assessment of 2025 performance",
+              "image_path": "artifacts/docenv/ti2025ars/page_104.png"
+            },
+            {
+              "page": 105,
+              "summary": "• TI’s revenue continues to come from a diverse base of thousands of applications. This is an intentional",
+              "image_path": "artifacts/docenv/ti2025ars/page_105.png"
+            },
+            {
+              "page": 106,
+              "summary": "Performance summary",
+              "image_path": "artifacts/docenv/ti2025ars/page_106.png"
+            },
+            {
+              "page": 107,
+              "summary": "Equity",
+              "image_path": "artifacts/docenv/ti2025ars/page_107.png"
+            },
+            {
+              "page": 108,
+              "summary": "Equity dilution",
+              "image_path": "artifacts/docenv/ti2025ars/page_108.png"
+            },
+            {
+              "page": 109,
+              "summary": "enhanced defined contribution plan. Mr. Templeton chose to have his benefits frozen. The other named executive",
+              "image_path": "artifacts/docenv/ti2025ars/page_109.png"
+            },
+            {
+              "page": 110,
+              "summary": "Compensation following employment termination or change in control",
+              "image_path": "artifacts/docenv/ti2025ars/page_110.png"
+            },
+            {
+              "page": 111,
+              "summary": "2025 compensation tables",
+              "image_path": "artifacts/docenv/ti2025ars/page_111.png"
+            },
+            {
+              "page": 112,
+              "summary": "(3) Consists of the profit sharing amount paid to each of the named executive officers for 2025.",
+              "image_path": "artifacts/docenv/ti2025ars/page_112.png"
+            },
+            {
+              "page": 113,
+              "summary": "Grants of plan-based awards in 2025",
+              "image_path": "artifacts/docenv/ti2025ars/page_113.png"
+            },
+            {
+              "page": 114,
+              "summary": "Outstanding equity awards at fiscal year-end 2025",
+              "image_path": "artifacts/docenv/ti2025ars/page_114.png"
+            },
+            {
+              "page": 115,
+              "summary": "(1) Calculated by multiplying the number of RSUs by the closing price of TI common stock on December 31, 2025",
+              "image_path": "artifacts/docenv/ti2025ars/page_115.png"
+            },
+            {
+              "page": 116,
+              "summary": "Stock awards",
+              "image_path": "artifacts/docenv/ti2025ars/page_116.png"
+            },
+            {
+              "page": 117,
+              "summary": "2025 pension benefits",
+              "image_path": "artifacts/docenv/ti2025ars/page_117.png"
+            },
+            {
+              "page": 118,
+              "summary": "TI employees non-qualified pension plans",
+              "image_path": "artifacts/docenv/ti2025ars/page_118.png"
+            },
+            {
+              "page": 119,
+              "summary": "(1) Amounts shown for Mr. Ilan include a portion of his bonus and salary paid in 2025, for Mr. Lizardi a portion of",
+              "image_path": "artifacts/docenv/ti2025ars/page_119.png"
+            },
+            {
+              "page": 120,
+              "summary": "Potential payments upon termination or change in control",
+              "image_path": "artifacts/docenv/ti2025ars/page_120.png"
+            },
+            {
+              "page": 121,
+              "summary": "In the case of a separation agreement in which the executive officer will be at least 50 years old and have at least",
+              "image_path": "artifacts/docenv/ti2025ars/page_121.png"
+            },
+            {
+              "page": 122,
+              "summary": "(1) Calculated by multiplying the number of outstanding RSUs by the closing price of TI common stock as of",
+              "image_path": "artifacts/docenv/ti2025ars/page_122.png"
+            },
+            {
+              "page": 123,
+              "summary": "Pay versus performance",
+              "image_path": "artifacts/docenv/ti2025ars/page_123.png"
+            },
+            {
+              "page": 124,
+              "summary": "(5) Adjustments to the non-PEO named executive officers’ average total compensation for 2025 as reported in",
+              "image_path": "artifacts/docenv/ti2025ars/page_124.png"
+            },
+            {
+              "page": 125,
+              "summary": "Audit committee matters",
+              "image_path": "artifacts/docenv/ti2025ars/page_125.png"
+            },
+            {
+              "page": 126,
+              "summary": "Representatives of Ernst & Young are expected to be present and available to respond to appropriate questions at",
+              "image_path": "artifacts/docenv/ti2025ars/page_126.png"
+            },
+            {
+              "page": 127,
+              "summary": "Proxies solicited by management will be voted against the stockholder proposal below unless stockholders specify a",
+              "image_path": "artifacts/docenv/ti2025ars/page_127.png"
+            },
+            {
+              "page": 128,
+              "summary": "Board of directors’ response",
+              "image_path": "artifacts/docenv/ti2025ars/page_128.png"
+            },
+            {
+              "page": 129,
+              "summary": "Additional information",
+              "image_path": "artifacts/docenv/ti2025ars/page_129.png"
+            },
+            {
+              "page": 130,
+              "summary": "Security ownership of directors and management",
+              "image_path": "artifacts/docenv/ti2025ars/page_130.png"
+            },
+            {
+              "page": 131,
+              "summary": "(a) The non-employee directors’ RSUs granted before 2007 are settled in TI common stock generally upon",
+              "image_path": "artifacts/docenv/ti2025ars/page_131.png"
+            },
+            {
+              "page": 132,
+              "summary": "The policy specifies that a related person transaction includes, but is not limited to, any financial transaction,",
+              "image_path": "artifacts/docenv/ti2025ars/page_132.png"
+            },
+            {
+              "page": 133,
+              "summary": "◦ an interest as a limited partner in a partnership, and that ownership interest, when combined with all the",
+              "image_path": "artifacts/docenv/ti2025ars/page_133.png"
+            },
+            {
+              "page": 134,
+              "summary": "Any proposals, nominations or notices are to be sent to Texas Instruments Incorporated, 12500 TI Boulevard, MS",
+              "image_path": "artifacts/docenv/ti2025ars/page_134.png"
+            },
+            {
+              "page": 135,
+              "summary": "Stockholders sharing the same address",
+              "image_path": "artifacts/docenv/ti2025ars/page_135.png"
+            },
+            {
+              "page": 136,
+              "summary": "Important Notice Regarding the Availability of Proxy Materials for the Stockholder Meeting to be held on",
+              "image_path": "artifacts/docenv/ti2025ars/page_136.png"
+            },
+            {
+              "page": 137,
+              "summary": "(This page intentionally left blank.)",
+              "image_path": "artifacts/docenv/ti2025ars/page_137.png"
+            },
+            {
+              "page": 138,
+              "summary": "OTHER INFORMATION",
+              "image_path": "artifacts/docenv/ti2025ars/page_138.png"
+            },
+            {
+              "page": 139,
+              "summary": "BOARD OF DIRECTORS, LEADERSHIP",
+              "image_path": "artifacts/docenv/ti2025ars/page_139.png"
+            },
+            {
+              "page": 140,
+              "summary": "© 2025 Texas Instruments Incorporated SZZO173",
+              "image_path": "artifacts/docenv/ti2025ars/page_140.png"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "document"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "search_primary_page",
+      "action": "search",
+      "params": {
+        "query": "notice 2026 annual meeting",
+        "top_k": 3
+      },
+      "result": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "notice 2026 annual meeting",
+          "results": [
+            {
+              "page": 1,
+              "score": 4.0,
+              "snippet": "TEXAS INSTRUMENTS\n2025 Annual Report\nNotice of 2026 Annual Meeting\nand Proxy Statement"
+            },
+            {
+              "page": 5,
+              "score": 4.0,
+              "snippet": "TABLE OF CONTENTS\nForm 10-K Proxy statement\nPART I Notice of 2026 annual meeting of 1\nstockholders\nItem 1. Business 2\nVoting procedures, quorum and attendance 3\nItem 1A. Risk factors 9\nrequirements\nItem 1B. Unresolved staff comments 15\nCorp"
+            },
+            {
+              "page": 75,
+              "score": 4.0,
+              "snippet": "NOTICE OF ANNUAL MEETING OF STOCKHOLDERS\nApril 16, 2026\nDear Stockholder:\nYou are cordially invited to attend the 2026 annual meeting of stockholders on Thursday, April 16, 2026, on our\nproperty at 12500 TI Boulevard, Dallas, Texas, at 8:30"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "contains_pages",
+          "passed": true,
+          "expected": [
+            1
+          ],
+          "actual": [
+            1,
+            5,
+            75
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "search_primary_page_cached",
+      "action": "search",
+      "params": {
+        "query": "notice 2026 annual meeting",
+        "top_k": 3
+      },
+      "result": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "notice 2026 annual meeting",
+          "results": [
+            {
+              "page": 1,
+              "score": 4.0,
+              "snippet": "TEXAS INSTRUMENTS\n2025 Annual Report\nNotice of 2026 Annual Meeting\nand Proxy Statement"
+            },
+            {
+              "page": 5,
+              "score": 4.0,
+              "snippet": "TABLE OF CONTENTS\nForm 10-K Proxy statement\nPART I Notice of 2026 annual meeting of 1\nstockholders\nItem 1. Business 2\nVoting procedures, quorum and attendance 3\nItem 1A. Risk factors 9\nrequirements\nItem 1B. Unresolved staff comments 15\nCorp"
+            },
+            {
+              "page": 75,
+              "score": 4.0,
+              "snippet": "NOTICE OF ANNUAL MEETING OF STOCKHOLDERS\nApril 16, 2026\nDear Stockholder:\nYou are cordially invited to attend the 2026 annual meeting of stockholders on Thursday, April 16, 2026, on our\nproperty at 12500 TI Boulevard, Dallas, Texas, at 8:30"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": true
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "contains_pages",
+          "passed": true,
+          "expected": [
+            1
+          ],
+          "actual": [
+            1,
+            5,
+            75
+          ]
+        },
+        {
+          "name": "cache_hit",
+          "passed": true,
+          "expected": true,
+          "actual": true
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "read_primary_page",
+      "action": "read_page",
+      "params": {
+        "page_ids": [
+          1
+        ]
+      },
+      "result": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 1,
+              "text": "TEXAS INSTRUMENTS\n2025 Annual Report\nNotice of 2026 Annual Meeting\nand Proxy Statement",
+              "summary": "TEXAS INSTRUMENTS",
+              "image_path": "artifacts/docenv/ti2025ars/page_001.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "TEXAS INSTRUMENTS"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "name": "crop_evidence_region",
+      "action": "crop",
+      "params": {
+        "page_id": 79,
+        "bbox": [
+          266.45999,
+          109.20001000000002,
+          522.21002,
+          605.7000099999999
+        ]
+      },
+      "result": {
+        "action": "crop",
+        "status": "success",
+        "result": {
+          "page": 79,
+          "bbox": [
+            266.45999,
+            109.20001000000002,
+            522.21002,
+            605.7000099999999
+          ],
+          "text": "| nnilB\nkraM |  | kralC\ntenaJ |  | daehgiarC\nnitraM |  | remraF\nsitruC |  | nalI\nvivaH |  | yelstaP\nalemaP |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| • | • | • | • | • | • | • | • | • | • | • |\n| • | • | • | • | • | • | • | • | • |  | • |\n| • | • | • | • | • |  | • | • | • | • | • |\n| • | • | • | • | • | • | • | • |  | • | • |\n| • | • | • | • | • | • |  | • | • | • |  |\n| • | • |  | • | • |  |  |  | • |  |  |\n| • | • | • | • | • |  | • | • | • | • | • |\n| • | • | • | • | • | • | • | • | • | • | • |\n| • | • | • | • | • | • | • | • | • |  | • |",
+          "image_path": "artifacts/docenv/ti2025ars/crops/page_079_555_227_1087_1261.png"
+        },
+        "provenance": {
+          "page": 79,
+          "bbox": [
+            266.45999,
+            109.20001000000002,
+            522.21002,
+            605.7000099999999
+          ],
+          "element_type": "region"
+        },
+        "confidence": 0.9,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "| nnilB"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "name": "ocr_evidence_region",
+      "action": "ocr",
+      "params": {
+        "page_id": 79,
+        "bbox": [
+          266.45999,
+          109.20001000000002,
+          522.21002,
+          605.7000099999999
+        ]
+      },
+      "result": {
+        "action": "ocr",
+        "status": "success",
+        "result": {
+          "page": 79,
+          "bbox": [
+            266.45999,
+            109.20001000000002,
+            522.21002,
+            605.7000099999999
+          ],
+          "text": "| nnilB\nkraM |  | kralC\ntenaJ |  | daehgiarC\nnitraM |  | remraF\nsitruC |  | nalI\nvivaH |  | yelstaP\nalemaP |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| • | • | • | • | • | • | • | • | • | • | • |\n| • | • | • | • | • | • | • | • | • |  | • |\n| • | • | • | • | • |  | • | • | • | • | • |\n| • | • | • | • | • | • | • | • |  | • | • |\n| • | • | • | • | • | • |  | • | • | • |  |\n| • | • |  | • | • |  |  |  | • |  |  |\n| • | • | • | • | • |  | • | • | • | • | • |\n| • | • | • | • | • | • | • | • | • | • | • |\n| • | • | • | • | • | • | • | • | • |  | • |"
+        },
+        "provenance": {
+          "page": 79,
+          "bbox": [
+            266.45999,
+            109.20001000000002,
+            522.21002,
+            605.7000099999999
+          ],
+          "element_type": "ocr_text"
+        },
+        "confidence": 0.88,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "| nnilB"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "name": "parse_table_primary_table",
+      "action": "parse_table",
+      "params": {
+        "page_id": 79,
+        "bbox": [
+          266.45999,
+          109.20001000000002,
+          522.21002,
+          605.7000099999999
+        ]
+      },
+      "result": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {
+          "page": 79,
+          "bbox": [
+            266.45999,
+            109.20001000000002,
+            522.21002,
+            605.7000099999999
+          ],
+          "rows": [
+            [
+              "nnilB\nkraM",
+              "",
+              "kralC\ntenaJ",
+              "",
+              "daehgiarC\nnitraM",
+              "",
+              "remraF\nsitruC",
+              "",
+              "nalI\nvivaH",
+              "",
+              "yelstaP\nalemaP"
+            ],
+            [
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•"
+            ],
+            [
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "",
+              "•"
+            ],
+            [
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•"
+            ],
+            [
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "",
+              "•",
+              "•"
+            ],
+            [
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "",
+              "•",
+              "•",
+              "•",
+              ""
+            ],
+            [
+              "•",
+              "•",
+              "",
+              "•",
+              "•",
+              "",
+              "",
+              "",
+              "•",
+              "",
+              ""
+            ],
+            [
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•"
+            ],
+            [
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•"
+            ],
+            [
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "•",
+              "",
+              "•"
+            ]
+          ],
+          "markdown": "| nnilB\nkraM |  | kralC\ntenaJ |  | daehgiarC\nnitraM |  | remraF\nsitruC |  | nalI\nvivaH |  | yelstaP\nalemaP |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| • | • | • | • | • | • | • | • | • | • | • |\n| • | • | • | • | • | • | • | • | • |  | • |\n| • | • | • | • | • |  | • | • | • | • | • |\n| • | • | • | • | • | • | • | • |  | • | • |\n| • | • | • | • | • | • |  | • | • | • |  |\n| • | • |  | • | • |  |  |  | • |  |  |\n| • | • | • | • | • |  | • | • | • | • | • |\n| • | • | • | • | • | • | • | • | • | • | • |\n| • | • | • | • | • | • | • | • | • |  | • |"
+        },
+        "provenance": {
+          "page": 79,
+          "bbox": [
+            266.45999,
+            109.20001000000002,
+            522.21002,
+            605.7000099999999
+          ],
+          "element_type": "table"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "table_rows_min",
+          "passed": true,
+          "expected": 2,
+          "actual": 10
+        },
+        {
+          "name": "table_text_cells_min",
+          "passed": true,
+          "expected": 2,
+          "actual": 92
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "name": "compute_sanity_check",
+      "action": "compute",
+      "params": {
+        "expr": "(a-b)/b*100",
+        "vars": {
+          "a": 3.2,
+          "b": 2.8
+        }
+      },
+      "result": {
+        "action": "compute",
+        "status": "success",
+        "result": {
+          "expr": "(a-b)/b*100",
+          "vars": {
+            "a": 3.2,
+            "b": 2.8
+          },
+          "value": 14.285714285714299
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "computed_value"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "value_equals",
+          "passed": true,
+          "expected": 14.2857142857,
+          "actual": 14.285714285714299
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "name": "verify_supported_claim",
+      "action": "verify",
+      "params": {
+        "claim": "nnilb kram kralc tenaj daehgiarc nitram remraf sitruc nali vivah yelstap alemap",
+        "evidence_refs": [
+          {
+            "page": 79,
+            "bbox": [
+              266.45999,
+              109.20001000000002,
+              522.21002,
+              605.7000099999999
+            ]
+          }
+        ]
+      },
+      "result": {
+        "action": "verify",
+        "status": "success",
+        "result": {
+          "claim": "nnilb kram kralc tenaj daehgiarc nitram remraf sitruc nali vivah yelstap alemap",
+          "evidence_count": 1,
+          "label": "SUPPORTED",
+          "sufficiency": "SUFFICIENT",
+          "confidence": 0.99,
+          "failure_taxonomy": null
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "verification"
+        },
+        "confidence": 0.99,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "support_label",
+          "passed": true,
+          "expected": "SUPPORTED",
+          "actual": "SUPPORTED"
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "name": "detect_layout_primary_page",
+      "action": "detect_layout",
+      "params": {
+        "page_id": 1
+      },
+      "result": {
+        "action": "detect_layout",
+        "status": "success",
+        "result": {
+          "page": 1,
+          "elements": [
+            {
+              "element_type": "word",
+              "bbox": [
+                48.96,
+                315.5982712,
+                115.64,
+                335.5982712
+              ],
+              "text": "TEXAS"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                121.19999999999999,
+                315.5982712,
+                265.64,
+                335.5982712
+              ],
+              "text": "INSTRUMENTS"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                48.96,
+                342.71444308,
+                88.992,
+                360.71444308
+              ],
+              "text": "2025"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                93.006,
+                342.71444308,
+                149.04,
+                360.71444308
+              ],
+              "text": "Annual"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                154.04399999999998,
+                342.71444308,
+                208.062,
+                360.71444308
+              ],
+              "text": "Report"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                48.96,
+                386.15679683999997,
+                88.63600000000001,
+                400.15679683999997
+              ],
+              "text": "Notice"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                92.528,
+                386.15679683999997,
+                104.20400000000001,
+                400.15679683999997
+              ],
+              "text": "of"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                108.096,
+                386.15679683999997,
+                139.23200000000003,
+                400.15679683999997
+              ],
+              "text": "2026"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                142.35400000000004,
+                386.15679683999997,
+                185.93600000000006,
+                400.15679683999997
+              ],
+              "text": "Annual"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                189.82800000000006,
+                386.15679683999997,
+                239.62600000000003,
+                400.15679683999997
+              ],
+              "text": "Meeting"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                48.96,
+                405.95678683999995,
+                72.31200000000001,
+                419.95678683999995
+              ],
+              "text": "and"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                76.20400000000001,
+                405.95678683999995,
+                111.988,
+                419.95678683999995
+              ],
+              "text": "Proxy"
+            },
+            {
+              "element_type": "word",
+              "bbox": [
+                115.88,
+                405.95678683999995,
+                179.69200000000004,
+                419.95678683999995
+              ],
+              "text": "Statement"
+            }
+          ]
+        },
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "element_type": "layout"
+        },
+        "confidence": 0.8,
+        "cache_hit": false
+      },
+      "checks": [
+        {
+          "name": "status",
+          "passed": true,
+          "expected": "success"
+        },
+        {
+          "name": "text_contains",
+          "passed": true,
+          "expected": "bbox"
+        }
+      ]
+    }
+  ]
+}

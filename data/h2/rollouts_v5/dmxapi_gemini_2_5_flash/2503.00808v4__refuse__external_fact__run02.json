@@ -1,0 +1,221 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      [
+        "overview",
+        "search",
+        "read_page",
+        "refuse"
+      ]
+    ],
+    "answerable": false,
+    "difficulty": "medium",
+    "doc_id": "2503.00808v4",
+    "metadata": {
+      "negative_evidence_query": "current employer today first author",
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage",
+        "v5_refuse_query_diversification"
+      ],
+      "question_zh": "根据文档，论文第一作者今天的当前雇主是什么？先用工具检查文档；如果文档没有提供，则基于证据拒答。",
+      "refuse_category_zh": "文档外事实",
+      "review_status": "v5_refuse_diverse_review"
+    },
+    "pdf_path": "data/raw_pdfs/2503.00808v4.pdf",
+    "question": "What is the current employer of the paper's first author today, according to the document? First check the document with tools; if the document does not provide it, refuse with a brief evidence-based reason.",
+    "reference_answer": "REFUSE",
+    "required_tools": [
+      "search",
+      "read_page",
+      "refuse"
+    ],
+    "seed_id": "2503.00808v4__refuse__external_fact",
+    "source": "structure_heuristic_v5_refuse_diverse",
+    "supporting_refs": [],
+    "task_type": "unanswerable",
+    "tool_hints": {
+      "negative_evidence_policy": "Use search and read_page before refusing.",
+      "search_policy": "Search for: current employer today first author"
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"action\": \"search\", \"action_input\": {\"query\": \"current employer today first author\", \"top_k\": 3}}",
+      "thought": "",
+      "action": "search",
+      "action_input": {
+        "query": "current employer today first author",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "current employer today first author",
+          "results": [
+            {
+              "page": 17,
+              "score": 2.0,
+              "snippet": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\nHowever,wefoundforafastTextclassifiertrainedwithuni-gram+bi-gramfeatures,ifweonlygiveitsuni-gramandmake\nthefinalscoreprediction,thatdoesnothaveahugedifferencetousingallfeatures"
+            },
+            {
+              "page": 4,
+              "score": 1.0,
+              "snippet": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\n2.3.TheOverallFramework scorer. Notably, our approach requires only the fastText\nscoreratdeployment,makingithighlyaccessibleandscal-\nOur core hypothesis is that the data on whi"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"action\": \"read_page\", \"action_input\": {\"page_ids\": [17, 4]}}",
+      "thought": "",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          17,
+          4
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 17,
+              "text": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\nHowever,wefoundforafastTextclassifiertrainedwithuni-gram+bi-gramfeatures,ifweonlygiveitsuni-gramandmake\nthefinalscoreprediction,thatdoesnothaveahugedifferencetousingallfeatures(with<0.02scoredifferenceoutof1.0).\nThenweexplorethefeatureimportanceforuni-gramonly.\nA.3.2.FASTTEXTFEATUREINFLUENCESCORE\nWebrieflydiscussedthelearnedfeatureswiththeirinfluencescoresin§4.2,andwelistthetop-50positive/negativefeatures\nalongsidetheinfluencescoresinTable6below.\nTable 6: The Top-50 fastText learned fearures with corresponding influence scores of different methods. Positive and\nNegativearedefinedaccordingtothemagnitudeoftheinfluencescore.\nMethod Top-50fastTextFeatureswithInfluenceScores\nDCLM(pos) (“‘, 968.194), (Why, 671.558), (Answer:, 620.404), (Additionally„ 599.6), (assistant., 567.250), (Edit:, 565.787),\n(Generate,537.11),(answer.,502.883),(Given,474.243),(A:,457.440),(Question:,447.825),(Write,440.69),(task.,\n423.878),(ELI5,419.001),(AI,403.29),(question:,394.996),(\\\\\\\\,378.738),(why,378.032),(answering,370.485),\n(Describe, 368.243), (explanation., 349.408), (basically, 347.061), (sentence, 338.57), (&amp;, 331.964), (answer,\n328.221),(assistant„324.112),(How,322.649),([deleted],320.465),([Your,317.477),(Overall„316.189),(Reddit,\n315.919),(EDIT:,314.785),(explain,307.202),(Provide,292.085),(step-by-step,290.89),(old.,283.723),(Rewrite,\n280.710),(user],280.342),([deleted,279.535),(Title:,279.145),(is:,278.694),(can.,278.337),(Identify,270.603),\n(Explain,268.238),(Imagine,259.265),(Summarize,254.946),(Create,254.661),([removed],254.198),(Roleplay,\n253.866),(Whats,250.611)\nDCLM(neg) (–, -479.818), (Comment, -466.0545), (Posted, -450.19833), (Post, -442.57623), ([...], -386.1609), (Comments, -\n377.41232), (—, -344.9523), (About, -340.93152), (..., -321.9254), (“The, -321.84586), (Re:, -310.0053), (More,\n-297.77707), (», -294.49173), (See, -289.7501), (2012, -278.6206), (View, -278.62042), (PM, -274.32016), (©, -\n272.98975),(2017,-269.48788),(Read,-267.5124),(Leave,-265.90674),(Related,-260.5703),(2013,-260.09442),\n(Love,-254.712),(Free,-247.34369),(Home,-247.21219),(2014,-244.1095),(Q:,-240.64737),(Click,-239.72502),\n(Questions,-238.72769),(blog,-232.80008),(&,-231.04167),(2010,-225.71875),(Be,-225.16672),(Buy,-222.93646),\n(Originally,-219.75381),(...,-218.0946),(Last,-217.36478),(Search,-216.1242),(2011,-214.54568),(·,-214.43338),\n(by:,-213.91516),(to:,-213.87567),(Don’t,-212.08264),(Get,-210.06216),(2019,-207.97916),(Continue,-203.56561),\n(Although,-203.0502),(Date:,-201.52185),(2009,-199.80365)\nPRESELECT (ˆ,337.7),(Likes,241.387),(share|improve,241.28),(MIT,240.614),(–\\xa0,240.006),(Retrieved,232.997),(Received,\n(pos) 214.872),(Photo:,205.808),(Azure,200.453),(Tolkien,195.01),(Math,193.741),(answer,187.706),(Contributed,\n185.518),(Cite,184.729),(MATLAB,176.991),(Document,172.13),(Youre,168.549),(API,168.372),(Rhapsody,\n166.203),(Name,165.407),(Novell,165.201),((for,162.172),(Dismiss,159.38),(Geek,156.977),(Examples,153.852),\n(Expand,153.352),(add-ons,153.074),((and,151.961),(Techdirt,151.241),(Perl,148.295),(12,147.958),(Youll,\n146.352),(Random,144.253),(macrumors,142.24),(p.,141.384),(Fool,140.61),(secs,140.129),(1.,138.052),(bass,\n136.025),(Users,132.508),(Boards,132.233),(IBM,131.088),(Journey,130.867),(Step,130.648),(BrainyQuote,\n130.109),(of\\xa0the,127.833),(Preview,127.324),(Comentários),126.514),(contributors,126.057),(Early,124.897)\nPRESELECT (Register,-375.421),(Details,-335.247),(Comments,-320.821),(Updated:,-310.755),(COVID-19,-303.878),(tho,\n(neg) -281.664),(Print,-271.024),(Profile,-262.205),(Leave,-258.85),(Published:,-235.235),(Product,-228.646),(coro-\nnavirus, -227.227), (2020, -223.704), (By:, -222.939), (Shipping, -219.518), (Share, -219.401), (Login, -219.266),\n(Deals,-211.159),(Add,-207.725),(item,-201.697),(Reviews,-201.59),(Sponsored,-200.319),(Current,-196.23),(»,\n-195.792),(Follow,-194.77),(2021,-192.621),(©,-192.304),(Join,-189.937),(\"\",-189.647),(Post,-186.328),(View,\n-183.529),(Item,-182.289),(Privacy,-176.569),(“We,-176.348),(Search,-175.912),(Publication,-175.804),(Author:,\n-173.699),(Subscribe,-170.517),(Contact,-165.304),(ISBN,-163.925),(About,-163.91),(account?,-163.671),(re-\nviews,-162.936),(Posted,-162.205),(Customer,-160.427),(Level,-155.532),(Paperback,-155.16),(Author,-153.952),\n(Submit,-152.988),(Ratings,-151.985)\nA.4.ExtendtoPretrainingCorpora\nWeuseDataTrove(Penedoetal.,2024c)whichisalibraryforprocessingdataatverylargescale. Thefinalfilteringprocess\nonpretrainingcorporadoesnotneedanyGPUresroucesandthefilteringprocessisdoneonthemachinewith4AMD\nEPYC965496-CoreProcessor.\nA.5.SelectedPretrainingDataDetails\nAsanextensionofTable4,weplottheselecteddatadistributioninFigure7whereweusethesamey-axisscaleforallfour\nsub-plotswhichmeansthemagnitudesofthebarsaredirectlycomparable. Andwefurtherincludetheselectedpretrianing\ndatadistributionofperplexitycorrelation(Thrushetal.,2024)whichusesdomain-levelcorrelationandthenselectsdomains\ninFigure8below.\n17",
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_017.png"
+            },
+            {
+              "page": 4,
+              "text": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\n2.3.TheOverallFramework scorer. Notably, our approach requires only the fastText\nscoreratdeployment,makingithighlyaccessibleandscal-\nOur core hypothesis is that the data on which the losses\nabletoselectdatafromalargecorpus. Werefertoourdata\ncanhelppredicttheperformancewellisthedatathatcan\nselectionmethodasPRESELECT,shortforpredictivedata\ncontributetotrainingeffectively,thusthedocuments’pre-\nselection.\ndictivestrengthscoresasdefinedinEq.1areourmetricto\nselectdata. However,computingEq.1foreverydocument\n3.Experiments\nisexpensivesinceitrequirescomputinglossesofseveral\nmodelsonallthedata,thuswefollowLietal.(2024a)and\nIn this section, we first introduce our pre-training corpus\nonlyselectasmallseedsetofdocumentsthatarelaterused\n(§3.1).Thenvariouspre-trainingdataselectionbaselineswe\ntotrainafastTextclassifier(Joulinetal.,2017). Asshown\ncompared(§3.2)andevaluationsettings(§3.3)arepresented.\nin Figure 2, we first randomly sample a small subset of\nIn the last part, we will demonstrate our experimental re-\ndata from the pre-training corpus, which is kept separate\nsults. Fullimplementationdetailsandevaluationdetailsare\nfromthedatausedforlatertraining,tocomputethenormal-\nillustratedinAppendixBandAppendixC.\nizedlosses. Specifically,wepickthe3,000mostfrequent\ndomains(e.g.,wikipedia.org)inthecorpusandrandomly\n3.1.Pre-trainingCorpusandModels\nsample300examplesforeachdomainforawidecoverage\noverthepre-trainingcorpora,thusobtaining900Ksamples Forafaircomparisonandeaseofprocessing,wefollowand\nin total. Then we choose the models from the Llama 1 directlyusethelargedatapoolcreatedinLietal.(2024a).\nand2series (Touvronetal.,2023a;b)rangingfrom7Bto Concretely,thisdatapoolutilizedaversionofRefinedWeb\n65Bparameters–intotal6modelsareusedtocomputethe thatundergoesprocessingthroughresiliparsetextextrac-\npredictivestrengthforthedata. Wedonotchoosevarious tion(Bevendorffetal.,2018),RefinedWeb’sheuristicfilter-\nmodels from different families to compute the predictive ing(Penedoetal.,2024d)anddeduplicationusingbloom\nstrengthonpurpose–inourpreliminaryexperiments,we filters(Soldainietal.,2024),solelyfilteredfromCommon\nfoundthatmodelsfromvariousfamiliesintroducesignif- Crawl. Thislargedatapoolhasover20trilliontokensin\nicantevaluationnoises,forexample,theyaresensitiveto total,whichwillserveasthesourceforustosamplesmaller\nprompts and the prompt that is good for one model may datapoolstoconductdataselectionexperimentsinvarious\nnotbesuitableforanother. Thisissueisparticularlysalient scales. WerefertothepoolasRefinedWebinthefollowing\ngiventhatweareevaluatingbasemodelsthataregenerally sections.\nmore sensitive to prompts than instruction-tuned models.\nFollowingthesuggestedsettinginLietal.(2024a),weran-\nSuchnoiseswoulddramaticallyaffectthecomputationof\ndomlysample80billion,300billion,and1trilliontokensas\npredictivestrength,andthuswefoundthatdataselectedthis\nthedataselectionpoolfor400M,1B,and3Bmodeltraining\nwaycouldnotoutperformarandomdataselectionbaseline\nrespectivelyandselect10%ofthedatafortrainingunless\ninourinitialtrials. ThisdesigndiffersfromThrushetal.\notherwise specified, which corresponds to the Chinchilla\n(2024)whichemploysdiversemodelstoestimateperplexity\noptimaltrainingdatasize(Hoffmannetal.,2024). Forthe\ncorrelation. Such distinction probably explains why per-\nmodels,weuseaLlamaarchitecture(Touvronetal.,2023a)\nplexitycorrelationfailstoimproverandomdataselection\nunlessotherwisespecified. WealsoapplyPRESELECTon\nbaselines significantly on a high-quality, pre-filtered data\ntheC4datasettoshowtheeffectivenessofourmethodon\npool,asshownintheconcurrentversionoftheirpaper. We\ndifferentcorporaandtocomparewithmoredataselection\nruninferenceofthesemodelsonthe900Kdocumentsto\nbaselines.\nobtain the loss ranks of these models on each document\nrespectively. Next,weobtainthedownstreamscoreranks\n3.2.Baselines\nbydirectlyusingtheaveragedscoresonadiversesetof12\nbenchmarks from Huang et al. (2024). We also explored\nTomakeafaircomparison,wekeepthedatapoolandtrain-\nhowperformancechangewhenchoosingonespecifictask\ningsettingofbaselinesthesameas PRESELECT,suchas\n(e.g. HellaSwag)asthetargetthatelicitsadifferentranking\nmodel architecture and training hyper-parameters, while\ntoaveragedscoreinAppendixA.7.2.\nonlythedataselectionpartisdifferent. Weconsiderthefol-\nOncewecomputethepredictivestrengthscoresforallthe lowingbaselines: (1)Random,whichrandomlyselectsthe\ndocuments,weidentifythepositiveandnegativesamples documents;(2)PPLfiltering,whichkeepslow-perplexity\nfromthemtotrainafastTextclassifier.Concretely,weselect documents following CCNet (Wenzek et al., 2020); (3)\nthedocumentswiththehighestpredictivestrengthscoresas FineWeb-Edu(Penedoetal.,2024b),whichscorestheeduca-\nthepositiveexamples,andthosewiththelowestpredictive tionlevelofdocumentswithanLLMandthentrainasmall\nstrengthscoresasthenegativeones. Weselectaround200K scorertoidentifyandselecteducationalcontents(Penedo\npositive and 200K negative examples to train a fastText et al., 2024b); (4) PPL Correlation (DD) (Thrush et al.,\n4",
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_004.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"The search results and the content of pages 4 and 17 do not contain any information about the authors' affiliations or current employers. The question asks for the *current* employer *today*, which is information that is highly unlikely to be found in a research paper, as papers typically list affiliations at the time of publication. Since the document does not provide this information, I should refuse the question.\", \"action\": \"refuse\", \"action_input\": {\"reason\": \"The document does not contain information about the current employer of the paper's first author. Research papers typically list affiliations at the time of publication, not current employment status.\"}}",
+      "thought": "The search results and the content of pages 4 and 17 do not contain any information about the authors' affiliations or current employers. The question asks for the *current* employer *today*, which is information that is highly unlikely to be found in a research paper, as papers typically list affiliations at the time of publication. Since the document does not provide this information, I should refuse the question.",
+      "action": "refuse",
+      "action_input": {
+        "reason": "The document does not contain information about the current employer of the paper's first author. Research papers typically list affiliations at the time of publication, not current employment status."
+      },
+      "observation": {
+        "action": "refuse",
+        "status": "success",
+        "result": {
+          "reason": "The document does not contain information about the current employer of the paper's first author. Research papers typically list affiliations at the time of publication, not current employment status.",
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "refusal"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "refuse"
+  ],
+  "final_action": "refuse",
+  "final_answer": "The document does not contain information about the current employer of the paper's first author. Research papers typically list affiliations at the time of publication, not current employment status.",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1380,
+      "completion_tokens": 135,
+      "total_tokens": 1515,
+      "prompt_tokens_details": {
+        "text_tokens": 1380,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 106
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1628,
+      "completion_tokens": 92,
+      "total_tokens": 1720,
+      "prompt_tokens_details": {
+        "text_tokens": 1628,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 66
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2876,
+      "completion_tokens": 136,
+      "total_tokens": 3012,
+      "prompt_tokens_details": {
+        "text_tokens": 2876,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": true,
+    "direct_answer": false
+  }
+}

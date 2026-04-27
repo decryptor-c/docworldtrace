@@ -1,0 +1,296 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      [
+        "search",
+        "read_page",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "hard",
+    "doc_id": "2308.06595v4",
+    "metadata": {
+      "anchor_page": 1,
+      "anchor_phrase": "visit bench a benchmark for vision",
+      "answer_page": 2,
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage"
+      ],
+      "review_status": "v4_query_sanitized"
+    },
+    "pdf_path": "data/raw_pdfs/2308.06595v4.pdf",
+    "question": "Use search to find the page about \"visit bench a benchmark for vision\". Then inspect the following page and report its heading or leading phrase.",
+    "reference_answer": "1 Introduction",
+    "required_tools": [
+      "search",
+      "read_page"
+    ],
+    "seed_id": "2308.06595v4__cross__p1_p2",
+    "source": "structure_heuristic_v2_review_approved_v3_path_optimized_v4_query_sanitized",
+    "supporting_refs": [
+      {
+        "page": 2
+      }
+    ],
+    "task_type": "cross_page",
+    "tool_hints": {
+      "search_policy": "Use the quoted anchor phrase as the search query; do not assume page numbers."
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I should search for the anchor phrase to locate the relevant page.\",\"action\":\"search\",\"action_input\":{\"query\":\"visit bench a benchmark for vision\",\"top_k\":3}}",
+      "thought": "I should search for the anchor phrase to locate the relevant page.",
+      "action": "search",
+      "action_input": {
+        "query": "visit bench a benchmark for vision",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "visit bench a benchmark for vision",
+          "results": [
+            {
+              "page": 1,
+              "score": 6.0,
+              "snippet": "VisIT-Bench: A Benchmark for Vision-Language\nInstruction Following Inspired by Real-World Use\nYonatanBitton*1,2 HritikBansal*3 JackHessel*4 RulinShao5 WanrongZhu6\nAnasAwadalla5 JoshGardner5 RohanTaori7 LudwigSchmidt4,5,8\nAbstract\nWeintroduc"
+            },
+            {
+              "page": 2,
+              "score": 6.0,
+              "snippet": "1 Introduction\nA long-standing challenge for artificial intelligence is to build general-purpose assistants\nthatcan,incollaborationwithhumans,solvediverseandnever-before-seentasks[1]. For\ntextual tasks, several recent works [2, 3, 4, 5, 6, "
+            },
+            {
+              "page": 3,
+              "score": 5.0,
+              "snippet": "Reasoning Over Art Knowledge Recognition Location Home Renovation\nPlots Understanding\nHow much is the Teach me about this Where is this? If you are going for a Here is a photo of my\nbrowser usage for painting. picnic at this location, bathr"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The search result indicates that the relevant page is page 1. I should now read page 1 to confirm its content and then proceed to inspect the following page.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[1]}}",
+      "thought": "The search result indicates that the relevant page is page 1. I should now read page 1 to confirm its content and then proceed to inspect the following page.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          1
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 1,
+              "text": "VisIT-Bench: A Benchmark for Vision-Language\nInstruction Following Inspired by Real-World Use\nYonatanBitton*1,2 HritikBansal*3 JackHessel*4 RulinShao5 WanrongZhu6\nAnasAwadalla5 JoshGardner5 RohanTaori7 LudwigSchmidt4,5,8\nAbstract\nWeintroduceVisIT-Bench(VisualInsTructionBenchmark),abenchmark\nfor evaluation of instruction-following vision-language models for real-\nworlduse. Ourstartingpointiscurating70“instructionfamilies”thatwe\nenvisioninstructiontunedvision-languagemodelsshouldbeabletoaddress.\nExtendingbeyondevaluationslikeVQAv2andCOCO,tasksrangefrom\nbasicrecognitiontogameplayingandcreativegeneration. Followingcura-\ntion,ourdatasetcomprises592testqueries,eachwithahuman-authored\ninstruction-conditioned caption. These descriptions surface instruction-\nspecific factors, e.g., for an instruction asking about the accessibility of\na storefront for wheelchair users, the instruction-conditioned caption de-\nscribesramps/potentialobstacles. Thesedescriptionsenable1)collecting\nhuman-verifiedreferenceoutputsforeachinstance;and2)automaticevalu-\nationofcandidatemultimodalgenerationsusingatext-onlyLLM,aligning\nwithhumanjudgment. Wequantifyqualitygapsbetweenmodelsandrefer-\nencesusingbothhumanandautomaticevaluations;e.g.,thetop-performing\ninstruction-followingmodelwinsagainsttheGPT-4referenceinjust27%\nof the comparison. VisIT-Bench is dynamic to participate, practitioners\nsimply submit their model’s response on the project website; Data, code\nandleaderboardisavailableathttps://visit-bench.github.io/.\nInstruction Instruction-Conditioned Caption Human-Verified GPT4 Response\nCreate a catchy title There is a jeep parked on the street with \"Tan Lines & Ticket Stubs: A Love Story\nfor a country song the top down. There is a wheel cover on the Unbound\" -A country song about\nbased upon the spare tire in the back with an inscription leaving it all behind, finding love, and\nadvice printed on the that says, \"Quit your Job, Buy a Ticket, Get a embracing the freedom of the open\nwheel cover. Tan, Fall in Love, Never Return.\" road.\nFigure1: AnexamplefromVisIT-Bench,featuringanimage,achallenginginstruction,an\ninstruction-conditionedcaption,andahuman-verifiedGPT4response. Theseelementsare\nusedforevaluatingmultimodalchatbotsandupdatingadynamicleaderboard.\n∗\nEqualcontribution. Contactyonatanbitton1@gmail.com,hbansal@ucla.edu,jackh@allenai.org,\nschmidt@cs.washington.edu. 1HebrewUniversity 2GoogleResearch 3UCLA 4AllenInstituteforAI\n5UniversityofWashington 6UCSB 7Stanford 8LAION ,\nPreprint.Underreview.\n3202\nceD\n62\n]LC.sc[\n4v59560.8032:viXra",
+              "summary": "VisIT-Bench: A Benchmark for Vision-Language",
+              "image_path": "artifacts/docenv/2308.06595v4/page_001.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\":\"I have confirmed the content of page 1. Now I should read page 2 to inspect its heading or leading phrase.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[2]}}",
+      "thought": "I have confirmed the content of page 1. Now I should read page 2 to inspect its heading or leading phrase.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          2
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 2,
+              "text": "1 Introduction\nA long-standing challenge for artificial intelligence is to build general-purpose assistants\nthatcan,incollaborationwithhumans,solvediverseandnever-before-seentasks[1]. For\ntextual tasks, several recent works [2, 3, 4, 5, 6, 7] have shown that fine-tuning language\nmodelssuchasGPT-3andLLaMAwithsupervisedinstruction+responseexamples[8,9,10]\nenablesthemtorespondtoimperativerequestsandquestionswithouttask-specifictraining.\nZero-shot generalization is promising not only for standard academic benchmarks, but –\nperhaps more-so – for creative, useful, and real-world queries that downstream users of\nlanguagetechnologiesarelikelytomake.\nOnthemultimodalside,recentinstruction-followingvision-languagemodelsalsoprovide\nazero-shotinterface. Givenanimage(ormultipleimages)andaquery(e.g.,“howmany\napplesareinthisimage?” or“Whatisthis?” or“WriteapoeminthestyleofRobertFrost\naboutthisscene.”) atextualresponseisprovided. RecentworkslikeOpenFlamingo[11,12],\nLLaVA[13]andothers[14,15,16,17,18],haveimplementedthisinterfacewithpromising\ninitialresults. AlthoughstandardbenchmarkslikeVQAv2[19]andCOCOcaptioning[20]\nare commonly used to assess performance, less is know about how models perform on\nbroader, open-endedqueriesthatresemblereal-worlduserbehavior. Evaluationsofsuch\nqueriestypicallyrelyoninformalandqualitativeapproaches.\nTo support quantitative evaluation for this setting, we present VisIT-Bench (Visual\nInsTruction Benchmark), a dynamic benchmark consisting of 592 challenging vision-\nlanguageinstructions. Eachinstancecontainsaninstruction,inputimage(s),ainstruction-\nconditioned caption (a human-crafted caption for the image(s)/instruction), and a human\nverifiedreference(Figure1). Instructionsareimage-contextualimperativerequestsorques-\ntions,e.g.,foranimageofpancakes,auserasks“howcanIcookthisinahealthyway?”.\nDifferentfromexistingzero-shotevaluations,manyoftheinstructionsfocusonopen-ended\ngenerationrequests(e.g.,“writeapoem...” or“whatshouldIbringifIweretovisithere?”).\nWecreatedVisIT-Benchtocoverawidearrayof“instructionfamilies”. Ourstartingpoint\nwasasetof70“wish-list”taskssuchas“homerenovation”and“gardeningtips”collectedby\ntheauthors:1 eachrequiringvariedhigh-levelskillsfromrecognitiontocomplexreasoning\n(Figure 2). We derived 25/70 instruction families from benchmark tasks such as Visual\nQuestion Answering (VQA) [21] and robust change captioning [22] into a chatbot-style\nformat(thisreformattingdiffersfrompriorwork[14,17,13],aswefocusonopen-ended\nchatbotstyleresponses.). Notably,10oftheserepurposedtasksinvolvemultipleimages.\nWe started with 10 images for each instruction family. Our annotators, guided by an\nexample,createanewinstruction,andprovidea(permissivelylicensed)image. Foreach\ninstruction, we next collect instruction-conditioned captions – unlike prior work [23, 24]\nthesedescriptionsaredesignednotonlytodescribetheimageingeneral,butalso,surface\ninformationtargetedtotheinstruction. Finally,weuseinstruction-conditionedcaptionsto\ngenerate areference candidate output fromGPT-4; an additional humanverificationstep\ndiscardsGPT-4referencesdeemedtobeincorrect.\nWeconductalarge-scaleempiricalcomparisonofmultimodalinstruction-followingmodels\nusing VisIT-Bench (§4). We first gather predictions for each instance from 7 candidate\nmodels. Then,wecollect5Khumanjudgementsofoutputqualitybypittingmodeloutputs\nhead-to-head,and(inaforced-choicesetup)crowd-sourcingpairwisepreferencejudgements.\nThis analysis not only reveals significant differences between models (e.g., that LLaVA-\n13b[13]isgenerallypreferredtoPanda[18]),butalso,thatthehumanverifiedreferences\nin our corpus are preferred significantly more than the ones generated using multimodal\nmodels. Wesummarizehead-to-headcomparisonswithtwometrics: 1)Eloratings[25,26],\n1Werecognizethatpromisingapplicationsmaynotbecoveredbyourset;andwedon’tnecessarilyadvocate\nfordeployingmodelsinallcaseswecover–wehopeVisIT-Benchcanhelptoquantifyshortcomingsandrisks.\n2",
+              "summary": "1 Introduction",
+              "image_path": "artifacts/docenv/2308.06595v4/page_002.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 4,
+      "raw_model_output": "{\"thought\": \"Corrupted negative-control terminal action.\", \"action\": \"answer\", \"action_input\": {\"text\": \"Incorrect heading not supported by the document\", \"evidence_refs\": [{\"page\": 2}]}}",
+      "thought": "Corrupted negative-control terminal action.",
+      "action": "answer",
+      "action_input": {
+        "text": "Incorrect heading not supported by the document",
+        "evidence_refs": [
+          {
+            "page": 2
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "Incorrect heading not supported by the document",
+          "evidence_refs": [
+            {
+              "page": 2
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "negative_control"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "Incorrect heading not supported by the document",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1145,
+      "completion_tokens": 38,
+      "total_tokens": 1183,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1490,
+      "completion_tokens": 51,
+      "total_tokens": 1541,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1995,
+      "completion_tokens": 43,
+      "total_tokens": 2038,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 2499,
+      "completion_tokens": 51,
+      "total_tokens": 2550,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 4,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "wrong_final_answer",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "2308.06595v4__cross__p1_p2",
+    "source_final_action": "answer",
+    "source_final_answer": "1 Introduction",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The terminal answer/refusal was intentionally corrupted while preserving the preceding trajectory."
+  }
+}

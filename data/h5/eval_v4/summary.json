@@ -1,0 +1,125 @@
+{
+  "sft_summary": "data/h5/sft_v4/summary.json",
+  "no_tool_eval": "data/h2/eval_no_tool_v3/summary.json",
+  "tool_eval": "data/h2/eval_v4/summary.json",
+  "path_review": "data/h2/eval_v4_path/path_review.json",
+  "docverify": "data/h3/docverify_plus_v4/docverify_review.json",
+  "h5_proxy_passed": true,
+  "criteria": {
+    "sft_files_present": true,
+    "trajectory_has_nonterminal_supervision": true,
+    "trajectory_covers_core_tools": true,
+    "docverify_keep_rate_ok": true,
+    "acceptable_path_rate_ok": true,
+    "proxy_tool_use_improves_over_answer_only": true,
+    "proxy_accuracy_improves_over_answer_only": true
+  },
+  "dataset_counts": {
+    "answer_only_train": 56,
+    "answer_only_eval": 24,
+    "trajectory_train": 162,
+    "trajectory_eval": 72
+  },
+  "answer_only_train_signal": {
+    "terminal_target_rate": 1.0,
+    "nonterminal_target_rate": 0.0,
+    "core_tool_coverage": [
+      "answer",
+      "refuse"
+    ]
+  },
+  "trajectory_train_signal": {
+    "terminal_target_rate": 0.3457,
+    "nonterminal_target_rate": 0.6543,
+    "core_tool_coverage": [
+      "answer",
+      "compute",
+      "parse_table",
+      "read_page",
+      "refuse",
+      "search",
+      "verify"
+    ],
+    "target_action_distribution": {
+      "search": 27,
+      "read_page": 55,
+      "answer": 44,
+      "refuse": 12,
+      "parse_table": 10,
+      "compute": 8,
+      "verify": 4,
+      "crop": 2
+    }
+  },
+  "no_tool_overall": {
+    "count": 80,
+    "format_compliance_rate": 1.0,
+    "proper_termination_rate": 1.0,
+    "answer_correct_rate": 0.325,
+    "answer_correct_adjusted_rate": 0.325,
+    "mean_answer_f1": 0.3317,
+    "avg_steps": 1.0,
+    "verify_usage_rate": 0.0,
+    "refuse_usage_rate": 0.875,
+    "direct_answer_rate": 1.0
+  },
+  "docenv_agent_overall": {
+    "count": 80,
+    "format_compliance_rate": 1.0,
+    "proper_termination_rate": 1.0,
+    "answer_correct_rate": 0.8125,
+    "answer_correct_adjusted_rate": 1.0,
+    "mean_answer_f1": 0.8425,
+    "avg_steps": 2.925,
+    "verify_usage_rate": 0.1,
+    "refuse_usage_rate": 0.2,
+    "direct_answer_rate": 0.0
+  },
+  "path_overall": {
+    "count": 80,
+    "strict_path_ok_rate": 0.8125,
+    "evidence_path_ok_rate": 1.0,
+    "acceptable_path_ok_rate": 1.0,
+    "proper_termination_rate": 1.0,
+    "expected_terminal_rate": 1.0,
+    "nonterminal_tool_use_rate": 1.0,
+    "required_tool_coverage_rate": 0.8125,
+    "successful_evidence_observation_rate": 1.0,
+    "strict_path_issues": {
+      "path_ok": 65,
+      "missing_required_tool": 15
+    },
+    "acceptable_path_issues": {
+      "acceptable_path_ok": 80
+    }
+  },
+  "docverify_overall": {
+    "count": 80,
+    "support_rate": 1.0,
+    "sufficiency_rate": 1.0,
+    "keep_rate": 1.0,
+    "review_rate": 0.0,
+    "reject_rate": 0.0,
+    "adjusted_answer_correct_rate": 1.0,
+    "mean_quality_score": 0.9933,
+    "support_labels": {
+      "SUPPORTED": 80
+    },
+    "sufficiency_labels": {
+      "SUFFICIENT": 80
+    },
+    "filter_decisions": {
+      "keep": 80
+    },
+    "failure_taxonomy": {
+      "none": 80
+    }
+  },
+  "docenv_minus_no_tool": {
+    "adjusted_answer_correct_rate": 0.675,
+    "direct_answer_rate": -1.0,
+    "avg_steps": 1.925,
+    "verify_usage_rate": 0.1
+  },
+  "interpretation": "This is an H5 proxy/readiness result, not a completed model fine-tuning result. It verifies that the SFT files exist, trajectory supervision contains non-terminal tool actions, and the observed DocEnv-agent behavior dominates the no-tool answer-only control."
+}
