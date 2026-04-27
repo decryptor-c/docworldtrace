@@ -72,3 +72,7 @@ Updated remaining scripts to v5 defaults:
 - scripts/run_h3_negative.sh
 - scripts/rerun_h2_failed.sh
 - scripts/run_h5_pilot.sh
+
+Deleted old H5 data:
+- data/h5/eval_v4/
+- data/h5/sft_v4/
