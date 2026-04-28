@@ -7,12 +7,16 @@
 ## Overall
 
 - Count: `120`
+- Unique seed count: `20`
 - Unique sequence count: `12`
 - Unique sequence ratio: `10.00%`
+- Seed-level unique sequence ratio: `60.00%`
 - Action coverage: `8/10` `['answer', 'compute', 'crop', 'parse_table', 'read_page', 'refuse', 'search', 'verify']`
 - Core pilot action coverage: `7/7` `['answer', 'compute', 'parse_table', 'read_page', 'refuse', 'search', 'verify']`
 - Step count mean/std: `2.8167` / `0.6706`
 - Step count distribution: `{3: 68, 2: 36, 4: 14, 1: 1, 5: 1}`
+- Rule-based template match rate: `73.33%`
+- Rule-based deviation rate: `26.67%`
 - Search calls: `54`
 - Unique search query count: `15`
 - Unique search query ratio: `27.78%`
@@ -30,6 +34,19 @@
 - covered_tasks: `['cross_page', 'numeric_computation', 'table_lookup', 'text_lookup', 'unanswerable', 'verification']`
 - expected_tasks: `['cross_page', 'numeric_computation', 'table_lookup', 'text_lookup', 'unanswerable', 'verification']`
 - rationale: `H4-lite passes when six task types are covered, core pilot actions are used, at least six unique tool sequences appear, and seed-level search queries are not highly duplicated.`
+
+## Original H4 Gates
+
+- strict_original_passed: `False`
+- seed_normalized_passed: `False`
+- unique_sequence_ratio_ok: `False`
+- seed_level_unique_sequence_ratio_ok: `True`
+- action_coverage_ok: `True`
+- step_count_std_ok: `False`
+- rule_based_deviation_ok: `False`
+- search_duplicate_rate_ok: `False`
+- thresholds: `{'unique_sequence_ratio': '>= 0.50', 'seed_level_unique_sequence_ratio': '>= 0.50', 'action_coverage_count': '>= 7', 'step_count_std': '>= 1.50', 'rule_based_deviation_rate': '>= 0.40', 'search_duplicate_rate': '< 0.30'}`
+- observed: `{'unique_sequence_ratio': 0.1, 'seed_level_unique_sequence_ratio': 0.6, 'action_coverage_count': 8, 'step_count_std': 0.6706, 'rule_based_deviation_rate': 0.2667, 'search_duplicate_rate': 0.7222}`
 
 ## Top Tool Sequences
 
@@ -103,11 +120,56 @@
   - `search -> read_page -> verify -> answer`: `6`
   - `read_page -> verify -> answer`: `6`
 
+## Rule-Based Template Baseline
+
+### cross_page
+- Template: `search -> read_page -> read_page -> answer`
+- Match rate: `29.17%`
+- Deviation rate: `70.83%`
+- Deviating sequences:
+  - `search -> read_page -> answer`: `17`
+
+### numeric_computation
+- Template: `parse_table -> compute -> answer`
+- Match rate: `83.33%`
+- Deviation rate: `16.67%`
+- Deviating sequences:
+  - `parse_table`: `1`
+  - `read_page -> parse_table -> compute -> answer`: `1`
+  - `read_page -> crop -> compute -> compute -> answer`: `1`
+
+### table_lookup
+- Template: `read_page -> parse_table -> answer`
+- Match rate: `50.00%`
+- Deviation rate: `50.00%`
+- Deviating sequences:
+  - `parse_table -> answer`: `5`
+  - `read_page -> answer`: `1`
+
+### text_lookup
+- Template: `read_page -> answer`
+- Match rate: `100.00%`
+- Deviation rate: `0.00%`
+- Deviating sequences:
+
+### unanswerable
+- Template: `search -> read_page -> refuse`
+- Match rate: `100.00%`
+- Deviation rate: `0.00%`
+- Deviating sequences:
+
+### verification
+- Template: `read_page -> verify -> answer`
+- Match rate: `50.00%`
+- Deviation rate: `50.00%`
+- Deviating sequences:
+  - `search -> read_page -> verify -> answer`: `6`
+
 ## Kept Trajectories Only
 
-- Count: `118`
+- Count: `116`
 - Unique sequence count: `11`
-- Unique sequence ratio: `9.32%`
+- Unique sequence ratio: `9.48%`
 - Action coverage: `8/10` `['answer', 'compute', 'crop', 'parse_table', 'read_page', 'refuse', 'search', 'verify']`
 
 ## Interpretation

@@ -1,0 +1,243 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      [
+        "overview",
+        "search",
+        "read_page",
+        "refuse"
+      ]
+    ],
+    "answerable": false,
+    "difficulty": "medium",
+    "doc_id": "2308.06595v4",
+    "metadata": {
+      "negative_evidence_query": "current physical location today first author",
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage",
+        "v5_refuse_query_diversification"
+      ],
+      "question_zh": "文档是否给出了论文第一作者今天的实时所在地？先用工具检查文档；如果文档没有提供，则基于证据拒答。",
+      "refuse_category_zh": "文档外事实",
+      "review_status": "v5_refuse_diverse_review"
+    },
+    "pdf_path": "data/raw_pdfs/2308.06595v4.pdf",
+    "question": "What current physical location today does the document give for the paper's first author? First check the document with tools; if the document does not provide it, refuse with a brief evidence-based reason.",
+    "reference_answer": "REFUSE",
+    "required_tools": [
+      "search",
+      "read_page",
+      "refuse"
+    ],
+    "seed_id": "2308.06595v4__refuse__external_fact",
+    "source": "structure_heuristic_v5_refuse_diverse",
+    "supporting_refs": [],
+    "task_type": "unanswerable",
+    "tool_hints": {
+      "negative_evidence_policy": "Use search and read_page before refusing.",
+      "search_policy": "Search for: current physical location today first author"
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash__negative",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"action\": \"search\", \"action_input\": {\"query\": \"current physical location today first author\", \"top_k\": 3}}",
+      "thought": "",
+      "action": "search",
+      "action_input": {
+        "query": "current physical location today first author",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "current physical location today first author",
+          "results": [
+            {
+              "page": 24,
+              "score": 2.0,
+              "snippet": "Table5: ListofexistingdatasetsinVisIT-Bench,categorizedassingleandmultipleimage\ndatasets.\nDataset Topic\nVQA[21] VisualQuestionAnswering\nVCR[84] Cognition-levelVisualUnderstanding\nGD-VCR[85] Geo-DiverseCommonsenseReasoning\nWHOOPS[41] WhatMak"
+            },
+            {
+              "page": 2,
+              "score": 1.0,
+              "snippet": "1 Introduction\nA long-standing challenge for artificial intelligence is to build general-purpose assistants\nthatcan,incollaborationwithhumans,solvediverseandnever-before-seentasks[1]. For\ntextual tasks, several recent works [2, 3, 4, 5, 6, "
+            },
+            {
+              "page": 3,
+              "score": 1.0,
+              "snippet": "Reasoning Over Art Knowledge Recognition Location Home Renovation\nPlots Understanding\nHow much is the Teach me about this Where is this? If you are going for a Here is a photo of my\nbrowser usage for painting. picnic at this location, bathr"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The search results do not directly provide information about the current physical location of the first author. The snippets are about datasets, introductions, and general topics. I need to read the pages to confirm if there's any mention of author affiliations or contact information that might hint at a location.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [24, 2, 3]}}",
+      "thought": "The search results do not directly provide information about the current physical location of the first author. The snippets are about datasets, introductions, and general topics. I need to read the pages to confirm if there's any mention of author affiliations or contact information that might hint at a location.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          24,
+          2,
+          3
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 24,
+              "text": "Table5: ListofexistingdatasetsinVisIT-Bench,categorizedassingleandmultipleimage\ndatasets.\nDataset Topic\nVQA[21] VisualQuestionAnswering\nVCR[84] Cognition-levelVisualUnderstanding\nGD-VCR[85] Geo-DiverseCommonsenseReasoning\nWHOOPS[41] WhatMakesthisImageStrange\nNewyorkCaption[86] HumorUnderstanding\nCLEVR[87] VisualQuestionAnswering\nSingle Kilogram[88] TangramsIdentification\nHarmfulMemes[89] MemesUnderstanding\nScienceQA[90] ScienceQuestionAnswering\nOK-VQA[91] OutsideKnowledgeVisualQuestionAnswering\nAOK-VQA[92] OutsideKnowledgeVisualQuestion\nAOK-VQA[92] QuestionGeneration\nVizWiz[93] VisualQuestionAnswering\nGQA[67] VisualQuestionAnsweringonSceneGraphs\nTextCaps[94] VisualQuestionAnsweringonTexts\nRobustChangeCaptioning[22] DescribingWhathasChangeinaScene\nNLVR2[36] TestingVisualLanguageBias\nImageCoDE[95] ImageRetrieval\nSpot-the-Diff[96] IdentifyingDifferences\nVASR[97] VisualAnalogies\nMultiple\nWinoGavil[98] VisualAssociations\nIRFL(Metaphor)[99] FigurativeSpeechUnderstanding\nIRFL(Idioms)[99] FigurativeSpeechUnderstanding\nIconQA[100] AbstractDiagramUnderstanding\nPick-a-Pic[101] Text-to-ImageUserPreferences\nTable6: ListofskillsandexistingdatasetsinVisIT-Bench\n‘scienceqa’, ‘ocr math’, ‘recognition’, ‘okvqa’, ‘house plan understand-\ning’, ‘nlvr2’, ‘gardening tips’, ‘textcaps’, ‘architectural styles’, ‘dressing\nsense’, ‘winoground’, ‘food recipe’, ‘paper folding’, ‘whoops’, ‘spot\nthe diff’, ‘winogavil’, ‘imagecode’, ‘exercise’, ‘art knowledge’, ‘gqa’,\n‘physical knowledge’, ‘contextual knowledge of events’, ‘home renova-\ntion’, ‘aokvqa’, ‘animals’, ‘vasr’, ‘counting’, ‘board games’, ‘solving\ngeometry problems’, ‘who to call?’, ‘clevr’, ‘building materials’, ‘hazard\nidentification’, ‘pickapick’, ‘astronomy’, ‘figurative speech explanation’,\n‘writeastory’,‘gesturesunderstanding’,‘newyork’,‘culturalknowledge’,\n‘aokvqg’, ‘traffic sign identification’, ‘pop culture’, ‘fashion products’,\n‘harmful memes’, ‘write a poem’, ‘vizwiz’, ‘guesstimate of capacity’,\n‘location understanding’, ‘graph reasoning’, ‘vqa’, ‘game playing’, ‘dif-\nferently abled’, ‘chemical identification’, ‘history knowledge’, ‘climate\nand weather understanding’, ‘irfl metaphor’, ‘human emotion recog-\nnition’, ‘medical’, ‘gd vcr’, ‘vcr’, ‘technical support’, ‘catchy titles’,\n‘kilogram’, ‘anagrams’, ‘color’, ‘tour guide’, ‘directions’, ‘irfl idiom’,\n‘rcc’\n24",
+              "summary": "Table5: ListofexistingdatasetsinVisIT-Bench,categorizedassingleandmultipleimage",
+              "image_path": "artifacts/docenv/2308.06595v4/page_024.png"
+            },
+            {
+              "page": 2,
+              "text": "1 Introduction\nA long-standing challenge for artificial intelligence is to build general-purpose assistants\nthatcan,incollaborationwithhumans,solvediverseandnever-before-seentasks[1]. For\ntextual tasks, several recent works [2, 3, 4, 5, 6, 7] have shown that fine-tuning language\nmodelssuchasGPT-3andLLaMAwithsupervisedinstruction+responseexamples[8,9,10]\nenablesthemtorespondtoimperativerequestsandquestionswithouttask-specifictraining.\nZero-shot generalization is promising not only for standard academic benchmarks, but –\nperhaps more-so – for creative, useful, and real-world queries that downstream users of\nlanguagetechnologiesarelikelytomake.\nOnthemultimodalside,recentinstruction-followingvision-languagemodelsalsoprovide\nazero-shotinterface. Givenanimage(ormultipleimages)andaquery(e.g.,“howmany\napplesareinthisimage?” or“Whatisthis?” or“WriteapoeminthestyleofRobertFrost\naboutthisscene.”) atextualresponseisprovided. RecentworkslikeOpenFlamingo[11,12],\nLLaVA[13]andothers[14,15,16,17,18],haveimplementedthisinterfacewithpromising\ninitialresults. AlthoughstandardbenchmarkslikeVQAv2[19]andCOCOcaptioning[20]\nare commonly used to assess performance, less is know about how models perform on\nbroader, open-endedqueriesthatresemblereal-worlduserbehavior. Evaluationsofsuch\nqueriestypicallyrelyoninformalandqualitativeapproaches.\nTo support quantitative evaluation for this setting, we present VisIT-Bench (Visual\nInsTruction Benchmark), a dynamic benchmark consisting of 592 challenging vision-\nlanguageinstructions. Eachinstancecontainsaninstruction,inputimage(s),ainstruction-\nconditioned caption (a human-crafted caption for the image(s)/instruction), and a human\nverifiedreference(Figure1). Instructionsareimage-contextualimperativerequestsorques-\ntions,e.g.,foranimageofpancakes,auserasks“howcanIcookthisinahealthyway?”.\nDifferentfromexistingzero-shotevaluations,manyoftheinstructionsfocusonopen-ended\ngenerationrequests(e.g.,“writeapoem...” or“whatshouldIbringifIweretovisithere?”).\nWecreatedVisIT-Benchtocoverawidearrayof“instructionfamilies”. Ourstartingpoint\nwasasetof70“wish-list”taskssuchas“homerenovation”and“gardeningtips”collectedby\ntheauthors:1 eachrequiringvariedhigh-levelskillsfromrecognitiontocomplexreasoning\n(Figure 2). We derived 25/70 instruction families from benchmark tasks such as Visual\nQuestion Answering (VQA) [21] and robust change captioning [22] into a chatbot-style\nformat(thisreformattingdiffersfrompriorwork[14,17,13],aswefocusonopen-ended\nchatbotstyleresponses.). Notably,10oftheserepurposedtasksinvolvemultipleimages.\nWe started with 10 images for each instruction family. Our annotators, guided by an\nexample,createanewinstruction,andprovidea(permissivelylicensed)image. Foreach\ninstruction, we next collect instruction-conditioned captions – unlike prior work [23, 24]\nthesedescriptionsaredesignednotonlytodescribetheimageingeneral,butalso,surface\ninformationtargetedtotheinstruction. Finally,weuseinstruction-conditionedcaptionsto\ngenerate areference candidate output fromGPT-4; an additional humanverificationstep\ndiscardsGPT-4referencesdeemedtobeincorrect.\nWeconductalarge-scaleempiricalcomparisonofmultimodalinstruction-followingmodels\nusing VisIT-Bench (§4). We first gather predictions for each instance from 7 candidate\nmodels. Then,wecollect5Khumanjudgementsofoutputqualitybypittingmodeloutputs\nhead-to-head,and(inaforced-choicesetup)crowd-sourcingpairwisepreferencejudgements.\nThis analysis not only reveals significant differences between models (e.g., that LLaVA-\n13b[13]isgenerallypreferredtoPanda[18]),butalso,thatthehumanverifiedreferences\nin our corpus are preferred significantly more than the ones generated using multimodal\nmodels. Wesummarizehead-to-headcomparisonswithtwometrics: 1)Eloratings[25,26],\n1Werecognizethatpromisingapplicationsmaynotbecoveredbyourset;andwedon’tnecessarilyadvocate\nfordeployingmodelsinallcaseswecover–wehopeVisIT-Benchcanhelptoquantifyshortcomingsandrisks.\n2",
+              "summary": "1 Introduction",
+              "image_path": "artifacts/docenv/2308.06595v4/page_002.png"
+            },
+            {
+              "page": 3,
+              "text": "Reasoning Over Art Knowledge Recognition Location Home Renovation\nPlots Understanding\nHow much is the Teach me about this Where is this? If you are going for a Here is a photo of my\nbrowser usage for painting. picnic at this location, bathroom. How can I\nFirefox and Safari? what items should you design it nicer?\ncarry with you?\nContextual Figurative Speech Chemical Hazard Identification Game Playing\nKnowledge of Events Explanation Identification\nTell me what is notable Someone said that this Which chemical If you are driving and What is the poker hand\nor important about the man is an angel. Why? compound does this come across this shown in the picture?\nevent in this photo. image represent? scenario, what should Is this a good hand?\nyou do?\nFigure2: Asamplefromthe70instructionfamiliesinVisIT-Benchrepresentingtaskswe\nenvisioninstruction-followingvision-languagemodelsshould beabletofollow.\nwhichproviderelative“skill”ratingestimatesencodingtheprobabilitythatmodelAwill\nbepreferredtomodelB;and2)winrateversusourreferences,whichprovidesanabsolute\nmetric. ThebestmodelaccordingtohumanjudgementisLLaMA-Adapter-v2[16],yetit\nonlywinsinapairwisesettingagainstthereferencein27.4%ofcases.\nFinally,wedesignanautomatedevaluationforVisIT-Bench,utilizingGPT-4torankpairs\nof model responses based on factors like correctness, relevance, and fluency. Using the\ninstruction-conditionedcaptionandtheinstruction,GPT-4determinesthebetterresponse\nbetween two options, expediting iteration compared to human preferences. We explore\nreference-freeandreference-backed versionsofthismetric. Comparedtovariousmetrics\n(BLEU-4 [27], ROUGE-L [28], METEOR [29], CIDEr [30], and BERTScore [31]), our\nevaluationalignsbestwithhumanpreferences. Forexample,itachievesa94%agreement\nrateinthecaseswhereallfiveannotatorsagree. SeeFigure7foraschematicoftheprocess.\nWhileitisdifficulttoapriorienvisionallpossiblescenariosunderwhichmoreperformant\nmultimodalchatbotsmightbeused,wehopeVisIT-Benchcanprovideapathtoimproving\nvision-languagemodels“inthewild.” Table1presentsasummaryofourcontributionsin\ncomparison to the recent works [32, 14, 17, 33, 34, 35] in the evaluation of multimodal\nchatbots. WepubliclyreleaseVisIT-Benchdata,code,andautomaticmetricstofacilitate\nfuturemodelevaluations,availableinhttps://visit-bench.github.io/.\nTable1: Comparisonwithrelatedworksforevaluatinginstruction-followingvision-language\nmodels. Win-rates*referstothemodelwin-ratesagainstareferenceoutput/model.\nMultiInstruct[32] Owl[17] InstructBLIP[14] M3IT[33] LVLM[34] GAVIE[35] VisIT-Bench\nNumberofModels 1 5 3 4 8 5 10\nNumberofSkillsTested 9 6 13 13 47 16 70\nMultiple-Images ✗ ✓ ✗ ✗ ✗ ✗ ✓\nVideo ✗ ✗ ✓ ✓ ✗ ✗ ✗\nMulti-TurnConversations ✓ ✓ ✓ ✓ ✓ ✗ ✗\nMultilingualConversations ✗ ✓ ✗ ✓ ✗ ✗ ✗\nInstruction-conditionedCaptions ✗ ✗ ✗ ✗ ✗ ✗ ✓\nChatbot-styleResponses ✗ ✗ ✗ ✗ ✗ ✗ ✓\nDataset-specificEvaluation ✓ ✓ ✓ ✓ ✓ ✗ ✗\nHumanEvaluation ✗ ✓ ✗ ✗ ✓ ✗ ✓\nAuto/GPT-4Evaluation ✗ ✓ ✗ ✓ ✗ ✓ ✓\nWin-rates* ✗ ✓ ✗ ✓ ✗ ✓ ✓\nEloRating ✗ ✗ ✗ ✗ ✓ ✗ ✓\n3",
+              "summary": "Reasoning Over Art Knowledge Recognition Location Home Renovation",
+              "image_path": "artifacts/docenv/2308.06595v4/page_003.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"Corrupted negative-control terminal action.\", \"action\": \"answer\", \"action_input\": {\"text\": \"The private mobile phone number is 555-0100.\", \"evidence_refs\": []}}",
+      "thought": "Corrupted negative-control terminal action.",
+      "action": "answer",
+      "action_input": {
+        "text": "The private mobile phone number is 555-0100.",
+        "evidence_refs": []
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "The private mobile phone number is 555-0100.",
+          "evidence_refs": []
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "negative_control"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "The private mobile phone number is 555-0100.",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1362,
+      "completion_tokens": 116,
+      "total_tokens": 1478,
+      "prompt_tokens_details": {
+        "text_tokens": 1362,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 86
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1702,
+      "completion_tokens": 90,
+      "total_tokens": 1792,
+      "prompt_tokens_details": {
+        "text_tokens": 1702,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 3190,
+      "completion_tokens": 176,
+      "total_tokens": 3366,
+      "prompt_tokens_details": {
+        "text_tokens": 3190,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "false_answer_for_unanswerable",
+    "source_teacher": "dmxapi_gemini_2_5_flash",
+    "source_seed_id": "2308.06595v4__refuse__external_fact",
+    "source_final_action": "refuse",
+    "source_final_answer": "The document does not provide information about the current physical location of the paper's first author. I have searched for relevant terms and read the introductory pages, but no such details were found.",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The terminal answer/refusal was intentionally corrupted while preserving the preceding trajectory."
+  }
+}

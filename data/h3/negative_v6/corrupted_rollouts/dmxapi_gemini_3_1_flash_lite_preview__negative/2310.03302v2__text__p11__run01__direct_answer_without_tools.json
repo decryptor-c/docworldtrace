@@ -1,0 +1,135 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "easy",
+    "doc_id": "2310.03302v2",
+    "metadata": {
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage"
+      ],
+      "page": 11,
+      "review_status": "v4_query_sanitized"
+    },
+    "pdf_path": "data/raw_pdfs/2310.03302v2.pdf",
+    "question": "What is the heading or leading phrase on page 11? Return the page summary or the first visible leading phrase exactly. Do not choose a later figure caption, table caption, or section title unless it is the first visible leading phrase.",
+    "reference_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+    "required_tools": [
+      "read_page"
+    ],
+    "seed_id": "2310.03302v2__text__p11",
+    "source": "structure_heuristic_approved_v3_path_optimized_v4_query_sanitized",
+    "supporting_refs": [
+      {
+        "page": 11
+      }
+    ],
+    "task_type": "text_lookup",
+    "tool_hints": {
+      "target_page": 11
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview__negative",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"Answering directly without using document tools.\", \"action\": \"answer\", \"action_input\": {\"text\": \"MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\", \"evidence_refs\": [{\"page\": 11}]}}",
+      "thought": "Answering directly without using document tools.",
+      "action": "answer",
+      "action_input": {
+        "text": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "evidence_refs": [
+          {
+            "page": 11
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+          "evidence_refs": [
+            {
+              "page": 11
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1341,
+      "completion_tokens": 41,
+      "total_tokens": 1382,
+      "prompt_tokens_details": {
+        "text_tokens": 1341,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2128,
+      "completion_tokens": 71,
+      "total_tokens": 2199,
+      "prompt_tokens_details": {
+        "text_tokens": 2128,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 1,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": true
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "direct_answer_without_tools",
+    "source_teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+    "source_seed_id": "2310.03302v2__text__p11",
+    "source_final_action": "answer",
+    "source_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer text is preserved, but all supporting tool calls and observations are removed."
+  }
+}

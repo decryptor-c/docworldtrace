@@ -463,8 +463,13 @@ def build_seed_file(pdf_dir: str, out_path: str, quotas: Optional[Dict[str, int]
         raise SystemExit(f"No PDFs found in {pdf_dir}")
 
     candidates: List[Dict[str, Any]] = []
+    skipped_pdfs: List[Dict[str, str]] = []
     for pdf_path in pdf_paths:
-        env = DocEnv.from_pdf(str(pdf_path))
+        try:
+            env = DocEnv.from_pdf(str(pdf_path))
+        except Exception as exc:  # noqa: BLE001 - batch seed generation should skip bad candidate PDFs
+            skipped_pdfs.append({"pdf_path": str(pdf_path), "error": str(exc)})
+            continue
         candidates.extend(candidate_seeds_for_env(env, str(pdf_path)))
 
     selected = select_seed_set(candidates, quotas)
@@ -486,19 +491,45 @@ def build_seed_file(pdf_dir: str, out_path: str, quotas: Optional[Dict[str, int]
         "selected_count": len(selected),
         "task_distribution": by_type,
         "seed_ids": [item["seed_id"] for item in selected],
+        "skipped_pdf_count": len(skipped_pdfs),
+        "skipped_pdfs": skipped_pdfs,
     }
     summary_path = out_file.with_suffix(".summary.json")
     summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
     return summary
 
 
+def _load_quotas(value: Optional[str], multiplier: int) -> Dict[str, int]:
+    if value:
+        source = Path(value)
+        if source.exists():
+            raw = json.loads(source.read_text(encoding="utf-8"))
+        else:
+            raw = json.loads(value)
+        return {str(key): int(item) for key, item in raw.items()}
+    if multiplier < 1:
+        raise SystemExit("--quota-multiplier must be >= 1")
+    return {key: item * multiplier for key, item in DEFAULT_QUOTAS.items()}
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate H2 QA seeds from pilot PDFs.")
     parser.add_argument("--pdf-dir", default="data/raw_pdfs", help="Directory containing PDFs")
     parser.add_argument("--out", default="data/h2/seeds/pilot_seeds.jsonl", help="Output JSONL file")
+    parser.add_argument(
+        "--quota-multiplier",
+        type=int,
+        default=1,
+        help="Multiply the default per-task quotas. Use >1 when expanding H4 diversity runs.",
+    )
+    parser.add_argument(
+        "--quotas-json",
+        default=None,
+        help="Optional JSON string or JSON file path overriding per-task quotas.",
+    )
     args = parser.parse_args()
 
-    summary = build_seed_file(args.pdf_dir, args.out)
+    summary = build_seed_file(args.pdf_dir, args.out, quotas=_load_quotas(args.quotas_json, args.quota_multiplier))
     print(json.dumps(summary, ensure_ascii=False, indent=2))
 
 

@@ -1,0 +1,267 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      [
+        "search",
+        "read_page",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "hard",
+    "doc_id": "2310.03302v2",
+    "metadata": {
+      "anchor_page": 1,
+      "anchor_phrase": "mlagentbench evaluating language agents on",
+      "answer_page": 2,
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage"
+      ],
+      "review_status": "v4_query_sanitized"
+    },
+    "pdf_path": "data/raw_pdfs/2310.03302v2.pdf",
+    "question": "Use search to find the page about \"mlagentbench evaluating language agents on\". Then inspect the following page and report its heading or leading phrase.",
+    "reference_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+    "required_tools": [
+      "search",
+      "read_page"
+    ],
+    "seed_id": "2310.03302v2__cross__p1_p2",
+    "source": "structure_heuristic_v2_review_approved_v3_path_optimized_v4_query_sanitized",
+    "supporting_refs": [
+      {
+        "page": 2
+      }
+    ],
+    "task_type": "cross_page",
+    "tool_hints": {
+      "search_policy": "Use the quoted anchor phrase as the search query; do not assume page numbers."
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I will use the search tool to locate the page containing the phrase 'mlagentbench evaluating language agents on'.\",\"action\":\"search\",\"action_input\":{\"query\":\"mlagentbench evaluating language agents on\",\"top_k\":1}}",
+      "thought": "I will use the search tool to locate the page containing the phrase 'mlagentbench evaluating language agents on'.",
+      "action": "search",
+      "action_input": {
+        "query": "mlagentbench evaluating language agents on",
+        "top_k": 1
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "mlagentbench evaluating language agents on",
+          "results": [
+            {
+              "page": 1,
+              "score": 5.0,
+              "snippet": "MLAgentBench: Evaluating Language Agents on\nMachine Learning Experimentation\nQianHuang1 JianVora1 PercyLiang1 JureLeskovec1\nAbstract theexperiment(e.g.,validationaccuracy),theyrevisetheir\nmethod to improve performance on the task. This iter"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The search indicates that the relevant content starts on page 1. I will read page 1 to confirm its heading and content.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[1]}}",
+      "thought": "The search indicates that the relevant content starts on page 1. I will read page 1 to confirm its heading and content.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          1
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_weak_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\":\"I have read page 1 and confirmed its heading and content. Now, I need to inspect the following page (page 2) to report its heading or leading phrase.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[2]}}",
+      "thought": "I have read page 1 and confirmed its heading and content. Now, I need to inspect the following page (page 2) to report its heading or leading phrase.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          2
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_weak_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 4,
+      "raw_model_output": "{\"thought\":\"I have inspected page 2 and can now report its heading or leading phrase.\",\"action\":\"answer\",\"action_input\":{\"text\":\"MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation\",\"evidence_refs\":[{\"page\":2}]}}",
+      "thought": "I have inspected page 2 and can now report its heading or leading phrase.",
+      "action": "answer",
+      "action_input": {
+        "text": "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation",
+        "evidence_refs": [
+          {
+            "page": 2
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation",
+          "evidence_refs": [
+            {
+              "page": 2
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1141,
+      "completion_tokens": 49,
+      "total_tokens": 1190,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1323,
+      "completion_tokens": 44,
+      "total_tokens": 1367,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1821,
+      "completion_tokens": 53,
+      "total_tokens": 1874,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 2419,
+      "completion_tokens": 53,
+      "total_tokens": 2472,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 4,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "weak_search_only_evidence",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "2310.03302v2__cross__p1_p2",
+    "source_final_action": "answer",
+    "source_final_answer": "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved, but rich evidence observations are blanked so only search-level evidence remains."
+  }
+}

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from collections import Counter, defaultdict
 from copy import deepcopy
 from pathlib import Path
@@ -11,6 +12,23 @@ from .h2_rollout import display_path
 from .h3_docverify import evaluate as evaluate_docverify
 from .h3_docverify import write_markdown as write_docverify_markdown
 from .h3_docverify import write_manual_template
+
+EXTENDED_CORRUPTION_TYPES = {
+    "hallucinated_evidence_ref",
+    "compute_expression_mismatch",
+    "verify_label_mismatch",
+}
+
+NATURAL_LIKE_CORRUPTION_TYPES = {
+    "over_refusal_for_answerable",
+    "direct_answer_without_tools",
+    "numeric_near_miss",
+    "dropped_compute_step",
+    "table_row_label_as_answer",
+    "weak_search_only_evidence",
+}
+
+NUMBER_RE = re.compile(r"[-+]?\d+(?:\.\d+)?")
 
 
 def _load_json(path: Path) -> Dict[str, Any]:
@@ -93,6 +111,62 @@ def _remove_evidence_observations(payload: Dict[str, Any]) -> None:
         }
 
 
+def _set_terminal_evidence_refs(payload: Dict[str, Any], evidence_refs: List[Dict[str, Any]]) -> None:
+    terminal = _last_terminal_step(payload)
+    if terminal is None:
+        return
+    terminal.setdefault("action_input", {})["evidence_refs"] = evidence_refs
+    result = (terminal.setdefault("observation", {}).setdefault("result", {}))
+    if isinstance(result, dict):
+        result["evidence_refs"] = evidence_refs
+
+
+def _flip_label(label: str | None) -> str:
+    return "UNSUPPORTED" if str(label or "").upper() == "SUPPORTED" else "SUPPORTED"
+
+
+def _numbers(value: str) -> List[float]:
+    return [float(item) for item in NUMBER_RE.findall(value or "")]
+
+
+def _refresh_sequence_and_metrics(payload: Dict[str, Any]) -> None:
+    payload["tool_sequence"] = [step.get("action") for step in payload.get("trajectory", []) if step.get("action")]
+    metrics = dict(payload.get("metrics", {}))
+    sequence = payload["tool_sequence"]
+    metrics["used_refuse"] = "refuse" in sequence
+    metrics["used_verify"] = "verify" in sequence
+    nonterminal = [item for item in sequence if item not in {"answer", "refuse"}]
+    metrics["direct_answer"] = bool(sequence and sequence[-1] in {"answer", "refuse"} and not nonterminal)
+    metrics["step_count"] = len(payload.get("trajectory", []))
+    metrics["terminated_normally"] = bool(sequence and sequence[-1] in {"answer", "refuse"})
+    metrics["format_compliant"] = True
+    payload["metrics"] = metrics
+
+
+def _set_corruption_metadata(
+    corrupted: Dict[str, Any],
+    source: Dict[str, Any],
+    corruption_type: str,
+    rationale: str,
+) -> Tuple[Dict[str, Any], Dict[str, Any]]:
+    corrupted["condition"] = "h3_negative_control"
+    corrupted["corruption"] = {
+        "type": corruption_type,
+        "source_teacher": source.get("teacher", {}).get("name"),
+        "source_seed_id": source.get("seed", {}).get("seed_id"),
+        "source_final_action": source.get("final_action"),
+        "source_final_answer": source.get("final_answer"),
+        "expected_human_label": "BAD_TRAJECTORY",
+        "expected_filter_decision": "reject_or_review",
+        "rationale": rationale,
+    }
+    corrupted["teacher"] = {
+        **dict(corrupted.get("teacher", {})),
+        "name": f"{corrupted.get('teacher', {}).get('name', 'teacher')}__negative",
+    }
+    return corrupted, corrupted["corruption"]
+
+
 def _wrong_answer_for(payload: Dict[str, Any]) -> Tuple[str, str]:
     seed = payload["seed"]
     task_type = seed.get("task_type")
@@ -133,6 +207,129 @@ def corrupt_payload(payload: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, 
     return corrupted, corrupted["corruption"]
 
 
+def corrupt_payload_over_refusal(payload: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]] | None:
+    if not payload.get("seed", {}).get("answerable", True):
+        return None
+    corrupted = deepcopy(payload)
+    _set_terminal(
+        corrupted,
+        "refuse",
+        "I cannot answer because the document does not provide sufficient evidence.",
+    )
+    return _set_corruption_metadata(
+        corrupted,
+        payload,
+        "over_refusal_for_answerable",
+        "The trajectory previously answered an answerable question, but the terminal action is changed to refusal.",
+    )
+
+
+def corrupt_payload_direct_answer_without_tools(payload: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]] | None:
+    if payload.get("final_action") != "answer":
+        return None
+    corrupted = deepcopy(payload)
+    terminal = deepcopy(_last_terminal_step(corrupted))
+    if terminal is None:
+        return None
+    terminal["step"] = 1
+    terminal["thought"] = "Answering directly without using document tools."
+    terminal["raw_model_output"] = json.dumps(
+        {
+            "thought": terminal["thought"],
+            "action": "answer",
+            "action_input": terminal.get("action_input", {}),
+        },
+        ensure_ascii=False,
+    )
+    corrupted["trajectory"] = [terminal]
+    _refresh_sequence_and_metrics(corrupted)
+    return _set_corruption_metadata(
+        corrupted,
+        payload,
+        "direct_answer_without_tools",
+        "The final answer text is preserved, but all supporting tool calls and observations are removed.",
+    )
+
+
+def corrupt_payload_numeric_near_miss(payload: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]] | None:
+    seed = payload.get("seed", {})
+    if seed.get("task_type") != "numeric_computation" or payload.get("final_action") != "answer":
+        return None
+    reference_numbers = _numbers(str(seed.get("reference_answer", "")))
+    if not reference_numbers:
+        return None
+    wrong_value = reference_numbers[0] + 1.0
+    unit = " percentage points" if "percentage point" in str(seed.get("reference_answer", "")).lower() else ""
+    corrupted = deepcopy(payload)
+    _set_terminal(corrupted, "answer", f"{wrong_value:g}{unit}")
+    return _set_corruption_metadata(
+        corrupted,
+        payload,
+        "numeric_near_miss",
+        "The terminal numeric answer is changed to a plausible but incorrect nearby value.",
+    )
+
+
+def corrupt_payload_dropped_compute(payload: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]] | None:
+    seed = payload.get("seed", {})
+    if seed.get("task_type") != "numeric_computation" or payload.get("final_action") != "answer":
+        return None
+    if "compute" not in payload.get("tool_sequence", []):
+        return None
+    corrupted = deepcopy(payload)
+    corrupted["trajectory"] = [step for step in corrupted.get("trajectory", []) if step.get("action") != "compute"]
+    for index, step in enumerate(corrupted["trajectory"], start=1):
+        step["step"] = index
+    _refresh_sequence_and_metrics(corrupted)
+    return _set_corruption_metadata(
+        corrupted,
+        payload,
+        "dropped_compute_step",
+        "The final numeric answer is preserved, but the compute provenance step is removed.",
+    )
+
+
+def corrupt_payload_table_row_label(payload: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]] | None:
+    seed = payload.get("seed", {})
+    if seed.get("task_type") != "table_lookup" or payload.get("final_action") != "answer":
+        return None
+    corrupted = deepcopy(payload)
+    question = str(seed.get("question", ""))
+    row_label = question.split("'")[1] if "'" in question and len(question.split("'")) > 2 else "the requested row label"
+    _set_terminal(corrupted, "answer", row_label)
+    return _set_corruption_metadata(
+        corrupted,
+        payload,
+        "table_row_label_as_answer",
+        "The answer is replaced with a plausible table row label rather than the requested cell value.",
+    )
+
+
+def corrupt_payload_weak_search_only_evidence(payload: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]] | None:
+    if payload.get("final_action") != "answer" or not payload.get("seed", {}).get("answerable", True):
+        return None
+    if "search" not in payload.get("tool_sequence", []):
+        return None
+    corrupted = deepcopy(payload)
+    for step in corrupted.get("trajectory", []):
+        if step.get("action") in {"search", "answer", "refuse"}:
+            continue
+        step["observation"] = {
+            "action": step.get("action"),
+            "status": "success",
+            "result": {},
+            "provenance": {"page": None, "bbox": None, "element_type": "corrupted_weak_evidence"},
+            "confidence": 0.0,
+            "cache_hit": False,
+        }
+    return _set_corruption_metadata(
+        corrupted,
+        payload,
+        "weak_search_only_evidence",
+        "The final answer is preserved, but rich evidence observations are blanked so only search-level evidence remains.",
+    )
+
+
 def corrupt_payload_missing_evidence(payload: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]]:
     corrupted = deepcopy(payload)
     _remove_evidence_observations(corrupted)
@@ -154,10 +351,110 @@ def corrupt_payload_missing_evidence(payload: Dict[str, Any]) -> Tuple[Dict[str,
     return corrupted, corrupted["corruption"]
 
 
+def corrupt_payload_hallucinated_evidence_ref(payload: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]] | None:
+    if payload.get("final_action") != "answer":
+        return None
+    corrupted = deepcopy(payload)
+    _set_terminal_evidence_refs(corrupted, [{"page": 999999, "bbox": [0, 0, 1, 1]}])
+    corrupted["condition"] = "h3_negative_control"
+    corrupted["corruption"] = {
+        "type": "hallucinated_evidence_ref",
+        "source_teacher": payload.get("teacher", {}).get("name"),
+        "source_seed_id": payload.get("seed", {}).get("seed_id"),
+        "source_final_action": payload.get("final_action"),
+        "source_final_answer": payload.get("final_answer"),
+        "expected_human_label": "BAD_TRAJECTORY",
+        "expected_filter_decision": "reject_or_review",
+        "rationale": "The final answer is preserved, but terminal evidence_refs point to a page never observed in the trajectory.",
+    }
+    corrupted["teacher"] = {
+        **dict(corrupted.get("teacher", {})),
+        "name": f"{corrupted.get('teacher', {}).get('name', 'teacher')}__negative",
+    }
+    return corrupted, corrupted["corruption"]
+
+
+def corrupt_payload_compute_expression_mismatch(payload: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]] | None:
+    if payload.get("seed", {}).get("task_type") != "numeric_computation" or payload.get("final_action") != "answer":
+        return None
+    corrupted = deepcopy(payload)
+    changed = False
+    for step in corrupted.get("trajectory", []):
+        if step.get("action") != "compute":
+            continue
+        observation = step.get("observation") or {}
+        if observation.get("status") != "success":
+            continue
+        result = observation.setdefault("result", {})
+        if "value" not in result:
+            continue
+        result["expr"] = "bad_left + bad_right"
+        result["vars"] = {"bad_left": 123.0, "bad_right": 456.0}
+        step.setdefault("action_input", {})["expr"] = "bad_left + bad_right"
+        step.setdefault("action_input", {})["vars"] = {"bad_left": 123.0, "bad_right": 456.0}
+        changed = True
+        break
+    if not changed:
+        return None
+    corrupted["condition"] = "h3_negative_control"
+    corrupted["corruption"] = {
+        "type": "compute_expression_mismatch",
+        "source_teacher": payload.get("teacher", {}).get("name"),
+        "source_seed_id": payload.get("seed", {}).get("seed_id"),
+        "source_final_action": payload.get("final_action"),
+        "source_final_answer": payload.get("final_answer"),
+        "expected_human_label": "BAD_TRAJECTORY",
+        "expected_filter_decision": "reject_or_review",
+        "rationale": "The final answer is preserved, but a successful compute step now has an expression/vars provenance that recomputes to a different value.",
+    }
+    corrupted["teacher"] = {
+        **dict(corrupted.get("teacher", {})),
+        "name": f"{corrupted.get('teacher', {}).get('name', 'teacher')}__negative",
+    }
+    return corrupted, corrupted["corruption"]
+
+
+def corrupt_payload_verify_label_mismatch(payload: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]] | None:
+    if payload.get("seed", {}).get("task_type") != "verification" or payload.get("final_action") != "answer":
+        return None
+    corrupted = deepcopy(payload)
+    changed = False
+    for step in corrupted.get("trajectory", []):
+        if step.get("action") != "verify":
+            continue
+        result = (step.get("observation") or {}).get("result") or {}
+        if "label" not in result:
+            continue
+        result["label"] = _flip_label(result.get("label"))
+        result["sufficiency"] = "INSUFFICIENT"
+        changed = True
+        break
+    if not changed:
+        return None
+    corrupted["condition"] = "h3_negative_control"
+    corrupted["corruption"] = {
+        "type": "verify_label_mismatch",
+        "source_teacher": payload.get("teacher", {}).get("name"),
+        "source_seed_id": payload.get("seed", {}).get("seed_id"),
+        "source_final_action": payload.get("final_action"),
+        "source_final_answer": payload.get("final_answer"),
+        "expected_human_label": "BAD_TRAJECTORY",
+        "expected_filter_decision": "reject_or_review",
+        "rationale": "The final answer is preserved, but the verify observation label is flipped to disagree with the expected verification label.",
+    }
+    corrupted["teacher"] = {
+        **dict(corrupted.get("teacher", {})),
+        "name": f"{corrupted.get('teacher', {}).get('name', 'teacher')}__negative",
+    }
+    return corrupted, corrupted["corruption"]
+
+
 def build_negative_rollouts(
     source_rollout_dir: Path,
     out_rollout_dir: Path,
     include_missing_evidence: bool,
+    include_extended_corruptions: bool,
+    include_natural_like_corruptions: bool,
     max_per_type: int | None,
 ) -> Dict[str, Any]:
     out_rollout_dir.mkdir(parents=True, exist_ok=True)
@@ -168,9 +465,30 @@ def build_negative_rollouts(
         payload = _load_json(source_path)
         if payload.get("status") != "completed" or payload.get("final_action") not in {"answer", "refuse"}:
             continue
-        corrupted_items = [corrupt_payload(payload)]
+        corrupted_items: List[Tuple[Dict[str, Any], Dict[str, Any]]] = [corrupt_payload(payload)]
         if include_missing_evidence and payload.get("seed", {}).get("answerable", True):
             corrupted_items.append(corrupt_payload_missing_evidence(payload))
+        if include_extended_corruptions:
+            for builder in [
+                corrupt_payload_hallucinated_evidence_ref,
+                corrupt_payload_compute_expression_mismatch,
+                corrupt_payload_verify_label_mismatch,
+            ]:
+                item = builder(payload)
+                if item is not None:
+                    corrupted_items.append(item)
+        if include_natural_like_corruptions:
+            for builder in [
+                corrupt_payload_over_refusal,
+                corrupt_payload_direct_answer_without_tools,
+                corrupt_payload_numeric_near_miss,
+                corrupt_payload_dropped_compute,
+                corrupt_payload_table_row_label,
+                corrupt_payload_weak_search_only_evidence,
+            ]:
+                item = builder(payload)
+                if item is not None:
+                    corrupted_items.append(item)
         for corrupted, corruption in corrupted_items:
             corruption_type = corruption["type"]
             if max_per_type is not None and type_counts[corruption_type] >= max_per_type:
@@ -310,6 +628,8 @@ def main() -> None:
     parser.add_argument("--out-dir", default="data/h3/negative_v4")
     parser.add_argument("--top-k", type=int, default=5)
     parser.add_argument("--include-missing-evidence", action="store_true")
+    parser.add_argument("--include-extended-corruptions", action="store_true")
+    parser.add_argument("--include-natural-like-corruptions", action="store_true")
     parser.add_argument("--max-per-type", type=int, default=None)
     args = parser.parse_args()
 
@@ -317,6 +637,8 @@ def main() -> None:
         source_rollout_dir=Path(args.source_rollout_dir),
         out_rollout_dir=Path(args.negative_rollout_dir),
         include_missing_evidence=args.include_missing_evidence,
+        include_extended_corruptions=args.include_extended_corruptions,
+        include_natural_like_corruptions=args.include_natural_like_corruptions,
         max_per_type=args.max_per_type,
     )
     review = evaluate_negative(Path(args.negative_rollout_dir), Path(args.out_dir), top_k=args.top_k)

@@ -5,6 +5,7 @@ from collections import Counter
 from dataclasses import asdict, dataclass, field
 from typing import Any, Dict, Iterable, List, Optional, Sequence
 
+from .safe_eval import safe_eval
 from .utils import tokenize
 
 
@@ -377,6 +378,78 @@ def jsonish(value: Dict[str, Any]) -> str:
     return " ".join(f"{key}: {item}" for key, item in value.items() if item is not None)
 
 
+def _terminal_evidence_refs(payload: Dict[str, Any]) -> List[Dict[str, Any]]:
+    for step in reversed(payload.get("trajectory", [])):
+        if step.get("action") not in {"answer", "refuse"}:
+            continue
+        action_input = step.get("action_input") or {}
+        refs = action_input.get("evidence_refs")
+        if isinstance(refs, list):
+            return [ref for ref in refs if isinstance(ref, dict)]
+        observation_result = ((step.get("observation") or {}).get("result") or {})
+        refs = observation_result.get("evidence_refs")
+        if isinstance(refs, list):
+            return [ref for ref in refs if isinstance(ref, dict)]
+    return []
+
+
+def _invalid_terminal_evidence_refs(payload: Dict[str, Any], evidence_items: List[EvidenceItem]) -> List[Dict[str, Any]]:
+    refs = _terminal_evidence_refs(payload)
+    if not refs:
+        return []
+    observed_pages = {item.page for item in evidence_items if item.page is not None}
+    if not observed_pages:
+        return []
+    invalid = []
+    for ref in refs:
+        page = _safe_int(ref.get("page"))
+        if page is not None and page not in observed_pages:
+            invalid.append(ref)
+    return invalid
+
+
+def _successful_compute_mismatches(payload: Dict[str, Any]) -> List[Dict[str, Any]]:
+    mismatches: List[Dict[str, Any]] = []
+    for step in payload.get("trajectory", []):
+        if step.get("action") != "compute":
+            continue
+        observation = step.get("observation") or {}
+        if observation.get("status") != "success":
+            continue
+        result = observation.get("result") or {}
+        action_input = step.get("action_input") or {}
+        expr = result.get("expr") or action_input.get("expr")
+        variables = result.get("vars") or action_input.get("vars") or {}
+        observed_value = result.get("value")
+        if expr is None or observed_value is None or not isinstance(variables, dict):
+            continue
+        try:
+            expected_value = safe_eval(str(expr), variables)
+            mismatch = abs(float(expected_value) - float(observed_value)) > 1e-6
+        except Exception as exc:  # noqa: BLE001 - diagnostic path for corrupted provenance
+            mismatches.append(
+                {
+                    "step": step.get("step"),
+                    "expr": expr,
+                    "vars": variables,
+                    "observed_value": observed_value,
+                    "error": str(exc),
+                }
+            )
+            continue
+        if mismatch:
+            mismatches.append(
+                {
+                    "step": step.get("step"),
+                    "expr": expr,
+                    "vars": variables,
+                    "observed_value": observed_value,
+                    "recomputed_value": expected_value,
+                }
+            )
+    return mismatches
+
+
 class EvidenceRanker:
     def rank(self, claim: AtomicClaim, evidence_items: List[EvidenceItem], top_k: int = 5) -> List[EvidenceItem]:
         scored = []
@@ -456,10 +529,12 @@ class SupportJudge:
         final_label = _verification_label(payload.get("final_answer") or "")
         expected_label = _verification_label(claim.expected_answer)
         final_ok = bool(expected_label and final_label == expected_label)
-        if verify_items and final_ok:
+        if verify_items:
             labels = " ".join(str(item.metadata.get("label", "")) for item in verify_items)
             evidence_label = _verification_label(labels)
-            if evidence_label == expected_label:
+            sufficiency_labels = {str(item.metadata.get("sufficiency", "")).upper() for item in verify_items}
+            evidence_sufficient = bool(sufficiency_labels) and sufficiency_labels.issubset({"SUFFICIENT"})
+            if final_ok and evidence_label == expected_label and evidence_sufficient:
                 return ClaimJudgment(
                     claim_id=claim.claim_id,
                     label="SUPPORTED",
@@ -470,16 +545,20 @@ class SupportJudge:
                     failure_taxonomy=None,
                     signals={"verify_used": True},
                 )
-        if verify_items and not final_ok:
             return ClaimJudgment(
                 claim_id=claim.claim_id,
                 label="NOT_SUPPORTED",
                 sufficiency="INSUFFICIENT",
                 confidence=0.35,
                 evidence_ids=[item.evidence_id for item in verify_items[:2]],
-                rationale="The verify tool was used, but the final verification answer does not match the expected label.",
+                rationale="The verify tool was used, but the final verification answer, verify observation label, or verify sufficiency does not match the expected label.",
                 failure_taxonomy="verification_label_mismatch",
-                signals={"verify_used": True, "final_ok": final_ok},
+                signals={
+                    "verify_used": True,
+                    "final_ok": final_ok,
+                    "evidence_label": evidence_label,
+                    "evidence_sufficient": evidence_sufficient,
+                },
             )
         return self._judge_text(claim, evidence_items, payload)
 
@@ -489,7 +568,19 @@ class SupportJudge:
         unit_ok = not claim.unit or has_percentage_point_unit(final)
         has_document_evidence = any(item.source_action in {"read_page", "crop", "ocr", "parse_table", "search"} for item in evidence_items)
         has_compute = any(item.source_action == "compute" for item in evidence_items)
+        compute_mismatches = _successful_compute_mismatches(payload)
         evidence_ids = [item.evidence_id for item in evidence_items[:5]]
+        if number_ok and unit_ok and compute_mismatches:
+            return ClaimJudgment(
+                claim_id=claim.claim_id,
+                label="NOT_SUPPORTED",
+                sufficiency="INSUFFICIENT",
+                confidence=0.32,
+                evidence_ids=evidence_ids,
+                rationale="The final numeric answer matches, but the successful compute provenance is inconsistent when recomputed.",
+                failure_taxonomy="compute_expression_mismatch",
+                signals={"number_ok": number_ok, "unit_ok": unit_ok, "compute_mismatches": compute_mismatches},
+            )
         if number_ok and unit_ok and has_document_evidence and has_compute:
             return ClaimJudgment(
                 claim_id=claim.claim_id,
@@ -570,6 +661,23 @@ class SupportJudge:
         answer_ok = _string_contains(claim.expected_answer, final)
         evidence_ok = _string_contains(claim.expected_answer, evidence_text) or token_f1(claim.expected_answer, evidence_text) >= 0.45
         evidence_ids = [item.evidence_id for item in evidence_items[:5]]
+        seed = payload.get("seed", {})
+        required_non_search = any(
+            tool in {"read_page", "crop", "ocr", "parse_table", "verify"}
+            for tool in seed.get("required_tools", [])
+        )
+        search_only_evidence = bool(evidence_items) and all(item.source_action == "search" for item in evidence_items)
+        if answer_ok and evidence_ok and required_non_search and search_only_evidence:
+            return ClaimJudgment(
+                claim_id=claim.claim_id,
+                label="PARTIAL",
+                sufficiency="INSUFFICIENT",
+                confidence=0.62,
+                evidence_ids=evidence_ids,
+                rationale="The final answer matches, but only search-level evidence remains for a task that requires more specific document evidence.",
+                failure_taxonomy="search_only_evidence",
+                signals={"answer_ok": answer_ok, "evidence_ok": evidence_ok, "search_only_evidence": True},
+            )
         if answer_ok and evidence_ok:
             return ClaimJudgment(
                 claim_id=claim.claim_id,
@@ -659,6 +767,7 @@ class DocVerifyPlus:
         final_answer = payload.get("final_answer") or ""
         claims = self.decomposer.decompose(seed, final_action, final_answer)
         evidence_items = self.collector.collect(payload)
+        invalid_evidence_refs = _invalid_terminal_evidence_refs(payload, evidence_items)
         if payload.get("status") != "completed" or final_action not in {"answer", "refuse"}:
             judgments = [
                 ClaimJudgment(
@@ -678,6 +787,31 @@ class DocVerifyPlus:
                 "sufficiency": "INVALID",
                 "filter_decision": "reject",
                 "failure_taxonomy": payload.get("status") or "invalid_terminal",
+                "claims": [claim.to_dict() for claim in claims],
+                "evidence": [item.to_dict() for item in evidence_items],
+                "claim_judgments": [judgment.to_dict() for judgment in judgments],
+                "reward_signals": rewards,
+            }
+        if invalid_evidence_refs:
+            judgments = [
+                ClaimJudgment(
+                    claim_id=claim.claim_id,
+                    label="NOT_SUPPORTED",
+                    sufficiency="INSUFFICIENT",
+                    confidence=0.2,
+                    evidence_ids=[],
+                    rationale="The terminal answer cites evidence_refs that were not observed in the trajectory.",
+                    failure_taxonomy="invalid_evidence_ref",
+                    signals={"invalid_evidence_refs": invalid_evidence_refs},
+                )
+                for claim in claims
+            ]
+            rewards = self.reward.score(payload, judgments, evidence_items)
+            return {
+                "support_label": "NOT_SUPPORTED",
+                "sufficiency": "INSUFFICIENT",
+                "filter_decision": "reject",
+                "failure_taxonomy": "invalid_evidence_ref",
                 "claims": [claim.to_dict() for claim in claims],
                 "evidence": [item.to_dict() for item in evidence_items],
                 "claim_judgments": [judgment.to_dict() for judgment in judgments],
@@ -727,6 +861,9 @@ def _aggregate_sufficiency(judgments: List[ClaimJudgment]) -> str:
 
 def _filter_decision(payload: Dict[str, Any], support_label: str, sufficiency: str, rewards: Dict[str, float]) -> str:
     if payload.get("status") != "completed" or payload.get("final_action") not in {"answer", "refuse"}:
+        return "reject"
+    expected_terminal = "answer" if payload.get("seed", {}).get("answerable", True) else "refuse"
+    if payload.get("final_action") != expected_terminal:
         return "reject"
     if support_label == "SUPPORTED" and sufficiency == "SUFFICIENT" and rewards["quality_score"] >= 0.75:
         return "keep"

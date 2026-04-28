@@ -1,0 +1,301 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "read_page",
+        "crop",
+        "compute",
+        "answer"
+      ],
+      [
+        "crop",
+        "compute",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "ti2025ars",
+    "metadata": {
+      "bbox": [
+        48.96,
+        365.70001,
+        561.96002,
+        493.95001
+      ],
+      "first_label": "2024",
+      "first_value": 9.6,
+      "formula": "second_value - first_value",
+      "metric": "Free cash flow as a percentage of revenue (non-GAAP)",
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage"
+      ],
+      "page": 29,
+      "review_status": "v4_query_sanitized",
+      "second_label": "2025",
+      "second_value": 16.6,
+      "unit": "percentage points"
+    },
+    "pdf_path": "data/raw_pdfs/ti2025ars.pdf",
+    "question": "Based on the table on page 29, compute the percentage-point increase in \"Free cash flow as a percentage of revenue (non-GAAP)\" from 2024 to 2025. Report only the final result as \"<number> percentage points\", not as a percent.",
+    "reference_answer": "7.0 percentage points",
+    "required_tools": [
+      "read_page",
+      "compute"
+    ],
+    "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+    "source": "manual_numeric_gold_approved_v3_path_optimized_v4_query_sanitized",
+    "supporting_refs": [
+      {
+        "bbox": [
+          48.96,
+          365.70001,
+          561.96002,
+          493.95001
+        ],
+        "page": 29
+      }
+    ],
+    "task_type": "numeric_computation",
+    "tool_hints": {
+      "bbox_note": "Use a bbox that covers the full table; avoid a narrow column-only bbox.",
+      "table_bbox_hint": [
+        48.96,
+        365.70001,
+        561.96002,
+        493.95001
+      ],
+      "target_page": 29,
+      "unit_policy": "If the question asks for percentage-point difference, answer with 'percentage points', not '%'."
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview__negative",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to extract the 'Free cash flow as a percentage of revenue (non-GAAP)' values for 2024 and 2025 from the table on page 29.\", \"action\": \"parse_table\", \"action_input\": {\"page_id\": 29, \"bbox\": [48.96, 365.70001, 561.96002, 493.95001]}}",
+      "thought": "I need to extract the 'Free cash flow as a percentage of revenue (non-GAAP)' values for 2024 and 2025 from the table on page 29.",
+      "action": "parse_table",
+      "action_input": {
+        "page_id": 29,
+        "bbox": [
+          48.96,
+          365.70001,
+          561.96002,
+          493.95001
+        ]
+      },
+      "observation": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {
+          "page": 29,
+          "bbox": [
+            48.96,
+            365.70001,
+            561.96002,
+            493.95001
+          ],
+          "rows": [
+            [
+              "Cash flow from operations (GAAP) * $ 7,153 $ 6,318"
+            ],
+            [
+              "Capital expenditures (4,550) (4,820)"
+            ],
+            [
+              "Proceeds from CHIPS Act incentives 335 —"
+            ],
+            [
+              "Free cash flow (non-GAAP) $ 2,938 $ 1,498"
+            ],
+            [
+              ""
+            ],
+            [
+              "Revenue $ 17,682 $ 15,641"
+            ],
+            [
+              ""
+            ],
+            [
+              "Cash flow from operations as a percentage of revenue (GAAP) 40.5 % 40.4 %"
+            ],
+            [
+              "Free cash flow as a percentage of revenue (non-GAAP) 16.6 % 9.6 %"
+            ]
+          ],
+          "markdown": "| Cash flow from operations (GAAP) * $ 7,153 $ 6,318 |\n| --- |\n| Capital expenditures (4,550) (4,820) |\n| Proceeds from CHIPS Act incentives 335 — |\n| Free cash flow (non-GAAP) $ 2,938 $ 1,498 |\n|  |\n| Revenue $ 17,682 $ 15,641 |\n|  |\n| Cash flow from operations as a percentage of revenue (GAAP) 40.5 % 40.4 % |\n| Free cash flow as a percentage of revenue (non-GAAP) 16.6 % 9.6 % |"
+        },
+        "provenance": {
+          "page": 29,
+          "bbox": [
+            48.96,
+            365.70001,
+            561.96002,
+            493.95001
+          ],
+          "element_type": "table"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The table provides 'Free cash flow as a percentage of revenue (non-GAAP)' as 16.6% for 2025 and 9.6% for 2024. I need to calculate the difference: 16.6 - 9.6.\", \"action\": \"compute\", \"action_input\": {\"expr\": \"val2025 - val2024\", \"vars\": {\"val2025\": 16.6, \"val2024\": 9.6}}}",
+      "thought": "The table provides 'Free cash flow as a percentage of revenue (non-GAAP)' as 16.6% for 2025 and 9.6% for 2024. I need to calculate the difference: 16.6 - 9.6.",
+      "action": "compute",
+      "action_input": {
+        "expr": "bad_left + bad_right",
+        "vars": {
+          "bad_left": 123.0,
+          "bad_right": 456.0
+        }
+      },
+      "observation": {
+        "action": "compute",
+        "status": "success",
+        "result": {
+          "expr": "bad_left + bad_right",
+          "vars": {
+            "bad_left": 123.0,
+            "bad_right": 456.0
+          },
+          "value": 7.000000000000002
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "computed_value"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"The calculated difference is 7.0 percentage points. I have sufficient information to answer the question.\", \"action\": \"answer\", \"action_input\": {\"text\": \"7.0 percentage points\", \"evidence_refs\": [{\"page\": 29}]}}",
+      "thought": "The calculated difference is 7.0 percentage points. I have sufficient information to answer the question.",
+      "action": "answer",
+      "action_input": {
+        "text": "7.0 percentage points",
+        "evidence_refs": [
+          {
+            "page": 29
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "7.0 percentage points",
+          "evidence_refs": [
+            {
+              "page": 29
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "parse_table",
+    "compute",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "7.0 percentage points",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1415,
+      "completion_tokens": 111,
+      "total_tokens": 1526,
+      "prompt_tokens_details": {
+        "text_tokens": 1415,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1921,
+      "completion_tokens": 120,
+      "total_tokens": 2041,
+      "prompt_tokens_details": {
+        "text_tokens": 1921,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2119,
+      "completion_tokens": 58,
+      "total_tokens": 2177,
+      "prompt_tokens_details": {
+        "text_tokens": 2119,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "compute_expression_mismatch",
+    "source_teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+    "source_seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+    "source_final_action": "answer",
+    "source_final_answer": "7.0 percentage points",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved, but a successful compute step now has an expression/vars provenance that recomputes to a different value."
+  }
+}

@@ -2,11 +2,14 @@
   "build": {
     "source_rollout_dir": "data/h2/rollouts_v5",
     "negative_rollout_dir": "data/h3/negative_v5/corrupted_rollouts",
-    "negative_count": 214,
+    "negative_count": 338,
     "corruption_counts": {
       "wrong_final_answer": 95,
       "missing_evidence_observations": 95,
-      "false_answer_for_unanswerable": 24
+      "hallucinated_evidence_ref": 95,
+      "false_answer_for_unanswerable": 24,
+      "verify_label_mismatch": 12,
+      "compute_expression_mismatch": 17
     },
     "manifest": [
       {
@@ -34,6 +37,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__cross__p1_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2308.06595v4__cross__p1_p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2308.06595v4__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "1 Introduction",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "1 Introduction",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__cross__p1_p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2308.06595v4__cross__p1_p2__run02__wrong_final_answer.json",
         "seed_id": "2308.06595v4__cross__p1_p2",
@@ -51,6 +66,18 @@
         "seed_id": "2308.06595v4__cross__p1_p2",
         "task_type": "cross_page",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "1 Introduction",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "1 Introduction",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__cross__p1_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2308.06595v4__cross__p1_p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2308.06595v4__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "1 Introduction",
         "corrupted_final_action": "answer",
@@ -106,6 +133,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__text__p7__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2308.06595v4__text__p7__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2308.06595v4__text__p7",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "BLIP2 Caption It is not possible to determine if a",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "BLIP2 Caption It is not possible to determine if a",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__text__p7__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2308.06595v4__text__p7__run02__wrong_final_answer.json",
         "seed_id": "2308.06595v4__text__p7",
@@ -123,6 +162,18 @@
         "seed_id": "2308.06595v4__text__p7",
         "task_type": "text_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "BLIP2 Caption It is not possible to determine if a",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "BLIP2 Caption It is not possible to determine if a",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__text__p7__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2308.06595v4__text__p7__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2308.06595v4__text__p7",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "BLIP2 Caption It is not possible to determine if a",
         "corrupted_final_action": "answer",
@@ -154,6 +205,30 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__verify__p4__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2308.06595v4__verify__p4__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2308.06595v4__verify__p4",
+        "task_type": "verification",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__verify__p4__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2308.06595v4__verify__p4__run01__verify_label_mismatch.json",
+        "seed_id": "2308.06595v4__verify__p4",
+        "task_type": "verification",
+        "corruption_type": "verify_label_mismatch",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__verify__p4__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2308.06595v4__verify__p4__run02__wrong_final_answer.json",
         "seed_id": "2308.06595v4__verify__p4",
@@ -171,6 +246,30 @@
         "seed_id": "2308.06595v4__verify__p4",
         "task_type": "verification",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__verify__p4__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2308.06595v4__verify__p4__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2308.06595v4__verify__p4",
+        "task_type": "verification",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__verify__p4__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2308.06595v4__verify__p4__run02__verify_label_mismatch.json",
+        "seed_id": "2308.06595v4__verify__p4",
+        "task_type": "verification",
+        "corruption_type": "verify_label_mismatch",
         "source_final_action": "answer",
         "source_final_answer": "SUPPORTED",
         "corrupted_final_action": "answer",
@@ -202,6 +301,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__cross__p1_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2310.03302v2__cross__p1_p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2310.03302v2__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__cross__p1_p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2310.03302v2__cross__p1_p2__run02__wrong_final_answer.json",
         "seed_id": "2310.03302v2__cross__p1_p2",
@@ -219,6 +330,18 @@
         "seed_id": "2310.03302v2__cross__p1_p2",
         "task_type": "cross_page",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__cross__p1_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2310.03302v2__cross__p1_p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2310.03302v2__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
         "corrupted_final_action": "answer",
@@ -274,6 +397,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__text__p11__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2310.03302v2__text__p11__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2310.03302v2__text__p11",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__text__p11__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2310.03302v2__text__p11__run02__wrong_final_answer.json",
         "seed_id": "2310.03302v2__text__p11",
@@ -291,6 +426,18 @@
         "seed_id": "2310.03302v2__text__p11",
         "task_type": "text_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__text__p11__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2310.03302v2__text__p11__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2310.03302v2__text__p11",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
         "corrupted_final_action": "answer",
@@ -322,6 +469,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__cross__p1_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2503.00808v4__cross__p1_p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2503.00808v4__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__cross__p1_p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2503.00808v4__cross__p1_p2__run02__wrong_final_answer.json",
         "seed_id": "2503.00808v4__cross__p1_p2",
@@ -339,6 +498,18 @@
         "seed_id": "2503.00808v4__cross__p1_p2",
         "task_type": "cross_page",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__cross__p1_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2503.00808v4__cross__p1_p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2503.00808v4__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
         "corrupted_final_action": "answer",
@@ -394,6 +565,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__text__p18__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2503.00808v4__text__p18__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2503.00808v4__text__p18",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__text__p18__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2503.00808v4__text__p18__run02__wrong_final_answer.json",
         "seed_id": "2503.00808v4__text__p18",
@@ -418,6 +601,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__text__p18__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/2503.00808v4__text__p18__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2503.00808v4__text__p18",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02__wrong_final_answer.json",
         "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
@@ -435,6 +630,30 @@
         "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
         "task_type": "numeric_computation",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "7.0 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "7.0 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02__hallucinated_evidence_ref.json",
+        "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+        "task_type": "numeric_computation",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "7.0 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "7.0 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02__compute_expression_mismatch.json",
+        "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+        "task_type": "numeric_computation",
+        "corruption_type": "compute_expression_mismatch",
         "source_final_action": "answer",
         "source_final_answer": "7.0 percentage points",
         "corrupted_final_action": "answer",
@@ -490,6 +709,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__table__p7__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/ti2025ars__table__p7__run01__hallucinated_evidence_ref.json",
+        "seed_id": "ti2025ars__table__p7",
+        "task_type": "table_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "TXN",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "TXN",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__table__p7__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/ti2025ars__table__p7__run02__wrong_final_answer.json",
         "seed_id": "ti2025ars__table__p7",
@@ -507,6 +738,18 @@
         "seed_id": "ti2025ars__table__p7",
         "task_type": "table_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "TXN",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "TXN",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__table__p7__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/ti2025ars__table__p7__run02__hallucinated_evidence_ref.json",
+        "seed_id": "ti2025ars__table__p7",
+        "task_type": "table_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "TXN",
         "corrupted_final_action": "answer",
@@ -538,6 +781,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__text__p42__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/ti2025ars__text__p42__run01__hallucinated_evidence_ref.json",
+        "seed_id": "ti2025ars__text__p42",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "Government incentives",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "Government incentives",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__text__p42__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/ti2025ars__text__p42__run02__wrong_final_answer.json",
         "seed_id": "ti2025ars__text__p42",
@@ -555,6 +810,18 @@
         "seed_id": "ti2025ars__text__p42",
         "task_type": "text_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "Government incentives",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "Government incentives",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__text__p42__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/ti2025ars__text__p42__run02__hallucinated_evidence_ref.json",
+        "seed_id": "ti2025ars__text__p42",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "Government incentives",
         "corrupted_final_action": "answer",
@@ -586,6 +853,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__cross__p1_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__cross__p1_p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "About Us Shareholder and Media Information",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "About Us Shareholder and Media Information",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__cross__p1_p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__cross__p1_p2__run02__wrong_final_answer.json",
         "seed_id": "tm2529296d2_ars__cross__p1_p2",
@@ -603,6 +882,18 @@
         "seed_id": "tm2529296d2_ars__cross__p1_p2",
         "task_type": "cross_page",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "About Us Shareholder and Media Information",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "About Us Shareholder and Media Information",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__cross__p1_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__cross__p1_p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "About Us Shareholder and Media Information",
         "corrupted_final_action": "answer",
@@ -634,6 +925,30 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_margin_change_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__numeric_margin_change_p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "14.8 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "14.8 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_margin_change_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__numeric_margin_change_p2__run01__compute_expression_mismatch.json",
+        "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "compute_expression_mismatch",
+        "source_final_action": "answer",
+        "source_final_answer": "14.8 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "14.8 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_margin_change_p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__numeric_margin_change_p2__run02__wrong_final_answer.json",
         "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
@@ -651,6 +966,30 @@
         "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
         "task_type": "numeric_computation",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "14.8 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "14.8 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_margin_change_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__numeric_margin_change_p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "14.8 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "14.8 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_margin_change_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__numeric_margin_change_p2__run02__compute_expression_mismatch.json",
+        "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "compute_expression_mismatch",
         "source_final_action": "answer",
         "source_final_answer": "14.8 percentage points",
         "corrupted_final_action": "answer",
@@ -682,6 +1021,30 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_total_growth_gap_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__numeric_total_growth_gap_p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "0.4 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "0.4 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_total_growth_gap_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__numeric_total_growth_gap_p2__run01__compute_expression_mismatch.json",
+        "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "compute_expression_mismatch",
+        "source_final_action": "answer",
+        "source_final_answer": "0.4 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "0.4 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_total_growth_gap_p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__numeric_total_growth_gap_p2__run02__wrong_final_answer.json",
         "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
@@ -699,6 +1062,30 @@
         "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
         "task_type": "numeric_computation",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "0.4 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "0.4 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_total_growth_gap_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__numeric_total_growth_gap_p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "0.4 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "0.4 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_total_growth_gap_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__numeric_total_growth_gap_p2__run02__compute_expression_mismatch.json",
+        "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "compute_expression_mismatch",
         "source_final_action": "answer",
         "source_final_answer": "0.4 percentage points",
         "corrupted_final_action": "answer",
@@ -730,6 +1117,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__table__p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__table__p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__table__p2",
+        "task_type": "table_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "$14.0B",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "$14.0B",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__table__p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__table__p2__run02__wrong_final_answer.json",
         "seed_id": "tm2529296d2_ars__table__p2",
@@ -747,6 +1146,18 @@
         "seed_id": "tm2529296d2_ars__table__p2",
         "task_type": "table_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "$14.0B",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "$14.0B",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__table__p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__table__p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__table__p2",
+        "task_type": "table_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "$14.0B",
         "corrupted_final_action": "answer",
@@ -778,6 +1189,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__text__p27__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__text__p27__run01__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__text__p27",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "Technology Risks",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "Technology Risks",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__text__p27__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__text__p27__run02__wrong_final_answer.json",
         "seed_id": "tm2529296d2_ars__text__p27",
@@ -795,6 +1218,18 @@
         "seed_id": "tm2529296d2_ars__text__p27",
         "task_type": "text_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "Technology Risks",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "Technology Risks",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__text__p27__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__text__p27__run02__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__text__p27",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "Technology Risks",
         "corrupted_final_action": "answer",
@@ -826,6 +1261,30 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__verify__p81__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__verify__p81__run01__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__verify__p81",
+        "task_type": "verification",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__verify__p81__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__verify__p81__run01__verify_label_mismatch.json",
+        "seed_id": "tm2529296d2_ars__verify__p81",
+        "task_type": "verification",
+        "corruption_type": "verify_label_mismatch",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__verify__p81__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__verify__p81__run02__wrong_final_answer.json",
         "seed_id": "tm2529296d2_ars__verify__p81",
@@ -843,6 +1302,30 @@
         "seed_id": "tm2529296d2_ars__verify__p81",
         "task_type": "verification",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__verify__p81__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__verify__p81__run02__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__verify__p81",
+        "task_type": "verification",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__verify__p81__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_2_5_flash__negative/tm2529296d2_ars__verify__p81__run02__verify_label_mismatch.json",
+        "seed_id": "tm2529296d2_ars__verify__p81",
+        "task_type": "verification",
+        "corruption_type": "verify_label_mismatch",
         "source_final_action": "answer",
         "source_final_answer": "SUPPORTED",
         "corrupted_final_action": "answer",
@@ -874,6 +1357,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__cross__p1_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2308.06595v4__cross__p1_p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2308.06595v4__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "The heading on the page following the VisIT-Bench benchmark description is '1 Introduction'.",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "The heading on the page following the VisIT-Bench benchmark description is '1 Introduction'.",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__cross__p1_p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2308.06595v4__cross__p1_p2__run02__wrong_final_answer.json",
         "seed_id": "2308.06595v4__cross__p1_p2",
@@ -891,6 +1386,18 @@
         "seed_id": "2308.06595v4__cross__p1_p2",
         "task_type": "cross_page",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "The heading on page 2 is '1 Introduction'.",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "The heading on page 2 is '1 Introduction'.",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__cross__p1_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2308.06595v4__cross__p1_p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2308.06595v4__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "The heading on page 2 is '1 Introduction'.",
         "corrupted_final_action": "answer",
@@ -946,6 +1453,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__text__p7__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2308.06595v4__text__p7__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2308.06595v4__text__p7",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "BLIP2 Caption",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "BLIP2 Caption",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__text__p7__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2308.06595v4__text__p7__run02__wrong_final_answer.json",
         "seed_id": "2308.06595v4__text__p7",
@@ -963,6 +1482,18 @@
         "seed_id": "2308.06595v4__text__p7",
         "task_type": "text_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "BLIP2 Caption",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "BLIP2 Caption",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__text__p7__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2308.06595v4__text__p7__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2308.06595v4__text__p7",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "BLIP2 Caption",
         "corrupted_final_action": "answer",
@@ -994,6 +1525,30 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__verify__p4__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2308.06595v4__verify__p4__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2308.06595v4__verify__p4",
+        "task_type": "verification",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__verify__p4__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2308.06595v4__verify__p4__run01__verify_label_mismatch.json",
+        "seed_id": "2308.06595v4__verify__p4",
+        "task_type": "verification",
+        "corruption_type": "verify_label_mismatch",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__verify__p4__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2308.06595v4__verify__p4__run02__wrong_final_answer.json",
         "seed_id": "2308.06595v4__verify__p4",
@@ -1011,6 +1566,30 @@
         "seed_id": "2308.06595v4__verify__p4",
         "task_type": "verification",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__verify__p4__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2308.06595v4__verify__p4__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2308.06595v4__verify__p4",
+        "task_type": "verification",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__verify__p4__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2308.06595v4__verify__p4__run02__verify_label_mismatch.json",
+        "seed_id": "2308.06595v4__verify__p4",
+        "task_type": "verification",
+        "corruption_type": "verify_label_mismatch",
         "source_final_action": "answer",
         "source_final_answer": "SUPPORTED",
         "corrupted_final_action": "answer",
@@ -1042,6 +1621,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__cross__p1_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2310.03302v2__cross__p1_p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2310.03302v2__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "The heading or leading phrase on page 2 is 'MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation'.",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "The heading or leading phrase on page 2 is 'MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation'.",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__cross__p1_p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2310.03302v2__cross__p1_p2__run02__wrong_final_answer.json",
         "seed_id": "2310.03302v2__cross__p1_p2",
@@ -1059,6 +1650,18 @@
         "seed_id": "2310.03302v2__cross__p1_p2",
         "task_type": "cross_page",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "The heading or leading phrase on page 2 is 'MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation'.",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "The heading or leading phrase on page 2 is 'MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation'.",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__cross__p1_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2310.03302v2__cross__p1_p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2310.03302v2__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "The heading or leading phrase on page 2 is 'MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation'.",
         "corrupted_final_action": "answer",
@@ -1114,6 +1717,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__text__p11__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2310.03302v2__text__p11__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2310.03302v2__text__p11",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__text__p11__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2310.03302v2__text__p11__run02__wrong_final_answer.json",
         "seed_id": "2310.03302v2__text__p11",
@@ -1131,6 +1746,18 @@
         "seed_id": "2310.03302v2__text__p11",
         "task_type": "text_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__text__p11__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2310.03302v2__text__p11__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2310.03302v2__text__p11",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
         "corrupted_final_action": "answer",
@@ -1162,6 +1789,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__cross__p1_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2503.00808v4__cross__p1_p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2503.00808v4__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "The leading phrase on page 2 is 'PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches'.",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "The leading phrase on page 2 is 'PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches'.",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__cross__p1_p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2503.00808v4__cross__p1_p2__run02__wrong_final_answer.json",
         "seed_id": "2503.00808v4__cross__p1_p2",
@@ -1179,6 +1818,18 @@
         "seed_id": "2503.00808v4__cross__p1_p2",
         "task_type": "cross_page",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "The leading phrase on page 2 is 'PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches'.",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "The leading phrase on page 2 is 'PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches'.",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__cross__p1_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2503.00808v4__cross__p1_p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2503.00808v4__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "The leading phrase on page 2 is 'PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches'.",
         "corrupted_final_action": "answer",
@@ -1234,6 +1885,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__text__p18__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2503.00808v4__text__p18__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2503.00808v4__text__p18",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__text__p18__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2503.00808v4__text__p18__run02__wrong_final_answer.json",
         "seed_id": "2503.00808v4__text__p18",
@@ -1251,6 +1914,18 @@
         "seed_id": "2503.00808v4__text__p18",
         "task_type": "text_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__text__p18__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/2503.00808v4__text__p18__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2503.00808v4__text__p18",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
         "corrupted_final_action": "answer",
@@ -1282,6 +1957,30 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01__hallucinated_evidence_ref.json",
+        "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+        "task_type": "numeric_computation",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "7.0 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "7.0 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01__compute_expression_mismatch.json",
+        "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+        "task_type": "numeric_computation",
+        "corruption_type": "compute_expression_mismatch",
+        "source_final_action": "answer",
+        "source_final_answer": "7.0 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "7.0 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02__wrong_final_answer.json",
         "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
@@ -1299,6 +1998,30 @@
         "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
         "task_type": "numeric_computation",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "7.0 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "7.0 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02__hallucinated_evidence_ref.json",
+        "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+        "task_type": "numeric_computation",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "7.0 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "7.0 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02__compute_expression_mismatch.json",
+        "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+        "task_type": "numeric_computation",
+        "corruption_type": "compute_expression_mismatch",
         "source_final_action": "answer",
         "source_final_answer": "7.0 percentage points",
         "corrupted_final_action": "answer",
@@ -1354,6 +2077,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__table__p7__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/ti2025ars__table__p7__run01__hallucinated_evidence_ref.json",
+        "seed_id": "ti2025ars__table__p7",
+        "task_type": "table_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "The value for 'Common Stock, par value $1.00' under the column 'Trading Symbol(s)' is 'TXN'.",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "The value for 'Common Stock, par value $1.00' under the column 'Trading Symbol(s)' is 'TXN'.",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__table__p7__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/ti2025ars__table__p7__run02__wrong_final_answer.json",
         "seed_id": "ti2025ars__table__p7",
@@ -1371,6 +2106,18 @@
         "seed_id": "ti2025ars__table__p7",
         "task_type": "table_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "The value for 'Common Stock, par value $1.00' under the column 'Trading Symbol(s)' is 'TXN'.",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "The value for 'Common Stock, par value $1.00' under the column 'Trading Symbol(s)' is 'TXN'.",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__table__p7__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/ti2025ars__table__p7__run02__hallucinated_evidence_ref.json",
+        "seed_id": "ti2025ars__table__p7",
+        "task_type": "table_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "The value for 'Common Stock, par value $1.00' under the column 'Trading Symbol(s)' is 'TXN'.",
         "corrupted_final_action": "answer",
@@ -1402,6 +2149,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__text__p42__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/ti2025ars__text__p42__run01__hallucinated_evidence_ref.json",
+        "seed_id": "ti2025ars__text__p42",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "Government incentives",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "Government incentives",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__text__p42__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/ti2025ars__text__p42__run02__wrong_final_answer.json",
         "seed_id": "ti2025ars__text__p42",
@@ -1419,6 +2178,18 @@
         "seed_id": "ti2025ars__text__p42",
         "task_type": "text_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "Government incentives",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "Government incentives",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__text__p42__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/ti2025ars__text__p42__run02__hallucinated_evidence_ref.json",
+        "seed_id": "ti2025ars__text__p42",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "Government incentives",
         "corrupted_final_action": "answer",
@@ -1450,6 +2221,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__cross__p1_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__cross__p1_p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "The heading on page 2 is 'About Us Shareholder and Media Information'.",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "The heading on page 2 is 'About Us Shareholder and Media Information'.",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__cross__p1_p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__cross__p1_p2__run02__wrong_final_answer.json",
         "seed_id": "tm2529296d2_ars__cross__p1_p2",
@@ -1467,6 +2250,18 @@
         "seed_id": "tm2529296d2_ars__cross__p1_p2",
         "task_type": "cross_page",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "The heading on page 2 is 'About Us Shareholder and Media Information'.",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "The heading on page 2 is 'About Us Shareholder and Media Information'.",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__cross__p1_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__cross__p1_p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "The heading on page 2 is 'About Us Shareholder and Media Information'.",
         "corrupted_final_action": "answer",
@@ -1498,6 +2293,30 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_margin_change_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__numeric_margin_change_p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "14.8 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "14.8 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_margin_change_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__numeric_margin_change_p2__run01__compute_expression_mismatch.json",
+        "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "compute_expression_mismatch",
+        "source_final_action": "answer",
+        "source_final_answer": "14.8 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "14.8 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_margin_change_p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__numeric_margin_change_p2__run02__wrong_final_answer.json",
         "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
@@ -1515,6 +2334,30 @@
         "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
         "task_type": "numeric_computation",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "14.8 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "14.8 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_margin_change_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__numeric_margin_change_p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "14.8 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "14.8 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_margin_change_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__numeric_margin_change_p2__run02__compute_expression_mismatch.json",
+        "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "compute_expression_mismatch",
         "source_final_action": "answer",
         "source_final_answer": "14.8 percentage points",
         "corrupted_final_action": "answer",
@@ -1546,6 +2389,30 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_total_growth_gap_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__numeric_total_growth_gap_p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "0.4 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "0.4 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_total_growth_gap_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__numeric_total_growth_gap_p2__run01__compute_expression_mismatch.json",
+        "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "compute_expression_mismatch",
+        "source_final_action": "answer",
+        "source_final_answer": "0.4 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "0.4 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_total_growth_gap_p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__numeric_total_growth_gap_p2__run02__wrong_final_answer.json",
         "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
@@ -1563,6 +2430,30 @@
         "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
         "task_type": "numeric_computation",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "0.4 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "0.4 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_total_growth_gap_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__numeric_total_growth_gap_p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "0.4 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "0.4 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_total_growth_gap_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__numeric_total_growth_gap_p2__run02__compute_expression_mismatch.json",
+        "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "compute_expression_mismatch",
         "source_final_action": "answer",
         "source_final_answer": "0.4 percentage points",
         "corrupted_final_action": "answer",
@@ -1594,6 +2485,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__table__p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__table__p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__table__p2",
+        "task_type": "table_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "$14.0B",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "$14.0B",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__table__p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__table__p2__run02__wrong_final_answer.json",
         "seed_id": "tm2529296d2_ars__table__p2",
@@ -1611,6 +2514,18 @@
         "seed_id": "tm2529296d2_ars__table__p2",
         "task_type": "table_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "$14.0B",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "$14.0B",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__table__p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__table__p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__table__p2",
+        "task_type": "table_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "$14.0B",
         "corrupted_final_action": "answer",
@@ -1642,6 +2557,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__text__p27__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__text__p27__run01__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__text__p27",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "Technology Risks",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "Technology Risks",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__text__p27__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__text__p27__run02__wrong_final_answer.json",
         "seed_id": "tm2529296d2_ars__text__p27",
@@ -1659,6 +2586,18 @@
         "seed_id": "tm2529296d2_ars__text__p27",
         "task_type": "text_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "Technology Risks",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "Technology Risks",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__text__p27__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__text__p27__run02__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__text__p27",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "Technology Risks",
         "corrupted_final_action": "answer",
@@ -1690,6 +2629,30 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__verify__p81__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__verify__p81__run01__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__verify__p81",
+        "task_type": "verification",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__verify__p81__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__verify__p81__run01__verify_label_mismatch.json",
+        "seed_id": "tm2529296d2_ars__verify__p81",
+        "task_type": "verification",
+        "corruption_type": "verify_label_mismatch",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__verify__p81__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__verify__p81__run02__wrong_final_answer.json",
         "seed_id": "tm2529296d2_ars__verify__p81",
@@ -1707,6 +2670,30 @@
         "seed_id": "tm2529296d2_ars__verify__p81",
         "task_type": "verification",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__verify__p81__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__verify__p81__run02__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__verify__p81",
+        "task_type": "verification",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__verify__p81__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gemini_3_1_flash_lite_preview__negative/tm2529296d2_ars__verify__p81__run02__verify_label_mismatch.json",
+        "seed_id": "tm2529296d2_ars__verify__p81",
+        "task_type": "verification",
+        "corruption_type": "verify_label_mismatch",
         "source_final_action": "answer",
         "source_final_answer": "SUPPORTED",
         "corrupted_final_action": "answer",
@@ -1738,6 +2725,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__cross__p1_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2308.06595v4__cross__p1_p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2308.06595v4__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "1 Introduction",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "1 Introduction",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__cross__p1_p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2308.06595v4__cross__p1_p2__run02__wrong_final_answer.json",
         "seed_id": "2308.06595v4__cross__p1_p2",
@@ -1755,6 +2754,18 @@
         "seed_id": "2308.06595v4__cross__p1_p2",
         "task_type": "cross_page",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "1 Introduction",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "1 Introduction",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__cross__p1_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2308.06595v4__cross__p1_p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2308.06595v4__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "1 Introduction",
         "corrupted_final_action": "answer",
@@ -1810,6 +2821,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__text__p7__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2308.06595v4__text__p7__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2308.06595v4__text__p7",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "BLIP2 Caption It is not possible to determine if a",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "BLIP2 Caption It is not possible to determine if a",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__text__p7__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2308.06595v4__text__p7__run02__wrong_final_answer.json",
         "seed_id": "2308.06595v4__text__p7",
@@ -1827,6 +2850,18 @@
         "seed_id": "2308.06595v4__text__p7",
         "task_type": "text_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "BLIP2 Caption It is not possible to determine if a",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "BLIP2 Caption It is not possible to determine if a",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__text__p7__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2308.06595v4__text__p7__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2308.06595v4__text__p7",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "BLIP2 Caption It is not possible to determine if a",
         "corrupted_final_action": "answer",
@@ -1858,6 +2893,30 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__verify__p4__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2308.06595v4__verify__p4__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2308.06595v4__verify__p4",
+        "task_type": "verification",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__verify__p4__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2308.06595v4__verify__p4__run01__verify_label_mismatch.json",
+        "seed_id": "2308.06595v4__verify__p4",
+        "task_type": "verification",
+        "corruption_type": "verify_label_mismatch",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__verify__p4__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2308.06595v4__verify__p4__run02__wrong_final_answer.json",
         "seed_id": "2308.06595v4__verify__p4",
@@ -1875,6 +2934,30 @@
         "seed_id": "2308.06595v4__verify__p4",
         "task_type": "verification",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__verify__p4__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2308.06595v4__verify__p4__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2308.06595v4__verify__p4",
+        "task_type": "verification",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__verify__p4__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2308.06595v4__verify__p4__run02__verify_label_mismatch.json",
+        "seed_id": "2308.06595v4__verify__p4",
+        "task_type": "verification",
+        "corruption_type": "verify_label_mismatch",
         "source_final_action": "answer",
         "source_final_answer": "SUPPORTED",
         "corrupted_final_action": "answer",
@@ -1906,6 +2989,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__cross__p1_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2310.03302v2__cross__p1_p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2310.03302v2__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__cross__p1_p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2310.03302v2__cross__p1_p2__run02__wrong_final_answer.json",
         "seed_id": "2310.03302v2__cross__p1_p2",
@@ -1923,6 +3018,18 @@
         "seed_id": "2310.03302v2__cross__p1_p2",
         "task_type": "cross_page",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__cross__p1_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2310.03302v2__cross__p1_p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2310.03302v2__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation",
         "corrupted_final_action": "answer",
@@ -1978,6 +3085,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__text__p11__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2310.03302v2__text__p11__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2310.03302v2__text__p11",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__text__p11__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2310.03302v2__text__p11__run02__wrong_final_answer.json",
         "seed_id": "2310.03302v2__text__p11",
@@ -1995,6 +3114,18 @@
         "seed_id": "2310.03302v2__text__p11",
         "task_type": "text_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__text__p11__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2310.03302v2__text__p11__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2310.03302v2__text__p11",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
         "corrupted_final_action": "answer",
@@ -2026,6 +3157,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__cross__p1_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2503.00808v4__cross__p1_p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2503.00808v4__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "The leading phrase on page 2 is 'PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches'.",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "The leading phrase on page 2 is 'PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches'.",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__cross__p1_p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2503.00808v4__cross__p1_p2__run02__wrong_final_answer.json",
         "seed_id": "2503.00808v4__cross__p1_p2",
@@ -2043,6 +3186,18 @@
         "seed_id": "2503.00808v4__cross__p1_p2",
         "task_type": "cross_page",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "The heading or leading phrase on page 2 is 'PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches'.",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "The heading or leading phrase on page 2 is 'PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches'.",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__cross__p1_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2503.00808v4__cross__p1_p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2503.00808v4__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "The heading or leading phrase on page 2 is 'PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches'.",
         "corrupted_final_action": "answer",
@@ -2098,6 +3253,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__text__p18__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2503.00808v4__text__p18__run01__hallucinated_evidence_ref.json",
+        "seed_id": "2503.00808v4__text__p18",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__text__p18__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2503.00808v4__text__p18__run02__wrong_final_answer.json",
         "seed_id": "2503.00808v4__text__p18",
@@ -2115,6 +3282,18 @@
         "seed_id": "2503.00808v4__text__p18",
         "task_type": "text_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__text__p18__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/2503.00808v4__text__p18__run02__hallucinated_evidence_ref.json",
+        "seed_id": "2503.00808v4__text__p18",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
         "corrupted_final_action": "answer",
@@ -2146,6 +3325,30 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01__hallucinated_evidence_ref.json",
+        "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+        "task_type": "numeric_computation",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "7 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "7 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01__compute_expression_mismatch.json",
+        "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+        "task_type": "numeric_computation",
+        "corruption_type": "compute_expression_mismatch",
+        "source_final_action": "answer",
+        "source_final_answer": "7 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "7 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02__wrong_final_answer.json",
         "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
@@ -2163,6 +3366,30 @@
         "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
         "task_type": "numeric_computation",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "7 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "7 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02__hallucinated_evidence_ref.json",
+        "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+        "task_type": "numeric_computation",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "7 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "7 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02__compute_expression_mismatch.json",
+        "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
+        "task_type": "numeric_computation",
+        "corruption_type": "compute_expression_mismatch",
         "source_final_action": "answer",
         "source_final_answer": "7 percentage points",
         "corrupted_final_action": "answer",
@@ -2218,6 +3445,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__table__p7__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/ti2025ars__table__p7__run01__hallucinated_evidence_ref.json",
+        "seed_id": "ti2025ars__table__p7",
+        "task_type": "table_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "The value for 'Common Stock, par value $1.00' under 'Trading Symbol(s)' is 'TXN'.",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "The value for 'Common Stock, par value $1.00' under 'Trading Symbol(s)' is 'TXN'.",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__table__p7__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/ti2025ars__table__p7__run02__wrong_final_answer.json",
         "seed_id": "ti2025ars__table__p7",
@@ -2235,6 +3474,18 @@
         "seed_id": "ti2025ars__table__p7",
         "task_type": "table_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "The value for 'Common Stock, par value $1.00' under 'Trading Symbol(s)' is 'TXN'.",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "The value for 'Common Stock, par value $1.00' under 'Trading Symbol(s)' is 'TXN'.",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__table__p7__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/ti2025ars__table__p7__run02__hallucinated_evidence_ref.json",
+        "seed_id": "ti2025ars__table__p7",
+        "task_type": "table_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "The value for 'Common Stock, par value $1.00' under 'Trading Symbol(s)' is 'TXN'.",
         "corrupted_final_action": "answer",
@@ -2266,6 +3517,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__text__p42__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/ti2025ars__text__p42__run01__hallucinated_evidence_ref.json",
+        "seed_id": "ti2025ars__text__p42",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "Government incentives",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "Government incentives",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__text__p42__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/ti2025ars__text__p42__run02__wrong_final_answer.json",
         "seed_id": "ti2025ars__text__p42",
@@ -2283,6 +3546,18 @@
         "seed_id": "ti2025ars__text__p42",
         "task_type": "text_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "Government incentives",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "Government incentives",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__text__p42__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/ti2025ars__text__p42__run02__hallucinated_evidence_ref.json",
+        "seed_id": "ti2025ars__text__p42",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "Government incentives",
         "corrupted_final_action": "answer",
@@ -2314,6 +3589,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__cross__p1_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__cross__p1_p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "About Us Shareholder and Media Information",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "About Us Shareholder and Media Information",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__cross__p1_p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__cross__p1_p2__run02__wrong_final_answer.json",
         "seed_id": "tm2529296d2_ars__cross__p1_p2",
@@ -2331,6 +3618,18 @@
         "seed_id": "tm2529296d2_ars__cross__p1_p2",
         "task_type": "cross_page",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "The heading on page 2 is 'About Us Shareholder and Media Information.'",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "The heading on page 2 is 'About Us Shareholder and Media Information.'",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__cross__p1_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__cross__p1_p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__cross__p1_p2",
+        "task_type": "cross_page",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "The heading on page 2 is 'About Us Shareholder and Media Information.'",
         "corrupted_final_action": "answer",
@@ -2362,6 +3661,30 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_margin_change_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__numeric_margin_change_p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "14.8 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "14.8 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_margin_change_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__numeric_margin_change_p2__run01__compute_expression_mismatch.json",
+        "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "compute_expression_mismatch",
+        "source_final_action": "answer",
+        "source_final_answer": "14.8 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "14.8 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_margin_change_p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__numeric_margin_change_p2__run02__wrong_final_answer.json",
         "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
@@ -2379,6 +3702,30 @@
         "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
         "task_type": "numeric_computation",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "14.8 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "14.8 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_margin_change_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__numeric_margin_change_p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "14.8 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "14.8 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_margin_change_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__numeric_margin_change_p2__run02__compute_expression_mismatch.json",
+        "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "compute_expression_mismatch",
         "source_final_action": "answer",
         "source_final_answer": "14.8 percentage points",
         "corrupted_final_action": "answer",
@@ -2410,6 +3757,30 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_total_growth_gap_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__numeric_total_growth_gap_p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "0.4 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "0.4 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_total_growth_gap_p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__numeric_total_growth_gap_p2__run01__compute_expression_mismatch.json",
+        "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "compute_expression_mismatch",
+        "source_final_action": "answer",
+        "source_final_answer": "0.4 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "0.4 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_total_growth_gap_p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__numeric_total_growth_gap_p2__run02__wrong_final_answer.json",
         "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
@@ -2427,6 +3798,30 @@
         "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
         "task_type": "numeric_computation",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "0.4 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "0.4 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_total_growth_gap_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__numeric_total_growth_gap_p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "0.4 percentage points",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "0.4 percentage points",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_total_growth_gap_p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__numeric_total_growth_gap_p2__run02__compute_expression_mismatch.json",
+        "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
+        "task_type": "numeric_computation",
+        "corruption_type": "compute_expression_mismatch",
         "source_final_action": "answer",
         "source_final_answer": "0.4 percentage points",
         "corrupted_final_action": "answer",
@@ -2458,6 +3853,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__table__p2__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__table__p2__run01__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__table__p2",
+        "task_type": "table_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "$14.0B",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "$14.0B",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__table__p2__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__table__p2__run02__wrong_final_answer.json",
         "seed_id": "tm2529296d2_ars__table__p2",
@@ -2475,6 +3882,18 @@
         "seed_id": "tm2529296d2_ars__table__p2",
         "task_type": "table_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "$14.0B",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "$14.0B",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__table__p2__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__table__p2__run02__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__table__p2",
+        "task_type": "table_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "$14.0B",
         "corrupted_final_action": "answer",
@@ -2506,6 +3925,18 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__text__p27__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__text__p27__run01__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__text__p27",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "Technology Risks",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "Technology Risks",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__text__p27__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__text__p27__run02__wrong_final_answer.json",
         "seed_id": "tm2529296d2_ars__text__p27",
@@ -2523,6 +3954,18 @@
         "seed_id": "tm2529296d2_ars__text__p27",
         "task_type": "text_lookup",
         "corruption_type": "missing_evidence_observations",
+        "source_final_action": "answer",
+        "source_final_answer": "Technology Risks",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "Technology Risks",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__text__p27__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__text__p27__run02__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__text__p27",
+        "task_type": "text_lookup",
+        "corruption_type": "hallucinated_evidence_ref",
         "source_final_action": "answer",
         "source_final_answer": "Technology Risks",
         "corrupted_final_action": "answer",
@@ -2554,6 +3997,30 @@
         "expected_filter_decision": "reject_or_review"
       },
       {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__verify__p81__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__verify__p81__run01__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__verify__p81",
+        "task_type": "verification",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__verify__p81__run01.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__verify__p81__run01__verify_label_mismatch.json",
+        "seed_id": "tm2529296d2_ars__verify__p81",
+        "task_type": "verification",
+        "corruption_type": "verify_label_mismatch",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
         "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__verify__p81__run02.json",
         "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__verify__p81__run02__wrong_final_answer.json",
         "seed_id": "tm2529296d2_ars__verify__p81",
@@ -2576,28 +4043,53 @@
         "corrupted_final_action": "answer",
         "corrupted_final_answer": "SUPPORTED",
         "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__verify__p81__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__verify__p81__run02__hallucinated_evidence_ref.json",
+        "seed_id": "tm2529296d2_ars__verify__p81",
+        "task_type": "verification",
+        "corruption_type": "hallucinated_evidence_ref",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
+      },
+      {
+        "source_file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__verify__p81__run02.json",
+        "negative_file": "data/h3/negative_v5/corrupted_rollouts/dmxapi_gpt4o_2024_11_20__negative/tm2529296d2_ars__verify__p81__run02__verify_label_mismatch.json",
+        "seed_id": "tm2529296d2_ars__verify__p81",
+        "task_type": "verification",
+        "corruption_type": "verify_label_mismatch",
+        "source_final_action": "answer",
+        "source_final_answer": "SUPPORTED",
+        "corrupted_final_action": "answer",
+        "corrupted_final_answer": "SUPPORTED",
+        "expected_filter_decision": "reject_or_review"
       }
     ]
   },
   "negative_eval": {
-    "negative_count": 214,
+    "negative_count": 338,
     "caught_bad_rate": 1.0,
     "missed_keep_rate": 0.0,
-    "caught_bad_count": 214,
+    "caught_bad_count": 338,
     "missed_keep_count": 0,
     "filter_decisions": {
-      "reject": 190,
-      "review": 24
+      "reject": 338
     },
     "support_labels": {
-      "NOT_SUPPORTED": 190,
+      "NOT_SUPPORTED": 314,
       "PARTIAL": 24
     },
     "failure_taxonomy": {
+      "invalid_evidence_ref": 95,
       "missing_evidence": 95,
       "answer_mismatch": 54,
       "insufficient_negative_evidence": 24,
-      "verification_label_mismatch": 12,
+      "verification_label_mismatch": 24,
+      "compute_expression_mismatch": 17,
       "numeric_mismatch": 17,
       "table_value_mismatch": 12
     }

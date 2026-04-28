@@ -1,6 +1,6 @@
 # H2 Path Review
 
-- Rollout dir: `/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5`
+- Rollout dir: `data/h2/rollouts_v5`
 
 ## Overall
 
@@ -140,7 +140,7 @@
 ## Non-Acceptable Path Cases
 
 ### format_error | dmxapi_gemini_2_5_flash | ti2025ars__numeric_free_cash_flow_margin_change_p29
-- file: `/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01.json`
+- file: `data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01.json`
 - task: `numeric_computation`
 - sequence: `['parse_table']`
 - final action: `None`, expected: `answer`
@@ -148,7 +148,7 @@
 - failed required: `[]`
 
 ### tool_path_not_acceptable | dmxapi_gemini_3_1_flash_lite_preview | ti2025ars__table__p7
-- file: `/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__table__p7__run01.json`
+- file: `data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__table__p7__run01.json`
 - task: `table_lookup`
 - sequence: `['read_page', 'answer']`
 - final action: `answer`, expected: `answer`

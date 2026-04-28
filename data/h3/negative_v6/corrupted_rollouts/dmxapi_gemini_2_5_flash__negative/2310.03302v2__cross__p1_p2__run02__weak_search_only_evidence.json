@@ -1,0 +1,229 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      [
+        "search",
+        "read_page",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "hard",
+    "doc_id": "2310.03302v2",
+    "metadata": {
+      "anchor_page": 1,
+      "anchor_phrase": "mlagentbench evaluating language agents on",
+      "answer_page": 2,
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage"
+      ],
+      "review_status": "v4_query_sanitized"
+    },
+    "pdf_path": "data/raw_pdfs/2310.03302v2.pdf",
+    "question": "Use search to find the page about \"mlagentbench evaluating language agents on\". Then inspect the following page and report its heading or leading phrase.",
+    "reference_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+    "required_tools": [
+      "search",
+      "read_page"
+    ],
+    "seed_id": "2310.03302v2__cross__p1_p2",
+    "source": "structure_heuristic_v2_review_approved_v3_path_optimized_v4_query_sanitized",
+    "supporting_refs": [
+      {
+        "page": 2
+      }
+    ],
+    "task_type": "cross_page",
+    "tool_hints": {
+      "search_policy": "Use the quoted anchor phrase as the search query; do not assume page numbers."
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash__negative",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"action\": \"search\", \"action_input\": {\"query\": \"mlagentbench evaluating language agents on\", \"top_k\": 3}}",
+      "thought": "",
+      "action": "search",
+      "action_input": {
+        "query": "mlagentbench evaluating language agents on",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "mlagentbench evaluating language agents on",
+          "results": [
+            {
+              "page": 1,
+              "score": 5.0,
+              "snippet": "MLAgentBench: Evaluating Language Agents on\nMachine Learning Experimentation\nQianHuang1 JianVora1 PercyLiang1 JureLeskovec1\nAbstract theexperiment(e.g.,validationaccuracy),theyrevisetheir\nmethod to improve performance on the task. This iter"
+            },
+            {
+              "page": 13,
+              "score": 5.0,
+              "snippet": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\nFranklin,A.,Maggie,Benner,M.,Rambis,N.,Baffour,P., H., Burget, J., Ho, A., Barnes, E., and Christiano,\nHolbrook, R., Crossley, S., and ulrichboser. Feedback P. F. Evaluat"
+            },
+            {
+              "page": 14,
+              "score": 4.0,
+              "snippet": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\nTechnology,UIST’23,NewYork,NY,USA,2023.Asso- URL https://api.semanticscholar.org/\nciationforComputingMachinery.ISBN9798400701320. CorpusID:249210177.\ndoi: 10.1145/3586183"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The search results indicate that the phrase \\\"MLAgentBench: Evaluating Language Agents on\\\" appears on page 1. I need to inspect the following page, which is page 2, and report its heading or leading phrase.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [2]}}",
+      "thought": "The search results indicate that the phrase \"MLAgentBench: Evaluating Language Agents on\" appears on page 1. I need to inspect the following page, which is page 2, and report its heading or leading phrase.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          2
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_weak_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"The heading or leading phrase on page 2 is \\\"MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\\\".\", \"action\": \"answer\", \"action_input\": {\"text\": \"MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\", \"evidence_refs\": [{\"page\": 2}]}}",
+      "thought": "The heading or leading phrase on page 2 is \"MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\".",
+      "action": "answer",
+      "action_input": {
+        "text": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+        "evidence_refs": [
+          {
+            "page": 2
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+          "evidence_refs": [
+            {
+              "page": 2
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1334,
+      "completion_tokens": 170,
+      "total_tokens": 1504,
+      "prompt_tokens_details": {
+        "text_tokens": 1334,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 139
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1722,
+      "completion_tokens": 71,
+      "total_tokens": 1793,
+      "prompt_tokens_details": {
+        "text_tokens": 1722,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2382,
+      "completion_tokens": 69,
+      "total_tokens": 2451,
+      "prompt_tokens_details": {
+        "text_tokens": 2382,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "weak_search_only_evidence",
+    "source_teacher": "dmxapi_gemini_2_5_flash",
+    "source_seed_id": "2310.03302v2__cross__p1_p2",
+    "source_final_action": "answer",
+    "source_final_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved, but rich evidence observations are blanked so only search-level evidence remains."
+  }
+}

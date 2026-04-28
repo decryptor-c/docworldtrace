@@ -1,0 +1,141 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "easy",
+    "doc_id": "2308.06595v4",
+    "metadata": {
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage"
+      ],
+      "page": 7,
+      "review_status": "v4_query_sanitized"
+    },
+    "pdf_path": "data/raw_pdfs/2308.06595v4.pdf",
+    "question": "What is the heading or leading phrase on page 7? Return the page summary or the first visible leading phrase exactly. Do not choose a later figure caption, table caption, or section title unless it is the first visible leading phrase.",
+    "reference_answer": "BLIP2 Caption It is not possible to determine if a",
+    "required_tools": [
+      "read_page"
+    ],
+    "seed_id": "2308.06595v4__text__p7",
+    "source": "structure_heuristic_approved_v3_path_optimized_v4_query_sanitized",
+    "supporting_refs": [
+      {
+        "page": 7
+      }
+    ],
+    "task_type": "text_lookup",
+    "tool_hints": {
+      "target_page": 7
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"Answering directly without using document tools.\", \"action\": \"answer\", \"action_input\": {\"text\": \"BLIP2 Caption It is not possible to determine if a\", \"evidence_refs\": [{\"page\": 7}]}}",
+      "thought": "Answering directly without using document tools.",
+      "action": "answer",
+      "action_input": {
+        "text": "BLIP2 Caption It is not possible to determine if a",
+        "evidence_refs": [
+          {
+            "page": 7
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "BLIP2 Caption It is not possible to determine if a",
+          "evidence_refs": [
+            {
+              "page": 7
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "BLIP2 Caption It is not possible to determine if a",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1153,
+      "completion_tokens": 33,
+      "total_tokens": 1186,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1746,
+      "completion_tokens": 50,
+      "total_tokens": 1796,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 1,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": true
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "direct_answer_without_tools",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "2308.06595v4__text__p7",
+    "source_final_action": "answer",
+    "source_final_answer": "BLIP2 Caption It is not possible to determine if a",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer text is preserved, but all supporting tool calls and observations are removed."
+  }
+}

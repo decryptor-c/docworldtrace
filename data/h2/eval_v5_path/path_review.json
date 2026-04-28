@@ -1,5 +1,5 @@
 {
-  "rollout_dir": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5",
+  "rollout_dir": "data/h2/rollouts_v5",
   "overall": {
     "count": 120,
     "strict_path_ok_rate": 0.7667,
@@ -192,7 +192,7 @@
   },
   "records": [
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__cross__p1_p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__cross__p1_p2__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2308.06595v4__cross__p1_p2",
       "task_type": "cross_page",
@@ -217,7 +217,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__cross__p1_p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__cross__p1_p2__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2308.06595v4__cross__p1_p2",
       "task_type": "cross_page",
@@ -242,7 +242,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__refuse__external_fact__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__refuse__external_fact__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2308.06595v4__refuse__external_fact",
       "task_type": "unanswerable",
@@ -267,7 +267,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__refuse__external_fact__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__refuse__external_fact__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2308.06595v4__refuse__external_fact",
       "task_type": "unanswerable",
@@ -292,7 +292,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__text__p7__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__text__p7__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2308.06595v4__text__p7",
       "task_type": "text_lookup",
@@ -316,7 +316,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__text__p7__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__text__p7__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2308.06595v4__text__p7",
       "task_type": "text_lookup",
@@ -340,7 +340,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__verify__p4__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__verify__p4__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2308.06595v4__verify__p4",
       "task_type": "verification",
@@ -366,7 +366,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__verify__p4__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__verify__p4__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2308.06595v4__verify__p4",
       "task_type": "verification",
@@ -392,7 +392,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__cross__p1_p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__cross__p1_p2__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2310.03302v2__cross__p1_p2",
       "task_type": "cross_page",
@@ -417,7 +417,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__cross__p1_p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__cross__p1_p2__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2310.03302v2__cross__p1_p2",
       "task_type": "cross_page",
@@ -442,7 +442,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__refuse__legal_risk__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__refuse__legal_risk__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2310.03302v2__refuse__legal_risk",
       "task_type": "unanswerable",
@@ -467,7 +467,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__refuse__legal_risk__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__refuse__legal_risk__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2310.03302v2__refuse__legal_risk",
       "task_type": "unanswerable",
@@ -492,7 +492,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__text__p11__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__text__p11__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2310.03302v2__text__p11",
       "task_type": "text_lookup",
@@ -516,7 +516,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__text__p11__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__text__p11__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2310.03302v2__text__p11",
       "task_type": "text_lookup",
@@ -540,7 +540,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__cross__p1_p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__cross__p1_p2__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2503.00808v4__cross__p1_p2",
       "task_type": "cross_page",
@@ -565,7 +565,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__cross__p1_p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__cross__p1_p2__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2503.00808v4__cross__p1_p2",
       "task_type": "cross_page",
@@ -590,7 +590,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__refuse__external_fact__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__refuse__external_fact__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2503.00808v4__refuse__external_fact",
       "task_type": "unanswerable",
@@ -615,7 +615,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__refuse__external_fact__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__refuse__external_fact__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2503.00808v4__refuse__external_fact",
       "task_type": "unanswerable",
@@ -640,7 +640,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__text__p18__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__text__p18__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2503.00808v4__text__p18",
       "task_type": "text_lookup",
@@ -664,7 +664,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__text__p18__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2503.00808v4__text__p18__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "2503.00808v4__text__p18",
       "task_type": "text_lookup",
@@ -688,7 +688,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
       "task_type": "numeric_computation",
@@ -714,7 +714,7 @@
       "acceptable_path_issue": "format_error"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
       "task_type": "numeric_computation",
@@ -741,7 +741,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__refuse__undisclosed_forecast__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__refuse__undisclosed_forecast__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "ti2025ars__refuse__undisclosed_forecast",
       "task_type": "unanswerable",
@@ -766,7 +766,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__refuse__undisclosed_forecast__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__refuse__undisclosed_forecast__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "ti2025ars__refuse__undisclosed_forecast",
       "task_type": "unanswerable",
@@ -791,7 +791,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__table__p7__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__table__p7__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "ti2025ars__table__p7",
       "task_type": "table_lookup",
@@ -816,7 +816,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__table__p7__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__table__p7__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "ti2025ars__table__p7",
       "task_type": "table_lookup",
@@ -841,7 +841,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__text__p42__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__text__p42__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "ti2025ars__text__p42",
       "task_type": "text_lookup",
@@ -865,7 +865,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__text__p42__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/ti2025ars__text__p42__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "ti2025ars__text__p42",
       "task_type": "text_lookup",
@@ -889,7 +889,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__cross__p1_p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__cross__p1_p2__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "tm2529296d2_ars__cross__p1_p2",
       "task_type": "cross_page",
@@ -914,7 +914,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__cross__p1_p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__cross__p1_p2__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "tm2529296d2_ars__cross__p1_p2",
       "task_type": "cross_page",
@@ -939,7 +939,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_margin_change_p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_margin_change_p2__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
       "task_type": "numeric_computation",
@@ -966,7 +966,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_margin_change_p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_margin_change_p2__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
       "task_type": "numeric_computation",
@@ -993,7 +993,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_total_growth_gap_p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_total_growth_gap_p2__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
       "task_type": "numeric_computation",
@@ -1019,7 +1019,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_total_growth_gap_p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric_total_growth_gap_p2__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
       "task_type": "numeric_computation",
@@ -1046,7 +1046,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__table__p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__table__p2__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "tm2529296d2_ars__table__p2",
       "task_type": "table_lookup",
@@ -1071,7 +1071,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__table__p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__table__p2__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "tm2529296d2_ars__table__p2",
       "task_type": "table_lookup",
@@ -1096,7 +1096,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__text__p27__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__text__p27__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "tm2529296d2_ars__text__p27",
       "task_type": "text_lookup",
@@ -1120,7 +1120,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__text__p27__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__text__p27__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "tm2529296d2_ars__text__p27",
       "task_type": "text_lookup",
@@ -1144,7 +1144,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__verify__p81__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__verify__p81__run01.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "tm2529296d2_ars__verify__p81",
       "task_type": "verification",
@@ -1170,7 +1170,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__verify__p81__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/tm2529296d2_ars__verify__p81__run02.json",
       "teacher": "dmxapi_gemini_2_5_flash",
       "seed_id": "tm2529296d2_ars__verify__p81",
       "task_type": "verification",
@@ -1196,7 +1196,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__cross__p1_p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__cross__p1_p2__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2308.06595v4__cross__p1_p2",
       "task_type": "cross_page",
@@ -1221,7 +1221,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__cross__p1_p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__cross__p1_p2__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2308.06595v4__cross__p1_p2",
       "task_type": "cross_page",
@@ -1246,7 +1246,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__refuse__external_fact__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__refuse__external_fact__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2308.06595v4__refuse__external_fact",
       "task_type": "unanswerable",
@@ -1271,7 +1271,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__refuse__external_fact__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__refuse__external_fact__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2308.06595v4__refuse__external_fact",
       "task_type": "unanswerable",
@@ -1296,7 +1296,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__text__p7__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__text__p7__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2308.06595v4__text__p7",
       "task_type": "text_lookup",
@@ -1320,7 +1320,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__text__p7__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__text__p7__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2308.06595v4__text__p7",
       "task_type": "text_lookup",
@@ -1344,7 +1344,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__verify__p4__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__verify__p4__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2308.06595v4__verify__p4",
       "task_type": "verification",
@@ -1371,7 +1371,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__verify__p4__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__verify__p4__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2308.06595v4__verify__p4",
       "task_type": "verification",
@@ -1398,7 +1398,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__cross__p1_p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__cross__p1_p2__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2310.03302v2__cross__p1_p2",
       "task_type": "cross_page",
@@ -1423,7 +1423,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__cross__p1_p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__cross__p1_p2__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2310.03302v2__cross__p1_p2",
       "task_type": "cross_page",
@@ -1448,7 +1448,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__refuse__legal_risk__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__refuse__legal_risk__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2310.03302v2__refuse__legal_risk",
       "task_type": "unanswerable",
@@ -1473,7 +1473,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__refuse__legal_risk__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__refuse__legal_risk__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2310.03302v2__refuse__legal_risk",
       "task_type": "unanswerable",
@@ -1498,7 +1498,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__text__p11__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__text__p11__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2310.03302v2__text__p11",
       "task_type": "text_lookup",
@@ -1522,7 +1522,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__text__p11__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__text__p11__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2310.03302v2__text__p11",
       "task_type": "text_lookup",
@@ -1546,7 +1546,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__cross__p1_p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__cross__p1_p2__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2503.00808v4__cross__p1_p2",
       "task_type": "cross_page",
@@ -1571,7 +1571,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__cross__p1_p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__cross__p1_p2__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2503.00808v4__cross__p1_p2",
       "task_type": "cross_page",
@@ -1596,7 +1596,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__refuse__external_fact__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__refuse__external_fact__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2503.00808v4__refuse__external_fact",
       "task_type": "unanswerable",
@@ -1621,7 +1621,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__refuse__external_fact__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__refuse__external_fact__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2503.00808v4__refuse__external_fact",
       "task_type": "unanswerable",
@@ -1646,7 +1646,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__text__p18__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__text__p18__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2503.00808v4__text__p18",
       "task_type": "text_lookup",
@@ -1670,7 +1670,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__text__p18__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__text__p18__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "2503.00808v4__text__p18",
       "task_type": "text_lookup",
@@ -1694,7 +1694,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
       "task_type": "numeric_computation",
@@ -1721,7 +1721,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
       "task_type": "numeric_computation",
@@ -1748,7 +1748,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__refuse__undisclosed_forecast__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__refuse__undisclosed_forecast__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "ti2025ars__refuse__undisclosed_forecast",
       "task_type": "unanswerable",
@@ -1773,7 +1773,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__refuse__undisclosed_forecast__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__refuse__undisclosed_forecast__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "ti2025ars__refuse__undisclosed_forecast",
       "task_type": "unanswerable",
@@ -1798,7 +1798,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__table__p7__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__table__p7__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "ti2025ars__table__p7",
       "task_type": "table_lookup",
@@ -1824,7 +1824,7 @@
       "acceptable_path_issue": "tool_path_not_acceptable"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__table__p7__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__table__p7__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "ti2025ars__table__p7",
       "task_type": "table_lookup",
@@ -1849,7 +1849,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__text__p42__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__text__p42__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "ti2025ars__text__p42",
       "task_type": "text_lookup",
@@ -1873,7 +1873,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__text__p42__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__text__p42__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "ti2025ars__text__p42",
       "task_type": "text_lookup",
@@ -1897,7 +1897,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__cross__p1_p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__cross__p1_p2__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "tm2529296d2_ars__cross__p1_p2",
       "task_type": "cross_page",
@@ -1922,7 +1922,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__cross__p1_p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__cross__p1_p2__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "tm2529296d2_ars__cross__p1_p2",
       "task_type": "cross_page",
@@ -1947,7 +1947,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_margin_change_p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_margin_change_p2__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
       "task_type": "numeric_computation",
@@ -1974,7 +1974,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_margin_change_p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_margin_change_p2__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
       "task_type": "numeric_computation",
@@ -2001,7 +2001,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_total_growth_gap_p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_total_growth_gap_p2__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
       "task_type": "numeric_computation",
@@ -2028,7 +2028,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_total_growth_gap_p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric_total_growth_gap_p2__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
       "task_type": "numeric_computation",
@@ -2055,7 +2055,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__table__p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__table__p2__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "tm2529296d2_ars__table__p2",
       "task_type": "table_lookup",
@@ -2081,7 +2081,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__table__p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__table__p2__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "tm2529296d2_ars__table__p2",
       "task_type": "table_lookup",
@@ -2107,7 +2107,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__text__p27__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__text__p27__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "tm2529296d2_ars__text__p27",
       "task_type": "text_lookup",
@@ -2131,7 +2131,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__text__p27__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__text__p27__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "tm2529296d2_ars__text__p27",
       "task_type": "text_lookup",
@@ -2155,7 +2155,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__verify__p81__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__verify__p81__run01.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "tm2529296d2_ars__verify__p81",
       "task_type": "verification",
@@ -2182,7 +2182,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__verify__p81__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__verify__p81__run02.json",
       "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
       "seed_id": "tm2529296d2_ars__verify__p81",
       "task_type": "verification",
@@ -2209,7 +2209,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__cross__p1_p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__cross__p1_p2__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2308.06595v4__cross__p1_p2",
       "task_type": "cross_page",
@@ -2235,7 +2235,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__cross__p1_p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__cross__p1_p2__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2308.06595v4__cross__p1_p2",
       "task_type": "cross_page",
@@ -2261,7 +2261,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__refuse__external_fact__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__refuse__external_fact__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2308.06595v4__refuse__external_fact",
       "task_type": "unanswerable",
@@ -2286,7 +2286,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__refuse__external_fact__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__refuse__external_fact__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2308.06595v4__refuse__external_fact",
       "task_type": "unanswerable",
@@ -2311,7 +2311,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__text__p7__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__text__p7__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2308.06595v4__text__p7",
       "task_type": "text_lookup",
@@ -2335,7 +2335,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__text__p7__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__text__p7__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2308.06595v4__text__p7",
       "task_type": "text_lookup",
@@ -2359,7 +2359,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__verify__p4__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__verify__p4__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2308.06595v4__verify__p4",
       "task_type": "verification",
@@ -2386,7 +2386,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__verify__p4__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2308.06595v4__verify__p4__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2308.06595v4__verify__p4",
       "task_type": "verification",
@@ -2413,7 +2413,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__cross__p1_p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__cross__p1_p2__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2310.03302v2__cross__p1_p2",
       "task_type": "cross_page",
@@ -2439,7 +2439,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__cross__p1_p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__cross__p1_p2__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2310.03302v2__cross__p1_p2",
       "task_type": "cross_page",
@@ -2465,7 +2465,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__refuse__legal_risk__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__refuse__legal_risk__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2310.03302v2__refuse__legal_risk",
       "task_type": "unanswerable",
@@ -2490,7 +2490,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__refuse__legal_risk__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__refuse__legal_risk__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2310.03302v2__refuse__legal_risk",
       "task_type": "unanswerable",
@@ -2515,7 +2515,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__text__p11__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__text__p11__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2310.03302v2__text__p11",
       "task_type": "text_lookup",
@@ -2539,7 +2539,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__text__p11__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2310.03302v2__text__p11__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2310.03302v2__text__p11",
       "task_type": "text_lookup",
@@ -2563,7 +2563,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__cross__p1_p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__cross__p1_p2__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2503.00808v4__cross__p1_p2",
       "task_type": "cross_page",
@@ -2589,7 +2589,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__cross__p1_p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__cross__p1_p2__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2503.00808v4__cross__p1_p2",
       "task_type": "cross_page",
@@ -2615,7 +2615,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__refuse__external_fact__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__refuse__external_fact__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2503.00808v4__refuse__external_fact",
       "task_type": "unanswerable",
@@ -2640,7 +2640,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__refuse__external_fact__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__refuse__external_fact__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2503.00808v4__refuse__external_fact",
       "task_type": "unanswerable",
@@ -2665,7 +2665,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__text__p18__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__text__p18__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2503.00808v4__text__p18",
       "task_type": "text_lookup",
@@ -2689,7 +2689,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__text__p18__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/2503.00808v4__text__p18__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "2503.00808v4__text__p18",
       "task_type": "text_lookup",
@@ -2713,7 +2713,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__numeric_free_cash_flow_margin_change_p29__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
       "task_type": "numeric_computation",
@@ -2740,7 +2740,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__numeric_free_cash_flow_margin_change_p29__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "ti2025ars__numeric_free_cash_flow_margin_change_p29",
       "task_type": "numeric_computation",
@@ -2767,7 +2767,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__refuse__undisclosed_forecast__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__refuse__undisclosed_forecast__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "ti2025ars__refuse__undisclosed_forecast",
       "task_type": "unanswerable",
@@ -2792,7 +2792,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__refuse__undisclosed_forecast__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__refuse__undisclosed_forecast__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "ti2025ars__refuse__undisclosed_forecast",
       "task_type": "unanswerable",
@@ -2817,7 +2817,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__table__p7__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__table__p7__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "ti2025ars__table__p7",
       "task_type": "table_lookup",
@@ -2843,7 +2843,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__table__p7__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__table__p7__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "ti2025ars__table__p7",
       "task_type": "table_lookup",
@@ -2868,7 +2868,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__text__p42__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__text__p42__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "ti2025ars__text__p42",
       "task_type": "text_lookup",
@@ -2892,7 +2892,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__text__p42__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/ti2025ars__text__p42__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "ti2025ars__text__p42",
       "task_type": "text_lookup",
@@ -2916,7 +2916,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__cross__p1_p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__cross__p1_p2__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "tm2529296d2_ars__cross__p1_p2",
       "task_type": "cross_page",
@@ -2941,7 +2941,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__cross__p1_p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__cross__p1_p2__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "tm2529296d2_ars__cross__p1_p2",
       "task_type": "cross_page",
@@ -2967,7 +2967,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_margin_change_p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_margin_change_p2__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
       "task_type": "numeric_computation",
@@ -2994,7 +2994,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_margin_change_p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_margin_change_p2__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "tm2529296d2_ars__numeric_margin_change_p2",
       "task_type": "numeric_computation",
@@ -3021,7 +3021,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_total_growth_gap_p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_total_growth_gap_p2__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
       "task_type": "numeric_computation",
@@ -3048,7 +3048,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_total_growth_gap_p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric_total_growth_gap_p2__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "tm2529296d2_ars__numeric_total_growth_gap_p2",
       "task_type": "numeric_computation",
@@ -3075,7 +3075,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__table__p2__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__table__p2__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "tm2529296d2_ars__table__p2",
       "task_type": "table_lookup",
@@ -3101,7 +3101,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__table__p2__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__table__p2__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "tm2529296d2_ars__table__p2",
       "task_type": "table_lookup",
@@ -3127,7 +3127,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__text__p27__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__text__p27__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "tm2529296d2_ars__text__p27",
       "task_type": "text_lookup",
@@ -3151,7 +3151,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__text__p27__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__text__p27__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "tm2529296d2_ars__text__p27",
       "task_type": "text_lookup",
@@ -3175,7 +3175,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__verify__p81__run01.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__verify__p81__run01.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "tm2529296d2_ars__verify__p81",
       "task_type": "verification",
@@ -3201,7 +3201,7 @@
       "acceptable_path_issue": "acceptable_path_ok"
     },
     {
-      "file": "/home/kimilabra/DocWorldTrace/data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__verify__p81__run02.json",
+      "file": "data/h2/rollouts_v5/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__verify__p81__run02.json",
       "teacher": "dmxapi_gpt4o_2024_11_20",
       "seed_id": "tm2529296d2_ars__verify__p81",
       "task_type": "verification",

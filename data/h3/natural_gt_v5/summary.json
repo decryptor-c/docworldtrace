@@ -1,0 +1,27 @@
+{
+  "docverify": "data/h3/docverify_plus_v5/docverify_review.json",
+  "sample_size_requested": 100,
+  "sample_count": 100,
+  "task_counts": {
+    "cross_page": 21,
+    "numeric_computation": 18,
+    "table_lookup": 12,
+    "text_lookup": 19,
+    "unanswerable": 18,
+    "verification": 12
+  },
+  "teacher_counts": {
+    "dmxapi_gemini_2_5_flash": 34,
+    "dmxapi_gemini_3_1_flash_lite_preview": 33,
+    "dmxapi_gpt4o_2024_11_20": 33
+  },
+  "auto_filter_decisions": {
+    "keep": 96,
+    "reject": 3,
+    "review": 1
+  },
+  "outputs": {
+    "jsonl": "data/h3/natural_gt_v5/natural_manual_labels_template.jsonl",
+    "markdown": "data/h3/natural_gt_v5/natural_manual_review.md"
+  }
+}

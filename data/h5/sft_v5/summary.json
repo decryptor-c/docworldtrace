@@ -1,0 +1,173 @@
+{
+  "rollout_dir": "data/h2/rollouts_v5",
+  "docverify": "data/h3/docverify_plus_v5/docverify_review.json",
+  "out_dir": "data/h5/sft_v5",
+  "heldout_per_task": 1,
+  "rollout_count": 116,
+  "unique_seed_count": 20,
+  "split_rollout_counts": {
+    "train": 83,
+    "eval": 33
+  },
+  "split_by_task": {
+    "cross_page": {
+      "train": 18,
+      "eval": 6
+    },
+    "numeric_computation": {
+      "train": 11,
+      "eval": 6
+    },
+    "table_lookup": {
+      "eval": 5,
+      "train": 6
+    },
+    "text_lookup": {
+      "train": 24,
+      "eval": 6
+    },
+    "unanswerable": {
+      "train": 18,
+      "eval": 6
+    },
+    "verification": {
+      "train": 6,
+      "eval": 4
+    }
+  },
+  "dataset_counts": {
+    "answer_only_train": 83,
+    "answer_only_eval": 33,
+    "trajectory_train": 233,
+    "trajectory_eval": 94
+  },
+  "answer_only_train": {
+    "condition": "answer_only_sft",
+    "count": 83,
+    "task_distribution": {
+      "cross_page": 18,
+      "unanswerable": 18,
+      "text_lookup": 24,
+      "numeric_computation": 11,
+      "table_lookup": 6,
+      "verification": 6
+    },
+    "teacher_distribution": {
+      "dmxapi_gemini_2_5_flash": 27,
+      "dmxapi_gemini_3_1_flash_lite_preview": 28,
+      "dmxapi_gpt4o_2024_11_20": 28
+    },
+    "target_action_distribution": {
+      "answer": 65,
+      "refuse": 18
+    },
+    "terminal_target_rate": 1.0,
+    "nonterminal_target_rate": 0.0,
+    "core_tool_coverage": [
+      "answer",
+      "refuse"
+    ]
+  },
+  "trajectory_train": {
+    "condition": "trajectory_sft",
+    "count": 233,
+    "task_distribution": {
+      "cross_page": 59,
+      "unanswerable": 54,
+      "text_lookup": 48,
+      "numeric_computation": 36,
+      "table_lookup": 14,
+      "verification": 22
+    },
+    "teacher_distribution": {
+      "dmxapi_gemini_2_5_flash": 76,
+      "dmxapi_gemini_3_1_flash_lite_preview": 74,
+      "dmxapi_gpt4o_2024_11_20": 83
+    },
+    "target_action_distribution": {
+      "search": 40,
+      "read_page": 75,
+      "answer": 65,
+      "refuse": 18,
+      "parse_table": 16,
+      "compute": 12,
+      "verify": 6,
+      "crop": 1
+    },
+    "terminal_target_rate": 0.3562,
+    "nonterminal_target_rate": 0.6438,
+    "core_tool_coverage": [
+      "answer",
+      "compute",
+      "parse_table",
+      "read_page",
+      "refuse",
+      "search",
+      "verify"
+    ]
+  },
+  "answer_only_eval": {
+    "condition": "answer_only_sft",
+    "count": 33,
+    "task_distribution": {
+      "cross_page": 6,
+      "unanswerable": 6,
+      "table_lookup": 5,
+      "numeric_computation": 6,
+      "text_lookup": 6,
+      "verification": 4
+    },
+    "teacher_distribution": {
+      "dmxapi_gemini_2_5_flash": 10,
+      "dmxapi_gemini_3_1_flash_lite_preview": 11,
+      "dmxapi_gpt4o_2024_11_20": 12
+    },
+    "target_action_distribution": {
+      "answer": 27,
+      "refuse": 6
+    },
+    "terminal_target_rate": 1.0,
+    "nonterminal_target_rate": 0.0,
+    "core_tool_coverage": [
+      "answer",
+      "refuse"
+    ]
+  },
+  "trajectory_eval": {
+    "condition": "trajectory_sft",
+    "count": 94,
+    "task_distribution": {
+      "cross_page": 20,
+      "unanswerable": 18,
+      "table_lookup": 14,
+      "numeric_computation": 18,
+      "text_lookup": 12,
+      "verification": 12
+    },
+    "teacher_distribution": {
+      "dmxapi_gemini_2_5_flash": 28,
+      "dmxapi_gemini_3_1_flash_lite_preview": 31,
+      "dmxapi_gpt4o_2024_11_20": 35
+    },
+    "target_action_distribution": {
+      "search": 12,
+      "read_page": 28,
+      "answer": 27,
+      "refuse": 6,
+      "parse_table": 11,
+      "compute": 6,
+      "verify": 4
+    },
+    "terminal_target_rate": 0.3511,
+    "nonterminal_target_rate": 0.6489,
+    "core_tool_coverage": [
+      "answer",
+      "compute",
+      "parse_table",
+      "read_page",
+      "refuse",
+      "search",
+      "verify"
+    ]
+  }
+}

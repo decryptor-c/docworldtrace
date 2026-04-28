@@ -1,0 +1,189 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "easy",
+    "doc_id": "2503.00808v4",
+    "metadata": {
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage"
+      ],
+      "page": 18,
+      "review_status": "v4_query_sanitized"
+    },
+    "pdf_path": "data/raw_pdfs/2503.00808v4.pdf",
+    "question": "What is the heading or leading phrase on page 18? Return the page summary or the first visible leading phrase exactly. Do not choose a later figure caption, table caption, or section title unless it is the first visible leading phrase.",
+    "reference_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+    "required_tools": [
+      "read_page"
+    ],
+    "seed_id": "2503.00808v4__text__p18",
+    "source": "structure_heuristic_approved_v3_path_optimized_v4_query_sanitized",
+    "supporting_refs": [
+      {
+        "page": 18
+      }
+    ],
+    "task_type": "text_lookup",
+    "tool_hints": {
+      "target_page": 18
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I need to read page 18 to find the heading or leading phrase.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[18]}}",
+      "thought": "I need to read page 18 to find the heading or leading phrase.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          18
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 18,
+              "text": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\n0.030 0.030\n0.025 0.025\n0.020 0.020\n0.015 0.015\n0.010 0.010\n0.005 0.005\n0.000 0.000\nen.wikiped w i w a is . w o su . r u t g u h f . d e c c g o w . u m u w a f w l r . d e . w f i d a a w u n n w . f c i . c o b w t m e i w o e n w r . a . n n d e i v f t t o y c . o o a w p r t g e w e w n . w c b w ju o . l n w e m r y i a . s b w t c t i a . m h w o r e n r w e r g e s r .w e . s c w p a a o n o w s m r d h w t n i . n . c o h g o b u t m l f o e f n i . n c p w g o o t m w s o t w n .c p . w l o o it m w s e t w r . o c . t n o i b c m a c . w n c e w o w m w s . . m co d m p w a i. r w w c c w o w h w w m i w . v f w o . e b . r . s o u b li r s e d g i s n e . e c sh o ss a m i r n e s . i n d e e t r.co m en.w e ik n i . p w w e w ik d w i i s a . o r .o e u r f r e g c r e w w e . n o w w r c w w g e . . . m b c e r o d i n m t p a . m i n .c n . o w ic m i a k . i c p o e m d w w ia w w . p w o w h r . w . g e n y w n s c o . b w o t i . r . e s n g s a l . m c c w r o e . e w n m b d i w o h -t o . . e s g k x l o s id t v . s a e . d c sh e o l a m s a r a i e d c . w e r n e . w e e d t w d -t u . w e u . x a w k t u e s w s . . c s w o a i m y s w p s e . s g w c y e o w c e m h . k a o . r c l c o o h w g m i y v w w . e w w w .o i . w k e r i g n . a s c . c c y r o c i w b m lo d w p . w c e o . d w m ia ik .c ih o o m w.co m\n0.030 0.030\n0.025 0.025\n0.020 0.020\n0.015 0.015\n0.010 0.010\n0.005 0.005\n0.000 0.000\nwww m .p a h t y h s .s ic t s a f c o k r e u x m ch s w . a c w n o w g m p . e h r . e y c d s o s i d m s t c a i l s t a c . . s c s k h t o o a d m v c o e k t r e . f o x lo r c g w e h . n a c . n o w n g m i e e k w . i c p s o e p . m t d y r v o c ia t g o r . r o m o a p r b m g e i s n m . a o e t r o r e g q s r v u . . c s e iz t o r a l y m e c t t h k .c e in o x g m c 2 h w . a c w w n o w w g m w . e w s w . c . c r w r e o i w . b f m f e o r d e r r w . e l c e d w n o z w b c m i w n u e w . g i . u l w c b d r o . l i b c u n m a r e g a n . . c c s d k t o i a c e m t c d i k o .c e n w o x a w m c r h w y. a . c b n o w o g m w o e k w .c r . a o a g m n s c . e c s o t m ry S .co o m urce D e o n. w w m w ik w ip a . e fa d n i ia n fi . c w o w t s r w i w g o w n w . . . l n s n it e t i e a f t t r c y o k . e t o o i n r c v g . a e m . r c f . o w lo m i w k . i w c p o w e m t d w v i . a t s r . e o o x p rg s e t s o . r o i r e e s g l n s a a . . s c w r h o c i d m h k o i i s v t o e .o u o r r w s f g c o a w e u c . w r r o o e . r s w d c g a - h n t c o . e r o w x e r t d g h s - o . t c u e o n x m t d s . . c c h o o m w lis .c ts o . w m w w w w 3 w w w . w o . w . r ic t g . h r t e y e . d g o d u rg i a t. r c d o ia m w e n w v .c e w o r . y m g t t h y i . n o g rg 2.co m\nytisneD\nRandom Selection FineWeb-Edu DCLM Ours\nFigure7:Theselecteddatadistribution(RefinedWeb)oversourcedomainsofdifferentdataselectionbaselinesindescending\norder. Thetop-20domainsarelistedforcomparisonandthedensityarecountedbasedoncharacterpercentage. They-axis\nscalearesameacrossfoursubplots.\nA.6.FilteringComputationOverhead\nSimilartomanymodel-basedmethodssuchasMATES,DsDm(Yuetal.,2024;Engstrometal.,2024),PRESELECTinvolves\npre-computingthecompressionefficiencyonasmallsetofdata. Asweshowin§2.3,wecomputecompressiononaround\n0.6BtokensbyLlamamodelsrangesfrom7Bto65Bonlyonceforallexperiments. AccodingtoKaplanetal.(2020),the\ninferenceFLOPsisC ≈2·N(D)=1.8×1020FLOPs,equivalentto25H100hours,whichissmall,acceptableeven\ninfer\nnegligiblewhentrainingalargemodel.\n18",
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_018.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 18,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The heading or leading phrase is clearly visible at the start of the page.\",\"action\":\"answer\",\"action_input\":{\"text\":\"PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\",\"evidence_refs\":[{\"page\":18}]}}",
+      "thought": "The heading or leading phrase is clearly visible at the start of the page.",
+      "action": "answer",
+      "action_input": {
+        "text": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "evidence_refs": [
+          {
+            "page": 999999,
+            "bbox": [
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+          "evidence_refs": [
+            {
+              "page": 999999,
+              "bbox": [
+                0,
+                0,
+                1,
+                1
+              ]
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1165,
+      "completion_tokens": 33,
+      "total_tokens": 1198,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 2029,
+      "completion_tokens": 54,
+      "total_tokens": 2083,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "hallucinated_evidence_ref",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "2503.00808v4__text__p18",
+    "source_final_action": "answer",
+    "source_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved, but terminal evidence_refs point to a page never observed in the trajectory."
+  }
+}

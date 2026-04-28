@@ -3,8 +3,10 @@
   "docverify_path": "data/h3/docverify_plus_v5/docverify_review.json",
   "overall": {
     "count": 120,
+    "unique_seed_count": 20,
     "unique_sequence_count": 12,
     "unique_sequence_ratio": 0.1,
+    "seed_level_unique_sequence_ratio": 0.6,
     "top_sequences": {
       "read_page -> answer": 31,
       "search -> read_page -> refuse": 24,
@@ -59,6 +61,9 @@
       "1": 1,
       "5": 1
     },
+    "rule_based_template_match_count": 88,
+    "rule_based_template_match_rate": 0.7333,
+    "rule_based_deviation_rate": 0.2667,
     "search_call_count": 54,
     "unique_search_query_count": 15,
     "unique_search_query_ratio": 0.2778,
@@ -86,8 +91,10 @@
   "by_teacher": {
     "dmxapi_gemini_2_5_flash": {
       "count": 40,
+      "unique_seed_count": 20,
       "unique_sequence_count": 8,
       "unique_sequence_ratio": 0.2,
+      "seed_level_unique_sequence_ratio": 0.4,
       "top_sequences": {
         "read_page -> answer": 10,
         "search -> read_page -> answer": 8,
@@ -135,6 +142,9 @@
         "4": 5,
         "1": 1
       },
+      "rule_based_template_match_count": 26,
+      "rule_based_template_match_rate": 0.65,
+      "rule_based_deviation_rate": 0.35,
       "search_call_count": 20,
       "unique_search_query_count": 10,
       "unique_search_query_ratio": 0.5,
@@ -156,8 +166,10 @@
     },
     "dmxapi_gemini_3_1_flash_lite_preview": {
       "count": 40,
+      "unique_seed_count": 20,
       "unique_sequence_count": 7,
       "unique_sequence_ratio": 0.175,
+      "seed_level_unique_sequence_ratio": 0.35,
       "top_sequences": {
         "read_page -> answer": 11,
         "search -> read_page -> answer": 8,
@@ -202,6 +214,9 @@
         "3": 27,
         "2": 13
       },
+      "rule_based_template_match_count": 29,
+      "rule_based_template_match_rate": 0.725,
+      "rule_based_deviation_rate": 0.275,
       "search_call_count": 16,
       "unique_search_query_count": 8,
       "unique_search_query_ratio": 0.5,
@@ -221,8 +236,10 @@
     },
     "dmxapi_gpt4o_2024_11_20": {
       "count": 40,
+      "unique_seed_count": 20,
       "unique_sequence_count": 10,
       "unique_sequence_ratio": 0.25,
+      "seed_level_unique_sequence_ratio": 0.5,
       "top_sequences": {
         "read_page -> answer": 10,
         "search -> read_page -> refuse": 8,
@@ -274,6 +291,9 @@
         "2": 13,
         "5": 1
       },
+      "rule_based_template_match_count": 33,
+      "rule_based_template_match_rate": 0.825,
+      "rule_based_deviation_rate": 0.175,
       "search_call_count": 18,
       "unique_search_query_count": 9,
       "unique_search_query_ratio": 0.5,
@@ -296,8 +316,10 @@
   "by_task_type": {
     "cross_page": {
       "count": 24,
+      "unique_seed_count": 4,
       "unique_sequence_count": 2,
       "unique_sequence_ratio": 0.0833,
+      "seed_level_unique_sequence_ratio": 0.5,
       "top_sequences": {
         "search -> read_page -> answer": 17,
         "search -> read_page -> read_page -> answer": 7
@@ -325,6 +347,9 @@
         "3": 17,
         "4": 7
       },
+      "rule_based_template_match_count": 7,
+      "rule_based_template_match_rate": 0.2917,
+      "rule_based_deviation_rate": 0.7083,
       "search_call_count": 24,
       "unique_search_query_count": 5,
       "unique_search_query_ratio": 0.2083,
@@ -341,8 +366,10 @@
     },
     "numeric_computation": {
       "count": 18,
+      "unique_seed_count": 3,
       "unique_sequence_count": 4,
       "unique_sequence_ratio": 0.2222,
+      "seed_level_unique_sequence_ratio": 1.3333,
       "top_sequences": {
         "parse_table -> compute -> answer": 15,
         "parse_table": 1,
@@ -379,6 +406,9 @@
         "4": 1,
         "5": 1
       },
+      "rule_based_template_match_count": 15,
+      "rule_based_template_match_rate": 0.8333,
+      "rule_based_deviation_rate": 0.1667,
       "search_call_count": 0,
       "unique_search_query_count": 0,
       "unique_search_query_ratio": 0.0,
@@ -389,8 +419,10 @@
     },
     "table_lookup": {
       "count": 12,
+      "unique_seed_count": 2,
       "unique_sequence_count": 3,
       "unique_sequence_ratio": 0.25,
+      "seed_level_unique_sequence_ratio": 1.5,
       "top_sequences": {
         "read_page -> parse_table -> answer": 6,
         "parse_table -> answer": 5,
@@ -419,6 +451,9 @@
         "3": 6,
         "2": 6
       },
+      "rule_based_template_match_count": 6,
+      "rule_based_template_match_rate": 0.5,
+      "rule_based_deviation_rate": 0.5,
       "search_call_count": 0,
       "unique_search_query_count": 0,
       "unique_search_query_ratio": 0.0,
@@ -429,8 +464,10 @@
     },
     "text_lookup": {
       "count": 30,
+      "unique_seed_count": 5,
       "unique_sequence_count": 1,
       "unique_sequence_ratio": 0.0333,
+      "seed_level_unique_sequence_ratio": 0.2,
       "top_sequences": {
         "read_page -> answer": 30
       },
@@ -453,6 +490,9 @@
       "step_count_distribution": {
         "2": 30
       },
+      "rule_based_template_match_count": 30,
+      "rule_based_template_match_rate": 1.0,
+      "rule_based_deviation_rate": 0.0,
       "search_call_count": 0,
       "unique_search_query_count": 0,
       "unique_search_query_ratio": 0.0,
@@ -463,8 +503,10 @@
     },
     "unanswerable": {
       "count": 24,
+      "unique_seed_count": 4,
       "unique_sequence_count": 1,
       "unique_sequence_ratio": 0.0417,
+      "seed_level_unique_sequence_ratio": 0.25,
       "top_sequences": {
         "search -> read_page -> refuse": 24
       },
@@ -490,6 +532,9 @@
       "step_count_distribution": {
         "3": 24
       },
+      "rule_based_template_match_count": 24,
+      "rule_based_template_match_rate": 1.0,
+      "rule_based_deviation_rate": 0.0,
       "search_call_count": 24,
       "unique_search_query_count": 8,
       "unique_search_query_ratio": 0.3333,
@@ -509,8 +554,10 @@
     },
     "verification": {
       "count": 12,
+      "unique_seed_count": 2,
       "unique_sequence_count": 2,
       "unique_sequence_ratio": 0.1667,
+      "seed_level_unique_sequence_ratio": 1.0,
       "top_sequences": {
         "search -> read_page -> verify -> answer": 6,
         "read_page -> verify -> answer": 6
@@ -541,6 +588,9 @@
         "4": 6,
         "3": 6
       },
+      "rule_based_template_match_count": 6,
+      "rule_based_template_match_rate": 0.5,
+      "rule_based_deviation_rate": 0.5,
       "search_call_count": 6,
       "unique_search_query_count": 2,
       "unique_search_query_ratio": 0.3333,
@@ -580,20 +630,115 @@
       "read_page -> verify -> answer": 6
     }
   },
+  "rule_based_templates": {
+    "text_lookup": [
+      "read_page",
+      "answer"
+    ],
+    "table_lookup": [
+      "read_page",
+      "parse_table",
+      "answer"
+    ],
+    "numeric_computation": [
+      "parse_table",
+      "compute",
+      "answer"
+    ],
+    "cross_page": [
+      "search",
+      "read_page",
+      "read_page",
+      "answer"
+    ],
+    "verification": [
+      "read_page",
+      "verify",
+      "answer"
+    ],
+    "unanswerable": [
+      "search",
+      "read_page",
+      "refuse"
+    ]
+  },
+  "rule_based_template_table": {
+    "cross_page": {
+      "template": "search -> read_page -> read_page -> answer",
+      "count": 24,
+      "match_count": 7,
+      "match_rate": 0.2917,
+      "deviation_rate": 0.7083,
+      "deviating_sequences": {
+        "search -> read_page -> answer": 17
+      }
+    },
+    "numeric_computation": {
+      "template": "parse_table -> compute -> answer",
+      "count": 18,
+      "match_count": 15,
+      "match_rate": 0.8333,
+      "deviation_rate": 0.1667,
+      "deviating_sequences": {
+        "parse_table": 1,
+        "read_page -> parse_table -> compute -> answer": 1,
+        "read_page -> crop -> compute -> compute -> answer": 1
+      }
+    },
+    "table_lookup": {
+      "template": "read_page -> parse_table -> answer",
+      "count": 12,
+      "match_count": 6,
+      "match_rate": 0.5,
+      "deviation_rate": 0.5,
+      "deviating_sequences": {
+        "parse_table -> answer": 5,
+        "read_page -> answer": 1
+      }
+    },
+    "text_lookup": {
+      "template": "read_page -> answer",
+      "count": 30,
+      "match_count": 30,
+      "match_rate": 1.0,
+      "deviation_rate": 0.0,
+      "deviating_sequences": {}
+    },
+    "unanswerable": {
+      "template": "search -> read_page -> refuse",
+      "count": 24,
+      "match_count": 24,
+      "match_rate": 1.0,
+      "deviation_rate": 0.0,
+      "deviating_sequences": {}
+    },
+    "verification": {
+      "template": "read_page -> verify -> answer",
+      "count": 12,
+      "match_count": 6,
+      "match_rate": 0.5,
+      "deviation_rate": 0.5,
+      "deviating_sequences": {
+        "search -> read_page -> verify -> answer": 6
+      }
+    }
+  },
   "kept_only": {
-    "count": 118,
+    "count": 116,
+    "unique_seed_count": 20,
     "unique_sequence_count": 11,
-    "unique_sequence_ratio": 0.0932,
+    "unique_sequence_ratio": 0.0948,
+    "seed_level_unique_sequence_ratio": 0.55,
     "top_sequences": {
       "read_page -> answer": 30,
       "search -> read_page -> refuse": 24,
       "search -> read_page -> answer": 17,
       "parse_table -> compute -> answer": 15,
       "search -> read_page -> read_page -> answer": 7,
-      "search -> read_page -> verify -> answer": 6,
       "read_page -> parse_table -> answer": 6,
       "read_page -> verify -> answer": 6,
       "parse_table -> answer": 5,
+      "search -> read_page -> verify -> answer": 4,
       "read_page -> parse_table -> compute -> answer": 1,
       "read_page -> crop -> compute -> compute -> answer": 1
     },
@@ -619,29 +764,32 @@
       "verify"
     ],
     "action_counts": {
-      "search": 54,
-      "read_page": 105,
-      "answer": 94,
+      "search": 52,
+      "read_page": 103,
+      "answer": 92,
       "refuse": 24,
-      "verify": 12,
       "parse_table": 27,
       "compute": 18,
+      "verify": 10,
       "crop": 1
     },
-    "step_count_mean": 2.839,
-    "step_count_std": 0.6506,
+    "step_count_mean": 2.819,
+    "step_count_std": 0.6379,
     "step_count_distribution": {
       "3": 68,
       "2": 35,
-      "4": 14,
+      "4": 12,
       "5": 1
     },
-    "search_call_count": 54,
-    "unique_search_query_count": 15,
-    "unique_search_query_ratio": 0.2778,
-    "seeds_with_search_count": 10,
-    "unique_seed_query_pair_count": 15,
-    "unique_seed_query_pair_ratio": 0.2778,
+    "rule_based_template_match_count": 88,
+    "rule_based_template_match_rate": 0.7586,
+    "rule_based_deviation_rate": 0.2414,
+    "search_call_count": 52,
+    "unique_search_query_count": 14,
+    "unique_search_query_ratio": 0.2692,
+    "seeds_with_search_count": 9,
+    "unique_seed_query_pair_count": 14,
+    "unique_seed_query_pair_ratio": 0.2692,
     "search_query_counts": {
       "mlagentbench evaluating language agents on": 6,
       "predictive data selection the data that": 6,
@@ -652,7 +800,6 @@
       "current employer today first author": 4,
       "2035 exact revenue forecast fiscal year": 4,
       "10 2 frozen executive death benefit plan as amended incorporated": 4,
-      "2 visit bench areal worldinspiredvlinstruction followingbenchmark": 2,
       "visit-bench: a benchmark for vision-language": 2,
       "first author location": 2,
       "legal case regulatory investigation confidential id": 2,
@@ -684,6 +831,32 @@
     ],
     "rationale": "H4-lite passes when six task types are covered, core pilot actions are used, at least six unique tool sequences appear, and seed-level search queries are not highly duplicated."
   },
+  "h4_original_decision": {
+    "strict_original_passed": false,
+    "seed_normalized_passed": false,
+    "unique_sequence_ratio_ok": false,
+    "seed_level_unique_sequence_ratio_ok": true,
+    "action_coverage_ok": true,
+    "step_count_std_ok": false,
+    "rule_based_deviation_ok": false,
+    "search_duplicate_rate_ok": false,
+    "thresholds": {
+      "unique_sequence_ratio": ">= 0.50",
+      "seed_level_unique_sequence_ratio": ">= 0.50",
+      "action_coverage_count": ">= 7",
+      "step_count_std": ">= 1.50",
+      "rule_based_deviation_rate": ">= 0.40",
+      "search_duplicate_rate": "< 0.30"
+    },
+    "observed": {
+      "unique_sequence_ratio": 0.1,
+      "seed_level_unique_sequence_ratio": 0.6,
+      "action_coverage_count": 8,
+      "step_count_std": 0.6706,
+      "rule_based_deviation_rate": 0.2667,
+      "search_duplicate_rate": 0.7222
+    }
+  },
   "records": [
     {
       "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__cross__p1_p2__run01.json",
@@ -706,6 +879,8 @@
       "search_queries": [
         "visit bench a benchmark for vision"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -730,6 +905,8 @@
       "search_queries": [
         "visit bench a benchmark for vision"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -754,6 +931,8 @@
       "search_queries": [
         "current physical location today first author"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -778,6 +957,8 @@
       "search_queries": [
         "current physical location today first author"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -798,6 +979,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -818,6 +1001,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -844,8 +1029,10 @@
       "search_queries": [
         "2 visit bench areal worldinspiredvlinstruction followingbenchmark"
       ],
-      "docverify_filter_decision": "keep",
-      "docverify_support_label": "SUPPORTED"
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
     },
     {
       "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2308.06595v4__verify__p4__run02.json",
@@ -870,8 +1057,10 @@
       "search_queries": [
         "2 visit bench areal worldinspiredvlinstruction followingbenchmark"
       ],
-      "docverify_filter_decision": "keep",
-      "docverify_support_label": "SUPPORTED"
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
     },
     {
       "file": "data/h2/rollouts_v5/dmxapi_gemini_2_5_flash/2310.03302v2__cross__p1_p2__run01.json",
@@ -894,6 +1083,8 @@
       "search_queries": [
         "mlagentbench evaluating language agents on"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -918,6 +1109,8 @@
       "search_queries": [
         "mlagentbench evaluating language agents on"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -942,6 +1135,8 @@
       "search_queries": [
         "confidential non-public legal case number regulatory investigation ID"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -966,6 +1161,8 @@
       "search_queries": [
         "confidential non-public legal case number regulatory investigation ID"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -986,6 +1183,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1006,6 +1205,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1030,6 +1231,8 @@
       "search_queries": [
         "predictive data selection the data that"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1054,6 +1257,8 @@
       "search_queries": [
         "predictive data selection the data that"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1078,6 +1283,8 @@
       "search_queries": [
         "current employer today first author"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1102,6 +1309,8 @@
       "search_queries": [
         "current employer today first author"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1122,6 +1331,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1142,6 +1353,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1160,6 +1373,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "reject",
       "docverify_support_label": "INVALID"
     },
@@ -1182,6 +1397,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1206,6 +1423,8 @@
       "search_queries": [
         "2035 exact revenue forecast fiscal year"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1230,6 +1449,8 @@
       "search_queries": [
         "2035 exact revenue forecast fiscal year"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1252,6 +1473,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1274,6 +1497,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1294,6 +1519,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1314,6 +1541,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1338,6 +1567,8 @@
       "search_queries": [
         "2025 annual report"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1362,6 +1593,8 @@
       "search_queries": [
         "2025 annual report"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1384,6 +1617,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1406,6 +1641,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1430,6 +1667,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1452,6 +1691,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1474,6 +1715,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1496,6 +1739,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1516,6 +1761,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1536,6 +1783,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1562,6 +1811,8 @@
       "search_queries": [
         "10 2 frozen executive death benefit plan as amended incorporated"
       ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1588,6 +1839,8 @@
       "search_queries": [
         "10 2 frozen executive death benefit plan as amended incorporated"
       ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1612,6 +1865,8 @@
       "search_queries": [
         "VisIT-Bench: A Benchmark for Vision-Language"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1636,6 +1891,8 @@
       "search_queries": [
         "VisIT-Bench: A Benchmark for Vision-Language"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1660,6 +1917,8 @@
       "search_queries": [
         "first author location"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1684,6 +1943,8 @@
       "search_queries": [
         "first author location"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1704,6 +1965,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1724,6 +1987,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1746,6 +2011,8 @@
         "verify"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1768,6 +2035,8 @@
         "verify"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1792,6 +2061,8 @@
       "search_queries": [
         "mlagentbench evaluating language agents on"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1816,6 +2087,8 @@
       "search_queries": [
         "mlagentbench evaluating language agents on"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1840,6 +2113,8 @@
       "search_queries": [
         "legal case regulatory investigation confidential ID"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1864,6 +2139,8 @@
       "search_queries": [
         "legal case regulatory investigation confidential ID"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1884,6 +2161,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1904,6 +2183,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1928,6 +2209,8 @@
       "search_queries": [
         "predictive data selection the data that"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1952,6 +2235,8 @@
       "search_queries": [
         "predictive data selection the data that"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -1976,6 +2261,8 @@
       "search_queries": [
         "first author employer"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2000,6 +2287,8 @@
       "search_queries": [
         "first author employer"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2020,6 +2309,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2040,6 +2331,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2062,6 +2355,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2084,6 +2379,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2108,6 +2405,8 @@
       "search_queries": [
         "2035 revenue forecast"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2132,6 +2431,8 @@
       "search_queries": [
         "2035 revenue forecast"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2152,6 +2453,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "review",
       "docverify_support_label": "PARTIAL"
     },
@@ -2174,6 +2477,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2194,6 +2499,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2214,6 +2521,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2238,6 +2547,8 @@
       "search_queries": [
         "2025 annual report"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2262,6 +2573,8 @@
       "search_queries": [
         "2025 annual report"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2284,6 +2597,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2306,6 +2621,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2328,6 +2645,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2350,6 +2669,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2370,6 +2691,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2390,6 +2713,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2410,6 +2735,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2430,6 +2757,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2452,6 +2781,8 @@
         "verify"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2474,6 +2805,8 @@
         "verify"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2499,6 +2832,8 @@
       "search_queries": [
         "visit bench a benchmark for vision"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2524,6 +2859,8 @@
       "search_queries": [
         "visit bench a benchmark for vision"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2548,6 +2885,8 @@
       "search_queries": [
         "current physical location today first author"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2572,6 +2911,8 @@
       "search_queries": [
         "current physical location today first author"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2592,6 +2933,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2612,6 +2955,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2634,6 +2979,8 @@
         "verify"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2656,6 +3003,8 @@
         "verify"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2681,6 +3030,8 @@
       "search_queries": [
         "mlagentbench evaluating language agents on"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2706,6 +3057,8 @@
       "search_queries": [
         "mlagentbench evaluating language agents on"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2730,6 +3083,8 @@
       "search_queries": [
         "confidential non-public legal case number regulatory investigation ID"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2754,6 +3109,8 @@
       "search_queries": [
         "confidential non-public legal case number regulatory investigation ID"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2774,6 +3131,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2794,6 +3153,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2819,6 +3180,8 @@
       "search_queries": [
         "predictive data selection the data that"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2844,6 +3207,8 @@
       "search_queries": [
         "predictive data selection the data that"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2868,6 +3233,8 @@
       "search_queries": [
         "current employer today first author"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2892,6 +3259,8 @@
       "search_queries": [
         "current employer today first author"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2912,6 +3281,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2932,6 +3303,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2957,6 +3330,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -2979,6 +3354,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -3003,6 +3380,8 @@
       "search_queries": [
         "2035 exact revenue forecast fiscal year"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -3027,6 +3406,8 @@
       "search_queries": [
         "2035 exact revenue forecast fiscal year"
       ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -3047,6 +3428,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -3069,6 +3452,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -3089,6 +3474,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -3109,6 +3496,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -3133,6 +3522,8 @@
       "search_queries": [
         "2025 annual report"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -3158,6 +3549,8 @@
       "search_queries": [
         "2025 annual report"
       ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -3180,6 +3573,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -3202,6 +3597,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -3224,6 +3621,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -3246,6 +3645,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -3266,6 +3667,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -3286,6 +3689,8 @@
         "parse_table"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -3306,6 +3711,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -3326,6 +3733,8 @@
         "read_page"
       ],
       "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -3352,6 +3761,8 @@
       "search_queries": [
         "10 2 frozen executive death benefit plan as amended incorporated"
       ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     },
@@ -3378,6 +3789,8 @@
       "search_queries": [
         "10 2 frozen executive death benefit plan as amended incorporated"
       ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
       "docverify_filter_decision": "keep",
       "docverify_support_label": "SUPPORTED"
     }

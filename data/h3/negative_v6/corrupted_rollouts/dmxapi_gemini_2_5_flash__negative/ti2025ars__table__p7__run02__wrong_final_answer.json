@@ -1,0 +1,279 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      [
+        "parse_table",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "ti2025ars",
+    "metadata": {
+      "bbox": [
+        49.5,
+        335.89999,
+        562.5,
+        364.39999
+      ],
+      "column_label": "Trading Symbol(s)",
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage"
+      ],
+      "page": 7,
+      "review_status": "v4_query_sanitized",
+      "row_label": "Common Stock, par value $1.00"
+    },
+    "pdf_path": "data/raw_pdfs/ti2025ars.pdf",
+    "question": "On page 7, in the table, what is the value for row \"Common Stock, par value $1.00\" under column \"Trading Symbol(s)\"? Use the table evidence on that page; do not answer from memory.",
+    "reference_answer": "TXN",
+    "required_tools": [
+      "read_page",
+      "parse_table"
+    ],
+    "seed_id": "ti2025ars__table__p7",
+    "source": "structure_heuristic_v2_review_approved_v3_path_optimized_v4_query_sanitized",
+    "supporting_refs": [
+      {
+        "bbox": [
+          49.5,
+          335.89999,
+          562.5,
+          364.39999
+        ],
+        "page": 7
+      }
+    ],
+    "task_type": "table_lookup",
+    "tool_hints": {
+      "bbox_note": "Use a bbox that covers the full table; avoid a narrow column-only bbox.",
+      "table_bbox_hint": [
+        49.5,
+        335.89999,
+        562.5,
+        364.39999
+      ],
+      "target_page": 7
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash__negative",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"action\": \"read_page\", \"action_input\": {\"page_ids\": [7]}}",
+      "thought": "",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          7
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 7,
+              "text": "UNITED STATES\nSECURITIES AND EXCHANGE COMMISSION\nWashington, D.C. 20549\nFORM 10-K\n☒ ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\nFor the fiscal year ended December 31, 2025\n☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\nFor the transition period from ___________ to ___________\nCommission File Number 001-03761\nTEXAS INSTRUMENTS INCORPORATED\n(Exact Name of Registrant as Specified in Its Charter)\nDelaware 75-0289970\n(State of Incorporation) (I.R.S. Employer Identification No.)\n12500 TI Boulevard, Dallas, Texas 75243\n(Address of principal executive offices) (Zip Code)\nRegistrant’s telephone number, including area code 214-479-3773\nSecurities registered pursuant to Section 12(b) of the Act:\nTitle of each class Trading Symbol(s) Name of each exchange on which registered\nCommon Stock, par value $1.00 TXN The Nasdaq Global Select Market\nSecurities registered pursuant to Section 12(g) of the Act: None\nIndicate by check mark if the Registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act. Yes ☒ No ☐\nIndicate by check mark if the Registrant is not required to file reports pursuant to Section 13 or Section 15(d) of the Act. Yes ☐ No ☒\nIndicate by check mark whether the Registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities\nExchange Act of 1934 during the preceding 12 months (or for such shorter period that the Registrant was required to file such reports),\nand (2) has been subject to such filing requirements for the past 90 days. Yes ☒ No ☐\nIndicate by check mark whether the Registrant has submitted electronically every Interactive Data File required to be submitted pursuant\nto Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the Registrant\nwas required to submit such files). Yes ☒ No ☐\nIndicate by check mark whether the Registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting\ncompany, or an emerging growth company. See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting\ncompany,” and “emerging growth company” in Rule 12b-2 of the Exchange Act.\nLarge accelerated filer ☒ Accelerated filer ☐\nNon-accelerated filer ☐ Smaller reporting company ☐\nEmerging growth company ☐\nIf an emerging growth company, indicate by check mark if the Registrant has elected not to use the extended transition period for\n☐\ncomplying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.\nIndicate by check mark whether the registrant has filed a report on and attestation to its management’s assessment of the\neffectiveness of its internal control over financial reporting under Section 404(b) of the Sarbanes-Oxley Act (15 U.S.C. 7262(b)) by ☒\nthe registered public accounting firm that prepared or issued its audit report.\nIf securities are registered pursuant to Section 12(b) of the Act, indicate by check mark whether the financial statements of the\n☐\nregistrant included in the filing reflect the correction of an error to previously issued financial statements.\nIndicate by check mark whether any of those error corrections are restatements that required a recovery analysis of incentive-\nbased compensation received by any of the registrant’s executive officers during the relevant recovery period pursuant to ☐\n§240.10D-1(b).\nIndicate by check mark whether the Registrant is a shell company (as defined in Rule 12b-2 of the Act). Yes ☐ No ☒\nThe aggregate market value of voting stock held by non-affiliates of the Registrant was approximately $188,509,303,179 as of June 30,\n2025.\n907,550,774 (Number of shares of common stock outstanding as of January 27, 2026)\nPart III hereof incorporates information by reference to the Registrant’s proxy statement for the 2026 annual meeting of stockholders.\n2025 FORM 10-K  PAGE 1",
+              "summary": "UNITED STATES",
+              "image_path": "artifacts/docenv/ti2025ars/page_007.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 7,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"I have read page 7 and can see the table. Now I need to parse the table to extract the requested value. The table bbox hint is [49.5, 335.89999, 562.5, 364.39999].\", \"action\": \"parse_table\", \"action_input\": {\"page_id\": 7, \"bbox\": [49.5, 335.89999, 562.5, 364.39999]}}",
+      "thought": "I have read page 7 and can see the table. Now I need to parse the table to extract the requested value. The table bbox hint is [49.5, 335.89999, 562.5, 364.39999].",
+      "action": "parse_table",
+      "action_input": {
+        "page_id": 7,
+        "bbox": [
+          49.5,
+          335.89999,
+          562.5,
+          364.39999
+        ]
+      },
+      "observation": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {
+          "page": 7,
+          "bbox": [
+            49.5,
+            335.89999,
+            562.5,
+            364.39999
+          ],
+          "rows": [
+            [
+              "Title of each class",
+              "Trading Symbol(s)",
+              "Name of each exchange on which registered"
+            ],
+            [
+              "Common Stock, par value $1.00",
+              "TXN",
+              "The Nasdaq Global Select Market"
+            ]
+          ],
+          "markdown": "| Title of each class | Trading Symbol(s) | Name of each exchange on which registered |\n| --- | --- | --- |\n| Common Stock, par value $1.00 | TXN | The Nasdaq Global Select Market |"
+        },
+        "provenance": {
+          "page": 7,
+          "bbox": [
+            49.5,
+            335.89999,
+            562.5,
+            364.39999
+          ],
+          "element_type": "table"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"Corrupted negative-control terminal action.\", \"action\": \"answer\", \"action_input\": {\"text\": \"NOT_IN_TABLE\", \"evidence_refs\": [{\"bbox\": [49.5, 335.89999, 562.5, 364.39999], \"page\": 7}]}}",
+      "thought": "Corrupted negative-control terminal action.",
+      "action": "answer",
+      "action_input": {
+        "text": "NOT_IN_TABLE",
+        "evidence_refs": [
+          {
+            "bbox": [
+              49.5,
+              335.89999,
+              562.5,
+              364.39999
+            ],
+            "page": 7
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "NOT_IN_TABLE",
+          "evidence_refs": [
+            {
+              "bbox": [
+                49.5,
+                335.89999,
+                562.5,
+                364.39999
+              ],
+              "page": 7
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "negative_control"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "parse_table",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "NOT_IN_TABLE",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1352,
+      "completion_tokens": 91,
+      "total_tokens": 1443,
+      "prompt_tokens_details": {
+        "text_tokens": 1352,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 69
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1906,
+      "completion_tokens": 130,
+      "total_tokens": 2036,
+      "prompt_tokens_details": {
+        "text_tokens": 1906,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2220,
+      "completion_tokens": 126,
+      "total_tokens": 2346,
+      "prompt_tokens_details": {
+        "text_tokens": 2220,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "wrong_final_answer",
+    "source_teacher": "dmxapi_gemini_2_5_flash",
+    "source_seed_id": "ti2025ars__table__p7",
+    "source_final_action": "answer",
+    "source_final_answer": "TXN",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The terminal answer/refusal was intentionally corrupted while preserving the preceding trajectory."
+  }
+}

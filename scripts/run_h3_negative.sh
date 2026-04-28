@@ -10,6 +10,8 @@ NEGATIVE_ROLLOUT_DIR="${H3_NEGATIVE_ROLLOUT_DIR:-${OUT_DIR}/corrupted_rollouts}"
 TOP_K="${H3_DOCVERIFY_TOP_K:-5}"
 MAX_PER_TYPE="${H3_NEGATIVE_MAX_PER_TYPE:-}"
 INCLUDE_MISSING_EVIDENCE="${H3_INCLUDE_MISSING_EVIDENCE:-1}"
+INCLUDE_EXTENDED_CORRUPTIONS="${H3_INCLUDE_EXTENDED_CORRUPTIONS:-1}"
+INCLUDE_NATURAL_LIKE_CORRUPTIONS="${H3_INCLUDE_NATURAL_LIKE_CORRUPTIONS:-1}"
 
 pilot_require_dir "${SOURCE_ROLLOUT_DIR}" "source rollout directory"
 
@@ -25,6 +27,14 @@ ARGS=(
 
 if [[ "${INCLUDE_MISSING_EVIDENCE}" == "1" ]]; then
   ARGS+=(--include-missing-evidence)
+fi
+
+if [[ "${INCLUDE_EXTENDED_CORRUPTIONS}" == "1" ]]; then
+  ARGS+=(--include-extended-corruptions)
+fi
+
+if [[ "${INCLUDE_NATURAL_LIKE_CORRUPTIONS}" == "1" ]]; then
+  ARGS+=(--include-natural-like-corruptions)
 fi
 
 if [[ -n "${MAX_PER_TYPE}" ]]; then

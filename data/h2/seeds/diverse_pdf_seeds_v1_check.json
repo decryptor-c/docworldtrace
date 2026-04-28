@@ -1,0 +1,113 @@
+{
+  "source_seed_file": "data/h2/seeds/diverse_pdf_seeds_v1.jsonl",
+  "checked_seed_file": "data/h2/seeds/diverse_pdf_seeds_v1_checked.jsonl",
+  "source_count": 66,
+  "checked_count": 55,
+  "removed_count": 11,
+  "source_task_distribution": {
+    "cross_page": 11,
+    "unanswerable": 14,
+    "table_lookup": 11,
+    "text_lookup": 14,
+    "verification": 10,
+    "numeric_computation": 6
+  },
+  "checked_task_distribution": {
+    "cross_page": 7,
+    "unanswerable": 14,
+    "verification": 10,
+    "text_lookup": 11,
+    "table_lookup": 7,
+    "numeric_computation": 6
+  },
+  "removed": [
+    {
+      "seed_id": "2308.06595v4__table__p3",
+      "status": "REVISE",
+      "reason": "awkward table row label; question is unnatural",
+      "task_type": "table_lookup",
+      "question": "On page 3, in the table, what is the value for row \"How much is the\nbrowser usage for\nFirefox and Safari?\" under column \"Art Knowledge\"?",
+      "reference_answer": "Teach me about this\npainting."
+    },
+    {
+      "seed_id": "2308.06595v4__text__p7",
+      "status": "REVISE",
+      "reason": "reference phrase is unstable in page text extraction",
+      "task_type": "text_lookup",
+      "question": "What is the heading or leading phrase on page 7?",
+      "reference_answer": "BLIP2 Caption It is not possible to determine if a"
+    },
+    {
+      "seed_id": "fda_ozempic_2025_label__cross__p1_p2",
+      "status": "REVISE",
+      "reason": "cross-page anchor/answer phrase unstable in PDF text extraction",
+      "task_type": "cross_page",
+      "question": "First find the page about \"highlights of prescribing information contraindications\". What is the heading or leading phrase on the next page?",
+      "reference_answer": "FULL PRESCRIBING INFORMATION: CONTENTS* 8.6Renal Impairment"
+    },
+    {
+      "seed_id": "fda_ozempic_2025_label__table__p4",
+      "status": "REVISE",
+      "reason": "table row/column labels contain line-break dosage formatting",
+      "task_type": "table_lookup",
+      "question": "On page 4, in the table, what is the value for row \"0.25 mg\n0.5 mg\" under column \"Total Strength\nper Total Volume\"?",
+      "reference_answer": "2 mg / 3 mL"
+    },
+    {
+      "seed_id": "fda_ozempic_2025_label__text__p1",
+      "status": "REVISE",
+      "reason": "heading phrase contains noisy rule separators",
+      "task_type": "text_lookup",
+      "question": "What is the heading or leading phrase on page 1?",
+      "reference_answer": "HIGHLIGHTS OF PRESCRIBING INFORMATION --------------------------------CONTRAINDICATIONS--------------------------------"
+    },
+    {
+      "seed_id": "irs_2025_form_1040__cross__p1_p2",
+      "status": "REVISE",
+      "reason": "anchor phrase is OCR/reversed-text artifact",
+      "task_type": "cross_page",
+      "question": "First find the page about \"mrof 1040 department of the treasury\". What is the heading or leading phrase on the next page?",
+      "reference_answer": "Form 1040 (2025) Page 2"
+    },
+    {
+      "seed_id": "irs_2025_form_1040__table__p1",
+      "status": "REVISE",
+      "reason": "form table label/value too awkward for clean QA",
+      "task_type": "table_lookup",
+      "question": "On page 1, in the table, what is the value for row \"(5) Check if lived\nwith you more\nthan half of 2025\" under column \"Dependent 1\"?",
+      "reference_answer": "(a) Yes\n(b) And in the U.S."
+    },
+    {
+      "seed_id": "irs_2025_form_1040__text__p1",
+      "status": "REVISE",
+      "reason": "reference contains reversed Form artifact",
+      "task_type": "text_lookup",
+      "question": "What is the heading or leading phrase on page 1?",
+      "reference_answer": "mroF 1040 Department of the Treasury—Internal Revenue Service 2025"
+    },
+    {
+      "seed_id": "nist_ai_600_1_genai_profile__table__p29",
+      "status": "REVISE",
+      "reason": "column label too long/multiline for stable table QA",
+      "task_type": "table_lookup",
+      "question": "On page 29, in the table, what is the value for row \"MP-2.3-003\" under column \"Harmful Bias and Homogenization;\nIntellectual Property\"?",
+      "reference_answer": "Information Integrity"
+    },
+    {
+      "seed_id": "scotus_loper_bright_2024__cross__p1_p2",
+      "status": "REVISE",
+      "reason": "anchor phrase is generic slip-opinion boilerplate",
+      "task_type": "cross_page",
+      "question": "First find the page about \"slip opinion october term 2023 1\". What is the heading or leading phrase on the next page?",
+      "reference_answer": "2 LOPER BRIGHT ENTERPRISES v. RAIMONDO"
+    },
+    {
+      "seed_id": "tm2529296d2_ars__cross__p1_p2",
+      "status": "REVISE",
+      "reason": "answer phrase unstable in raw page-text check",
+      "task_type": "cross_page",
+      "question": "First find the page about \"2025 annual report\". What is the heading or leading phrase on the next page?",
+      "reference_answer": "About Us Shareholder and Media Information"
+    }
+  ]
+}

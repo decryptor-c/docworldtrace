@@ -16,6 +16,12 @@ Run only selected stages:
 RUN_H1=0 RUN_H2=0 RUN_H3=1 RUN_H3_NEGATIVE=1 RUN_H4=1 bash scripts/run_h1_h4_pilot.sh
 ```
 
+Run the prepared expanded-document H4 pipeline on a server after uploading the checked seed and referenced PDFs:
+
+```bash
+H2_REPEATS=1 bash scripts/run_prepared_h4_pipeline.sh
+```
+
 Current default seed and output version is v5. Run the dedicated H2-H4 v5 pipeline with the refuse-diverse seed and the DMXAPI teacher set:
 
 ```bash
@@ -34,7 +40,10 @@ bash scripts/run_h2_h4_v5_pipeline.sh
 | H2 path review | `scripts/review_h2_paths.py` | `data/h2/eval_v5_path/` |
 | H3 positive DocVerify++ | `scripts/run_h3_docverify_plus.sh` | `data/h3/docverify_plus_v5/` |
 | H3 negative-control | `scripts/run_h3_negative.sh` | `data/h3/negative_v5/` |
+| H3 natural GT sample | `scripts/build_h3_natural_gt_sample.sh` | `data/h3/natural_gt_v5/` |
 | H4 diversity | `scripts/run_h4_diversity.sh` | `data/h4/diversity_v5/` |
+| Expanded PDF candidates | `data/raw_pdfs/diverse_pdf_candidates_v1.json` | 12 official-source candidate PDFs |
+| Prepared-seed server pipeline | `scripts/run_prepared_h4_pipeline.sh` | `data/h4/diversity_diverse_v1/` |
 
 ## Current Teacher Set
 
@@ -57,11 +66,17 @@ bash scripts/run_h2_h4_v5_pipeline.sh
 | `docworldtrace/pilot/h2_eval.py` | H2 final-answer evaluation |
 | `docworldtrace/pilot/h3_docverify.py` | H3 rule-based DocVerify++ positive filtering |
 | `docworldtrace/pilot/h3_negative.py` | H3 corrupted trajectory generation and detection |
+| `docworldtrace/pilot/h3_natural_gt.py` | H3 natural-distribution manual GT sampling |
 | `docworldtrace/pilot/h4_diversity.py` | H4 trajectory diversity analysis |
+| `docworldtrace/pilot/h5_sft.py` | H5 answer-only and trajectory SFT dataset preparation |
 
 ## Notes
 
 - H2 uses teacher APIs. Make sure `.env.dmxapi` exists or export `DMXAPI_API_KEY`.
 - H3 and H4 can be rerun from existing H2 rollouts without calling the teacher model.
+- `H3_INCLUDE_EXTENDED_CORRUPTIONS=1` is the default for `run_h3_negative.sh`; set it to `0` to reproduce the older three-corruption negative-control.
+- `H3_INCLUDE_NATURAL_LIKE_CORRUPTIONS=1` is also the default; it adds over-refusal, direct answer without tools, numeric near miss, dropped compute, table row-label answer, and search-only evidence corruptions.
+- Use `data/raw_pdfs/diverse_pdf_candidates_v1.md` as the human review list before downloading new PDFs into `data/raw_pdfs/`.
+- `run_prepared_h4_pipeline.sh` expects prepared PDFs and `data/h2/seeds/diverse_pdf_seeds_v1_checked.jsonl`; it does not download documents or regenerate seeds.
 - Current kept experiment data is v5. Older H2/H3/H4 versioned data was removed; see `data/cleanup_old_versions_deleted.md`.
 - `scripts/lib/pilot_common.sh` contains shared shell helpers for root detection, virtualenv activation, and file/directory checks.

@@ -1,0 +1,277 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      [
+        "search",
+        "read_page",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "hard",
+    "doc_id": "2308.06595v4",
+    "metadata": {
+      "anchor_page": 1,
+      "anchor_phrase": "visit bench a benchmark for vision",
+      "answer_page": 2,
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage"
+      ],
+      "review_status": "v4_query_sanitized"
+    },
+    "pdf_path": "data/raw_pdfs/2308.06595v4.pdf",
+    "question": "Use search to find the page about \"visit bench a benchmark for vision\". Then inspect the following page and report its heading or leading phrase.",
+    "reference_answer": "1 Introduction",
+    "required_tools": [
+      "search",
+      "read_page"
+    ],
+    "seed_id": "2308.06595v4__cross__p1_p2",
+    "source": "structure_heuristic_v2_review_approved_v3_path_optimized_v4_query_sanitized",
+    "supporting_refs": [
+      {
+        "page": 2
+      }
+    ],
+    "task_type": "cross_page",
+    "tool_hints": {
+      "search_policy": "Use the quoted anchor phrase as the search query; do not assume page numbers."
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I should search for the anchor phrase to locate the relevant page.\",\"action\":\"search\",\"action_input\":{\"query\":\"visit bench a benchmark for vision\",\"top_k\":3}}",
+      "thought": "I should search for the anchor phrase to locate the relevant page.",
+      "action": "search",
+      "action_input": {
+        "query": "visit bench a benchmark for vision",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "visit bench a benchmark for vision",
+          "results": [
+            {
+              "page": 1,
+              "score": 6.0,
+              "snippet": "VisIT-Bench: A Benchmark for Vision-Language\nInstruction Following Inspired by Real-World Use\nYonatanBitton*1,2 HritikBansal*3 JackHessel*4 RulinShao5 WanrongZhu6\nAnasAwadalla5 JoshGardner5 RohanTaori7 LudwigSchmidt4,5,8\nAbstract\nWeintroduc"
+            },
+            {
+              "page": 2,
+              "score": 6.0,
+              "snippet": "1 Introduction\nA long-standing challenge for artificial intelligence is to build general-purpose assistants\nthatcan,incollaborationwithhumans,solvediverseandnever-before-seentasks[1]. For\ntextual tasks, several recent works [2, 3, 4, 5, 6, "
+            },
+            {
+              "page": 3,
+              "score": 5.0,
+              "snippet": "Reasoning Over Art Knowledge Recognition Location Home Renovation\nPlots Understanding\nHow much is the Teach me about this Where is this? If you are going for a Here is a photo of my\nbrowser usage for painting. picnic at this location, bathr"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The search result indicates that the relevant page is page 1. I should now read page 1 to confirm its content and then proceed to inspect the following page.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[1]}}",
+      "thought": "The search result indicates that the relevant page is page 1. I should now read page 1 to confirm its content and then proceed to inspect the following page.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          1
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_weak_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\":\"I have confirmed the content of page 1. Now I should read page 2 to inspect its heading or leading phrase.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[2]}}",
+      "thought": "I have confirmed the content of page 1. Now I should read page 2 to inspect its heading or leading phrase.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          2
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_weak_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 4,
+      "raw_model_output": "{\"thought\":\"I have inspected page 2 and found its heading. I can now answer the question with the heading of page 2.\",\"action\":\"answer\",\"action_input\":{\"text\":\"1 Introduction\",\"evidence_refs\":[{\"page\":2}]}}",
+      "thought": "I have inspected page 2 and found its heading. I can now answer the question with the heading of page 2.",
+      "action": "answer",
+      "action_input": {
+        "text": "1 Introduction",
+        "evidence_refs": [
+          {
+            "page": 2
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "1 Introduction",
+          "evidence_refs": [
+            {
+              "page": 2
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "1 Introduction",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1145,
+      "completion_tokens": 38,
+      "total_tokens": 1183,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1490,
+      "completion_tokens": 51,
+      "total_tokens": 1541,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1995,
+      "completion_tokens": 43,
+      "total_tokens": 2038,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 2499,
+      "completion_tokens": 51,
+      "total_tokens": 2550,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 4,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "weak_search_only_evidence",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "2308.06595v4__cross__p1_p2",
+    "source_final_action": "answer",
+    "source_final_answer": "1 Introduction",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved, but rich evidence observations are blanked so only search-level evidence remains."
+  }
+}

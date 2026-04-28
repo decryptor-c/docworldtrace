@@ -61,46 +61,50 @@ Non-acceptable cases:
 | Metric | Result |
 |---|---:|
 | Count | 120 |
-| Support rate | 98.33% |
-| Sufficiency rate | 98.33% |
-| Keep rate | 98.33% |
+| Support rate | 96.67% |
+| Sufficiency rate | 96.67% |
+| Keep rate | 96.67% |
 | Review rate | 0.83% |
-| Reject rate | 0.83% |
+| Reject rate | 2.50% |
 | Adjusted answer correct | 99.17% |
 
-H3 flags exactly the two important cases:
+H3 flags four important cases after the stricter verify-observation consistency check:
 
 | Decision | Failure | Teacher | Seed | Reason |
 |---|---|---|---|---|
 | `reject` | `format_error` | `gemini-2.5-flash` | `ti2025ars__numeric_free_cash_flow_margin_change_p29` | Invalid rollout without final answer/refuse |
+| `reject` | `verification_label_mismatch` | `gemini-2.5-flash` | `2308.06595v4__verify__p4` | Verify observation returned unsupported/insufficient while final answer said `SUPPORTED` |
+| `reject` | `verification_label_mismatch` | `gemini-2.5-flash` | `2308.06595v4__verify__p4` | Same seed, second rollout with inconsistent verify observation |
 | `review` | `missing_table_evidence` | `gemini-3.1-flash-lite-preview` | `ti2025ars__table__p7` | Answer matches `TXN`, but path skipped `parse_table` |
 
-Interpretation: H3 behaves correctly. It keeps supported trajectories and catches the two questionable trajectories.
+Interpretation: H3 now catches both malformed trajectories and natural verify-tool inconsistencies rather than relying only on final-answer correctness.
 
 ## H3 Negative-Control
 
 | Metric | Result |
 |---|---:|
-| Negative count | 214 |
-| Caught bad count | 214 |
+| Negative count | 338 |
+| Caught bad count | 338 |
 | Caught bad rate | 100% |
 | Missed keep count | 0 |
 | Missed keep rate | 0% |
-| Reject decisions | 190 |
-| Review decisions | 24 |
+| Reject decisions | 338 |
+| Review decisions | 0 |
 
 Failure taxonomy:
 
 | Failure Type | Count |
 |---|---:|
+| `invalid_evidence_ref` | 95 |
 | `missing_evidence` | 95 |
 | `answer_mismatch` | 54 |
 | `insufficient_negative_evidence` | 24 |
-| `verification_label_mismatch` | 12 |
+| `verification_label_mismatch` | 24 |
+| `compute_expression_mismatch` | 17 |
 | `numeric_mismatch` | 17 |
 | `table_value_mismatch` | 12 |
 
-Interpretation: H3 negative-control passes. No corrupted trajectory is incorrectly kept.
+Interpretation: H3 negative-control passes after adding hallucinated evidence refs, compute provenance mismatch, and verify label/sufficiency mismatch corruptions. No corrupted trajectory is incorrectly kept.
 
 ## H4 Diversity
 
@@ -117,6 +121,10 @@ Interpretation: H3 negative-control passes. No corrupted trajectory is incorrect
 | Covered task types | 6 / 6 |
 | Unique search query count | 15 |
 | Unique search query ratio | 27.78% |
+| Seed-level unique sequence ratio | 60.00% |
+| Step count std | 0.6706 |
+| Rule-based deviation rate | 26.67% |
+| Search duplicate rate | 72.22% |
 
 Top paths:
 
@@ -131,7 +139,7 @@ Top paths:
 | `read_page -> parse_table -> answer` | 6 |
 | `read_page -> verify -> answer` | 6 |
 
-Interpretation: H4 core evidence is strong: all task types and all core actions are covered, with 12 unique tool sequences. The only failing H4-lite submetric is search-query diversity. This is partly expected because each seed is repeated across three teachers and two runs, so repeated anchor queries lower the unique search-query ratio.
+Interpretation: H4 core coverage is strong, but the original H4 gates still fail. The measured weak points are low rollout-level sequence diversity, low step-count variance, low rule-based deviation, and high repeated search-query rate. This confirms the report's concern: H4 needs more complex seeds and/or more heterogeneous teachers rather than a wording-only fix.
 
 ## Overall Decision
 
@@ -140,17 +148,18 @@ V5 improves refusal diversity and adds `gemini-3.1-flash-lite-preview`. The new 
 Strictly, V5 is not a clean full pass because:
 
 - H2 has 1 malformed rollout.
-- H3 positive has 1 reject and 1 review.
-- H4-lite is false due to search-query diversity.
+- H3 positive has 3 rejects and 1 review after stricter verifier checks.
+- H4-lite is false, and original H4 gates fail on step std, rule-based deviation, and search-query duplication.
 
 For pilot validation, V5 still supports the main claims:
 
 - Teacher agents generate non-direct, tool-using trajectories.
-- DocVerify++ catches bad or insufficient trajectories.
+- DocVerify++ catches bad, insufficient, and internally inconsistent trajectories.
 - The kept trajectory set covers the core tools and task types.
 
 Recommended action before treating V5 as the final report baseline:
 
 - Rerun or exclude the one malformed Gemini 2.5 numeric rollout.
+- Rerun or exclude the two Gemini 2.5 verification rollouts whose verify observations contradict the final answer.
 - Keep the Gemini 3.1 table case as a useful H3 review example, or rerun it if the final dataset requires only `keep` trajectories.
-- Adjust H4 search-query diversity to be computed at seed level rather than rollout level, or add more search-based seeds if strict H4-lite must pass unchanged.
+- Add longer multi-hop seeds and more search-based variants if strict H4 diversity must pass unchanged.

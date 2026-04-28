@@ -1,0 +1,161 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "easy",
+    "doc_id": "2308.06595v4",
+    "metadata": {
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage"
+      ],
+      "page": 7,
+      "review_status": "v4_query_sanitized"
+    },
+    "pdf_path": "data/raw_pdfs/2308.06595v4.pdf",
+    "question": "What is the heading or leading phrase on page 7? Return the page summary or the first visible leading phrase exactly. Do not choose a later figure caption, table caption, or section title unless it is the first visible leading phrase.",
+    "reference_answer": "BLIP2 Caption It is not possible to determine if a",
+    "required_tools": [
+      "read_page"
+    ],
+    "seed_id": "2308.06595v4__text__p7",
+    "source": "structure_heuristic_approved_v3_path_optimized_v4_query_sanitized",
+    "supporting_refs": [
+      {
+        "page": 7
+      }
+    ],
+    "task_type": "text_lookup",
+    "tool_hints": {
+      "target_page": 7
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview__negative",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to read page 7 to identify the first visible leading phrase or heading.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [7]}}",
+      "thought": "I need to read page 7 to identify the first visible leading phrase or heading.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          7
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The first visible leading phrase on page 7 is 'BLIP2 Caption'.\", \"action\": \"answer\", \"action_input\": {\"text\": \"BLIP2 Caption\", \"evidence_refs\": [{\"page\": 7}]}}",
+      "thought": "The first visible leading phrase on page 7 is 'BLIP2 Caption'.",
+      "action": "answer",
+      "action_input": {
+        "text": "BLIP2 Caption",
+        "evidence_refs": [
+          {
+            "page": 7
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "BLIP2 Caption",
+          "evidence_refs": [
+            {
+              "page": 7
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "BLIP2 Caption",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1349,
+      "completion_tokens": 43,
+      "total_tokens": 1392,
+      "prompt_tokens_details": {
+        "text_tokens": 1349,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1964,
+      "completion_tokens": 53,
+      "total_tokens": 2017,
+      "prompt_tokens_details": {
+        "text_tokens": 1964,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "missing_evidence_observations",
+    "source_teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+    "source_seed_id": "2308.06595v4__text__p7",
+    "source_final_action": "answer",
+    "source_final_answer": "BLIP2 Caption",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved but all non-terminal evidence observations were blanked."
+  }
+}

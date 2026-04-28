@@ -25,6 +25,15 @@ ALL_ACTIONS = [
 
 CORE_PILOT_ACTIONS = {"search", "read_page", "parse_table", "compute", "verify", "answer", "refuse"}
 
+RULE_BASED_TEMPLATES = {
+    "text_lookup": ["read_page", "answer"],
+    "table_lookup": ["read_page", "parse_table", "answer"],
+    "numeric_computation": ["parse_table", "compute", "answer"],
+    "cross_page": ["search", "read_page", "read_page", "answer"],
+    "verification": ["read_page", "verify", "answer"],
+    "unanswerable": ["search", "read_page", "refuse"],
+}
+
 
 def _pct(numerator: int, denominator: int) -> float:
     return round(numerator / denominator, 4) if denominator else 0.0
@@ -32,6 +41,15 @@ def _pct(numerator: int, denominator: int) -> float:
 
 def _sequence_key(sequence: List[str]) -> str:
     return " -> ".join(sequence) if sequence else "<empty>"
+
+
+def _rule_based_template(task_type: str) -> List[str]:
+    return RULE_BASED_TEMPLATES.get(task_type, [])
+
+
+def _matches_rule_template(task_type: str, sequence: List[str]) -> bool:
+    template = _rule_based_template(task_type)
+    return bool(template) and sequence == template
 
 
 def _load_docverify(path: Optional[str]) -> Dict[str, Dict[str, Any]]:
@@ -82,6 +100,8 @@ def _collect_records(rollout_dir: Path, docverify_by_file: Dict[str, Dict[str, A
                 "step_count": len(sequence),
                 "actions": sorted(set(sequence)),
                 "search_queries": _search_queries(payload),
+                "rule_based_template": _sequence_key(_rule_based_template(seed.get("task_type"))),
+                "matches_rule_based_template": _matches_rule_template(seed.get("task_type"), sequence),
                 "docverify_filter_decision": filter_decision,
                 "docverify_support_label": support_label,
             }
@@ -92,10 +112,12 @@ def _collect_records(rollout_dir: Path, docverify_by_file: Dict[str, Dict[str, A
 def _summarize(records: List[Dict[str, Any]]) -> Dict[str, Any]:
     total = len(records)
     unique_sequences = Counter(record["sequence_key"] for record in records)
+    unique_seeds = sorted({record["seed_id"] for record in records})
     action_counts = Counter(action for record in records for action in record["sequence"])
     action_coverage = sorted(action for action in ALL_ACTIONS if action_counts[action] > 0)
     core_coverage = sorted(action for action in CORE_PILOT_ACTIONS if action_counts[action] > 0)
     step_counts = [record["step_count"] for record in records]
+    rule_matches = sum(1 for record in records if record["matches_rule_based_template"])
     queries = [query for record in records for query in record["search_queries"]]
     normalized_queries = [_normalized_query(query) for query in queries]
     unique_queries = sorted(set(normalized_queries))
@@ -108,8 +130,10 @@ def _summarize(records: List[Dict[str, Any]]) -> Dict[str, Any]:
     unique_seed_query_pair_count = len(seed_query_pairs)
     return {
         "count": total,
+        "unique_seed_count": len(unique_seeds),
         "unique_sequence_count": len(unique_sequences),
         "unique_sequence_ratio": _pct(len(unique_sequences), total),
+        "seed_level_unique_sequence_ratio": _pct(len(unique_sequences), len(unique_seeds)),
         "top_sequences": dict(unique_sequences.most_common(20)),
         "action_coverage_count": len(action_coverage),
         "action_coverage": action_coverage,
@@ -119,6 +143,9 @@ def _summarize(records: List[Dict[str, Any]]) -> Dict[str, Any]:
         "step_count_mean": round(mean(step_counts), 4) if step_counts else 0.0,
         "step_count_std": round(pstdev(step_counts), 4) if len(step_counts) > 1 else 0.0,
         "step_count_distribution": dict(Counter(step_counts)),
+        "rule_based_template_match_count": rule_matches,
+        "rule_based_template_match_rate": _pct(rule_matches, total),
+        "rule_based_deviation_rate": _pct(total - rule_matches, total),
         "search_call_count": len(queries),
         "unique_search_query_count": len(unique_queries),
         "unique_search_query_ratio": _pct(len(unique_queries), len(queries)),
@@ -141,6 +168,26 @@ def _path_cross_table(records: List[Dict[str, Any]]) -> Dict[str, Dict[str, int]
     for record in records:
         table[record["task_type"]][record["sequence_key"]] += 1
     return {task: dict(counter.most_common()) for task, counter in sorted(table.items())}
+
+
+def _rule_based_table(records: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+    table: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
+    for record in records:
+        table[record["task_type"]].append(record)
+    out: Dict[str, Dict[str, Any]] = {}
+    for task_type, items in sorted(table.items()):
+        match_count = sum(1 for item in items if item["matches_rule_based_template"])
+        out[task_type] = {
+            "template": _sequence_key(_rule_based_template(task_type)),
+            "count": len(items),
+            "match_count": match_count,
+            "match_rate": _pct(match_count, len(items)),
+            "deviation_rate": _pct(len(items) - match_count, len(items)),
+            "deviating_sequences": dict(
+                Counter(item["sequence_key"] for item in items if not item["matches_rule_based_template"]).most_common()
+            ),
+        }
+    return out
 
 
 def _kept_records(records: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -176,6 +223,42 @@ def _h4_lite_decision(overall: Dict[str, Any], by_task_type: Dict[str, Dict[str,
     }
 
 
+def _h4_original_decision(overall: Dict[str, Any]) -> Dict[str, Any]:
+    sequence_ok = overall["unique_sequence_ratio"] >= 0.5
+    seed_sequence_ok = overall["seed_level_unique_sequence_ratio"] >= 0.5
+    action_coverage_ok = overall["action_coverage_count"] >= 7
+    step_std_ok = overall["step_count_std"] >= 1.5
+    rule_deviation_ok = overall["rule_based_deviation_rate"] >= 0.4
+    search_duplicate_rate = 1.0 - overall["unique_search_query_ratio"] if overall["search_call_count"] else 0.0
+    search_dup_ok = search_duplicate_rate < 0.3
+    return {
+        "strict_original_passed": sequence_ok and action_coverage_ok and step_std_ok and rule_deviation_ok and search_dup_ok,
+        "seed_normalized_passed": seed_sequence_ok and action_coverage_ok and step_std_ok and rule_deviation_ok and search_dup_ok,
+        "unique_sequence_ratio_ok": sequence_ok,
+        "seed_level_unique_sequence_ratio_ok": seed_sequence_ok,
+        "action_coverage_ok": action_coverage_ok,
+        "step_count_std_ok": step_std_ok,
+        "rule_based_deviation_ok": rule_deviation_ok,
+        "search_duplicate_rate_ok": search_dup_ok,
+        "thresholds": {
+            "unique_sequence_ratio": ">= 0.50",
+            "seed_level_unique_sequence_ratio": ">= 0.50",
+            "action_coverage_count": ">= 7",
+            "step_count_std": ">= 1.50",
+            "rule_based_deviation_rate": ">= 0.40",
+            "search_duplicate_rate": "< 0.30",
+        },
+        "observed": {
+            "unique_sequence_ratio": overall["unique_sequence_ratio"],
+            "seed_level_unique_sequence_ratio": overall["seed_level_unique_sequence_ratio"],
+            "action_coverage_count": overall["action_coverage_count"],
+            "step_count_std": overall["step_count_std"],
+            "rule_based_deviation_rate": overall["rule_based_deviation_rate"],
+            "search_duplicate_rate": round(search_duplicate_rate, 4),
+        },
+    }
+
+
 def evaluate(rollout_dir: Path, docverify_path: Optional[str]) -> Dict[str, Any]:
     docverify_by_file = _load_docverify(docverify_path)
     records = _collect_records(rollout_dir, docverify_by_file)
@@ -189,8 +272,11 @@ def evaluate(rollout_dir: Path, docverify_path: Optional[str]) -> Dict[str, Any]
         "by_teacher": _by_key(records, "teacher"),
         "by_task_type": by_task_type,
         "task_type_path_table": _path_cross_table(records),
+        "rule_based_templates": RULE_BASED_TEMPLATES,
+        "rule_based_template_table": _rule_based_table(records),
         "kept_only": _summarize(kept) if kept else None,
         "h4_lite_decision": _h4_lite_decision(overall, by_task_type),
+        "h4_original_decision": _h4_original_decision(overall),
         "records": records,
     }
     return payload
@@ -199,6 +285,7 @@ def evaluate(rollout_dir: Path, docverify_path: Optional[str]) -> Dict[str, Any]
 def write_markdown(path: Path, payload: Dict[str, Any]) -> None:
     overall = payload["overall"]
     decision = payload["h4_lite_decision"]
+    original = payload["h4_original_decision"]
     lines = [
         "# H4 Trajectory Diversity Analysis",
         "",
@@ -209,12 +296,16 @@ def write_markdown(path: Path, payload: Dict[str, Any]) -> None:
         "## Overall",
         "",
         f"- Count: `{overall['count']}`",
+        f"- Unique seed count: `{overall['unique_seed_count']}`",
         f"- Unique sequence count: `{overall['unique_sequence_count']}`",
         f"- Unique sequence ratio: `{overall['unique_sequence_ratio']:.2%}`",
+        f"- Seed-level unique sequence ratio: `{overall['seed_level_unique_sequence_ratio']:.2%}`",
         f"- Action coverage: `{overall['action_coverage_count']}/10` `{overall['action_coverage']}`",
         f"- Core pilot action coverage: `{overall['core_pilot_action_coverage_count']}/7` `{overall['core_pilot_action_coverage']}`",
         f"- Step count mean/std: `{overall['step_count_mean']}` / `{overall['step_count_std']}`",
         f"- Step count distribution: `{overall['step_count_distribution']}`",
+        f"- Rule-based template match rate: `{overall['rule_based_template_match_rate']:.2%}`",
+        f"- Rule-based deviation rate: `{overall['rule_based_deviation_rate']:.2%}`",
         f"- Search calls: `{overall['search_call_count']}`",
         f"- Unique search query count: `{overall['unique_search_query_count']}`",
         f"- Unique search query ratio: `{overall['unique_search_query_ratio']:.2%}`",
@@ -226,6 +317,9 @@ def write_markdown(path: Path, payload: Dict[str, Any]) -> None:
         "",
     ]
     for key, value in decision.items():
+        lines.append(f"- {key}: `{value}`")
+    lines.extend(["", "## Original H4 Gates", ""])
+    for key, value in original.items():
         lines.append(f"- {key}: `{value}`")
     lines.extend(["", "## Top Tool Sequences", ""])
     for sequence, count in overall["top_sequences"].items():
@@ -239,6 +333,16 @@ def write_markdown(path: Path, payload: Dict[str, Any]) -> None:
         lines.append(f"- Action coverage: `{stats['action_coverage']}`")
         lines.append("- Paths:")
         for sequence, count in payload["task_type_path_table"][task_type].items():
+            lines.append(f"  - `{sequence}`: `{count}`")
+        lines.append("")
+    lines.extend(["## Rule-Based Template Baseline", ""])
+    for task_type, stats in payload["rule_based_template_table"].items():
+        lines.append(f"### {task_type}")
+        lines.append(f"- Template: `{stats['template']}`")
+        lines.append(f"- Match rate: `{stats['match_rate']:.2%}`")
+        lines.append(f"- Deviation rate: `{stats['deviation_rate']:.2%}`")
+        lines.append("- Deviating sequences:")
+        for sequence, count in stats["deviating_sequences"].items():
             lines.append(f"  - `{sequence}`: `{count}`")
         lines.append("")
     if payload.get("kept_only"):

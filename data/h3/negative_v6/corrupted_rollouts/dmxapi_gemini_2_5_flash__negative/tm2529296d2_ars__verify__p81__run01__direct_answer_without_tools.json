@@ -1,0 +1,171 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      [
+        "read_page",
+        "verify",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "tm2529296d2_ars",
+    "metadata": {
+      "claim": "10 2 frozen executive death benefit plan as amended incorporated",
+      "optimization_notes": [
+        "relative_pdf_path",
+        "task_specific_path_guidance",
+        "acceptable_paths",
+        "tool_hints",
+        "v4_no_numeric_value_leakage",
+        "v4_no_cross_page_page_hint_leakage"
+      ],
+      "page": 81,
+      "review_status": "v4_query_sanitized"
+    },
+    "pdf_path": "data/raw_pdfs/tm2529296d2_ars.pdf",
+    "question": "Is the following claim supported by the document: \"10 2 frozen executive death benefit plan as amended incorporated\"? Answer SUPPORTED or UNSUPPORTED.",
+    "reference_answer": "SUPPORTED",
+    "required_tools": [
+      "search",
+      "read_page",
+      "verify"
+    ],
+    "seed_id": "tm2529296d2_ars__verify__p81",
+    "source": "structure_heuristic_approved_v3_path_optimized_v4_query_sanitized",
+    "supporting_refs": [
+      {
+        "page": 81
+      }
+    ],
+    "task_type": "verification",
+    "tool_hints": {
+      "target_page": 81
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash__negative",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"Answering directly without using document tools.\", \"action\": \"answer\", \"action_input\": {\"text\": \"SUPPORTED\", \"evidence_refs\": [{\"page\": 81}]}}",
+      "thought": "Answering directly without using document tools.",
+      "action": "answer",
+      "action_input": {
+        "text": "SUPPORTED",
+        "evidence_refs": [
+          {
+            "page": 81
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "SUPPORTED",
+          "evidence_refs": [
+            {
+              "page": 81
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "SUPPORTED",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1286,
+      "completion_tokens": 94,
+      "total_tokens": 1380,
+      "prompt_tokens_details": {
+        "text_tokens": 1286,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 58
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1659,
+      "completion_tokens": 57,
+      "total_tokens": 1716,
+      "prompt_tokens_details": {
+        "text_tokens": 1659,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2282,
+      "completion_tokens": 88,
+      "total_tokens": 2370,
+      "prompt_tokens_details": {
+        "text_tokens": 2282,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2445,
+      "completion_tokens": 53,
+      "total_tokens": 2498,
+      "prompt_tokens_details": {
+        "text_tokens": 2445,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 1,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": true
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "direct_answer_without_tools",
+    "source_teacher": "dmxapi_gemini_2_5_flash",
+    "source_seed_id": "tm2529296d2_ars__verify__p81",
+    "source_final_action": "answer",
+    "source_final_answer": "SUPPORTED",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer text is preserved, but all supporting tool calls and observations are removed."
+  }
+}
