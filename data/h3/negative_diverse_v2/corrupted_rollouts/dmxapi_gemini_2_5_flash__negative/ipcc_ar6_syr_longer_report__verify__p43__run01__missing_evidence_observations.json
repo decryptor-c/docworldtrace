@@ -1,0 +1,256 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      [
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      [
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "ipcc_ar6_syr_longer_report",
+    "metadata": {
+      "claim": "long term climate and development futures",
+      "page": 43
+    },
+    "pdf_path": "data/raw_pdfs/ipcc_ar6_syr_longer_report.pdf",
+    "question": "Is the following claim supported by the document: \"long term climate and development futures\"? Answer SUPPORTED or UNSUPPORTED.",
+    "reference_answer": "SUPPORTED",
+    "required_tools": [
+      "search",
+      "read_page",
+      "verify"
+    ],
+    "seed_id": "ipcc_ar6_syr_longer_report__verify__p43",
+    "source": "structure_heuristic",
+    "supporting_refs": [
+      {
+        "page": 43
+      }
+    ],
+    "task_type": "verification",
+    "tool_hints": {
+      "target_page": 43
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash__negative",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"action\": \"search\", \"action_input\": {\"query\": \"long term climate and development futures\", \"top_k\": 3}}\n",
+      "thought": "",
+      "action": "search",
+      "action_input": {
+        "query": "long term climate and development futures",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The search results indicate that the phrase \\\"long-term climate and development futures\\\" appears in the document, specifically as a section title on page 33 and 34. I should read these pages to confirm the claim.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [33, 34]}}\n",
+      "thought": "The search results indicate that the phrase \"long-term climate and development futures\" appears in the document, specifically as a section title on page 33 and 34. I should read these pages to confirm the claim.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          33,
+          34
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"The claim \\\"long term climate and development futures\\\" is explicitly stated as a section title on page 33 and 34. This directly supports the claim.\", \"action\": \"verify\", \"action_input\": {\"claim\": \"long term climate and development futures\", \"evidence_refs\": [{\"page\": 33}, {\"page\": 34}]}}\n",
+      "thought": "The claim \"long term climate and development futures\" is explicitly stated as a section title on page 33 and 34. This directly supports the claim.",
+      "action": "verify",
+      "action_input": {
+        "claim": "long term climate and development futures",
+        "evidence_refs": [
+          {
+            "page": 33
+          },
+          {
+            "page": 34
+          }
+        ]
+      },
+      "observation": {
+        "action": "verify",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 4,
+      "raw_model_output": "{\"thought\": \"The claim is supported by the document, as confirmed by the verify tool. I can now answer.\", \"action\": \"answer\", \"action_input\": {\"text\": \"SUPPORTED\", \"evidence_refs\": [{\"page\": 33}, {\"page\": 34}]}}\n",
+      "thought": "The claim is supported by the document, as confirmed by the verify tool. I can now answer.",
+      "action": "answer",
+      "action_input": {
+        "text": "SUPPORTED",
+        "evidence_refs": [
+          {
+            "page": 33
+          },
+          {
+            "page": 34
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "SUPPORTED",
+          "evidence_refs": [
+            {
+              "page": 33
+            },
+            {
+              "page": 34
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "verify",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "SUPPORTED",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1262,
+      "completion_tokens": 72,
+      "total_tokens": 1334,
+      "prompt_tokens_details": {
+        "text_tokens": 1262,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 42
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1551,
+      "completion_tokens": 77,
+      "total_tokens": 1628,
+      "prompt_tokens_details": {
+        "text_tokens": 1551,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2069,
+      "completion_tokens": 79,
+      "total_tokens": 2148,
+      "prompt_tokens_details": {
+        "text_tokens": 2069,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2218,
+      "completion_tokens": 62,
+      "total_tokens": 2280,
+      "prompt_tokens_details": {
+        "text_tokens": 2218,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 4,
+    "used_verify": true,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "missing_evidence_observations",
+    "source_teacher": "dmxapi_gemini_2_5_flash",
+    "source_seed_id": "ipcc_ar6_syr_longer_report__verify__p43",
+    "source_final_action": "answer",
+    "source_final_answer": "SUPPORTED",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved but all non-terminal evidence observations were blanked."
+  }
+}

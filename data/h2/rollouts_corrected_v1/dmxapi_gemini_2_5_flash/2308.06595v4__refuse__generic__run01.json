@@ -1,0 +1,293 @@
+{
+  "seed": {
+    "seed_id": "2308.06595v4__refuse__generic",
+    "doc_id": "2308.06595v4",
+    "pdf_path": "data/raw_pdfs/2308.06595v4.pdf",
+    "question": "What is the private mobile phone number of the first author or CEO listed in the document?",
+    "reference_answer": "REFUSE",
+    "task_type": "unanswerable",
+    "difficulty": "medium",
+    "required_tools": [
+      "search",
+      "read_page",
+      "refuse"
+    ],
+    "source": "structure_heuristic_v2_review",
+    "answerable": false,
+    "supporting_refs": [],
+    "metadata": {
+      "review_status": "needs_human_review",
+      "negative_evidence_query": "private mobile phone number first author CEO"
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"action\": \"search\", \"action_input\": {\"query\": \"phone number OR contact OR author OR CEO\", \"top_k\": 3}}",
+      "thought": "",
+      "action": "search",
+      "action_input": {
+        "query": "phone number OR contact OR author OR CEO",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "phone number OR contact OR author OR CEO",
+          "results": [
+            {
+              "page": 2,
+              "score": 3.0,
+              "snippet": "1 Introduction\nA long-standing challenge for artificial intelligence is to build general-purpose assistants\nthatcan,incollaborationwithhumans,solvediverseandnever-before-seentasks[1]. For\ntextual tasks, several recent works [2, 3, 4, 5, 6, "
+            },
+            {
+              "page": 6,
+              "score": 2.0,
+              "snippet": "andyoucanaddashortexplanation: <instruction>’. Response: Thispromptisemployed\nforbothsingleandmultipleimageinstances,withappropriatemodificationsforthelatter.\nThenweverifyeachresponsewithhumanannotators.3 Ifaresponseismarkedincorrect,the\nan"
+            },
+            {
+              "page": 12,
+              "score": 2.0,
+              "snippet": "C4[11]),improvedsoftwareandhardwareframeworks,andadvancesinmodality-specific\nmodelssuchaslanguagemodels(e.g.,[10]). Ourworkspecificallyevaluatesmodelswhich\ncangeneratetextualoutputs,givenoneormoreimages,andtext. Recentexamplesofsuch\nmodelsi"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The search results did not directly provide any contact information like a phone number. The snippets mention 'Introduction' and 'human annotators' but nothing about authors' or CEO's contact details. I will try to read the introduction page to see if author information is present there, as it's common for academic papers.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [2]}}",
+      "thought": "The search results did not directly provide any contact information like a phone number. The snippets mention 'Introduction' and 'human annotators' but nothing about authors' or CEO's contact details. I will try to read the introduction page to see if author information is present there, as it's common for academic papers.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          2
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 2,
+              "text": "1 Introduction\nA long-standing challenge for artificial intelligence is to build general-purpose assistants\nthatcan,incollaborationwithhumans,solvediverseandnever-before-seentasks[1]. For\ntextual tasks, several recent works [2, 3, 4, 5, 6, 7] have shown that fine-tuning language\nmodelssuchasGPT-3andLLaMAwithsupervisedinstruction+responseexamples[8,9,10]\nenablesthemtorespondtoimperativerequestsandquestionswithouttask-specifictraining.\nZero-shot generalization is promising not only for standard academic benchmarks, but –\nperhaps more-so – for creative, useful, and real-world queries that downstream users of\nlanguagetechnologiesarelikelytomake.\nOnthemultimodalside,recentinstruction-followingvision-languagemodelsalsoprovide\nazero-shotinterface. Givenanimage(ormultipleimages)andaquery(e.g.,“howmany\napplesareinthisimage?” or“Whatisthis?” or“WriteapoeminthestyleofRobertFrost\naboutthisscene.”) atextualresponseisprovided. RecentworkslikeOpenFlamingo[11,12],\nLLaVA[13]andothers[14,15,16,17,18],haveimplementedthisinterfacewithpromising\ninitialresults. AlthoughstandardbenchmarkslikeVQAv2[19]andCOCOcaptioning[20]\nare commonly used to assess performance, less is know about how models perform on\nbroader, open-endedqueriesthatresemblereal-worlduserbehavior. Evaluationsofsuch\nqueriestypicallyrelyoninformalandqualitativeapproaches.\nTo support quantitative evaluation for this setting, we present VisIT-Bench (Visual\nInsTruction Benchmark), a dynamic benchmark consisting of 592 challenging vision-\nlanguageinstructions. Eachinstancecontainsaninstruction,inputimage(s),ainstruction-\nconditioned caption (a human-crafted caption for the image(s)/instruction), and a human\nverifiedreference(Figure1). Instructionsareimage-contextualimperativerequestsorques-\ntions,e.g.,foranimageofpancakes,auserasks“howcanIcookthisinahealthyway?”.\nDifferentfromexistingzero-shotevaluations,manyoftheinstructionsfocusonopen-ended\ngenerationrequests(e.g.,“writeapoem...” or“whatshouldIbringifIweretovisithere?”).\nWecreatedVisIT-Benchtocoverawidearrayof“instructionfamilies”. Ourstartingpoint\nwasasetof70“wish-list”taskssuchas“homerenovation”and“gardeningtips”collectedby\ntheauthors:1 eachrequiringvariedhigh-levelskillsfromrecognitiontocomplexreasoning\n(Figure 2). We derived 25/70 instruction families from benchmark tasks such as Visual\nQuestion Answering (VQA) [21] and robust change captioning [22] into a chatbot-style\nformat(thisreformattingdiffersfrompriorwork[14,17,13],aswefocusonopen-ended\nchatbotstyleresponses.). Notably,10oftheserepurposedtasksinvolvemultipleimages.\nWe started with 10 images for each instruction family. Our annotators, guided by an\nexample,createanewinstruction,andprovidea(permissivelylicensed)image. Foreach\ninstruction, we next collect instruction-conditioned captions – unlike prior work [23, 24]\nthesedescriptionsaredesignednotonlytodescribetheimageingeneral,butalso,surface\ninformationtargetedtotheinstruction. Finally,weuseinstruction-conditionedcaptionsto\ngenerate areference candidate output fromGPT-4; an additional humanverificationstep\ndiscardsGPT-4referencesdeemedtobeincorrect.\nWeconductalarge-scaleempiricalcomparisonofmultimodalinstruction-followingmodels\nusing VisIT-Bench (§4). We first gather predictions for each instance from 7 candidate\nmodels. Then,wecollect5Khumanjudgementsofoutputqualitybypittingmodeloutputs\nhead-to-head,and(inaforced-choicesetup)crowd-sourcingpairwisepreferencejudgements.\nThis analysis not only reveals significant differences between models (e.g., that LLaVA-\n13b[13]isgenerallypreferredtoPanda[18]),butalso,thatthehumanverifiedreferences\nin our corpus are preferred significantly more than the ones generated using multimodal\nmodels. Wesummarizehead-to-headcomparisonswithtwometrics: 1)Eloratings[25,26],\n1Werecognizethatpromisingapplicationsmaynotbecoveredbyourset;andwedon’tnecessarilyadvocate\nfordeployingmodelsinallcaseswecover–wehopeVisIT-Benchcanhelptoquantifyshortcomingsandrisks.\n2",
+              "summary": "1 Introduction",
+              "image_path": "artifacts/docenv/2308.06595v4/page_002.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"Page 2, the introduction, does not contain any author contact information or a CEO's name. It's a research paper, so a CEO is unlikely to be mentioned. I will try searching for 'author' again, but this time I'll broaden my search to include 'affiliation' or 'contact information' to see if any author details are available elsewhere in the document, perhaps on the first page or an appendix.\", \"action\": \"search\", \"action_input\": {\"query\": \"author OR affiliation OR contact information\", \"top_k\": 3}}",
+      "thought": "Page 2, the introduction, does not contain any author contact information or a CEO's name. It's a research paper, so a CEO is unlikely to be mentioned. I will try searching for 'author' again, but this time I'll broaden my search to include 'affiliation' or 'contact information' to see if any author details are available elsewhere in the document, perhaps on the first page or an appendix.",
+      "action": "search",
+      "action_input": {
+        "query": "author OR affiliation OR contact information",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "author OR affiliation OR contact information",
+          "results": [
+            {
+              "page": 2,
+              "score": 2.0,
+              "snippet": "1 Introduction\nA long-standing challenge for artificial intelligence is to build general-purpose assistants\nthatcan,incollaborationwithhumans,solvediverseandnever-before-seentasks[1]. For\ntextual tasks, several recent works [2, 3, 4, 5, 6, "
+            },
+            {
+              "page": 6,
+              "score": 2.0,
+              "snippet": "andyoucanaddashortexplanation: <instruction>’. Response: Thispromptisemployed\nforbothsingleandmultipleimageinstances,withappropriatemodificationsforthelatter.\nThenweverifyeachresponsewithhumanannotators.3 Ifaresponseismarkedincorrect,the\nan"
+            },
+            {
+              "page": 7,
+              "score": 2.0,
+              "snippet": "BLIP2 Caption It is not possible to determine if a\ndisabled wheelchair-bound individual\na sign on a brick wall would find it easy to go into the store\nbased on the image of \"a sign on a brick\nGPT-4\nwall.\" Additional information about the\nIn"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 4,
+      "raw_model_output": "{\"thought\": \"The search results still don't provide any direct contact information or even a list of authors with affiliations. Academic papers usually list authors on the first page or at the beginning of the introduction. Given that I've searched for relevant terms and read the introduction without success, it's highly probable that this document does not contain the private mobile phone number of the first author or a CEO. I will check page 1 to be absolutely sure, as it's the most common place for author lists.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [1]}}",
+      "thought": "The search results still don't provide any direct contact information or even a list of authors with affiliations. Academic papers usually list authors on the first page or at the beginning of the introduction. Given that I've searched for relevant terms and read the introduction without success, it's highly probable that this document does not contain the private mobile phone number of the first author or a CEO. I will check page 1 to be absolutely sure, as it's the most common place for author lists.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          1
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 1,
+              "text": "VisIT-Bench: A Benchmark for Vision-Language\nInstruction Following Inspired by Real-World Use\nYonatanBitton*1,2 HritikBansal*3 JackHessel*4 RulinShao5 WanrongZhu6\nAnasAwadalla5 JoshGardner5 RohanTaori7 LudwigSchmidt4,5,8\nAbstract\nWeintroduceVisIT-Bench(VisualInsTructionBenchmark),abenchmark\nfor evaluation of instruction-following vision-language models for real-\nworlduse. Ourstartingpointiscurating70“instructionfamilies”thatwe\nenvisioninstructiontunedvision-languagemodelsshouldbeabletoaddress.\nExtendingbeyondevaluationslikeVQAv2andCOCO,tasksrangefrom\nbasicrecognitiontogameplayingandcreativegeneration. Followingcura-\ntion,ourdatasetcomprises592testqueries,eachwithahuman-authored\ninstruction-conditioned caption. These descriptions surface instruction-\nspecific factors, e.g., for an instruction asking about the accessibility of\na storefront for wheelchair users, the instruction-conditioned caption de-\nscribesramps/potentialobstacles. Thesedescriptionsenable1)collecting\nhuman-verifiedreferenceoutputsforeachinstance;and2)automaticevalu-\nationofcandidatemultimodalgenerationsusingatext-onlyLLM,aligning\nwithhumanjudgment. Wequantifyqualitygapsbetweenmodelsandrefer-\nencesusingbothhumanandautomaticevaluations;e.g.,thetop-performing\ninstruction-followingmodelwinsagainsttheGPT-4referenceinjust27%\nof the comparison. VisIT-Bench is dynamic to participate, practitioners\nsimply submit their model’s response on the project website; Data, code\nandleaderboardisavailableathttps://visit-bench.github.io/.\nInstruction Instruction-Conditioned Caption Human-Verified GPT4 Response\nCreate a catchy title There is a jeep parked on the street with \"Tan Lines & Ticket Stubs: A Love Story\nfor a country song the top down. There is a wheel cover on the Unbound\" -A country song about\nbased upon the spare tire in the back with an inscription leaving it all behind, finding love, and\nadvice printed on the that says, \"Quit your Job, Buy a Ticket, Get a embracing the freedom of the open\nwheel cover. Tan, Fall in Love, Never Return.\" road.\nFigure1: AnexamplefromVisIT-Bench,featuringanimage,achallenginginstruction,an\ninstruction-conditionedcaption,andahuman-verifiedGPT4response. Theseelementsare\nusedforevaluatingmultimodalchatbotsandupdatingadynamicleaderboard.\n∗\nEqualcontribution. Contactyonatanbitton1@gmail.com,hbansal@ucla.edu,jackh@allenai.org,\nschmidt@cs.washington.edu. 1HebrewUniversity 2GoogleResearch 3UCLA 4AllenInstituteforAI\n5UniversityofWashington 6UCSB 7Stanford 8LAION ,\nPreprint.Underreview.\n3202\nceD\n62\n]LC.sc[\n4v59560.8032:viXra",
+              "summary": "VisIT-Bench: A Benchmark for Vision-Language",
+              "image_path": "artifacts/docenv/2308.06595v4/page_001.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 5,
+      "raw_model_output": "{\"thought\": \"I have read page 1 and found the authors' names. However, there is no mention of their private mobile phone numbers or any contact information beyond a project website URL. There is also no mention of a CEO. Since the question specifically asks for a *private mobile phone number*, and such information is highly unlikely to be found in an academic paper, I can conclude that the information is not present in the document.\", \"action\": \"refuse\", \"action_input\": {\"reason\": \"The document lists the authors but does not provide any private mobile phone numbers or contact information for them. There is also no mention of a CEO in the document.\"}}",
+      "thought": "I have read page 1 and found the authors' names. However, there is no mention of their private mobile phone numbers or any contact information beyond a project website URL. There is also no mention of a CEO. Since the question specifically asks for a *private mobile phone number*, and such information is highly unlikely to be found in an academic paper, I can conclude that the information is not present in the document.",
+      "action": "refuse",
+      "action_input": {
+        "reason": "The document lists the authors but does not provide any private mobile phone numbers or contact information for them. There is also no mention of a CEO in the document."
+      },
+      "observation": {
+        "action": "refuse",
+        "status": "success",
+        "result": {
+          "reason": "The document lists the authors but does not provide any private mobile phone numbers or contact information for them. There is also no mention of a CEO in the document.",
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "refusal"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "search",
+    "read_page",
+    "refuse"
+  ],
+  "final_action": "refuse",
+  "final_answer": "The document lists the authors but does not provide any private mobile phone numbers or contact information for them. There is also no mention of a CEO in the document.",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1273,
+      "completion_tokens": 91,
+      "total_tokens": 1364,
+      "prompt_tokens_details": {
+        "text_tokens": 1273,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 59
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1617,
+      "completion_tokens": 91,
+      "total_tokens": 1708,
+      "prompt_tokens_details": {
+        "text_tokens": 1617,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2195,
+      "completion_tokens": 122,
+      "total_tokens": 2317,
+      "prompt_tokens_details": {
+        "text_tokens": 2195,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2617,
+      "completion_tokens": 127,
+      "total_tokens": 2744,
+      "prompt_tokens_details": {
+        "text_tokens": 2617,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 3214,
+      "completion_tokens": 137,
+      "total_tokens": 3351,
+      "prompt_tokens_details": {
+        "text_tokens": 3214,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 5,
+    "used_verify": false,
+    "used_refuse": true,
+    "direct_answer": false
+  }
+}

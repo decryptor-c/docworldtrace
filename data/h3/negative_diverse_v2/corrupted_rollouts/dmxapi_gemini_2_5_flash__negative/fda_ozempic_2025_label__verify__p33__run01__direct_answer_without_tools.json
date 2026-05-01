@@ -1,0 +1,166 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      [
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      [
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "fda_ozempic_2025_label",
+    "metadata": {
+      "claim": "ozempic is injected under the skin subcutaneously of your stomach",
+      "page": 33
+    },
+    "pdf_path": "data/raw_pdfs/fda_ozempic_2025_label.pdf",
+    "question": "Is the following claim supported by the document: \"ozempic is injected under the skin subcutaneously of your stomach\"? Answer SUPPORTED or UNSUPPORTED.",
+    "reference_answer": "SUPPORTED",
+    "required_tools": [
+      "search",
+      "read_page",
+      "verify"
+    ],
+    "seed_id": "fda_ozempic_2025_label__verify__p33",
+    "source": "structure_heuristic",
+    "supporting_refs": [
+      {
+        "page": 33
+      }
+    ],
+    "task_type": "verification",
+    "tool_hints": {
+      "target_page": 33
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash__negative",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"Answering directly without using document tools.\", \"action\": \"answer\", \"action_input\": {\"text\": \"SUPPORTED\", \"evidence_refs\": [{\"page\": 33}]}}",
+      "thought": "Answering directly without using document tools.",
+      "action": "answer",
+      "action_input": {
+        "text": "SUPPORTED",
+        "evidence_refs": [
+          {
+            "page": 33
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "SUPPORTED",
+          "evidence_refs": [
+            {
+              "page": 33
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "SUPPORTED",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1347,
+      "completion_tokens": 80,
+      "total_tokens": 1427,
+      "prompt_tokens_details": {
+        "text_tokens": 1347,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 49
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1656,
+      "completion_tokens": 23,
+      "total_tokens": 1679,
+      "prompt_tokens_details": {
+        "text_tokens": 1656,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2163,
+      "completion_tokens": 42,
+      "total_tokens": 2205,
+      "prompt_tokens_details": {
+        "text_tokens": 2163,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2281,
+      "completion_tokens": 31,
+      "total_tokens": 2312,
+      "prompt_tokens_details": {
+        "text_tokens": 2281,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 1,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": true
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "direct_answer_without_tools",
+    "source_teacher": "dmxapi_gemini_2_5_flash",
+    "source_seed_id": "fda_ozempic_2025_label__verify__p33",
+    "source_final_action": "answer",
+    "source_final_answer": "SUPPORTED",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer text is preserved, but all supporting tool calls and observations are removed."
+  }
+}

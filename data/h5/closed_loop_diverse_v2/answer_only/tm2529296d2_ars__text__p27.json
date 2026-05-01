@@ -1,0 +1,93 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "answer"
+      ],
+      [
+        "search",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "easy",
+    "doc_id": "tm2529296d2_ars",
+    "metadata": {
+      "page": 27
+    },
+    "pdf_path": "data/raw_pdfs/tm2529296d2_ars.pdf",
+    "question": "What is the heading or leading phrase on page 27?",
+    "reference_answer": "Technology Risks",
+    "required_tools": [
+      "read_page"
+    ],
+    "seed_id": "tm2529296d2_ars__text__p27",
+    "source": "structure_heuristic",
+    "supporting_refs": [
+      {
+        "page": 27
+      }
+    ],
+    "task_type": "text_lookup",
+    "tool_hints": {
+      "target_page": 27
+    }
+  },
+  "teacher": {
+    "name": "answer_only",
+    "model": "Qwen3-VL-8B-Instruct",
+    "adapter_path": "runs/h5_qwen3_vl_diverse_v2/answer_only_adapter"
+  },
+  "student": {
+    "name": "answer_only",
+    "adapter_path": "runs/h5_qwen3_vl_diverse_v2/answer_only_adapter"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"Use the final supervised answer.\", \"action\": \"answer\", \"action_input\": {\"text\": \"The heading on page 27 is 'Section 1: Introduction to the Document'.\"}}",
+      "thought": "Use the final supervised answer.",
+      "action": "answer",
+      "action_input": {
+        "text": "The heading on page 27 is 'Section 1: Introduction to the Document'.",
+        "evidence_refs": []
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "The heading on page 27 is 'Section 1: Introduction to the Document'.",
+          "evidence_refs": [],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "The heading on page 27 is 'Section 1: Introduction to the Document'.",
+  "raw_usage": [],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 1,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": true
+  },
+  "_file": "data/h5/closed_loop_diverse_v2/answer_only/tm2529296d2_ars__text__p27.json"
+}

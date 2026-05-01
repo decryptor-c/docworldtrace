@@ -1,0 +1,194 @@
+{
+  "seed": {
+    "seed_id": "irs_2025_form_1040__verify__p2",
+    "doc_id": "irs_2025_form_1040",
+    "pdf_path": "data/raw_pdfs/irs_2025_form_1040.pdf",
+    "question": "Is the following claim supported by the document: \"subtract line 14 from line 11b if zero or less enter 0 this is your taxable income\"? Answer SUPPORTED or UNSUPPORTED.",
+    "reference_answer": "SUPPORTED",
+    "task_type": "verification",
+    "difficulty": "medium",
+    "required_tools": [
+      "search",
+      "read_page",
+      "verify"
+    ],
+    "source": "structure_heuristic",
+    "answerable": true,
+    "supporting_refs": [
+      {
+        "page": 2
+      }
+    ],
+    "metadata": {
+      "page": 2,
+      "claim": "subtract line 14 from line 11b if zero or less enter 0 this is your taxable income",
+      "audit_note": "W7 fix: replaced trivial page-footer claim ('form 1040 2025 page 2') with the actual line 15 instruction text on p2."
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to check the instructions on page 2 of the 2025 Form 1040 to see if the claim regarding line 14 and line 11b is accurate.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [2]}}",
+      "thought": "I need to check the instructions on page 2 of the 2025 Form 1040 to see if the claim regarding line 14 and line 11b is accurate.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          2
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 2,
+              "text": "Form 1040 (2025) Page 2\nTax and 11b Amount from line 11a (adjusted gross income) . . . . . . . . . . . . . . . . 11b\nCredits\n12a Someone can claim You as a dependent Your spouse as a dependent\nb Spouse itemizes on a separate return c You were a dual-status alien\nd You: Were born before January 2, 1961 Are blind\nSpouse: Was born before January 2, 1961 Is blind\nStandard\ndeduction for— e Standard deduction or itemized deductions (from Schedule A). . . . . . . . . . . 12e\n• Single or 13a Qualified business income deduction from Form 8995 or Form 8995-A . . . . . . . . . 13a\nMarried filing\nseparately, b Additional deductions from Schedule 1-A, line 38 . . . . . . . . . . . . . . . 13b\n$15,750 14 Add lines 12e, 13a, and 13b . . . . . . . . . . . . . . . . . . . . . 14\n• Married filing\njointly or 15 Subtract line 14 from line 11b. If zero or less, enter -0-. This is your taxable income . . . . . 15\nQualifying 16 Tax (see instructions). Check if any from Form(s): 1 8814 2 4972 3 16\nsurviving\nspouse, 17 Amount from Schedule 2, line 3 . . . . . . . . . . . . . . . . . . . . 17\n$31,500\n18 Add lines 16 and 17 . . . . . . . . . . . . . . . . . . . . . . . . 18\n• Head of\nhousehold, 19 Child tax credit or credit for other dependents from Schedule 8812 . . . . . . . . . . 19\n$23,625 20 Amount from Schedule 3, line 8 . . . . . . . . . . . . . . . . . . . . 20\n• If you checked\na box on line 21 Add lines 19 and 20 . . . . . . . . . . . . . . . . . . . . . . . . 21\n12a, 12b, 12c, 22 Subtract line 21 from line 18. If zero or less, enter -0- . . . . . . . . . . . . . . 22\nor 12d, see inst.\n23 Other taxes, including self-employment tax, from Schedule 2, line 21 . . . . . . . . . 23\n24 Add lines 22 and 23. This is your total tax . . . . . . . . . . . . . . . . . 24\nPayments 25 Federal income tax withheld from:\nand a Form(s) W-2 . . . . . . . . . . . . . . . . . . 25a\nRefundable\nb Form(s) 1099 . . . . . . . . . . . . . . . . . . 25b\nCredits\nc Other forms (see instructions) . . . . . . . . . . . . . 25c\nd Add lines 25a through 25c . . . . . . . . . . . . . . . . . . . . . . 25d\n26 2025 estimated tax payments and amount applied from 2024 return . . . . . . . . . . 26\nIf you made estimated tax payments with your former spouse in 2025,\nIf you have a enter their SSN (see instructions):\nqualifying child,\n27a Earned income credit (EIC) . . . . . . . . . . . . . . 27a\nyou may need to\nattach Sch. EIC. b Clergy filing Schedule SE (see instructions) . . . . . . . . . . . . . . . .\nc If you do not want to claim the EIC, check here . . . . . . . . . . . . . . .\n28 Additional child tax credit (ACTC) from Schedule 8812. If you do not want\nto claim the ACTC, check here . . . . . . . . . . . . 28\n29 American opportunity credit from Form 8863, line 8 . . . . . . . 29\n30 Refundable adoption credit from Form 8839, line 13 . . . . . . 30\n31 Amount from Schedule 3, line 15 . . . . . . . . . . . . 31\n32 Add lines 27a, 28, 29, 30, and 31. These are your total other payments and refundable credits . 32\n33 Add lines 25d, 26, and 32. These are your total payments . . . . . . . . . . . . 33\nRefund 34 If line 33 is more than line 24, subtract line 24 from line 33. This is the amount you overpaid . . 34\n35a Amount of line 34 you want refunded to you. If Form 8888 is attached, check here . . . . 35a\nDirect deposit? b Routing number c Type: Checking Savings\nSee instructions.\nd Account number\n36 Amount of line 34 you want applied to your 2026 estimated tax . . . 36\nAmount 37 Subtract line 33 from line 24. This is the amount you owe.\nYou Owe For details on how to pay, go to www.irs.gov/Payments or see instructions . . . . . . . . 37\n38 Estimated tax penalty (see instructions) . . . . . . . . . . 38\nThird Party Do you want to allow another person to discuss this return with the IRS? See instructions. Yes. Complete below. No\nDesignee\nDesignee’s Phone Personal identification\nname no. number (PIN)\nSign Under penalties of perjury, I declare that I have examined this return and accompanying schedules and statements, and to the best of my knowledge and\nbelief, they are true, correct, and complete. Declaration of preparer (other than taxpayer) is based on all information of which preparer has any knowledge.\nHere\nYour signature Date Your occupation If the IRS sent you an Identity\nProtection PIN, enter it here\n(see inst.)\nJoint return? Spouse’s signature. If a joint return, both must sign. Date Spouse’s occupation If the IRS sent your spouse an\nSee instructions.\nIdentity Protection PIN, enter it here\nKeep a copy for\n(see inst.)\nyour records.\nPhone no. Email address\nPaid Preparer’s name Preparer’s signature Date PTIN Check if:\nPreparer Self-employed\nUse Only\nFirm’s name Phone no.\nFirm’s address Firm’s EIN\nGo to www.irs.gov/Form1040 for instructions and the latest information. Form 1040 (2025)",
+              "summary": "Form 1040 (2025) Page 2",
+              "image_path": "artifacts/docenv/irs_2025_form_1040/page_002.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The document states on line 15: 'Subtract line 14 from line 11b. If zero or less, enter -0-. This is your taxable income.' The claim in the question matches this instruction.\", \"action\": \"verify\", \"action_input\": {\"claim\": \"subtract line 14 from line 11b if zero or less enter 0 this is your taxable income\", \"evidence_refs\": [{\"page\": 2}]}}",
+      "thought": "The document states on line 15: 'Subtract line 14 from line 11b. If zero or less, enter -0-. This is your taxable income.' The claim in the question matches this instruction.",
+      "action": "verify",
+      "action_input": {
+        "claim": "subtract line 14 from line 11b if zero or less enter 0 this is your taxable income",
+        "evidence_refs": [
+          {
+            "page": 2
+          }
+        ]
+      },
+      "observation": {
+        "action": "verify",
+        "status": "success",
+        "result": {
+          "claim": "subtract line 14 from line 11b if zero or less enter 0 this is your taxable income",
+          "evidence_count": 1,
+          "label": "SUPPORTED",
+          "sufficiency": "SUFFICIENT",
+          "confidence": 0.99,
+          "failure_taxonomy": null
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "verification"
+        },
+        "confidence": 0.99,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"The claim is supported by the document.\", \"action\": \"answer\", \"action_input\": {\"text\": \"SUPPORTED\", \"evidence_refs\": [{\"page\": 2}]}}",
+      "thought": "The claim is supported by the document.",
+      "action": "answer",
+      "action_input": {
+        "text": "SUPPORTED",
+        "evidence_refs": [
+          {
+            "page": 2
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "SUPPORTED",
+          "evidence_refs": [
+            {
+              "page": 2
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "verify",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "SUPPORTED",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1085,
+      "completion_tokens": 68,
+      "total_tokens": 1153,
+      "prompt_tokens_details": {
+        "text_tokens": 1085,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1865,
+      "completion_tokens": 101,
+      "total_tokens": 1966,
+      "prompt_tokens_details": {
+        "text_tokens": 1865,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2052,
+      "completion_tokens": 42,
+      "total_tokens": 2094,
+      "prompt_tokens_details": {
+        "text_tokens": 2052,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": true,
+    "used_refuse": false,
+    "direct_answer": false
+  }
+}

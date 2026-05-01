@@ -1,0 +1,208 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      [
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      [
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "epa_ghg_inventory_1990_2022",
+    "metadata": {
+      "audit_note": "W4 fix: original claim was an OCR'd numeric row from a city table — fragile. Switched to a clean ES-table claim grounded in p41 Table ES-2 (Total Gross Emissions 2022 = 6,343.2).",
+      "claim": "total gross emissions in 2022 were 6 343 2 mmt co2 eq",
+      "page": 41
+    },
+    "pdf_path": "data/raw_pdfs/epa_ghg_inventory_1990_2022.pdf",
+    "question": "Is the following claim supported by the document: \"total gross emissions in 2022 were 6 343 2 mmt co2 eq\"? Answer SUPPORTED or UNSUPPORTED.",
+    "reference_answer": "SUPPORTED",
+    "required_tools": [
+      "search",
+      "read_page",
+      "verify"
+    ],
+    "seed_id": "epa_ghg_inventory_1990_2022__verify__p41",
+    "source": "structure_heuristic",
+    "supporting_refs": [
+      {
+        "page": 41
+      }
+    ],
+    "task_type": "verification",
+    "tool_hints": {
+      "target_page": 41
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview__negative",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to verify the total gross emissions for 2022 on page 41.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [41]}}",
+      "thought": "I need to verify the total gross emissions for 2022 on page 41.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          41
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The table on page 41 shows 'Total Gross Emissions (Sources)' for 2022 as 6,343.2 MMT CO2 Eq. The claim states '6 343 2 mmt co2 eq', which matches the value in the table (ignoring the formatting difference).\", \"action\": \"verify\", \"action_input\": {\"claim\": \"total gross emissions in 2022 were 6 343 2 mmt co2 eq\", \"evidence_refs\": [{\"page\": 41}]}}",
+      "thought": "The table on page 41 shows 'Total Gross Emissions (Sources)' for 2022 as 6,343.2 MMT CO2 Eq. The claim states '6 343 2 mmt co2 eq', which matches the value in the table (ignoring the formatting difference).",
+      "action": "verify",
+      "action_input": {
+        "claim": "total gross emissions in 2022 were 6 343 2 mmt co2 eq",
+        "evidence_refs": [
+          {
+            "page": 41
+          }
+        ]
+      },
+      "observation": {
+        "action": "verify",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"action\": \"answer\", \"action_input\": {\"text\": \"SUPPORTED\", \"evidence_refs\": [{\"page\": 41}]}}",
+      "thought": "",
+      "action": "answer",
+      "action_input": {
+        "text": "SUPPORTED",
+        "evidence_refs": [
+          {
+            "page": 41
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "SUPPORTED",
+          "evidence_refs": [
+            {
+              "page": 41
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "verify",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "SUPPORTED",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1353,
+      "completion_tokens": 47,
+      "total_tokens": 1400,
+      "prompt_tokens_details": {
+        "text_tokens": 1353,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2430,
+      "completion_tokens": 124,
+      "total_tokens": 2554,
+      "prompt_tokens_details": {
+        "text_tokens": 2430,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2638,
+      "completion_tokens": 31,
+      "total_tokens": 2669,
+      "prompt_tokens_details": {
+        "text_tokens": 2638,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": true,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "missing_evidence_observations",
+    "source_teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+    "source_seed_id": "epa_ghg_inventory_1990_2022__verify__p41",
+    "source_final_action": "answer",
+    "source_final_answer": "SUPPORTED",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved but all non-terminal evidence observations were blanked."
+  }
+}

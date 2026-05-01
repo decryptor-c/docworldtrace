@@ -1,0 +1,106 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "read_page",
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "ocr",
+        "compute",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "tm2529296d2_ars",
+    "metadata": {
+      "bbox": [
+        35.94,
+        333.96,
+        535.455,
+        458.2800500000001
+      ],
+      "column_label": "High-Touch Solutions N.A.",
+      "first_label": "Revenue",
+      "first_value": 14.0,
+      "formula": "(second_value - first_value) / abs(first_value) * 100",
+      "page": 2,
+      "review_status": "needs_human_review",
+      "second_label": "Reported sales growth",
+      "second_value": 2.0
+    },
+    "pdf_path": "data/raw_pdfs/tm2529296d2_ars.pdf",
+    "question": "Based on the table on page 2, for column \"High-Touch Solutions N.A.\", what is the percentage change from row \"Revenue\" (14) to row \"Reported sales growth\" (2)?",
+    "reference_answer": "-85.71%",
+    "required_tools": [
+      "parse_table",
+      "compute"
+    ],
+    "seed_id": "tm2529296d2_ars__numeric__p2",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          35.94,
+          333.96,
+          535.455,
+          458.2800500000001
+        ],
+        "page": 2
+      }
+    ],
+    "task_type": "numeric_computation",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "compute_note": "Use the numeric formula in the question and preserve the sign of the percentage change.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        35.94,
+        333.96,
+        535.455,
+        458.2800500000001
+      ],
+      "target_page": 2
+    }
+  },
+  "teacher": {
+    "name": "answer_only",
+    "model": "Qwen3-VL-8B-Instruct",
+    "adapter_path": "runs/h5_qwen3_vl_diverse_v2/answer_only_adapter"
+  },
+  "student": {
+    "name": "answer_only",
+    "adapter_path": "runs/h5_qwen3_vl_diverse_v2/answer_only_adapter"
+  },
+  "status": "format_error",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"Use the final supervised answer.\", \"action\": \"compute\", \"action_input\": {\"text\": \"((2 - 14) / 14) * 100\", \"evidence_refs\": [{\"page\": 2}]}}",
+      "format_valid": false,
+      "execution_valid": false,
+      "error": "'expr'"
+    }
+  ],
+  "tool_sequence": [],
+  "final_action": null,
+  "final_answer": null,
+  "raw_usage": [],
+  "metrics": {
+    "format_compliant": false,
+    "terminated_normally": false,
+    "step_count": 1,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "_file": "data/h5/closed_loop_diverse_v2/answer_only/tm2529296d2_ars__numeric__p2.json"
+}

@@ -1,0 +1,160 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      [
+        "parse_table",
+        "answer"
+      ],
+      [
+        "read_page",
+        "ocr",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "usgs_mcs_2025",
+    "metadata": {
+      "bbox": [
+        49.645714285714284,
+        59.639999999999986,
+        561.8314285714287,
+        696.16
+      ],
+      "column_label": "Applications",
+      "page": 21,
+      "review_status": "needs_human_review",
+      "row_label": "Aluminum"
+    },
+    "pdf_path": "data/raw_pdfs/usgs_mcs_2025.pdf",
+    "question": "On page 21, in the table, what is the value for row \"Aluminum\" under column \"Applications\"?",
+    "reference_answer": "Metallurgy and many sectors of the economy.",
+    "required_tools": [
+      "read_page",
+      "parse_table"
+    ],
+    "seed_id": "usgs_mcs_2025__table__p21",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          49.645714285714284,
+          59.639999999999986,
+          561.8314285714287,
+          696.16
+        ],
+        "page": 21
+      }
+    ],
+    "task_type": "table_lookup",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        49.645714285714284,
+        59.639999999999986,
+        561.8314285714287,
+        696.16
+      ],
+      "target_page": 21
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview__negative",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"Answering directly without using document tools.\", \"action\": \"answer\", \"action_input\": {\"text\": \"The value for 'Aluminum' under the 'Applications' column is 'Metallurgy and many sectors of the economy.'\", \"evidence_refs\": [{\"page\": 21}]}}",
+      "thought": "Answering directly without using document tools.",
+      "action": "answer",
+      "action_input": {
+        "text": "The value for 'Aluminum' under the 'Applications' column is 'Metallurgy and many sectors of the economy.'",
+        "evidence_refs": [
+          {
+            "page": 21
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "The value for 'Aluminum' under the 'Applications' column is 'Metallurgy and many sectors of the economy.'",
+          "evidence_refs": [
+            {
+              "page": 21
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "The value for 'Aluminum' under the 'Applications' column is 'Metallurgy and many sectors of the economy.'",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1420,
+      "completion_tokens": 121,
+      "total_tokens": 1541,
+      "prompt_tokens_details": {
+        "text_tokens": 1420,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2132,
+      "completion_tokens": 77,
+      "total_tokens": 2209,
+      "prompt_tokens_details": {
+        "text_tokens": 2132,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 1,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": true
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "direct_answer_without_tools",
+    "source_teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+    "source_seed_id": "usgs_mcs_2025__table__p21",
+    "source_final_action": "answer",
+    "source_final_answer": "The value for 'Aluminum' under the 'Applications' column is 'Metallurgy and many sectors of the economy.'",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer text is preserved, but all supporting tool calls and observations are removed."
+  }
+}

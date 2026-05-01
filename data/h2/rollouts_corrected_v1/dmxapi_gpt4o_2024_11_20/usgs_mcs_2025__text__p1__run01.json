@@ -1,0 +1,150 @@
+{
+  "seed": {
+    "seed_id": "usgs_mcs_2025__text__p1",
+    "doc_id": "usgs_mcs_2025",
+    "pdf_path": "data/raw_pdfs/usgs_mcs_2025.pdf",
+    "question": "What is the heading or leading phrase on page 1? Return the page summary or the first visible leading phrase exactly. Do not choose a later figure caption, table caption, or section title unless it is the first visible leading phrase.",
+    "reference_answer": "U.S. Department of the Interior",
+    "task_type": "text_lookup",
+    "difficulty": "easy",
+    "required_tools": [
+      "read_page"
+    ],
+    "source": "structure_heuristic_v2_review",
+    "answerable": true,
+    "supporting_refs": [
+      {
+        "page": 1
+      }
+    ],
+    "metadata": {
+      "review_status": "needs_human_review",
+      "page": 1,
+      "audit_note": "B9 fix: p2 is only a cover photo caption (not a heading), so cross-page task degenerates. Converted to text_lookup on p1 ('U.S. Department of the Interior'). USGS cross_page would need later content pages (not yet vetted). | Followup F3: removed leftover cross_page fields (anchor_page/answer_page/anchor_phrase) since task is now text_lookup."
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I need to read page 1 to find the heading or leading phrase.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[1]}}",
+      "thought": "I need to read page 1 to find the heading or leading phrase.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          1
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 1,
+              "text": "U.S. Department of the Interior\nU.S. Geological Survey\nMINERAL COMMODITY\nSUMMARIES 2025\nAbrasives Fluorspar Mercury Silicon\nAluminum Gallium Mica Silver\nAntimony Garnet Molybdenum Soda Ash\nArsenic Gemstones Nickel Stone\nAsbestos Germanium Niobium Strontium\nBarite Gold Nitrogen Sulfur\nBauxite Graphite Palladium Talc\nBeryllium Gypsum Peat Tantalum\nBismuth Hafnium Perlite Tellurium\nBoron Helium Phosphate Rock Thallium\nBromine Indium Platinum Thorium\nCadmium Iodine Potash Tin\nCement Iron and Steel Pumice Titanium\nCesium Iron Ore Quartz Tungsten\nChromium Iron Oxide Pigments Rare Earths Vanadium\nClays Kyanite Rhenium Vermiculite\nCobalt Lead Rubidium Wollastonite\nCopper Lime Salt Yttrium\nDiamond Lithium Sand and Gravel Zeolites\nDiatomite Magnesium Scandium Zinc\nFeldspar Manganese Selenium Zirconium\nVersion 1.2, March 2025",
+              "summary": "U.S. Department of the Interior",
+              "image_path": "artifacts/docenv/usgs_mcs_2025/page_001.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The heading or leading phrase on page 1 is clearly visible in the summary and text.\",\"action\":\"answer\",\"action_input\":{\"text\":\"U.S. Department of the Interior\",\"evidence_refs\":[{\"page\":1}]}}",
+      "thought": "The heading or leading phrase on page 1 is clearly visible in the summary and text.",
+      "action": "answer",
+      "action_input": {
+        "text": "U.S. Department of the Interior",
+        "evidence_refs": [
+          {
+            "page": 1
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "U.S. Department of the Interior",
+          "evidence_refs": [
+            {
+              "page": 1
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "U.S. Department of the Interior",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1096,
+      "completion_tokens": 33,
+      "total_tokens": 1129,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1442,
+      "completion_tokens": 49,
+      "total_tokens": 1491,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  }
+}

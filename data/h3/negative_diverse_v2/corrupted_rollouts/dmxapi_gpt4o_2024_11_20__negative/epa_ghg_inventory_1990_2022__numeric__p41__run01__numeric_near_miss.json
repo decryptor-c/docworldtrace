@@ -1,0 +1,775 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "read_page",
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "ocr",
+        "compute",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "epa_ghg_inventory_1990_2022",
+    "metadata": {
+      "audit_note": "B1 fix: original compared header row 'Gas/Source' (1990 header) with -19.4 — meaningless. Reformulated to two truly comparable values in the same column. | V2 fix: Corrected the two-decimal signed percentage GT from -14.93% to -14.94%.",
+      "bbox": [
+        74.904,
+        481.005997,
+        540.1,
+        694.289688947368
+      ],
+      "column_label": "1990",
+      "first_label": "Total Gross Emissions (Sources)",
+      "first_value": 6536.9,
+      "formula": "(second_value - first_value) / abs(first_value) * 100",
+      "page": 41,
+      "review_status": "needs_human_review",
+      "second_label": "Net Emissions (Sources and Sinks)",
+      "second_value": 5560.2
+    },
+    "pdf_path": "data/raw_pdfs/epa_ghg_inventory_1990_2022.pdf",
+    "question": "Based on the table on page 41, in column \"1990\", compute the percentage by which the value in row \"Net Emissions (Sources and Sinks)\" (5560.2) differs from the value in row \"Total Gross Emissions (Sources)\" (6536.9). Report only the final result as a signed percentage with two decimals.",
+    "reference_answer": "-14.94%",
+    "required_tools": [
+      "parse_table",
+      "compute"
+    ],
+    "seed_id": "epa_ghg_inventory_1990_2022__numeric__p41",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          74.904,
+          481.005997,
+          540.1,
+          694.289688947368
+        ],
+        "page": 41
+      }
+    ],
+    "task_type": "numeric_computation",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "compute_note": "Use the numeric formula in the question and preserve the sign of the percentage change.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        74.904,
+        481.005997,
+        540.1,
+        694.289688947368
+      ],
+      "target_page": 41
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I should start by parsing the table on page 41 using the provided bbox to extract the relevant values.\",\"action\":\"parse_table\",\"action_input\":{\"page_id\":41,\"bbox\":[74.904,481.005997,540.1,694.289688947368]}}",
+      "thought": "I should start by parsing the table on page 41 using the provided bbox to extract the relevant values.",
+      "action": "parse_table",
+      "action_input": {
+        "page_id": 41,
+        "bbox": [
+          74.904,
+          481.005997,
+          540.1,
+          694.289688947368
+        ]
+      },
+      "observation": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {
+          "page": 41,
+          "bbox": [
+            74.904,
+            481.005997,
+            540.1,
+            694.2896889473683
+          ],
+          "rows": [
+            [
+              "Gas/Source",
+              "",
+              "1990",
+              "2005",
+              "2018",
+              "",
+              "2019",
+              "",
+              "2020",
+              "",
+              "2021",
+              "",
+              "2022",
+              "",
+              "Percent",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "Change",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "Since",
+              ""
+            ],
+            [
+              "Gas/Source",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "2019",
+              "",
+              "2020",
+              "",
+              "2021",
+              "",
+              "2022",
+              "",
+              "1990",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "6,126.9",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "CH (excludes LULUCF sources)a\n4",
+              "",
+              "871.7",
+              "795.4",
+              "771.5",
+              "",
+              "754.3",
+              "",
+              "735.3",
+              "",
+              "720.5",
+              "",
+              "702.4",
+              "",
+              "-19.4%",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "419.2",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "HFCs",
+              "",
+              "47.7",
+              "121.7",
+              "163.9",
+              "",
+              "168.2",
+              "",
+              "170.3",
+              "",
+              "177.0",
+              "",
+              "182.8",
+              "",
+              "282.9%",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "10.2",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "SF\n6",
+              "",
+              "37.9",
+              "20.2",
+              "7.6",
+              "",
+              "8.4",
+              "",
+              "8.1",
+              "",
+              "8.5",
+              "",
+              "7.6",
+              "",
+              "-80.0%",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "1.0",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Total Gross Emissions (Sources)a",
+              "",
+              "6,536.9",
+              "7,494.6",
+              "6,752.7",
+              "",
+              "6,590.1",
+              "",
+              "6,001.8",
+              "",
+              "6,328.8",
+              "",
+              "6,343.2",
+              "",
+              "-3.0%",
+              ""
+            ],
+            [
+              "LULUCF Emissionsb",
+              "",
+              "58.0",
+              "68.9",
+              "62.8",
+              "",
+              "58.0",
+              "",
+              "68.4",
+              "",
+              "72.9",
+              "",
+              "67.6",
+              "",
+              "16.5%",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "58.5",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "NO\n2",
+              "",
+              "4.8",
+              "10.3",
+              "7.3",
+              "",
+              "5.5",
+              "",
+              "9.1",
+              "",
+              "10.7",
+              "",
+              "9.1",
+              "",
+              "88.3%",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "(976.6)",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "LULUCF Sector Net Totald",
+              "",
+              "(976.7)",
+              "(907.7)",
+              "(915.5)",
+              "",
+              "(863.6)",
+              "",
+              "(904.4)",
+              "",
+              "(910.6)",
+              "",
+              "(854.2)",
+              "",
+              "-12.5%",
+              ""
+            ],
+            [
+              "Net Emissions (Sources and Sinks)",
+              "",
+              "5,560.2",
+              "6,586.9",
+              "5,837.3",
+              "",
+              "5,726.6",
+              "",
+              "5,097.4",
+              "",
+              "5,418.2",
+              "",
+              "5,489.0",
+              "",
+              "-1.3%",
+              ""
+            ]
+          ],
+          "markdown": "| Gas/Source |  | 1990 | 2005 | 2018 |  | 2019 |  | 2020 |  | 2021 |  | 2022 |  | Percent |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  | Change |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  | Since |  |\n| Gas/Source |  |  |  |  |  | 2019 |  | 2020 |  | 2021 |  | 2022 |  | 1990 |  |\n|  |  |  | 6,126.9 |  |  |  |  |  |  |  |  |  |  |  |  |\n| CH (excludes LULUCF sources)a\n4 |  | 871.7 | 795.4 | 771.5 |  | 754.3 |  | 735.3 |  | 720.5 |  | 702.4 |  | -19.4% |  |\n|  |  |  | 419.2 |  |  |  |  |  |  |  |  |  |  |  |  |\n| HFCs |  | 47.7 | 121.7 | 163.9 |  | 168.2 |  | 170.3 |  | 177.0 |  | 182.8 |  | 282.9% |  |\n|  |  |  | 10.2 |  |  |  |  |  |  |  |  |  |  |  |  |\n| SF\n6 |  | 37.9 | 20.2 | 7.6 |  | 8.4 |  | 8.1 |  | 8.5 |  | 7.6 |  | -80.0% |  |\n|  |  |  | 1.0 |  |  |  |  |  |  |  |  |  |  |  |  |\n| Total Gross Emissions (Sources)a |  | 6,536.9 | 7,494.6 | 6,752.7 |  | 6,590.1 |  | 6,001.8 |  | 6,328.8 |  | 6,343.2 |  | -3.0% |  |\n| LULUCF Emissionsb |  | 58.0 | 68.9 | 62.8 |  | 58.0 |  | 68.4 |  | 72.9 |  | 67.6 |  | 16.5% |  |\n|  |  |  | 58.5 |  |  |  |  |  |  |  |  |  |  |  |  |\n| NO\n2 |  | 4.8 | 10.3 | 7.3 |  | 5.5 |  | 9.1 |  | 10.7 |  | 9.1 |  | 88.3% |  |\n|  |  |  | (976.6) |  |  |  |  |  |  |  |  |  |  |  |  |\n| LULUCF Sector Net Totald |  | (976.7) | (907.7) | (915.5) |  | (863.6) |  | (904.4) |  | (910.6) |  | (854.2) |  | -12.5% |  |\n| Net Emissions (Sources and Sinks) |  | 5,560.2 | 6,586.9 | 5,837.3 |  | 5,726.6 |  | 5,097.4 |  | 5,418.2 |  | 5,489.0 |  | -1.3% |  |"
+        },
+        "provenance": {
+          "page": 41,
+          "bbox": [
+            74.904,
+            481.005997,
+            540.1,
+            694.2896889473683
+          ],
+          "element_type": "table"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The table parsing did not fully capture the rows for 'Net Emissions (Sources and Sinks)' and 'Total Gross Emissions (Sources)'. I need to refine the extraction using OCR on the same region.\",\"action\":\"ocr\",\"action_input\":{\"page_id\":41,\"bbox\":[74.904,481.005997,540.1,694.289688947368]}}",
+      "thought": "The table parsing did not fully capture the rows for 'Net Emissions (Sources and Sinks)' and 'Total Gross Emissions (Sources)'. I need to refine the extraction using OCR on the same region.",
+      "action": "ocr",
+      "action_input": {
+        "page_id": 41,
+        "bbox": [
+          74.904,
+          481.005997,
+          540.1,
+          694.289688947368
+        ]
+      },
+      "observation": {
+        "action": "ocr",
+        "status": "success",
+        "result": {
+          "page": 41,
+          "bbox": [
+            74.904,
+            481.005997,
+            540.1,
+            694.289688947368
+          ],
+          "text": "| Gas/Source |  | 1990 | 2005 | 2018 |  | 2019 |  | 2020 |  | 2021 |  | 2022 |  | Percent |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  | Change |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  | Since |  |\n| Gas/Source |  |  |  |  |  | 2019 |  | 2020 |  | 2021 |  | 2022 |  | 1990 |  |\n|  |  |  | 6,126.9 |  |  |  |  |  |  |  |  |  |  |  |  |\n| CH (excludes LULUCF sources)a\n4 |  | 871.7 | 795.4 | 771.5 |  | 754.3 |  | 735.3 |  | 720.5 |  | 702.4 |  | -19.4% |  |\n|  |  |  | 419.2 |  |  |  |  |  |  |  |  |  |  |  |  |\n| HFCs |  | 47.7 | 121.7 | 163.9 |  | 168.2 |  | 170.3 |  | 177.0 |  | 182.8 |  | 282.9% |  |\n|  |  |  | 10.2 |  |  |  |  |  |  |  |  |  |  |  |  |\n| SF\n6 |  | 37.9 | 20.2 | 7.6 |  | 8.4 |  | 8.1 |  | 8.5 |  | 7.6 |  | -80.0% |  |\n|  |  |  | 1.0 |  |  |  |  |  |  |  |  |  |  |  |  |\n| Total Gross Emissions (Sources)a |  | 6,536.9 | 7,494.6 | 6,752.7 |  | 6,590.1 |  | 6,001.8 |  | 6,328.8 |  | 6,343.2 |  | -3.0% |  |\n| LULUCF Emissionsb |  | 58.0 | 68.9 | 62.8 |  | 58.0 |  | 68.4 |  | 72.9 |  | 67.6 |  | 16.5% |  |\n|  |  |  | 58.5 |  |  |  |  |  |  |  |  |  |  |  |  |\n| NO\n2 |  | 4.8 | 10.3 | 7.3 |  | 5.5 |  | 9.1 |  | 10.7 |  | 9.1 |  | 88.3% |  |\n|  |  |  | (976.6) |  |  |  |  |  |  |  |  |  |  |  |  |\n| LULUCF Sector Net Totald |  | (976.7) | (907.7) | (915.5) |  | (863.6) |  | (904.4) |  | (910.6) |  | (854.2) |  | -12.5% |  |\n| Net Emissions (Sources and Sinks) |  | 5,560.2 | 6,586.9 | 5,837.3 |  | 5,726.6 |  | 5,097.4 |  | 5,418.2 |  | 5,489.0 |  | -1.3% |  |"
+        },
+        "provenance": {
+          "page": 41,
+          "bbox": [
+            74.904,
+            481.005997,
+            540.1,
+            694.289688947368
+          ],
+          "element_type": "ocr_text"
+        },
+        "confidence": 0.88,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\":\"The OCR output still does not provide the full numeric values for 'Net Emissions (Sources and Sinks)' and 'Total Gross Emissions (Sources)'. I need to refine the extraction further.\",\"action\":\"crop\",\"action_input\":{\"page_id\":41,\"bbox\":[74.904,481.005997,540.1,694.289688947368]}}",
+      "thought": "The OCR output still does not provide the full numeric values for 'Net Emissions (Sources and Sinks)' and 'Total Gross Emissions (Sources)'. I need to refine the extraction further.",
+      "action": "crop",
+      "action_input": {
+        "page_id": 41,
+        "bbox": [
+          74.904,
+          481.005997,
+          540.1,
+          694.289688947368
+        ]
+      },
+      "observation": {
+        "action": "crop",
+        "status": "success",
+        "result": {
+          "page": 41,
+          "bbox": [
+            74.904,
+            481.005997,
+            540.1,
+            694.289688947368
+          ],
+          "text": "| Gas/Source |  | 1990 | 2005 | 2018 |  | 2019 |  | 2020 |  | 2021 |  | 2022 |  | Percent |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  | Change |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  | Since |  |\n| Gas/Source |  |  |  |  |  | 2019 |  | 2020 |  | 2021 |  | 2022 |  | 1990 |  |\n|  |  |  | 6,126.9 |  |  |  |  |  |  |  |  |  |  |  |  |\n| CH (excludes LULUCF sources)a\n4 |  | 871.7 | 795.4 | 771.5 |  | 754.3 |  | 735.3 |  | 720.5 |  | 702.4 |  | -19.4% |  |\n|  |  |  | 419.2 |  |  |  |  |  |  |  |  |  |  |  |  |\n| HFCs |  | 47.7 | 121.7 | 163.9 |  | 168.2 |  | 170.3 |  | 177.0 |  | 182.8 |  | 282.9% |  |\n|  |  |  | 10.2 |  |  |  |  |  |  |  |  |  |  |  |  |\n| SF\n6 |  | 37.9 | 20.2 | 7.6 |  | 8.4 |  | 8.1 |  | 8.5 |  | 7.6 |  | -80.0% |  |\n|  |  |  | 1.0 |  |  |  |  |  |  |  |  |  |  |  |  |\n| Total Gross Emissions (Sources)a |  | 6,536.9 | 7,494.6 | 6,752.7 |  | 6,590.1 |  | 6,001.8 |  | 6,328.8 |  | 6,343.2 |  | -3.0% |  |\n| LULUCF Emissionsb |  | 58.0 | 68.9 | 62.8 |  | 58.0 |  | 68.4 |  | 72.9 |  | 67.6 |  | 16.5% |  |\n|  |  |  | 58.5 |  |  |  |  |  |  |  |  |  |  |  |  |\n| NO\n2 |  | 4.8 | 10.3 | 7.3 |  | 5.5 |  | 9.1 |  | 10.7 |  | 9.1 |  | 88.3% |  |\n|  |  |  | (976.6) |  |  |  |  |  |  |  |  |  |  |  |  |\n| LULUCF Sector Net Totald |  | (976.7) | (907.7) | (915.5) |  | (863.6) |  | (904.4) |  | (910.6) |  | (854.2) |  | -12.5% |  |\n| Net Emissions (Sources and Sinks) |  | 5,560.2 | 6,586.9 | 5,837.3 |  | 5,726.6 |  | 5,097.4 |  | 5,418.2 |  | 5,489.0 |  | -1.3% |  |",
+          "image_path": "artifacts/docenv/epa_ghg_inventory_1990_2022/crops/page_041_156_1002_1125_1446.png"
+        },
+        "provenance": {
+          "page": 41,
+          "bbox": [
+            74.904,
+            481.005997,
+            540.1,
+            694.289688947368
+          ],
+          "element_type": "region"
+        },
+        "confidence": 0.9,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 4,
+      "raw_model_output": "{\"thought\":\"The crop and OCR results still do not provide the numeric values for 'Net Emissions (Sources and Sinks)' and 'Total Gross Emissions (Sources)'. I need to attempt another approach to extract these values.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[41]}}",
+      "thought": "The crop and OCR results still do not provide the numeric values for 'Net Emissions (Sources and Sinks)' and 'Total Gross Emissions (Sources)'. I need to attempt another approach to extract these values.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          41
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 41,
+              "text": "Figure ES-1: U.S. Greenhouse Gas Emissions and Sinks by Gas\na The term “flux” is used to describe the exchange of CO to and from the atmosphere, with net flux being either positive or\n2\nnegative depending on the overall balance. Removal and long-term storage of CO from the atmosphere is also referred to as\n2\n“carbon sequestration.”\nTable ES-2: Recent Trends in U.S. Greenhouse Gas Emissions and Sinks (MMT CO Eq.)\n2\nPercent\nChange\nSince\nGas/Source 1990 2005 2018 2019 2020 2021 2022 1990\nCO 5,131.6 6,126.9 5,362.2 5,234.5 4,689.0 5,017.2 5,053.0 -1.5%\n2\nCH (excludes LULUCF sources)a 871.7 795.4 771.5 754.3 735.3 720.5 702.4 -19.4%\n4\nNO (excludes LULUCF sources)a 408.2 419.2 439.5 416.4 391.2 398.2 389.7 -4.5%\n2\nHFCs 47.7 121.7 163.9 168.2 170.3 177.0 182.8 282.9%\nPFCs 39.5 10.2 7.4 7.3 6.6 6.3 6.7 -83.1%\nSF 37.9 20.2 7.6 8.4 8.1 8.5 7.6 -80.0%\n6\nNF 0.3 1.0 0.7 1.1 1.3 1.1 1.1 238.3%\n3\nTotal Gross Emissions (Sources)a 6,536.9 7,494.6 6,752.7 6,590.1 6,001.8 6,328.8 6,343.2 -3.0%\nLULUCF Emissionsb 58.0 68.9 62.8 58.0 68.4 72.9 67.6 16.5%\nCH 53.1 58.5 55.5 52.5 59.3 62.1 58.4 10.0%\n4\nNO 4.8 10.3 7.3 5.5 9.1 10.7 9.1 88.3%\n2\nLULUCF Carbon Stock Changec (1034.7) (976.6) (978.3) (921.6) (972.8) (983.4) (921.8) -10.9%\nLULUCF Sector Net Totald (976.7) (907.7) (915.5) (863.6) (904.4) (910.6) (854.2) -12.5%\nNet Emissions (Sources and Sinks) 5,560.2 6,586.9 5,837.3 5,726.6 5,097.4 5,418.2 5,489.0 -1.3%\na Gross emissions totals do not include CH and N O emissions from LULUCF. LULUCF CH and NO emissions are included in\n4 2 4 2\nnet emission totals.\nExecutive Summary ES-5",
+              "summary": "Figure ES-1: U.S. Greenhouse Gas Emissions and Sinks by Gas",
+              "image_path": "artifacts/docenv/epa_ghg_inventory_1990_2022/page_041.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 41,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 5,
+      "raw_model_output": "{\"thought\":\"I now have the numeric values for 'Net Emissions (Sources and Sinks)' (5560.2) and 'Total Gross Emissions (Sources)' (6536.9) from the page text. I can proceed to compute the percentage difference.\",\"action\":\"compute\",\"action_input\":{\"expr\":\"(net_emissions - gross_emissions) / gross_emissions * 100\",\"vars\":{\"net_emissions\":5560.2,\"gross_emissions\":6536.9}}}",
+      "thought": "I now have the numeric values for 'Net Emissions (Sources and Sinks)' (5560.2) and 'Total Gross Emissions (Sources)' (6536.9) from the page text. I can proceed to compute the percentage difference.",
+      "action": "compute",
+      "action_input": {
+        "expr": "(net_emissions - gross_emissions) / gross_emissions * 100",
+        "vars": {
+          "net_emissions": 5560.2,
+          "gross_emissions": 6536.9
+        }
+      },
+      "observation": {
+        "action": "compute",
+        "status": "success",
+        "result": {
+          "expr": "(net_emissions - gross_emissions) / gross_emissions * 100",
+          "vars": {
+            "net_emissions": 5560.2,
+            "gross_emissions": 6536.9
+          },
+          "value": -14.941333047774938
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "computed_value"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 6,
+      "raw_model_output": "{\"thought\": \"Corrupted negative-control terminal action.\", \"action\": \"answer\", \"action_input\": {\"text\": \"-13.94\", \"evidence_refs\": [{\"bbox\": [74.904, 481.005997, 540.1, 694.289688947368], \"page\": 41}]}}",
+      "thought": "Corrupted negative-control terminal action.",
+      "action": "answer",
+      "action_input": {
+        "text": "-13.94",
+        "evidence_refs": [
+          {
+            "bbox": [
+              74.904,
+              481.005997,
+              540.1,
+              694.289688947368
+            ],
+            "page": 41
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "-13.94",
+          "evidence_refs": [
+            {
+              "bbox": [
+                74.904,
+                481.005997,
+                540.1,
+                694.289688947368
+              ],
+              "page": 41
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "negative_control"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "parse_table",
+    "ocr",
+    "crop",
+    "read_page",
+    "compute",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "-13.94",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1291,
+      "completion_tokens": 61,
+      "total_tokens": 1352,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 2620,
+      "completion_tokens": 82,
+      "total_tokens": 2702,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 3683,
+      "completion_tokens": 79,
+      "total_tokens": 3762,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 4743,
+      "completion_tokens": 62,
+      "total_tokens": 4805,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 5670,
+      "completion_tokens": 103,
+      "total_tokens": 5773,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 5847,
+      "completion_tokens": 47,
+      "total_tokens": 5894,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 6,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "numeric_near_miss",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "epa_ghg_inventory_1990_2022__numeric__p41",
+    "source_final_action": "answer",
+    "source_final_answer": "-14.94%",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The terminal numeric answer is changed to a plausible but incorrect nearby value."
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      [
+        "parse_table",
+        "answer"
+      ],
+      [
+        "read_page",
+        "ocr",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "apple_2025_10k",
+    "metadata": {
+      "audit_note": "W1 fix: original asked column 'Business' which doesn't exist as a data column in the TOC. Now uses real 'Page' column with a TOC-row item. | Followup F2: rephrased to a natural-language TOC question; removed strict row_label/column_label to avoid contract dependency on parse_table cell layout (real parser output is ['Item 1A.', 'Risk Factors', '5']).",
+      "bbox": [
+        18.22499732062509,
+        161.3250228941237,
+        593.8874323986892,
+        241.95683198246488
+      ],
+      "page": 3,
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/apple_2025_10k.pdf",
+    "question": "In the table of contents on page 3, what page is \"Item 1A. Risk Factors\" listed on? Use the table on that page; do not answer from memory.",
+    "reference_answer": "5",
+    "required_tools": [
+      "read_page",
+      "parse_table"
+    ],
+    "seed_id": "apple_2025_10k__table__p3",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          18.22499732062509,
+          161.3250228941237,
+          593.8874323986892,
+          241.95683198246488
+        ],
+        "page": 3
+      }
+    ],
+    "task_type": "table_lookup",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        18.22499732062509,
+        161.3250228941237,
+        593.8874323986892,
+        241.95683198246488
+      ],
+      "target_page": 3
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview__negative",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"Answering directly without using document tools.\", \"action\": \"answer\", \"action_input\": {\"text\": \"Item 1A. Risk Factors is listed on page 5.\", \"evidence_refs\": [{\"page\": 3}]}}",
+      "thought": "Answering directly without using document tools.",
+      "action": "answer",
+      "action_input": {
+        "text": "Item 1A. Risk Factors is listed on page 5.",
+        "evidence_refs": [
+          {
+            "page": 3
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "Item 1A. Risk Factors is listed on page 5.",
+          "evidence_refs": [
+            {
+              "page": 3
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "Item 1A. Risk Factors is listed on page 5.",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1496,
+      "completion_tokens": 132,
+      "total_tokens": 1628,
+      "prompt_tokens_details": {
+        "text_tokens": 1496,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1960,
+      "completion_tokens": 65,
+      "total_tokens": 2025,
+      "prompt_tokens_details": {
+        "text_tokens": 1960,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 1,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": true
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "direct_answer_without_tools",
+    "source_teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+    "source_seed_id": "apple_2025_10k__table__p3",
+    "source_final_action": "answer",
+    "source_final_answer": "Item 1A. Risk Factors is listed on page 5.",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer text is preserved, but all supporting tool calls and observations are removed."
+  }
+}

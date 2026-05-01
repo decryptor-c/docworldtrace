@@ -1,0 +1,208 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      [
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      [
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "nasa_fy2025_budget_summary",
+    "metadata": {
+      "audit_note": "W9 fix: original claim 'nasa s fy 2025 budget request' duplicated p4 heading and was trivially supported. Replaced with a specific budget-cell claim that requires inspecting the table.",
+      "claim": "deep space exploration systems fy 2025 request equals 7 618 2 million",
+      "page": 12
+    },
+    "pdf_path": "data/raw_pdfs/nasa_fy2025_budget_summary.pdf",
+    "question": "Is the following claim supported by the document: \"deep space exploration systems fy 2025 request equals 7 618 2 million\"? Answer SUPPORTED or UNSUPPORTED.",
+    "reference_answer": "SUPPORTED",
+    "required_tools": [
+      "search",
+      "read_page",
+      "verify"
+    ],
+    "seed_id": "nasa_fy2025_budget_summary__verify__p12",
+    "source": "structure_heuristic",
+    "supporting_refs": [
+      {
+        "page": 12
+      }
+    ],
+    "task_type": "verification",
+    "tool_hints": {
+      "target_page": 12
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview__negative",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to verify the budget request for deep space exploration systems for FY 2025. I will start by reading page 12.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [12]}}",
+      "thought": "I need to verify the budget request for deep space exploration systems for FY 2025. I will start by reading page 12.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          12
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The document shows 'Deep Space Exploration Systems' FY 2025 Request as 7,618.2. The claim says 7 618 2 million, which matches the value in the table.\", \"action\": \"verify\", \"action_input\": {\"claim\": \"deep space exploration systems fy 2025 request equals 7 618 2 million\", \"evidence_refs\": [{\"page\": 12}]}}",
+      "thought": "The document shows 'Deep Space Exploration Systems' FY 2025 Request as 7,618.2. The claim says 7 618 2 million, which matches the value in the table.",
+      "action": "verify",
+      "action_input": {
+        "claim": "deep space exploration systems fy 2025 request equals 7 618 2 million",
+        "evidence_refs": [
+          {
+            "page": 12
+          }
+        ]
+      },
+      "observation": {
+        "action": "verify",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"action\": \"answer\", \"action_input\": {\"text\": \"SUPPORTED\", \"evidence_refs\": [{\"page\": 12}]}}",
+      "thought": "",
+      "action": "answer",
+      "action_input": {
+        "text": "SUPPORTED",
+        "evidence_refs": [
+          {
+            "page": 12
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "SUPPORTED",
+          "evidence_refs": [
+            {
+              "page": 12
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "verify",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "SUPPORTED",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1305,
+      "completion_tokens": 57,
+      "total_tokens": 1362,
+      "prompt_tokens_details": {
+        "text_tokens": 1305,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2498,
+      "completion_tokens": 101,
+      "total_tokens": 2599,
+      "prompt_tokens_details": {
+        "text_tokens": 2498,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2683,
+      "completion_tokens": 31,
+      "total_tokens": 2714,
+      "prompt_tokens_details": {
+        "text_tokens": 2683,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": true,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "missing_evidence_observations",
+    "source_teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+    "source_seed_id": "nasa_fy2025_budget_summary__verify__p12",
+    "source_final_action": "answer",
+    "source_final_answer": "SUPPORTED",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved but all non-terminal evidence observations were blanked."
+  }
+}

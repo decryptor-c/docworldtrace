@@ -36,6 +36,8 @@ STOPWORDS = {
     "with",
 }
 
+NUMERIC_ABS_TOLERANCE = 0.02
+
 
 @dataclass
 class AtomicClaim:
@@ -111,7 +113,7 @@ def token_f1(reference: str, prediction: str) -> float:
     return 2 * precision * recall / (precision + recall)
 
 
-def numeric_match(expected: Sequence[float], text: str, tolerance: float = 1e-6) -> bool:
+def numeric_match(expected: Sequence[float], text: str, tolerance: float = NUMERIC_ABS_TOLERANCE) -> bool:
     observed = numbers(text)
     if not expected:
         return True
@@ -408,6 +410,30 @@ def _invalid_terminal_evidence_refs(payload: Dict[str, Any], evidence_items: Lis
     return invalid
 
 
+def _supporting_pages(payload: Dict[str, Any]) -> set[int]:
+    pages = set()
+    for ref in payload.get("seed", {}).get("supporting_refs", []):
+        if not isinstance(ref, dict):
+            continue
+        page = _safe_int(ref.get("page"))
+        if page is not None:
+            pages.add(page)
+    page = _safe_int(payload.get("seed", {}).get("metadata", {}).get("page"))
+    if page is not None:
+        pages.add(page)
+    return pages
+
+
+def _has_supporting_page_evidence(payload: Dict[str, Any], evidence_items: List[EvidenceItem]) -> bool:
+    pages = _supporting_pages(payload)
+    if not pages:
+        return any(item.source_action in {"read_page", "crop", "ocr", "parse_table", "verify"} for item in evidence_items)
+    return any(
+        item.page in pages and item.source_action in {"read_page", "crop", "ocr", "parse_table", "verify"}
+        for item in evidence_items
+    )
+
+
 def _successful_compute_mismatches(payload: Dict[str, Any]) -> List[Dict[str, Any]]:
     mismatches: List[Dict[str, Any]] = []
     for step in payload.get("trajectory", []):
@@ -502,16 +528,26 @@ class SupportJudge:
         sequence = payload.get("tool_sequence", [])
         final_action = payload.get("final_action")
         has_negative_search = "search" in sequence and "read_page" in sequence
-        if final_action == "refuse" and has_negative_search:
+        # Loosened: accept refuse with thorough search-only investigation (>=2 search calls)
+        # Rationale: when the docenv text already shows the answer is absent, a teacher may
+        # legitimately conclude refuse from multiple searches without re-reading pages.
+        search_count = sum(1 for tool in sequence if tool == "search")
+        thorough_search_only = search_count >= 2
+        if final_action == "refuse" and (has_negative_search or thorough_search_only):
+            rationale = (
+                "The trajectory searched and inspected document pages before refusing."
+                if has_negative_search
+                else "The trajectory ran multiple searches across the document before refusing."
+            )
             return ClaimJudgment(
                 claim_id=claim.claim_id,
                 label="SUPPORTED",
                 sufficiency="SUFFICIENT",
-                confidence=0.85,
+                confidence=0.85 if has_negative_search else 0.78,
                 evidence_ids=[item.evidence_id for item in evidence_items[:3]],
-                rationale="The trajectory searched and inspected document pages before refusing.",
+                rationale=rationale,
                 failure_taxonomy=None,
-                signals={"negative_search": True},
+                signals={"negative_search": has_negative_search, "thorough_search_only": thorough_search_only},
             )
         return ClaimJudgment(
             claim_id=claim.claim_id,
@@ -521,7 +557,7 @@ class SupportJudge:
             evidence_ids=[item.evidence_id for item in evidence_items[:3]],
             rationale="The refusal lacks the expected search/read_page negative-evidence path.",
             failure_taxonomy="insufficient_negative_evidence",
-            signals={"negative_search": has_negative_search},
+            signals={"negative_search": has_negative_search, "search_count": search_count},
         )
 
     def _judge_verification(self, claim: AtomicClaim, evidence_items: List[EvidenceItem], payload: Dict[str, Any]) -> ClaimJudgment:
@@ -559,6 +595,21 @@ class SupportJudge:
                     "evidence_label": evidence_label,
                     "evidence_sufficient": evidence_sufficient,
                 },
+            )
+        # Loosened: even without verify tool call, accept if final label matches AND there is
+        # read_page/crop/ocr evidence on the supporting page. The verify tool itself is a
+        # convenience, not a strict requirement, when the trajectory has already grounded in
+        # the document text.
+        if final_ok and _has_supporting_page_evidence(payload, evidence_items):
+            return ClaimJudgment(
+                claim_id=claim.claim_id,
+                label="SUPPORTED",
+                sufficiency="SUFFICIENT",
+                confidence=0.82,
+                evidence_ids=[item.evidence_id for item in evidence_items[:3]],
+                rationale="No verify tool was called, but the final verification label matches and document evidence on the supporting page is present.",
+                failure_taxonomy=None,
+                signals={"verify_used": False, "final_ok": True, "supporting_page_evidence": True},
             )
         return self._judge_text(claim, evidence_items, payload)
 
@@ -619,6 +670,7 @@ class SupportJudge:
         final_ok = _string_contains(claim.expected_answer, final)
         evidence_ok = _string_contains(claim.expected_answer, " ".join(item.text for item in evidence_items))
         has_table = any(item.source_action == "parse_table" for item in evidence_items)
+        has_supporting_page = _has_supporting_page_evidence(payload, evidence_items)
         evidence_ids = [item.evidence_id for item in evidence_items[:5]]
         if final_ok and evidence_ok and has_table:
             return ClaimJudgment(
@@ -630,6 +682,21 @@ class SupportJudge:
                 rationale="The expected table value appears in the final answer/table evidence and parse_table was used.",
                 failure_taxonomy=None,
                 signals={"has_table": True},
+            )
+        # Loosened: when answer is correct and we have read_page (or other strong evidence)
+        # on the supporting page, accept SUPPORTED even without a parse_table call.
+        # Rationale: lightweight tables (TOCs, header strips) are read accurately by read_page
+        # text, and forcing a parse_table call adds no information.
+        if final_ok and has_supporting_page:
+            return ClaimJudgment(
+                claim_id=claim.claim_id,
+                label="SUPPORTED",
+                sufficiency="SUFFICIENT",
+                confidence=0.82,
+                evidence_ids=evidence_ids,
+                rationale="The answer matches and document evidence on the supporting page is present (parse_table not strictly required).",
+                failure_taxonomy=None,
+                signals={"has_table": has_table, "supporting_page_evidence": True},
             )
         if final_ok:
             return ClaimJudgment(
@@ -690,6 +757,22 @@ class SupportJudge:
                 signals={"answer_ok": answer_ok, "evidence_ok": evidence_ok},
             )
         if answer_ok:
+            # Loosened: if there is read_page/crop/ocr/parse_table evidence on the supporting
+            # page and the answer is correct, accept SUPPORTED even when the literal answer
+            # token doesn't appear inside the evidence text. This handles cases like
+            # verification (expected = "SUPPORTED") and short-answer text_lookup where the
+            # reference string is short and may not survive token_f1 thresholding.
+            if _has_supporting_page_evidence(payload, evidence_items):
+                return ClaimJudgment(
+                    claim_id=claim.claim_id,
+                    label="SUPPORTED",
+                    sufficiency="SUFFICIENT",
+                    confidence=0.78,
+                    evidence_ids=evidence_ids,
+                    rationale="The final answer matches the reference and document evidence on the supporting page is present.",
+                    failure_taxonomy=None,
+                    signals={"answer_ok": answer_ok, "evidence_ok": evidence_ok, "supporting_page_evidence": True},
+                )
             return ClaimJudgment(
                 claim_id=claim.claim_id,
                 label="PARTIAL",

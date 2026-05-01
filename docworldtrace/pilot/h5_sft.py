@@ -51,12 +51,12 @@ def _kept_files(docverify_path: Path) -> Set[str]:
     return files
 
 
-def _load_kept_rollouts(rollout_dir: Path, docverify_path: Path) -> List[Dict[str, Any]]:
-    kept = _kept_files(docverify_path)
+def _load_kept_rollouts(rollout_dir: Path, docverify_path: Path | None, keep_all: bool = False) -> List[Dict[str, Any]]:
+    kept = set() if keep_all else _kept_files(docverify_path)  # type: ignore[arg-type]
     rollouts = []
     for path in sorted(rollout_dir.glob("*/*.json")):
         display = _display_path(path)
-        if str(path) not in kept and display not in kept:
+        if not keep_all and str(path) not in kept and display not in kept:
             continue
         payload = _load_json(path)
         payload["_file"] = display
@@ -302,16 +302,18 @@ def _rollout_summary(rollouts: Sequence[Dict[str, Any]], split: Dict[str, str]) 
 
 def build_h5_sft(
     rollout_dir: str,
-    docverify: str,
+    docverify: str | None,
     out_dir: str,
     heldout_per_task: int,
+    keep_all: bool = False,
 ) -> Dict[str, Any]:
     rollout_path = Path(rollout_dir)
-    docverify_path = Path(docverify)
+    docverify_path = Path(docverify) if docverify else None
     out_path = Path(out_dir)
-    rollouts = _load_kept_rollouts(rollout_path, docverify_path)
+    rollouts = _load_kept_rollouts(rollout_path, docverify_path, keep_all=keep_all)
     if not rollouts:
-        raise SystemExit(f"No kept rollouts found from {rollout_dir} using {docverify}")
+        source = "all rollouts" if keep_all else f"DocVerify++ keep decisions from {docverify}"
+        raise SystemExit(f"No H5 rollouts found from {rollout_dir} using {source}")
     split = _split_seed_ids(rollouts, heldout_per_task=heldout_per_task)
 
     datasets = {
@@ -335,7 +337,8 @@ def build_h5_sft(
 
     summary = {
         "rollout_dir": _display_path(rollout_path),
-        "docverify": _display_path(docverify_path),
+        "docverify": _display_path(docverify_path) if docverify_path else None,
+        "keep_all": keep_all,
         "out_dir": _display_path(out_path),
         "heldout_per_task": heldout_per_task,
         **_rollout_summary(rollouts, split),
@@ -356,6 +359,7 @@ def write_h5_report(path: Path, summary: Dict[str, Any]) -> None:
         "",
         f"- Rollout dir: `{summary['rollout_dir']}`",
         f"- DocVerify++ source: `{summary['docverify']}`",
+        f"- Keep all rollouts: `{summary.get('keep_all', False)}`",
         f"- Output dir: `{summary['out_dir']}`",
         f"- Kept rollout count: `{summary['rollout_count']}`",
         f"- Unique seed count: `{summary['unique_seed_count']}`",
@@ -395,13 +399,19 @@ def main() -> None:
     parser.add_argument("--docverify", default="data/h3/docverify_plus_v4/docverify_review.json")
     parser.add_argument("--out-dir", default="data/h5/sft_v4")
     parser.add_argument("--heldout-per-task", type=int, default=1)
+    parser.add_argument(
+        "--keep-all",
+        action="store_true",
+        help="Use every rollout in --rollout-dir instead of reading DocVerify++ keep decisions.",
+    )
     args = parser.parse_args()
 
     summary = build_h5_sft(
         rollout_dir=args.rollout_dir,
-        docverify=args.docverify,
+        docverify=None if args.keep_all else args.docverify,
         out_dir=args.out_dir,
         heldout_per_task=args.heldout_per_task,
+        keep_all=args.keep_all,
     )
     print(json.dumps(summary, ensure_ascii=False, indent=2))
 

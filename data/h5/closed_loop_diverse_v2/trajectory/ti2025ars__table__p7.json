@@ -1,0 +1,186 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      [
+        "parse_table",
+        "answer"
+      ],
+      [
+        "read_page",
+        "ocr",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "ti2025ars",
+    "metadata": {
+      "bbox": [
+        49.5,
+        335.89999,
+        562.5,
+        364.39999
+      ],
+      "column_label": "Trading Symbol(s)",
+      "page": 7,
+      "review_status": "needs_human_review",
+      "row_label": "Common Stock, par value $1.00"
+    },
+    "pdf_path": "data/raw_pdfs/ti2025ars.pdf",
+    "question": "On page 7, in the table, what is the value for row \"Common Stock, par value $1.00\" under column \"Trading Symbol(s)\"?",
+    "reference_answer": "TXN",
+    "required_tools": [
+      "read_page",
+      "parse_table"
+    ],
+    "seed_id": "ti2025ars__table__p7",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          49.5,
+          335.89999,
+          562.5,
+          364.39999
+        ],
+        "page": 7
+      }
+    ],
+    "task_type": "table_lookup",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        49.5,
+        335.89999,
+        562.5,
+        364.39999
+      ],
+      "target_page": 7
+    }
+  },
+  "teacher": {
+    "name": "trajectory",
+    "model": "Qwen3-VL-8B-Instruct",
+    "adapter_path": "runs/h5_qwen3_vl_diverse_v2/trajectory_adapter"
+  },
+  "student": {
+    "name": "trajectory",
+    "adapter_path": "runs/h5_qwen3_vl_diverse_v2/trajectory_adapter"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"\", \"action\": \"parse_table\", \"action_input\": {\"page_id\": 7, \"bbox\": [49.5, 335.89999, 562.5, 364.39999]}}",
+      "thought": "",
+      "action": "parse_table",
+      "action_input": {
+        "page_id": 7,
+        "bbox": [
+          49.5,
+          335.89999,
+          562.5,
+          364.39999
+        ]
+      },
+      "observation": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {
+          "page": 7,
+          "bbox": [
+            49.5,
+            335.89999,
+            562.5,
+            364.39999
+          ],
+          "rows": [
+            [
+              "Title of each class",
+              "Trading Symbol(s)",
+              "Name of each exchange on which registered"
+            ],
+            [
+              "Common Stock, par value $1.00",
+              "TXN",
+              "The Nasdaq Global Select Market"
+            ]
+          ],
+          "markdown": "| Title of each class | Trading Symbol(s) | Name of each exchange on which registered |\n| --- | --- | --- |\n| Common Stock, par value $1.00 | TXN | The Nasdaq Global Select Market |"
+        },
+        "provenance": {
+          "page": 7,
+          "bbox": [
+            49.5,
+            335.89999,
+            562.5,
+            364.39999
+          ],
+          "element_type": "table"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"\", \"action\": \"answer\", \"action_input\": {\"text\": \"TXN\", \"evidence_refs\": [{\"page\": 7}]}}",
+      "thought": "",
+      "action": "answer",
+      "action_input": {
+        "text": "TXN",
+        "evidence_refs": [
+          {
+            "page": 7
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "TXN",
+          "evidence_refs": [
+            {
+              "page": 7
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "parse_table",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "TXN",
+  "raw_usage": [],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "_file": "data/h5/closed_loop_diverse_v2/trajectory/ti2025ars__table__p7.json"
+}

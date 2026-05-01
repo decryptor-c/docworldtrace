@@ -1,0 +1,233 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      [
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      [
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "fda_ozempic_2025_label",
+    "metadata": {
+      "claim": "ozempic is injected under the skin subcutaneously of your stomach",
+      "page": 33
+    },
+    "pdf_path": "data/raw_pdfs/fda_ozempic_2025_label.pdf",
+    "question": "Is the following claim supported by the document: \"ozempic is injected under the skin subcutaneously of your stomach\"? Answer SUPPORTED or UNSUPPORTED.",
+    "reference_answer": "SUPPORTED",
+    "required_tools": [
+      "search",
+      "read_page",
+      "verify"
+    ],
+    "seed_id": "fda_ozempic_2025_label__verify__p33",
+    "source": "structure_heuristic",
+    "supporting_refs": [
+      {
+        "page": 33
+      }
+    ],
+    "task_type": "verification",
+    "tool_hints": {
+      "target_page": 33
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I should start by reading page 33 as it is the target page for verification.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[33]}}",
+      "thought": "I should start by reading page 33 as it is the target page for verification.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          33
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 33,
+              "text": "• OZEMPIC is injected under the skin (subcutaneously) of your stomach (abdomen), thigh, or upper arm. Do not inject\nOZEMPIC into a muscle (intramuscularly) or vein (intravenously).\n• Use OZEMPIC 1 time each week, on the same day each week, at any time of the day.\n• You may change the day of the week you use OZEMPIC as long as your last dose was given 2 or more days before.\n• If you miss a dose of OZEMPIC, take the missed dose as soon as possible within 5 days after the missed dose. If\nmore than 5 days have passed, skip the missed dose and take your next dose on the regularly scheduled day.\n• OZEMPIC may be taken with or without food.\n• Do not mix insulin and OZEMPIC together in the same injection.\n• You may give an injection of OZEMPIC and insulin in the same body area (such as your stomach area), but not right\nnext to each other.\n• Change (rotate) your injection site with each injection. Do not use the same site for each injection.\n• Do not share your OZEMPIC pen with other people, even if the needle has been changed. You may give other\npeople a serious infection, or get a serious infection from them.\n• If you take too much OZEMPIC, call your healthcare provider or Poison Help line at 1-800-222-1222 or go to the\nnearest hospital emergency room right away.\nWhat are the possible side effects of OZEMPIC?\nOZEMPIC may cause serious side effects, including:\n• See “What is the most important information I should know about OZEMPIC?”\n• inflammation of your pancreas (pancreatitis). Stop using OZEMPIC and call your healthcare provider right away if\nyou have severe pain in your stomach area (abdomen) that will not go away, with or without vomiting. You may feel\nthe pain from your abdomen to your back.\n• changes in vision. Tell your healthcare provider if you have changes in vision during treatment with OZEMPIC.\n• low blood sugar (hypoglycemia). Your risk for getting low blood sugar may be higher if you use OZEMPIC with\nanother medicine that can cause low blood sugar, such as a sulfonylurea or insulin. Signs and symptoms of low\nblood sugar may include:\no dizziness or light-headedness o blurred vision o anxiety, irritability, or mood changes\nsweating slurred speech hunger\no o o\nconfusion or drowsiness shakiness weakness\no o o\nheadache fast heartbeat feeling jittery\no o o\n• Dehydration leading to kidney problems. Diarrhea, nausea, and vomiting may cause a loss of fluids (dehydration)\nwhich may cause kidney problems. It is important for you to drink fluids to help reduce your chance of dehydration.\nTell your healthcare provider right away if you have nausea, vomiting, or diarrhea that does not go away.\n• Severe stomach problems. Stomach problems, sometimes severe, have been reported in people who use\nOZEMPIC. Tell your healthcare provider if you have stomach problems that are severe or will not go away.\n• serious allergic reactions. Stop using OZEMPIC and get medical help right away, if you have any symptoms of a\nserious allergic reaction including:\nswelling of your face, lips, tongue severe rash or itching very rapid heartbeat\no o o\nor throat fainting or feeling dizzy\no\no\nproblems breathing or swallowing\n• gallbladder problems. Gallbladder problems have happened in some people who take OZEMPIC. Tell your\nhealthcare provider right away if you get symptoms of gallbladder problems which may include:\npain in your upper stomach (abdomen) yellowing of skin or eyes (jaundice)\no o\no fever o clay-colored stools\n• food or liquid getting into the lungs during surgery or other procedures that use anesthesia or deep\nsleepiness (deep sedation). OZEMPIC may increase the chance of food getting into your lungs during surgery or\nother procedures. Tell all your healthcare providers that you are taking OZEMPIC before you are scheduled to have\nsurgery or other procedures.\nThe most common side effects of OZEMPIC may include nausea, vomiting, diarrhea, stomach (abdominal) pain, and\nconstipation.\nTalk to your healthcare provider about any side effect that bothers you or does not go away. These are not all the\npossible side effects of OZEMPIC.\nCall your doctor for medical advice about side effects. You may report side effects to FDA at 1-800-FDA-1088.\nReference ID: 5519421",
+              "summary": "• OZEMPIC is injected under the skin (subcutaneously) of your stomach (abdomen), thigh, or upper arm. Do not inject",
+              "image_path": "artifacts/docenv/fda_ozempic_2025_label/page_033.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 33,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The claim matches the text on page 33. I should verify this claim using the evidence from the page.\",\"action\":\"verify\",\"action_input\":{\"claim\":\"ozempic is injected under the skin subcutaneously of your stomach\",\"evidence_refs\":[{\"page\":33}]}}",
+      "thought": "The claim matches the text on page 33. I should verify this claim using the evidence from the page.",
+      "action": "verify",
+      "action_input": {
+        "claim": "ozempic is injected under the skin subcutaneously of your stomach",
+        "evidence_refs": [
+          {
+            "page": 33
+          }
+        ]
+      },
+      "observation": {
+        "action": "verify",
+        "status": "success",
+        "result": {
+          "claim": "ozempic is injected under the skin subcutaneously of your stomach",
+          "evidence_count": 1,
+          "label": "UNSUPPORTED",
+          "sufficiency": "INSUFFICIENT",
+          "confidence": 0.99,
+          "failure_taxonomy": null
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "verification"
+        },
+        "confidence": 0.99,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\":\"The claim has been verified as SUPPORTED based on sufficient evidence from page 33.\",\"action\":\"answer\",\"action_input\":{\"text\":\"SUPPORTED\",\"evidence_refs\":[{\"page\":33}]}}",
+      "thought": "The claim has been verified as SUPPORTED based on sufficient evidence from page 33.",
+      "action": "answer",
+      "action_input": {
+        "text": "SUPPORTED",
+        "evidence_refs": [
+          {
+            "page": 33
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "SUPPORTED",
+          "evidence_refs": [
+            {
+              "page": 33
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "verify",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "SUPPORTED",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1170,
+      "completion_tokens": 35,
+      "total_tokens": 1205,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1682,
+      "completion_tokens": 60,
+      "total_tokens": 1742,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1822,
+      "completion_tokens": 42,
+      "total_tokens": 1864,
+      "prompt_tokens_details": {
+        "cached_tokens": 1664,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": true,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "verify_label_mismatch",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "fda_ozempic_2025_label__verify__p33",
+    "source_final_action": "answer",
+    "source_final_answer": "SUPPORTED",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved, but the verify observation label is flipped to disagree with the expected verification label."
+  }
+}

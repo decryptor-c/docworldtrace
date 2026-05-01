@@ -1,0 +1,159 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "answer"
+      ],
+      [
+        "search",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "easy",
+    "doc_id": "usgs_mcs_2025",
+    "metadata": {
+      "audit_note": "B9 fix: p2 is only a cover photo caption (not a heading), so cross-page task degenerates. Converted to text_lookup on p1 ('U.S. Department of the Interior'). USGS cross_page would need later content pages (not yet vetted). | Followup F3: removed leftover cross_page fields (anchor_page/answer_page/anchor_phrase) since task is now text_lookup.",
+      "page": 1,
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/usgs_mcs_2025.pdf",
+    "question": "What is the heading or leading phrase on page 1? Return the page summary or the first visible leading phrase exactly. Do not choose a later figure caption, table caption, or section title unless it is the first visible leading phrase.",
+    "reference_answer": "U.S. Department of the Interior",
+    "required_tools": [
+      "read_page"
+    ],
+    "seed_id": "usgs_mcs_2025__text__p1",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "page": 1
+      }
+    ],
+    "task_type": "text_lookup",
+    "tool_hints": {
+      "target_page": 1
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview__negative",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to read page 1 to identify the leading phrase.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [1]}}",
+      "thought": "I need to read page 1 to identify the leading phrase.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          1
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The first visible leading phrase on page 1 is 'U.S. Department of the Interior'.\", \"action\": \"answer\", \"action_input\": {\"text\": \"U.S. Department of the Interior\", \"evidence_refs\": [{\"page\": 1}]}}",
+      "thought": "The first visible leading phrase on page 1 is 'U.S. Department of the Interior'.",
+      "action": "answer",
+      "action_input": {
+        "text": "U.S. Department of the Interior",
+        "evidence_refs": [
+          {
+            "page": 1
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "U.S. Department of the Interior",
+          "evidence_refs": [
+            {
+              "page": 1
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "U.S. Department of the Interior",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1308,
+      "completion_tokens": 39,
+      "total_tokens": 1347,
+      "prompt_tokens_details": {
+        "text_tokens": 1308,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1662,
+      "completion_tokens": 61,
+      "total_tokens": 1723,
+      "prompt_tokens_details": {
+        "text_tokens": 1662,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "missing_evidence_observations",
+    "source_teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+    "source_seed_id": "usgs_mcs_2025__text__p1",
+    "source_final_action": "answer",
+    "source_final_answer": "U.S. Department of the Interior",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved but all non-terminal evidence observations were blanked."
+  }
+}

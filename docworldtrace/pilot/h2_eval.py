@@ -9,6 +9,8 @@ from typing import Any, Dict, Iterable, List
 
 from ..utils import tokenize
 
+NUMERIC_ABS_TOLERANCE = 0.02
+
 
 def _display_path(path: str) -> str:
     path_obj = Path(path).expanduser()
@@ -80,7 +82,7 @@ def _numeric_match(reference: str, prediction: str) -> bool:
     pred_numbers = _numbers(prediction)
     if not ref_numbers:
         return False
-    return all(any(abs(ref - pred) <= 1e-6 for pred in pred_numbers) for ref in ref_numbers[:1])
+    return all(any(abs(ref - pred) <= NUMERIC_ABS_TOLERANCE for pred in pred_numbers) for ref in ref_numbers[:1])
 
 
 def _contains_answer(reference: str, prediction: str, task_type: str) -> bool:

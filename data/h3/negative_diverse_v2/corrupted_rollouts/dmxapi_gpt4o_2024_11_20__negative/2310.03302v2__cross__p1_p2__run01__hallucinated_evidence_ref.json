@@ -1,0 +1,286 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "hard",
+    "doc_id": "2310.03302v2",
+    "metadata": {
+      "anchor_page": 1,
+      "anchor_phrase": "mlagentbench evaluating language agents on",
+      "answer_page": 2,
+      "audit_note": "V2 fix: Clarified that the desired next-page phrase is the running title, not the first figure caption.",
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/2310.03302v2.pdf",
+    "question": "Use search to find the page about \"mlagentbench evaluating language agents on\". Then inspect the following page and report the running paper title printed at the very top of that page. Ignore figure captions such as \"Starter Files\".",
+    "reference_answer": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+    "required_tools": [
+      "search",
+      "read_page"
+    ],
+    "seed_id": "2310.03302v2__cross__p1_p2",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "page": 2
+      }
+    ],
+    "task_type": "cross_page",
+    "tool_hints": {
+      "target_page": 2
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I should search for the page about 'mlagentbench evaluating language agents on' first.\",\"action\":\"search\",\"action_input\":{\"query\":\"mlagentbench evaluating language agents on\",\"top_k\":1}}",
+      "thought": "I should search for the page about 'mlagentbench evaluating language agents on' first.",
+      "action": "search",
+      "action_input": {
+        "query": "mlagentbench evaluating language agents on",
+        "top_k": 1
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "mlagentbench evaluating language agents on",
+          "results": [
+            {
+              "page": 1,
+              "score": 5.0,
+              "snippet": "MLAgentBench: Evaluating Language Agents on\nMachine Learning Experimentation\nQianHuang1 JianVora1 PercyLiang1 JureLeskovec1\nAbstract theexperiment(e.g.,validationaccuracy),theyrevisetheir\nmethod to improve performance on the task. This iter"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The search indicates that the relevant content is on page 1. I should read page 1 to confirm the running paper title and then inspect the following page (page 2).\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[1]}}",
+      "thought": "The search indicates that the relevant content is on page 1. I should read page 1 to confirm the running paper title and then inspect the following page (page 2).",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          1
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 1,
+              "text": "MLAgentBench: Evaluating Language Agents on\nMachine Learning Experimentation\nQianHuang1 JianVora1 PercyLiang1 JureLeskovec1\nAbstract theexperiment(e.g.,validationaccuracy),theyrevisetheir\nmethod to improve performance on the task. This itera-\nAcentralaspectofmachinelearningresearchis\ntiveprocessischallenging,asitrequirestheresearcherto\nexperimentation, the process of designing and\npossessextensivepriorknowledgeaboutpotentialmethods,\nrunningexperiments, analyzingtheresults, and\ntoproducefunctionalcode, andtointerpretexperimental\niteratingtowardssomepositiveoutcome(e.g.,im-\nresultsforfutureimprovements.\nprovingaccuracy). Couldagentsdrivenbypow-\nerful language models perform machine learn- Thecomplexityandexpertiserequiredforsuccessfulma-\ningexperimentationeffectively? Toanswerthis chinelearningexperimentationposesignificantbarriersto\nquestion,weintroduceMLAgentBench,asuite entry. Inlightofthesechallenges,therehasbeeninterestin\nof 13 tasks ranging from improving model per- thepossibilityofautomatingaspectsofthemachinelearn-\nformanceonCIFAR-10torecentresearchprob- ingworkflow,suchasNeuralArchitectureSearch(Elsken\nlemslikeBabyLM.Foreachtask, anagentcan etal.,2019)andAutoML(Heetal.,2021). Theemergence\nperformactionslikereading/writingfiles,execut- ofadvancedlanguagemodels, withtheirabilitytounder-\ning code, and inspecting outputs. We then con- standandgeneratehuman-liketext,presentsanpromising\nstructanagentthatcanperformMLexperimenta- opportunitytofurtherautomateMLexperimentationend\ntionbasedonReActframework. Webenchmark to end. Can we develop an agent capable of conducting\nagentsbasedonClaudev1.0,Claudev2.1,Claude machinelearningexperimentationautonomously?\nv3Opus,GPT-4,GPT-4-turbo,Gemini-Pro,and\nInthispaper,weproposeMLAgentBench,thefirstbench-\nMixtralandfindthataClaudev3Opusagentis\nmark for evaluating agents capable of machine learning\nthe best in terms of success rate. It can build\nexperimentation (Figure 1). MLAgentBench is a general\ncompellingMLmodelsovermanytasksinMLA-\nframeworkforspecifyingexperimentationtaskswithclear\ngentBenchwith37.5%averagesuccessrate. Our\ngoals and automatically evaluates agents on these tasks.\nagentsalsodisplayhighlyinterpretableplansand\nConcretely, each task is specified with a task description,\nactions. However,thesuccessratesvaryconsid-\na set of starter files (including starter code and data, e.g.,\nerably;theyspanfrom100%onwell-established\nKaggle data package), and an evaluator that can assign a\nolderdatasetstoaslowas0%onrecentKaggle\nperformancemetricscoretoafinalsubmission(suchastest\nchallengescreatedpotentiallyaftertheunderlying\nset accuracy of the submitted test set prediction). Given\nLMwastrained. Finally,weidentifyseveralkey\nthese, an agent can perform actions like reading/writing\nchallengesforLM-basedagentssuchaslong-term\nfilesandexecutingPythoncodeinaworkspace. Duringthe\nplanningandreducinghallucination. 2\nagent’sinteractionwiththeenvironment,wecollectitsin-\nteractiontraceforevaluation,whichistheagentactionsand\n1.Introduction intermediatesnapshotsoftheworkspace(i.e.,thesetoffiles\nanddirectoriesintheworkingdirectory). Weevaluatethe\nMuchoftheprogressinmachinelearningisdrivenbyef- agentalongtwoaspects: 1)competenceinaccomplishing\nfectiveexperimentation: Givenatask(e.g.,imageclassifica- thetask,i.e.,thefractionoftimethattheagentwasableto\ntion),aresearcherdevelopsamethod(e.g.,choiceofmodel improvetheperformancemetric(e.g.,testaccuracy)byat\narchitecture and learning algorithm), runs an experiment, least10%overthebaselineinthestartercode;2)efficiency,\nand then evaluates the results. Based on the outcome of theamountoftimeandnumberoftokensLMqueriesspent\nbytheagent. Whileourbenchmarkisframedintermsof\n1StanfordUniversity. Correspondenceto: QianHuang<qh-\nautomationforsimplicity,westresstheimportanceofinter-\nwang@cs.stanford.edu>.\npretabilityforbuildingtrustandalsoprovidingahookfor\n2Our code is released at https://github.com/snap- humanaugmentation: Indeed,aresearchercouldintervene\nstanford/MLAgentBench/.\n1\n4202\nrpA\n41\n]GL.sc[\n2v20330.0132:viXra",
+              "summary": "MLAgentBench: Evaluating Language Agents on",
+              "image_path": "artifacts/docenv/2310.03302v2/page_001.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\":\"I have confirmed the running paper title on page 1. Now, I should read page 2 to inspect the running paper title printed at the very top of that page.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[2]}}",
+      "thought": "I have confirmed the running paper title on page 1. Now, I should read page 2 to inspect the running paper title printed at the very top of that page.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          2
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 2,
+              "text": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation\nStarter Files\nEvaluator\nTask Description workspace/\n├── images/\nTask: ├── data_description.txt\nImprove the performance of the Test Accuracy\n├── evaluation_details.txt\ncurrent model in train.py ...\n├── ...\n└── train.py\n... Incre r a t se the Let's r t+ s 1 ee how ...\nlearning rate! it does!\nEdit train.py a t ... E o d t\nt\ni\nh\nte\ne\nd\nd\n!\ni\nH\nff\ne\n.\nr\n.\ne\n..\nis python train a . t p +1 y o T t+ r 1 ain i\n.\nn\n..\ng\n.\nLog\nworkspace/ workspace/\n├── images/ ├── images/\n├── data_description.txt ├── data_description.txt\n├── evaluation_details.txt ├── evaluation_details.txt\n├── ... ├── ...\n└── train.py ├── submission.cav\nSt\nS t\n└\n+1\n── train.py\nFigure1. OverviewofMLAgentBench.EachenvironmentinMLAgentBenchincludesataskdescription,asetofstarterfiles,andan\nevaluator. Anagentcanread/writefilesandexecutePythoncoderepeatedly,eventuallyproducingafinalfile(e.g.,testpredictionsin\nsubmission.csv).Theagentisevaluatedbasedonthequalityofthisfile.Ateachtimestep,thelanguageagentshouldproducealanguage\noutputr ,whichcontainsreflection,researchplanandstatus,etc,andactiona ,whichisthenexecutedbytheenvironmenttoupdatestate\nt t\ns ,i.e.thesetoffilesintheworkspaceandproduceanobservationo asshowninTable1.\nt t\nandedittheworkspaceorplansoftheagent. 20240229)(Anthropic,2023),GeminiPro(Aniletal.,2023),\nandMixtral(Instruct-v0.1)(Jiangetal.,2024). Wefindthat\nMLAgentBenchincludes13MLtasksfromdiversedomains\nouragentperformsthebestintermsofsuccessratewhen\nrangingindifficultyandrecency(Table2),wherethecode\nbased on Claude v3 Opus with 37.5 % average success\nexecutionisrelativelyinexpensive—ontheorderofminutes.\nrate. Ouragentisabletosuccessfullysolvemanytasksand\nForexample,onetaskistoincreasethetestaccuracyofa\ngeneratehighlyinterpretableresearchplansalongtheway,\nbaselineConvolutionNeuralNetworks(CNN)modelonthe\nthoughtherearestillmanylimitations. Onwell-established\nCIFAR-10dataset(Krizhevsky,2009)bymorethan10%.\ntasksliketrainingamodeloverthehouse-pricedataset,it\nBeyondwell-establisheddatasetslikeCIFAR-10,wealso\nisabletoachieve100%successrateover8runs. However,\nincludemorerecentKagglechallengeslaunchedbetween\nthe agent struggles with Kaggle challenges and BabyLM\nAugust 31, 2022 and May 11, 2023 and other research\n(Warstadtetal.,2023),withonlya0–25%successrate. We\ndatasetslaunchedinJanuary2023toseewhethertheagent\nthencompareresultsagainsttheadaptationofotherexisting\ncanextrapolatetonewerdatasetspotentiallyunseenduring\nagentssuchasReActandAutoGPTandfindimprovements\n(pre-)training.\nupon them. We also identify several key challenges for\nWethencreateanagentforMLexperimentationinspiredby LM-basedagentdesigns,e.g. howtoeffectivelyplanandre-\nexistingworks(Yaoetal.,2023;Shinnetal.,2023;Wang planoverlonghorizonsandhallucinationaboutthecurrent\net al., 2023a; aut, 2023; Schick et al., 2023; Park et al., progress, and show how our design handles them quali-\n2023). Ateachstep,weautomaticallyconstructaprompt tatively. Overall, our agent demonstrates feasibility and\nthatsummarizesallknowninformationaboutthetaskand successwithLM-basedagentsforMLexperimentation,but\nprioractions,andquerytheLMtoproduceastep-wisere- thereisstillsomewaysuntiltheycansucceedreliably.\nflection(Shinnetal.,2023),ahigh-levelplan(aut,2023),a\nfact-checkingsection,areasoningstepbeforeaction(Yao\n2.MLAgentBench: BenchmarkingML\net al., 2023), and the next action to take. The actions in-\nexperimentation\ncludebasicactionsintheenvironmentaswellascompound\nactionsthatinvolveseveralbasicactionsandmodularLM MLAgentBenchintroducesageneralframeworkforspeci-\ncalls,suchasunderstandingafileandeditingafilebased fyingwell-scopedexecutabletasksandautomaticallyeval-\noninstructions. SeemoredetailsinSection2.2.1and3. uating agents on these tasks. The benchmark provides a\nmodularimplementationoftheenvironmentandtheagent,\nOnMLAgentBench,webenchmarkagentsbasedonGPT-4\nandcapturestheentireinteractiontraceforevaluation. We\n(0613),GPT-4-turbo(0125),(Nakanoetal.,2021;OpenAI,\ninclude13concreteanddiversemachinelearningtasksin\n2023), Claude v1.0, Claude v2.1, Claude v3 Opus (opus-\n2",
+              "summary": "MLAgentBench:EvaluatingLanguageAgentsonMachineLearningExperimentation",
+              "image_path": "artifacts/docenv/2310.03302v2/page_002.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 4,
+      "raw_model_output": "{\"thought\":\"I have inspected page 2 and found the running paper title at the top. I can now answer the question.\",\"action\":\"answer\",\"action_input\":{\"text\":\"MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation\",\"evidence_refs\":[{\"page\":2}]}}",
+      "thought": "I have inspected page 2 and found the running paper title at the top. I can now answer the question.",
+      "action": "answer",
+      "action_input": {
+        "text": "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation",
+        "evidence_refs": [
+          {
+            "page": 999999,
+            "bbox": [
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation",
+          "evidence_refs": [
+            {
+              "page": 999999,
+              "bbox": [
+                0,
+                0,
+                1,
+                1
+              ]
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1132,
+      "completion_tokens": 44,
+      "total_tokens": 1176,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1309,
+      "completion_tokens": 55,
+      "total_tokens": 1364,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1818,
+      "completion_tokens": 53,
+      "total_tokens": 1871,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 2416,
+      "completion_tokens": 60,
+      "total_tokens": 2476,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 4,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "hallucinated_evidence_ref",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "2310.03302v2__cross__p1_p2",
+    "source_final_action": "answer",
+    "source_final_answer": "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved, but terminal evidence_refs point to a page never observed in the trajectory."
+  }
+}

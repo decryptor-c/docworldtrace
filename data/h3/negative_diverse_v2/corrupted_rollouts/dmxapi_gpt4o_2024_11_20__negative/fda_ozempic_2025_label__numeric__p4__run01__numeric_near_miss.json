@@ -1,0 +1,301 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "read_page",
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "ocr",
+        "compute",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "fda_ozempic_2025_label",
+    "metadata": {
+      "audit_note": "W5 fix: original row labels contained newlines from a merged cell. Rewrote with single-line dose-pen labels and added 'mg per pen' clarification.",
+      "bbox": [
+        36.239999999999995,
+        410.52,
+        303.8405,
+        495.3595
+      ],
+      "column_label": "Total Strength per Total Volume",
+      "first_label": "0.5 mg dose pen",
+      "first_value": 2.0,
+      "formula": "(second_value - first_value) / abs(first_value) * 100",
+      "page": 4,
+      "review_status": "needs_human_review",
+      "second_label": "1 mg dose pen",
+      "second_value": 4.0
+    },
+    "pdf_path": "data/raw_pdfs/fda_ozempic_2025_label.pdf",
+    "question": "Based on the table on page 4 ('DOSAGE FORMS AND STRENGTHS'), in the column \"Total Strength per Total Volume\" (mg per pen), compute the percentage increase from the 0.5 mg dose pen (2 mg / 3 mL) to the 1 mg dose pen (4 mg / 3 mL). Report only the final result as a signed percentage with two decimals.",
+    "reference_answer": "100.00%",
+    "required_tools": [
+      "parse_table",
+      "compute"
+    ],
+    "seed_id": "fda_ozempic_2025_label__numeric__p4",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          36.239999999999995,
+          410.52,
+          303.8405,
+          495.3595
+        ],
+        "page": 4
+      }
+    ],
+    "task_type": "numeric_computation",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "compute_note": "Use the numeric formula in the question and preserve the sign of the percentage change.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        36.239999999999995,
+        410.52,
+        303.8405,
+        495.3595
+      ],
+      "target_page": 4
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I should parse the table on page 4 using the provided bbox to extract relevant dosage information.\",\"action\":\"parse_table\",\"action_input\":{\"page_id\":4,\"bbox\":[36.239999999999995,410.52,303.8405,495.3595]}}",
+      "thought": "I should parse the table on page 4 using the provided bbox to extract relevant dosage information.",
+      "action": "parse_table",
+      "action_input": {
+        "page_id": 4,
+        "bbox": [
+          36.239999999999995,
+          410.52,
+          303.8405,
+          495.3595
+        ]
+      },
+      "observation": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {
+          "page": 4,
+          "bbox": [
+            36.239999999999995,
+            410.52,
+            303.8405,
+            495.3595
+          ],
+          "rows": [
+            [
+              "Dose per\nInjection",
+              "Total Strength\nper Total Volume",
+              "Strength per\nmL"
+            ],
+            [
+              "0.25 mg\n0.5 mg",
+              "2 mg / 3 mL",
+              "0.68 mg/mL"
+            ],
+            [
+              "1 mg",
+              "4 mg / 3 mL",
+              "1.34 mg/mL"
+            ],
+            [
+              "2 mg",
+              "8 mg / 3 mL",
+              "2.68 mg/mL"
+            ]
+          ],
+          "markdown": "| Dose per\nInjection | Total Strength\nper Total Volume | Strength per\nmL |\n| --- | --- | --- |\n| 0.25 mg\n0.5 mg | 2 mg / 3 mL | 0.68 mg/mL |\n| 1 mg | 4 mg / 3 mL | 1.34 mg/mL |\n| 2 mg | 8 mg / 3 mL | 2.68 mg/mL |"
+        },
+        "provenance": {
+          "page": 4,
+          "bbox": [
+            36.239999999999995,
+            410.52,
+            303.8405,
+            495.3595
+          ],
+          "element_type": "table"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"I now have the dosage information. I will compute the percentage increase from the 0.5 mg dose pen (2 mg / 3 mL) to the 1 mg dose pen (4 mg / 3 mL) using the formula.\",\"action\":\"compute\",\"action_input\":{\"expr\":\"(new_strength - old_strength) / old_strength * 100\",\"vars\":{\"new_strength\":4,\"old_strength\":2}}}",
+      "thought": "I now have the dosage information. I will compute the percentage increase from the 0.5 mg dose pen (2 mg / 3 mL) to the 1 mg dose pen (4 mg / 3 mL) using the formula.",
+      "action": "compute",
+      "action_input": {
+        "expr": "(new_strength - old_strength) / old_strength * 100",
+        "vars": {
+          "new_strength": 4,
+          "old_strength": 2
+        }
+      },
+      "observation": {
+        "action": "compute",
+        "status": "success",
+        "result": {
+          "expr": "(new_strength - old_strength) / old_strength * 100",
+          "vars": {
+            "new_strength": 4,
+            "old_strength": 2
+          },
+          "value": 100.0
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "computed_value"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"Corrupted negative-control terminal action.\", \"action\": \"answer\", \"action_input\": {\"text\": \"101\", \"evidence_refs\": [{\"bbox\": [36.239999999999995, 410.52, 303.8405, 495.3595], \"page\": 4}]}}",
+      "thought": "Corrupted negative-control terminal action.",
+      "action": "answer",
+      "action_input": {
+        "text": "101",
+        "evidence_refs": [
+          {
+            "bbox": [
+              36.239999999999995,
+              410.52,
+              303.8405,
+              495.3595
+            ],
+            "page": 4
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "101",
+          "evidence_refs": [
+            {
+              "bbox": [
+                36.239999999999995,
+                410.52,
+                303.8405,
+                495.3595
+              ],
+              "page": 4
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "negative_control"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "parse_table",
+    "compute",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "101",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1333,
+      "completion_tokens": 61,
+      "total_tokens": 1394,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1670,
+      "completion_tokens": 91,
+      "total_tokens": 1761,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1828,
+      "completion_tokens": 51,
+      "total_tokens": 1879,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "numeric_near_miss",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "fda_ozempic_2025_label__numeric__p4",
+    "source_final_action": "answer",
+    "source_final_answer": "100.00%",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The terminal numeric answer is changed to a plausible but incorrect nearby value."
+  }
+}

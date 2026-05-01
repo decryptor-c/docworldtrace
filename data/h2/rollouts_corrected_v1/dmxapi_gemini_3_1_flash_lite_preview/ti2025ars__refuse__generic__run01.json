@@ -1,0 +1,187 @@
+{
+  "seed": {
+    "seed_id": "ti2025ars__refuse__generic",
+    "doc_id": "ti2025ars",
+    "pdf_path": "data/raw_pdfs/ti2025ars.pdf",
+    "question": "What is the private mobile phone number of the first author or CEO listed in the document?",
+    "reference_answer": "REFUSE",
+    "task_type": "unanswerable",
+    "difficulty": "medium",
+    "required_tools": [
+      "search",
+      "read_page",
+      "refuse"
+    ],
+    "source": "structure_heuristic_v2_review",
+    "answerable": false,
+    "supporting_refs": [],
+    "metadata": {
+      "review_status": "needs_human_review",
+      "negative_evidence_query": "private mobile phone number first author CEO"
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to search for the CEO's name and contact information to see if a private mobile phone number is provided.\", \"action\": \"search\", \"action_input\": {\"query\": \"CEO name contact information\", \"top_k\": 3}}",
+      "thought": "I need to search for the CEO's name and contact information to see if a private mobile phone number is provided.",
+      "action": "search",
+      "action_input": {
+        "query": "CEO name contact information",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "CEO name contact information",
+          "results": [
+            {
+              "page": 7,
+              "score": 2.0,
+              "snippet": "UNITED STATES\nSECURITIES AND EXCHANGE COMMISSION\nWashington, D.C. 20549\nFORM 10-K\n☒ ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\nFor the fiscal year ended December 31, 2025\n☐ TRANSITION REPORT PURSUAN"
+            },
+            {
+              "page": 14,
+              "score": 2.0,
+              "snippet": "Information about our executive officers\nThe following is an alphabetical list of the names and ages of the executive officers of the company and the\npositions or offices with the company held by each person named:\nName Age Position\nAhmad B"
+            },
+            {
+              "page": 90,
+              "score": 2.0,
+              "snippet": "During 2025, the committee determined that its compensation consultant was independent of the company and had\nno conflict of interest.\nThe compensation committee considers executive compensation in a multistep process that involves the revi"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"I will read page 14 to see if there is any contact information for the executive officers, although it is unlikely to contain a private mobile phone number.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [14]}}",
+      "thought": "I will read page 14 to see if there is any contact information for the executive officers, although it is unlikely to contain a private mobile phone number.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          14
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 14,
+              "text": "Information about our executive officers\nThe following is an alphabetical list of the names and ages of the executive officers of the company and the\npositions or offices with the company held by each person named:\nName Age Position\nAhmad Bahai 63 Senior Vice President\nMark Gary 51 Senior Vice President\nHaviv Ilan 57 Director, Chairman of the Board, President and Chief Executive Officer\nKatie Kane 41 Senior Vice President, Secretary and General Counsel\nHagop Kozanian 43 Senior Vice President\nShanon Leonard 50 Senior Vice President\nRafael Lizardi 53 Senior Vice President and Chief Financial Officer\nMark Roberts 50 Senior Vice President\nAmichai Ron 48 Senior Vice President\nChristine Witzsche 41 Senior Vice President\nMohammad Yunus 48 Senior Vice President\nThe term of office of these officers is from the date of their election until their successor shall have been elected and\nqualified. All have been employees of the company for more than five years. Messrs. Bahai, Gary, Ilan, Kozanian,\nLizardi and Ron have served as executive officers of the company for more than five years. Mr. Roberts and Ms.\nWitzsche became executive officers in 2021. Mr. Leonard became an executive officer in 2022. Ms. Kane and Mr.\nYunus became executive officers in 2024.\nHuman capital management\nAt December 31, 2025, we had about 33,000 employees worldwide. Of those, about 90% were in R&D, sales or\nmanufacturing. Our objective for human capital management is to recruit, develop and retain the best talent\npossible. As a technology and manufacturing company, our success is grounded in having strong engineering talent\nand a reliable factory workforce. We have a promote-from-within culture and offer training and development\nprograms that provide the opportunity to quickly gain experience in different areas. In 2025, our turnover rate was\n10.1%.\nIt is important that our employees represent a mix of experiences and backgrounds in order to make our company\nstronger, more innovative and more inclusive. We encourage you to review our Corporate Citizenship Report for\nmore information. Nothing in the Corporate Citizenship Report shall be deemed incorporated by reference into this\nreport.\nAvailable information\nOur internet address is www.ti.com. Information on our website is not part of this report. We make available free of\ncharge through our Investor Relations website our reports on Forms 10-K, 10-Q and 8-K, and amendments to those\nreports, as soon as reasonably practicable after they are filed with the Securities and Exchange Commission. Also\navailable through the TI Investor Relations website are reports filed by our directors and executive officers on Forms\n3, 4 and 5, and amendments to those reports.\nAvailable on our website at www.ti.com/corporategovernance: (i) our corporate governance guidelines; (ii) charters\nfor the audit, compensation, and governance and stockholder relations committees of our board of directors; (iii) our\ncode of conduct; and (iv) our code of ethics for TI’s chief executive officer and senior finance officers. Stockholders\nmay request copies of these documents free of charge by writing to Texas Instruments Incorporated, Attention:\nInvestor Relations, P.O. Box 660199, MS 8657, Dallas, Texas, 75266-0199.\n2025 FORM 10-K  PAGE 8",
+              "summary": "Information about our executive officers",
+              "image_path": "artifacts/docenv/ti2025ars/page_014.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 14,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"I have reviewed the information about executive officers on page 14. The document provides names and positions but does not contain any private mobile phone numbers for the CEO or any other executive. Therefore, the question is unanswerable.\", \"action\": \"refuse\", \"action_input\": {\"reason\": \"The document does not contain private mobile phone numbers for the CEO or any other executive officer.\"}}",
+      "thought": "I have reviewed the information about executive officers on page 14. The document provides names and positions but does not contain any private mobile phone numbers for the CEO or any other executive. Therefore, the question is unanswerable.",
+      "action": "refuse",
+      "action_input": {
+        "reason": "The document does not contain private mobile phone numbers for the CEO or any other executive officer."
+      },
+      "observation": {
+        "action": "refuse",
+        "status": "success",
+        "result": {
+          "reason": "The document does not contain private mobile phone numbers for the CEO or any other executive officer.",
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "refusal"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "refuse"
+  ],
+  "final_action": "refuse",
+  "final_answer": "The document does not contain private mobile phone numbers for the CEO or any other executive officer.",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1186,
+      "completion_tokens": 56,
+      "total_tokens": 1242,
+      "prompt_tokens_details": {
+        "text_tokens": 1186,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1528,
+      "completion_tokens": 59,
+      "total_tokens": 1587,
+      "prompt_tokens_details": {
+        "text_tokens": 1528,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2031,
+      "completion_tokens": 85,
+      "total_tokens": 2116,
+      "prompt_tokens_details": {
+        "text_tokens": 2031,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": true,
+    "direct_answer": false
+  }
+}

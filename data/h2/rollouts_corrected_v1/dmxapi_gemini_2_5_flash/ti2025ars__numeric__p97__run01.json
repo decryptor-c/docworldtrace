@@ -1,0 +1,85 @@
+{
+  "seed": {
+    "seed_id": "ti2025ars__numeric__p97",
+    "doc_id": "ti2025ars",
+    "pdf_path": "data/raw_pdfs/ti2025ars.pdf",
+    "question": "Based on the table on page 97, for column \"2025 Absolute Performance\", what is the percentage change from row \"Revenue Growth: Total TI\" (13) to row \"Profit from Operations as a % of Revenue\n(Operating Profit Margin)\" (34.1)?",
+    "reference_answer": "162.31%",
+    "task_type": "numeric_computation",
+    "difficulty": "medium",
+    "required_tools": [
+      "parse_table",
+      "compute"
+    ],
+    "source": "structure_heuristic_v2_review",
+    "answerable": true,
+    "supporting_refs": [
+      {
+        "page": 97,
+        "bbox": [
+          84.96,
+          114.0,
+          562.71002,
+          215.25
+        ]
+      }
+    ],
+    "metadata": {
+      "page": 97,
+      "bbox": [
+        84.96,
+        114.0,
+        562.71002,
+        215.25
+      ],
+      "column_label": "2025 Absolute Performance",
+      "first_label": "Revenue Growth: Total TI",
+      "second_label": "Profit from Operations as a % of Revenue\n(Operating Profit Margin)",
+      "first_value": 13.0,
+      "second_value": 34.1,
+      "formula": "(second_value - first_value) / abs(first_value) * 100",
+      "review_status": "needs_human_review"
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "format_error",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"action\":\"parse_table\",\"action_input\":{\"page_id\":97}}",
+      "format_valid": false,
+      "execution_valid": false,
+      "error": "parse_table requires bbox with 4 values"
+    }
+  ],
+  "tool_sequence": [],
+  "final_action": null,
+  "final_answer": null,
+  "raw_usage": [
+    {
+      "prompt_tokens": 1251,
+      "completion_tokens": 141,
+      "total_tokens": 1392,
+      "prompt_tokens_details": {
+        "text_tokens": 1251,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 123
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": false,
+    "terminated_normally": false,
+    "step_count": 1,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  }
+}

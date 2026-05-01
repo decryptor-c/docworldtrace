@@ -1,0 +1,394 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      [
+        "parse_table",
+        "answer"
+      ],
+      [
+        "read_page",
+        "ocr",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "nasa_fy2025_budget_summary",
+    "metadata": {
+      "audit_note": "B6 fix: original asked the column-header text. Now points to a labeled data row × data column.",
+      "bbox": [
+        35.769999999999996,
+        54.08699999999999,
+        924.2299999999997,
+        503.0902222222222
+      ],
+      "column_label": "FY 2025 Request",
+      "page": 4,
+      "review_status": "needs_human_review",
+      "row_label": "NASA Total"
+    },
+    "pdf_path": "data/raw_pdfs/nasa_fy2025_budget_summary.pdf",
+    "question": "On page 4, in the table, what is the value for row \"NASA Total\" under column \"FY 2025 Request\"? Use the table evidence on that page; do not answer from memory.",
+    "reference_answer": "25,383.7",
+    "required_tools": [
+      "read_page",
+      "parse_table"
+    ],
+    "seed_id": "nasa_fy2025_budget_summary__table__p4",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          35.769999999999996,
+          54.08699999999999,
+          924.2299999999997,
+          503.0902222222222
+        ],
+        "page": 4
+      }
+    ],
+    "task_type": "table_lookup",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        35.769999999999996,
+        54.08699999999999,
+        924.2299999999997,
+        503.0902222222222
+      ],
+      "target_page": 4
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to extract the value for 'NASA Total' under 'FY 2025 Request' from the table on page 4.\", \"action\": \"parse_table\", \"action_input\": {\"page_id\": 4, \"bbox\": [35.769999999999996, 54.08699999999999, 924.2299999999997, 503.0902222222222]}}",
+      "thought": "I need to extract the value for 'NASA Total' under 'FY 2025 Request' from the table on page 4.",
+      "action": "parse_table",
+      "action_input": {
+        "page_id": 4,
+        "bbox": [
+          35.769999999999996,
+          54.08699999999999,
+          924.2299999999997,
+          503.0902222222222
+        ]
+      },
+      "observation": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {
+          "page": 4,
+          "bbox": [
+            35.77,
+            54.08699999999999,
+            924.23,
+            503.0902222222222
+          ],
+          "rows": [
+            [
+              "",
+              "FY 2023\nOperating\nPlan1/",
+              "FY 2024\nCR2/",
+              "FY 2025 Request",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Budget Authority ($M)",
+              "",
+              "",
+              "FY 2025\nRequest",
+              "",
+              "FY 2026",
+              "FY 2027",
+              "FY 2028",
+              "FY 2029"
+            ],
+            [
+              "Deep Space Exploration Systems",
+              "7,447.6",
+              "7,468.9",
+              "7,618.2",
+              "",
+              "7,803.7",
+              "7,959.8",
+              "8,119.0",
+              "8,281.4"
+            ],
+            [
+              "",
+              "",
+              "",
+              "4,213.0\n3,288.1\n117.1",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Space Operations",
+              "4,266.7",
+              "4,250.0",
+              "4,389.7",
+              "",
+              "4,497.6",
+              "4,587.6",
+              "4,679.4",
+              "4,773.0"
+            ],
+            [
+              "",
+              "",
+              "",
+              "1,269.6\n1,862.1\n1,088.4\n169.6\n0.0",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Space Technology",
+              "1,193.0",
+              "1,200.0",
+              "1,181.8",
+              "",
+              "1,205.4",
+              "1,229.5",
+              "1,254.1",
+              "1,279.2"
+            ],
+            [
+              "Science",
+              "7,791.5",
+              "7,795.0",
+              "7,565.7",
+              "",
+              "7,717.0",
+              "7,871.3",
+              "8,028.7",
+              "8,189.3"
+            ],
+            [
+              "",
+              "",
+              "",
+              "2,378.7\n2,731.5\n1,578.1\n786.7\n90.8",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Aeronautics",
+              "935.0",
+              "935.0",
+              "965.8",
+              "",
+              "985.1",
+              "1,004.8",
+              "1,024.9",
+              "1,045.4"
+            ],
+            [
+              "STEM Engagement",
+              "143.5",
+              "143.5",
+              "143.5",
+              "",
+              "146.4",
+              "149.3",
+              "152.3",
+              "155.3"
+            ],
+            [
+              "Safety, Security, and Mission Services",
+              "3,136.5",
+              "3,129.5",
+              "3,044.4",
+              "",
+              "3,105.3",
+              "3,167.4",
+              "3,230.7",
+              "3,295.3"
+            ],
+            [
+              "",
+              "",
+              "",
+              "2,058.1\n986.3",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Construction and Environmental Compliance & Restoration",
+              "422.4",
+              "414.3",
+              "424.1",
+              "",
+              "379.3",
+              "386.9",
+              "394.6",
+              "402.5"
+            ],
+            [
+              "",
+              "",
+              "",
+              "344.7\n79.4",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Inspector General",
+              "47.6",
+              "47.6",
+              "50.5",
+              "",
+              "51.5",
+              "52.5",
+              "53.6",
+              "54.7"
+            ],
+            [
+              "NASA Total",
+              "25,383.7",
+              "25,383.7",
+              "25,383.7",
+              "",
+              "25,891.3",
+              "26,409.1",
+              "26,937.3",
+              "27,476.1"
+            ]
+          ],
+          "markdown": "|  | FY 2023\nOperating\nPlan1/ | FY 2024\nCR2/ | FY 2025 Request |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  |  |  |\n| Budget Authority ($M) |  |  | FY 2025\nRequest |  | FY 2026 | FY 2027 | FY 2028 | FY 2029 |\n| Deep Space Exploration Systems | 7,447.6 | 7,468.9 | 7,618.2 |  | 7,803.7 | 7,959.8 | 8,119.0 | 8,281.4 |\n|  |  |  | 4,213.0\n3,288.1\n117.1 |  |  |  |  |  |\n| Space Operations | 4,266.7 | 4,250.0 | 4,389.7 |  | 4,497.6 | 4,587.6 | 4,679.4 | 4,773.0 |\n|  |  |  | 1,269.6\n1,862.1\n1,088.4\n169.6\n0.0 |  |  |  |  |  |\n| Space Technology | 1,193.0 | 1,200.0 | 1,181.8 |  | 1,205.4 | 1,229.5 | 1,254.1 | 1,279.2 |\n| Science | 7,791.5 | 7,795.0 | 7,565.7 |  | 7,717.0 | 7,871.3 | 8,028.7 | 8,189.3 |\n|  |  |  | 2,378.7\n2,731.5\n1,578.1\n786.7\n90.8 |  |  |  |  |  |\n| Aeronautics | 935.0 | 935.0 | 965.8 |  | 985.1 | 1,004.8 | 1,024.9 | 1,045.4 |\n| STEM Engagement | 143.5 | 143.5 | 143.5 |  | 146.4 | 149.3 | 152.3 | 155.3 |\n| Safety, Security, and Mission Services | 3,136.5 | 3,129.5 | 3,044.4 |  | 3,105.3 | 3,167.4 | 3,230.7 | 3,295.3 |\n|  |  |  | 2,058.1\n986.3 |  |  |  |  |  |\n| Construction and Environmental Compliance & Restoration | 422.4 | 414.3 | 424.1 |  | 379.3 | 386.9 | 394.6 | 402.5 |\n|  |  |  | 344.7\n79.4 |  |  |  |  |  |\n| Inspector General | 47.6 | 47.6 | 50.5 |  | 51.5 | 52.5 | 53.6 | 54.7 |\n| NASA Total | 25,383.7 | 25,383.7 | 25,383.7 |  | 25,891.3 | 26,409.1 | 26,937.3 | 27,476.1 |"
+        },
+        "provenance": {
+          "page": 4,
+          "bbox": [
+            35.77,
+            54.08699999999999,
+            924.23,
+            503.0902222222222
+          ],
+          "element_type": "table"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The table clearly lists 'NASA Total' in the first column and '25,383.7' in the 'FY 2025 Request' column.\", \"action\": \"answer\", \"action_input\": {\"text\": \"The value for 'NASA Total' under the 'FY 2025 Request' column is 25,383.7.\", \"evidence_refs\": [{\"page\": 4}]}}",
+      "thought": "The table clearly lists 'NASA Total' in the first column and '25,383.7' in the 'FY 2025 Request' column.",
+      "action": "answer",
+      "action_input": {
+        "text": "The value for 'NASA Total' under the 'FY 2025 Request' column is 25,383.7.",
+        "evidence_refs": [
+          {
+            "page": 4
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "The value for 'NASA Total' under the 'FY 2025 Request' column is 25,383.7.",
+          "evidence_refs": [
+            {
+              "page": 4
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "parse_table",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "The value for 'NASA Total' under the 'FY 2025 Request' column is 25,383.7.",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1461,
+      "completion_tokens": 135,
+      "total_tokens": 1596,
+      "prompt_tokens_details": {
+        "text_tokens": 1461,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 3123,
+      "completion_tokens": 97,
+      "total_tokens": 3220,
+      "prompt_tokens_details": {
+        "text_tokens": 3123,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  }
+}

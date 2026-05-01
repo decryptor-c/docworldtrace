@@ -1,0 +1,230 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "hard",
+    "doc_id": "nasa_fy2025_budget_summary",
+    "metadata": {
+      "anchor_page": 2,
+      "anchor_phrase": "international space station while partnering with us industry",
+      "answer_page": 3,
+      "audit_note": "B5 fix: p2 and p3 share the SAME page heading (degenerate cross-page). Re-anchored on a phrase unique to p2 (ISS bullet) and rephrased to ask for the leading bullet on p3 instead of the heading. | V2 fix: Aligned the query with a short leading-phrase GT instead of a long bullet clause.",
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/nasa_fy2025_budget_summary.pdf",
+    "question": "Use search to find the page about \"international space station while partnering with U.S. industry\". Then inspect the following page and report only the first three words of the first bullet.",
+    "reference_answer": "Drives scientific discovery",
+    "required_tools": [
+      "search",
+      "read_page"
+    ],
+    "seed_id": "nasa_fy2025_budget_summary__cross__p2_p3",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "page": 3
+      }
+    ],
+    "task_type": "cross_page",
+    "tool_hints": {
+      "target_page": 3
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview__negative",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to find the page discussing the international space station and U.S. industry partnerships, then read the next page to find the first three words of the first bullet.\", \"action\": \"search\", \"action_input\": {\"query\": \"international space station partnering with U.S. industry\"}}",
+      "thought": "I need to find the page discussing the international space station and U.S. industry partnerships, then read the next page to find the first three words of the first bullet.",
+      "action": "search",
+      "action_input": {
+        "query": "international space station partnering with U.S. industry",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "international space station partnering with U.S. industry",
+          "results": [
+            {
+              "page": 2,
+              "score": 8.0,
+              "snippet": "Advancing U.S. Leadership in Exploration and Discovery\n• The President’s budget request for NASA is an investment in our nation’s future; it promotes U.S.\nleadership in space exploration, improves our understanding of Earth and the universe"
+            },
+            {
+              "page": 8,
+              "score": 7.0,
+              "snippet": "Low-Earth Orbit Transition: ISS to Commercial Destinations\nFY 2020 2021 2022 2023 2024 2025 2026 2027 2028 2029 2030 2031 2032\nInternational Space Station (ISS) Operations\nU.S. Deorbit Vehicle Development\nDelivery Deorbit\nCommercial LEO Des"
+            },
+            {
+              "page": 17,
+              "score": 6.0,
+              "snippet": "Space Operations:\nInternational Space Station\nFY 2023 FY 2025 Request\nFY 2024\nOperating FY 2025\nBudget Authority ($M) CR2/ FY 2026 FY 2027 FY 2028 FY 2029\nPlan1/ Request\nInternational Space Station 1,286.2 1,269.6 1,267.8 1,262.8 1,259.4 1,"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The search results point to page 2 as a relevant starting point. I will read page 2 and page 3 to find the bulleted list mentioned in the task.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [2, 3]}}",
+      "thought": "The search results point to page 2 as a relevant starting point. I will read page 2 and page 3 to find the bulleted list mentioned in the task.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          2,
+          3
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 2,
+              "text": "Advancing U.S. Leadership in Exploration and Discovery\n• The President’s budget request for NASA is an investment in our nation’s future; it promotes U.S.\nleadership in space exploration, improves our understanding of Earth and the universe, inspires the\nArtemis Generation, and develops new aviation and space technologies for the benefit of humanity\n• Leads the world back to the Moon through the Artemis program, with the broadest space exploration\ncoalition in history\n• Advances science and research in low-Earth orbit on the\nInternational Space Station while partnering with U.S.\nindustry to develop commercial destinations to further\nAmerican presence in low Earth Orbit after the ISS is\nretired in 2030\n• Invests in the civil space technology base by developing,\ndemonstrating, and transferring revolutionary technologies\nthat expand the commercial space economy and transform\nNASA missions\n2",
+              "summary": "Advancing U.S. Leadership in Exploration and Discovery",
+              "image_path": "artifacts/docenv/nasa_fy2025_budget_summary/page_002.png"
+            },
+            {
+              "page": 3,
+              "text": "Advancing U.S. Leadership in Exploration and Discovery\n• Drives scientific discovery through a balanced portfolio of space-based observatories\nperforming fundamental research, exploring other bodies in the solar system, and\ngazing into the galaxy and beyond\n• Strengthens NASA’s global leadership in Earth science to enhance our\nunderstanding of the Earth system, response to natural hazards, and\nmanagement of our natural resources\n• Bolsters competitiveness of the U.S. aviation sector, with technologies\nthat will transform commercial air travel, including a more efficient and\ngreener future for aviation\n• Engages students from diverse communities to pursue science, technology,\nengineering, and mathematics\n• Invests in workforce, information technology, and infrastructure to enable mission\nsuccess, and maintains a strong commitment to advancing diversity, equity, inclusion,\nand accessibility\n3",
+              "summary": "Advancing U.S. Leadership in Exploration and Discovery",
+              "image_path": "artifacts/docenv/nasa_fy2025_budget_summary/page_003.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"Corrupted negative-control terminal action.\", \"action\": \"answer\", \"action_input\": {\"text\": \"Incorrect heading not supported by the document\", \"evidence_refs\": [{\"page\": 3}]}}",
+      "thought": "Corrupted negative-control terminal action.",
+      "action": "answer",
+      "action_input": {
+        "text": "Incorrect heading not supported by the document",
+        "evidence_refs": [
+          {
+            "page": 3
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "Incorrect heading not supported by the document",
+          "evidence_refs": [
+            {
+              "page": 3
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "negative_control"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "Incorrect heading not supported by the document",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1290,
+      "completion_tokens": 65,
+      "total_tokens": 1355,
+      "prompt_tokens_details": {
+        "text_tokens": 1290,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1754,
+      "completion_tokens": 64,
+      "total_tokens": 1818,
+      "prompt_tokens_details": {
+        "text_tokens": 1754,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2297,
+      "completion_tokens": 90,
+      "total_tokens": 2387,
+      "prompt_tokens_details": {
+        "text_tokens": 2297,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "wrong_final_answer",
+    "source_teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+    "source_seed_id": "nasa_fy2025_budget_summary__cross__p2_p3",
+    "source_final_action": "answer",
+    "source_final_answer": "Drives scientific discovery",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The terminal answer/refusal was intentionally corrupted while preserving the preceding trajectory."
+  }
+}

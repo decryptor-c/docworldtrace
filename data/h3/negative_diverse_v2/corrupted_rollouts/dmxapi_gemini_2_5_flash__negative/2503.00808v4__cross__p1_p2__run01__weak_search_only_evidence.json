@@ -1,0 +1,217 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "hard",
+    "doc_id": "2503.00808v4",
+    "metadata": {
+      "anchor_page": 1,
+      "anchor_phrase": "predictive data selection the data that",
+      "answer_page": 2,
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/2503.00808v4.pdf",
+    "question": "First find the page about \"predictive data selection the data that\". What is the heading or leading phrase on the next page?",
+    "reference_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+    "required_tools": [
+      "search",
+      "read_page"
+    ],
+    "seed_id": "2503.00808v4__cross__p1_p2",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "page": 2
+      }
+    ],
+    "task_type": "cross_page",
+    "tool_hints": {
+      "target_page": 2
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash__negative",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"action\": \"search\", \"action_input\": {\"query\": \"predictive data selection the data that\", \"top_k\": 3}}",
+      "thought": "",
+      "action": "search",
+      "action_input": {
+        "query": "predictive data selection the data that",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "predictive data selection the data that",
+          "results": [
+            {
+              "page": 1,
+              "score": 6.0,
+              "snippet": "Predictive Data Selection: The Data That Predicts Is the Data That Teaches\nKashunShum*1 YuzhenHuang*1 HongjianZou2 QiDing2 YixuanLiao2 XiaoxinChen2 QianLiu\nJunxianHe1\nAbstract\n42\nLanguagemodelpretraininginvolvestrainingon\nextensivecorpora,w"
+            },
+            {
+              "page": 3,
+              "score": 6.0,
+              "snippet": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\nin§3.4. WhileHuangetal.(2024)usethePearsoncorrelationco-\nefficient to measure the relationship between losses and\nExperimental results show that PRESELECT naturally se-\nthe mod"
+            },
+            {
+              "page": 4,
+              "score": 6.0,
+              "snippet": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\n2.3.TheOverallFramework scorer. Notably, our approach requires only the fastText\nscoreratdeployment,makingithighlyaccessibleandscal-\nOur core hypothesis is that the data on whi"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The search results indicate that the phrase \\\"Predictive Data Selection: The Data That Predicts Is the Data That Teaches\\\" appears on multiple pages, including page 1. The question asks for the heading or leading phrase on the *next* page after finding the page about \\\"predictive data selection the data that\\\". Since page 1 contains the exact phrase, I should read page 2 to find its heading or leading phrase.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [2]}}",
+      "thought": "The search results indicate that the phrase \"Predictive Data Selection: The Data That Predicts Is the Data That Teaches\" appears on multiple pages, including page 1. The question asks for the heading or leading phrase on the *next* page after finding the page about \"predictive data selection the data that\". Since page 1 contains the exact phrase, I should read page 2 to find its heading or leading phrase.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          2
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_weak_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"Page 2 starts with the phrase \\\"PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\\\", which is the leading phrase or heading.\", \"action\": \"answer\", \"action_input\": {\"text\": \"PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\", \"evidence_refs\": [{\"page\": 2}]}}",
+      "thought": "Page 2 starts with the phrase \"PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\", which is the leading phrase or heading.",
+      "action": "answer",
+      "action_input": {
+        "text": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "evidence_refs": [
+          {
+            "page": 2
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+          "evidence_refs": [
+            {
+              "page": 2
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1332,
+      "completion_tokens": 113,
+      "total_tokens": 1445,
+      "prompt_tokens_details": {
+        "text_tokens": 1332,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 82
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1678,
+      "completion_tokens": 113,
+      "total_tokens": 1791,
+      "prompt_tokens_details": {
+        "text_tokens": 1678,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2333,
+      "completion_tokens": 163,
+      "total_tokens": 2496,
+      "prompt_tokens_details": {
+        "text_tokens": 2333,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 82
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "weak_search_only_evidence",
+    "source_teacher": "dmxapi_gemini_2_5_flash",
+    "source_seed_id": "2503.00808v4__cross__p1_p2",
+    "source_final_action": "answer",
+    "source_final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved, but rich evidence observations are blanked so only search-level evidence remains."
+  }
+}

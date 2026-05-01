@@ -1,0 +1,343 @@
+{
+  "seed": {
+    "seed_id": "nasa_fy2025_budget_summary__numeric__p4",
+    "doc_id": "nasa_fy2025_budget_summary",
+    "pdf_path": "data/raw_pdfs/nasa_fy2025_budget_summary.pdf",
+    "question": "Based on the table on page 4, in column \"FY 2023 Operating Plan\", compute the percentage by which the value in row \"Space Operations\" (4266.7) is less than the value in row \"Deep Space Exploration Systems\" (7447.6). Report only the final result as a signed percentage with two decimals.",
+    "reference_answer": "-42.71%",
+    "task_type": "numeric_computation",
+    "difficulty": "medium",
+    "required_tools": [
+      "parse_table",
+      "compute"
+    ],
+    "source": "structure_heuristic_v2_review",
+    "answerable": true,
+    "supporting_refs": [
+      {
+        "page": 4,
+        "bbox": [
+          35.769999999999996,
+          54.08699999999999,
+          924.2299999999997,
+          503.0902222222222
+        ]
+      }
+    ],
+    "metadata": {
+      "page": 4,
+      "bbox": [
+        35.769999999999996,
+        54.08699999999999,
+        924.2299999999997,
+        503.0902222222222
+      ],
+      "column_label": "FY 2023 Operating Plan",
+      "first_label": "Deep Space Exploration Systems",
+      "second_label": "Space Operations",
+      "first_value": 7447.6,
+      "second_value": 4266.7,
+      "formula": "(second_value - first_value) / abs(first_value) * 100",
+      "review_status": "needs_human_review",
+      "audit_note": "W8 fix: rephrased question from 'percentage change from row X to row Y' (semantically odd for cross-program comparison) to 'percentage by which Y is less than X' which is a natural budget-comparison question."
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "format_error",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I need to confirm the values in the table on page 4 to perform the calculation.\",\"action\":\"parse_table\",\"action_input\":{\"page_id\":4,\"bbox\":[50,100,600,500]}}",
+      "thought": "I need to confirm the values in the table on page 4 to perform the calculation.",
+      "action": "parse_table",
+      "action_input": {
+        "page_id": 4,
+        "bbox": [
+          50.0,
+          100.0,
+          600.0,
+          500.0
+        ]
+      },
+      "observation": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {
+          "page": 4,
+          "bbox": [
+            35.77,
+            54.08699999999999,
+            924.23,
+            503.0902222222222
+          ],
+          "rows": [
+            [
+              "",
+              "FY 2023\nOperating\nPlan1/",
+              "FY 2024\nCR2/",
+              "FY 2025 Request",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Budget Authority ($M)",
+              "",
+              "",
+              "FY 2025\nRequest",
+              "",
+              "FY 2026",
+              "FY 2027",
+              "FY 2028",
+              "FY 2029"
+            ],
+            [
+              "Deep Space Exploration Systems",
+              "7,447.6",
+              "7,468.9",
+              "7,618.2",
+              "",
+              "7,803.7",
+              "7,959.8",
+              "8,119.0",
+              "8,281.4"
+            ],
+            [
+              "",
+              "",
+              "",
+              "4,213.0\n3,288.1\n117.1",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Space Operations",
+              "4,266.7",
+              "4,250.0",
+              "4,389.7",
+              "",
+              "4,497.6",
+              "4,587.6",
+              "4,679.4",
+              "4,773.0"
+            ],
+            [
+              "",
+              "",
+              "",
+              "1,269.6\n1,862.1\n1,088.4\n169.6\n0.0",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Space Technology",
+              "1,193.0",
+              "1,200.0",
+              "1,181.8",
+              "",
+              "1,205.4",
+              "1,229.5",
+              "1,254.1",
+              "1,279.2"
+            ],
+            [
+              "Science",
+              "7,791.5",
+              "7,795.0",
+              "7,565.7",
+              "",
+              "7,717.0",
+              "7,871.3",
+              "8,028.7",
+              "8,189.3"
+            ],
+            [
+              "",
+              "",
+              "",
+              "2,378.7\n2,731.5\n1,578.1\n786.7\n90.8",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Aeronautics",
+              "935.0",
+              "935.0",
+              "965.8",
+              "",
+              "985.1",
+              "1,004.8",
+              "1,024.9",
+              "1,045.4"
+            ],
+            [
+              "STEM Engagement",
+              "143.5",
+              "143.5",
+              "143.5",
+              "",
+              "146.4",
+              "149.3",
+              "152.3",
+              "155.3"
+            ],
+            [
+              "Safety, Security, and Mission Services",
+              "3,136.5",
+              "3,129.5",
+              "3,044.4",
+              "",
+              "3,105.3",
+              "3,167.4",
+              "3,230.7",
+              "3,295.3"
+            ],
+            [
+              "",
+              "",
+              "",
+              "2,058.1\n986.3",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Construction and Environmental Compliance & Restoration",
+              "422.4",
+              "414.3",
+              "424.1",
+              "",
+              "379.3",
+              "386.9",
+              "394.6",
+              "402.5"
+            ],
+            [
+              "",
+              "",
+              "",
+              "344.7\n79.4",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Inspector General",
+              "47.6",
+              "47.6",
+              "50.5",
+              "",
+              "51.5",
+              "52.5",
+              "53.6",
+              "54.7"
+            ],
+            [
+              "NASA Total",
+              "25,383.7",
+              "25,383.7",
+              "25,383.7",
+              "",
+              "25,891.3",
+              "26,409.1",
+              "26,937.3",
+              "27,476.1"
+            ]
+          ],
+          "markdown": "|  | FY 2023\nOperating\nPlan1/ | FY 2024\nCR2/ | FY 2025 Request |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  |  |  |\n| Budget Authority ($M) |  |  | FY 2025\nRequest |  | FY 2026 | FY 2027 | FY 2028 | FY 2029 |\n| Deep Space Exploration Systems | 7,447.6 | 7,468.9 | 7,618.2 |  | 7,803.7 | 7,959.8 | 8,119.0 | 8,281.4 |\n|  |  |  | 4,213.0\n3,288.1\n117.1 |  |  |  |  |  |\n| Space Operations | 4,266.7 | 4,250.0 | 4,389.7 |  | 4,497.6 | 4,587.6 | 4,679.4 | 4,773.0 |\n|  |  |  | 1,269.6\n1,862.1\n1,088.4\n169.6\n0.0 |  |  |  |  |  |\n| Space Technology | 1,193.0 | 1,200.0 | 1,181.8 |  | 1,205.4 | 1,229.5 | 1,254.1 | 1,279.2 |\n| Science | 7,791.5 | 7,795.0 | 7,565.7 |  | 7,717.0 | 7,871.3 | 8,028.7 | 8,189.3 |\n|  |  |  | 2,378.7\n2,731.5\n1,578.1\n786.7\n90.8 |  |  |  |  |  |\n| Aeronautics | 935.0 | 935.0 | 965.8 |  | 985.1 | 1,004.8 | 1,024.9 | 1,045.4 |\n| STEM Engagement | 143.5 | 143.5 | 143.5 |  | 146.4 | 149.3 | 152.3 | 155.3 |\n| Safety, Security, and Mission Services | 3,136.5 | 3,129.5 | 3,044.4 |  | 3,105.3 | 3,167.4 | 3,230.7 | 3,295.3 |\n|  |  |  | 2,058.1\n986.3 |  |  |  |  |  |\n| Construction and Environmental Compliance & Restoration | 422.4 | 414.3 | 424.1 |  | 379.3 | 386.9 | 394.6 | 402.5 |\n|  |  |  | 344.7\n79.4 |  |  |  |  |  |\n| Inspector General | 47.6 | 47.6 | 50.5 |  | 51.5 | 52.5 | 53.6 | 54.7 |\n| NASA Total | 25,383.7 | 25,383.7 | 25,383.7 |  | 25,891.3 | 26,409.1 | 26,937.3 | 27,476.1 |"
+        },
+        "provenance": {
+          "page": 4,
+          "bbox": [
+            35.77,
+            54.08699999999999,
+            924.23,
+            503.0902222222222
+          ],
+          "element_type": "table"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "",
+      "format_valid": false,
+      "execution_valid": false,
+      "error": "No JSON object found in model output"
+    }
+  ],
+  "tool_sequence": [
+    "parse_table"
+  ],
+  "final_action": null,
+  "final_answer": null,
+  "raw_usage": [
+    {
+      "prompt_tokens": 1315,
+      "completion_tokens": 56,
+      "total_tokens": 1371,
+      "prompt_tokens_details": {
+        "text_tokens": 1315,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2898,
+      "completion_tokens": 140,
+      "total_tokens": 3038,
+      "prompt_tokens_details": {
+        "text_tokens": 2898,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 140
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": false,
+    "terminated_normally": false,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  }
+}

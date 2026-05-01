@@ -1,0 +1,210 @@
+{
+  "seed": {
+    "seed_id": "2308.06595v4__refuse__generic",
+    "doc_id": "2308.06595v4",
+    "pdf_path": "data/raw_pdfs/2308.06595v4.pdf",
+    "question": "What is the private mobile phone number of the first author or CEO listed in the document?",
+    "reference_answer": "REFUSE",
+    "task_type": "unanswerable",
+    "difficulty": "medium",
+    "required_tools": [
+      "search",
+      "read_page",
+      "refuse"
+    ],
+    "source": "structure_heuristic_v2_review",
+    "answerable": false,
+    "supporting_refs": [],
+    "metadata": {
+      "review_status": "needs_human_review",
+      "negative_evidence_query": "private mobile phone number first author CEO"
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I should search for any mention of the first author or CEO in the document.\",\"action\":\"search\",\"action_input\":{\"query\":\"first author or CEO\",\"top_k\":3}}",
+      "thought": "I should search for any mention of the first author or CEO in the document.",
+      "action": "search",
+      "action_input": {
+        "query": "first author or CEO",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "first author or CEO",
+          "results": [
+            {
+              "page": 2,
+              "score": 2.0,
+              "snippet": "1 Introduction\nA long-standing challenge for artificial intelligence is to build general-purpose assistants\nthatcan,incollaborationwithhumans,solvediverseandnever-before-seentasks[1]. For\ntextual tasks, several recent works [2, 3, 4, 5, 6, "
+            },
+            {
+              "page": 3,
+              "score": 1.0,
+              "snippet": "Reasoning Over Art Knowledge Recognition Location Home Renovation\nPlots Understanding\nHow much is the Teach me about this Where is this? If you are going for a Here is a photo of my\nbrowser usage for painting. picnic at this location, bathr"
+            },
+            {
+              "page": 4,
+              "score": 1.0,
+              "snippet": "2 VisIT-Bench: AReal-WorldInspiredVLInstruction-FollowingBenchmark\nInstruction Generation Instruction-Conditioned Caption Generation Model Output Evaluation\n“Create a new, challenging instruction “Provide a highly descriptive caption to all"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The search results do not provide any direct information about the first author or CEO. I should read the relevant pages to confirm.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[2,3,4]}}",
+      "thought": "The search results do not provide any direct information about the first author or CEO. I should read the relevant pages to confirm.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          2,
+          3,
+          4
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 2,
+              "text": "1 Introduction\nA long-standing challenge for artificial intelligence is to build general-purpose assistants\nthatcan,incollaborationwithhumans,solvediverseandnever-before-seentasks[1]. For\ntextual tasks, several recent works [2, 3, 4, 5, 6, 7] have shown that fine-tuning language\nmodelssuchasGPT-3andLLaMAwithsupervisedinstruction+responseexamples[8,9,10]\nenablesthemtorespondtoimperativerequestsandquestionswithouttask-specifictraining.\nZero-shot generalization is promising not only for standard academic benchmarks, but –\nperhaps more-so – for creative, useful, and real-world queries that downstream users of\nlanguagetechnologiesarelikelytomake.\nOnthemultimodalside,recentinstruction-followingvision-languagemodelsalsoprovide\nazero-shotinterface. Givenanimage(ormultipleimages)andaquery(e.g.,“howmany\napplesareinthisimage?” or“Whatisthis?” or“WriteapoeminthestyleofRobertFrost\naboutthisscene.”) atextualresponseisprovided. RecentworkslikeOpenFlamingo[11,12],\nLLaVA[13]andothers[14,15,16,17,18],haveimplementedthisinterfacewithpromising\ninitialresults. AlthoughstandardbenchmarkslikeVQAv2[19]andCOCOcaptioning[20]\nare commonly used to assess performance, less is know about how models perform on\nbroader, open-endedqueriesthatresemblereal-worlduserbehavior. Evaluationsofsuch\nqueriestypicallyrelyoninformalandqualitativeapproaches.\nTo support quantitative evaluation for this setting, we present VisIT-Bench (Visual\nInsTruction Benchmark), a dynamic benchmark consisting of 592 challenging vision-\nlanguageinstructions. Eachinstancecontainsaninstruction,inputimage(s),ainstruction-\nconditioned caption (a human-crafted caption for the image(s)/instruction), and a human\nverifiedreference(Figure1). Instructionsareimage-contextualimperativerequestsorques-\ntions,e.g.,foranimageofpancakes,auserasks“howcanIcookthisinahealthyway?”.\nDifferentfromexistingzero-shotevaluations,manyoftheinstructionsfocusonopen-ended\ngenerationrequests(e.g.,“writeapoem...” or“whatshouldIbringifIweretovisithere?”).\nWecreatedVisIT-Benchtocoverawidearrayof“instructionfamilies”. Ourstartingpoint\nwasasetof70“wish-list”taskssuchas“homerenovation”and“gardeningtips”collectedby\ntheauthors:1 eachrequiringvariedhigh-levelskillsfromrecognitiontocomplexreasoning\n(Figure 2). We derived 25/70 instruction families from benchmark tasks such as Visual\nQuestion Answering (VQA) [21] and robust change captioning [22] into a chatbot-style\nformat(thisreformattingdiffersfrompriorwork[14,17,13],aswefocusonopen-ended\nchatbotstyleresponses.). Notably,10oftheserepurposedtasksinvolvemultipleimages.\nWe started with 10 images for each instruction family. Our annotators, guided by an\nexample,createanewinstruction,andprovidea(permissivelylicensed)image. Foreach\ninstruction, we next collect instruction-conditioned captions – unlike prior work [23, 24]\nthesedescriptionsaredesignednotonlytodescribetheimageingeneral,butalso,surface\ninformationtargetedtotheinstruction. Finally,weuseinstruction-conditionedcaptionsto\ngenerate areference candidate output fromGPT-4; an additional humanverificationstep\ndiscardsGPT-4referencesdeemedtobeincorrect.\nWeconductalarge-scaleempiricalcomparisonofmultimodalinstruction-followingmodels\nusing VisIT-Bench (§4). We first gather predictions for each instance from 7 candidate\nmodels. Then,wecollect5Khumanjudgementsofoutputqualitybypittingmodeloutputs\nhead-to-head,and(inaforced-choicesetup)crowd-sourcingpairwisepreferencejudgements.\nThis analysis not only reveals significant differences between models (e.g., that LLaVA-\n13b[13]isgenerallypreferredtoPanda[18]),butalso,thatthehumanverifiedreferences\nin our corpus are preferred significantly more than the ones generated using multimodal\nmodels. Wesummarizehead-to-headcomparisonswithtwometrics: 1)Eloratings[25,26],\n1Werecognizethatpromisingapplicationsmaynotbecoveredbyourset;andwedon’tnecessarilyadvocate\nfordeployingmodelsinallcaseswecover–wehopeVisIT-Benchcanhelptoquantifyshortcomingsandrisks.\n2",
+              "summary": "1 Introduction",
+              "image_path": "artifacts/docenv/2308.06595v4/page_002.png"
+            },
+            {
+              "page": 3,
+              "text": "Reasoning Over Art Knowledge Recognition Location Home Renovation\nPlots Understanding\nHow much is the Teach me about this Where is this? If you are going for a Here is a photo of my\nbrowser usage for painting. picnic at this location, bathroom. How can I\nFirefox and Safari? what items should you design it nicer?\ncarry with you?\nContextual Figurative Speech Chemical Hazard Identification Game Playing\nKnowledge of Events Explanation Identification\nTell me what is notable Someone said that this Which chemical If you are driving and What is the poker hand\nor important about the man is an angel. Why? compound does this come across this shown in the picture?\nevent in this photo. image represent? scenario, what should Is this a good hand?\nyou do?\nFigure2: Asamplefromthe70instructionfamiliesinVisIT-Benchrepresentingtaskswe\nenvisioninstruction-followingvision-languagemodelsshould beabletofollow.\nwhichproviderelative“skill”ratingestimatesencodingtheprobabilitythatmodelAwill\nbepreferredtomodelB;and2)winrateversusourreferences,whichprovidesanabsolute\nmetric. ThebestmodelaccordingtohumanjudgementisLLaMA-Adapter-v2[16],yetit\nonlywinsinapairwisesettingagainstthereferencein27.4%ofcases.\nFinally,wedesignanautomatedevaluationforVisIT-Bench,utilizingGPT-4torankpairs\nof model responses based on factors like correctness, relevance, and fluency. Using the\ninstruction-conditionedcaptionandtheinstruction,GPT-4determinesthebetterresponse\nbetween two options, expediting iteration compared to human preferences. We explore\nreference-freeandreference-backed versionsofthismetric. Comparedtovariousmetrics\n(BLEU-4 [27], ROUGE-L [28], METEOR [29], CIDEr [30], and BERTScore [31]), our\nevaluationalignsbestwithhumanpreferences. Forexample,itachievesa94%agreement\nrateinthecaseswhereallfiveannotatorsagree. SeeFigure7foraschematicoftheprocess.\nWhileitisdifficulttoapriorienvisionallpossiblescenariosunderwhichmoreperformant\nmultimodalchatbotsmightbeused,wehopeVisIT-Benchcanprovideapathtoimproving\nvision-languagemodels“inthewild.” Table1presentsasummaryofourcontributionsin\ncomparison to the recent works [32, 14, 17, 33, 34, 35] in the evaluation of multimodal\nchatbots. WepubliclyreleaseVisIT-Benchdata,code,andautomaticmetricstofacilitate\nfuturemodelevaluations,availableinhttps://visit-bench.github.io/.\nTable1: Comparisonwithrelatedworksforevaluatinginstruction-followingvision-language\nmodels. Win-rates*referstothemodelwin-ratesagainstareferenceoutput/model.\nMultiInstruct[32] Owl[17] InstructBLIP[14] M3IT[33] LVLM[34] GAVIE[35] VisIT-Bench\nNumberofModels 1 5 3 4 8 5 10\nNumberofSkillsTested 9 6 13 13 47 16 70\nMultiple-Images ✗ ✓ ✗ ✗ ✗ ✗ ✓\nVideo ✗ ✗ ✓ ✓ ✗ ✗ ✗\nMulti-TurnConversations ✓ ✓ ✓ ✓ ✓ ✗ ✗\nMultilingualConversations ✗ ✓ ✗ ✓ ✗ ✗ ✗\nInstruction-conditionedCaptions ✗ ✗ ✗ ✗ ✗ ✗ ✓\nChatbot-styleResponses ✗ ✗ ✗ ✗ ✗ ✗ ✓\nDataset-specificEvaluation ✓ ✓ ✓ ✓ ✓ ✗ ✗\nHumanEvaluation ✗ ✓ ✗ ✗ ✓ ✗ ✓\nAuto/GPT-4Evaluation ✗ ✓ ✗ ✓ ✗ ✓ ✓\nWin-rates* ✗ ✓ ✗ ✓ ✗ ✓ ✓\nEloRating ✗ ✗ ✗ ✗ ✓ ✗ ✓\n3",
+              "summary": "Reasoning Over Art Knowledge Recognition Location Home Renovation",
+              "image_path": "artifacts/docenv/2308.06595v4/page_003.png"
+            },
+            {
+              "page": 4,
+              "text": "2 VisIT-Bench: AReal-WorldInspiredVLInstruction-FollowingBenchmark\nInstruction Generation Instruction-Conditioned Caption Generation Model Output Evaluation\n“Create a new, challenging instruction “Provide a highly descriptive caption to allow a “Evaluate model predictions by answering the\ninspired by the seed task for that family” text-only recipient to follow the instruction” following questions…”.\nTask Contextual Knowledge of Events Instruction There is one color of candy Instruction I am the player with the white chess\nFamily in the bowl that is missing pieces. Is there a move I can take on\nSeed Why is he waving? What from the spoon. Which color this turn to capture one of my\nInstruction happened in this event? is not represented in the opponent’s pieces?\nImage spoon full of candies? I C n o s n tr d u i c ti t o io n n e - d T T h h e e r b e l a is c k a r w o o o o k d s e a n re c h a e t s a s 8 b a o n a d r d h 8 [. . . . T ] he\nImage Caption black knights are at c6 and g8. [...]\nImage\nOutput Martin Luther King Jr. is waving\nto acknowledge and greet the\ncrowd of protesters who have GPT-4 Yes, you can capture the black pawn\ngathered to hear him speak [...] Output at e5 with your white pawn at e4.\nNew Why is this guy raising his hand? Annotated Brightly colored round Output Does GPT-4 correctly follow the instruction?\nInstruction Caption candies, with colors of red, Eval [ ] Yes [X] No\norange, yellow, green, pink If answered ‘No’ for the above, mark one of\nSelected and dark brown. A purple the following:\nImage spoon is raised above the bin [ ] N/A\nof candy, bringing them in for [X] The dense caption is detailed enough,\na close-up. The spoon has the problem is in GPT-4’s answer\nred, orange, yellow, green [ ] The dense caption is underspecified, not\nand dark brown candy in it. GPT-4’s fault\nFigure3: Datacollectionsteps: (1)InstructionGeneration-Annotatorsderiveinstances\nfromaseedtask,seeFigure3(left). (2)CaptionGeneration-Richinstruction-conditioned\ncaptions are produced for GPT-4 references, shown in Figure 3 (middle). (3) Model\nEvaluation - GPT-4 responses are human-validated, illustrated in Figure 3 (right). Top\nblocksshowraterinstructions;bottomblocksdepictoutputs.\nVisIT-Bench was built to emulate real-world applications of multimodal models through\nimage-texttasks,creatinganextensiveandpracticalbenchmark. Thesetasks,or‘instruction\nfamilies’, are seen as key capabilities of a high-performing vision-and-language model.\nAlthoughourselectionsarenotexhaustive,theyprovideabroadbasisforevaluatingbeyond\nacademicbenchmarks. Weprioritizefamilycoveragevs. numberofinstances-per-task. The\nfinalcorpus,comprising592instancesand1,159publicimages,canbefoundatVisIT-Bench\nSheet and VisIT-Bench Sheet Multi-Images. VisIT-Bench instances are either from 45\nnewlyassembledinstructionfamiliesorreformattedfrom25existingdatasets(seeTable5).\nNotably,10instructionfamiliescatertomulti-imagequeryscenarios(e.g.,Figure4).\n2.1 DataCollection\nTheauthorsofthisworkperformaninitialannotationstepofcuratinginstructionfamilies.\nForeachinstructionfamilynotderivedfromanexistingtask(45outof70),wedesignate\na name for the family (e.g., “Contextual Knowledge of Events”) and identify an image-\ninstructionpairthatexemplifiesthecategory,alongwithasampleresponse(“MartinLuther\nKing Jr. is waving to acknowledge and greet the crowd of protesters [...]”). 10 sample\nfamilesareinFigure2.\nThe following steps are carried out in collaboration with crowdworkers, who receive an\nhourlywageof$18. ThesestepsareoutlinedinFigure3: (1)takingtheimage/instruction\nexample as a guiding seed task crowdworkers formulate a new instruction that examines\nthe same instruction family (“instruction generation”); (2) crowdworkers create detailed\nimage captions that describe the image and allow an entity, relying solely on this text, to\ninterpretandexecutethegiveninstructionsuccessfully(“instruction-conditionedcaption\ngeneration”);(3)crowdworkersassessthecorrectnessofGPT-4’sresponsetotheinstruction\n4",
+              "summary": "2 VisIT-Bench: AReal-WorldInspiredVLInstruction-FollowingBenchmark",
+              "image_path": "artifacts/docenv/2308.06595v4/page_004.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\":\"The pages I read do not mention the first author or CEO, nor do they provide any private contact information. I should refuse the task as unanswerable.\",\"action\":\"refuse\",\"action_input\":{\"reason\":\"The document does not contain any information about the private mobile phone number of the first author or CEO.\"}}",
+      "thought": "The pages I read do not mention the first author or CEO, nor do they provide any private contact information. I should refuse the task as unanswerable.",
+      "action": "refuse",
+      "action_input": {
+        "reason": "The document does not contain any information about the private mobile phone number of the first author or CEO."
+      },
+      "observation": {
+        "action": "refuse",
+        "status": "success",
+        "result": {
+          "reason": "The document does not contain any information about the private mobile phone number of the first author or CEO.",
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "refusal"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "refuse"
+  ],
+  "final_action": "refuse",
+  "final_answer": "The document does not contain any information about the private mobile phone number of the first author or CEO.",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1083,
+      "completion_tokens": 39,
+      "total_tokens": 1122,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1390,
+      "completion_tokens": 47,
+      "total_tokens": 1437,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 2686,
+      "completion_tokens": 67,
+      "total_tokens": 2753,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": true,
+    "direct_answer": false
+  }
+}

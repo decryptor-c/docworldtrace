@@ -1,0 +1,208 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      [
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      [
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "irs_2025_form_1040",
+    "metadata": {
+      "audit_note": "W7 fix: replaced trivial page-footer claim ('form 1040 2025 page 2') with the actual line 15 instruction text on p2.",
+      "claim": "subtract line 14 from line 11b if zero or less enter 0 this is your taxable income",
+      "page": 2
+    },
+    "pdf_path": "data/raw_pdfs/irs_2025_form_1040.pdf",
+    "question": "Is the following claim supported by the document: \"subtract line 14 from line 11b if zero or less enter 0 this is your taxable income\"? Answer SUPPORTED or UNSUPPORTED.",
+    "reference_answer": "SUPPORTED",
+    "required_tools": [
+      "search",
+      "read_page",
+      "verify"
+    ],
+    "seed_id": "irs_2025_form_1040__verify__p2",
+    "source": "structure_heuristic",
+    "supporting_refs": [
+      {
+        "page": 2
+      }
+    ],
+    "task_type": "verification",
+    "tool_hints": {
+      "target_page": 2
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview__negative",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to verify the claim about the calculation of taxable income on page 2 of the 2025 Form 1040.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [2]}}",
+      "thought": "I need to verify the claim about the calculation of taxable income on page 2 of the 2025 Form 1040.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          2
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The document states on line 15: 'Subtract line 14 from line 11b. If zero or less, enter -0-. This is your taxable income'. The claim says 'subtract line 14 from line 11b if zero or less enter 0 this is your taxable income'. This matches the document content.\", \"action\": \"verify\", \"action_input\": {\"claim\": \"subtract line 14 from line 11b if zero or less enter 0 this is your taxable income\", \"evidence_refs\": [{\"page\": 2}]}}",
+      "thought": "The document states on line 15: 'Subtract line 14 from line 11b. If zero or less, enter -0-. This is your taxable income'. The claim says 'subtract line 14 from line 11b if zero or less enter 0 this is your taxable income'. This matches the document content.",
+      "action": "verify",
+      "action_input": {
+        "claim": "subtract line 14 from line 11b if zero or less enter 0 this is your taxable income",
+        "evidence_refs": [
+          {
+            "page": 2
+          }
+        ]
+      },
+      "observation": {
+        "action": "verify",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"The claim is supported by the document.\", \"action\": \"answer\", \"action_input\": {\"text\": \"SUPPORTED\", \"evidence_refs\": [{\"page\": 2}]}}",
+      "thought": "The claim is supported by the document.",
+      "action": "answer",
+      "action_input": {
+        "text": "SUPPORTED",
+        "evidence_refs": [
+          {
+            "page": 2
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "SUPPORTED",
+          "evidence_refs": [
+            {
+              "page": 2
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "verify",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "SUPPORTED",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1130,
+      "completion_tokens": 56,
+      "total_tokens": 1186,
+      "prompt_tokens_details": {
+        "text_tokens": 1130,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1898,
+      "completion_tokens": 126,
+      "total_tokens": 2024,
+      "prompt_tokens_details": {
+        "text_tokens": 1898,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2110,
+      "completion_tokens": 42,
+      "total_tokens": 2152,
+      "prompt_tokens_details": {
+        "text_tokens": 2110,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": true,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "missing_evidence_observations",
+    "source_teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+    "source_seed_id": "irs_2025_form_1040__verify__p2",
+    "source_final_action": "answer",
+    "source_final_answer": "SUPPORTED",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved but all non-terminal evidence observations were blanked."
+  }
+}

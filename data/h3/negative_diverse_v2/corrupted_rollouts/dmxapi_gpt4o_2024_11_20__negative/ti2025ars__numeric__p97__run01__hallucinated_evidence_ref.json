@@ -1,0 +1,311 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "read_page",
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "ocr",
+        "compute",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "ti2025ars",
+    "metadata": {
+      "bbox": [
+        84.96,
+        114.0,
+        562.71002,
+        215.25
+      ],
+      "column_label": "2025 Absolute Performance",
+      "first_label": "Revenue Growth: Total TI",
+      "first_value": 13.0,
+      "formula": "(second_value - first_value) / abs(first_value) * 100",
+      "page": 97,
+      "review_status": "needs_human_review",
+      "second_label": "Profit from Operations as a % of Revenue\n(Operating Profit Margin)",
+      "second_value": 34.1
+    },
+    "pdf_path": "data/raw_pdfs/ti2025ars.pdf",
+    "question": "Based on the table on page 97, for column \"2025 Absolute Performance\", what is the percentage change from row \"Revenue Growth: Total TI\" (13) to row \"Profit from Operations as a % of Revenue\n(Operating Profit Margin)\" (34.1)?",
+    "reference_answer": "162.31%",
+    "required_tools": [
+      "parse_table",
+      "compute"
+    ],
+    "seed_id": "ti2025ars__numeric__p97",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          84.96,
+          114.0,
+          562.71002,
+          215.25
+        ],
+        "page": 97
+      }
+    ],
+    "task_type": "numeric_computation",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "compute_note": "Use the numeric formula in the question and preserve the sign of the percentage change.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        84.96,
+        114.0,
+        562.71002,
+        215.25
+      ],
+      "target_page": 97
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I should start by parsing the table on page 97 using the provided bbox to extract the relevant data.\",\"action\":\"parse_table\",\"action_input\":{\"page_id\":97,\"bbox\":[84.96,114.0,562.71002,215.25]}}",
+      "thought": "I should start by parsing the table on page 97 using the provided bbox to extract the relevant data.",
+      "action": "parse_table",
+      "action_input": {
+        "page_id": 97,
+        "bbox": [
+          84.96,
+          114.0,
+          562.71002,
+          215.25
+        ]
+      },
+      "observation": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {
+          "page": 97,
+          "bbox": [
+            84.96,
+            114.0,
+            562.71002,
+            215.25
+          ],
+          "rows": [
+            [
+              "",
+              "2025 Absolute Performance",
+              "2025 Relative Performance *"
+            ],
+            [
+              "Revenue Growth: Total TI",
+              "13.0%",
+              "Above median"
+            ],
+            [
+              "Profit from Operations as a % of Revenue\n(Operating Profit Margin)",
+              "34.1%",
+              "Above median"
+            ],
+            [
+              "Total Shareholder Return (TSR)",
+              "-4.5%",
+              "Below median"
+            ],
+            [
+              "",
+              "",
+              ""
+            ],
+            [
+              "Assessment of Strategic Progress",
+              "Strengthened strategic position in 2025",
+              ""
+            ]
+          ],
+          "markdown": "|  | 2025 Absolute Performance | 2025 Relative Performance * |\n| --- | --- | --- |\n| Revenue Growth: Total TI | 13.0% | Above median |\n| Profit from Operations as a % of Revenue\n(Operating Profit Margin) | 34.1% | Above median |\n| Total Shareholder Return (TSR) | -4.5% | Below median |\n|  |  |  |\n| Assessment of Strategic Progress | Strengthened strategic position in 2025 |  |"
+        },
+        "provenance": {
+          "page": 97,
+          "bbox": [
+            84.96,
+            114.0,
+            562.71002,
+            215.25
+          ],
+          "element_type": "table"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"I have the values for 'Revenue Growth: Total TI' (13.0%) and 'Profit from Operations as a % of Revenue (Operating Profit Margin)' (34.1%). I will compute the percentage change between these values.\",\"action\":\"compute\",\"action_input\":{\"expr\":\"(profit_margin - revenue_growth) / revenue_growth * 100\",\"vars\":{\"profit_margin\":34.1,\"revenue_growth\":13.0}}}",
+      "thought": "I have the values for 'Revenue Growth: Total TI' (13.0%) and 'Profit from Operations as a % of Revenue (Operating Profit Margin)' (34.1%). I will compute the percentage change between these values.",
+      "action": "compute",
+      "action_input": {
+        "expr": "(profit_margin - revenue_growth) / revenue_growth * 100",
+        "vars": {
+          "profit_margin": 34.1,
+          "revenue_growth": 13.0
+        }
+      },
+      "observation": {
+        "action": "compute",
+        "status": "success",
+        "result": {
+          "expr": "(profit_margin - revenue_growth) / revenue_growth * 100",
+          "vars": {
+            "profit_margin": 34.1,
+            "revenue_growth": 13.0
+          },
+          "value": 162.30769230769232
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "computed_value"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\":\"I have computed the percentage change as 162.31%. I can now provide the answer.\",\"action\":\"answer\",\"action_input\":{\"text\":\"The percentage change from 'Revenue Growth: Total TI' to 'Profit from Operations as a % of Revenue (Operating Profit Margin)' is 162.31%.\",\"evidence_refs\":[{\"page\":97}]}}",
+      "thought": "I have computed the percentage change as 162.31%. I can now provide the answer.",
+      "action": "answer",
+      "action_input": {
+        "text": "The percentage change from 'Revenue Growth: Total TI' to 'Profit from Operations as a % of Revenue (Operating Profit Margin)' is 162.31%.",
+        "evidence_refs": [
+          {
+            "page": 999999,
+            "bbox": [
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "The percentage change from 'Revenue Growth: Total TI' to 'Profit from Operations as a % of Revenue (Operating Profit Margin)' is 162.31%.",
+          "evidence_refs": [
+            {
+              "page": 999999,
+              "bbox": [
+                0,
+                0,
+                1,
+                1
+              ]
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "parse_table",
+    "compute",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "The percentage change from 'Revenue Growth: Total TI' to 'Profit from Operations as a % of Revenue (Operating Profit Margin)' is 162.31%.",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1205,
+      "completion_tokens": 58,
+      "total_tokens": 1263,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1549,
+      "completion_tokens": 92,
+      "total_tokens": 1641,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1712,
+      "completion_tokens": 75,
+      "total_tokens": 1787,
+      "prompt_tokens_details": {
+        "cached_tokens": 1152,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "hallucinated_evidence_ref",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "ti2025ars__numeric__p97",
+    "source_final_action": "answer",
+    "source_final_answer": "The percentage change from 'Revenue Growth: Total TI' to 'Profit from Operations as a % of Revenue (Operating Profit Margin)' is 162.31%.",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved, but terminal evidence_refs point to a page never observed in the trajectory."
+  }
+}

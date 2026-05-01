@@ -1,0 +1,178 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      [
+        "parse_table",
+        "answer"
+      ],
+      [
+        "read_page",
+        "ocr",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "epa_ghg_inventory_1990_2022",
+    "metadata": {
+      "answer_relation": "immediately_before_value_anchor",
+      "audit_note": "B3 fix: original was text_lookup but page begins mid-table with no heading. Converted to table_lookup using the first explicitly labeled row 'Transportation' on the same page. | Followup F1: added table bbox detected via pdfplumber (1 table on p134, 57 rows). 'Transportation' row value immediately before '28.5%' verified = '1,807.8'. | Followup F5: removed strict 2022 column_label because p134 is a continued table page and the parser output does not include the repeated column header.",
+      "bbox": [
+        73.512,
+        83.78,
+        540.1,
+        707.85
+      ],
+      "page": 134,
+      "review_status": "needs_human_review",
+      "row_label": "Transportation",
+      "value_anchor": "28.5%"
+    },
+    "pdf_path": "data/raw_pdfs/epa_ghg_inventory_1990_2022.pdf",
+    "question": "On page 134, in the table, what value appears in the \"Transportation\" row immediately before the percent-change value \"28.5%\"? Use the table evidence on that page; do not answer from memory.",
+    "reference_answer": "1,807.8",
+    "required_tools": [
+      "read_page",
+      "parse_table"
+    ],
+    "seed_id": "epa_ghg_inventory_1990_2022__table__p134",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          73.512,
+          83.78,
+          540.1,
+          707.85
+        ],
+        "page": 134
+      }
+    ],
+    "task_type": "table_lookup",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        73.512,
+        83.78,
+        540.1,
+        707.85
+      ],
+      "target_page": 134
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash__negative",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"Answering directly without using document tools.\", \"action\": \"answer\", \"action_input\": {\"text\": \"1,807.8\", \"evidence_refs\": [{\"page\": 134, \"bbox\": [471.512, 83.78, 485.1, 707.85]}]}}",
+      "thought": "Answering directly without using document tools.",
+      "action": "answer",
+      "action_input": {
+        "text": "1,807.8",
+        "evidence_refs": [
+          {
+            "page": 134,
+            "bbox": [
+              471.512,
+              83.78,
+              485.1,
+              707.85
+            ]
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "1,807.8",
+          "evidence_refs": [
+            {
+              "page": 134,
+              "bbox": [
+                471.512,
+                83.78,
+                485.1,
+                707.85
+              ]
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "1,807.8",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1468,
+      "completion_tokens": 122,
+      "total_tokens": 1590,
+      "prompt_tokens_details": {
+        "text_tokens": 1468,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 65
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 3053,
+      "completion_tokens": 221,
+      "total_tokens": 3274,
+      "prompt_tokens_details": {
+        "text_tokens": 3053,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 149
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 1,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": true
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "direct_answer_without_tools",
+    "source_teacher": "dmxapi_gemini_2_5_flash",
+    "source_seed_id": "epa_ghg_inventory_1990_2022__table__p134",
+    "source_final_action": "answer",
+    "source_final_answer": "1,807.8",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer text is preserved, but all supporting tool calls and observations are removed."
+  }
+}

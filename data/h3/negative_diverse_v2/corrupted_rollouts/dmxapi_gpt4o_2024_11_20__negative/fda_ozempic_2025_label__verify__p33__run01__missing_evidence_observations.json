@@ -1,0 +1,216 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      [
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      [
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "fda_ozempic_2025_label",
+    "metadata": {
+      "claim": "ozempic is injected under the skin subcutaneously of your stomach",
+      "page": 33
+    },
+    "pdf_path": "data/raw_pdfs/fda_ozempic_2025_label.pdf",
+    "question": "Is the following claim supported by the document: \"ozempic is injected under the skin subcutaneously of your stomach\"? Answer SUPPORTED or UNSUPPORTED.",
+    "reference_answer": "SUPPORTED",
+    "required_tools": [
+      "search",
+      "read_page",
+      "verify"
+    ],
+    "seed_id": "fda_ozempic_2025_label__verify__p33",
+    "source": "structure_heuristic",
+    "supporting_refs": [
+      {
+        "page": 33
+      }
+    ],
+    "task_type": "verification",
+    "tool_hints": {
+      "target_page": 33
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I should start by reading page 33 as it is the target page for verification.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[33]}}",
+      "thought": "I should start by reading page 33 as it is the target page for verification.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          33
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The claim matches the text on page 33. I should verify this claim using the evidence from the page.\",\"action\":\"verify\",\"action_input\":{\"claim\":\"ozempic is injected under the skin subcutaneously of your stomach\",\"evidence_refs\":[{\"page\":33}]}}",
+      "thought": "The claim matches the text on page 33. I should verify this claim using the evidence from the page.",
+      "action": "verify",
+      "action_input": {
+        "claim": "ozempic is injected under the skin subcutaneously of your stomach",
+        "evidence_refs": [
+          {
+            "page": 33
+          }
+        ]
+      },
+      "observation": {
+        "action": "verify",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\":\"The claim has been verified as SUPPORTED based on sufficient evidence from page 33.\",\"action\":\"answer\",\"action_input\":{\"text\":\"SUPPORTED\",\"evidence_refs\":[{\"page\":33}]}}",
+      "thought": "The claim has been verified as SUPPORTED based on sufficient evidence from page 33.",
+      "action": "answer",
+      "action_input": {
+        "text": "SUPPORTED",
+        "evidence_refs": [
+          {
+            "page": 33
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "SUPPORTED",
+          "evidence_refs": [
+            {
+              "page": 33
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "verify",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "SUPPORTED",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1170,
+      "completion_tokens": 35,
+      "total_tokens": 1205,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1682,
+      "completion_tokens": 60,
+      "total_tokens": 1742,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1822,
+      "completion_tokens": 42,
+      "total_tokens": 1864,
+      "prompt_tokens_details": {
+        "cached_tokens": 1664,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": true,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "missing_evidence_observations",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "fda_ozempic_2025_label__verify__p33",
+    "source_final_action": "answer",
+    "source_final_answer": "SUPPORTED",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved but all non-terminal evidence observations were blanked."
+  }
+}

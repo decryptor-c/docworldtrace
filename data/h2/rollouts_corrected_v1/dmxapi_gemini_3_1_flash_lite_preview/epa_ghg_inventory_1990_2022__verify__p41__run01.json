@@ -1,0 +1,202 @@
+{
+  "seed": {
+    "seed_id": "epa_ghg_inventory_1990_2022__verify__p41",
+    "doc_id": "epa_ghg_inventory_1990_2022",
+    "pdf_path": "data/raw_pdfs/epa_ghg_inventory_1990_2022.pdf",
+    "question": "Is the following claim supported by the document: \"total gross emissions in 2022 were 6 343 2 mmt co2 eq\"? Answer SUPPORTED or UNSUPPORTED.",
+    "reference_answer": "SUPPORTED",
+    "task_type": "verification",
+    "difficulty": "medium",
+    "required_tools": [
+      "search",
+      "read_page",
+      "verify"
+    ],
+    "source": "structure_heuristic",
+    "answerable": true,
+    "supporting_refs": [
+      {
+        "page": 41
+      }
+    ],
+    "metadata": {
+      "page": 41,
+      "claim": "total gross emissions in 2022 were 6 343 2 mmt co2 eq",
+      "audit_note": "W4 fix: original claim was an OCR'd numeric row from a city table — fragile. Switched to a clean ES-table claim grounded in p41 Table ES-2 (Total Gross Emissions 2022 = 6,343.2)."
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to find the total gross emissions for 2022 to verify the claim. I will search for 'total gross emissions 2022'.\", \"action\": \"search\", \"action_input\": {\"query\": \"total gross emissions 2022\"}}",
+      "thought": "I need to find the total gross emissions for 2022 to verify the claim. I will search for 'total gross emissions 2022'.",
+      "action": "search",
+      "action_input": {
+        "query": "total gross emissions 2022",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "total gross emissions 2022",
+          "results": [
+            {
+              "page": 29,
+              "score": 4.0,
+              "snippet": "Table 7-48: Approach 1 Quantitative Uncertainty Estimates for Emissions from Anaerobic Digestion (MT CO Eq.\n2\nand Percent) ....................................................................................................................."
+            },
+            {
+              "page": 30,
+              "score": 4.0,
+              "snippet": "Figure 2-7: Trends in End-Use Sector Emissions of CO from Fossil Fuel Combustion ........................................... 2-16\n2\nFigure 2-8: Electric Power Generation (Billion kWh) and Emissions (MMT CO Eq.) ............................."
+            },
+            {
+              "page": 40,
+              "score": 4.0,
+              "snippet": "ES.2 Recent Trends in U.S. Greenhouse Gas\nEmissions and Sinks\nIn 2022, total gross U.S. greenhouse gas emissions were 6,343.2 million metric tons of carbon dioxide equivalent\n(MMT CO\n2\nEq.).10 Total gross U.S. emissions decreased by 3.0 per"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The search result on page 40 explicitly states that in 2022, total gross U.S. greenhouse gas emissions were 6,343.2 million metric tons of carbon dioxide equivalent (MMT CO2 Eq.). This matches the claim provided.\", \"action\": \"verify\", \"action_input\": {\"claim\": \"total gross emissions in 2022 were 6 343 2 mmt co2 eq\", \"evidence_refs\": [{\"page\": 40}]}}",
+      "thought": "The search result on page 40 explicitly states that in 2022, total gross U.S. greenhouse gas emissions were 6,343.2 million metric tons of carbon dioxide equivalent (MMT CO2 Eq.). This matches the claim provided.",
+      "action": "verify",
+      "action_input": {
+        "claim": "total gross emissions in 2022 were 6 343 2 mmt co2 eq",
+        "evidence_refs": [
+          {
+            "page": 40
+          }
+        ]
+      },
+      "observation": {
+        "action": "verify",
+        "status": "success",
+        "result": {
+          "claim": "total gross emissions in 2022 were 6 343 2 mmt co2 eq",
+          "evidence_count": 1,
+          "label": "SUPPORTED",
+          "sufficiency": "SUFFICIENT",
+          "confidence": 0.99,
+          "failure_taxonomy": null
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "verification"
+        },
+        "confidence": 0.99,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"The claim is supported by the document.\", \"action\": \"answer\", \"action_input\": {\"text\": \"SUPPORTED\", \"evidence_refs\": [{\"page\": 40}]}}",
+      "thought": "The claim is supported by the document.",
+      "action": "answer",
+      "action_input": {
+        "text": "SUPPORTED",
+        "evidence_refs": [
+          {
+            "page": 40
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "SUPPORTED",
+          "evidence_refs": [
+            {
+              "page": 40
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "verify",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "SUPPORTED",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1306,
+      "completion_tokens": 62,
+      "total_tokens": 1368,
+      "prompt_tokens_details": {
+        "text_tokens": 1306,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1661,
+      "completion_tokens": 112,
+      "total_tokens": 1773,
+      "prompt_tokens_details": {
+        "text_tokens": 1661,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1862,
+      "completion_tokens": 43,
+      "total_tokens": 1905,
+      "prompt_tokens_details": {
+        "text_tokens": 1862,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": true,
+    "used_refuse": false,
+    "direct_answer": false
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "answer"
+      ],
+      [
+        "search",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "easy",
+    "doc_id": "usgs_mcs_2025",
+    "metadata": {
+      "audit_note": "W12 fix: p18 was a figure-only page (regional minerals map) with no real heading. Switched to p21 which starts with a clean Table 4 caption. | V2 fix: Disambiguated the caption from the visible page number.",
+      "page": 21,
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/usgs_mcs_2025.pdf",
+    "question": "On page 21, ignore page numbers and footnote markers. What table caption begins the page? Return the caption text only.",
+    "reference_answer": "Table 4.—The 2022 U.S. Critical Minerals List",
+    "required_tools": [
+      "read_page"
+    ],
+    "seed_id": "usgs_mcs_2025__text__p21",
+    "source": "structure_heuristic",
+    "supporting_refs": [
+      {
+        "page": 21
+      }
+    ],
+    "task_type": "text_lookup",
+    "tool_hints": {
+      "target_page": 21
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"Answering directly without using document tools.\", \"action\": \"answer\", \"action_input\": {\"text\": \"Table 4.—The 2022 U.S. Critical Minerals List\", \"evidence_refs\": [{\"page\": 21}]}}",
+      "thought": "Answering directly without using document tools.",
+      "action": "answer",
+      "action_input": {
+        "text": "Table 4.—The 2022 U.S. Critical Minerals List",
+        "evidence_refs": [
+          {
+            "page": 21
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "Table 4.—The 2022 U.S. Critical Minerals List",
+          "evidence_refs": [
+            {
+              "page": 21
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "Table 4.—The 2022 U.S. Critical Minerals List",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1105,
+      "completion_tokens": 35,
+      "total_tokens": 1140,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1566,
+      "completion_tokens": 55,
+      "total_tokens": 1621,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 1,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": true
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "direct_answer_without_tools",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "usgs_mcs_2025__text__p21",
+    "source_final_action": "answer",
+    "source_final_answer": "Table 4.—The 2022 U.S. Critical Minerals List",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer text is preserved, but all supporting tool calls and observations are removed."
+  }
+}

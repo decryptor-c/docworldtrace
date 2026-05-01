@@ -1,0 +1,137 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "answer"
+      ],
+      [
+        "search",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "easy",
+    "doc_id": "nasa_fy2025_budget_summary",
+    "metadata": {
+      "page": 4
+    },
+    "pdf_path": "data/raw_pdfs/nasa_fy2025_budget_summary.pdf",
+    "question": "What is the heading or leading phrase on page 4?",
+    "reference_answer": "NASA’s FY 2025 Budget Request",
+    "required_tools": [
+      "read_page"
+    ],
+    "seed_id": "nasa_fy2025_budget_summary__text__p4",
+    "source": "structure_heuristic",
+    "supporting_refs": [
+      {
+        "page": 4
+      }
+    ],
+    "task_type": "text_lookup",
+    "tool_hints": {
+      "target_page": 4
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"Answering directly without using document tools.\", \"action\": \"answer\", \"action_input\": {\"text\": \"NASA’s FY 2025 Budget Request\", \"evidence_refs\": [{\"page\": 4}]}}",
+      "thought": "Answering directly without using document tools.",
+      "action": "answer",
+      "action_input": {
+        "text": "NASA’s FY 2025 Budget Request",
+        "evidence_refs": [
+          {
+            "page": 4
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "NASA’s FY 2025 Budget Request",
+          "evidence_refs": [
+            {
+              "page": 4
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "NASA’s FY 2025 Budget Request",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1094,
+      "completion_tokens": 32,
+      "total_tokens": 1126,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1993,
+      "completion_tokens": 56,
+      "total_tokens": 2049,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 1,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": true
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "direct_answer_without_tools",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "nasa_fy2025_budget_summary__text__p4",
+    "source_final_action": "answer",
+    "source_final_answer": "NASA’s FY 2025 Budget Request",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer text is preserved, but all supporting tool calls and observations are removed."
+  }
+}

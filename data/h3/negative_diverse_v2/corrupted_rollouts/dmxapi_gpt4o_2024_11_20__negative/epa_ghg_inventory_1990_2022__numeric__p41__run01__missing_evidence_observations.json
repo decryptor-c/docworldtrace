@@ -1,0 +1,378 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "read_page",
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "ocr",
+        "compute",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "epa_ghg_inventory_1990_2022",
+    "metadata": {
+      "audit_note": "B1 fix: original compared header row 'Gas/Source' (1990 header) with -19.4 — meaningless. Reformulated to two truly comparable values in the same column. | V2 fix: Corrected the two-decimal signed percentage GT from -14.93% to -14.94%.",
+      "bbox": [
+        74.904,
+        481.005997,
+        540.1,
+        694.289688947368
+      ],
+      "column_label": "1990",
+      "first_label": "Total Gross Emissions (Sources)",
+      "first_value": 6536.9,
+      "formula": "(second_value - first_value) / abs(first_value) * 100",
+      "page": 41,
+      "review_status": "needs_human_review",
+      "second_label": "Net Emissions (Sources and Sinks)",
+      "second_value": 5560.2
+    },
+    "pdf_path": "data/raw_pdfs/epa_ghg_inventory_1990_2022.pdf",
+    "question": "Based on the table on page 41, in column \"1990\", compute the percentage by which the value in row \"Net Emissions (Sources and Sinks)\" (5560.2) differs from the value in row \"Total Gross Emissions (Sources)\" (6536.9). Report only the final result as a signed percentage with two decimals.",
+    "reference_answer": "-14.94%",
+    "required_tools": [
+      "parse_table",
+      "compute"
+    ],
+    "seed_id": "epa_ghg_inventory_1990_2022__numeric__p41",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          74.904,
+          481.005997,
+          540.1,
+          694.289688947368
+        ],
+        "page": 41
+      }
+    ],
+    "task_type": "numeric_computation",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "compute_note": "Use the numeric formula in the question and preserve the sign of the percentage change.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        74.904,
+        481.005997,
+        540.1,
+        694.289688947368
+      ],
+      "target_page": 41
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I should start by parsing the table on page 41 using the provided bbox to extract the relevant values.\",\"action\":\"parse_table\",\"action_input\":{\"page_id\":41,\"bbox\":[74.904,481.005997,540.1,694.289688947368]}}",
+      "thought": "I should start by parsing the table on page 41 using the provided bbox to extract the relevant values.",
+      "action": "parse_table",
+      "action_input": {
+        "page_id": 41,
+        "bbox": [
+          74.904,
+          481.005997,
+          540.1,
+          694.289688947368
+        ]
+      },
+      "observation": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The table parsing did not fully capture the rows for 'Net Emissions (Sources and Sinks)' and 'Total Gross Emissions (Sources)'. I need to refine the extraction using OCR on the same region.\",\"action\":\"ocr\",\"action_input\":{\"page_id\":41,\"bbox\":[74.904,481.005997,540.1,694.289688947368]}}",
+      "thought": "The table parsing did not fully capture the rows for 'Net Emissions (Sources and Sinks)' and 'Total Gross Emissions (Sources)'. I need to refine the extraction using OCR on the same region.",
+      "action": "ocr",
+      "action_input": {
+        "page_id": 41,
+        "bbox": [
+          74.904,
+          481.005997,
+          540.1,
+          694.289688947368
+        ]
+      },
+      "observation": {
+        "action": "ocr",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\":\"The OCR output still does not provide the full numeric values for 'Net Emissions (Sources and Sinks)' and 'Total Gross Emissions (Sources)'. I need to refine the extraction further.\",\"action\":\"crop\",\"action_input\":{\"page_id\":41,\"bbox\":[74.904,481.005997,540.1,694.289688947368]}}",
+      "thought": "The OCR output still does not provide the full numeric values for 'Net Emissions (Sources and Sinks)' and 'Total Gross Emissions (Sources)'. I need to refine the extraction further.",
+      "action": "crop",
+      "action_input": {
+        "page_id": 41,
+        "bbox": [
+          74.904,
+          481.005997,
+          540.1,
+          694.289688947368
+        ]
+      },
+      "observation": {
+        "action": "crop",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 4,
+      "raw_model_output": "{\"thought\":\"The crop and OCR results still do not provide the numeric values for 'Net Emissions (Sources and Sinks)' and 'Total Gross Emissions (Sources)'. I need to attempt another approach to extract these values.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[41]}}",
+      "thought": "The crop and OCR results still do not provide the numeric values for 'Net Emissions (Sources and Sinks)' and 'Total Gross Emissions (Sources)'. I need to attempt another approach to extract these values.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          41
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 5,
+      "raw_model_output": "{\"thought\":\"I now have the numeric values for 'Net Emissions (Sources and Sinks)' (5560.2) and 'Total Gross Emissions (Sources)' (6536.9) from the page text. I can proceed to compute the percentage difference.\",\"action\":\"compute\",\"action_input\":{\"expr\":\"(net_emissions - gross_emissions) / gross_emissions * 100\",\"vars\":{\"net_emissions\":5560.2,\"gross_emissions\":6536.9}}}",
+      "thought": "I now have the numeric values for 'Net Emissions (Sources and Sinks)' (5560.2) and 'Total Gross Emissions (Sources)' (6536.9) from the page text. I can proceed to compute the percentage difference.",
+      "action": "compute",
+      "action_input": {
+        "expr": "(net_emissions - gross_emissions) / gross_emissions * 100",
+        "vars": {
+          "net_emissions": 5560.2,
+          "gross_emissions": 6536.9
+        }
+      },
+      "observation": {
+        "action": "compute",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 6,
+      "raw_model_output": "{\"thought\":\"The computation is complete, and I can now provide the signed percentage difference as the answer.\",\"action\":\"answer\",\"action_input\":{\"text\":\"-14.94%\",\"evidence_refs\":[{\"page\":41}]}}",
+      "thought": "The computation is complete, and I can now provide the signed percentage difference as the answer.",
+      "action": "answer",
+      "action_input": {
+        "text": "-14.94%",
+        "evidence_refs": [
+          {
+            "page": 41
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "-14.94%",
+          "evidence_refs": [
+            {
+              "page": 41
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "parse_table",
+    "ocr",
+    "crop",
+    "read_page",
+    "compute",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "-14.94%",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1291,
+      "completion_tokens": 61,
+      "total_tokens": 1352,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 2620,
+      "completion_tokens": 82,
+      "total_tokens": 2702,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 3683,
+      "completion_tokens": 79,
+      "total_tokens": 3762,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 4743,
+      "completion_tokens": 62,
+      "total_tokens": 4805,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 5670,
+      "completion_tokens": 103,
+      "total_tokens": 5773,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 5847,
+      "completion_tokens": 47,
+      "total_tokens": 5894,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 6,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "missing_evidence_observations",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "epa_ghg_inventory_1990_2022__numeric__p41",
+    "source_final_action": "answer",
+    "source_final_answer": "-14.94%",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved but all non-terminal evidence observations were blanked."
+  }
+}

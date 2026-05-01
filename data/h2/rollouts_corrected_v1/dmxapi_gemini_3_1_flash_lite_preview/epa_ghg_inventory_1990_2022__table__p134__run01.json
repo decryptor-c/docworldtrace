@@ -1,0 +1,160 @@
+{
+  "seed": {
+    "seed_id": "epa_ghg_inventory_1990_2022__table__p134",
+    "doc_id": "epa_ghg_inventory_1990_2022",
+    "pdf_path": "data/raw_pdfs/epa_ghg_inventory_1990_2022.pdf",
+    "question": "On page 134, in the table, what value appears in the \"Transportation\" row immediately before the percent-change value \"28.5%\"? Use the table evidence on that page; do not answer from memory.",
+    "reference_answer": "1,807.8",
+    "task_type": "table_lookup",
+    "difficulty": "medium",
+    "required_tools": [
+      "read_page",
+      "parse_table"
+    ],
+    "source": "structure_heuristic_v2_review",
+    "answerable": true,
+    "supporting_refs": [
+      {
+        "page": 134,
+        "bbox": [
+          73.512,
+          83.78,
+          540.1,
+          707.85
+        ]
+      }
+    ],
+    "metadata": {
+      "page": 134,
+      "row_label": "Transportation",
+      "value_anchor": "28.5%",
+      "answer_relation": "immediately_before_value_anchor",
+      "review_status": "needs_human_review",
+      "audit_note": "B3 fix: original was text_lookup but page begins mid-table with no heading. Converted to table_lookup using the first explicitly labeled row 'Transportation' on the same page. | Followup F1: added table bbox detected via pdfplumber (1 table on p134, 57 rows). 'Transportation' row value immediately before '28.5%' verified = '1,807.8'. | Followup F5: removed strict 2022 column_label because p134 is a continued table page and the parser output does not include the repeated column header.",
+      "bbox": [
+        73.512,
+        83.78,
+        540.1,
+        707.85
+      ]
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to locate the table on page 134 to find the 'Transportation' row and the value preceding '28.5%'.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [134]}}",
+      "thought": "I need to locate the table on page 134 to find the 'Transportation' row and the value preceding '28.5%'.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          134
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 134,
+              "text": "CO 2 1,173.8 1,136.4 1,110.7 1,118.3 1,036.9 1,071.1 1,080.8 17.0%\nCH 413.3 371.2 352.2 337.7 323.3 311.3 299.8 4.7%\n4\nNO 35.7 29.8 30.3 26.0 27.6 26.8 23.6 0.4%\n2\nHFCs, PFCs, SF and NF 100.6 49.8 48.6 49.8 48.1 46.5 48.3 0.8%\n6 3\nElectricity-Related 674.0 715.6 475.3 443.0 387.6 422.0 420.3 6.6%\nCO 658.3 704.0 467.7 435.9 381.0 414.9 412.8 6.5%\n2\nCH 0.2 0.3 0.4 0.4 0.4 0.4 0.3 +%\n4\nNO 6.7 7.9 5.8 5.1 4.7 5.2 5.8 0.1%\n2\nSF 8.8 3.5 1.3 1.6 1.5 1.6 1.4 +%\n6\nTransportation 1,524.6 1,970.8 1,876.5 1,879.5 1,629.5 1,810.6 1,807.8 28.5%\nDirect Emissions 1,521.4 1,965.9 1,871.6 1,874.6 1,625.3 1,805.5 1,801.5 28.4%\nCO 1,480.8 1,868.7 1,822.3 1,825.5 1,580.6 1,761.6 1,759.7 27.7%\n2\nCH 6.4 3.1 1.7 1.7 1.4 1.5 1.5 +%\n4\nNO 34.3 31.0 12.1 13.4 10.7 11.2 10.7 0.2%\n2\nHFCsb + 63.1 35.5 34.0 32.5 31.2 29.6 0.5%\nElectricity-Related 3.1 4.8 4.9 4.9 4.2 5.2 6.3 0.1%\nCO 3.1 4.8 4.8 4.9 4.1 5.1 6.2 0.1%\n2\nCH + + + + + + + +%\n4\nNO + 0.1 0.1 0.1 0.1 0.1 0.1 +%\n2\nSF + + + + + + + +%\n6\nResidential 958.0 1,247.7 1,035.9 984.0 919.5 958.0 973.5 15.3%\nDirect Emissions 345.6 371.2 376.8 384.2 358.0 369.6 391.3 6.2%\nCO 338.6 358.9 338.9 342.9 314.8 318.0 334.1 5.3%\n2\nCH 5.9 4.5 5.1 5.3 3.6 3.6 4.3 0.1%\n4\nNO 0.9 0.8 0.8 0.8 0.6 0.6 0.7 +%\n2\nSF 0.2 7.0 31.9 35.1 39.0 47.3 52.2 0.8%\n6\nElectricity-Related 612.4 876.5 659.1 599.7 561.5 588.4 582.2 9.2%\nCO 598.1 862.2 648.6 590.1 551.9 578.5 571.8 9.0%\n2\nCH 0.2 0.3 0.5 0.5 0.5 0.5 0.5 +%\n4\nNO 6.1 9.7 8.1 6.9 6.8 7.2 8.1 0.1%\n2\nSF 8.0 4.2 1.8 2.2 2.2 2.2 1.9 +%\n6\nCommercial 1,002.5 1,241.1 1,074.3 1,030.5 931.5 976.8 1,002.6 15.8%\nDirect Emissions 447.0 418.9 453.5 462.6 436.9 443.7 463.7 7.3%\nCO 228.3 227.1 246.3 251.7 229.3 237.5 258.7 4.1%\n2\nCH 203.6 150.9 125.9 127.8 122.9 120.5 118.5 1.9%\n4\nNO 15.1 19.4 22.8 23.2 23.9 23.7 23.6 0.4%\n2\nHFCs + 21.4 58.5 59.8 60.8 61.9 62.9 1.0%\nElectricity-Related 555.5 822.2 620.8 567.8 494.6 533.2 539.0 8.5%\nCO 542.6 808.9 611.0 558.7 486.2 524.2 529.3 8.3%\n2\nCH 0.1 0.3 0.5 0.5 0.5 0.5 0.4 +%\n4\nNO 5.5 9.1 7.6 6.6 6.0 6.5 7.5 0.1%\n2\nSF 7.3 4.0 1.7 2.1 2.0 2.0 1.7 +%\n6\nAgriculture 631.1 672.6 722.7 696.3 674.4 681.6 663.6 10.5%\nDirect Emissions 595.9 634.3 683.5 661.0 640.0 645.9 634.0 10.0%\nCO 50.5 58.7 47.0 46.9 47.1 47.4 47.9 0.8%\n2\nCH 241.9 264.6 285.2 280.4 282.6 282.0 277.0 4.4%\n4\nNO 303.5 311.0 351.3 333.7 310.3 316.4 309.1 4.9%\n2\nElectricity-Related 35.2 38.3 39.2 35.2 34.4 35.7 29.7 0.5%\nCO 34.3 37.7 38.6 34.7 33.8 35.1 29.2 0.5%\n2\nCH + + + + + + + +%\n4\nNO 0.3 0.4 0.5 0.4 0.4 0.4 0.4 +%\n2\nSF 0.5 0.2 0.1 0.1 0.1 0.1 0.1 +%\n6\nU.S. Territories 23.4 59.7 26.3 25.1 23.4 23.9 22.7 0.4%\nTotal Gross Emissions\n(Sources) 6,536.9 7,494.6 6,752.7 6,590.1 6,001.8 6,328.8 6,343.2 100.0%\nLULUCF Sector Net Totalc (976.7) (907.7) (915.5) (863.6) (904.4) (910.6) (854.2) (13.5%)\nNet Emissions (Sources\nand Sinks) 5,560.2 6,586.9 5,837.3 5,726.6 5,097.4 5,418.2 5,489.0 86.5%\n2-36 Inventory of U.S. Greenhouse Gas Emissions and Sinks: 1990–2022",
+              "summary": "CO 2 1,173.8 1,136.4 1,110.7 1,118.3 1,036.9 1,071.1 1,080.8 17.0%",
+              "image_path": "artifacts/docenv/epa_ghg_inventory_1990_2022/page_134.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 134,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The text on page 134 clearly shows the 'Transportation' row as: 'Transportation 1,524.6 1,970.8 1,876.5 1,879.5 1,629.5 1,810.6 1,807.8 28.5%'. The value immediately before 28.5% is 1,807.8.\", \"action\": \"answer\", \"action_input\": {\"text\": \"1,807.8\", \"evidence_refs\": [{\"page\": 134}]}}",
+      "thought": "The text on page 134 clearly shows the 'Transportation' row as: 'Transportation 1,524.6 1,970.8 1,876.5 1,879.5 1,629.5 1,810.6 1,807.8 28.5%'. The value immediately before 28.5% is 1,807.8.",
+      "action": "answer",
+      "action_input": {
+        "text": "1,807.8",
+        "evidence_refs": [
+          {
+            "page": 134
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "1,807.8",
+          "evidence_refs": [
+            {
+              "page": 134
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "1,807.8",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1345,
+      "completion_tokens": 59,
+      "total_tokens": 1404,
+      "prompt_tokens_details": {
+        "text_tokens": 1345,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2890,
+      "completion_tokens": 143,
+      "total_tokens": 3033,
+      "prompt_tokens_details": {
+        "text_tokens": 2890,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  }
+}

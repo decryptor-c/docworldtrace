@@ -1,0 +1,137 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "answer"
+      ],
+      [
+        "search",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "easy",
+    "doc_id": "ipcc_ar6_syr_longer_report",
+    "metadata": {
+      "audit_note": "W6 fix: retained the actual first visible heading extracted from p50. Followup F6: reverted the longer Table 3.1 caption because it is visible in the PDF but not recoverable from the current read_page text extraction.",
+      "page": 50,
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/ipcc_ar6_syr_longer_report.pdf",
+    "question": "What is the first visible section heading on page 50?",
+    "reference_answer": "Section 3",
+    "required_tools": [
+      "read_page"
+    ],
+    "seed_id": "ipcc_ar6_syr_longer_report__text__p50",
+    "source": "structure_heuristic",
+    "supporting_refs": [
+      {
+        "page": 50
+      }
+    ],
+    "task_type": "text_lookup",
+    "tool_hints": {
+      "target_page": 50
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash__negative",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"Answering directly without using document tools.\", \"action\": \"answer\", \"action_input\": {\"text\": \"Section 3\", \"evidence_refs\": [{\"page\": 50}]}}",
+      "thought": "Answering directly without using document tools.",
+      "action": "answer",
+      "action_input": {
+        "text": "Section 3",
+        "evidence_refs": [
+          {
+            "page": 50
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "Section 3",
+          "evidence_refs": [
+            {
+              "page": 50
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "Section 3",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1261,
+      "completion_tokens": 64,
+      "total_tokens": 1325,
+      "prompt_tokens_details": {
+        "text_tokens": 1261,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 41
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2556,
+      "completion_tokens": 78,
+      "total_tokens": 2634,
+      "prompt_tokens_details": {
+        "text_tokens": 2556,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 46
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 1,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": true
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "direct_answer_without_tools",
+    "source_teacher": "dmxapi_gemini_2_5_flash",
+    "source_seed_id": "ipcc_ar6_syr_longer_report__text__p50",
+    "source_final_action": "answer",
+    "source_final_answer": "Section 3",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer text is preserved, but all supporting tool calls and observations are removed."
+  }
+}

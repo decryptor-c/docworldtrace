@@ -1,0 +1,195 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      [
+        "parse_table",
+        "answer"
+      ],
+      [
+        "read_page",
+        "ocr",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "nasa_fy2025_budget_summary",
+    "metadata": {
+      "audit_note": "B6 fix: original asked the column-header text. Now points to a labeled data row × data column.",
+      "bbox": [
+        35.769999999999996,
+        54.08699999999999,
+        924.2299999999997,
+        503.0902222222222
+      ],
+      "column_label": "FY 2025 Request",
+      "page": 4,
+      "review_status": "needs_human_review",
+      "row_label": "NASA Total"
+    },
+    "pdf_path": "data/raw_pdfs/nasa_fy2025_budget_summary.pdf",
+    "question": "On page 4, in the table, what is the value for row \"NASA Total\" under column \"FY 2025 Request\"? Use the table evidence on that page; do not answer from memory.",
+    "reference_answer": "25,383.7",
+    "required_tools": [
+      "read_page",
+      "parse_table"
+    ],
+    "seed_id": "nasa_fy2025_budget_summary__table__p4",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          35.769999999999996,
+          54.08699999999999,
+          924.2299999999997,
+          503.0902222222222
+        ],
+        "page": 4
+      }
+    ],
+    "task_type": "table_lookup",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        35.769999999999996,
+        54.08699999999999,
+        924.2299999999997,
+        503.0902222222222
+      ],
+      "target_page": 4
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash__negative",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"action\": \"parse_table\", \"action_input\": {\"page_id\": 4, \"bbox\": [35.77, 54.087, 924.23, 503.09]}}",
+      "thought": "",
+      "action": "parse_table",
+      "action_input": {
+        "page_id": 4,
+        "bbox": [
+          35.77,
+          54.087,
+          924.23,
+          503.09
+        ]
+      },
+      "observation": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"action\": \"answer\", \"action_input\": {\"text\": \"25,383.7\", \"evidence_refs\": [{\"page\": 4}]}}",
+      "thought": "",
+      "action": "answer",
+      "action_input": {
+        "text": "25,383.7",
+        "evidence_refs": [
+          {
+            "page": 4
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "25,383.7",
+          "evidence_refs": [
+            {
+              "page": 4
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "parse_table",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "25,383.7",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1461,
+      "completion_tokens": 120,
+      "total_tokens": 1581,
+      "prompt_tokens_details": {
+        "text_tokens": 1461,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 64
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 3044,
+      "completion_tokens": 136,
+      "total_tokens": 3180,
+      "prompt_tokens_details": {
+        "text_tokens": 3044,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 100
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "missing_evidence_observations",
+    "source_teacher": "dmxapi_gemini_2_5_flash",
+    "source_seed_id": "nasa_fy2025_budget_summary__table__p4",
+    "source_final_action": "answer",
+    "source_final_answer": "25,383.7",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved but all non-terminal evidence observations were blanked."
+  }
+}

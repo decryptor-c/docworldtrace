@@ -1,0 +1,204 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      [
+        "parse_table",
+        "answer"
+      ],
+      [
+        "read_page",
+        "ocr",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "usgs_mcs_2025",
+    "metadata": {
+      "bbox": [
+        49.645714285714284,
+        59.639999999999986,
+        561.8314285714287,
+        696.16
+      ],
+      "column_label": "Applications",
+      "page": 21,
+      "review_status": "needs_human_review",
+      "row_label": "Aluminum"
+    },
+    "pdf_path": "data/raw_pdfs/usgs_mcs_2025.pdf",
+    "question": "On page 21, in the table, what is the value for row \"Aluminum\" under column \"Applications\"?",
+    "reference_answer": "Metallurgy and many sectors of the economy.",
+    "required_tools": [
+      "read_page",
+      "parse_table"
+    ],
+    "seed_id": "usgs_mcs_2025__table__p21",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          49.645714285714284,
+          59.639999999999986,
+          561.8314285714287,
+          696.16
+        ],
+        "page": 21
+      }
+    ],
+    "task_type": "table_lookup",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        49.645714285714284,
+        59.639999999999986,
+        561.8314285714287,
+        696.16
+      ],
+      "target_page": 21
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash__negative",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"action\":\"parse_table\",\"action_input\":{\"page_id\":21,\"bbox\":[49.645714285714284,59.639999999999986,561.8314285714287,696.16]}}",
+      "thought": "",
+      "action": "parse_table",
+      "action_input": {
+        "page_id": 21,
+        "bbox": [
+          49.645714285714284,
+          59.639999999999986,
+          561.8314285714287,
+          696.16
+        ]
+      },
+      "observation": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The table has been successfully parsed. I need to find the value for \\\"Aluminum\\\" under the \\\"Applications\\\" column.\",\"action\":\"answer\",\"action_input\":{\"text\":\"Metallurgy and many sectors of the economy.\",\"evidence_refs\":[{\"page\":21,\"bbox\":[202.83142857142857,203.63999999999996,220.83142857142857,696.16]}]}}",
+      "thought": "The table has been successfully parsed. I need to find the value for \"Aluminum\" under the \"Applications\" column.",
+      "action": "answer",
+      "action_input": {
+        "text": "Metallurgy and many sectors of the economy.",
+        "evidence_refs": [
+          {
+            "page": 21,
+            "bbox": [
+              202.83142857142857,
+              203.63999999999996,
+              220.83142857142857,
+              696.16
+            ]
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "Metallurgy and many sectors of the economy.",
+          "evidence_refs": [
+            {
+              "page": 21,
+              "bbox": [
+                202.83142857142857,
+                203.63999999999996,
+                220.83142857142857,
+                696.16
+              ]
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "parse_table",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "Metallurgy and many sectors of the economy.",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1420,
+      "completion_tokens": 149,
+      "total_tokens": 1569,
+      "prompt_tokens_details": {
+        "text_tokens": 1420,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 65
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2095,
+      "completion_tokens": 125,
+      "total_tokens": 2220,
+      "prompt_tokens_details": {
+        "text_tokens": 2095,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "missing_evidence_observations",
+    "source_teacher": "dmxapi_gemini_2_5_flash",
+    "source_seed_id": "usgs_mcs_2025__table__p21",
+    "source_final_action": "answer",
+    "source_final_answer": "Metallurgy and many sectors of the economy.",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved but all non-terminal evidence observations were blanked."
+  }
+}

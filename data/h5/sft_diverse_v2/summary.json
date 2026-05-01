@@ -1,0 +1,175 @@
+{
+  "rollout_dir": "data/h2/rollouts_diverse_v2",
+  "docverify": null,
+  "keep_all": true,
+  "out_dir": "data/h5/sft_diverse_v2",
+  "heldout_per_task": 1,
+  "rollout_count": 162,
+  "unique_seed_count": 54,
+  "split_rollout_counts": {
+    "train": 144,
+    "eval": 18
+  },
+  "split_by_task": {
+    "cross_page": {
+      "train": 15,
+      "eval": 3
+    },
+    "numeric_computation": {
+      "train": 12,
+      "eval": 3
+    },
+    "table_lookup": {
+      "train": 18,
+      "eval": 3
+    },
+    "text_lookup": {
+      "train": 33,
+      "eval": 3
+    },
+    "unanswerable": {
+      "train": 39,
+      "eval": 3
+    },
+    "verification": {
+      "train": 27,
+      "eval": 3
+    }
+  },
+  "dataset_counts": {
+    "answer_only_train": 144,
+    "answer_only_eval": 18,
+    "trajectory_train": 427,
+    "trajectory_eval": 50
+  },
+  "answer_only_train": {
+    "condition": "answer_only_sft",
+    "count": 144,
+    "task_distribution": {
+      "cross_page": 15,
+      "unanswerable": 39,
+      "verification": 27,
+      "text_lookup": 33,
+      "table_lookup": 18,
+      "numeric_computation": 12
+    },
+    "teacher_distribution": {
+      "dmxapi_gemini_2_5_flash": 48,
+      "dmxapi_gemini_3_1_flash_lite_preview": 48,
+      "dmxapi_gpt4o_2024_11_20": 48
+    },
+    "target_action_distribution": {
+      "answer": 105,
+      "refuse": 39
+    },
+    "terminal_target_rate": 1.0,
+    "nonterminal_target_rate": 0.0,
+    "core_tool_coverage": [
+      "answer",
+      "refuse"
+    ]
+  },
+  "trajectory_train": {
+    "condition": "trajectory_sft",
+    "count": 427,
+    "task_distribution": {
+      "cross_page": 49,
+      "unanswerable": 142,
+      "verification": 90,
+      "text_lookup": 66,
+      "table_lookup": 36,
+      "numeric_computation": 44
+    },
+    "teacher_distribution": {
+      "dmxapi_gemini_2_5_flash": 145,
+      "dmxapi_gemini_3_1_flash_lite_preview": 132,
+      "dmxapi_gpt4o_2024_11_20": 150
+    },
+    "target_action_distribution": {
+      "search": 76,
+      "read_page": 131,
+      "answer": 105,
+      "refuse": 39,
+      "verify": 27,
+      "parse_table": 30,
+      "compute": 17,
+      "ocr": 1,
+      "crop": 1
+    },
+    "terminal_target_rate": 0.3372,
+    "nonterminal_target_rate": 0.6628,
+    "core_tool_coverage": [
+      "answer",
+      "compute",
+      "parse_table",
+      "read_page",
+      "refuse",
+      "search",
+      "verify"
+    ]
+  },
+  "answer_only_eval": {
+    "condition": "answer_only_sft",
+    "count": 18,
+    "task_distribution": {
+      "cross_page": 3,
+      "verification": 3,
+      "unanswerable": 3,
+      "table_lookup": 3,
+      "numeric_computation": 3,
+      "text_lookup": 3
+    },
+    "teacher_distribution": {
+      "dmxapi_gemini_2_5_flash": 6,
+      "dmxapi_gemini_3_1_flash_lite_preview": 6,
+      "dmxapi_gpt4o_2024_11_20": 6
+    },
+    "target_action_distribution": {
+      "answer": 15,
+      "refuse": 3
+    },
+    "terminal_target_rate": 1.0,
+    "nonterminal_target_rate": 0.0,
+    "core_tool_coverage": [
+      "answer",
+      "refuse"
+    ]
+  },
+  "trajectory_eval": {
+    "condition": "trajectory_sft",
+    "count": 50,
+    "task_distribution": {
+      "cross_page": 10,
+      "verification": 9,
+      "unanswerable": 10,
+      "table_lookup": 6,
+      "numeric_computation": 9,
+      "text_lookup": 6
+    },
+    "teacher_distribution": {
+      "dmxapi_gemini_2_5_flash": 17,
+      "dmxapi_gemini_3_1_flash_lite_preview": 16,
+      "dmxapi_gpt4o_2024_11_20": 17
+    },
+    "target_action_distribution": {
+      "search": 8,
+      "read_page": 12,
+      "answer": 15,
+      "verify": 3,
+      "refuse": 3,
+      "parse_table": 6,
+      "compute": 3
+    },
+    "terminal_target_rate": 0.36,
+    "nonterminal_target_rate": 0.64,
+    "core_tool_coverage": [
+      "answer",
+      "compute",
+      "parse_table",
+      "read_page",
+      "refuse",
+      "search",
+      "verify"
+    ]
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "seed": {
+    "seed_id": "nasa_fy2025_budget_summary__cross__p2_p3",
+    "doc_id": "nasa_fy2025_budget_summary",
+    "pdf_path": "data/raw_pdfs/nasa_fy2025_budget_summary.pdf",
+    "question": "Use search to find the page about \"international space station while partnering with U.S. industry\". Then inspect the following page and report the first bullet's leading phrase.",
+    "reference_answer": "Drives scientific discovery through a balanced portfolio of space-based observatories",
+    "task_type": "cross_page",
+    "difficulty": "hard",
+    "required_tools": [
+      "search",
+      "read_page"
+    ],
+    "source": "structure_heuristic_v2_review",
+    "answerable": true,
+    "supporting_refs": [
+      {
+        "page": 3
+      }
+    ],
+    "metadata": {
+      "anchor_page": 2,
+      "answer_page": 3,
+      "anchor_phrase": "international space station while partnering with us industry",
+      "review_status": "needs_human_review",
+      "audit_note": "B5 fix: p2 and p3 share the SAME page heading (degenerate cross-page). Re-anchored on a phrase unique to p2 (ISS bullet) and rephrased to ask for the leading bullet on p3 instead of the heading."
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to find the page mentioning 'international space station while partnering with U.S. industry'. I will start by searching for this phrase.\", \"action\": \"search\", \"action_input\": {\"query\": \"international space station while partnering with U.S. industry\"}}",
+      "thought": "I need to find the page mentioning 'international space station while partnering with U.S. industry'. I will start by searching for this phrase.",
+      "action": "search",
+      "action_input": {
+        "query": "international space station while partnering with U.S. industry",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "international space station while partnering with U.S. industry",
+          "results": [
+            {
+              "page": 2,
+              "score": 9.0,
+              "snippet": "Advancing U.S. Leadership in Exploration and Discovery\n• The President’s budget request for NASA is an investment in our nation’s future; it promotes U.S.\nleadership in space exploration, improves our understanding of Earth and the universe"
+            },
+            {
+              "page": 8,
+              "score": 7.0,
+              "snippet": "Low-Earth Orbit Transition: ISS to Commercial Destinations\nFY 2020 2021 2022 2023 2024 2025 2026 2027 2028 2029 2030 2031 2032\nInternational Space Station (ISS) Operations\nU.S. Deorbit Vehicle Development\nDelivery Deorbit\nCommercial LEO Des"
+            },
+            {
+              "page": 17,
+              "score": 6.0,
+              "snippet": "Space Operations:\nInternational Space Station\nFY 2023 FY 2025 Request\nFY 2024\nOperating FY 2025\nBudget Authority ($M) CR2/ FY 2026 FY 2027 FY 2028 FY 2029\nPlan1/ Request\nInternational Space Station 1,286.2 1,269.6 1,267.8 1,262.8 1,259.4 1,"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The search results point to page 8 as a relevant location for ISS and commercial partnerships. I will read page 8 and page 9 to find the first bullet's leading phrase.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [8, 9]}}",
+      "thought": "The search results point to page 8 as a relevant location for ISS and commercial partnerships. I will read page 8 and page 9 to find the first bullet's leading phrase.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          8,
+          9
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 8,
+              "text": "Low-Earth Orbit Transition: ISS to Commercial Destinations\nFY 2020 2021 2022 2023 2024 2025 2026 2027 2028 2029 2030 2031 2032\nInternational Space Station (ISS) Operations\nU.S. Deorbit Vehicle Development\nDelivery Deorbit\nCommercial LEO Destinations (CLDs) Development CLD Operations\nPhase 1: Early Design Maturation Phase 2: Certification & Services\nContinue valuable Develop U.S. Deorbit\nAxiom science and research on Vehicle to safely deorbit\nISS through end of life ISS at end of useful life\nBalancing\nNanoracks 3 Priorities\nPartner with U.S. commercial space\nindustry to develop and deploy\ncommercial destinations to ensure\nAmerican access to LEO 8\nBlue Origin",
+              "summary": "Low-Earth Orbit Transition: ISS to Commercial Destinations",
+              "image_path": "artifacts/docenv/nasa_fy2025_budget_summary/page_008.png"
+            },
+            {
+              "page": 9,
+              "text": "CCUUII////SSPP--BBUUDDGG\nCommitment to the Earth and Sustainability\nInvests over $3.2 billion to observe, understand, and protect our home planet\n• $2.4 billion investment in Earth science and observations that enhance our\nunderstanding of the Earth system and make Earth science data available and\nactionable\n• $32 million for Advanced Capabilities for Emergency Response Operations\nand Wildland Fires\n• $522 million to reduce aviation’s climate impact, including a Sustainable Flight\nNational Partnership that will reduce fuel burn by as much as 30 percent\n• $252 million for OSIRIS-APEX, and NEO Surveyor which launches in 2028 to\ndetect, track, and characterize asteroids and comets that could impact Earth\n• $41 million to better understand and mitigate the hazard of orbital debris\n9",
+              "summary": "CCUUII////SSPP--BBUUDDGG",
+              "image_path": "artifacts/docenv/nasa_fy2025_budget_summary/page_009.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"I have read page 8 and 9. The question asks for the first bullet's leading phrase on the page following the one about the international space station and partnering with U.S. industry (page 8). Page 9 is the following page, and its first bullet is '$2.4 billion investment in Earth science and observations that enhance our understanding of the Earth system and make Earth science data available and actionable'. The leading phrase is '$2.4 billion investment'.\", \"action\": \"answer\", \"action_input\": {\"text\": \"$2.4 billion investment\", \"evidence_refs\": [{\"page\": 9}]}}",
+      "thought": "I have read page 8 and 9. The question asks for the first bullet's leading phrase on the page following the one about the international space station and partnering with U.S. industry (page 8). Page 9 is the following page, and its first bullet is '$2.4 billion investment in Earth science and observations that enhance our understanding of the Earth system and make Earth science data available and actionable'. The leading phrase is '$2.4 billion investment'.",
+      "action": "answer",
+      "action_input": {
+        "text": "$2.4 billion investment",
+        "evidence_refs": [
+          {
+            "page": 9
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "$2.4 billion investment",
+          "evidence_refs": [
+            {
+              "page": 9
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "$2.4 billion investment",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1259,
+      "completion_tokens": 60,
+      "total_tokens": 1319,
+      "prompt_tokens_details": {
+        "text_tokens": 1259,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1719,
+      "completion_tokens": 67,
+      "total_tokens": 1786,
+      "prompt_tokens_details": {
+        "text_tokens": 1719,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2300,
+      "completion_tokens": 135,
+      "total_tokens": 2435,
+      "prompt_tokens_details": {
+        "text_tokens": 2300,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  }
+}

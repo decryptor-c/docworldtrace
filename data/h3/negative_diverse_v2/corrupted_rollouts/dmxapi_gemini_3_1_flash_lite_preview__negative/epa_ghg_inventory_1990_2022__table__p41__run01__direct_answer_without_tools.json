@@ -1,0 +1,161 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      [
+        "parse_table",
+        "answer"
+      ],
+      [
+        "read_page",
+        "ocr",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "epa_ghg_inventory_1990_2022",
+    "metadata": {
+      "audit_note": "B2 fix: original asked header-row x header-column intersection (returned a header value). Now points to an actual data cell. | Followup F4: replaced the CH4/Percent Change cell with HFCs/2022 because the parser splits chemical subscripts and multi-row header text.",
+      "bbox": [
+        74.904,
+        481.005997,
+        540.1,
+        694.289688947368
+      ],
+      "column_label": "2022",
+      "page": 41,
+      "review_status": "needs_human_review",
+      "row_label": "HFCs"
+    },
+    "pdf_path": "data/raw_pdfs/epa_ghg_inventory_1990_2022.pdf",
+    "question": "On page 41, in the table, what is the value for row \"HFCs\" under column \"2022\"? Use the table evidence on that page; do not answer from memory.",
+    "reference_answer": "182.8",
+    "required_tools": [
+      "read_page",
+      "parse_table"
+    ],
+    "seed_id": "epa_ghg_inventory_1990_2022__table__p41",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          74.904,
+          481.005997,
+          540.1,
+          694.289688947368
+        ],
+        "page": 41
+      }
+    ],
+    "task_type": "table_lookup",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        74.904,
+        481.005997,
+        540.1,
+        694.289688947368
+      ],
+      "target_page": 41
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview__negative",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"Answering directly without using document tools.\", \"action\": \"answer\", \"action_input\": {\"text\": \"The value for 'HFCs' in 2022 is 182.8.\", \"evidence_refs\": [{\"page\": 41}]}}",
+      "thought": "Answering directly without using document tools.",
+      "action": "answer",
+      "action_input": {
+        "text": "The value for 'HFCs' in 2022 is 182.8.",
+        "evidence_refs": [
+          {
+            "page": 41
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "The value for 'HFCs' in 2022 is 182.8.",
+          "evidence_refs": [
+            {
+              "page": 41
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "The value for 'HFCs' in 2022 is 182.8.",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1476,
+      "completion_tokens": 105,
+      "total_tokens": 1581,
+      "prompt_tokens_details": {
+        "text_tokens": 1476,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 3035,
+      "completion_tokens": 85,
+      "total_tokens": 3120,
+      "prompt_tokens_details": {
+        "text_tokens": 3035,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 1,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": true
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "direct_answer_without_tools",
+    "source_teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+    "source_seed_id": "epa_ghg_inventory_1990_2022__table__p41",
+    "source_final_action": "answer",
+    "source_final_answer": "The value for 'HFCs' in 2022 is 182.8.",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer text is preserved, but all supporting tool calls and observations are removed."
+  }
+}

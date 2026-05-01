@@ -1,0 +1,235 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      [
+        "parse_table",
+        "answer"
+      ],
+      [
+        "read_page",
+        "ocr",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "apple_2025_10k",
+    "metadata": {
+      "audit_note": "W1 fix: original asked column 'Business' which doesn't exist as a data column in the TOC. Now uses real 'Page' column with a TOC-row item. | Followup F2: rephrased to a natural-language TOC question; removed strict row_label/column_label to avoid contract dependency on parse_table cell layout (real parser output is ['Item 1A.', 'Risk Factors', '5']).",
+      "bbox": [
+        18.22499732062509,
+        161.3250228941237,
+        593.8874323986892,
+        241.95683198246488
+      ],
+      "page": 3,
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/apple_2025_10k.pdf",
+    "question": "In the table of contents on page 3, what page is \"Item 1A. Risk Factors\" listed on? Use the table on that page; do not answer from memory.",
+    "reference_answer": "5",
+    "required_tools": [
+      "read_page",
+      "parse_table"
+    ],
+    "seed_id": "apple_2025_10k__table__p3",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          18.22499732062509,
+          161.3250228941237,
+          593.8874323986892,
+          241.95683198246488
+        ],
+        "page": 3
+      }
+    ],
+    "task_type": "table_lookup",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        18.22499732062509,
+        161.3250228941237,
+        593.8874323986892,
+        241.95683198246488
+      ],
+      "target_page": 3
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I should parse the table on page 3 using the provided bbox to locate the relevant information.\",\"action\":\"parse_table\",\"action_input\":{\"page_id\":3,\"bbox\":[18.22499732062509,161.3250228941237,593.8874323986892,241.95683198246488]}}",
+      "thought": "I should parse the table on page 3 using the provided bbox to locate the relevant information.",
+      "action": "parse_table",
+      "action_input": {
+        "page_id": 3,
+        "bbox": [
+          18.22499732062509,
+          161.3250228941237,
+          593.8874323986892,
+          241.95683198246488
+        ]
+      },
+      "observation": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {
+          "page": 3,
+          "bbox": [
+            18.224997320625082,
+            161.3250228941237,
+            593.8874323986893,
+            241.95683198246488
+          ],
+          "rows": [
+            [
+              "Item 1.",
+              "Business",
+              "1"
+            ],
+            [
+              "Item 1A.",
+              "Risk Factors",
+              "5"
+            ],
+            [
+              "Item 1B.",
+              "Unresolved Staff Comments",
+              "17"
+            ],
+            [
+              "Item 1C.",
+              "Cybersecurity",
+              "17"
+            ],
+            [
+              "Item 2.",
+              "Properties",
+              "17"
+            ],
+            [
+              "Item 3.",
+              "Legal Proceedings",
+              "18"
+            ],
+            [
+              "Item 4.",
+              "Mine Safety Disclosures",
+              "18"
+            ]
+          ],
+          "markdown": "| Item 1. | Business | 1 |\n| --- | --- | --- |\n| Item 1A. | Risk Factors | 5 |\n| Item 1B. | Unresolved Staff Comments | 17 |\n| Item 1C. | Cybersecurity | 17 |\n| Item 2. | Properties | 17 |\n| Item 3. | Legal Proceedings | 18 |\n| Item 4. | Mine Safety Disclosures | 18 |"
+        },
+        "provenance": {
+          "page": 3,
+          "bbox": [
+            18.224997320625082,
+            161.3250228941237,
+            593.8874323986893,
+            241.95683198246488
+          ],
+          "element_type": "table"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The table indicates that 'Item 1A. Risk Factors' is listed on page 5. I can now answer the question.\",\"action\":\"answer\",\"action_input\":{\"text\":\"'Item 1A. Risk Factors' is listed on page 5.\",\"evidence_refs\":[{\"page\":3}]}}",
+      "thought": "The table indicates that 'Item 1A. Risk Factors' is listed on page 5. I can now answer the question.",
+      "action": "answer",
+      "action_input": {
+        "text": "'Item 1A. Risk Factors' is listed on page 5.",
+        "evidence_refs": [
+          {
+            "page": 3
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "'Item 1A. Risk Factors' is listed on page 5.",
+          "evidence_refs": [
+            {
+              "page": 3
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "parse_table",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "'Item 1A. Risk Factors' is listed on page 5.",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1251,
+      "completion_tokens": 71,
+      "total_tokens": 1322,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1606,
+      "completion_tokens": 66,
+      "total_tokens": 1672,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  }
+}

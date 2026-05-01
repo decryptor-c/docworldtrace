@@ -1,0 +1,219 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "read_page",
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "ocr",
+        "compute",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "nasa_fy2025_budget_summary",
+    "metadata": {
+      "audit_note": "W8 fix: rephrased question from 'percentage change from row X to row Y' (semantically odd for cross-program comparison) to 'percentage by which Y is less than X' which is a natural budget-comparison question. | V2 fix: Removed the ambiguous 'is less than' phrasing and made the signed formula explicit.",
+      "bbox": [
+        35.769999999999996,
+        54.08699999999999,
+        924.2299999999997,
+        503.0902222222222
+      ],
+      "column_label": "FY 2023 Operating Plan",
+      "first_label": "Deep Space Exploration Systems",
+      "first_value": 7447.6,
+      "formula": "(second_value - first_value) / abs(first_value) * 100",
+      "page": 4,
+      "review_status": "needs_human_review",
+      "second_label": "Space Operations",
+      "second_value": 4266.7
+    },
+    "pdf_path": "data/raw_pdfs/nasa_fy2025_budget_summary.pdf",
+    "question": "Based on the table on page 4, in column \"FY 2023 Operating Plan\", compute the signed percentage change from row \"Deep Space Exploration Systems\" (7447.6) to row \"Space Operations\" (4266.7), using (Space Operations - Deep Space Exploration Systems) / abs(Deep Space Exploration Systems) * 100. Report only the final signed percentage with two decimals.",
+    "reference_answer": "-42.71%",
+    "required_tools": [
+      "parse_table",
+      "compute"
+    ],
+    "seed_id": "nasa_fy2025_budget_summary__numeric__p4",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          35.769999999999996,
+          54.08699999999999,
+          924.2299999999997,
+          503.0902222222222
+        ],
+        "page": 4
+      }
+    ],
+    "task_type": "numeric_computation",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "compute_note": "Use the numeric formula in the question and preserve the sign of the percentage change.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        35.769999999999996,
+        54.08699999999999,
+        924.2299999999997,
+        503.0902222222222
+      ],
+      "target_page": 4
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"Answering directly without using document tools.\", \"action\": \"answer\", \"action_input\": {\"text\": \"-42.71%\", \"evidence_refs\": [{\"page\": 4}]}}",
+      "thought": "Answering directly without using document tools.",
+      "action": "answer",
+      "action_input": {
+        "text": "-42.71%",
+        "evidence_refs": [
+          {
+            "page": 4
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "-42.71%",
+          "evidence_refs": [
+            {
+              "page": 4
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "-42.71%",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1271,
+      "completion_tokens": 69,
+      "total_tokens": 1340,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 2561,
+      "completion_tokens": 81,
+      "total_tokens": 2642,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 2720,
+      "completion_tokens": 95,
+      "total_tokens": 2815,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 2913,
+      "completion_tokens": 85,
+      "total_tokens": 2998,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 3075,
+      "completion_tokens": 51,
+      "total_tokens": 3126,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 1,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": true
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "direct_answer_without_tools",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "nasa_fy2025_budget_summary__numeric__p4",
+    "source_final_action": "answer",
+    "source_final_answer": "-42.71%",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer text is preserved, but all supporting tool calls and observations are removed."
+  }
+}

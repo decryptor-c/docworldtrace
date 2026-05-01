@@ -1,0 +1,233 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      [
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      [
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "epa_ghg_inventory_1990_2022",
+    "metadata": {
+      "audit_note": "W4 fix: original claim was an OCR'd numeric row from a city table — fragile. Switched to a clean ES-table claim grounded in p41 Table ES-2 (Total Gross Emissions 2022 = 6,343.2).",
+      "claim": "total gross emissions in 2022 were 6 343 2 mmt co2 eq",
+      "page": 41
+    },
+    "pdf_path": "data/raw_pdfs/epa_ghg_inventory_1990_2022.pdf",
+    "question": "Is the following claim supported by the document: \"total gross emissions in 2022 were 6 343 2 mmt co2 eq\"? Answer SUPPORTED or UNSUPPORTED.",
+    "reference_answer": "SUPPORTED",
+    "required_tools": [
+      "search",
+      "read_page",
+      "verify"
+    ],
+    "seed_id": "epa_ghg_inventory_1990_2022__verify__p41",
+    "source": "structure_heuristic",
+    "supporting_refs": [
+      {
+        "page": 41
+      }
+    ],
+    "task_type": "verification",
+    "tool_hints": {
+      "target_page": 41
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I should start by reading page 41 to locate the relevant information about total gross emissions in 2022.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[41]}}",
+      "thought": "I should start by reading page 41 to locate the relevant information about total gross emissions in 2022.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          41
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 41,
+              "text": "Figure ES-1: U.S. Greenhouse Gas Emissions and Sinks by Gas\na The term “flux” is used to describe the exchange of CO to and from the atmosphere, with net flux being either positive or\n2\nnegative depending on the overall balance. Removal and long-term storage of CO from the atmosphere is also referred to as\n2\n“carbon sequestration.”\nTable ES-2: Recent Trends in U.S. Greenhouse Gas Emissions and Sinks (MMT CO Eq.)\n2\nPercent\nChange\nSince\nGas/Source 1990 2005 2018 2019 2020 2021 2022 1990\nCO 5,131.6 6,126.9 5,362.2 5,234.5 4,689.0 5,017.2 5,053.0 -1.5%\n2\nCH (excludes LULUCF sources)a 871.7 795.4 771.5 754.3 735.3 720.5 702.4 -19.4%\n4\nNO (excludes LULUCF sources)a 408.2 419.2 439.5 416.4 391.2 398.2 389.7 -4.5%\n2\nHFCs 47.7 121.7 163.9 168.2 170.3 177.0 182.8 282.9%\nPFCs 39.5 10.2 7.4 7.3 6.6 6.3 6.7 -83.1%\nSF 37.9 20.2 7.6 8.4 8.1 8.5 7.6 -80.0%\n6\nNF 0.3 1.0 0.7 1.1 1.3 1.1 1.1 238.3%\n3\nTotal Gross Emissions (Sources)a 6,536.9 7,494.6 6,752.7 6,590.1 6,001.8 6,328.8 6,343.2 -3.0%\nLULUCF Emissionsb 58.0 68.9 62.8 58.0 68.4 72.9 67.6 16.5%\nCH 53.1 58.5 55.5 52.5 59.3 62.1 58.4 10.0%\n4\nNO 4.8 10.3 7.3 5.5 9.1 10.7 9.1 88.3%\n2\nLULUCF Carbon Stock Changec (1034.7) (976.6) (978.3) (921.6) (972.8) (983.4) (921.8) -10.9%\nLULUCF Sector Net Totald (976.7) (907.7) (915.5) (863.6) (904.4) (910.6) (854.2) -12.5%\nNet Emissions (Sources and Sinks) 5,560.2 6,586.9 5,837.3 5,726.6 5,097.4 5,418.2 5,489.0 -1.3%\na Gross emissions totals do not include CH and N O emissions from LULUCF. LULUCF CH and NO emissions are included in\n4 2 4 2\nnet emission totals.\nExecutive Summary ES-5",
+              "summary": "Figure ES-1: U.S. Greenhouse Gas Emissions and Sinks by Gas",
+              "image_path": "artifacts/docenv/epa_ghg_inventory_1990_2022/page_041.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 41,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The claim matches the value for total gross emissions in 2022 as stated in the document. I should now verify this claim.\",\"action\":\"verify\",\"action_input\":{\"claim\":\"total gross emissions in 2022 were 6 343 2 mmt co2 eq\",\"evidence_refs\":[{\"page\":41}]}}",
+      "thought": "The claim matches the value for total gross emissions in 2022 as stated in the document. I should now verify this claim.",
+      "action": "verify",
+      "action_input": {
+        "claim": "total gross emissions in 2022 were 6 343 2 mmt co2 eq",
+        "evidence_refs": [
+          {
+            "page": 41
+          }
+        ]
+      },
+      "observation": {
+        "action": "verify",
+        "status": "success",
+        "result": {
+          "claim": "total gross emissions in 2022 were 6 343 2 mmt co2 eq",
+          "evidence_count": 1,
+          "label": "SUPPORTED",
+          "sufficiency": "SUFFICIENT",
+          "confidence": 0.99,
+          "failure_taxonomy": null
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "verification"
+        },
+        "confidence": 0.99,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"Corrupted negative-control terminal action.\", \"action\": \"answer\", \"action_input\": {\"text\": \"UNSUPPORTED\", \"evidence_refs\": [{\"page\": 41}]}}",
+      "thought": "Corrupted negative-control terminal action.",
+      "action": "answer",
+      "action_input": {
+        "text": "UNSUPPORTED",
+        "evidence_refs": [
+          {
+            "page": 41
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "UNSUPPORTED",
+          "evidence_refs": [
+            {
+              "page": 41
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "negative_control"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "verify",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "UNSUPPORTED",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1148,
+      "completion_tokens": 40,
+      "total_tokens": 1188,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 2053,
+      "completion_tokens": 69,
+      "total_tokens": 2122,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 2207,
+      "completion_tokens": 38,
+      "total_tokens": 2245,
+      "prompt_tokens_details": {
+        "cached_tokens": 1152,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": true,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "wrong_final_answer",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "epa_ghg_inventory_1990_2022__verify__p41",
+    "source_final_action": "answer",
+    "source_final_answer": "SUPPORTED",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The terminal answer/refusal was intentionally corrupted while preserving the preceding trajectory."
+  }
+}

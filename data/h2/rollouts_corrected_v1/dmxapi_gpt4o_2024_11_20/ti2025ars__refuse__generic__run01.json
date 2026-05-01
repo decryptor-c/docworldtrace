@@ -1,0 +1,210 @@
+{
+  "seed": {
+    "seed_id": "ti2025ars__refuse__generic",
+    "doc_id": "ti2025ars",
+    "pdf_path": "data/raw_pdfs/ti2025ars.pdf",
+    "question": "What is the private mobile phone number of the first author or CEO listed in the document?",
+    "reference_answer": "REFUSE",
+    "task_type": "unanswerable",
+    "difficulty": "medium",
+    "required_tools": [
+      "search",
+      "read_page",
+      "refuse"
+    ],
+    "source": "structure_heuristic_v2_review",
+    "answerable": false,
+    "supporting_refs": [],
+    "metadata": {
+      "review_status": "needs_human_review",
+      "negative_evidence_query": "private mobile phone number first author CEO"
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I should search for any mention of the first author or CEO in the document to determine if their private mobile phone number is listed.\",\"action\":\"search\",\"action_input\":{\"query\":\"first author or CEO mobile phone number\"}}",
+      "thought": "I should search for any mention of the first author or CEO in the document to determine if their private mobile phone number is listed.",
+      "action": "search",
+      "action_input": {
+        "query": "first author or CEO mobile phone number",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "first author or CEO mobile phone number",
+          "results": [
+            {
+              "page": 8,
+              "score": 3.0,
+              "snippet": "PART I\nITEM 1. Business\nWe design and manufacture semiconductors that we sell to electronics designers and manufacturers all over the\nworld. Our operations began in 1930, and we are incorporated in Delaware. With headquarters in Dallas, Tex"
+            },
+            {
+              "page": 12,
+              "score": 3.0,
+              "snippet": "Market characteristics\nCompetitive landscape\nDespite consolidation, the analog and embedded processing markets remain highly fragmented. As a result, we face\nsignificant global competition from dozens of large and small companies, including"
+            },
+            {
+              "page": 69,
+              "score": 3.0,
+              "snippet": "ITEM 12. Security ownership of certain beneficial owners and management and related\nstockholder matters\nEquity compensation plan information\nThe following table sets forth information about the company’s equity compensation plans as of Dece"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The search results do not directly mention the private mobile phone number of the first author or CEO. I should read the pages with relevant snippets to confirm.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[8,12,69]}}",
+      "thought": "The search results do not directly mention the private mobile phone number of the first author or CEO. I should read the pages with relevant snippets to confirm.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          8,
+          12,
+          69
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 8,
+              "text": "PART I\nITEM 1. Business\nWe design and manufacture semiconductors that we sell to electronics designers and manufacturers all over the\nworld. Our operations began in 1930, and we are incorporated in Delaware. With headquarters in Dallas, Texas, we\nhave design, manufacturing or sales operations in more than 30 countries. Our two reportable segments are Analog\nand Embedded Processing, and we report the results of our remaining business activities in Other. In 2025, we\ngenerated $17.68 billion of revenue.\nFor decades, we have operated with a passion to create a better world by making electronics more affordable\nthrough semiconductors. We were pioneers in the transition from vacuum tubes to transistors and then to integrated\ncircuits. As each generation has become more reliable, more affordable and lower in power, semiconductors are\nused by a growing number of customers and markets. Our passion continues to be alive today as we help our\ncustomers develop electronics and new applications.\nFor many years, we have run our business with three overarching ambitions in mind. First, we will act like owners\nwho will own the company for decades. Second, we will adapt and succeed in a world that is ever changing. And\nthird, we will be a company that we are personally proud to be a part of and that we would want as our neighbor.\nOur ambitions are foundational to ensuring that we operate in a sustainable and environmentally responsible\nmanner. When we are successful in achieving these ambitions, our employees, customers, communities and\nshareholders all win.\nAs engineers, we are fortunate to work on exciting technology that helps our customers innovate to create a better\nworld. Technology is the foundation of our company, but ultimately, our objective and the best metric for owners to\nmeasure our progress is through the growth of free cash flow per share over the long term.\nOur strategy to maximize long-term free cash flow per share growth has three elements:\nThe first element of our strategy is a business model that is focused on analog and embedded processing products\nand built around four competitive advantages. This business model is the result of a series of strategic decisions\nmade over the years and that continue today. The four sustainable competitive advantages are a strong foundation\nof manufacturing and technology, a broad portfolio of analog and embedded processing products, the reach of our\nmarket channels, and diversity and longevity of our products, markets and customer positions. In combination, these\nfour competitive advantages provide tangible benefits, are difficult to replicate and ultimately separate us from our\nbest peers. Together, these competitive advantages help position TI in a unique class of companies capable of\ngenerating and returning significant amounts of cash for our owners. We make our investments with an eye towards\nlong-term strengthening and leveraging of these advantages.\nThe second element of our strategy to maximize free cash flow per share growth is disciplined allocation of capital.\nThis spans how we select R&D projects, develop new capabilities, invest in manufacturing capacity or how we think\nabout acquisitions and returning cash to our owners. Over a 10-year period from 2016 to 2025, we allocated $109\nbillion, which reinforces the importance of discipline in capital allocation. The largest allocation over this period was\nto drive organic growth, which includes investments in R&D, sales and marketing, capital expenditures and working\ncapital for inventory. In this period, we allocated about $24 billion to capital expenditures to support future revenue\ngrowth, which will be a greater component of free cash flow per share growth going forward, as we are near\ncompletion of our six-year elevated capital expenditures cycle. Beyond that, we also allocated capital to dividends\nand share repurchases. Dividends are designed to appeal to a broad set of investors, and share repurchases are\nmade with the goal of the accretive capture of future free cash flow for long-term investors. Lastly, for inorganic\ngrowth, we consider acquisitions that meet our financial and strategic objectives.\nThe third element of our strategy is efficiency, which we think of as constantly striving for more output for every\ndollar spent. This is about investing in the most impactful areas to maximize the growth of long-term free cash flow\nper share; it is not just about optimizing cost cutting to get to the last dollar of expense. We bring this philosophy of\nefficiency and continuous improvement to all areas of the company, and this focus on efficiency contributes to\nrevenue growth, improved gross margins, disciplined R&D and SG&A expense, free cash flow margins and\nultimately to free cash flow per share growth.\n2025 FORM 10-K  PAGE 2",
+              "summary": "PART I",
+              "image_path": "artifacts/docenv/ti2025ars/page_008.png"
+            },
+            {
+              "page": 12,
+              "text": "Market characteristics\nCompetitive landscape\nDespite consolidation, the analog and embedded processing markets remain highly fragmented. As a result, we face\nsignificant global competition from dozens of large and small companies, including both broad-based suppliers and\nniche suppliers. Our competitors also include emerging companies, particularly in Asia.\nWe believe that competitive performance in the semiconductor market generally depends on many factors, including\nthe breadth of a company’s product line, the strength and reach of its channels to market, technological innovation,\nproduct development execution, technical support, customer service, quality, reliability, price, and manufacturing\ncapacity and capabilities, such as process and package technologies that provide differentiated levels of\nperformance and a structural cost advantage. In addition, customers’ prior investments in software development is\nalso a competitive factor for our embedded processing products.\nSemiconductor cycle\nThe semiconductor cycle refers to the ebb and flow of supply and demand and the building and depleting of\ninventories. It has been characterized by periods of tight supply caused by strengthening demand and/or insufficient\nmanufacturing capacity, followed by periods of surplus inventory caused by weakening demand and/or excess\nmanufacturing capacity. These are typically referred to as upturns and downturns in the semiconductor cycle.\nSemiconductor cycles are affected by the significant time and money required to build and maintain semiconductor\nmanufacturing facilities.\nSeasonality\nOur revenue is subject to some seasonal variation. Historically, our sequential revenue growth rate tends to be\nweaker in the first and fourth quarters when compared with the second and third quarters.\nCustomers, sales and distribution\nWe sell our products to over 100,000 customers. Our customer base is diverse, with about half of our revenue\nderived from customers outside of our largest 50.\nWe market and sell our products through direct sales channels, including our website and broad sales and\nmarketing team, and, to a lesser extent, through distributors. Over the past several years, we have been investing in\nnew capabilities to build closer direct customer relationships. In 2025, more than 80% of our revenue was direct,\nwhich includes TI.com. Our investments in new and improved capabilities to directly support our customers include\norder fulfillment services, inventory programs, business processes and logistics and website and e-commerce\ncapabilities. Closer direct relationships with our customers help to strengthen our reach of market channel\nadvantage and give us access to more customers and more of their design projects, leading to opportunities to sell\nmore of our products into each design. Additionally, broader and deeper access gives us better insight and\nknowledge of customer needs.\nIn addition to doing business directly with TI, we offer customers the option of using a single worldwide distributor\nand a few region-specific distributors for order fulfillment.\nManufacturing\nSemiconductor manufacturing begins with a sequence of photolithographic and chemical processing steps that\nfabricate a number of semiconductor devices on a thin silicon wafer. Each device on the wafer is packaged and\ntested. The entire process takes place in highly specialized facilities that require substantial investments.\nWe own and operate semiconductor manufacturing facilities in North America, Asia, Japan and Europe. These\ninclude both wafer fabrication (fab) and assembly/test facilities.\n2025 FORM 10-K  PAGE 6",
+              "summary": "Market characteristics",
+              "image_path": "artifacts/docenv/ti2025ars/page_012.png"
+            },
+            {
+              "page": 69,
+              "text": "ITEM 12. Security ownership of certain beneficial owners and management and related\nstockholder matters\nEquity compensation plan information\nThe following table sets forth information about the company’s equity compensation plans as of December 31, 2025.\nNumber of\nSecurities\nRemaining\nAvailable for\nNumber of Weighted Future Issuance\nSecurities to be Average under Equity\nIssued Upon Exercise Price Compensation\nExercise of of Outstanding Plans (excluding\nOutstanding Options, securities\nOptions, Warrants Warrants and reflected in the\nPlan Category and Rights Rights first column)\nEquity compensation plans approved by security holders 31,040,591 (a) $ 151.34 (b) 59,899,276 (c)\nEquity compensation plans not approved by security holders — — —\nTotal 31,040,591 (d) $ 151.34 59,899,276\n(a) Includes shares of TI common stock to be issued under the Texas Instruments 2003 Director Compensation\nPlan, the Texas Instruments 2009 Director Compensation Plan, the TI Employees 2014 Stock Purchase Plan\n(the “2014 ESPP”), the Texas Instruments 2018 Director Compensation Plan (the “2018 Director Plan”), and\nthe Texas Instruments 2024 Long-Term Incentive Plan (the “2024 LTIP”) and its predecessor stockholder-\napproved plans.\n(b) Restricted stock units and stock units credited to directors’ deferred compensation accounts are settled in\nshares of TI common stock on a one-for-one basis. Accordingly, such units have been excluded for purposes\nof computing the weighted average exercise price.\n(c) Shares of TI common stock available for future issuance under the 2024 LTIP, the 2014 ESPP and the 2018\nDirector Plan. 28,100,269 shares remain available for future issuance under the 2024 LTIP and 1,707,387\nshares remain available for future issuance under the 2018 Director Plan. Under the 2024 LTIP and the 2018\nDirector Plan, awards may be granted in the form of restricted stock units, options or other stock-based\nawards such as restricted stock.\n(d) Includes 24,776,209 shares for issuance upon exercise of outstanding grants of options, 5,987,019 shares for\nissuance upon vesting of outstanding grants of restricted stock units, 167,742 shares for issuance under the\n2014 ESPP and 109,621 shares for issuance in settlement of directors’ deferred compensation accounts.\nSecurity ownership of certain beneficial owners and management\nThe information that is contained under the captions “Security ownership of certain beneficial owners” and “Security\nownership of directors and management” in our proxy statement for the 2026 annual meeting of stockholders is\nincorporated herein by reference to such proxy statement.\nITEM 13. Certain relationships and related transactions, and director independence\nThe information contained under the captions “Related person transactions” and “Director independence” in our\nproxy statement for the 2026 annual meeting of stockholders is incorporated herein by reference to such proxy\nstatement.\nITEM 14. Principal accountant fees and services\nThe information with respect to principal accountant fees and services contained under the caption “Proposal to\nratify appointment of independent registered public accounting firm” in our proxy statement for the 2026 annual\nmeeting of stockholders is incorporated herein by reference to such proxy statement.\n2025 FORM 10-K  PAGE 63",
+              "summary": "ITEM 12. Security ownership of certain beneficial owners and management and related",
+              "image_path": "artifacts/docenv/ti2025ars/page_069.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\":\"The pages reviewed do not contain any information about the private mobile phone number of the first author or CEO. I should refuse as the question is unanswerable.\",\"action\":\"refuse\",\"action_input\":{\"reason\":\"The document does not provide any information about the private mobile phone number of the first author or CEO.\"}}",
+      "thought": "The pages reviewed do not contain any information about the private mobile phone number of the first author or CEO. I should refuse as the question is unanswerable.",
+      "action": "refuse",
+      "action_input": {
+        "reason": "The document does not provide any information about the private mobile phone number of the first author or CEO."
+      },
+      "observation": {
+        "action": "refuse",
+        "status": "success",
+        "result": {
+          "reason": "The document does not provide any information about the private mobile phone number of the first author or CEO.",
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "refusal"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "refuse"
+  ],
+  "final_action": "refuse",
+  "final_answer": "The document does not provide any information about the private mobile phone number of the first author or CEO.",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1027,
+      "completion_tokens": 47,
+      "total_tokens": 1074,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1317,
+      "completion_tokens": 52,
+      "total_tokens": 1369,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 2393,
+      "completion_tokens": 67,
+      "total_tokens": 2460,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": true,
+    "direct_answer": false
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "answer"
+      ],
+      [
+        "search",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "easy",
+    "doc_id": "scotus_loper_bright_2024",
+    "metadata": {
+      "audit_note": "W10 fix: original reference ('2 LOPER BRIGHT ENTERPRISES v. RAIMONDO') is a running page-header repeated on every even page. Switched to 'Syllabus' which is the section heading directly under the page header. | V2 fix: Disambiguated the target heading from the running page header.",
+      "page": 2,
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/scotus_loper_bright_2024.pdf",
+    "question": "On page 2, ignore the running page header line \"2 LOPER BRIGHT ENTERPRISES v. RAIMONDO\". What section heading appears immediately below that header? Return only the heading.",
+    "reference_answer": "Syllabus",
+    "required_tools": [
+      "read_page"
+    ],
+    "seed_id": "scotus_loper_bright_2024__text__p2",
+    "source": "structure_heuristic",
+    "supporting_refs": [
+      {
+        "page": 2
+      }
+    ],
+    "task_type": "text_lookup",
+    "tool_hints": {
+      "target_page": 2
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview__negative",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to read page 2 to identify the section heading immediately below the running header.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [2]}}",
+      "thought": "I need to read page 2 to identify the section heading immediately below the running header.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          2
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 2,
+              "text": "2 LOPER BRIGHT ENTERPRISES v. RAIMONDO\nSyllabus\nthat the final “interpretation of the laws” would be “the proper and\npeculiar province of the courts.” The Federalist No. 78, p. 525 (A. Ham-\nilton). As Chief Justice Marshall declared in the foundational decision\nof Marbury v. Madison, “[i]t is emphatically the province and duty of\nthe judicial department to say what the law is.” 1 Cranch 137, 177. In\nthe decades following Marbury, when the meaning of a statute was at\nissue, the judicial role was to “interpret the act of Congress, in order to\nascertain the rights of the parties.” Decatur v. Paulding, 14 Pet. 497,\n515.\nThe Court recognized from the outset, though, that exercising inde-\npendent judgment often included according due respect to Executive\nBranch interpretations of federal statutes. Such respect was thought\nespecially warranted when an Executive Branch interpretation was is-\nsued roughly contemporaneously with enactment of the statute and\nremained consistent over time. The Court also gave “the most respect-\nful consideration” to Executive Branch interpretations simply because\n“[t]he officers concerned [were] usually able men, and masters of the\nsubject,” who may well have drafted the laws at issue. United States\nv. Moore, 95 U. S. 760, 763. “Respect,” though, was just that. The\nviews of the Executive Branch could inform the judgment of the Judi-\nciary, but did not supersede it. “[I]n cases where [a court’s] own judg-\nment . . . differ[ed] from that of other high functionaries,” the court was\n“not at liberty to surrender, or to waive it.” United States v. Dickson,\n15 Pet. 141, 162.\nDuring the “rapid expansion of the administrative process” that took\nplace during the New Deal era, United States v. Morton Salt Co., 338\nU. S. 632, 644, the Court often treated agency determinations of fact\nas binding on the courts, provided that there was “evidence to support\nthe findings,” St. Joseph Stock Yards Co. v. United States, 298 U. S.\n38, 51. But the Court did not extend similar deference to agency reso-\nlutions of questions of law. “The interpretation of the meaning of stat-\nutes, as applied to justiciable controversies,” remained “exclusively a\njudicial function.” United States v. American Trucking Assns., Inc.,\n310 U. S. 534, 544. The Court also continued to note that the informed\njudgment of the Executive Branch could be entitled to “great weight.”\nId., at 549. “The weight of such a judgment in a particular case,” the\nCourt observed, would “depend upon the thoroughness evident in its\nconsideration, the validity of its reasoning, its consistency with earlier\nand later pronouncements, and all those factors which give it power to\npersuade, if lacking power to control.” Skidmore v. Swift & Co., 323\nU. S. 134, 140.\nOccasionally during this period, the Court applied deferential re-\nview after concluding that a particular statute empowered an agency\nto decide how a broad statutory term applied to specific facts found by",
+              "summary": "2 LOPER BRIGHT ENTERPRISES v. RAIMONDO",
+              "image_path": "artifacts/docenv/scotus_loper_bright_2024/page_002.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The text on page 2 shows 'Syllabus' immediately below the header '2 LOPER BRIGHT ENTERPRISES v. RAIMONDO'.\", \"action\": \"answer\", \"action_input\": {\"text\": \"Syllabus\", \"evidence_refs\": [{\"page\": 2}]}}",
+      "thought": "The text on page 2 shows 'Syllabus' immediately below the header '2 LOPER BRIGHT ENTERPRISES v. RAIMONDO'.",
+      "action": "answer",
+      "action_input": {
+        "text": "Syllabus",
+        "evidence_refs": [
+          {
+            "page": 999999,
+            "bbox": [
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "Syllabus",
+          "evidence_refs": [
+            {
+              "page": 999999,
+              "bbox": [
+                0,
+                0,
+                1,
+                1
+              ]
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "Syllabus",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1368,
+      "completion_tokens": 44,
+      "total_tokens": 1412,
+      "prompt_tokens_details": {
+        "text_tokens": 1368,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1882,
+      "completion_tokens": 68,
+      "total_tokens": 1950,
+      "prompt_tokens_details": {
+        "text_tokens": 1882,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "hallucinated_evidence_ref",
+    "source_teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+    "source_seed_id": "scotus_loper_bright_2024__text__p2",
+    "source_final_action": "answer",
+    "source_final_answer": "Syllabus",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved, but terminal evidence_refs point to a page never observed in the trajectory."
+  }
+}

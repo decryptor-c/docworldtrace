@@ -1,0 +1,163 @@
+{
+  "seed": {
+    "seed_id": "apple_2025_10k__table__p3",
+    "doc_id": "apple_2025_10k",
+    "pdf_path": "data/raw_pdfs/apple_2025_10k.pdf",
+    "question": "In the table of contents on page 3, what page is \"Item 1A. Risk Factors\" listed on? Use the table on that page; do not answer from memory.",
+    "reference_answer": "5",
+    "task_type": "table_lookup",
+    "difficulty": "medium",
+    "required_tools": [
+      "read_page",
+      "parse_table"
+    ],
+    "source": "structure_heuristic_v2_review",
+    "answerable": true,
+    "supporting_refs": [
+      {
+        "page": 3,
+        "bbox": [
+          18.22499732062509,
+          161.3250228941237,
+          593.8874323986892,
+          241.95683198246488
+        ]
+      }
+    ],
+    "metadata": {
+      "page": 3,
+      "bbox": [
+        18.22499732062509,
+        161.3250228941237,
+        593.8874323986892,
+        241.95683198246488
+      ],
+      "review_status": "needs_human_review",
+      "audit_note": "W1 fix: original asked column 'Business' which doesn't exist as a data column in the TOC. Now uses real 'Page' column with a TOC-row item. | Followup F2: rephrased to a natural-language TOC question; removed strict row_label/column_label to avoid contract dependency on parse_table cell layout (real parser output is ['Item 1A.', 'Risk Factors', '5'])."
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I need to read page 3 to locate the table of contents and identify the relevant section.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[3]}}",
+      "thought": "I need to read page 3 to locate the table of contents and identify the relevant section.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          3
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 3,
+              "text": "Apple Inc.\nForm 10-K\nFor the Fiscal Year Ended September 27, 2025\nTABLE OF CONTENTS\nPage\nPart I\nItem 1. Business 1\nItem 1A. Risk Factors 5\nItem 1B. Unresolved Staff Comments 17\nItem 1C. Cybersecurity 17\nItem 2. Properties 17\nItem 3. Legal Proceedings 18\nItem 4. Mine Safety Disclosures 18\nPart II\nItem 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities 19\nItem 6. [Reserved] 20\nItem 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations 21\nItem 7A. Quantitative and Qualitative Disclosures About Market Risk 27\nItem 8. Financial Statements and Supplementary Data 28\nItem 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure 52\nItem 9A. Controls and Procedures 52\nItem 9B. Other Information 53\nItem 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections 53\nPart III\nItem 10. Directors, Executive Officers and Corporate Governance 53\nItem 11. Executive Compensation 53\nItem 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters 53\nItem 13. Certain Relationships and Related Transactions, and Director Independence 53\nItem 14. Principal Accountant Fees and Services 53\nPart IV\nItem 15. Exhibit and Financial Statement Schedules 54\nItem 16. Form 10-K Summary 57",
+              "summary": "Apple Inc.",
+              "image_path": "artifacts/docenv/apple_2025_10k/page_003.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 3,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The table of contents on page 3 lists 'Item 1A. Risk Factors' on page 5. I can now answer the question.\",\"action\":\"answer\",\"action_input\":{\"text\":\"'Item 1A. Risk Factors' is listed on page 5.\",\"evidence_refs\":[{\"page\":3}]}}",
+      "thought": "The table of contents on page 3 lists 'Item 1A. Risk Factors' on page 5. I can now answer the question.",
+      "action": "answer",
+      "action_input": {
+        "text": "'Item 1A. Risk Factors' is listed on page 5.",
+        "evidence_refs": [
+          {
+            "page": 3
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "'Item 1A. Risk Factors' is listed on page 5.",
+          "evidence_refs": [
+            {
+              "page": 3
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "'Item 1A. Risk Factors' is listed on page 5.",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1139,
+      "completion_tokens": 37,
+      "total_tokens": 1176,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1594,
+      "completion_tokens": 69,
+      "total_tokens": 1663,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  }
+}

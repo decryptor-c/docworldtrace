@@ -1,0 +1,262 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "hard",
+    "doc_id": "2503.00808v4",
+    "metadata": {
+      "anchor_page": 1,
+      "anchor_phrase": "predictive data selection the data that",
+      "answer_page": 2,
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/2503.00808v4.pdf",
+    "question": "First find the page about \"predictive data selection the data that\". What is the heading or leading phrase on the next page?",
+    "reference_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+    "required_tools": [
+      "search",
+      "read_page"
+    ],
+    "seed_id": "2503.00808v4__cross__p1_p2",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "page": 2
+      }
+    ],
+    "task_type": "cross_page",
+    "tool_hints": {
+      "target_page": 2
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I should search for the phrase 'predictive data selection the data that' to locate the relevant page.\",\"action\":\"search\",\"action_input\":{\"query\":\"predictive data selection the data that\",\"top_k\":1}}",
+      "thought": "I should search for the phrase 'predictive data selection the data that' to locate the relevant page.",
+      "action": "search",
+      "action_input": {
+        "query": "predictive data selection the data that",
+        "top_k": 1
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "predictive data selection the data that",
+          "results": [
+            {
+              "page": 1,
+              "score": 6.0,
+              "snippet": "Predictive Data Selection: The Data That Predicts Is the Data That Teaches\nKashunShum*1 YuzhenHuang*1 HongjianZou2 QiDing2 YixuanLiao2 XiaoxinChen2 QianLiu\nJunxianHe1\nAbstract\n42\nLanguagemodelpretraininginvolvestrainingon\nextensivecorpora,w"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The search indicates that page 1 contains the relevant content. I should now read page 1 to confirm the heading and proceed to the next page.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[1]}}",
+      "thought": "The search indicates that page 1 contains the relevant content. I should now read page 1 to confirm the heading and proceed to the next page.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          1
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 1,
+              "text": "Predictive Data Selection: The Data That Predicts Is the Data That Teaches\nKashunShum*1 YuzhenHuang*1 HongjianZou2 QiDing2 YixuanLiao2 XiaoxinChen2 QianLiu\nJunxianHe1\nAbstract\n42\nLanguagemodelpretraininginvolvestrainingon\nextensivecorpora,wheredataqualityplaysapiv- 40\notalrole. Inthiswork,weaimtodirectlyestimate\nthecontributionofdataduringpretrainingandse-\n38\nlectpretrainingdatainanefficientmanner.Specif-\nically,wedrawinspirationfromrecentfindings\nshowingthatcompressionefficiency(i.e.,normal- 36\nizedloss)ofdiversemodelsoncertaintextcorre-\nlatesstronglywiththeirdownstreamperformance, 34\nwhenthetextdomainalignswiththedownstream\nbenchmarks(Huangetal.,2024).Buildingonthis\n32\nobservation,wehypothesizethatdataonwhich 3 6 9 15 30 90 150 300\nmodellossesarepredictiveofdownstreamabili- \u00008\u0000V\u0000E\u0000M\u0000R\u0000M\u0000R\u0000K\u0000\u0004\u00008\u0000S\u0000O\u0000I\u0000R\u0000W\u0000\u0004\u0000\f\u0000&\u0000\r\ntiesalsocontributeeffectivelytolearning,which\nsharessimilarintuitionwithThrushetal.(2024).\nToleveragethisinsight,weintroducepredictive\ndataselection(PRESELECT),alightweightand\nefficientdataselectionmethodthatrequirestrain-\ning and deploying only a fastText-based scorer.\nThroughcomprehensiveexperimentswith1Band\n3Bparametermodels,wedemonstratethatmod-\nelstrainedon30BtokensselectedwithPRESE-\nLECTsurpasstheperformanceofthevanillabase-\nlinetrainedon300Btokens,achievinga10xre-\nductionincomputerequirements. Furthermore,\nPRESELECTsignificantlyoutperformsothercom-\npetitivedataselectionbaselines,suchasDCLM\nandFineWeb-Eduonascaleof3Bmodelstrained\non100Btokens. Weopen-sourceourtraineddata\nselectionscoreralongwiththecurateddatasetsat\nhttps://github.com/hkust-nlp/PreSelect.\n1.Introduction\nLargelanguagemodel(LLM)pre-trainingtypicallyrequires\ntraining on a huge data source such as web crawl data\n*Equalcontribution 1HKUST2VivoAILab.Correspondence\nto:KashunShum<ksshumab@connect.ust.hk>,JunxianHe<junx-\nianh@cse.ust.hk>.\nProceedingsofthe42nd InternationalConferenceonMachine\nLearning,Vancouver,Canada.PMLR267,2025.Copyright2025\nbytheauthor(s).\n\u0000\r\u0000\t\u0000\f\u0000\u0004\u0000I\u0000G\u0000R\u0000E\u0000Q\u0000V\u0000S\u0000J\u0000V\u0000I\u00004\u0000\u0004\u0000I\u0000K\u0000E\u0000V\u0000I\u0000Z\u0000%\n\u0000\u0015\u0000\u0014\u0000\\\u0000\u0004\u0000J\u0000E\u0000W\u0000X\u0000I\u0000V\n3.1%\nRandom Selection\nFineWeb-Edu\nDCLM\nPreSelect\nFigure 1: PRESELECT outperforms random selection by\nanaverageof3.1%accuracyacross15downstreambench-\nmarksandachieves10xreductionincomputerequirements\nonthescaleof1BmodelsusingRefinedWebcorpus.\nwheretheexistenceoflow-qualitydataleadstoslowscaling\nlaw(Kaplanetal.,2020;Chowdheryetal.,2023).Giventhe\ngrowingavailabletokenbudgetandlimitedtrainingbudget\nnowadays,dataselectionhasbecomeastandardstepinthe\npre-training stage. This step has played a critical role in\nenhancingdataqualityandoptimizingtrainingefficiency\nduringthedevelopmentofvariousLLMs(Touvronetal.,\n2023b;DeepSeek-AI,2024). Whilepreviouspracticesof-\ntenrelyonhumanheuristicssuchaspre-definedrulesand\ndomainclassificationtofilterdata(Penedoetal.,2024b;Li\netal.,2024a),inthisworkweaimtodirectlyidentifydata\nthatcouldcontributeeffectivelytolearningvariousabilities.\nWeareinspiredbythebeliefthat“compressionrepresents\nintelligence” and the corresponding empirical finding re-\ncently(Huangetal.,2024),thatthecompressionefficiency\n(i.e., the normalized loss)1 of a series of models on cer-\ntain raw text, strongly correlates with their downstream\nbenchmarkperformance,whenthetextdataalignswiththe\nbenchmark domains. For example, Huang et al. (2024)\nobservedthatmodellossesonrawGitHubcodeexhibitan\n1Foragivenmodel,thelosslesscompressionefficiency,such\nasbitspercharacteroncertaindata,isequaltothenormalizedloss\nonthatdata(Deletangetal.,2024;Huangetal.,2024).See§2.1\nforfurtherdetails.\n1\n5202\nguA\n2\n]LC.sc[\n4v80800.3052:viXra",
+              "summary": "Predictive Data Selection: The Data That Predicts Is the Data That Teaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_001.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\":\"I have confirmed the heading on page 1. Now I should read page 2 to identify its heading or leading phrase.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[2]}}",
+      "thought": "I have confirmed the heading on page 1. Now I should read page 2 to identify its heading or leading phrase.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          2
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 2,
+              "text": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\nsample\nNormalized Loss\necnamrofreP\nmaertsnwoD\ndifferent models rank not align\nrank align\nPos Features Neg Features\nNormalized Loss\n<‘^’,337.7> <‘Register’,-375>\n<’MIT’,240.6> <‘Comments’,-335.2>\npositive data negative data\n<‘Math’,193.7> <‘COVID-19’,-303.9>\n<‘Cite’,184.7> <‘2020’,-223.7>\n<‘1.’,138.1> <‘Shipping’,-219.5>\nscore\n... ... FastText Bi-gram\nClassifier\nFigure2: TheoverallframeworkofPRESELECT. Itfirstsamplesasubsetofpre-trainingdataforcomputingthepredictive\nstrengthscoreofeachdocument(§2.2). ThenafastText-basedscoreristrainedbasedontheidentifiedpositivedataand\nnegativedata. FinallythefastText-basedscoreristrainedtoenablescalabledataselection.\nalmostlinearcorrelationwithperformanceonvariouscod- (2024)inseveralkeyaspects: (1)Whiletheycomputeper-\ning tasks, whereas model losses on Common Crawl data plexitycorrelationsfordatadomains(e.g.,wikipedia.com),\naremoreindicativeofperformanceonknowledge-intensive our method operates at a much finer granularity, directly\ntasks. Theseinsightssuggestthatcompressionefficiency operatingonandselectingindividualdocuments.2 Aswe\non certain data is more reflective of model’s intelligence will demonstrate in §3.4 and §4.3, this finer granularity\nthanthatonotherdata. Motivatedbythis,wehypothesize leadstosignificantdifferencesintheselecteddataand,con-\nthatdataonwhichcompressionmoreeffectivelyrepresents sequently, in the final results; (2) Perplexity correlation\nintelligencealsofacilitatesthelearningofthatrespective suggestedusingalargenumberof(e.g.,around90)open-\nintelligencemoreeffectively. Asimilarhypothesis“LLM sourcedmodelstoapproximatethecorrelation. However,\nlossesonmanypretrainingtextsarecorrelatedwithdown- wearguethatusingmanyopen-sourcedLLMsbringspoten-\nstreambenchmarkperformance”wasproposedbyThrush tialevaluationnoiseswhendealingwithdifferentfamilies\net al. (2024) previously, but the empirical validation was ofthemodelsandcausescomputationinefficiency. Thusin\nlimitedandtheeffectivenessremainedinconclusive. ourdesign,weemploy6Llamamodelsonlyduringdatase-\nlection. (3)Theyperformedverylimitedexperimentswith\nBuildingonthishypothesis,wefirstdefinethepredictive\na 160M-size model and compared with several baselines\nstrengthofagiventexttoquantifyhowwellthecompres-\nonlimitedbenchmarks,whilewetrainmodelswithupto\nsionefficiencyonitcorrelateswiththemodels’ability,then,\n3B parameters on up to 100B tokens and evaluate on 17\nwe introduce predicative data selection (PRESELECT), a\ndiversebenchmarks,amorerealisticscaleinatypicalpre-\ndataselectionmethodbasedonthedata’spredictivestrength.\ntrainingsetting. Theupdated,concurrentversionofThrush\nDifferentfrompreviousworksthattrytoquantifythepre-\net al. (2024) further added 1B-scale experiments assesed\ntraining data influence requiring controlled training (Yu\noncomprehensivebenchmarks,wheretheresultsindicate\net al., 2024; Engstrom et al., 2024), our approach is ex-\ngoodperformanceonrawdatapoolsbutnoimprovement\ntremelylightweight,andonlyutilizesopenpretrainedmod-\nonhigh-quality,well-processesdatapools–anobservation\nelsinthewildwithouttraininganydeepmodelsinthepro-\ndistinctfromourempiricalresults. PRESELECT targetsa\ncess. Aftercollectingasmallseeddataset,afastText(Joulin\nwellde-duplicated,high-qualitypre-trainingcorpus–which\netal.,2017)istrainedtoenablescalabledataselection.\nwe believe represents a realistic setting – and shows the\nWhile we are motivated independently by Huang et al. effectivenessofselectingdatafromhigh-qualitydatapools\n(2024),ourapproachsharessimilarintuitionwithPerplexity\n2WenotethatThrushetal.(2024)preregistereddocument-level\nCorrelation(Thrushetal.,2024)andcanbeviewedunder\nexperimentsasfuturetasks,whichwerenotpresentaswereleased\ntheframeworkofPerplexityCorrelation,whichisthefirst\nthefirstversionofthispaper. TheupdatedversionofPerplexity\ntoexploredomain-levelcorrelation-basedmethodsindata Correlationaddeddocument-levelresultsconcurrenttothiswork,\nselection. However, this work differs from Thrush et al. butthefinalresultsareverydifferentaswewilldicussin§2.3.\n2",
+              "summary": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_002.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 4,
+      "raw_model_output": "{\"thought\":\"I have read page 2 and identified its leading content. I can now answer the question based on the heading or leading phrase from page 2.\",\"action\":\"answer\",\"action_input\":{\"text\":\"PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\",\"evidence_refs\":[{\"page\":2}]}}",
+      "thought": "I have read page 2 and identified its leading content. I can now answer the question based on the heading or leading phrase from page 2.",
+      "action": "answer",
+      "action_input": {
+        "text": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+        "evidence_refs": [
+          {
+            "page": 2
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+          "evidence_refs": [
+            {
+              "page": 2
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1130,
+      "completion_tokens": 47,
+      "total_tokens": 1177,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1332,
+      "completion_tokens": 48,
+      "total_tokens": 1380,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1991,
+      "completion_tokens": 43,
+      "total_tokens": 2034,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 2543,
+      "completion_tokens": 69,
+      "total_tokens": 2612,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 4,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  }
+}

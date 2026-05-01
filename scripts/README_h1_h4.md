@@ -43,7 +43,7 @@ bash scripts/run_h2_h4_v5_pipeline.sh
 | H3 natural GT sample | `scripts/build_h3_natural_gt_sample.sh` | `data/h3/natural_gt_v5/` |
 | H4 diversity | `scripts/run_h4_diversity.sh` | `data/h4/diversity_v5/` |
 | Expanded PDF candidates | `data/raw_pdfs/diverse_pdf_candidates_v1.json` | 12 official-source candidate PDFs |
-| Prepared-seed server pipeline | `scripts/run_prepared_h4_pipeline.sh` | `data/h4/diversity_diverse_v1/` |
+| Prepared-seed server pipeline | `scripts/run_prepared_h4_pipeline.sh` | `data/h4/diversity_diverse_v2/` |
 
 ## Current Teacher Set
 
@@ -77,6 +77,7 @@ bash scripts/run_h2_h4_v5_pipeline.sh
 - `H3_INCLUDE_EXTENDED_CORRUPTIONS=1` is the default for `run_h3_negative.sh`; set it to `0` to reproduce the older three-corruption negative-control.
 - `H3_INCLUDE_NATURAL_LIKE_CORRUPTIONS=1` is also the default; it adds over-refusal, direct answer without tools, numeric near miss, dropped compute, table row-label answer, and search-only evidence corruptions.
 - Use `data/raw_pdfs/diverse_pdf_candidates_v1.md` as the human review list before downloading new PDFs into `data/raw_pdfs/`.
-- `run_prepared_h4_pipeline.sh` expects prepared PDFs and `data/h2/seeds/diverse_pdf_seeds_v1_checked.jsonl`; it does not download documents or regenerate seeds.
+- `scripts/build_diverse_pdf_seeds_v2.py` builds `data/h2/seeds/diverse_pdf_seeds_v2.jsonl` from the audited diverse seed set, fixing ambiguous query/GT cases and adding tool hints.
+- `run_prepared_h4_pipeline.sh` expects prepared PDFs and `data/h2/seeds/diverse_pdf_seeds_v2.jsonl`; it does not download documents.
 - Current kept experiment data is v5. Older H2/H3/H4 versioned data was removed; see `data/cleanup_old_versions_deleted.md`.
 - `scripts/lib/pilot_common.sh` contains shared shell helpers for root detection, virtualenv activation, and file/directory checks.

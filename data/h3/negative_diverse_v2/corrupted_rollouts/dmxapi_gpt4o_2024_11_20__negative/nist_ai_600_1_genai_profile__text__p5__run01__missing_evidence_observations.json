@@ -1,0 +1,165 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "answer"
+      ],
+      [
+        "search",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "easy",
+    "doc_id": "nist_ai_600_1_genai_profile",
+    "metadata": {
+      "audit_note": "B8 fix: p7 begins with a mid-bullet continuation. Switched to p5 which starts with a clean section heading '1. Introduction'.",
+      "page": 5,
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/nist_ai_600_1_genai_profile.pdf",
+    "question": "What is the heading or leading phrase on page 5? Return the page summary or the first visible leading phrase exactly. Do not choose a later figure caption, table caption, or section title unless it is the first visible leading phrase.",
+    "reference_answer": "1. Introduction",
+    "required_tools": [
+      "read_page"
+    ],
+    "seed_id": "nist_ai_600_1_genai_profile__text__p5",
+    "source": "structure_heuristic",
+    "supporting_refs": [
+      {
+        "page": 5
+      }
+    ],
+    "task_type": "text_lookup",
+    "tool_hints": {
+      "target_page": 5
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I should read page 5 to identify the heading or leading phrase.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[5]}}",
+      "thought": "I should read page 5 to identify the heading or leading phrase.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          5
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The heading or leading phrase on page 5 is '1. Introduction'. I can now answer using this information.\",\"action\":\"answer\",\"action_input\":{\"text\":\"1. Introduction\",\"evidence_refs\":[{\"page\":5}]}}",
+      "thought": "The heading or leading phrase on page 5 is '1. Introduction'. I can now answer using this information.",
+      "action": "answer",
+      "action_input": {
+        "text": "1. Introduction",
+        "evidence_refs": [
+          {
+            "page": 5
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "1. Introduction",
+          "evidence_refs": [
+            {
+              "page": 5
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "1. Introduction",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1157,
+      "completion_tokens": 32,
+      "total_tokens": 1189,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1579,
+      "completion_tokens": 50,
+      "total_tokens": 1629,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "missing_evidence_observations",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "nist_ai_600_1_genai_profile__text__p5",
+    "source_final_action": "answer",
+    "source_final_answer": "1. Introduction",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved but all non-terminal evidence observations were blanked."
+  }
+}

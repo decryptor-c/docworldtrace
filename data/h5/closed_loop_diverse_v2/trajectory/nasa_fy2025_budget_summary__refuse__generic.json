@@ -1,0 +1,382 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      [
+        "search",
+        "search",
+        "refuse"
+      ]
+    ],
+    "answerable": false,
+    "difficulty": "medium",
+    "doc_id": "nasa_fy2025_budget_summary",
+    "metadata": {
+      "negative_evidence_query": "private mobile phone number first author CEO",
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/nasa_fy2025_budget_summary.pdf",
+    "question": "What is the private mobile phone number of the first author or CEO listed in the document?",
+    "reference_answer": "REFUSE",
+    "required_tools": [
+      "search",
+      "read_page",
+      "refuse"
+    ],
+    "seed_id": "nasa_fy2025_budget_summary__refuse__generic",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [],
+    "task_type": "unanswerable"
+  },
+  "teacher": {
+    "name": "trajectory",
+    "model": "Qwen3-VL-8B-Instruct",
+    "adapter_path": "runs/h5_qwen3_vl_diverse_v2/trajectory_adapter"
+  },
+  "student": {
+    "name": "trajectory",
+    "adapter_path": "runs/h5_qwen3_vl_diverse_v2/trajectory_adapter"
+  },
+  "status": "budget_exhausted",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"\", \"action\": \"search\", \"action_input\": {\"query\": \"author OR CEO\", \"top_k\": 3}}",
+      "thought": "",
+      "action": "search",
+      "action_input": {
+        "query": "author OR CEO",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "author OR CEO",
+          "results": [
+            {
+              "page": 35,
+              "score": 1.0,
+              "snippet": "Construction & Environmental Compliance &\nRestoration\nFY 2023 FY 2025 Request\nFY 2024\nOperating FY 2025\nBudget Authority ($M) CR2/ FY 2026 FY 2027 FY 2028 FY 2029\nPlan1/ Request\nConstruction and Environmental Compliance & Restoration 422.4 "
+            },
+            {
+              "page": 37,
+              "score": 1.0,
+              "snippet": "NASA Mission Planning Manifest: FY 2024 – FY 2029\nLBFD First Flight\nNASA Mission on US Commercial Launch Vehicle\nSWFO-L1\nSW Next L5 *** Reimbursable Mission for NOAA\nTSIS-2\nJoint NASA-Int'l Partner Mission\nNISAR (ISRO)\nInt'l Mission with NA"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"\", \"action\": \"search\", \"action_input\": {\"query\": \"contact information\", \"top_k\": 3}}",
+      "thought": "",
+      "action": "search",
+      "action_input": {
+        "query": "contact information",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "contact information",
+          "results": [
+            {
+              "page": 3,
+              "score": 1.0,
+              "snippet": "Advancing U.S. Leadership in Exploration and Discovery\n• Drives scientific discovery through a balanced portfolio of space-based observatories\nperforming fundamental research, exploring other bodies in the solar system, and\ngazing into the "
+            },
+            {
+              "page": 24,
+              "score": 1.0,
+              "snippet": "Science:\nEarth Science\nFY 2023 FY 2025 Request\nFY 2024\nOperating FY 2025\nBudget Authority ($M) CR2/ FY 2026 FY 2027 FY 2028 FY 2029\nPlan1/ Request\nEarth Science 2,175.0 2,378.7 2,396.3 2,446.1 2,489.7 2,543.4\n1/ -FY 2023 reflects funding am"
+            },
+            {
+              "page": 34,
+              "score": 1.0,
+              "snippet": "Safety, Security, and Mission Services\nFY 2023 FY 2025 Request\nFY 2024\nOperating FY 2025\nBudget Authority ($M) CR2/ FY 2026 FY 2027 FY 2028 FY 2029\nPlan1/ Request\nSafety, Security, and Mission Services 3,136.5 3,129.5 3,044.4 3,105.3 3,167."
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"\", \"action\": \"search\", \"action_input\": {\"query\": \"phone number\", \"top_k\": 3}}",
+      "thought": "",
+      "action": "search",
+      "action_input": {
+        "query": "phone number",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "partial",
+        "result": {
+          "query": "phone number",
+          "results": []
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.4,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 4,
+      "raw_model_output": "{\"thought\": \"\", \"action\": \"search\", \"action_input\": {\"query\": \"email address\", \"top_k\": 3}}",
+      "thought": "",
+      "action": "search",
+      "action_input": {
+        "query": "email address",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "email address",
+          "results": [
+            {
+              "page": 24,
+              "score": 1.0,
+              "snippet": "Science:\nEarth Science\nFY 2023 FY 2025 Request\nFY 2024\nOperating FY 2025\nBudget Authority ($M) CR2/ FY 2026 FY 2027 FY 2028 FY 2029\nPlan1/ Request\nEarth Science 2,175.0 2,378.7 2,396.3 2,446.1 2,489.7 2,543.4\n1/ -FY 2023 reflects funding am"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 5,
+      "raw_model_output": "{\"thought\": \"\", \"action\": \"search\", \"action_input\": {\"query\": \"NASA leadership\", \"top_k\": 3}}",
+      "thought": "",
+      "action": "search",
+      "action_input": {
+        "query": "NASA leadership",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "NASA leadership",
+          "results": [
+            {
+              "page": 2,
+              "score": 2.0,
+              "snippet": "Advancing U.S. Leadership in Exploration and Discovery\n• The President’s budget request for NASA is an investment in our nation’s future; it promotes U.S.\nleadership in space exploration, improves our understanding of Earth and the universe"
+            },
+            {
+              "page": 3,
+              "score": 2.0,
+              "snippet": "Advancing U.S. Leadership in Exploration and Discovery\n• Drives scientific discovery through a balanced portfolio of space-based observatories\nperforming fundamental research, exploring other bodies in the solar system, and\ngazing into the "
+            },
+            {
+              "page": 1,
+              "score": 1.0,
+              "snippet": "FY 2025 Budget Request\nwww.nasa.gov"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 6,
+      "raw_model_output": "{\"thought\": \"\", \"action\": \"search\", \"action_input\": {\"query\": \"NASA Administrator\", \"top_k\": 3}}",
+      "thought": "",
+      "action": "search",
+      "action_input": {
+        "query": "NASA Administrator",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "NASA Administrator",
+          "results": [
+            {
+              "page": 1,
+              "score": 1.0,
+              "snippet": "FY 2025 Budget Request\nwww.nasa.gov"
+            },
+            {
+              "page": 2,
+              "score": 1.0,
+              "snippet": "Advancing U.S. Leadership in Exploration and Discovery\n• The President’s budget request for NASA is an investment in our nation’s future; it promotes U.S.\nleadership in space exploration, improves our understanding of Earth and the universe"
+            },
+            {
+              "page": 3,
+              "score": 1.0,
+              "snippet": "Advancing U.S. Leadership in Exploration and Discovery\n• Drives scientific discovery through a balanced portfolio of space-based observatories\nperforming fundamental research, exploring other bodies in the solar system, and\ngazing into the "
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 7,
+      "raw_model_output": "{\"thought\": \"\", \"action\": \"search\", \"action_input\": {\"query\": \"NASA Director\", \"top_k\": 3}}",
+      "thought": "",
+      "action": "search",
+      "action_input": {
+        "query": "NASA Director",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "NASA Director",
+          "results": [
+            {
+              "page": 1,
+              "score": 1.0,
+              "snippet": "FY 2025 Budget Request\nwww.nasa.gov"
+            },
+            {
+              "page": 2,
+              "score": 1.0,
+              "snippet": "Advancing U.S. Leadership in Exploration and Discovery\n• The President’s budget request for NASA is an investment in our nation’s future; it promotes U.S.\nleadership in space exploration, improves our understanding of Earth and the universe"
+            },
+            {
+              "page": 3,
+              "score": 1.0,
+              "snippet": "Advancing U.S. Leadership in Exploration and Discovery\n• Drives scientific discovery through a balanced portfolio of space-based observatories\nperforming fundamental research, exploring other bodies in the solar system, and\ngazing into the "
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 8,
+      "raw_model_output": "{\"thought\": \"\", \"action\": \"search\", \"action_input\": {\"query\": \"NASA Chief\", \"top_k\": 3}}",
+      "thought": "",
+      "action": "search",
+      "action_input": {
+        "query": "NASA Chief",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "NASA Chief",
+          "results": [
+            {
+              "page": 1,
+              "score": 1.0,
+              "snippet": "FY 2025 Budget Request\nwww.nasa.gov"
+            },
+            {
+              "page": 2,
+              "score": 1.0,
+              "snippet": "Advancing U.S. Leadership in Exploration and Discovery\n• The President’s budget request for NASA is an investment in our nation’s future; it promotes U.S.\nleadership in space exploration, improves our understanding of Earth and the universe"
+            },
+            {
+              "page": 3,
+              "score": 1.0,
+              "snippet": "Advancing U.S. Leadership in Exploration and Discovery\n• Drives scientific discovery through a balanced portfolio of space-based observatories\nperforming fundamental research, exploring other bodies in the solar system, and\ngazing into the "
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "search",
+    "search",
+    "search",
+    "search",
+    "search",
+    "search",
+    "search"
+  ],
+  "final_action": null,
+  "final_answer": null,
+  "raw_usage": [],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": false,
+    "step_count": 8,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "_file": "data/h5/closed_loop_diverse_v2/trajectory/nasa_fy2025_budget_summary__refuse__generic.json"
+}

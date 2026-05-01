@@ -1,0 +1,161 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "answer"
+      ],
+      [
+        "search",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "easy",
+    "doc_id": "ipcc_ar6_syr_longer_report",
+    "metadata": {
+      "audit_note": "V2 fix: page 11 is figure-like in DocEnv and not a reliable table extraction target; converted to stable text_lookup.",
+      "page": 11,
+      "previous_seed_id": "ipcc_ar6_syr_longer_report__table__p11",
+      "previous_task_type": "table_lookup",
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/ipcc_ar6_syr_longer_report.pdf",
+    "question": "On page 11, what section heading appears at the top of the page? Return only the heading.",
+    "reference_answer": "Current Status and Trends",
+    "required_tools": [
+      "read_page"
+    ],
+    "seed_id": "ipcc_ar6_syr_longer_report__text__p11",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "page": 11
+      }
+    ],
+    "task_type": "text_lookup",
+    "tool_hints": {
+      "target_page": 11
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview__negative",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to read page 11 to identify the section heading at the top of the page.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [11]}}",
+      "thought": "I need to read page 11 to identify the section heading at the top of the page.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          11
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {},
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "corrupted_empty_evidence"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The text at the top of page 11 is 'Current Status and Trends'.\", \"action\": \"answer\", \"action_input\": {\"text\": \"Current Status and Trends\", \"evidence_refs\": [{\"page\": 11}]}}",
+      "thought": "The text at the top of page 11 is 'Current Status and Trends'.",
+      "action": "answer",
+      "action_input": {
+        "text": "Current Status and Trends",
+        "evidence_refs": [
+          {
+            "page": 11
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "Current Status and Trends",
+          "evidence_refs": [
+            {
+              "page": 11
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "Current Status and Trends",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1269,
+      "completion_tokens": 47,
+      "total_tokens": 1316,
+      "prompt_tokens_details": {
+        "text_tokens": 1269,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2021,
+      "completion_tokens": 55,
+      "total_tokens": 2076,
+      "prompt_tokens_details": {
+        "text_tokens": 2021,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "missing_evidence_observations",
+    "source_teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+    "source_seed_id": "ipcc_ar6_syr_longer_report__text__p11",
+    "source_final_action": "answer",
+    "source_final_answer": "Current Status and Trends",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved but all non-terminal evidence observations were blanked."
+  }
+}

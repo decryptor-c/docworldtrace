@@ -1,0 +1,296 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "read_page",
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      [
+        "ocr",
+        "compute",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "tm2529296d2_ars",
+    "metadata": {
+      "bbox": [
+        35.94,
+        333.96,
+        535.455,
+        458.2800500000001
+      ],
+      "column_label": "High-Touch Solutions N.A.",
+      "first_label": "Revenue",
+      "first_value": 14.0,
+      "formula": "(second_value - first_value) / abs(first_value) * 100",
+      "page": 2,
+      "review_status": "needs_human_review",
+      "second_label": "Reported sales growth",
+      "second_value": 2.0
+    },
+    "pdf_path": "data/raw_pdfs/tm2529296d2_ars.pdf",
+    "question": "Based on the table on page 2, for column \"High-Touch Solutions N.A.\", what is the percentage change from row \"Revenue\" (14) to row \"Reported sales growth\" (2)?",
+    "reference_answer": "-85.71%",
+    "required_tools": [
+      "parse_table",
+      "compute"
+    ],
+    "seed_id": "tm2529296d2_ars__numeric__p2",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          35.94,
+          333.96,
+          535.455,
+          458.2800500000001
+        ],
+        "page": 2
+      }
+    ],
+    "task_type": "numeric_computation",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "compute_note": "Use the numeric formula in the question and preserve the sign of the percentage change.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        35.94,
+        333.96,
+        535.455,
+        458.2800500000001
+      ],
+      "target_page": 2
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview__negative",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to extract the data from the table on page 2 to perform the calculation.\", \"action\": \"parse_table\", \"action_input\": {\"page_id\": 2, \"bbox\": [35.94, 333.96, 535.455, 458.2800500000001]}}",
+      "thought": "I need to extract the data from the table on page 2 to perform the calculation.",
+      "action": "parse_table",
+      "action_input": {
+        "page_id": 2,
+        "bbox": [
+          35.94,
+          333.96,
+          535.455,
+          458.2800500000001
+        ]
+      },
+      "observation": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {
+          "page": 2,
+          "bbox": [
+            35.94,
+            333.96,
+            535.455,
+            458.28005
+          ],
+          "rows": [
+            [
+              "",
+              "High-Touch Solutions N.A.",
+              "Endless Assortment",
+              "Total Company1"
+            ],
+            [
+              "Revenue",
+              "$14.0B",
+              "$3.6B",
+              "$17.9B"
+            ],
+            [
+              "Reported sales growth",
+              "2.0%",
+              "15.7%",
+              "4.5%"
+            ],
+            [
+              "Daily, organic constant currency sales growth2",
+              "2.6%",
+              "15.6%",
+              "4.9%"
+            ],
+            [
+              "Adjusted Operating Margin2",
+              "16.8%",
+              "9.8%",
+              "15.0%"
+            ],
+            [
+              "Adjusted ROIC2",
+              "—",
+              "—",
+              "39.1%"
+            ]
+          ],
+          "markdown": "|  | High-Touch Solutions N.A. | Endless Assortment | Total Company1 |\n| --- | --- | --- | --- |\n| Revenue | $14.0B | $3.6B | $17.9B |\n| Reported sales growth | 2.0% | 15.7% | 4.5% |\n| Daily, organic constant currency sales growth2 | 2.6% | 15.6% | 4.9% |\n| Adjusted Operating Margin2 | 16.8% | 9.8% | 15.0% |\n| Adjusted ROIC2 | — | — | 39.1% |"
+        },
+        "provenance": {
+          "page": 2,
+          "bbox": [
+            35.94,
+            333.96,
+            535.455,
+            458.28005
+          ],
+          "element_type": "table"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The user asked for the percentage change from Revenue (14) to Reported sales growth (2). However, the table shows Revenue as 14.0 and Reported sales growth as 2.0. I will calculate the percentage change as (2.0 - 14.0) / 14.0 * 100.\", \"action\": \"compute\", \"action_input\": {\"expr\": \"(growth - revenue) / revenue * 100\", \"vars\": {\"growth\": 2.0, \"revenue\": 14.0}}}",
+      "thought": "The user asked for the percentage change from Revenue (14) to Reported sales growth (2). However, the table shows Revenue as 14.0 and Reported sales growth as 2.0. I will calculate the percentage change as (2.0 - 14.0) / 14.0 * 100.",
+      "action": "compute",
+      "action_input": {
+        "expr": "bad_left + bad_right",
+        "vars": {
+          "bad_left": 123.0,
+          "bad_right": 456.0
+        }
+      },
+      "observation": {
+        "action": "compute",
+        "status": "success",
+        "result": {
+          "expr": "bad_left + bad_right",
+          "vars": {
+            "bad_left": 123.0,
+            "bad_right": 456.0
+          },
+          "value": -85.71428571428571
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "computed_value"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"The calculation is complete. The percentage change is approximately -85.71%.\", \"action\": \"answer\", \"action_input\": {\"text\": \"-85.71%\", \"evidence_refs\": [{\"page\": 2}]}}",
+      "thought": "The calculation is complete. The percentage change is approximately -85.71%.",
+      "action": "answer",
+      "action_input": {
+        "text": "-85.71%",
+        "evidence_refs": [
+          {
+            "page": 2
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "-85.71%",
+          "evidence_refs": [
+            {
+              "page": 2
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "parse_table",
+    "compute",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "-85.71%",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1437,
+      "completion_tokens": 90,
+      "total_tokens": 1527,
+      "prompt_tokens_details": {
+        "text_tokens": 1437,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1913,
+      "completion_tokens": 123,
+      "total_tokens": 2036,
+      "prompt_tokens_details": {
+        "text_tokens": 1913,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2114,
+      "completion_tokens": 55,
+      "total_tokens": 2169,
+      "prompt_tokens_details": {
+        "text_tokens": 2114,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "compute_expression_mismatch",
+    "source_teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+    "source_seed_id": "tm2529296d2_ars__numeric__p2",
+    "source_final_action": "answer",
+    "source_final_answer": "-85.71%",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved, but a successful compute step now has an expression/vars provenance that recomputes to a different value."
+  }
+}

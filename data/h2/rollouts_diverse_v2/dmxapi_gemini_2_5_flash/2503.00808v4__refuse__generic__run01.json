@@ -1,0 +1,259 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      [
+        "search",
+        "search",
+        "refuse"
+      ]
+    ],
+    "answerable": false,
+    "difficulty": "medium",
+    "doc_id": "2503.00808v4",
+    "metadata": {
+      "negative_evidence_query": "private mobile phone number first author CEO",
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/2503.00808v4.pdf",
+    "question": "What is the private mobile phone number of the first author or CEO listed in the document?",
+    "reference_answer": "REFUSE",
+    "required_tools": [
+      "search",
+      "read_page",
+      "refuse"
+    ],
+    "seed_id": "2503.00808v4__refuse__generic",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [],
+    "task_type": "unanswerable"
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"action\": \"search\", \"action_input\": {\"query\": \"author contact information OR CEO contact information\", \"top_k\": 3}}",
+      "thought": "",
+      "action": "search",
+      "action_input": {
+        "query": "author contact information OR CEO contact information",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "author contact information OR CEO contact information",
+          "results": [
+            {
+              "page": 17,
+              "score": 2.0,
+              "snippet": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\nHowever,wefoundforafastTextclassifiertrainedwithuni-gram+bi-gramfeatures,ifweonlygiveitsuni-gramandmake\nthefinalscoreprediction,thatdoesnothaveahugedifferencetousingallfeatures"
+            },
+            {
+              "page": 3,
+              "score": 1.0,
+              "snippet": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\nin§3.4. WhileHuangetal.(2024)usethePearsoncorrelationco-\nefficient to measure the relationship between losses and\nExperimental results show that PRESELECT naturally se-\nthe mod"
+            },
+            {
+              "page": 13,
+              "score": 1.0,
+              "snippet": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\nOdijk, J., and Piperidis, S. (eds.), Proceedings of the\nTwelfthLanguageResourcesandEvaluationConference,\npp.4003–4012,Marseille,France,May2020.European\nLanguageResourcesAssocia"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"action\": \"search\", \"action_input\": {\"query\": \"phone number OR contact\", \"top_k\": 3}}",
+      "thought": "",
+      "action": "search",
+      "action_input": {
+        "query": "phone number OR contact",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "phone number OR contact",
+          "results": [
+            {
+              "page": 3,
+              "score": 2.0,
+              "snippet": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\nin§3.4. WhileHuangetal.(2024)usethePearsoncorrelationco-\nefficient to measure the relationship between losses and\nExperimental results show that PRESELECT naturally se-\nthe mod"
+            },
+            {
+              "page": 7,
+              "score": 1.0,
+              "snippet": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\nTable2: Thezero-shotperformancecomparisonbetweendataselectionbaselinesandPRESELECTonC4withPythiamodel\narchitecture. Allreferenceresultsofbaselinesareobtaineddirectlyfrom(Yuetal"
+            },
+            {
+              "page": 17,
+              "score": 1.0,
+              "snippet": "PredictiveDataSelection:TheDataThatPredictsIstheDataThatTeaches\nHowever,wefoundforafastTextclassifiertrainedwithuni-gram+bi-gramfeatures,ifweonlygiveitsuni-gramandmake\nthefinalscoreprediction,thatdoesnothaveahugedifferencetousingallfeatures"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\":\"The search results for 'author contact information', 'CEO contact information', 'phone number', and 'contact' did not yield any relevant information about private mobile phone numbers or contact details for authors or a CEO. The snippets provided are about the paper's content, not personal contact information. This suggests that such information is not present in the document. I will read page 1 to confirm if there's any author information there, as it's common for author details to be on the first page.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[1]}}",
+      "thought": "The search results for 'author contact information', 'CEO contact information', 'phone number', and 'contact' did not yield any relevant information about private mobile phone numbers or contact details for authors or a CEO. The snippets provided are about the paper's content, not personal contact information. This suggests that such information is not present in the document. I will read page 1 to confirm if there's any author information there, as it's common for author details to be on the first page.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          1
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 1,
+              "text": "Predictive Data Selection: The Data That Predicts Is the Data That Teaches\nKashunShum*1 YuzhenHuang*1 HongjianZou2 QiDing2 YixuanLiao2 XiaoxinChen2 QianLiu\nJunxianHe1\nAbstract\n42\nLanguagemodelpretraininginvolvestrainingon\nextensivecorpora,wheredataqualityplaysapiv- 40\notalrole. Inthiswork,weaimtodirectlyestimate\nthecontributionofdataduringpretrainingandse-\n38\nlectpretrainingdatainanefficientmanner.Specif-\nically,wedrawinspirationfromrecentfindings\nshowingthatcompressionefficiency(i.e.,normal- 36\nizedloss)ofdiversemodelsoncertaintextcorre-\nlatesstronglywiththeirdownstreamperformance, 34\nwhenthetextdomainalignswiththedownstream\nbenchmarks(Huangetal.,2024).Buildingonthis\n32\nobservation,wehypothesizethatdataonwhich 3 6 9 15 30 90 150 300\nmodellossesarepredictiveofdownstreamabili- \u00008\u0000V\u0000E\u0000M\u0000R\u0000M\u0000R\u0000K\u0000\u0004\u00008\u0000S\u0000O\u0000I\u0000R\u0000W\u0000\u0004\u0000\f\u0000&\u0000\r\ntiesalsocontributeeffectivelytolearning,which\nsharessimilarintuitionwithThrushetal.(2024).\nToleveragethisinsight,weintroducepredictive\ndataselection(PRESELECT),alightweightand\nefficientdataselectionmethodthatrequirestrain-\ning and deploying only a fastText-based scorer.\nThroughcomprehensiveexperimentswith1Band\n3Bparametermodels,wedemonstratethatmod-\nelstrainedon30BtokensselectedwithPRESE-\nLECTsurpasstheperformanceofthevanillabase-\nlinetrainedon300Btokens,achievinga10xre-\nductionincomputerequirements. Furthermore,\nPRESELECTsignificantlyoutperformsothercom-\npetitivedataselectionbaselines,suchasDCLM\nandFineWeb-Eduonascaleof3Bmodelstrained\non100Btokens. Weopen-sourceourtraineddata\nselectionscoreralongwiththecurateddatasetsat\nhttps://github.com/hkust-nlp/PreSelect.\n1.Introduction\nLargelanguagemodel(LLM)pre-trainingtypicallyrequires\ntraining on a huge data source such as web crawl data\n*Equalcontribution 1HKUST2VivoAILab.Correspondence\nto:KashunShum<ksshumab@connect.ust.hk>,JunxianHe<junx-\nianh@cse.ust.hk>.\nProceedingsofthe42nd InternationalConferenceonMachine\nLearning,Vancouver,Canada.PMLR267,2025.Copyright2025\nbytheauthor(s).\n\u0000\r\u0000\t\u0000\f\u0000\u0004\u0000I\u0000G\u0000R\u0000E\u0000Q\u0000V\u0000S\u0000J\u0000V\u0000I\u00004\u0000\u0004\u0000I\u0000K\u0000E\u0000V\u0000I\u0000Z\u0000%\n\u0000\u0015\u0000\u0014\u0000\\\u0000\u0004\u0000J\u0000E\u0000W\u0000X\u0000I\u0000V\n3.1%\nRandom Selection\nFineWeb-Edu\nDCLM\nPreSelect\nFigure 1: PRESELECT outperforms random selection by\nanaverageof3.1%accuracyacross15downstreambench-\nmarksandachieves10xreductionincomputerequirements\nonthescaleof1BmodelsusingRefinedWebcorpus.\nwheretheexistenceoflow-qualitydataleadstoslowscaling\nlaw(Kaplanetal.,2020;Chowdheryetal.,2023).Giventhe\ngrowingavailabletokenbudgetandlimitedtrainingbudget\nnowadays,dataselectionhasbecomeastandardstepinthe\npre-training stage. This step has played a critical role in\nenhancingdataqualityandoptimizingtrainingefficiency\nduringthedevelopmentofvariousLLMs(Touvronetal.,\n2023b;DeepSeek-AI,2024). Whilepreviouspracticesof-\ntenrelyonhumanheuristicssuchaspre-definedrulesand\ndomainclassificationtofilterdata(Penedoetal.,2024b;Li\netal.,2024a),inthisworkweaimtodirectlyidentifydata\nthatcouldcontributeeffectivelytolearningvariousabilities.\nWeareinspiredbythebeliefthat“compressionrepresents\nintelligence” and the corresponding empirical finding re-\ncently(Huangetal.,2024),thatthecompressionefficiency\n(i.e., the normalized loss)1 of a series of models on cer-\ntain raw text, strongly correlates with their downstream\nbenchmarkperformance,whenthetextdataalignswiththe\nbenchmark domains. For example, Huang et al. (2024)\nobservedthatmodellossesonrawGitHubcodeexhibitan\n1Foragivenmodel,thelosslesscompressionefficiency,such\nasbitspercharacteroncertaindata,isequaltothenormalizedloss\nonthatdata(Deletangetal.,2024;Huangetal.,2024).See§2.1\nforfurtherdetails.\n1\n5202\nguA\n2\n]LC.sc[\n4v80800.3052:viXra",
+              "summary": "Predictive Data Selection: The Data That Predicts Is the Data That Teaches",
+              "image_path": "artifacts/docenv/2503.00808v4/page_001.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 4,
+      "raw_model_output": "{\"thought\":\"I have read page 1. It lists the authors and their affiliations (e.g., *1, 2), but there is no mention of any private mobile phone numbers or CEO information. The document appears to be a research paper, and such personal contact details are typically not included. Given the previous search results and the content of page 1, it's highly unlikely that this information exists in the document.\",\"action\":\"refuse\",\"action_input\":{\"reason\":\"The document is a research paper and does not contain private mobile phone numbers for authors or any CEO. I have searched for contact information and reviewed the first page where author details are typically found, but no such information is present.\"}}",
+      "thought": "I have read page 1. It lists the authors and their affiliations (e.g., *1, 2), but there is no mention of any private mobile phone numbers or CEO information. The document appears to be a research paper, and such personal contact details are typically not included. Given the previous search results and the content of page 1, it's highly unlikely that this information exists in the document.",
+      "action": "refuse",
+      "action_input": {
+        "reason": "The document is a research paper and does not contain private mobile phone numbers for authors or any CEO. I have searched for contact information and reviewed the first page where author details are typically found, but no such information is present."
+      },
+      "observation": {
+        "action": "refuse",
+        "status": "success",
+        "result": {
+          "reason": "The document is a research paper and does not contain private mobile phone numbers for authors or any CEO. I have searched for contact information and reviewed the first page where author details are typically found, but no such information is present.",
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "refusal"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "search",
+    "read_page",
+    "refuse"
+  ],
+  "final_action": "refuse",
+  "final_answer": "The document is a research paper and does not contain private mobile phone numbers for authors or any CEO. I have searched for contact information and reviewed the first page where author details are typically found, but no such information is present.",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1312,
+      "completion_tokens": 82,
+      "total_tokens": 1394,
+      "prompt_tokens_details": {
+        "text_tokens": 1312,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 51
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1662,
+      "completion_tokens": 74,
+      "total_tokens": 1736,
+      "prompt_tokens_details": {
+        "text_tokens": 1662,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 46
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1993,
+      "completion_tokens": 123,
+      "total_tokens": 2116,
+      "prompt_tokens_details": {
+        "text_tokens": 1993,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2813,
+      "completion_tokens": 146,
+      "total_tokens": 2959,
+      "prompt_tokens_details": {
+        "text_tokens": 2813,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 4,
+    "used_verify": false,
+    "used_refuse": true,
+    "direct_answer": false
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "hard",
+    "doc_id": "epa_ghg_inventory_1990_2022",
+    "metadata": {
+      "anchor_page": 2,
+      "anchor_phrase": "front cover photo credit for cow and digester",
+      "answer_page": 3,
+      "audit_note": "W3 fix: extended anchor to a longer unique phrase ('cow and digester') to reduce false matches.",
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/epa_ghg_inventory_1990_2022.pdf",
+    "question": "Use search to find the page about \"front cover photo credit for cow and digester\". Then inspect the following page and report the heading or leading phrase.",
+    "reference_answer": "HOW TO OBTAIN COPIES",
+    "required_tools": [
+      "search",
+      "read_page"
+    ],
+    "seed_id": "epa_ghg_inventory_1990_2022__cross__p2_p3",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "page": 3
+      }
+    ],
+    "task_type": "cross_page",
+    "tool_hints": {
+      "target_page": 3
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I should search for the page about 'front cover photo credit for cow and digester' to locate the anchor page.\",\"action\":\"search\",\"action_input\":{\"query\":\"front cover photo credit for cow and digester\",\"top_k\":3}}",
+      "thought": "I should search for the page about 'front cover photo credit for cow and digester' to locate the anchor page.",
+      "action": "search",
+      "action_input": {
+        "query": "front cover photo credit for cow and digester",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "front cover photo credit for cow and digester",
+          "results": [
+            {
+              "page": 2,
+              "score": 11.0,
+              "snippet": "Front cover photo credit for cow and digester: Vanguard Renewables."
+            },
+            {
+              "page": 695,
+              "score": 4.0,
+              "snippet": "a) “Developed, Open Space – areas with a mixture of some constructed materials, but mostly vegetation in\nthe form of lawn grasses. Impervious surfaces account for less than 20 percent of total cover. These areas\nmost commonly include large-"
+            },
+            {
+              "page": 700,
+              "score": 4.0,
+              "snippet": "ten percent uncertainty was associated with settlement area estimates based on expert judgment. Uncertainty\nassociated with estimates of percent settlement tree coverage for each of the 50 states was based on standard\nerror associated with "
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The anchor page is identified as page 2. I should now read page 3 to inspect its heading or leading phrase.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[3]}}",
+      "thought": "The anchor page is identified as page 2. I should now read page 3 to inspect its heading or leading phrase.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          3
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 3,
+              "text": "HOW TO OBTAIN COPIES\nYou can electronically download this document on the U.S. EPA's homepage at\nhttps://www.epa.gov/ghgemissions/inventory-us-greenhouse-gas-emissions-and-sinks.\nAll data tables of this document for the full time series 1990 through 2022, inclusive, will be made available within\n4-6 weeks after publication of the final report online at the link mentioned in the citation below.\nRECOMMENDED CITATION\nEPA (2024) Inventory of U.S. Greenhouse Gas Emissions and Sinks: 1990-2022. U.S. Environmental Protection\nAgency, EPA 430-R-24-004. https://www.epa.gov/ghgemissions/inventory-us-greenhouse-gas-emissions-and-\nsinks-1990-2022.\nFOR FURTHER INFORMATION\nContact Ms. Mausami Desai, Environmental Protection Agency, (202) 304–8932, desai.mausami@epa.gov,\nor Mr. Vincent Camobreco, Environmental Protection Agency, (202) 617–6678, camobreco.vincent@epa.gov.\nFor more information regarding climate change and greenhouse gas emissions, see the EPA web site at\nhttps://www.epa.gov/ghgemissions.",
+              "summary": "HOW TO OBTAIN COPIES",
+              "image_path": "artifacts/docenv/epa_ghg_inventory_1990_2022/page_003.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 3,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\":\"I have read page 3 and found the heading 'HOW TO OBTAIN COPIES'. I can now answer the question.\",\"action\":\"answer\",\"action_input\":{\"text\":\"HOW TO OBTAIN COPIES\",\"evidence_refs\":[{\"page\":3}]}}",
+      "thought": "I have read page 3 and found the heading 'HOW TO OBTAIN COPIES'. I can now answer the question.",
+      "action": "answer",
+      "action_input": {
+        "text": "HOW TO OBTAIN COPIES",
+        "evidence_refs": [
+          {
+            "page": 999999,
+            "bbox": [
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "HOW TO OBTAIN COPIES",
+          "evidence_refs": [
+            {
+              "page": 999999,
+              "bbox": [
+                0,
+                0,
+                1,
+                1
+              ]
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "HOW TO OBTAIN COPIES",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1133,
+      "completion_tokens": 52,
+      "total_tokens": 1185,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1404,
+      "completion_tokens": 43,
+      "total_tokens": 1447,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1787,
+      "completion_tokens": 55,
+      "total_tokens": 1842,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "hallucinated_evidence_ref",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "epa_ghg_inventory_1990_2022__cross__p2_p3",
+    "source_final_action": "answer",
+    "source_final_answer": "HOW TO OBTAIN COPIES",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved, but terminal evidence_refs point to a page never observed in the trajectory."
+  }
+}

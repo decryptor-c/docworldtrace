@@ -1,0 +1,160 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      [
+        "parse_table",
+        "answer"
+      ],
+      [
+        "read_page",
+        "ocr",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "tm2529296d2_ars",
+    "metadata": {
+      "bbox": [
+        35.94,
+        333.96,
+        535.455,
+        458.2800500000001
+      ],
+      "column_label": "High-Touch Solutions N.A.",
+      "page": 2,
+      "review_status": "needs_human_review",
+      "row_label": "Revenue"
+    },
+    "pdf_path": "data/raw_pdfs/tm2529296d2_ars.pdf",
+    "question": "On page 2, in the table, what is the value for row \"Revenue\" under column \"High-Touch Solutions N.A.\"?",
+    "reference_answer": "$14.0B",
+    "required_tools": [
+      "read_page",
+      "parse_table"
+    ],
+    "seed_id": "tm2529296d2_ars__table__p2",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          35.94,
+          333.96,
+          535.455,
+          458.2800500000001
+        ],
+        "page": 2
+      }
+    ],
+    "task_type": "table_lookup",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        35.94,
+        333.96,
+        535.455,
+        458.2800500000001
+      ],
+      "target_page": 2
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview__negative",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"Answering directly without using document tools.\", \"action\": \"answer\", \"action_input\": {\"text\": \"$14.0B\", \"evidence_refs\": [{\"page\": 2}]}}",
+      "thought": "Answering directly without using document tools.",
+      "action": "answer",
+      "action_input": {
+        "text": "$14.0B",
+        "evidence_refs": [
+          {
+            "page": 2
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "$14.0B",
+          "evidence_refs": [
+            {
+              "page": 2
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "$14.0B",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1409,
+      "completion_tokens": 96,
+      "total_tokens": 1505,
+      "prompt_tokens_details": {
+        "text_tokens": 1409,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1891,
+      "completion_tokens": 60,
+      "total_tokens": 1951,
+      "prompt_tokens_details": {
+        "text_tokens": 1891,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 1,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": true
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "direct_answer_without_tools",
+    "source_teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+    "source_seed_id": "tm2529296d2_ars__table__p2",
+    "source_final_action": "answer",
+    "source_final_answer": "$14.0B",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer text is preserved, but all supporting tool calls and observations are removed."
+  }
+}

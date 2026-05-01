@@ -1,0 +1,199 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      [
+        "search",
+        "search",
+        "refuse"
+      ]
+    ],
+    "answerable": false,
+    "difficulty": "medium",
+    "doc_id": "ti2025ars",
+    "metadata": {
+      "negative_evidence_query": "private mobile phone number first author CEO",
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/ti2025ars.pdf",
+    "question": "What is the private mobile phone number of the first author or CEO listed in the document?",
+    "reference_answer": "REFUSE",
+    "required_tools": [
+      "search",
+      "read_page",
+      "refuse"
+    ],
+    "seed_id": "ti2025ars__refuse__generic",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [],
+    "task_type": "unanswerable"
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to search for the CEO or author's contact information to see if a private mobile phone number is provided.\", \"action\": \"search\", \"action_input\": {\"query\": \"CEO contact information mobile phone number\"}}",
+      "thought": "I need to search for the CEO or author's contact information to see if a private mobile phone number is provided.",
+      "action": "search",
+      "action_input": {
+        "query": "CEO contact information mobile phone number",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "CEO contact information mobile phone number",
+          "results": [
+            {
+              "page": 90,
+              "score": 3.0,
+              "snippet": "During 2025, the committee determined that its compensation consultant was independent of the company and had\nno conflict of interest.\nThe compensation committee considers executive compensation in a multistep process that involves the revi"
+            },
+            {
+              "page": 122,
+              "score": 3.0,
+              "snippet": "(1) Calculated by multiplying the number of outstanding RSUs by the closing price of TI common stock as of\nDecember 31, 2025 ($173.49). All outstanding RSU awards will continue to vest according to their terms.\n(2) Calculated as the differe"
+            },
+            {
+              "page": 139,
+              "score": 3.0,
+              "snippet": "BOARD OF DIRECTORS, LEADERSHIP\nDirectors Leadership\nHaviv Ilan Reginald DesRoches Haviv Ilan Krunali Patel\nChairman of the Board, President, Chairman of the Board, Senior Vice President and\nPresident and Rice University President and Chief "
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The search results mention the CEO, Haviv Ilan, but do not provide any private mobile phone numbers. I will read page 139 to confirm if any contact details are listed.\", \"action\": \"read_page\", \"action_input\": {\"page_ids\": [139]}}",
+      "thought": "The search results mention the CEO, Haviv Ilan, but do not provide any private mobile phone numbers. I will read page 139 to confirm if any contact details are listed.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          139
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 139,
+              "text": "BOARD OF DIRECTORS, LEADERSHIP\nDirectors Leadership\nHaviv Ilan Reginald DesRoches Haviv Ilan Krunali Patel\nChairman of the Board, President, Chairman of the Board, Senior Vice President and\nPresident and Rice University President and Chief Information Officer\nChief Executive Officer, Chief Executive Officer\nTexas Instruments Incorporated Curtis Farmer Mark Roberts\nFormer Chairman of the Board, Ahmad Bahai Senior Vice President\nMark Blinn President and Senior Vice President and\nRetired Chief Executive Officer, Chief Executive Officer, Chief Technology Officer Amichai Ron\nFlowserve Corporation Comerica Incorporated Senior Vice President\nMark Gary\nTodd Bluedorn Jean Hobby Senior Vice President Christine Witzsche\nRetired Chairman of the Board Retired Partner, Senior Vice President\nand Chief Executive Officer, PricewaterhouseCoopers LLP Katie Kane\nLennox International Inc. Senior Vice President, Mohammad Yunus\nRonald Kirk Secretary and Senior Vice President\nJanet Clark Senior Of Counsel, General Counsel\nRetired Chief Financial Officer, Gibson, Dunn & Crutcher LLP\nMarathon Oil Corporation Hagop Kozanian\nPamela Patsley Senior Vice President\nCarrie Cox Retired Chairman of the Board\nRetired Chairman of the Board and Chief Executive Officer, Shanon Leonard\nand Chief Executive Officer, MoneyGram International, Inc. Senior Vice President\nHumacyte, Inc.\nRobert Sanchez Rafael Lizardi\nMartin Craighead Chairman of the Board and Senior Vice President and\nRetired Chairman of the Board Chief Executive Officer, Chief Financial Officer\nand Chief Executive Officer, Ryder System, Inc.\nBaker Hughes Inc.\nTI Fellows\nTI Fellows are engineers, scientists or technologists who are recognized by peers and TI management for outstanding\ntechnical contributions. Fellows are elected or reelected based on their exceptional technical leadership in driving deeper\nlevels of innovation that make TI stronger.\nAnnounced in 2025: Jason Jones, Dave Magee and Pushpa Mahalingam named Fellows.\nStockholder and other information\nStockholder records information SEC Form 10-K\nStockholder correspondence: Overnight correspondence: A copy of the company’s annual report to the\nSecurities and Exchange Commission (SEC) on\nComputershare Computershare\nForm 10-K is available on the Investor Relations\nP.O. Box 43006 150 Royall Street\nwebsite at www.ti.com/ir and on the SEC website at\nProvidence, RI 02940-3006 Canton, MA 02021\nwww.sec.gov.\nToll-free: 800-981-8676 Copies of the Form 10-K, including a list of exhibits\nand any exhibit specifically requested, are available\nPhone: 312-360-5151 without charge by writing to:\nWebsite: www.computershare.com/investor Texas Instruments Investor Relations\nP.O. Box 660199, MS 8657\nOnline inquiries: www-us.computershare.com/investor/contact Dallas, TX 75266-0199",
+              "summary": "BOARD OF DIRECTORS, LEADERSHIP",
+              "image_path": "artifacts/docenv/ti2025ars/page_139.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 139,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\": \"I have searched the document and reviewed the leadership page, and there is no mention of any private mobile phone numbers for the CEO or any other individual. The information is not available in the document.\", \"action\": \"refuse\", \"action_input\": {\"reason\": \"The document does not contain the private mobile phone number of the CEO or any other author/executive.\"}}",
+      "thought": "I have searched the document and reviewed the leadership page, and there is no mention of any private mobile phone numbers for the CEO or any other individual. The information is not available in the document.",
+      "action": "refuse",
+      "action_input": {
+        "reason": "The document does not contain the private mobile phone number of the CEO or any other author/executive."
+      },
+      "observation": {
+        "action": "refuse",
+        "status": "success",
+        "result": {
+          "reason": "The document does not contain the private mobile phone number of the CEO or any other author/executive.",
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "refusal"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "refuse"
+  ],
+  "final_action": "refuse",
+  "final_answer": "The document does not contain the private mobile phone number of the CEO or any other author/executive.",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1209,
+      "completion_tokens": 50,
+      "total_tokens": 1259,
+      "prompt_tokens_details": {
+        "text_tokens": 1209,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1532,
+      "completion_tokens": 67,
+      "total_tokens": 1599,
+      "prompt_tokens_details": {
+        "text_tokens": 1532,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1995,
+      "completion_tokens": 80,
+      "total_tokens": 2075,
+      "prompt_tokens_details": {
+        "text_tokens": 1995,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": true,
+    "direct_answer": false
+  }
+}

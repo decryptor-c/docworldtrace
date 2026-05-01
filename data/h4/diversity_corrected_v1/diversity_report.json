@@ -1,0 +1,5271 @@
+{
+  "rollout_dir": "data/h2/rollouts_corrected_v1",
+  "docverify_path": "data/h3/docverify_plus_corrected_v1/docverify_review.json",
+  "overall": {
+    "count": 162,
+    "unique_seed_count": 54,
+    "unique_sequence_count": 39,
+    "unique_sequence_ratio": 0.2407,
+    "seed_level_unique_sequence_ratio": 0.7222,
+    "top_sequences": {
+      "read_page -> answer": 39,
+      "search -> read_page -> refuse": 23,
+      "search -> read_page -> verify -> answer": 17,
+      "search -> read_page -> answer": 15,
+      "read_page -> parse_table -> answer": 11,
+      "search -> verify -> answer": 6,
+      "search -> read_page -> search -> read_page -> refuse": 5,
+      "search -> search -> read_page -> refuse": 4,
+      "parse_table -> compute -> answer": 4,
+      "parse_table -> read_page -> compute -> answer": 3,
+      "read_page -> compute -> answer": 2,
+      "search -> search -> refuse": 2,
+      "<empty>": 2,
+      "read_page -> refuse": 2,
+      "search -> read_page -> read_page -> read_page -> refuse": 2,
+      "search -> read_page -> read_page -> answer": 2,
+      "search -> search -> read_page -> search -> search -> read_page -> refuse": 1,
+      "read_page -> parse_table -> parse_table -> ocr -> ocr -> compute -> answer": 1,
+      "read_page": 1,
+      "search -> read_page -> verify -> verify -> answer": 1
+    },
+    "action_coverage_count": 8,
+    "action_coverage": [
+      "answer",
+      "compute",
+      "ocr",
+      "parse_table",
+      "read_page",
+      "refuse",
+      "search",
+      "verify"
+    ],
+    "core_pilot_action_coverage_count": 7,
+    "core_pilot_action_coverage": [
+      "answer",
+      "compute",
+      "parse_table",
+      "read_page",
+      "refuse",
+      "search",
+      "verify"
+    ],
+    "action_counts": {
+      "search": 113,
+      "read_page": 165,
+      "answer": 110,
+      "refuse": 48,
+      "verify": 34,
+      "parse_table": 26,
+      "ocr": 11,
+      "compute": 12
+    },
+    "step_count_mean": 3.2037,
+    "step_count_std": 1.238,
+    "step_count_distribution": {
+      "3": 65,
+      "5": 14,
+      "4": 32,
+      "2": 41,
+      "7": 2,
+      "1": 2,
+      "8": 2,
+      "0": 2,
+      "6": 2
+    },
+    "rule_based_template_match_count": 74,
+    "rule_based_template_match_rate": 0.4568,
+    "rule_based_deviation_rate": 0.5432,
+    "search_call_count": 113,
+    "unique_search_query_count": 70,
+    "unique_search_query_ratio": 0.6195,
+    "seeds_with_search_count": 31,
+    "unique_seed_query_pair_count": 95,
+    "unique_seed_query_pair_ratio": 0.8407,
+    "search_query_counts": {
+      "first author or ceo": 8,
+      "author or ceo": 6,
+      "author ceo contact phone number": 4,
+      "predictive data selection the data that": 3,
+      "contact information": 3,
+      "front cover photo credit for cow and digester": 3,
+      "long term climate and development futures": 3,
+      "international space station while partnering with u.s. industry": 3,
+      "gina m raimondo secretary": 3,
+      "participatory engagement methods": 3,
+      "ceo author contact phone number": 3,
+      "visit bench a benchmark for vision": 2,
+      "2 visit bench areal worldinspiredvlinstruction followingbenchmark": 2,
+      "mlagentbench evaluating language agents on": 2,
+      "ceo": 2,
+      "total gross emissions 2022": 2,
+      "contact information or phone number": 2,
+      "chevron rested on a presumption that congress when it left ambiguity in a statute meant for implementation by an agency": 2,
+      "ceo contact information": 2,
+      "10 2 frozen executive death benefit plan as amended incorporated": 2,
+      "author ceo phone number contact": 2,
+      "ceo name contact information": 2,
+      "first author or ceo mobile phone number": 2,
+      "phone number or contact or author or ceo": 1,
+      "author or affiliation or contact information": 1,
+      "phone number or contact or ceo or author": 1,
+      "phone number or contact or ceo": 1,
+      "ceo phone number": 1,
+      "author": 1,
+      "laws relating to the collection use retention protection and transfer of personal data": 1
+    }
+  },
+  "by_teacher": {
+    "dmxapi_gemini_2_5_flash": {
+      "count": 54,
+      "unique_seed_count": 54,
+      "unique_sequence_count": 22,
+      "unique_sequence_ratio": 0.4074,
+      "seed_level_unique_sequence_ratio": 0.4074,
+      "top_sequences": {
+        "read_page -> answer": 11,
+        "search -> read_page -> verify -> answer": 7,
+        "search -> read_page -> answer": 5,
+        "read_page -> parse_table -> answer": 5,
+        "search -> search -> read_page -> refuse": 4,
+        "search -> read_page -> refuse": 3,
+        "read_page -> compute -> answer": 2,
+        "search -> search -> refuse": 2,
+        "<empty>": 2,
+        "search -> read_page -> search -> read_page -> refuse": 1,
+        "search -> search -> read_page -> search -> search -> read_page -> refuse": 1,
+        "read_page -> parse_table -> parse_table -> ocr -> ocr -> compute -> answer": 1,
+        "read_page": 1,
+        "search -> verify -> answer": 1,
+        "search -> read_page -> verify -> verify -> answer": 1,
+        "search -> verify -> verify -> read_page -> verify -> verify -> verify -> answer": 1,
+        "search -> read_page -> read_page -> read_page -> answer": 1,
+        "search -> search -> search -> refuse": 1,
+        "search -> search -> read_page -> search -> refuse": 1,
+        "read_page -> parse_table -> ocr -> answer": 1
+      },
+      "action_coverage_count": 8,
+      "action_coverage": [
+        "answer",
+        "compute",
+        "ocr",
+        "parse_table",
+        "read_page",
+        "refuse",
+        "search",
+        "verify"
+      ],
+      "core_pilot_action_coverage_count": 7,
+      "core_pilot_action_coverage": [
+        "answer",
+        "compute",
+        "parse_table",
+        "read_page",
+        "refuse",
+        "search",
+        "verify"
+      ],
+      "action_counts": {
+        "search": 45,
+        "read_page": 53,
+        "answer": 36,
+        "refuse": 15,
+        "verify": 15,
+        "parse_table": 8,
+        "ocr": 4,
+        "compute": 3
+      },
+      "step_count_mean": 3.3148,
+      "step_count_std": 1.4634,
+      "step_count_distribution": {
+        "3": 18,
+        "5": 4,
+        "4": 15,
+        "2": 11,
+        "7": 2,
+        "1": 1,
+        "8": 1,
+        "0": 2
+      },
+      "rule_based_template_match_count": 19,
+      "rule_based_template_match_rate": 0.3519,
+      "rule_based_deviation_rate": 0.6481,
+      "search_call_count": 45,
+      "unique_search_query_count": 37,
+      "unique_search_query_ratio": 0.8222,
+      "seeds_with_search_count": 31,
+      "unique_seed_query_pair_count": 45,
+      "unique_seed_query_pair_ratio": 1.0,
+      "search_query_counts": {
+        "author or ceo": 6,
+        "ceo": 2,
+        "contact information or phone number": 2,
+        "ceo contact information": 2,
+        "visit bench a benchmark for vision": 1,
+        "phone number or contact or author or ceo": 1,
+        "author or affiliation or contact information": 1,
+        "2 visit bench areal worldinspiredvlinstruction followingbenchmark": 1,
+        "mlagentbench evaluating language agents on": 1,
+        "phone number or contact or ceo or author": 1,
+        "predictive data selection the data that": 1,
+        "phone number or contact or ceo": 1,
+        "ceo phone number": 1,
+        "author": 1,
+        "contact information": 1,
+        "laws relating to the collection use retention protection and transfer of personal data": 1,
+        "front cover photo credit for cow and digester": 1,
+        "contact information or private phone number": 1,
+        "total gross emissions 2022": 1,
+        "ozempic injected subcutaneously stomach": 1,
+        "authors list or contact information": 1,
+        "long term climate and development futures": 1,
+        "taxable income": 1,
+        "international space station while partnering with u.s. industry": 1,
+        "contact information or personnel": 1,
+        "deep space exploration systems fy 2025 request": 1,
+        "gina m raimondo secretary": 1,
+        "author contact information": 1,
+        "contact information authors": 1,
+        "participatory engagement methods": 1
+      }
+    },
+    "dmxapi_gemini_3_1_flash_lite_preview": {
+      "count": 54,
+      "unique_seed_count": 54,
+      "unique_sequence_count": 13,
+      "unique_sequence_ratio": 0.2407,
+      "seed_level_unique_sequence_ratio": 0.2407,
+      "top_sequences": {
+        "read_page -> answer": 16,
+        "search -> read_page -> refuse": 13,
+        "search -> read_page -> answer": 6,
+        "search -> verify -> answer": 5,
+        "parse_table -> read_page -> compute -> answer": 3,
+        "search -> read_page -> verify -> answer": 2,
+        "read_page -> parse_table -> answer": 2,
+        "read_page -> refuse": 2,
+        "read_page -> verify -> answer": 1,
+        "parse_table": 1,
+        "search -> search -> read_page -> verify -> answer": 1,
+        "parse_table -> compute -> answer": 1,
+        "read_page -> search -> read_page -> search -> ocr -> search -> read_page -> refuse": 1
+      },
+      "action_coverage_count": 8,
+      "action_coverage": [
+        "answer",
+        "compute",
+        "ocr",
+        "parse_table",
+        "read_page",
+        "refuse",
+        "search",
+        "verify"
+      ],
+      "core_pilot_action_coverage_count": 7,
+      "core_pilot_action_coverage": [
+        "answer",
+        "compute",
+        "parse_table",
+        "read_page",
+        "refuse",
+        "search",
+        "verify"
+      ],
+      "action_counts": {
+        "search": 31,
+        "read_page": 49,
+        "answer": 37,
+        "refuse": 16,
+        "verify": 9,
+        "parse_table": 7,
+        "compute": 4,
+        "ocr": 1
+      },
+      "step_count_mean": 2.8519,
+      "step_count_std": 1.0075,
+      "step_count_distribution": {
+        "3": 28,
+        "2": 18,
+        "4": 5,
+        "1": 1,
+        "5": 1,
+        "8": 1
+      },
+      "rule_based_template_match_count": 28,
+      "rule_based_template_match_rate": 0.5185,
+      "rule_based_deviation_rate": 0.4815,
+      "search_call_count": 31,
+      "unique_search_query_count": 24,
+      "unique_search_query_ratio": 0.7742,
+      "seeds_with_search_count": 28,
+      "unique_seed_query_pair_count": 31,
+      "unique_seed_query_pair_ratio": 1.0,
+      "search_query_counts": {
+        "author ceo contact phone number": 4,
+        "ceo author contact phone number": 3,
+        "author ceo phone number contact": 2,
+        "ceo name contact information": 2,
+        "visit-bench: a benchmark for vision-language": 1,
+        "mlagentbench: evaluating language agents on": 1,
+        "predictive data selection the data that": 1,
+        "ceo name private mobile phone number": 1,
+        "personal data collection use retention protection transfer laws": 1,
+        "front cover photo credit for cow and digester": 1,
+        "total gross emissions 2022": 1,
+        "ozempic subcutaneous injection administration": 1,
+        "long term climate and development futures": 1,
+        "international space station while partnering with u.s. industry": 1,
+        "deep space exploration systems fy 2025 budget request": 1,
+        "gina m raimondo secretary": 1,
+        "participatory engagement methods": 1,
+        "phone number": 1,
+        "chevron presumption congress ambiguity agency implementation": 1,
+        "chevron rested on a presumption that congress": 1,
+        "revenue high-touch solutions n.a.": 1,
+        "high-touch solutions n.a. revenue": 1,
+        "revenue high-touch solutions n.a. table": 1,
+        "frozen executive death benefit plan": 1
+      }
+    },
+    "dmxapi_gpt4o_2024_11_20": {
+      "count": 54,
+      "unique_seed_count": 54,
+      "unique_sequence_count": 17,
+      "unique_sequence_ratio": 0.3148,
+      "seed_level_unique_sequence_ratio": 0.3148,
+      "top_sequences": {
+        "read_page -> answer": 12,
+        "search -> read_page -> verify -> answer": 8,
+        "search -> read_page -> refuse": 7,
+        "search -> read_page -> answer": 4,
+        "search -> read_page -> search -> read_page -> refuse": 4,
+        "read_page -> parse_table -> answer": 4,
+        "parse_table -> compute -> answer": 3,
+        "search -> read_page -> read_page -> read_page -> refuse": 2,
+        "search -> read_page -> read_page -> answer": 2,
+        "search -> read_page -> search -> read_page -> verify -> answer": 1,
+        "parse_table -> ocr -> read_page -> compute -> answer": 1,
+        "read_page -> ocr -> parse_table -> ocr -> refuse": 1,
+        "search -> read_page -> read_page -> verify -> answer": 1,
+        "parse_table -> ocr -> compute -> answer": 1,
+        "read_page -> parse_table -> ocr -> refuse": 1,
+        "read_page -> ocr -> refuse": 1,
+        "search -> read_page -> search -> read_page -> search -> refuse": 1
+      },
+      "action_coverage_count": 8,
+      "action_coverage": [
+        "answer",
+        "compute",
+        "ocr",
+        "parse_table",
+        "read_page",
+        "refuse",
+        "search",
+        "verify"
+      ],
+      "core_pilot_action_coverage_count": 7,
+      "core_pilot_action_coverage": [
+        "answer",
+        "compute",
+        "parse_table",
+        "read_page",
+        "refuse",
+        "search",
+        "verify"
+      ],
+      "action_counts": {
+        "search": 37,
+        "read_page": 63,
+        "answer": 37,
+        "refuse": 17,
+        "verify": 10,
+        "parse_table": 11,
+        "compute": 5,
+        "ocr": 6
+      },
+      "step_count_mean": 3.4444,
+      "step_count_std": 1.1167,
+      "step_count_distribution": {
+        "3": 19,
+        "4": 12,
+        "5": 9,
+        "2": 12,
+        "6": 2
+      },
+      "rule_based_template_match_count": 27,
+      "rule_based_template_match_rate": 0.5,
+      "rule_based_deviation_rate": 0.5,
+      "search_call_count": 37,
+      "unique_search_query_count": 28,
+      "unique_search_query_ratio": 0.7568,
+      "seeds_with_search_count": 30,
+      "unique_seed_query_pair_count": 37,
+      "unique_seed_query_pair_ratio": 1.0,
+      "search_query_counts": {
+        "first author or ceo": 8,
+        "contact information": 2,
+        "first author or ceo mobile phone number": 2,
+        "visit bench a benchmark for vision": 1,
+        "2 visit bench areal worldinspiredvlinstruction followingbenchmark": 1,
+        "mlagentbench evaluating language agents on": 1,
+        "predictive data selection the data that": 1,
+        "first author or ceo contact details": 1,
+        "ceo or first author": 1,
+        "federal state international laws personal data collection use retention protection transfer": 1,
+        "front cover photo credit for cow and digester": 1,
+        "total gross emissions in 2022": 1,
+        "6 343 2 mmt co2 eq": 1,
+        "ozempic injected under the skin subcutaneously of your stomach": 1,
+        "long term climate and development futures": 1,
+        "author or ceo mobile phone number": 1,
+        "subtract line 14 from line 11b taxable income": 1,
+        "international space station while partnering with u.s. industry": 1,
+        "contact information or author or ceo": 1,
+        "deep space exploration systems fy 2025 request 7,618.2 million": 1,
+        "gina m raimondo secretary": 1,
+        "author ceo mobile phone number": 1,
+        "participatory engagement methods": 1,
+        "chevron rested on a presumption that congress when it left ambiguity in a statute meant for implementation by an agency": 1,
+        "private contact details or phone number": 1,
+        "10 2 frozen executive death benefit plan as amended incorporated": 1,
+        "author list or leadership": 1,
+        "contact information or private details": 1
+      }
+    }
+  },
+  "by_task_type": {
+    "cross_page": {
+      "count": 18,
+      "unique_seed_count": 6,
+      "unique_sequence_count": 3,
+      "unique_sequence_ratio": 0.1667,
+      "seed_level_unique_sequence_ratio": 0.5,
+      "top_sequences": {
+        "search -> read_page -> answer": 15,
+        "search -> read_page -> read_page -> answer": 2,
+        "search -> read_page -> read_page -> read_page -> answer": 1
+      },
+      "action_coverage_count": 3,
+      "action_coverage": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "core_pilot_action_coverage_count": 3,
+      "core_pilot_action_coverage": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "action_counts": {
+        "search": 18,
+        "read_page": 22,
+        "answer": 18
+      },
+      "step_count_mean": 3.2222,
+      "step_count_std": 0.5329,
+      "step_count_distribution": {
+        "3": 15,
+        "5": 1,
+        "4": 2
+      },
+      "rule_based_template_match_count": 2,
+      "rule_based_template_match_rate": 0.1111,
+      "rule_based_deviation_rate": 0.8889,
+      "search_call_count": 18,
+      "unique_search_query_count": 8,
+      "unique_search_query_ratio": 0.4444,
+      "seeds_with_search_count": 6,
+      "unique_seed_query_pair_count": 8,
+      "unique_seed_query_pair_ratio": 0.4444,
+      "search_query_counts": {
+        "predictive data selection the data that": 3,
+        "front cover photo credit for cow and digester": 3,
+        "international space station while partnering with u.s. industry": 3,
+        "gina m raimondo secretary": 3,
+        "visit bench a benchmark for vision": 2,
+        "mlagentbench evaluating language agents on": 2,
+        "visit-bench: a benchmark for vision-language": 1,
+        "mlagentbench: evaluating language agents on": 1
+      }
+    },
+    "numeric_computation": {
+      "count": 15,
+      "unique_seed_count": 5,
+      "unique_sequence_count": 8,
+      "unique_sequence_ratio": 0.5333,
+      "seed_level_unique_sequence_ratio": 1.6,
+      "top_sequences": {
+        "parse_table -> compute -> answer": 4,
+        "parse_table -> read_page -> compute -> answer": 3,
+        "read_page -> compute -> answer": 2,
+        "<empty>": 2,
+        "read_page -> parse_table -> parse_table -> ocr -> ocr -> compute -> answer": 1,
+        "parse_table": 1,
+        "parse_table -> ocr -> read_page -> compute -> answer": 1,
+        "parse_table -> ocr -> compute -> answer": 1
+      },
+      "action_coverage_count": 5,
+      "action_coverage": [
+        "answer",
+        "compute",
+        "ocr",
+        "parse_table",
+        "read_page"
+      ],
+      "core_pilot_action_coverage_count": 4,
+      "core_pilot_action_coverage": [
+        "answer",
+        "compute",
+        "parse_table",
+        "read_page"
+      ],
+      "action_counts": {
+        "read_page": 7,
+        "parse_table": 12,
+        "ocr": 4,
+        "compute": 12,
+        "answer": 12
+      },
+      "step_count_mean": 3.1333,
+      "step_count_std": 1.7461,
+      "step_count_distribution": {
+        "7": 1,
+        "3": 6,
+        "0": 2,
+        "4": 4,
+        "1": 1,
+        "5": 1
+      },
+      "rule_based_template_match_count": 4,
+      "rule_based_template_match_rate": 0.2667,
+      "rule_based_deviation_rate": 0.7333,
+      "search_call_count": 0,
+      "unique_search_query_count": 0,
+      "unique_search_query_ratio": 0.0,
+      "seeds_with_search_count": 0,
+      "unique_seed_query_pair_count": 0,
+      "unique_seed_query_pair_ratio": 0.0,
+      "search_query_counts": {}
+    },
+    "table_lookup": {
+      "count": 24,
+      "unique_seed_count": 8,
+      "unique_sequence_count": 10,
+      "unique_sequence_ratio": 0.4167,
+      "seed_level_unique_sequence_ratio": 1.25,
+      "top_sequences": {
+        "read_page -> parse_table -> answer": 11,
+        "read_page -> answer": 5,
+        "read_page": 1,
+        "read_page -> parse_table -> ocr -> answer": 1,
+        "read_page -> search -> ocr -> refuse": 1,
+        "read_page -> refuse": 1,
+        "read_page -> search -> read_page -> search -> ocr -> search -> read_page -> refuse": 1,
+        "read_page -> ocr -> parse_table -> ocr -> refuse": 1,
+        "read_page -> parse_table -> ocr -> refuse": 1,
+        "read_page -> ocr -> refuse": 1
+      },
+      "action_coverage_count": 6,
+      "action_coverage": [
+        "answer",
+        "ocr",
+        "parse_table",
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "core_pilot_action_coverage_count": 5,
+      "core_pilot_action_coverage": [
+        "answer",
+        "parse_table",
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "action_counts": {
+        "read_page": 26,
+        "parse_table": 14,
+        "answer": 17,
+        "ocr": 7,
+        "search": 4,
+        "refuse": 6
+      },
+      "step_count_mean": 3.0833,
+      "step_count_std": 1.3202,
+      "step_count_distribution": {
+        "3": 12,
+        "1": 1,
+        "4": 3,
+        "2": 6,
+        "8": 1,
+        "5": 1
+      },
+      "rule_based_template_match_count": 11,
+      "rule_based_template_match_rate": 0.4583,
+      "rule_based_deviation_rate": 0.5417,
+      "search_call_count": 4,
+      "unique_search_query_count": 4,
+      "unique_search_query_ratio": 1.0,
+      "seeds_with_search_count": 1,
+      "unique_seed_query_pair_count": 4,
+      "unique_seed_query_pair_ratio": 1.0,
+      "search_query_counts": {
+        "high-touch solutions n.a.": 1,
+        "revenue high-touch solutions n.a.": 1,
+        "high-touch solutions n.a. revenue": 1,
+        "revenue high-touch solutions n.a. table": 1
+      }
+    },
+    "text_lookup": {
+      "count": 33,
+      "unique_seed_count": 11,
+      "unique_sequence_count": 1,
+      "unique_sequence_ratio": 0.0303,
+      "seed_level_unique_sequence_ratio": 0.0909,
+      "top_sequences": {
+        "read_page -> answer": 33
+      },
+      "action_coverage_count": 2,
+      "action_coverage": [
+        "answer",
+        "read_page"
+      ],
+      "core_pilot_action_coverage_count": 2,
+      "core_pilot_action_coverage": [
+        "answer",
+        "read_page"
+      ],
+      "action_counts": {
+        "read_page": 33,
+        "answer": 33
+      },
+      "step_count_mean": 2,
+      "step_count_std": 0.0,
+      "step_count_distribution": {
+        "2": 33
+      },
+      "rule_based_template_match_count": 33,
+      "rule_based_template_match_rate": 1.0,
+      "rule_based_deviation_rate": 0.0,
+      "search_call_count": 0,
+      "unique_search_query_count": 0,
+      "unique_search_query_ratio": 0.0,
+      "seeds_with_search_count": 0,
+      "unique_seed_query_pair_count": 0,
+      "unique_seed_query_pair_ratio": 0.0,
+      "search_query_counts": {}
+    },
+    "unanswerable": {
+      "count": 42,
+      "unique_seed_count": 14,
+      "unique_sequence_count": 11,
+      "unique_sequence_ratio": 0.2619,
+      "seed_level_unique_sequence_ratio": 0.7857,
+      "top_sequences": {
+        "search -> read_page -> refuse": 23,
+        "search -> read_page -> search -> read_page -> refuse": 5,
+        "search -> search -> read_page -> refuse": 4,
+        "search -> search -> refuse": 2,
+        "search -> read_page -> read_page -> read_page -> refuse": 2,
+        "search -> search -> read_page -> search -> search -> read_page -> refuse": 1,
+        "search -> search -> search -> refuse": 1,
+        "search -> search -> read_page -> search -> refuse": 1,
+        "search -> read_page -> read_page -> refuse": 1,
+        "read_page -> refuse": 1,
+        "search -> read_page -> search -> read_page -> search -> refuse": 1
+      },
+      "action_coverage_count": 3,
+      "action_coverage": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "core_pilot_action_coverage_count": 3,
+      "core_pilot_action_coverage": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "action_counts": {
+        "search": 61,
+        "read_page": 51,
+        "refuse": 42
+      },
+      "step_count_mean": 3.6667,
+      "step_count_std": 1.0389,
+      "step_count_distribution": {
+        "5": 8,
+        "3": 25,
+        "7": 1,
+        "4": 6,
+        "2": 1,
+        "6": 1
+      },
+      "rule_based_template_match_count": 23,
+      "rule_based_template_match_rate": 0.5476,
+      "rule_based_deviation_rate": 0.4524,
+      "search_call_count": 61,
+      "unique_search_query_count": 36,
+      "unique_search_query_ratio": 0.5902,
+      "seeds_with_search_count": 14,
+      "unique_seed_query_pair_count": 61,
+      "unique_seed_query_pair_ratio": 1.0,
+      "search_query_counts": {
+        "first author or ceo": 8,
+        "author or ceo": 6,
+        "author ceo contact phone number": 4,
+        "contact information": 3,
+        "ceo author contact phone number": 3,
+        "ceo": 2,
+        "contact information or phone number": 2,
+        "ceo contact information": 2,
+        "author ceo phone number contact": 2,
+        "ceo name contact information": 2,
+        "first author or ceo mobile phone number": 2,
+        "phone number or contact or author or ceo": 1,
+        "author or affiliation or contact information": 1,
+        "phone number or contact or ceo or author": 1,
+        "phone number or contact or ceo": 1,
+        "ceo phone number": 1,
+        "author": 1,
+        "contact information or private phone number": 1,
+        "authors list or contact information": 1,
+        "contact information or personnel": 1,
+        "author contact information": 1,
+        "contact information authors": 1,
+        "ceo name": 1,
+        "haviv ilan private mobile phone number": 1,
+        "author or ceo contact information": 1,
+        "private mobile phone number or contact information or authors or contributors": 1,
+        "ceo name private mobile phone number": 1,
+        "phone number": 1,
+        "first author or ceo contact details": 1,
+        "ceo or first author": 1
+      }
+    },
+    "verification": {
+      "count": 30,
+      "unique_seed_count": 10,
+      "unique_sequence_count": 9,
+      "unique_sequence_ratio": 0.3,
+      "seed_level_unique_sequence_ratio": 0.9,
+      "top_sequences": {
+        "search -> read_page -> verify -> answer": 17,
+        "search -> verify -> answer": 6,
+        "search -> read_page -> verify -> verify -> answer": 1,
+        "search -> verify -> verify -> read_page -> verify -> verify -> verify -> answer": 1,
+        "read_page -> answer": 1,
+        "read_page -> verify -> answer": 1,
+        "search -> search -> read_page -> verify -> answer": 1,
+        "search -> read_page -> search -> read_page -> verify -> answer": 1,
+        "search -> read_page -> read_page -> verify -> answer": 1
+      },
+      "action_coverage_count": 4,
+      "action_coverage": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "core_pilot_action_coverage_count": 4,
+      "core_pilot_action_coverage": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "action_counts": {
+        "search": 30,
+        "read_page": 26,
+        "verify": 34,
+        "answer": 30
+      },
+      "step_count_mean": 4,
+      "step_count_std": 1.0646,
+      "step_count_distribution": {
+        "4": 17,
+        "3": 7,
+        "5": 3,
+        "8": 1,
+        "2": 1,
+        "6": 1
+      },
+      "rule_based_template_match_count": 1,
+      "rule_based_template_match_rate": 0.0333,
+      "rule_based_deviation_rate": 0.9667,
+      "search_call_count": 30,
+      "unique_search_query_count": 22,
+      "unique_search_query_ratio": 0.7333,
+      "seeds_with_search_count": 10,
+      "unique_seed_query_pair_count": 22,
+      "unique_seed_query_pair_ratio": 0.7333,
+      "search_query_counts": {
+        "long term climate and development futures": 3,
+        "participatory engagement methods": 3,
+        "2 visit bench areal worldinspiredvlinstruction followingbenchmark": 2,
+        "total gross emissions 2022": 2,
+        "chevron rested on a presumption that congress when it left ambiguity in a statute meant for implementation by an agency": 2,
+        "10 2 frozen executive death benefit plan as amended incorporated": 2,
+        "laws relating to the collection use retention protection and transfer of personal data": 1,
+        "ozempic injected subcutaneously stomach": 1,
+        "taxable income": 1,
+        "deep space exploration systems fy 2025 request": 1,
+        "personal data collection use retention protection transfer laws": 1,
+        "ozempic subcutaneous injection administration": 1,
+        "deep space exploration systems fy 2025 budget request": 1,
+        "chevron presumption congress ambiguity agency implementation": 1,
+        "chevron rested on a presumption that congress": 1,
+        "frozen executive death benefit plan": 1,
+        "federal state international laws personal data collection use retention protection transfer": 1,
+        "total gross emissions in 2022": 1,
+        "6 343 2 mmt co2 eq": 1,
+        "ozempic injected under the skin subcutaneously of your stomach": 1,
+        "subtract line 14 from line 11b taxable income": 1,
+        "deep space exploration systems fy 2025 request 7,618.2 million": 1
+      }
+    }
+  },
+  "task_type_path_table": {
+    "cross_page": {
+      "search -> read_page -> answer": 15,
+      "search -> read_page -> read_page -> answer": 2,
+      "search -> read_page -> read_page -> read_page -> answer": 1
+    },
+    "numeric_computation": {
+      "parse_table -> compute -> answer": 4,
+      "parse_table -> read_page -> compute -> answer": 3,
+      "read_page -> compute -> answer": 2,
+      "<empty>": 2,
+      "read_page -> parse_table -> parse_table -> ocr -> ocr -> compute -> answer": 1,
+      "parse_table": 1,
+      "parse_table -> ocr -> read_page -> compute -> answer": 1,
+      "parse_table -> ocr -> compute -> answer": 1
+    },
+    "table_lookup": {
+      "read_page -> parse_table -> answer": 11,
+      "read_page -> answer": 5,
+      "read_page": 1,
+      "read_page -> parse_table -> ocr -> answer": 1,
+      "read_page -> search -> ocr -> refuse": 1,
+      "read_page -> refuse": 1,
+      "read_page -> search -> read_page -> search -> ocr -> search -> read_page -> refuse": 1,
+      "read_page -> ocr -> parse_table -> ocr -> refuse": 1,
+      "read_page -> parse_table -> ocr -> refuse": 1,
+      "read_page -> ocr -> refuse": 1
+    },
+    "text_lookup": {
+      "read_page -> answer": 33
+    },
+    "unanswerable": {
+      "search -> read_page -> refuse": 23,
+      "search -> read_page -> search -> read_page -> refuse": 5,
+      "search -> search -> read_page -> refuse": 4,
+      "search -> search -> refuse": 2,
+      "search -> read_page -> read_page -> read_page -> refuse": 2,
+      "search -> search -> read_page -> search -> search -> read_page -> refuse": 1,
+      "search -> search -> search -> refuse": 1,
+      "search -> search -> read_page -> search -> refuse": 1,
+      "search -> read_page -> read_page -> refuse": 1,
+      "read_page -> refuse": 1,
+      "search -> read_page -> search -> read_page -> search -> refuse": 1
+    },
+    "verification": {
+      "search -> read_page -> verify -> answer": 17,
+      "search -> verify -> answer": 6,
+      "search -> read_page -> verify -> verify -> answer": 1,
+      "search -> verify -> verify -> read_page -> verify -> verify -> verify -> answer": 1,
+      "read_page -> answer": 1,
+      "read_page -> verify -> answer": 1,
+      "search -> search -> read_page -> verify -> answer": 1,
+      "search -> read_page -> search -> read_page -> verify -> answer": 1,
+      "search -> read_page -> read_page -> verify -> answer": 1
+    }
+  },
+  "rule_based_templates": {
+    "text_lookup": [
+      "read_page",
+      "answer"
+    ],
+    "table_lookup": [
+      "read_page",
+      "parse_table",
+      "answer"
+    ],
+    "numeric_computation": [
+      "parse_table",
+      "compute",
+      "answer"
+    ],
+    "cross_page": [
+      "search",
+      "read_page",
+      "read_page",
+      "answer"
+    ],
+    "verification": [
+      "read_page",
+      "verify",
+      "answer"
+    ],
+    "unanswerable": [
+      "search",
+      "read_page",
+      "refuse"
+    ]
+  },
+  "rule_based_template_table": {
+    "cross_page": {
+      "template": "search -> read_page -> read_page -> answer",
+      "count": 18,
+      "match_count": 2,
+      "match_rate": 0.1111,
+      "deviation_rate": 0.8889,
+      "deviating_sequences": {
+        "search -> read_page -> answer": 15,
+        "search -> read_page -> read_page -> read_page -> answer": 1
+      }
+    },
+    "numeric_computation": {
+      "template": "parse_table -> compute -> answer",
+      "count": 15,
+      "match_count": 4,
+      "match_rate": 0.2667,
+      "deviation_rate": 0.7333,
+      "deviating_sequences": {
+        "parse_table -> read_page -> compute -> answer": 3,
+        "read_page -> compute -> answer": 2,
+        "<empty>": 2,
+        "read_page -> parse_table -> parse_table -> ocr -> ocr -> compute -> answer": 1,
+        "parse_table": 1,
+        "parse_table -> ocr -> read_page -> compute -> answer": 1,
+        "parse_table -> ocr -> compute -> answer": 1
+      }
+    },
+    "table_lookup": {
+      "template": "read_page -> parse_table -> answer",
+      "count": 24,
+      "match_count": 11,
+      "match_rate": 0.4583,
+      "deviation_rate": 0.5417,
+      "deviating_sequences": {
+        "read_page -> answer": 5,
+        "read_page": 1,
+        "read_page -> parse_table -> ocr -> answer": 1,
+        "read_page -> search -> ocr -> refuse": 1,
+        "read_page -> refuse": 1,
+        "read_page -> search -> read_page -> search -> ocr -> search -> read_page -> refuse": 1,
+        "read_page -> ocr -> parse_table -> ocr -> refuse": 1,
+        "read_page -> parse_table -> ocr -> refuse": 1,
+        "read_page -> ocr -> refuse": 1
+      }
+    },
+    "text_lookup": {
+      "template": "read_page -> answer",
+      "count": 33,
+      "match_count": 33,
+      "match_rate": 1.0,
+      "deviation_rate": 0.0,
+      "deviating_sequences": {}
+    },
+    "unanswerable": {
+      "template": "search -> read_page -> refuse",
+      "count": 42,
+      "match_count": 23,
+      "match_rate": 0.5476,
+      "deviation_rate": 0.4524,
+      "deviating_sequences": {
+        "search -> read_page -> search -> read_page -> refuse": 5,
+        "search -> search -> read_page -> refuse": 4,
+        "search -> search -> refuse": 2,
+        "search -> read_page -> read_page -> read_page -> refuse": 2,
+        "search -> search -> read_page -> search -> search -> read_page -> refuse": 1,
+        "search -> search -> search -> refuse": 1,
+        "search -> search -> read_page -> search -> refuse": 1,
+        "search -> read_page -> read_page -> refuse": 1,
+        "read_page -> refuse": 1,
+        "search -> read_page -> search -> read_page -> search -> refuse": 1
+      }
+    },
+    "verification": {
+      "template": "read_page -> verify -> answer",
+      "count": 30,
+      "match_count": 1,
+      "match_rate": 0.0333,
+      "deviation_rate": 0.9667,
+      "deviating_sequences": {
+        "search -> read_page -> verify -> answer": 17,
+        "search -> verify -> answer": 6,
+        "search -> read_page -> verify -> verify -> answer": 1,
+        "search -> verify -> verify -> read_page -> verify -> verify -> verify -> answer": 1,
+        "read_page -> answer": 1,
+        "search -> search -> read_page -> verify -> answer": 1,
+        "search -> read_page -> search -> read_page -> verify -> answer": 1,
+        "search -> read_page -> read_page -> verify -> answer": 1
+      }
+    }
+  },
+  "kept_only": {
+    "count": 139,
+    "unique_seed_count": 51,
+    "unique_sequence_count": 28,
+    "unique_sequence_ratio": 0.2014,
+    "seed_level_unique_sequence_ratio": 0.549,
+    "top_sequences": {
+      "read_page -> answer": 34,
+      "search -> read_page -> refuse": 23,
+      "search -> read_page -> verify -> answer": 17,
+      "search -> read_page -> answer": 12,
+      "read_page -> parse_table -> answer": 11,
+      "search -> verify -> answer": 6,
+      "search -> read_page -> search -> read_page -> refuse": 5,
+      "search -> search -> read_page -> refuse": 4,
+      "parse_table -> read_page -> compute -> answer": 3,
+      "parse_table -> compute -> answer": 3,
+      "read_page -> compute -> answer": 2,
+      "search -> search -> refuse": 2,
+      "search -> read_page -> read_page -> read_page -> refuse": 2,
+      "search -> search -> read_page -> search -> search -> read_page -> refuse": 1,
+      "read_page -> parse_table -> parse_table -> ocr -> ocr -> compute -> answer": 1,
+      "search -> read_page -> read_page -> read_page -> answer": 1,
+      "search -> search -> search -> refuse": 1,
+      "search -> search -> read_page -> search -> refuse": 1,
+      "read_page -> parse_table -> ocr -> answer": 1,
+      "search -> read_page -> read_page -> refuse": 1
+    },
+    "action_coverage_count": 8,
+    "action_coverage": [
+      "answer",
+      "compute",
+      "ocr",
+      "parse_table",
+      "read_page",
+      "refuse",
+      "search",
+      "verify"
+    ],
+    "core_pilot_action_coverage_count": 7,
+    "core_pilot_action_coverage": [
+      "answer",
+      "compute",
+      "parse_table",
+      "read_page",
+      "refuse",
+      "search",
+      "verify"
+    ],
+    "action_counts": {
+      "search": 103,
+      "read_page": 143,
+      "answer": 98,
+      "refuse": 41,
+      "verify": 27,
+      "parse_table": 22,
+      "ocr": 5,
+      "compute": 11
+    },
+    "step_count_mean": 3.2374,
+    "step_count_std": 1.0497,
+    "step_count_distribution": {
+      "3": 60,
+      "5": 12,
+      "4": 29,
+      "2": 34,
+      "7": 2,
+      "6": 2
+    },
+    "rule_based_template_match_count": 67,
+    "rule_based_template_match_rate": 0.482,
+    "rule_based_deviation_rate": 0.518,
+    "search_call_count": 103,
+    "unique_search_query_count": 63,
+    "unique_search_query_ratio": 0.6117,
+    "seeds_with_search_count": 30,
+    "unique_seed_query_pair_count": 88,
+    "unique_seed_query_pair_ratio": 0.8544,
+    "search_query_counts": {
+      "first author or ceo": 8,
+      "author or ceo": 6,
+      "author ceo contact phone number": 4,
+      "predictive data selection the data that": 3,
+      "contact information": 3,
+      "front cover photo credit for cow and digester": 3,
+      "long term climate and development futures": 3,
+      "gina m raimondo secretary": 3,
+      "participatory engagement methods": 3,
+      "ceo author contact phone number": 3,
+      "visit bench a benchmark for vision": 2,
+      "2 visit bench areal worldinspiredvlinstruction followingbenchmark": 2,
+      "ceo": 2,
+      "total gross emissions 2022": 2,
+      "contact information or phone number": 2,
+      "chevron rested on a presumption that congress when it left ambiguity in a statute meant for implementation by an agency": 2,
+      "ceo contact information": 2,
+      "10 2 frozen executive death benefit plan as amended incorporated": 2,
+      "author ceo phone number contact": 2,
+      "ceo name contact information": 2,
+      "first author or ceo mobile phone number": 2,
+      "phone number or contact or author or ceo": 1,
+      "author or affiliation or contact information": 1,
+      "phone number or contact or ceo or author": 1,
+      "phone number or contact or ceo": 1,
+      "ceo phone number": 1,
+      "author": 1,
+      "laws relating to the collection use retention protection and transfer of personal data": 1,
+      "contact information or private phone number": 1,
+      "ozempic injected subcutaneously stomach": 1
+    }
+  },
+  "h4_lite_decision": {
+    "h4_lite_passed": true,
+    "task_coverage_ok": true,
+    "core_action_coverage_ok": true,
+    "sequence_diversity_ok": true,
+    "search_query_diversity_ok": true,
+    "covered_tasks": [
+      "cross_page",
+      "numeric_computation",
+      "table_lookup",
+      "text_lookup",
+      "unanswerable",
+      "verification"
+    ],
+    "expected_tasks": [
+      "cross_page",
+      "numeric_computation",
+      "table_lookup",
+      "text_lookup",
+      "unanswerable",
+      "verification"
+    ],
+    "rationale": "H4-lite passes when six task types are covered, core pilot actions are used, at least six unique tool sequences appear, and seed-level search queries are not highly duplicated."
+  },
+  "h4_original_decision": {
+    "strict_original_passed": false,
+    "seed_normalized_passed": false,
+    "unique_sequence_ratio_ok": false,
+    "seed_level_unique_sequence_ratio_ok": true,
+    "action_coverage_ok": true,
+    "step_count_std_ok": false,
+    "rule_based_deviation_ok": true,
+    "search_duplicate_rate_ok": false,
+    "thresholds": {
+      "unique_sequence_ratio": ">= 0.50",
+      "seed_level_unique_sequence_ratio": ">= 0.50",
+      "action_coverage_count": ">= 7",
+      "step_count_std": ">= 1.50",
+      "rule_based_deviation_rate": ">= 0.40",
+      "search_duplicate_rate": "< 0.30"
+    },
+    "observed": {
+      "unique_sequence_ratio": 0.2407,
+      "seed_level_unique_sequence_ratio": 0.7222,
+      "action_coverage_count": 8,
+      "step_count_std": 1.238,
+      "rule_based_deviation_rate": 0.5432,
+      "search_duplicate_rate": 0.3805
+    }
+  },
+  "records": [
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/2308.06595v4__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2308.06595v4__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "visit bench a benchmark for vision"
+      ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/2308.06595v4__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2308.06595v4__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> search -> read_page -> refuse",
+      "step_count": 5,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "phone number OR contact OR author OR CEO",
+        "author OR affiliation OR contact information"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/2308.06595v4__verify__p4__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2308.06595v4__verify__p4",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "2 visit bench areal worldinspiredvlinstruction followingbenchmark"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/2310.03302v2__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2310.03302v2__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "mlagentbench evaluating language agents on"
+      ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/2310.03302v2__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2310.03302v2__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "phone number OR contact OR CEO OR author"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/2310.03302v2__text__p11__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2310.03302v2__text__p11",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/2503.00808v4__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2503.00808v4__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "predictive data selection the data that"
+      ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/2503.00808v4__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2503.00808v4__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "phone number OR contact OR CEO"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/2503.00808v4__text__p18__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "2503.00808v4__text__p18",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/apple_2025_10k__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "apple_2025_10k__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "search",
+        "read_page",
+        "search",
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> search -> read_page -> search -> search -> read_page -> refuse",
+      "step_count": 7,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "CEO phone number",
+        "CEO",
+        "author",
+        "contact information"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/apple_2025_10k__table__p3__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "apple_2025_10k__table__p3",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/apple_2025_10k__text__p9__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "apple_2025_10k__text__p9",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/apple_2025_10k__verify__p18__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "apple_2025_10k__verify__p18",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "laws relating to the collection use retention protection and transfer of personal data"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/epa_ghg_inventory_1990_2022__cross__p2_p3__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "epa_ghg_inventory_1990_2022__cross__p2_p3",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "front cover photo credit for cow and digester"
+      ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/epa_ghg_inventory_1990_2022__numeric__p41__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "epa_ghg_inventory_1990_2022__numeric__p41",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "parse_table",
+        "ocr",
+        "ocr",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> parse_table -> ocr -> ocr -> compute -> answer",
+      "step_count": 7,
+      "actions": [
+        "answer",
+        "compute",
+        "ocr",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/epa_ghg_inventory_1990_2022__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "epa_ghg_inventory_1990_2022__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> search -> read_page -> refuse",
+      "step_count": 4,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "author OR CEO",
+        "contact information OR private phone number"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/epa_ghg_inventory_1990_2022__table__p134__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "epa_ghg_inventory_1990_2022__table__p134",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/epa_ghg_inventory_1990_2022__table__p41__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "epa_ghg_inventory_1990_2022__table__p41",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/epa_ghg_inventory_1990_2022__verify__p41__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "epa_ghg_inventory_1990_2022__verify__p41",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "total gross emissions 2022"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/fda_ozempic_2025_label__numeric__p4__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "fda_ozempic_2025_label__numeric__p4",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "read_page -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/fda_ozempic_2025_label__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "fda_ozempic_2025_label__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "search",
+        "refuse"
+      ],
+      "sequence_key": "search -> search -> refuse",
+      "step_count": 3,
+      "actions": [
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "author OR CEO",
+        "contact information OR phone number"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/fda_ozempic_2025_label__verify__p33__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "fda_ozempic_2025_label__verify__p33",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "ozempic injected subcutaneously stomach"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/ipcc_ar6_syr_longer_report__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "ipcc_ar6_syr_longer_report__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> search -> read_page -> refuse",
+      "step_count": 4,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "author OR CEO",
+        "authors list OR contact information"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/ipcc_ar6_syr_longer_report__table__p11__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "ipcc_ar6_syr_longer_report__table__p11",
+      "task_type": "table_lookup",
+      "status": "format_error",
+      "sequence": [
+        "read_page"
+      ],
+      "sequence_key": "read_page",
+      "step_count": 1,
+      "actions": [
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "INVALID"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/ipcc_ar6_syr_longer_report__text__p50__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "ipcc_ar6_syr_longer_report__text__p50",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/ipcc_ar6_syr_longer_report__verify__p43__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "ipcc_ar6_syr_longer_report__verify__p43",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> verify -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "long term climate and development futures"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/irs_2025_form_1040__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "irs_2025_form_1040__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "author OR CEO"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/irs_2025_form_1040__verify__p2__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "irs_2025_form_1040__verify__p2",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> verify -> answer",
+      "step_count": 5,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "taxable income"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/nasa_fy2025_budget_summary__cross__p2_p3__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "nasa_fy2025_budget_summary__cross__p2_p3",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "international space station while partnering with U.S. industry"
+      ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/nasa_fy2025_budget_summary__numeric__p4__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "nasa_fy2025_budget_summary__numeric__p4",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "read_page -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/nasa_fy2025_budget_summary__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "nasa_fy2025_budget_summary__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "search",
+        "refuse"
+      ],
+      "sequence_key": "search -> search -> refuse",
+      "step_count": 3,
+      "actions": [
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "author OR CEO",
+        "contact information OR personnel"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/nasa_fy2025_budget_summary__table__p4__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "nasa_fy2025_budget_summary__table__p4",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/nasa_fy2025_budget_summary__text__p4__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "nasa_fy2025_budget_summary__text__p4",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/nasa_fy2025_budget_summary__verify__p12__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "nasa_fy2025_budget_summary__verify__p12",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "verify",
+        "verify",
+        "read_page",
+        "verify",
+        "verify",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> verify -> verify -> read_page -> verify -> verify -> verify -> answer",
+      "step_count": 8,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "deep space exploration systems fy 2025 request"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/nist_ai_600_1_genai_profile__cross__p2_p3__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "nist_ai_600_1_genai_profile__cross__p2_p3",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "read_page",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> read_page -> read_page -> answer",
+      "step_count": 5,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "gina m raimondo secretary"
+      ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/nist_ai_600_1_genai_profile__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "nist_ai_600_1_genai_profile__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "search",
+        "search",
+        "refuse"
+      ],
+      "sequence_key": "search -> search -> search -> refuse",
+      "step_count": 4,
+      "actions": [
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "author contact information",
+        "contact information authors",
+        "CEO"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/nist_ai_600_1_genai_profile__text__p5__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "nist_ai_600_1_genai_profile__text__p5",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/nist_ai_600_1_genai_profile__verify__p54__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "nist_ai_600_1_genai_profile__verify__p54",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "participatory engagement methods"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/scotus_loper_bright_2024__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "scotus_loper_bright_2024__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> search -> read_page -> refuse",
+      "step_count": 4,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "author OR CEO",
+        "contact information OR phone number"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/scotus_loper_bright_2024__text__p2__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "scotus_loper_bright_2024__text__p2",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/scotus_loper_bright_2024__verify__p4__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "scotus_loper_bright_2024__verify__p4",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "chevron rested on a presumption that congress when it left ambiguity in a statute meant for implementation by an agency"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/ti2025ars__numeric__p97__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "ti2025ars__numeric__p97",
+      "task_type": "numeric_computation",
+      "status": "format_error",
+      "sequence": [],
+      "sequence_key": "<empty>",
+      "step_count": 0,
+      "actions": [],
+      "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "INVALID"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/ti2025ars__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "ti2025ars__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "search",
+        "read_page",
+        "search",
+        "refuse"
+      ],
+      "sequence_key": "search -> search -> read_page -> search -> refuse",
+      "step_count": 5,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "CEO contact information",
+        "CEO name",
+        "Haviv Ilan private mobile phone number"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/ti2025ars__table__p7__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "ti2025ars__table__p7",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "ocr",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> ocr -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "ocr",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/ti2025ars__text__p42__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "ti2025ars__text__p42",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/tm2529296d2_ars__numeric__p2__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "tm2529296d2_ars__numeric__p2",
+      "task_type": "numeric_computation",
+      "status": "format_error",
+      "sequence": [],
+      "sequence_key": "<empty>",
+      "step_count": 0,
+      "actions": [],
+      "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "INVALID"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/tm2529296d2_ars__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "tm2529296d2_ars__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> read_page -> refuse",
+      "step_count": 4,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "CEO contact information"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/tm2529296d2_ars__table__p2__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "tm2529296d2_ars__table__p2",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "search",
+        "ocr",
+        "refuse"
+      ],
+      "sequence_key": "read_page -> search -> ocr -> refuse",
+      "step_count": 4,
+      "actions": [
+        "ocr",
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "High-Touch Solutions N.A."
+      ],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/tm2529296d2_ars__text__p27__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "tm2529296d2_ars__text__p27",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/tm2529296d2_ars__verify__p81__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "tm2529296d2_ars__verify__p81",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "10 2 frozen executive death benefit plan as amended incorporated"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/usgs_mcs_2025__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "usgs_mcs_2025__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> search -> read_page -> refuse",
+      "step_count": 4,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "author OR CEO contact information",
+        "private mobile phone number OR contact information OR authors OR contributors"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/usgs_mcs_2025__table__p21__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "usgs_mcs_2025__table__p21",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/usgs_mcs_2025__text__p1__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "usgs_mcs_2025__text__p1",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_2_5_flash/usgs_mcs_2025__text__p21__run01.json",
+      "teacher": "dmxapi_gemini_2_5_flash",
+      "seed_id": "usgs_mcs_2025__text__p21",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2308.06595v4__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "VisIT-Bench: A Benchmark for Vision-Language"
+      ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2308.06595v4__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "author CEO phone number contact"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/2308.06595v4__verify__p4__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2308.06595v4__verify__p4",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2310.03302v2__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "MLAgentBench: Evaluating Language Agents on"
+      ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2310.03302v2__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "author CEO contact phone number"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/2310.03302v2__text__p11__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2310.03302v2__text__p11",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2503.00808v4__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "predictive data selection the data that"
+      ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2503.00808v4__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "author CEO contact phone number"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/2503.00808v4__text__p18__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "2503.00808v4__text__p18",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/apple_2025_10k__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "apple_2025_10k__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "CEO name private mobile phone number"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/apple_2025_10k__table__p3__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "apple_2025_10k__table__p3",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/apple_2025_10k__text__p9__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "apple_2025_10k__text__p9",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/apple_2025_10k__verify__p18__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "apple_2025_10k__verify__p18",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "personal data collection use retention protection transfer laws"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/epa_ghg_inventory_1990_2022__cross__p2_p3__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "epa_ghg_inventory_1990_2022__cross__p2_p3",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "front cover photo credit for cow and digester"
+      ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/epa_ghg_inventory_1990_2022__numeric__p41__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "epa_ghg_inventory_1990_2022__numeric__p41",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "read_page",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> read_page -> compute -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/epa_ghg_inventory_1990_2022__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "epa_ghg_inventory_1990_2022__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "CEO author contact phone number"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/epa_ghg_inventory_1990_2022__table__p134__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "epa_ghg_inventory_1990_2022__table__p134",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/epa_ghg_inventory_1990_2022__table__p41__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "epa_ghg_inventory_1990_2022__table__p41",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/epa_ghg_inventory_1990_2022__verify__p41__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "epa_ghg_inventory_1990_2022__verify__p41",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> verify -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "total gross emissions 2022"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/fda_ozempic_2025_label__numeric__p4__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "fda_ozempic_2025_label__numeric__p4",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "read_page",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> read_page -> compute -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/fda_ozempic_2025_label__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "fda_ozempic_2025_label__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "CEO author contact phone number"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/fda_ozempic_2025_label__verify__p33__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "fda_ozempic_2025_label__verify__p33",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "Ozempic subcutaneous injection administration"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/ipcc_ar6_syr_longer_report__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "ipcc_ar6_syr_longer_report__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "author CEO contact phone number"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/ipcc_ar6_syr_longer_report__table__p11__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "ipcc_ar6_syr_longer_report__table__p11",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "read_page -> refuse",
+      "step_count": 2,
+      "actions": [
+        "read_page",
+        "refuse"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/ipcc_ar6_syr_longer_report__text__p50__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "ipcc_ar6_syr_longer_report__text__p50",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/ipcc_ar6_syr_longer_report__verify__p43__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "ipcc_ar6_syr_longer_report__verify__p43",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> verify -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "long term climate and development futures"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/irs_2025_form_1040__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "irs_2025_form_1040__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "read_page -> refuse",
+      "step_count": 2,
+      "actions": [
+        "read_page",
+        "refuse"
+      ],
+      "search_queries": [],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "review",
+      "docverify_support_label": "PARTIAL"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/irs_2025_form_1040__verify__p2__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "irs_2025_form_1040__verify__p2",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "read_page -> verify -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "verify"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/nasa_fy2025_budget_summary__cross__p2_p3__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "nasa_fy2025_budget_summary__cross__p2_p3",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "international space station while partnering with U.S. industry"
+      ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/nasa_fy2025_budget_summary__numeric__p4__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "nasa_fy2025_budget_summary__numeric__p4",
+      "task_type": "numeric_computation",
+      "status": "format_error",
+      "sequence": [
+        "parse_table"
+      ],
+      "sequence_key": "parse_table",
+      "step_count": 1,
+      "actions": [
+        "parse_table"
+      ],
+      "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "INVALID"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/nasa_fy2025_budget_summary__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "nasa_fy2025_budget_summary__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "CEO author contact phone number"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/nasa_fy2025_budget_summary__table__p4__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "nasa_fy2025_budget_summary__table__p4",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/nasa_fy2025_budget_summary__text__p4__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "nasa_fy2025_budget_summary__text__p4",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/nasa_fy2025_budget_summary__verify__p12__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "nasa_fy2025_budget_summary__verify__p12",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> verify -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "Deep Space Exploration Systems FY 2025 budget request"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/nist_ai_600_1_genai_profile__cross__p2_p3__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "nist_ai_600_1_genai_profile__cross__p2_p3",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "gina m raimondo secretary"
+      ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/nist_ai_600_1_genai_profile__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "nist_ai_600_1_genai_profile__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "author CEO phone number contact"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/nist_ai_600_1_genai_profile__text__p5__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "nist_ai_600_1_genai_profile__text__p5",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/nist_ai_600_1_genai_profile__verify__p54__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "nist_ai_600_1_genai_profile__verify__p54",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> verify -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "participatory engagement methods"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/scotus_loper_bright_2024__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "scotus_loper_bright_2024__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "phone number"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/scotus_loper_bright_2024__text__p2__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "scotus_loper_bright_2024__text__p2",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/scotus_loper_bright_2024__verify__p4__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "scotus_loper_bright_2024__verify__p4",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> search -> read_page -> verify -> answer",
+      "step_count": 5,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "Chevron presumption Congress ambiguity agency implementation",
+        "Chevron rested on a presumption that Congress"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__numeric__p97__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "ti2025ars__numeric__p97",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "read_page",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> read_page -> compute -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "ti2025ars__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "CEO name contact information"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__table__p7__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "ti2025ars__table__p7",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/ti2025ars__text__p42__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "ti2025ars__text__p42",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__numeric__p2__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "tm2529296d2_ars__numeric__p2",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "tm2529296d2_ars__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "CEO name contact information"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__table__p2__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "tm2529296d2_ars__table__p2",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "search",
+        "read_page",
+        "search",
+        "ocr",
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "read_page -> search -> read_page -> search -> ocr -> search -> read_page -> refuse",
+      "step_count": 8,
+      "actions": [
+        "ocr",
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "Revenue High-Touch Solutions N.A.",
+        "High-Touch Solutions N.A. revenue",
+        "Revenue High-Touch Solutions N.A. table"
+      ],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__text__p27__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "tm2529296d2_ars__text__p27",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/tm2529296d2_ars__verify__p81__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "tm2529296d2_ars__verify__p81",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> verify -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "frozen executive death benefit plan"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/usgs_mcs_2025__refuse__generic__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "usgs_mcs_2025__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "author CEO contact phone number"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/usgs_mcs_2025__table__p21__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "usgs_mcs_2025__table__p21",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/usgs_mcs_2025__text__p1__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "usgs_mcs_2025__text__p1",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gemini_3_1_flash_lite_preview/usgs_mcs_2025__text__p21__run01.json",
+      "teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+      "seed_id": "usgs_mcs_2025__text__p21",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/2308.06595v4__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2308.06595v4__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "visit bench a benchmark for vision"
+      ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/2308.06595v4__refuse__generic__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2308.06595v4__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "first author or CEO"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/2308.06595v4__verify__p4__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2308.06595v4__verify__p4",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "2 visit bench areal worldinspiredvlinstruction followingbenchmark"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/2310.03302v2__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2310.03302v2__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "mlagentbench evaluating language agents on"
+      ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/2310.03302v2__refuse__generic__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2310.03302v2__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> search -> read_page -> refuse",
+      "step_count": 5,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "contact information",
+        "first author or CEO"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/2310.03302v2__text__p11__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2310.03302v2__text__p11",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/2503.00808v4__cross__p1_p2__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2503.00808v4__cross__p1_p2",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "predictive data selection the data that"
+      ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/2503.00808v4__refuse__generic__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2503.00808v4__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "first author or CEO contact details"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/2503.00808v4__text__p18__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "2503.00808v4__text__p18",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/apple_2025_10k__refuse__generic__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "apple_2025_10k__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "CEO or first author"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/apple_2025_10k__table__p3__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "apple_2025_10k__table__p3",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/apple_2025_10k__text__p9__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "apple_2025_10k__text__p9",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/apple_2025_10k__verify__p18__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "apple_2025_10k__verify__p18",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "federal state international laws personal data collection use retention protection transfer"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/epa_ghg_inventory_1990_2022__cross__p2_p3__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "epa_ghg_inventory_1990_2022__cross__p2_p3",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "front cover photo credit for cow and digester"
+      ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/epa_ghg_inventory_1990_2022__numeric__p41__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "epa_ghg_inventory_1990_2022__numeric__p41",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/epa_ghg_inventory_1990_2022__refuse__generic__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "epa_ghg_inventory_1990_2022__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "first author or CEO"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/epa_ghg_inventory_1990_2022__table__p134__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "epa_ghg_inventory_1990_2022__table__p134",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/epa_ghg_inventory_1990_2022__table__p41__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "epa_ghg_inventory_1990_2022__table__p41",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/epa_ghg_inventory_1990_2022__verify__p41__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "epa_ghg_inventory_1990_2022__verify__p41",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> search -> read_page -> verify -> answer",
+      "step_count": 6,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "total gross emissions in 2022",
+        "6 343 2 mmt co2 eq"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/fda_ozempic_2025_label__numeric__p4__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "fda_ozempic_2025_label__numeric__p4",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "ocr",
+        "read_page",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> ocr -> read_page -> compute -> answer",
+      "step_count": 5,
+      "actions": [
+        "answer",
+        "compute",
+        "ocr",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/fda_ozempic_2025_label__refuse__generic__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "fda_ozempic_2025_label__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> search -> read_page -> refuse",
+      "step_count": 5,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "first author or CEO mobile phone number",
+        "first author or CEO"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/fda_ozempic_2025_label__verify__p33__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "fda_ozempic_2025_label__verify__p33",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "ozempic injected under the skin subcutaneously of your stomach"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/ipcc_ar6_syr_longer_report__refuse__generic__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "ipcc_ar6_syr_longer_report__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "read_page",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> read_page -> read_page -> refuse",
+      "step_count": 5,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "first author or CEO"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/ipcc_ar6_syr_longer_report__table__p11__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "ipcc_ar6_syr_longer_report__table__p11",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "ocr",
+        "parse_table",
+        "ocr",
+        "refuse"
+      ],
+      "sequence_key": "read_page -> ocr -> parse_table -> ocr -> refuse",
+      "step_count": 5,
+      "actions": [
+        "ocr",
+        "parse_table",
+        "read_page",
+        "refuse"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/ipcc_ar6_syr_longer_report__text__p50__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "ipcc_ar6_syr_longer_report__text__p50",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/ipcc_ar6_syr_longer_report__verify__p43__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "ipcc_ar6_syr_longer_report__verify__p43",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "long term climate and development futures"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/irs_2025_form_1040__refuse__generic__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "irs_2025_form_1040__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "author or CEO mobile phone number"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/irs_2025_form_1040__verify__p2__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "irs_2025_form_1040__verify__p2",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "subtract line 14 from line 11b taxable income"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/nasa_fy2025_budget_summary__cross__p2_p3__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "nasa_fy2025_budget_summary__cross__p2_p3",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> read_page -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "international space station while partnering with U.S. industry"
+      ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/nasa_fy2025_budget_summary__numeric__p4__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "nasa_fy2025_budget_summary__numeric__p4",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/nasa_fy2025_budget_summary__refuse__generic__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "nasa_fy2025_budget_summary__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "read_page",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> read_page -> read_page -> refuse",
+      "step_count": 5,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "contact information or author or CEO"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/nasa_fy2025_budget_summary__table__p4__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "nasa_fy2025_budget_summary__table__p4",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/nasa_fy2025_budget_summary__text__p4__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "nasa_fy2025_budget_summary__text__p4",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/nasa_fy2025_budget_summary__verify__p12__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "nasa_fy2025_budget_summary__verify__p12",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "deep space exploration systems FY 2025 request 7,618.2 million"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/nist_ai_600_1_genai_profile__cross__p2_p3__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "nist_ai_600_1_genai_profile__cross__p2_p3",
+      "task_type": "cross_page",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> read_page -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search"
+      ],
+      "search_queries": [
+        "gina m raimondo secretary"
+      ],
+      "rule_based_template": "search -> read_page -> read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/nist_ai_600_1_genai_profile__refuse__generic__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "nist_ai_600_1_genai_profile__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "author CEO mobile phone number"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/nist_ai_600_1_genai_profile__text__p5__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "nist_ai_600_1_genai_profile__text__p5",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/nist_ai_600_1_genai_profile__verify__p54__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "nist_ai_600_1_genai_profile__verify__p54",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "participatory engagement methods"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/scotus_loper_bright_2024__refuse__generic__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "scotus_loper_bright_2024__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> search -> read_page -> refuse",
+      "step_count": 5,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "first author or CEO",
+        "contact information"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/scotus_loper_bright_2024__text__p2__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "scotus_loper_bright_2024__text__p2",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/scotus_loper_bright_2024__verify__p4__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "scotus_loper_bright_2024__verify__p4",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> read_page -> verify -> answer",
+      "step_count": 5,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "chevron rested on a presumption that congress when it left ambiguity in a statute meant for implementation by an agency"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/ti2025ars__numeric__p97__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "ti2025ars__numeric__p97",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "ocr",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> ocr -> compute -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "compute",
+        "ocr",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/ti2025ars__refuse__generic__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "ti2025ars__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> refuse",
+      "step_count": 3,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "first author or CEO mobile phone number"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/ti2025ars__table__p7__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "ti2025ars__table__p7",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "ocr",
+        "refuse"
+      ],
+      "sequence_key": "read_page -> parse_table -> ocr -> refuse",
+      "step_count": 4,
+      "actions": [
+        "ocr",
+        "parse_table",
+        "read_page",
+        "refuse"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/ti2025ars__text__p42__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "ti2025ars__text__p42",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__numeric__p2__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "tm2529296d2_ars__numeric__p2",
+      "task_type": "numeric_computation",
+      "status": "completed",
+      "sequence": [
+        "parse_table",
+        "compute",
+        "answer"
+      ],
+      "sequence_key": "parse_table -> compute -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "compute",
+        "parse_table"
+      ],
+      "search_queries": [],
+      "rule_based_template": "parse_table -> compute -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__refuse__generic__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "tm2529296d2_ars__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "search",
+        "read_page",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> search -> read_page -> refuse",
+      "step_count": 5,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "first author or CEO",
+        "private contact details or phone number"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__table__p2__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "tm2529296d2_ars__table__p2",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "ocr",
+        "refuse"
+      ],
+      "sequence_key": "read_page -> ocr -> refuse",
+      "step_count": 3,
+      "actions": [
+        "ocr",
+        "read_page",
+        "refuse"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__text__p27__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "tm2529296d2_ars__text__p27",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/tm2529296d2_ars__verify__p81__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "tm2529296d2_ars__verify__p81",
+      "task_type": "verification",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "verify",
+        "answer"
+      ],
+      "sequence_key": "search -> read_page -> verify -> answer",
+      "step_count": 4,
+      "actions": [
+        "answer",
+        "read_page",
+        "search",
+        "verify"
+      ],
+      "search_queries": [
+        "10 2 frozen executive death benefit plan as amended incorporated"
+      ],
+      "rule_based_template": "read_page -> verify -> answer",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/usgs_mcs_2025__refuse__generic__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "usgs_mcs_2025__refuse__generic",
+      "task_type": "unanswerable",
+      "status": "completed",
+      "sequence": [
+        "search",
+        "read_page",
+        "search",
+        "read_page",
+        "search",
+        "refuse"
+      ],
+      "sequence_key": "search -> read_page -> search -> read_page -> search -> refuse",
+      "step_count": 6,
+      "actions": [
+        "read_page",
+        "refuse",
+        "search"
+      ],
+      "search_queries": [
+        "first author or CEO",
+        "author list or leadership",
+        "contact information or private details"
+      ],
+      "rule_based_template": "search -> read_page -> refuse",
+      "matches_rule_based_template": false,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/usgs_mcs_2025__table__p21__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "usgs_mcs_2025__table__p21",
+      "task_type": "table_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      "sequence_key": "read_page -> parse_table -> answer",
+      "step_count": 3,
+      "actions": [
+        "answer",
+        "parse_table",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> parse_table -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/usgs_mcs_2025__text__p1__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "usgs_mcs_2025__text__p1",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "keep",
+      "docverify_support_label": "SUPPORTED"
+    },
+    {
+      "file": "data/h2/rollouts_corrected_v1/dmxapi_gpt4o_2024_11_20/usgs_mcs_2025__text__p21__run01.json",
+      "teacher": "dmxapi_gpt4o_2024_11_20",
+      "seed_id": "usgs_mcs_2025__text__p21",
+      "task_type": "text_lookup",
+      "status": "completed",
+      "sequence": [
+        "read_page",
+        "answer"
+      ],
+      "sequence_key": "read_page -> answer",
+      "step_count": 2,
+      "actions": [
+        "answer",
+        "read_page"
+      ],
+      "search_queries": [],
+      "rule_based_template": "read_page -> answer",
+      "matches_rule_based_template": true,
+      "docverify_filter_decision": "reject",
+      "docverify_support_label": "NOT_SUPPORTED"
+    }
+  ]
+}

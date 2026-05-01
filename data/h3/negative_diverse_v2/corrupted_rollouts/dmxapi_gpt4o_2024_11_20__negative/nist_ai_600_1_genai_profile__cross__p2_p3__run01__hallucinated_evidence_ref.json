@@ -1,0 +1,296 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "hard",
+    "doc_id": "nist_ai_600_1_genai_profile",
+    "metadata": {
+      "anchor_page": 2,
+      "anchor_phrase": "gina m raimondo secretary",
+      "answer_page": 3,
+      "audit_note": "B7 fix: p1 and p2 share identical NIST cover. Re-anchored on p2 unique 'Gina M. Raimondo, Secretary' and pointed answer to p3 ('About AI at NIST').",
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/nist_ai_600_1_genai_profile.pdf",
+    "question": "Use search to find the page about \"gina m raimondo secretary\". Then inspect the following page and report the heading or leading phrase.",
+    "reference_answer": "About AI at NIST",
+    "required_tools": [
+      "search",
+      "read_page"
+    ],
+    "seed_id": "nist_ai_600_1_genai_profile__cross__p2_p3",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "page": 3
+      }
+    ],
+    "task_type": "cross_page",
+    "tool_hints": {
+      "target_page": 3
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gpt4o_2024_11_20__negative",
+    "model": "gpt-4o-2024-11-20"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\":\"I should search for the phrase 'gina m raimondo secretary' to locate the anchor page.\",\"action\":\"search\",\"action_input\":{\"query\":\"gina m raimondo secretary\"}}",
+      "thought": "I should search for the phrase 'gina m raimondo secretary' to locate the anchor page.",
+      "action": "search",
+      "action_input": {
+        "query": "gina m raimondo secretary",
+        "top_k": 3
+      },
+      "observation": {
+        "action": "search",
+        "status": "success",
+        "result": {
+          "query": "gina m raimondo secretary",
+          "results": [
+            {
+              "page": 2,
+              "score": 4.0,
+              "snippet": "NIST Trustworthy and Responsible AI\nNIST AI 600-1\nArtificial Intelligence Risk Management\nFramework: Generative Artificial\nIntelligence Profile\nThis publication is available free of charge from:\nhttps://doi.org/10.6028/NIST.AI.600-1\nJuly 20"
+            },
+            {
+              "page": 5,
+              "score": 1.0,
+              "snippet": "1. Introduction\nThis document is a cross-sectoral profile of and companion resource for the AI Risk Management\nFramework (AI RMF 1.0) for Generative AI,1 pursuant to President Biden’s Executive Order (EO) 14110 on\nSafe, Secure, and Trustwor"
+            },
+            {
+              "page": 58,
+              "score": 1.0,
+              "snippet": "Appendix B. References\nAcemoglu, D. (2024) The Simple Macroeconomics of AI https://www.nber.org/papers/w32487\nAI Incident Database. https://incidentdatabase.ai/\nAtherton, D. (2024) Deepfakes and Child Safety: A Survey and Analysis of 2023 I"
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "page_list"
+        },
+        "confidence": 0.85,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The search results indicate page 2 contains relevant information about 'gina m raimondo secretary.' I should read page 2 to confirm and then inspect the following page (page 3).\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[2]}}",
+      "thought": "The search results indicate page 2 contains relevant information about 'gina m raimondo secretary.' I should read page 2 to confirm and then inspect the following page (page 3).",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          2
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 2,
+              "text": "NIST Trustworthy and Responsible AI\nNIST AI 600-1\nArtificial Intelligence Risk Management\nFramework: Generative Artificial\nIntelligence Profile\nThis publication is available free of charge from:\nhttps://doi.org/10.6028/NIST.AI.600-1\nJuly 2024\nU.S. Department of Commerce\nGina M. Raimondo, Secretary\nNational Institute of Standards and Technology\nLaurie E. Locascio, NIST Director and Under Secretary of Commerce for Standards and Technology",
+              "summary": "NIST Trustworthy and Responsible AI",
+              "image_path": "artifacts/docenv/nist_ai_600_1_genai_profile/page_002.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\":\"I have confirmed the presence of 'gina m raimondo secretary' on page 2. Now I should read page 3 to inspect its heading or leading phrase.\",\"action\":\"read_page\",\"action_input\":{\"page_ids\":[3]}}",
+      "thought": "I have confirmed the presence of 'gina m raimondo secretary' on page 2. Now I should read page 3 to inspect its heading or leading phrase.",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          3
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 3,
+              "text": "About AI at NIST: The National Institute of Standards and Technology (NIST) develops measurements,\ntechnology, tools, and standards to advance reliable, safe, transparent, explainable, privacy-enhanced,\nand fair artificial intelligence (AI) so that its full commercial and societal benefits can be realized without\nharm to people or the planet. NIST, which has conducted both fundamental and applied work on AI for\nmore than a decade, is also helping to fulfill the 2023 Executive Order on Safe, Secure, and Trustworthy\nAI. NIST established the U.S. AI Safety Institute and the companion AI Safety Institute Consortium to\ncontinue the efforts set in motion by the E.O. to build the science necessary for safe, secure, and\ntrustworthy development and use of AI.\nAcknowledgments: This report was accomplished with the many helpful comments and contributions\nfrom the community, including the NIST Generative AI Public Working Group, and NIST staff and guest\nresearchers: Chloe Autio, Jesse Dunietz, Patrick Hall, Shomik Jain, Kamie Roberts, Reva Schwartz, Martin\nStanley, and Elham Tabassi.\nNIST Technical Series Policies\nCopyright, Use, and Licensing Statements\nNIST Technical Series Publication Identifier Syntax\nPublication History\nApproved by the NIST Editorial Review Board on 07-25-2024\nContact Information\nai-inquiries@nist.gov\nNational Institute of Standards and Technology\nAttn: NIST AI Innovation Lab, Information Technology Laboratory\n100 Bureau Drive (Mail Stop 8900) Gaithersburg, MD 20899-8900\nAdditional Information\nAdditional information about this publication and other NIST AI publications are available at\nhttps://airc.nist.gov/Home.\nDisclaimer: Certain commercial entities, equipment, or materials may be identified in this document in\norder to adequately describe an experimental procedure or concept. Such identification is not intended to\nimply recommendation or endorsement by the National Institute of Standards and Technology, nor is it\nintended to imply that the entities, materials, or equipment are necessarily the best available for the\npurpose. Any mention of commercial, non-profit, academic partners, or their products, or references is\nfor information only; it is not intended to imply endorsement or recommendation by any U.S.\nGovernment agency.",
+              "summary": "About AI at NIST: The National Institute of Standards and Technology (NIST) develops measurements,",
+              "image_path": "artifacts/docenv/nist_ai_600_1_genai_profile/page_003.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 3,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 4,
+      "raw_model_output": "{\"thought\":\"I have inspected page 3 and found its leading phrase. I can now answer the question with the relevant information.\",\"action\":\"answer\",\"action_input\":{\"text\":\"About AI at NIST: The National Institute of Standards and Technology (NIST) develops measurements, technology, tools, and standards to advance reliable, safe, transparent, explainable, privacy-enhanced, and fair artificial intelligence (AI).\",\"evidence_refs\":[{\"page\":3}]}}",
+      "thought": "I have inspected page 3 and found its leading phrase. I can now answer the question with the relevant information.",
+      "action": "answer",
+      "action_input": {
+        "text": "About AI at NIST: The National Institute of Standards and Technology (NIST) develops measurements, technology, tools, and standards to advance reliable, safe, transparent, explainable, privacy-enhanced, and fair artificial intelligence (AI).",
+        "evidence_refs": [
+          {
+            "page": 999999,
+            "bbox": [
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "About AI at NIST: The National Institute of Standards and Technology (NIST) develops measurements, technology, tools, and standards to advance reliable, safe, transparent, explainable, privacy-enhanced, and fair artificial intelligence (AI).",
+          "evidence_refs": [
+            {
+              "page": 999999,
+              "bbox": [
+                0,
+                0,
+                1,
+                1
+              ]
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "search",
+    "read_page",
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "About AI at NIST: The National Institute of Standards and Technology (NIST) develops measurements, technology, tools, and standards to advance reliable, safe, transparent, explainable, privacy-enhanced, and fair artificial intelligence (AI).",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1117,
+      "completion_tokens": 40,
+      "total_tokens": 1157,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1462,
+      "completion_tokens": 57,
+      "total_tokens": 1519,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1696,
+      "completion_tokens": 52,
+      "total_tokens": 1748,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 2161,
+      "completion_tokens": 95,
+      "total_tokens": 2256,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 4,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "hallucinated_evidence_ref",
+    "source_teacher": "dmxapi_gpt4o_2024_11_20",
+    "source_seed_id": "nist_ai_600_1_genai_profile__cross__p2_p3",
+    "source_final_action": "answer",
+    "source_final_answer": "About AI at NIST: The National Institute of Standards and Technology (NIST) develops measurements, technology, tools, and standards to advance reliable, safe, transparent, explainable, privacy-enhanced, and fair artificial intelligence (AI).",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer is preserved, but terminal evidence_refs point to a page never observed in the trajectory."
+  }
+}

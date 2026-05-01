@@ -1,0 +1,520 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      [
+        "parse_table",
+        "answer"
+      ],
+      [
+        "read_page",
+        "ocr",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "epa_ghg_inventory_1990_2022",
+    "metadata": {
+      "audit_note": "B2 fix: original asked header-row x header-column intersection (returned a header value). Now points to an actual data cell. | Followup F4: replaced the CH4/Percent Change cell with HFCs/2022 because the parser splits chemical subscripts and multi-row header text.",
+      "bbox": [
+        74.904,
+        481.005997,
+        540.1,
+        694.289688947368
+      ],
+      "column_label": "2022",
+      "page": 41,
+      "review_status": "needs_human_review",
+      "row_label": "HFCs"
+    },
+    "pdf_path": "data/raw_pdfs/epa_ghg_inventory_1990_2022.pdf",
+    "question": "On page 41, in the table, what is the value for row \"HFCs\" under column \"2022\"? Use the table evidence on that page; do not answer from memory.",
+    "reference_answer": "182.8",
+    "required_tools": [
+      "read_page",
+      "parse_table"
+    ],
+    "seed_id": "epa_ghg_inventory_1990_2022__table__p41",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          74.904,
+          481.005997,
+          540.1,
+          694.289688947368
+        ],
+        "page": 41
+      }
+    ],
+    "task_type": "table_lookup",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        74.904,
+        481.005997,
+        540.1,
+        694.289688947368
+      ],
+      "target_page": 41
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to extract the value for 'HFCs' in the year '2022' from the table on page 41.\", \"action\": \"parse_table\", \"action_input\": {\"page_id\": 41, \"bbox\": [74.904, 481.005997, 540.1, 694.289688947368]}}",
+      "thought": "I need to extract the value for 'HFCs' in the year '2022' from the table on page 41.",
+      "action": "parse_table",
+      "action_input": {
+        "page_id": 41,
+        "bbox": [
+          74.904,
+          481.005997,
+          540.1,
+          694.289688947368
+        ]
+      },
+      "observation": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {
+          "page": 41,
+          "bbox": [
+            74.904,
+            481.005997,
+            540.1,
+            694.2896889473683
+          ],
+          "rows": [
+            [
+              "Gas/Source",
+              "",
+              "1990",
+              "2005",
+              "2018",
+              "",
+              "2019",
+              "",
+              "2020",
+              "",
+              "2021",
+              "",
+              "2022",
+              "",
+              "Percent",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "Change",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "Since",
+              ""
+            ],
+            [
+              "Gas/Source",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "2019",
+              "",
+              "2020",
+              "",
+              "2021",
+              "",
+              "2022",
+              "",
+              "1990",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "6,126.9",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "CH (excludes LULUCF sources)a\n4",
+              "",
+              "871.7",
+              "795.4",
+              "771.5",
+              "",
+              "754.3",
+              "",
+              "735.3",
+              "",
+              "720.5",
+              "",
+              "702.4",
+              "",
+              "-19.4%",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "419.2",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "HFCs",
+              "",
+              "47.7",
+              "121.7",
+              "163.9",
+              "",
+              "168.2",
+              "",
+              "170.3",
+              "",
+              "177.0",
+              "",
+              "182.8",
+              "",
+              "282.9%",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "10.2",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "SF\n6",
+              "",
+              "37.9",
+              "20.2",
+              "7.6",
+              "",
+              "8.4",
+              "",
+              "8.1",
+              "",
+              "8.5",
+              "",
+              "7.6",
+              "",
+              "-80.0%",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "1.0",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Total Gross Emissions (Sources)a",
+              "",
+              "6,536.9",
+              "7,494.6",
+              "6,752.7",
+              "",
+              "6,590.1",
+              "",
+              "6,001.8",
+              "",
+              "6,328.8",
+              "",
+              "6,343.2",
+              "",
+              "-3.0%",
+              ""
+            ],
+            [
+              "LULUCF Emissionsb",
+              "",
+              "58.0",
+              "68.9",
+              "62.8",
+              "",
+              "58.0",
+              "",
+              "68.4",
+              "",
+              "72.9",
+              "",
+              "67.6",
+              "",
+              "16.5%",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "58.5",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "NO\n2",
+              "",
+              "4.8",
+              "10.3",
+              "7.3",
+              "",
+              "5.5",
+              "",
+              "9.1",
+              "",
+              "10.7",
+              "",
+              "9.1",
+              "",
+              "88.3%",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "(976.6)",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "LULUCF Sector Net Totald",
+              "",
+              "(976.7)",
+              "(907.7)",
+              "(915.5)",
+              "",
+              "(863.6)",
+              "",
+              "(904.4)",
+              "",
+              "(910.6)",
+              "",
+              "(854.2)",
+              "",
+              "-12.5%",
+              ""
+            ],
+            [
+              "Net Emissions (Sources and Sinks)",
+              "",
+              "5,560.2",
+              "6,586.9",
+              "5,837.3",
+              "",
+              "5,726.6",
+              "",
+              "5,097.4",
+              "",
+              "5,418.2",
+              "",
+              "5,489.0",
+              "",
+              "-1.3%",
+              ""
+            ]
+          ],
+          "markdown": "| Gas/Source |  | 1990 | 2005 | 2018 |  | 2019 |  | 2020 |  | 2021 |  | 2022 |  | Percent |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  | Change |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  | Since |  |\n| Gas/Source |  |  |  |  |  | 2019 |  | 2020 |  | 2021 |  | 2022 |  | 1990 |  |\n|  |  |  | 6,126.9 |  |  |  |  |  |  |  |  |  |  |  |  |\n| CH (excludes LULUCF sources)a\n4 |  | 871.7 | 795.4 | 771.5 |  | 754.3 |  | 735.3 |  | 720.5 |  | 702.4 |  | -19.4% |  |\n|  |  |  | 419.2 |  |  |  |  |  |  |  |  |  |  |  |  |\n| HFCs |  | 47.7 | 121.7 | 163.9 |  | 168.2 |  | 170.3 |  | 177.0 |  | 182.8 |  | 282.9% |  |\n|  |  |  | 10.2 |  |  |  |  |  |  |  |  |  |  |  |  |\n| SF\n6 |  | 37.9 | 20.2 | 7.6 |  | 8.4 |  | 8.1 |  | 8.5 |  | 7.6 |  | -80.0% |  |\n|  |  |  | 1.0 |  |  |  |  |  |  |  |  |  |  |  |  |\n| Total Gross Emissions (Sources)a |  | 6,536.9 | 7,494.6 | 6,752.7 |  | 6,590.1 |  | 6,001.8 |  | 6,328.8 |  | 6,343.2 |  | -3.0% |  |\n| LULUCF Emissionsb |  | 58.0 | 68.9 | 62.8 |  | 58.0 |  | 68.4 |  | 72.9 |  | 67.6 |  | 16.5% |  |\n|  |  |  | 58.5 |  |  |  |  |  |  |  |  |  |  |  |  |\n| NO\n2 |  | 4.8 | 10.3 | 7.3 |  | 5.5 |  | 9.1 |  | 10.7 |  | 9.1 |  | 88.3% |  |\n|  |  |  | (976.6) |  |  |  |  |  |  |  |  |  |  |  |  |\n| LULUCF Sector Net Totald |  | (976.7) | (907.7) | (915.5) |  | (863.6) |  | (904.4) |  | (910.6) |  | (854.2) |  | -12.5% |  |\n| Net Emissions (Sources and Sinks) |  | 5,560.2 | 6,586.9 | 5,837.3 |  | 5,726.6 |  | 5,097.4 |  | 5,418.2 |  | 5,489.0 |  | -1.3% |  |"
+        },
+        "provenance": {
+          "page": 41,
+          "bbox": [
+            74.904,
+            481.005997,
+            540.1,
+            694.2896889473683
+          ],
+          "element_type": "table"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"The table shows the row 'HFCs' and the column '2022' corresponds to the value '182.8'.\", \"action\": \"answer\", \"action_input\": {\"text\": \"The value for 'HFCs' in 2022 is 182.8.\", \"evidence_refs\": [{\"page\": 41}]}}",
+      "thought": "The table shows the row 'HFCs' and the column '2022' corresponds to the value '182.8'.",
+      "action": "answer",
+      "action_input": {
+        "text": "The value for 'HFCs' in 2022 is 182.8.",
+        "evidence_refs": [
+          {
+            "page": 41
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "The value for 'HFCs' in 2022 is 182.8.",
+          "evidence_refs": [
+            {
+              "page": 41
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "parse_table",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "The value for 'HFCs' in 2022 is 182.8.",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1476,
+      "completion_tokens": 105,
+      "total_tokens": 1581,
+      "prompt_tokens_details": {
+        "text_tokens": 1476,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 3035,
+      "completion_tokens": 85,
+      "total_tokens": 3120,
+      "prompt_tokens_details": {
+        "text_tokens": 3035,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  }
+}

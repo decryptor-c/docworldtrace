@@ -1,0 +1,160 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "answer"
+      ],
+      [
+        "search",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "easy",
+    "doc_id": "usgs_mcs_2025",
+    "metadata": {
+      "audit_note": "W12 fix: p18 was a figure-only page (regional minerals map) with no real heading. Switched to p21 which starts with a clean Table 4 caption. | V2 fix: Disambiguated the caption from the visible page number.",
+      "page": 21,
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/usgs_mcs_2025.pdf",
+    "question": "On page 21, ignore page numbers and footnote markers. What table caption begins the page? Return the caption text only.",
+    "reference_answer": "Table 4.—The 2022 U.S. Critical Minerals List",
+    "required_tools": [
+      "read_page"
+    ],
+    "seed_id": "usgs_mcs_2025__text__p21",
+    "source": "structure_heuristic",
+    "supporting_refs": [
+      {
+        "page": 21
+      }
+    ],
+    "task_type": "text_lookup",
+    "tool_hints": {
+      "target_page": 21
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"action\":\"read_page\",\"action_input\":{\"page_ids\":[21]}}",
+      "thought": "",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          21
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 21,
+              "text": "17\n1\nTable 4.—The 2022 U.S. Critical Minerals List\nCritical mineral Applications\nAluminum Metallurgy and many sectors of the economy.\nAntimony Flame retardants and lead-acid batteries.\nArsenic Pesticides and semiconductors.\nBarite Hydrocarbon production.\nBeryllium Aerospace and defense.\nBismuth Medical, metallurgy, and atomic research.\nCerium2 Catalytic converters, ceramics, glass, metallurgy, and polishing compounds.\nCesium Research and development.\nChromium Metallurgy.\nCobalt Batteries and metallurgy.\nDysprosium2 Data storage devices, lasers, and permanent magnets.\nErbium2 Fiber optics, glass colorant, lasers, and optical amplifiers.\nEuropium2 Nuclear control rods and phosphors.\nFluorspar Cement, industrial chemicals, and metallurgy.\nGadolinium2 Medical imaging, metallurgy, and permanent magnets.\nGallium Integrated circuits and optical devices.\nGermanium Defense and fiber optics.\nGraphite Batteries, fuel cells, and lubricants.\nHafnium Ceramics, nuclear control rods, and metallurgy.\nHolmium2 Lasers, nuclear control rods, and permanent magnets.\nIndium Liquid crystal displays.\nIridium3 Anode coatings for electrochemical processes and chemical catalysts.\nLanthanum2 Batteries, catalysts, ceramics, glass, and metallurgy.\nLithium Batteries.\nLutetium2 Cancer therapies, electronics, and medical imaging.\nMagnesium Metallurgy.\nManganese Batteries and metallurgy.\nNeodymium2 Catalysts, lasers, and permanent magnets.\nNickel Batteries and metallurgy.\nNiobium Metallurgy.\nPalladium3 Catalytic converters and catalysts.\nPlatinum3 Catalytic converters and catalysts.\nPraseodymium2 Aerospace alloys, batteries, ceramics, colorants, and permanent magnets.\nRhodium3 Catalytic converters, catalysts, and electrical components.\nRubidium Research and development.\nRuthenium3 Catalysts, electronic components, and computer chips.\nSamarium2 Cancer treatments, nuclear, and permanent magnets.\nScandium Ceramics, fuel cells, and metallurgy.\nTantalum Capacitors and metallurgy.\nTellurium Metallurgy, solar cells, and thermoelectric devices.\nTerbium2 Fiber optics, lasers, permanent magnets, and solid state devices.\nThulium2 Lasers and metallurgy.\nTin Metallurgy.\nTitanium Metallurgy and pigments.\nTungsten Metallurgy.\nVanadium Batteries, catalysts, and metallurgy.\nYtterbium2 Catalysts, lasers, metallurgy, and scintillators.\nYttrium Catalysts, ceramics, lasers, metallurgy, and phosphors.\nZinc Metallurgy.\nZirconium Metallurgy and nuclear.\n1The 2022 Final List of Critical Minerals published February 24, 2022, by the U.S. Geological Survey (87 FR 10381).\n2Included in the Rare Earths chapter.\n3Included in the Platinum-Group Metals chapter.",
+              "summary": "17",
+              "image_path": "artifacts/docenv/usgs_mcs_2025/page_021.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 21,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"The question asks for the table caption that begins page 21. I have read page 21 and can see the caption.\",\"action\":\"answer\",\"action_input\":{\"text\":\"Table 4.—The 2022 U.S. Critical Minerals List\",\"evidence_refs\":[{\"page\":21}]}}",
+      "thought": "The question asks for the table caption that begins page 21. I have read page 21 and can see the caption.",
+      "action": "answer",
+      "action_input": {
+        "text": "Table 4.—The 2022 U.S. Critical Minerals List",
+        "evidence_refs": [
+          {
+            "page": 21
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "Table 4.—The 2022 U.S. Critical Minerals List",
+          "evidence_refs": [
+            {
+              "page": 21
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "Table 4.—The 2022 U.S. Critical Minerals List",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1289,
+      "completion_tokens": 57,
+      "total_tokens": 1346,
+      "prompt_tokens_details": {
+        "text_tokens": 1289,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 38
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1719,
+      "completion_tokens": 69,
+      "total_tokens": 1788,
+      "prompt_tokens_details": {
+        "text_tokens": 1719,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  }
+}

@@ -1,0 +1,12 @@
+# H5 Qwen3-VL LoRA SFT dependencies.
+#
+# Torch is intentionally not pinned here because CUDA versions differ by server.
+# Install the CUDA-matched torch build first if your environment does not have it.
+accelerate>=1.0.0
+bitsandbytes>=0.44.0
+datasets>=2.19.0
+peft>=0.13.0
+protobuf>=4.25.0
+safetensors>=0.4.3
+sentencepiece>=0.2.0
+transformers>=4.57.0

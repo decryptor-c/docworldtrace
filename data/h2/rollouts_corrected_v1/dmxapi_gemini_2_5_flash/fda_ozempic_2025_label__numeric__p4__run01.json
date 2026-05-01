@@ -1,0 +1,212 @@
+{
+  "seed": {
+    "seed_id": "fda_ozempic_2025_label__numeric__p4",
+    "doc_id": "fda_ozempic_2025_label",
+    "pdf_path": "data/raw_pdfs/fda_ozempic_2025_label.pdf",
+    "question": "Based on the table on page 4 ('DOSAGE FORMS AND STRENGTHS'), in the column \"Total Strength per Total Volume\" (mg per pen), compute the percentage increase from the 0.5 mg dose pen (2 mg / 3 mL) to the 1 mg dose pen (4 mg / 3 mL). Report only the final result as a signed percentage with two decimals.",
+    "reference_answer": "100.00%",
+    "task_type": "numeric_computation",
+    "difficulty": "medium",
+    "required_tools": [
+      "parse_table",
+      "compute"
+    ],
+    "source": "structure_heuristic_v2_review",
+    "answerable": true,
+    "supporting_refs": [
+      {
+        "page": 4,
+        "bbox": [
+          36.239999999999995,
+          410.52,
+          303.8405,
+          495.3595
+        ]
+      }
+    ],
+    "metadata": {
+      "page": 4,
+      "bbox": [
+        36.239999999999995,
+        410.52,
+        303.8405,
+        495.3595
+      ],
+      "column_label": "Total Strength per Total Volume",
+      "first_label": "0.5 mg dose pen",
+      "second_label": "1 mg dose pen",
+      "first_value": 2.0,
+      "second_value": 4.0,
+      "formula": "(second_value - first_value) / abs(first_value) * 100",
+      "review_status": "needs_human_review",
+      "audit_note": "W5 fix: original row labels contained newlines from a merged cell. Rewrote with single-line dose-pen labels and added 'mg per pen' clarification."
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"action\":\"read_page\",\"action_input\":{\"page_ids\":[4]}}",
+      "thought": "",
+      "action": "read_page",
+      "action_input": {
+        "page_ids": [
+          4
+        ]
+      },
+      "observation": {
+        "action": "read_page",
+        "status": "success",
+        "result": {
+          "pages": [
+            {
+              "page": 4,
+              "text": "2.2 Recommended Dosage\nRecommended Initiation Dosage\nInitiate OZEMPIC with a dosage of 0.25 mg injected subcutaneously once weekly for 4 weeks. Follow the\ndosage escalation below to reduce the risk of gastrointestinal adverse reactions [see Warnings and Precautions\n(5.7), Adverse Reactions (6.1)].\nAfter 4 weeks on the 0.25 mg dosage, increase the dosage to 0.5 mg once weekly.\nRecommended Maintenance and Maximum Dosages for Glycemic Control\nThe recommended maintenance dosage is 0.5 mg, 1 mg, or 2 mg, injected subcutaneously once weekly, based\non glycemic control.\nIf additional glycemic control is needed after at least 4 weeks on the:\n• 0.5 mg dosage, the dosage may be increased to 1 mg once weekly.\n• 1 mg dosage, the dosage may be increased to 2 mg once weekly.\nThe maximum recommended dosage is 2 mg once weekly.\nRecommended Maintenance Dosage in Patients with Type 2 Diabetes Mellitus and Chronic Kidney Disease\nIncrease the dosage to the maintenance dosage, 1 mg once weekly, after at least 4 weeks on the 0.5 mg dosage.\n3 DOSAGE FORMS AND STRENGTHS\nInjection: clear, colorless solution available in 3 prefilled, disposable, single-patient-use pens:\nDose per Total Strength Strength per\nInjection per Total Volume mL\n0.25 mg\n0.5 mg 2 mg / 3 mL 0.68 mg/mL\n1 mg 4 mg / 3 mL 1.34 mg/mL\n2 mg 8 mg / 3 mL 2.68 mg/mL\nThe 2 mg/1.5 mL (1.34 mg/mL) strength is not currently marketed by Novo Nordisk Inc.\n4 CONTRAINDICATIONS\nOZEMPIC is contraindicated in patients with:\n• A personal or family history of MTC or in patients with MEN 2 [see Warnings and Precautions (5.1)].\n• A serious hypersensitivity reaction to semaglutide or to any of the excipients in OZEMPIC. Serious\nhypersensitivity reactions including anaphylaxis and angioedema have been reported with OZEMPIC [see\nWarnings and Precautions (5.8)].\n5 WARNINGS AND PRECAUTIONS\n5.1 Risk of Thyroid C-Cell Tumors\nIn mice and rats, semaglutide caused a dose-dependent and treatment-duration-dependent increase in the\nincidence of thyroid C-cell tumors (adenomas and carcinomas) after lifetime exposure at clinically relevant\nplasma exposures [see Nonclinical Toxicology (13.1)]. It is unknown whether OZEMPIC causes thyroid C-cell\ntumors, including MTC, in humans as human relevance of semaglutide-induced rodent thyroid C-cell tumors\nhas not been determined.\nReference ID: 5519421",
+              "summary": "2.2 Recommended Dosage",
+              "image_path": "artifacts/docenv/fda_ozempic_2025_label/page_004.png"
+            }
+          ],
+          "missing": []
+        },
+        "provenance": {
+          "page": 4,
+          "bbox": null,
+          "element_type": "page"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\":\"I need to extract the 'Total Strength per Total Volume' values for the 0.5 mg dose pen and the 1 mg dose pen from the table on page 4. The question asks for the percentage increase from the 0.5 mg dose pen (2 mg / 3 mL) to the 1 mg dose pen (4 mg / 3 mL). I will use the 'Total Strength per Total Volume' column, which is given as 'mg per pen'. The values are 2 mg / 3 mL and 4 mg / 3 mL. I will use the numerator values (2 mg and 4 mg) for the calculation, as the denominator (3 mL) is the same for both.\",\"action\":\"compute\",\"action_input\":{\"expr\":\"((mg_1mg_pen - mg_0_5mg_pen) / mg_0_5mg_pen) * 100\",\"vars\":{\"mg_0_5mg_pen\":2,\"mg_1mg_pen\":4}}}",
+      "thought": "I need to extract the 'Total Strength per Total Volume' values for the 0.5 mg dose pen and the 1 mg dose pen from the table on page 4. The question asks for the percentage increase from the 0.5 mg dose pen (2 mg / 3 mL) to the 1 mg dose pen (4 mg / 3 mL). I will use the 'Total Strength per Total Volume' column, which is given as 'mg per pen'. The values are 2 mg / 3 mL and 4 mg / 3 mL. I will use the numerator values (2 mg and 4 mg) for the calculation, as the denominator (3 mL) is the same for both.",
+      "action": "compute",
+      "action_input": {
+        "expr": "((mg_1mg_pen - mg_0_5mg_pen) / mg_0_5mg_pen) * 100",
+        "vars": {
+          "mg_0_5mg_pen": 2,
+          "mg_1mg_pen": 4
+        }
+      },
+      "observation": {
+        "action": "compute",
+        "status": "success",
+        "result": {
+          "expr": "((mg_1mg_pen - mg_0_5mg_pen) / mg_0_5mg_pen) * 100",
+          "vars": {
+            "mg_0_5mg_pen": 2,
+            "mg_1mg_pen": 4
+          },
+          "value": 100.0
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "computed_value"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 3,
+      "raw_model_output": "{\"thought\":\"I have computed the percentage increase. Now I can provide the answer.\",\"action\":\"answer\",\"action_input\":{\"text\":\"100.00%\",\"evidence_refs\":[{\"page\":4}]}}",
+      "thought": "I have computed the percentage increase. Now I can provide the answer.",
+      "action": "answer",
+      "action_input": {
+        "text": "100.00%",
+        "evidence_refs": [
+          {
+            "page": 4
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "100.00%",
+          "evidence_refs": [
+            {
+              "page": 4
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "read_page",
+    "compute",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "100.00%",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1371,
+      "completion_tokens": 139,
+      "total_tokens": 1510,
+      "prompt_tokens_details": {
+        "text_tokens": 1371,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 121
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1885,
+      "completion_tokens": 217,
+      "total_tokens": 2102,
+      "prompt_tokens_details": {
+        "text_tokens": 1885,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2189,
+      "completion_tokens": 44,
+      "total_tokens": 2233,
+      "prompt_tokens_details": {
+        "text_tokens": 2189,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 3,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  }
+}

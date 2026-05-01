@@ -1,0 +1,148 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "search",
+        "read_page",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "hard",
+    "doc_id": "nist_ai_600_1_genai_profile",
+    "metadata": {
+      "anchor_page": 2,
+      "anchor_phrase": "gina m raimondo secretary",
+      "answer_page": 3,
+      "audit_note": "B7 fix: p1 and p2 share identical NIST cover. Re-anchored on p2 unique 'Gina M. Raimondo, Secretary' and pointed answer to p3 ('About AI at NIST').",
+      "review_status": "needs_human_review"
+    },
+    "pdf_path": "data/raw_pdfs/nist_ai_600_1_genai_profile.pdf",
+    "question": "Use search to find the page about \"gina m raimondo secretary\". Then inspect the following page and report the heading or leading phrase.",
+    "reference_answer": "About AI at NIST",
+    "required_tools": [
+      "search",
+      "read_page"
+    ],
+    "seed_id": "nist_ai_600_1_genai_profile__cross__p2_p3",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "page": 3
+      }
+    ],
+    "task_type": "cross_page",
+    "tool_hints": {
+      "target_page": 3
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_2_5_flash__negative",
+    "model": "gemini-2.5-flash"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"Answering directly without using document tools.\", \"action\": \"answer\", \"action_input\": {\"text\": \"About AI at NIST: The National Institute of Standards and Technology (NIST) develops measurements,\", \"evidence_refs\": [{\"page\": 3}]}}",
+      "thought": "Answering directly without using document tools.",
+      "action": "answer",
+      "action_input": {
+        "text": "About AI at NIST: The National Institute of Standards and Technology (NIST) develops measurements,",
+        "evidence_refs": [
+          {
+            "page": 3
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "About AI at NIST: The National Institute of Standards and Technology (NIST) develops measurements,",
+          "evidence_refs": [
+            {
+              "page": 3
+            }
+          ],
+          "terminated": true
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "final_answer"
+        },
+        "confidence": 1.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "About AI at NIST: The National Institute of Standards and Technology (NIST) develops measurements,",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1313,
+      "completion_tokens": 143,
+      "total_tokens": 1456,
+      "prompt_tokens_details": {
+        "text_tokens": 1313,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 113
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 1681,
+      "completion_tokens": 144,
+      "total_tokens": 1825,
+      "prompt_tokens_details": {
+        "text_tokens": 1681,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 122
+      },
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2137,
+      "completion_tokens": 167,
+      "total_tokens": 2304,
+      "prompt_tokens_details": {
+        "text_tokens": 2137,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 1,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": true
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "direct_answer_without_tools",
+    "source_teacher": "dmxapi_gemini_2_5_flash",
+    "source_seed_id": "nist_ai_600_1_genai_profile__cross__p2_p3",
+    "source_final_action": "answer",
+    "source_final_answer": "About AI at NIST: The National Institute of Standards and Technology (NIST) develops measurements,",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The final answer text is preserved, but all supporting tool calls and observations are removed."
+  }
+}

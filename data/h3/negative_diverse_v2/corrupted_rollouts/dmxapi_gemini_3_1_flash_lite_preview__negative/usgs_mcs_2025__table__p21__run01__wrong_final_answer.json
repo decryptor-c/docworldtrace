@@ -1,0 +1,421 @@
+{
+  "seed": {
+    "acceptable_paths": [
+      [
+        "read_page",
+        "parse_table",
+        "answer"
+      ],
+      [
+        "parse_table",
+        "answer"
+      ],
+      [
+        "read_page",
+        "ocr",
+        "answer"
+      ]
+    ],
+    "answerable": true,
+    "difficulty": "medium",
+    "doc_id": "usgs_mcs_2025",
+    "metadata": {
+      "bbox": [
+        49.645714285714284,
+        59.639999999999986,
+        561.8314285714287,
+        696.16
+      ],
+      "column_label": "Applications",
+      "page": 21,
+      "review_status": "needs_human_review",
+      "row_label": "Aluminum"
+    },
+    "pdf_path": "data/raw_pdfs/usgs_mcs_2025.pdf",
+    "question": "On page 21, in the table, what is the value for row \"Aluminum\" under column \"Applications\"?",
+    "reference_answer": "Metallurgy and many sectors of the economy.",
+    "required_tools": [
+      "read_page",
+      "parse_table"
+    ],
+    "seed_id": "usgs_mcs_2025__table__p21",
+    "source": "structure_heuristic_v2_review",
+    "supporting_refs": [
+      {
+        "bbox": [
+          49.645714285714284,
+          59.639999999999986,
+          561.8314285714287,
+          696.16
+        ],
+        "page": 21
+      }
+    ],
+    "task_type": "table_lookup",
+    "tool_hints": {
+      "bbox_note": "Use this bbox as the first parse_table/crop region; it covers the relevant table.",
+      "preferred_first_tool": "parse_table",
+      "table_bbox_hint": [
+        49.645714285714284,
+        59.639999999999986,
+        561.8314285714287,
+        696.16
+      ],
+      "target_page": 21
+    }
+  },
+  "teacher": {
+    "name": "dmxapi_gemini_3_1_flash_lite_preview__negative",
+    "model": "gemini-3.1-flash-lite-preview"
+  },
+  "status": "completed",
+  "trajectory": [
+    {
+      "step": 1,
+      "raw_model_output": "{\"thought\": \"I need to parse the table on page 21 to find the value for 'Aluminum' under 'Applications'.\", \"action\": \"parse_table\", \"action_input\": {\"page_id\": 21, \"bbox\": [49.645714285714284, 59.639999999999986, 561.8314285714287, 696.16]}}",
+      "thought": "I need to parse the table on page 21 to find the value for 'Aluminum' under 'Applications'.",
+      "action": "parse_table",
+      "action_input": {
+        "page_id": 21,
+        "bbox": [
+          49.645714285714284,
+          59.639999999999986,
+          561.8314285714287,
+          696.16
+        ]
+      },
+      "observation": {
+        "action": "parse_table",
+        "status": "success",
+        "result": {
+          "page": 21,
+          "bbox": [
+            49.645714285714284,
+            59.639999999999986,
+            561.8314285714285,
+            696.16
+          ],
+          "rows": [
+            [
+              "Critical mineral",
+              "Applications"
+            ],
+            [
+              "Aluminum",
+              "Metallurgy and many sectors of the economy."
+            ],
+            [
+              "Antimony",
+              "Flame retardants and lead-acid batteries."
+            ],
+            [
+              "Arsenic",
+              "Pesticides and semiconductors."
+            ],
+            [
+              "Barite",
+              "Hydrocarbon production."
+            ],
+            [
+              "Beryllium",
+              "Aerospace and defense."
+            ],
+            [
+              "Bismuth",
+              "Medical, metallurgy, and atomic research."
+            ],
+            [
+              "Cerium2",
+              "Catalytic converters, ceramics, glass, metallurgy, and polishing compounds."
+            ],
+            [
+              "Cesium",
+              "Research and development."
+            ],
+            [
+              "Chromium",
+              "Metallurgy."
+            ],
+            [
+              "Cobalt",
+              "Batteries and metallurgy."
+            ],
+            [
+              "Dysprosium2",
+              "Data storage devices, lasers, and permanent magnets."
+            ],
+            [
+              "Erbium2",
+              "Fiber optics, glass colorant, lasers, and optical amplifiers."
+            ],
+            [
+              "Europium2",
+              "Nuclear control rods and phosphors."
+            ],
+            [
+              "Fluorspar",
+              "Cement, industrial chemicals, and metallurgy."
+            ],
+            [
+              "Gadolinium2",
+              "Medical imaging, metallurgy, and permanent magnets."
+            ],
+            [
+              "Gallium",
+              "Integrated circuits and optical devices."
+            ],
+            [
+              "Germanium",
+              "Defense and fiber optics."
+            ],
+            [
+              "Graphite",
+              "Batteries, fuel cells, and lubricants."
+            ],
+            [
+              "Hafnium",
+              "Ceramics, nuclear control rods, and metallurgy."
+            ],
+            [
+              "Holmium2",
+              "Lasers, nuclear control rods, and permanent magnets."
+            ],
+            [
+              "Indium",
+              "Liquid crystal displays."
+            ],
+            [
+              "Iridium3",
+              "Anode coatings for electrochemical processes and chemical catalysts."
+            ],
+            [
+              "Lanthanum2",
+              "Batteries, catalysts, ceramics, glass, and metallurgy."
+            ],
+            [
+              "Lithium",
+              "Batteries."
+            ],
+            [
+              "Lutetium2",
+              "Cancer therapies, electronics, and medical imaging."
+            ],
+            [
+              "Magnesium",
+              "Metallurgy."
+            ],
+            [
+              "Manganese",
+              "Batteries and metallurgy."
+            ],
+            [
+              "Neodymium2",
+              "Catalysts, lasers, and permanent magnets."
+            ],
+            [
+              "Nickel",
+              "Batteries and metallurgy."
+            ],
+            [
+              "Niobium",
+              "Metallurgy."
+            ],
+            [
+              "Palladium3",
+              "Catalytic converters and catalysts."
+            ],
+            [
+              "Platinum3",
+              "Catalytic converters and catalysts."
+            ],
+            [
+              "Praseodymium2",
+              "Aerospace alloys, batteries, ceramics, colorants, and permanent magnets."
+            ],
+            [
+              "Rhodium3",
+              "Catalytic converters, catalysts, and electrical components."
+            ],
+            [
+              "Rubidium",
+              "Research and development."
+            ],
+            [
+              "Ruthenium3",
+              "Catalysts, electronic components, and computer chips."
+            ],
+            [
+              "Samarium2",
+              "Cancer treatments, nuclear, and permanent magnets."
+            ],
+            [
+              "Scandium",
+              "Ceramics, fuel cells, and metallurgy."
+            ],
+            [
+              "Tantalum",
+              "Capacitors and metallurgy."
+            ],
+            [
+              "Tellurium",
+              "Metallurgy, solar cells, and thermoelectric devices."
+            ],
+            [
+              "Terbium2",
+              "Fiber optics, lasers, permanent magnets, and solid state devices."
+            ],
+            [
+              "Thulium2",
+              "Lasers and metallurgy."
+            ],
+            [
+              "Tin",
+              "Metallurgy."
+            ],
+            [
+              "Titanium",
+              "Metallurgy and pigments."
+            ],
+            [
+              "Tungsten",
+              "Metallurgy."
+            ],
+            [
+              "Vanadium",
+              "Batteries, catalysts, and metallurgy."
+            ],
+            [
+              "Ytterbium2",
+              "Catalysts, lasers, metallurgy, and scintillators."
+            ],
+            [
+              "Yttrium",
+              "Catalysts, ceramics, lasers, metallurgy, and phosphors."
+            ],
+            [
+              "Zinc",
+              "Metallurgy."
+            ],
+            [
+              "Zirconium",
+              "Metallurgy and nuclear."
+            ]
+          ],
+          "markdown": "| Critical mineral | Applications |\n| --- | --- |\n| Aluminum | Metallurgy and many sectors of the economy. |\n| Antimony | Flame retardants and lead-acid batteries. |\n| Arsenic | Pesticides and semiconductors. |\n| Barite | Hydrocarbon production. |\n| Beryllium | Aerospace and defense. |\n| Bismuth | Medical, metallurgy, and atomic research. |\n| Cerium2 | Catalytic converters, ceramics, glass, metallurgy, and polishing compounds. |\n| Cesium | Research and development. |\n| Chromium | Metallurgy. |\n| Cobalt | Batteries and metallurgy. |\n| Dysprosium2 | Data storage devices, lasers, and permanent magnets. |\n| Erbium2 | Fiber optics, glass colorant, lasers, and optical amplifiers. |\n| Europium2 | Nuclear control rods and phosphors. |\n| Fluorspar | Cement, industrial chemicals, and metallurgy. |\n| Gadolinium2 | Medical imaging, metallurgy, and permanent magnets. |\n| Gallium | Integrated circuits and optical devices. |\n| Germanium | Defense and fiber optics. |\n| Graphite | Batteries, fuel cells, and lubricants. |\n| Hafnium | Ceramics, nuclear control rods, and metallurgy. |\n| Holmium2 | Lasers, nuclear control rods, and permanent magnets. |\n| Indium | Liquid crystal displays. |\n| Iridium3 | Anode coatings for electrochemical processes and chemical catalysts. |\n| Lanthanum2 | Batteries, catalysts, ceramics, glass, and metallurgy. |\n| Lithium | Batteries. |\n| Lutetium2 | Cancer therapies, electronics, and medical imaging. |\n| Magnesium | Metallurgy. |\n| Manganese | Batteries and metallurgy. |\n| Neodymium2 | Catalysts, lasers, and permanent magnets. |\n| Nickel | Batteries and metallurgy. |\n| Niobium | Metallurgy. |\n| Palladium3 | Catalytic converters and catalysts. |\n| Platinum3 | Catalytic converters and catalysts. |\n| Praseodymium2 | Aerospace alloys, batteries, ceramics, colorants, and permanent magnets. |\n| Rhodium3 | Catalytic converters, catalysts, and electrical components. |\n| Rubidium | Research and development. |\n| Ruthenium3 | Catalysts, electronic components, and computer chips. |\n| Samarium2 | Cancer treatments, nuclear, and permanent magnets. |\n| Scandium | Ceramics, fuel cells, and metallurgy. |\n| Tantalum | Capacitors and metallurgy. |\n| Tellurium | Metallurgy, solar cells, and thermoelectric devices. |\n| Terbium2 | Fiber optics, lasers, permanent magnets, and solid state devices. |\n| Thulium2 | Lasers and metallurgy. |\n| Tin | Metallurgy. |\n| Titanium | Metallurgy and pigments. |\n| Tungsten | Metallurgy. |\n| Vanadium | Batteries, catalysts, and metallurgy. |\n| Ytterbium2 | Catalysts, lasers, metallurgy, and scintillators. |\n| Yttrium | Catalysts, ceramics, lasers, metallurgy, and phosphors. |\n| Zinc | Metallurgy. |\n| Zirconium | Metallurgy and nuclear. |"
+        },
+        "provenance": {
+          "page": 21,
+          "bbox": [
+            49.645714285714284,
+            59.639999999999986,
+            561.8314285714285,
+            696.16
+          ],
+          "element_type": "table"
+        },
+        "confidence": 0.95,
+        "cache_hit": true
+      },
+      "format_valid": true,
+      "execution_valid": true
+    },
+    {
+      "step": 2,
+      "raw_model_output": "{\"thought\": \"Corrupted negative-control terminal action.\", \"action\": \"answer\", \"action_input\": {\"text\": \"NOT_IN_TABLE\", \"evidence_refs\": [{\"bbox\": [49.645714285714284, 59.639999999999986, 561.8314285714287, 696.16], \"page\": 21}]}}",
+      "thought": "Corrupted negative-control terminal action.",
+      "action": "answer",
+      "action_input": {
+        "text": "NOT_IN_TABLE",
+        "evidence_refs": [
+          {
+            "bbox": [
+              49.645714285714284,
+              59.639999999999986,
+              561.8314285714287,
+              696.16
+            ],
+            "page": 21
+          }
+        ]
+      },
+      "observation": {
+        "action": "answer",
+        "status": "success",
+        "result": {
+          "text": "NOT_IN_TABLE",
+          "evidence_refs": [
+            {
+              "bbox": [
+                49.645714285714284,
+                59.639999999999986,
+                561.8314285714287,
+                696.16
+              ],
+              "page": 21
+            }
+          ]
+        },
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "element_type": "negative_control"
+        },
+        "confidence": 0.0,
+        "cache_hit": false
+      },
+      "format_valid": true,
+      "execution_valid": true
+    }
+  ],
+  "tool_sequence": [
+    "parse_table",
+    "answer"
+  ],
+  "final_action": "answer",
+  "final_answer": "NOT_IN_TABLE",
+  "raw_usage": [
+    {
+      "prompt_tokens": 1420,
+      "completion_tokens": 121,
+      "total_tokens": 1541,
+      "prompt_tokens_details": {
+        "text_tokens": 1420,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    {
+      "prompt_tokens": 2132,
+      "completion_tokens": 77,
+      "total_tokens": 2209,
+      "prompt_tokens_details": {
+        "text_tokens": 2132,
+        "cached_tokens_details": {}
+      },
+      "completion_tokens_details": {},
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    }
+  ],
+  "metrics": {
+    "format_compliant": true,
+    "terminated_normally": true,
+    "step_count": 2,
+    "used_verify": false,
+    "used_refuse": false,
+    "direct_answer": false
+  },
+  "condition": "h3_negative_control",
+  "corruption": {
+    "type": "wrong_final_answer",
+    "source_teacher": "dmxapi_gemini_3_1_flash_lite_preview",
+    "source_seed_id": "usgs_mcs_2025__table__p21",
+    "source_final_action": "answer",
+    "source_final_answer": "The value for 'Aluminum' under the 'Applications' column is 'Metallurgy and many sectors of the economy.'",
+    "expected_human_label": "BAD_TRAJECTORY",
+    "expected_filter_decision": "reject_or_review",
+    "rationale": "The terminal answer/refusal was intentionally corrupted while preserving the preceding trajectory."
+  }
+}
