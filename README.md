@@ -16,11 +16,11 @@ H5: Qwen3-VL answer-only vs trajectory SFT
 
 | File | Purpose |
 |---|---|
-| `h1_h4_experiment_summary.md` | Main H1-H5 technical summary with experiment results |
-| `h1_h5_presentation_report.md` | Presentation-oriented report focused on results, data, and examples |
-| `h5_experiment_report.md` | Standalone H5 Qwen3-VL SFT report |
-| `h5_closed_loop_trajectory_comparison.md` | H5 answer-only vs trajectory closed-loop example comparison |
-| `h1_h4_analysis_report.md` | Analysis report and limitations |
+| `docs/reports/h1_h4_experiment_summary.md` | Main H1-H5 technical summary with experiment results |
+| `docs/reports/h1_h5_presentation_report.md` | Presentation-oriented report focused on results, data, and examples |
+| `docs/reports/h5_experiment_report.md` | Standalone H5 Qwen3-VL SFT report |
+| `docs/reports/h5_closed_loop_trajectory_comparison.md` | H5 answer-only vs trajectory closed-loop example comparison |
+| `docs/reports/h1_h4_analysis_report.md` | Analysis report and limitations |
 | `REPOSITORY_STRUCTURE.md` | Repository layout and artifact map |
 
 ## Repository Layout
@@ -29,6 +29,9 @@ H5: Qwen3-VL answer-only vs trajectory SFT
 |---|---|
 | `docworldtrace/` | Core DocEnv, search, verification, and safe compute implementation |
 | `docworldtrace/pilot/` | H1-H5 pilot experiment modules |
+| `docs/research_plan/` | Research plan and experiment design notes |
+| `docs/reports/` | Shared experiment summaries and presentation reports |
+| `related_work/` | Literature review and proposal materials |
 | `scripts/` | Reproducible shell/Python entrypoints |
 | `data/` | Seeds, rollouts, evaluation summaries, reports, and local PDFs |
 | `artifacts/` | Rendered pages and crop images used by DocEnv/manual review |

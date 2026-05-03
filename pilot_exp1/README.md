@@ -1,6 +1,6 @@
 # Pilot Exp-1 Server Setup
 
-本目录对应 `09_pilot_verification.md` 里的第一部分：`Pilot Exp-1 / H1: DocEnv 环境可行性`。
+本目录对应 [docs/research_plan/09_pilot_verification.md](../docs/research_plan/09_pilot_verification.md) 里的第一部分：`Pilot Exp-1 / H1: DocEnv 环境可行性`。
 
 ## 目标
 

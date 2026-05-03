@@ -2,18 +2,20 @@
 
 This file is the working map for the current DocWorldTrace pilot repository.
 
-## Top-Level Documents
+## Documents
 
-| File | Role |
+| Path | Role |
 |---|---|
 | `README.md` | Main project entrypoint |
-| `01_background.md` - `09_pilot_verification.md` | Research plan and experiment design notes |
-| `h1_h4_experiment_summary.md` | Main technical summary for H1-H5 pilot results |
-| `h1_h5_presentation_report.md` | Presentation-oriented result report |
-| `h1_h4_analysis_report.md` | Analysis, limitations, and action items |
-| `h5_experiment_report.md` | Standalone H5 Qwen3-VL SFT report |
-| `h5_closed_loop_trajectory_comparison.md` | H5 closed-loop answer-only vs trajectory examples |
-| `references.md` | References |
+| `REPOSITORY_STRUCTURE.md` | Repository layout and artifact map |
+| `docs/research_plan/` | Research plan and experiment design notes |
+| `docs/reports/h1_h4_experiment_summary.md` | Main technical summary for H1-H5 pilot results |
+| `docs/reports/h1_h5_presentation_report.md` | Presentation-oriented result report |
+| `docs/reports/h1_h4_analysis_report.md` | Analysis, limitations, and action items |
+| `docs/reports/h5_experiment_report.md` | Standalone H5 Qwen3-VL SFT report |
+| `docs/reports/h5_closed_loop_trajectory_comparison.md` | H5 closed-loop answer-only vs trajectory examples |
+| `docs/references.md` | References |
+| `related_work/` | Literature review, proposal, and deeper analysis notes |
 
 ## Code
 
@@ -90,7 +92,7 @@ scripts/README_h5_qwen3_vl.md
 | H5 SFT data summary | `data/h5/sft_diverse_v2/summary.json` |
 | H5 next-action eval summary | `runs/h5_qwen3_vl_diverse_v2/h5_qwen_eval_summary.json` |
 | H5 closed-loop summary | `data/h5/closed_loop_diverse_v2/summary.json` |
-| H5 closed-loop trajectory comparison | `h5_closed_loop_trajectory_comparison.md` |
+| H5 closed-loop trajectory comparison | `docs/reports/h5_closed_loop_trajectory_comparison.md` |
 
 ## Local-Only Outputs
 
@@ -117,4 +119,3 @@ Check whether new `data/` directories are intended to be committed. In general:
 - Commit small seed/review/report files.
 - Avoid committing model checkpoints, logs, and large temporary artifacts.
 - Commit derived summaries only when they are part of the experiment evidence.
-

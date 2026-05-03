@@ -1,6 +1,6 @@
 # Pilot Exp-2 / H2
 
-本目录对应 `09_pilot_verification.md` 中的 `Pilot Exp-2: Teacher 轨迹生成可行性`。
+本目录对应 [docs/research_plan/09_pilot_verification.md](../docs/research_plan/09_pilot_verification.md) 中的 `Pilot Exp-2: Teacher 轨迹生成可行性`。
 
 ## 目标
 
